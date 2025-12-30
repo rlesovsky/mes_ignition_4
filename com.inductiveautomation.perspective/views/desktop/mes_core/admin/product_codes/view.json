@@ -1,0 +1,1423 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "307px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Data Configuration",
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600",
+                        "marginLeft": 20
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "header"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#21262d"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Tree"
+                },
+                "position": {
+                  "basis": "224px",
+                  "grow": 1
+                },
+                "props": {
+                  "appearance": {
+                    "defaultNodeIcons": {
+                      "collapsed": {
+                        "path": "material/folder"
+                      },
+                      "empty": {
+                        "path": "material/stop"
+                      },
+                      "expanded": {
+                        "path": "material/folder_open"
+                      }
+                    },
+                    "expandIcons": {
+                      "collapsed": {
+                        "path": "material/arrow_right"
+                      },
+                      "expanded": {
+                        "path": "material/arrow_drop_down"
+                      }
+                    },
+                    "selectedStyle": {
+                      "backgroundColor": "#3b82f6"
+                    }
+                  },
+                  "items": [
+                    {
+                      "data": "I am string data for Item 1",
+                      "expanded": true,
+                      "items": [
+                        {
+                          "data": {
+                            "someKey": "Information here."
+                          },
+                          "expanded": true,
+                          "icon": {
+                            "color": "",
+                            "path": "material/folder_open",
+                            "style": {}
+                          },
+                          "items": [
+                            {
+                              "data": {
+                                "things": [
+                                  "one potato",
+                                  "two potato",
+                                  "three potato",
+                                  "four",
+                                  "boilem, mash em, put em in a stew"
+                                ]
+                              },
+                              "expanded": true,
+                              "icon": {
+                                "color": "#869DB1",
+                                "path": "material/folder_open",
+                                "style": {}
+                              },
+                              "items": [
+                                {
+                                  "data": {},
+                                  "expanded": false,
+                                  "items": [],
+                                  "label": "Line 1"
+                                },
+                                {
+                                  "data": {},
+                                  "expanded": false,
+                                  "items": [],
+                                  "label": "Line 2"
+                                }
+                              ],
+                              "label": "Area"
+                            }
+                          ],
+                          "label": "Site"
+                        }
+                      ],
+                      "label": "Enterprise"
+                    }
+                  ],
+                  "selection": [
+                    "0/0/0/0"
+                  ],
+                  "selectionData": [
+                    {
+                      "itemPath": "0/0/0/0",
+                      "value": {}
+                    }
+                  ]
+                },
+                "type": "ia.display.tree"
+              }
+            ],
+            "meta": {
+              "name": "productcode_table"
+            },
+            "position": {
+              "basis": "470px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#21262d",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "margin": 12
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "plant"
+        },
+        "position": {
+          "basis": "50px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "307px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Product Codes",
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600",
+                        "marginLeft": 20
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "add"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "props": {
+                      "color": "#10b981",
+                      "path": "material/add_circle_outline"
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "meta": {
+                      "name": "delete"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "props": {
+                      "color": "#FCA5A5A8",
+                      "path": "material/delete_forever",
+                      "style": {
+                        "marginRight": 10
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "header"
+                },
+                "position": {
+                  "basis": "70px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#21262d"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Table_0"
+                },
+                "position": {
+                  "basis": "887px"
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "now()"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Define the query for the productcode table (PostgreSQL)\n    query \u003d \"SELECT productcode AS \\\"ProductCode\\\", description AS \\\"Description\\\", disable AS \\\"Disable\\\", \\\"TimeStamp\\\" FROM productcode\"\n    try:\n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, [], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "bodyStyle": {
+                    "backgroundColor": "#0d1117"
+                  },
+                  "cells": {
+                    "style": {
+                      "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                      "padding": "12px"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "ProductCode",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Product Code"
+                      },
+                      "justify": "left",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#10b981",
+                          "unselected": "rgba(255, 255, 255, 0.3)"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "left",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Description",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "left",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Description"
+                      },
+                      "justify": "left",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#10b981",
+                          "unselected": "rgba(255, 255, 255, 0.3)"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "toggleSwitch",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Disable",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Status"
+                      },
+                      "justify": "center",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "boolean",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#ef4444",
+                          "unselected": "#10b981"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                      "editable": false,
+                      "field": "TimeStamp",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Last Updated"
+                      },
+                      "justify": "center",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#10b981",
+                          "unselected": "rgba(255, 255, 255, 0.3)"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    }
+                  ],
+                  "headerStyle": {
+                    "backgroundColor": "#21262d",
+                    "borderBottom": "2px solid #10b981",
+                    "color": "#ffffff",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.5px",
+                    "textTransform": "uppercase"
+                  },
+                  "pager": {
+                    "bottom": false
+                  },
+                  "rows": {
+                    "highlight": {
+                      "color": "rgba(16, 185, 129, 0.1)"
+                    },
+                    "striped": {
+                      "color": {
+                        "even": "#101418",
+                        "odd": "#161b22"
+                      }
+                    },
+                    "style": {
+                      "color": "#ffffff",
+                      "fontSize": "14px",
+                      "fontWeight": "400"
+                    }
+                  },
+                  "selection": {
+                    "style": {
+                      "backgroundColor": "rgba(16, 185, 129, 0.2)",
+                      "border": "1px solid #10b981"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid rgba(255, 255, 255, 0.08)",
+                    "boxShadow": "0 16px 64px rgba(0, 0, 0, 0.4)",
+                    "fontFamily": "\u0027Helvetica Neue\u0027, Arial, sans-serif",
+                    "margin": 10
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "productcode_table"
+            },
+            "position": {
+              "basis": "470px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#21262d",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "margin": 10
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "307px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Product Codes For Production Line",
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600",
+                        "marginLeft": 20
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "add"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "props": {
+                      "color": "#10b981",
+                      "path": "material/add_circle_outline"
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "meta": {
+                      "name": "delete"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "props": {
+                      "color": "#FCA5A5A8",
+                      "path": "material/delete_forever",
+                      "style": {
+                        "marginRight": 10
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "header"
+                },
+                "position": {
+                  "basis": "70px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#21262d"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Table_0"
+                },
+                "position": {
+                  "basis": "887px"
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "now()"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Define the query with join and parameterized LineID (PostgreSQL)\n    query \u003d \"\"\"\n        SELECT pc.productcode AS \\\"ProductCode\\\", pc.description AS \\\"Description\\\", pcl.enable AS \\\"Enable\\\", pcl.\\\"TimeStamp\\\" \n        FROM productcode pc\n        LEFT JOIN productcodeline pcl\n        ON pc.id \u003d pcl.productcodeid\n        WHERE pcl.lineid \u003d ?\n    \"\"\"\n    try:\n        # Execute the query with LineID from component property (adjust path as needed)\n        lineID \u003d 1  # Adjust based on your Perspective property path\n        data \u003d system.db.runPrepQuery(query, [lineID], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "bodyStyle": {
+                    "backgroundColor": "#0d1117"
+                  },
+                  "cells": {
+                    "style": {
+                      "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                      "padding": "12px"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "ProductCode",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Product Code"
+                      },
+                      "justify": "left",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#10b981",
+                          "unselected": "rgba(255, 255, 255, 0.3)"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "left",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Description",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "left",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Description"
+                      },
+                      "justify": "left",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#10b981",
+                          "unselected": "rgba(255, 255, 255, 0.3)"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "toggleSwitch",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Enable",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Status"
+                      },
+                      "justify": "center",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "boolean",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#ef4444",
+                          "unselected": "#10b981"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                      "editable": false,
+                      "field": "TimeStamp",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "backgroundColor": "#101418",
+                          "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                          "color": "#9ca3af",
+                          "fontSize": "12px",
+                          "fontWeight": "600"
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "#21262d",
+                          "borderBottom": "2px solid #10b981",
+                          "color": "#ffffff",
+                          "fontSize": "14px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.5px",
+                          "padding": "16px 12px",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Last Updated"
+                      },
+                      "justify": "center",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "—",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "#10b981",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "rgba(255, 255, 255, 0.1)",
+                          "style": {
+                            "borderRadius": "4px"
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "color": "#ffffff",
+                            "fontSize": "12px",
+                            "fontWeight": "600"
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "color": "#ffffff",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "padding": "12px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "#10b981",
+                          "unselected": "rgba(255, 255, 255, 0.3)"
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    }
+                  ],
+                  "headerStyle": {
+                    "backgroundColor": "#21262d",
+                    "borderBottom": "2px solid #10b981",
+                    "color": "#ffffff",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.5px",
+                    "textTransform": "uppercase"
+                  },
+                  "pager": {
+                    "bottom": false
+                  },
+                  "rows": {
+                    "highlight": {
+                      "color": "rgba(16, 185, 129, 0.1)"
+                    },
+                    "striped": {
+                      "color": {
+                        "even": "#101418",
+                        "odd": "#161b22"
+                      }
+                    },
+                    "style": {
+                      "color": "#ffffff",
+                      "fontSize": "14px",
+                      "fontWeight": "400"
+                    }
+                  },
+                  "selection": {
+                    "style": {
+                      "backgroundColor": "rgba(16, 185, 129, 0.2)",
+                      "border": "1px solid #10b981"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid rgba(255, 255, 255, 0.08)",
+                    "boxShadow": "0 16px 64px rgba(0, 0, 0, 0.4)",
+                    "fontFamily": "\u0027Helvetica Neue\u0027, Arial, sans-serif",
+                    "margin": 10
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "productcode_table_Line"
+            },
+            "position": {
+              "basis": "470px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#21262d",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "margin": 10
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "product_codes"
+        },
+        "position": {
+          "basis": "890px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "padding": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

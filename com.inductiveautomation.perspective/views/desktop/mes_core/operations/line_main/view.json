@@ -1,0 +1,308 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "300px"
+            },
+            "props": {
+              "text": "Line 1 Production",
+              "textStyle": {
+                "color": "#ffffff",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600",
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "30px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": 0,
+                          "output": "Stopped"
+                        },
+                        {
+                          "input": 1,
+                          "output": "Running"
+                        },
+                        {
+                          "input": 2,
+                          "output": "E-Stop"
+                        },
+                        {
+                          "input": 3,
+                          "output": "Blocked"
+                        },
+                        {
+                          "input": 4,
+                          "output": "Starved"
+                        },
+                        {
+                          "input": 5,
+                          "output": "Change Over"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.textStyle.color": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "#EF4444",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Running",
+                          "output": "#10B981"
+                        }
+                      ],
+                      "outputType": "color",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600",
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#21262d",
+            "borderBottomLeftRadius": 12,
+            "borderBottomRightRadius": 12,
+            "borderTopLeftRadius": 12,
+            "borderTopRightRadius": 12,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 5
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/production_status"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_1"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/oee"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_2"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10,
+                "marginRight": 10
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "middle"
+        },
+        "position": {
+          "basis": "489px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginTop": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/metrics"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_1"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/trend"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_2"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "bottom"
+        },
+        "position": {
+          "basis": "489px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginBottom": 10,
+            "marginTop": 10
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

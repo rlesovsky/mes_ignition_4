@@ -1,0 +1,19 @@
+{
+  "scope": "C",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "window.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "xml-format-version": 1,
+    "lastModificationSignature": "dc78e4a5a642711b0f2b9d8e02a0763abbcbb1e11506c7adfb95f3703cfe668b",
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "parameter-names": "selectedTagValue,showArea,showDT,showEnterprise,showLine,showSite,tagPath"
+  }
+}

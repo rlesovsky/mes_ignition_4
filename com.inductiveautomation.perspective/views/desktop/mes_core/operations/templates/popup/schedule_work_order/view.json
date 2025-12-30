@@ -1,0 +1,809 @@
+{
+  "custom": {
+    "unitScheduled": [
+      {
+        "TotalQuantity": 2000
+      }
+    ],
+    "workOrders": [
+      {
+        "ID": 42,
+        "ProductCode": "Test Product",
+        "Quantity": 2000,
+        "WorkOrder": "WO__Test_Product_2025-09-28_12-01-21"
+      }
+    ]
+  },
+  "params": {
+    "id": 42,
+    "lineID": 1
+  },
+  "propConfig": {
+    "custom.unitScheduled": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Base query with parameterized WorkOrderID\n    query \u003d \"\"\"\n        SELECT SUM(Quantity) AS TotalQuantity\n        FROM schedule\n        WHERE WorkOrderID \u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Get WorkOrderID from root container property\n        workOrderID \u003d self.custom.workOrders[0].ID\n        \n        params.append(workOrderID)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.workOrder": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Base query with parameterized ID\n    query \u003d \"\"\"\n        SELECT ID, WorkOrer\n        FROM workorder\n        WHERE ID \u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Get workOrderID from root container property\n        workOrderID \u003d self.custom.workOrders[0].WorkOrderID\n        \n        params.append(workOrderID)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.workOrders": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Base query matching your Vision query\n    query \u003d \"\"\"\n        SELECT ID, WorkOrder, ProductCode, Quantity\n        FROM workorder\n        WHERE ID \u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Get WorkOrderID from root container property\n        workOrderID \u003d self.params.id\n        \n        params.append(workOrderID)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.id": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.lineID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 546
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "151px"
+            },
+            "props": {
+              "text": "Work Order:",
+              "textStyle": {
+                "color": "#ffffff",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600",
+                "marginLeft": 20
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "307px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.workOrders[0].WorkOrder"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "color": "#ffffff",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600",
+                "marginLeft": 20
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "workorder"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#21262d"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Product Code:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "144px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.workOrders[0].ProductCode"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "product_code"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "marginLeft": 10,
+            "marginRight": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Work Order Units:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.workOrders[0].Quantity"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "basis": "175px"
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Units Scheduled:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.unitScheduled[0].TotalQuantity"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "workorder_units"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "marginLeft": 10,
+            "marginRight": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Units Produced:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.productCode"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "spacer"
+            },
+            "position": {
+              "basis": "175px"
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Units Remaining:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.productCode"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "units_produced"
+        },
+        "position": {
+          "basis": "50px",
+          "display": false
+        },
+        "props": {
+          "style": {
+            "marginLeft": 10,
+            "marginRight": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Start Time:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "DateTimeInput"
+            },
+            "position": {
+              "basis": "170px"
+            },
+            "props": {
+              "formattedValue": "Sep 27, 2025 12:00 AM",
+              "style": {
+                "marginBottom": 5,
+                "marginTop": 5
+              },
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1759031545786
+                ],
+                "$ts": 1758949200000
+              }
+            },
+            "type": "ia.input.date-time-input"
+          },
+          {
+            "meta": {
+              "name": "spacer"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "End Time:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "DateTimeInput_0"
+            },
+            "position": {
+              "basis": "170px"
+            },
+            "props": {
+              "formattedValue": "Sep 28, 2025 12:00 AM",
+              "style": {
+                "marginBottom": 5,
+                "marginTop": 5
+              },
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1759031554997
+                ],
+                "$ts": 1759035600000
+              }
+            },
+            "type": "ia.input.date-time-input"
+          }
+        ],
+        "meta": {
+          "name": "schedule"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "marginLeft": 10,
+            "marginRight": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Quantity:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "NumericEntryField"
+            },
+            "position": {
+              "basis": "169px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#101418",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10
+              },
+              "value": 2000
+            },
+            "type": "ia.input.numeric-entry-field"
+          }
+        ],
+        "meta": {
+          "name": "quantity"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "144px"
+            },
+            "props": {
+              "text": "Notes:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TextArea"
+            },
+            "position": {
+              "basis": "240px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10
+              }
+            },
+            "type": "ia.input.text-area"
+          }
+        ],
+        "meta": {
+          "name": "notes"
+        },
+        "position": {
+          "basis": "170px"
+        },
+        "props": {
+          "style": {
+            "marginBottom": 10,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\n    # Get current timestamp and set milliseconds to 0\n    timestamp \u003d system.date.now()\n    timestamp \u003d system.date.setTime(timestamp, system.date.getHour24(timestamp), system.date.getMinute(timestamp), system.date.getSecond(timestamp))\n    \n    # Define database name\n    db \u003d \u0027mes_core\u0027\n    \n    # Define insert query\n    query \u003d \u0027\u0027\u0027INSERT INTO schedule (LineID, WorkOrderID, ScheduleType, Note, ScheduleStartDateTime, ScheduleFinishDateTime, Quantity, EnteredBy, TimeStamp) \n               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)\u0027\u0027\u0027\n    \n    # Define validation query for WorkOrderID\n    validation_query \u003d \u0027\u0027\u0027SELECT ID FROM workorder WHERE ID \u003d ?\u0027\u0027\u0027\n    \n    try:\n        # Gather parameters required to add a schedule entry\n        lineID \u003d self.view.params.lineID\n        workOrderID \u003d self.view.params.id\n        workOrder \u003d self.view.custom.workOrders[0].WorkOrder\n        scheduleType \u003d \u0027\u0027\n        startDate \u003d self.parent.parent.getChild(\"schedule\").getChild(\"DateTimeInput\").props.value\n        finishDate \u003d self.parent.parent.getChild(\"schedule\").getChild(\"DateTimeInput_0\").props.value\n        quantity \u003d self.parent.parent.getChild(\"quantity\").getChild(\"NumericEntryField\").props.value\n        userName \u003d \u0027Randy L\u0027\n        note \u003d self.parent.parent.getChild(\"notes\").getChild(\"TextArea\").props.text\n        \n        # Validate WorkOrderID exists in workorder table\n        validation_result \u003d system.db.runPrepQuery(validation_query, [workOrderID], db)\n        if validation_result.getRowCount() \u003d\u003d 0:\n            system.util.getLogger(\"ScriptLogger\").error(\"Invalid WorkOrderID: {} does not exist in workorder table\".format(workOrderID))\n            return\n        \n        # Format timestamps for database\n        timestamp_str \u003d system.date.format(timestamp, \"yyyy-MM-dd HH:mm:ss\")\n        startDate_str \u003d system.date.format(startDate, \"yyyy-MM-dd HH:mm:ss\")\n        finishDate_str \u003d system.date.format(finishDate, \"yyyy-MM-dd HH:mm:ss\")\n        \n        # Execute the insert query\n        result \u003d system.db.runPrepUpdate(query, [lineID, workOrderID, scheduleType, note, startDate_str, finishDate_str, quantity, userName, timestamp_str], db)\n        \n        # Close the popup if insert is successful\n        if result \u003d\u003d 1:\n            system.perspective.closePopup(\"\")\n            \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Insert failed: {}\".format(str(e)))\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "create"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#d1d5db"
+                }
+              },
+              "style": {
+                "backgroundColor": "#10b981",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#9ca3af",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginRight": 5
+              },
+              "text": "Create",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\"\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "cancel"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#FAFAFB8C"
+                }
+              },
+              "style": {
+                "backgroundColor": "#FCA5A5A8",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#ef4444",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginLeft": 5
+              },
+              "text": "Cancel",
+              "textStyle": {
+                "color": "#FAFAFB8C",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "create"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "backgroundColor": "#0d1117",
+            "marginTop": 10,
+            "padding": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

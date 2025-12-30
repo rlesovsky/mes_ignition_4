@@ -1,0 +1,17 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ OEE ]\n\nSummary: OEE graphs!",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin"
+  ],
+  "attributes": {
+    "lastModificationSignature": "446239a24807aca316962a5e5be4633685b1478abacacc6df8d9f45432da9713",
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    }
+  }
+}

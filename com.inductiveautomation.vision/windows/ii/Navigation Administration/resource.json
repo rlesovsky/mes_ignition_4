@@ -1,0 +1,21 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ UI, Admin ]\n\nSummary: Configures and modifies the navigation tree.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "window.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "xml-format-version": 1,
+    "lastModificationSignature": "3be04532ea2a13e0f49cb77be03141b64b516e303358c2d835cf0d41b1c59d21",
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "open-on-start": true,
+    "parameter-names": "db,id"
+  }
+}

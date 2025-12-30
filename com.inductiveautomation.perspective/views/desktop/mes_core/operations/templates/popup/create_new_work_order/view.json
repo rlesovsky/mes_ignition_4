@@ -1,0 +1,303 @@
+{
+  "custom": {
+    "line": "Line 1"
+  },
+  "params": {
+    "runID": "value",
+    "scheduleID": "value",
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "custom.line": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\n    logger \u003d system.util.getLogger(\"StringSplitTransform\")\n    \n    if not quality.isGood():\n        return \"\"\n    \n    if not isinstance(value, basestring) or value is None:\n        logger.error(\"Invalid input: {}\".format(value))\n        return \"\"\n        \n    return value.rsplit(\u0027/\u0027, 1)[-1] if \u0027/\u0027 in value else value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.runID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.scheduleID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 350
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "table"
+        },
+        "position": {
+          "basis": "211px"
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\n    dbName \u003d \"mes_core\"\n    query \u003d \"SELECT ID, ProductCode, Description FROM productcode\"\n    \n    try:\n        data \u003d system.db.runQuery(query, dbName)\n        json_data \u003d system.dataset.toPyDataSet(data)\n        \n        result \u003d [\n            {col: row[col] for col in data.getColumnNames()}\n            for row in json_data\n        ]\n        \n        return result if result else [{}]\n    \n    except:\n        return [{}]",
+                  "type": "script"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "bodyStyle": {
+            "backgroundColor": "#0d1117"
+          },
+          "cells": {
+            "style": {
+              "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+              "padding": "12px"
+            }
+          },
+          "headerStyle": {
+            "backgroundColor": "#21262d",
+            "borderBottom": "2px solid #10b981",
+            "color": "#ffffff",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "letterSpacing": "0.5px",
+            "textTransform": "uppercase"
+          },
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "highlight": {
+              "color": "rgba(16, 185, 129, 0.1)"
+            },
+            "striped": {
+              "color": {
+                "even": "#101418",
+                "odd": "#161b22"
+              }
+            },
+            "style": {
+              "color": "#ffffff",
+              "fontSize": "14px",
+              "fontWeight": "400"
+            }
+          },
+          "selection": {
+            "style": {
+              "backgroundColor": "rgba(16, 185, 129, 0.2)",
+              "border": "1px solid #10b981"
+            }
+          },
+          "style": {
+            "backgroundColor": "transparent",
+            "border": "1px solid rgba(255, 255, 255, 0.08)",
+            "boxShadow": "0 16px 64px rgba(0, 0, 0, 0.4)",
+            "fontFamily": "\u0027Helvetica Neue\u0027, Arial, sans-serif",
+            "margin": 10
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "144px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Quantity To Make:",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "wordSpacing": "0.5px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "NumericEntryField"
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#101418",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10
+              },
+              "value": 100
+            },
+            "type": "ia.input.numeric-entry-field"
+          }
+        ],
+        "meta": {
+          "name": "quantity"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "marginLeft": 10,
+            "marginRight": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "    \n    timestamp \u003d system.date.now()\n    \n    # Set time to current hour, minute, second (which implicitly sets milliseconds to 0)\n    timestamp \u003d system.date.setTime(timestamp, system.date.getHour24(timestamp), system.date.getMinute(timestamp), system.date.getSecond(timestamp))\n    \n    parent \u003d self.parent\n    \n    root \u003d self.parent.parent\n    \n    table \u003d root.getChild(\u0027table\u0027)\n    \n    selected_row \u003d self.parent.parent.getChild(\"table\").props.selection.selectedRow\n    \n    if selected_row \u003d\u003d -1:\n        system.perspective.print(\"No row selected in the table.\")\n        return\n    \n    prod_code \u003d table.props.selection.data[0].ProductCode\n    \n    quantity \u003d root.getChild(\"quantity\").getChild(\"NumericEntryField\").props.value\n    \n    db \u003d \u0027mes_core\u0027\n    \n    query \u003d \u0027INSERT INTO workorder (WorkOrder, Quantity, Closed, Hide, TimeStamp, ProductCode) VALUES (?, ?, ?, ?, ?, ?)\u0027\n    \n    # Format timestamp string for WorkOrder\n    timestamp_str \u003d system.date.format(timestamp, \"yyyy-MM-dd_HH-mm-ss\")\n    \n    # Clean prod_code by replacing spaces with underscores\n    prod_code_clean \u003d prod_code.replace(\" \", \"_\")\n    \n    work_order \u003d \"WO__\" + prod_code_clean + \"_\" + timestamp_str\n    \n    system.db.runPrepUpdate(query, [work_order, quantity, 0, 0, timestamp, prod_code], db)\n    \n    system.perspective.closePopup(\"\")\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "create"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#d1d5db"
+                }
+              },
+              "style": {
+                "backgroundColor": "#10b981",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#9ca3af",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginRight": 5
+              },
+              "text": "Create",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\"\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "cancel"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#FAFAFB8C"
+                }
+              },
+              "style": {
+                "backgroundColor": "#FCA5A5A8",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#ef4444",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginLeft": 5
+              },
+              "text": "Cancel",
+              "textStyle": {
+                "color": "#FAFAFB8C",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "create"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "backgroundColor": "#0d1117",
+            "marginTop": 10,
+            "padding": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

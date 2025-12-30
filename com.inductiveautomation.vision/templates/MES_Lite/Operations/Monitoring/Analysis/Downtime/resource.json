@@ -1,0 +1,17 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ OEE ]\n\nSummary: Show minutes of downtime for top events.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin"
+  ],
+  "attributes": {
+    "lastModificationSignature": "b2b3e3e5928e199898084a184b3e4628aef16df1dc77103a9b0665f6eb37736e",
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    }
+  }
+}

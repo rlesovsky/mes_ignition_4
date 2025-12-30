@@ -1,0 +1,1318 @@
+{
+  "custom": {
+    "line": "Line 1",
+    "runDS": [
+      {
+        "Availability": 1,
+        "Closed": true,
+        "CurrentInfeed": 452,
+        "CurrentOutfeed": 365,
+        "CurrentWaste": 87,
+        "EstimatedFinishTime": null,
+        "GoodCount": 365,
+        "ID": 37,
+        "OEE": 0.4717668294906616,
+        "Performance": 0.6775956153869629,
+        "PlannedDowntime": 0,
+        "Quality": 0.6962365508079529,
+        "RunStartDateTime": {
+          "$": [
+            "ts",
+            192,
+            1759696923037
+          ],
+          "$ts": 1759084096000
+        },
+        "RunStopDateTime": {
+          "$": [
+            "ts",
+            192,
+            1759696923037
+          ],
+          "$ts": 1759086599000
+        },
+        "Runtime": null,
+        "ScheduleID": 49,
+        "SetupEndDateTime": null,
+        "SetupStartDateTime": null,
+        "StartInfeed": 0,
+        "StartOutfeed": 0,
+        "StartWaste": 0,
+        "StopInfeed": null,
+        "TimeStamp": {
+          "$": [
+            "ts",
+            192,
+            1759696923037
+          ],
+          "$ts": 1759086599000
+        },
+        "TotalCount": 372,
+        "TotalTime": 1098,
+        "UnplannedDowntime": 0,
+        "WasteCount": 87
+      }
+    ],
+    "runID": 40,
+    "scheduleID": 49
+  },
+  "params": {
+    "runID": 37,
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "custom.line": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\n    logger \u003d system.util.getLogger(\"StringSplitTransform\")\n    \n    if not quality.isGood():\n        return \"\"\n    \n    if not isinstance(value, basestring) or value is None:\n        logger.error(\"Invalid input: {}\".format(value))\n        return \"\"\n        \n    return value.rsplit(\u0027/\u0027, 1)[-1] if \u0027/\u0027 in value else value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.runDS": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Base query matching your Vision query\n    query \u003d \"\"\"\n        SELECT *\n        FROM run\n        WHERE ID \u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Get runID from root container property\n        runID \u003d self.params.runID\n        \n        params.append(runID)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.runID": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.tagPath} + \"/Line/OEE/RunID\""
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.scheduleID": {
+      "binding": {
+        "config": {
+          "path": "view.custom.runDS[0].ScheduleID"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.runID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 597
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "307px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Record Scrap",
+              "textStyle": {
+                "color": "#ffffff",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600",
+                "marginLeft": 20
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "50px",
+          "display": false
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#21262d"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "spacer"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "76px"
+                    },
+                    "props": {
+                      "text": "Line:",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 16,
+                        "wordSpacing": "0.5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "142px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.line"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "line"
+                },
+                "position": {
+                  "basis": "37px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "spacer"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "108px"
+                    },
+                    "props": {
+                      "text": "Part Number:",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 16,
+                        "wordSpacing": "0.5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "231px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": ".../Table_0.props.selection.data[0].defect_code"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "part _number"
+                },
+                "position": {
+                  "basis": "37px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "spacer"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "144px"
+                    },
+                    "props": {
+                      "text": "Bad Part Quantity:",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 16,
+                        "wordSpacing": "0.5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "NumericEntryField"
+                    },
+                    "position": {
+                      "basis": "150px"
+                    },
+                    "props": {
+                      "value": 2
+                    },
+                    "type": "ia.input.numeric-entry-field"
+                  }
+                ],
+                "meta": {
+                  "name": "quantity"
+                },
+                "position": {
+                  "basis": "37px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Table_0"
+                },
+                "position": {
+                  "basis": "164px"
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "now()"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Query to get data from defect_list\n    query \u003d \"\"\"\n        SELECT id, defect_code, defect_description, defect_type\n        FROM defect_list\n    \"\"\"\n    \n    try:\n        # Log transform execution with session and component details\n        logger \u003d system.util.getLogger(\"DefectListDataTransform\")\n        session_id \u003d self.session.props.id if hasattr(self.session, \u0027props\u0027) and hasattr(self.session.props, \u0027id\u0027) else \"Unknown\"\n        component_name \u003d self.meta.name if hasattr(self.meta, \u0027name\u0027) else \"Unknown Component\"\n        logger.info(\"Transform started for defect_list data at {} (Session: {}, Component: {})\".format(system.date.now(), session_id, component_name))\n        \n        # Log input value, quality, and tag path (if available)\n        tag_path \u003d self.props.path if hasattr(self, \u0027props\u0027) and hasattr(self.props, \u0027path\u0027) else \"Unknown Tag Path\"\n        logger.info(\"Input value type: {}, Quality: {}, Tag Path: {}\".format(type(value), str(quality), tag_path))\n        \n        # Check database connection status\n        try:\n            system.db.runQuery(\"SELECT 1\", database\u003ddbName)\n            logger.info(\"Database connection \u0027{}\u0027 is accessible\".format(dbName))\n        except Exception as db_error:\n            logger.error(\"Database connection \u0027{}\u0027 failed: {}\".format(dbName, str(db_error)))\n            return [{\n                \u0027id\u0027: None,\n                \u0027defect_code\u0027: None,\n                \u0027defect_description\u0027: None,\n                \u0027defect_type\u0027: None\n            }]\n        \n        # Log query execution attempt\n        logger.info(\"Executing query: {} in database: {}\".format(query.replace(\u0027\\n\u0027, \u0027 \u0027).strip(), dbName))\n        \n        # Execute the query\n        data \u003d system.db.runQuery(query, database\u003ddbName)\n        \n        # Log row count and column names\n        row_count \u003d data.getRowCount() if hasattr(data, \u0027getRowCount\u0027) else 0\n        column_names \u003d data.getColumnNames()\n        logger.info(\"Query returned {} rows with columns: {}\".format(row_count, column_names))\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        \n        # Check if there\u0027s data\n        if row_count \u003e 0:\n            # Return data with all rows, transforming defect_type where it equals \u00271\u0027\n            result \u003d [\n                {\n                    \u0027id\u0027: row[\u0027id\u0027],\n                    \u0027defect_code\u0027: row[\u0027defect_code\u0027],\n                    \u0027defect_description\u0027: row[\u0027defect_description\u0027],\n                    \u0027defect_type\u0027: \u0027Production\u0027 if str(row[\u0027defect_type\u0027]) \u003d\u003d \u00271\u0027 else row[\u0027defect_type\u0027]\n                }\n                for row in json_data\n            ]\n            logger.info(\"Returning {} rows of data: {}\".format(len(result), result))\n        else:\n            # Return empty row with column headers (None values)\n            result \u003d [{\n                \u0027id\u0027: None,\n                \u0027defect_code\u0027: None,\n                \u0027defect_description\u0027: None,\n                \u0027defect_type\u0027: None\n            }]\n            logger.info(\"No rows returned, sending empty structure\")\n        \n        return result\n        \n    except Exception as e:\n        logger.error(\"Query failed: {}\".format(str(e)))\n        # Return empty structure with expected column headers\n        return [{\n            \u0027id\u0027: None,\n            \u0027defect_code\u0027: None,\n            \u0027defect_description\u0027: None,\n            \u0027defect_type\u0027: None\n        }]",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "bodyStyle": {
+                    "backgroundColor": "#0d1117"
+                  },
+                  "cells": {
+                    "style": {
+                      "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                      "padding": "12px"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "defect_code",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "defect_description",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "defect_type",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "id",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": ""
+                    }
+                  ],
+                  "headerStyle": {
+                    "backgroundColor": "#21262d",
+                    "borderBottom": "2px solid #10b981",
+                    "color": "#ffffff",
+                    "fontSize": "14px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.5px",
+                    "textTransform": "uppercase"
+                  },
+                  "pager": {
+                    "bottom": false
+                  },
+                  "rows": {
+                    "highlight": {
+                      "color": "rgba(16, 185, 129, 0.1)"
+                    },
+                    "striped": {
+                      "color": {
+                        "even": "#101418",
+                        "odd": "#161b22"
+                      }
+                    },
+                    "style": {
+                      "color": "#ffffff",
+                      "fontSize": "14px",
+                      "fontWeight": "400"
+                    }
+                  },
+                  "selection": {
+                    "data": [
+                      {
+                        "defect_code": "DB01",
+                        "defect_description": "Dimensional Defects",
+                        "defect_type": "Production",
+                        "id": 1
+                      }
+                    ],
+                    "selectedColumn": "defect_description",
+                    "selectedRow": 0,
+                    "style": {
+                      "backgroundColor": "rgba(16, 185, 129, 0.2)",
+                      "border": "1px solid #10b981"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid rgba(255, 255, 255, 0.08)",
+                    "boxShadow": "0 16px 64px rgba(0, 0, 0, 0.4)",
+                    "fontFamily": "\u0027Helvetica Neue\u0027, Arial, sans-serif",
+                    "margin": 10
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "record"
+            },
+            "position": {
+              "basis": "398px"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#21262d",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "marginBottom": 5,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "spacer"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "105px"
+                    },
+                    "props": {
+                      "text": "Run Scrap",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 16,
+                        "wordSpacing": "0.5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "run_scrap"
+                },
+                "position": {
+                  "basis": "37px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "spacer"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "144px"
+                    },
+                    "props": {
+                      "text": "Total:",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 16,
+                        "wordSpacing": "0.5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "142px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Retrieve runID and scheduleID from view parameters at the start\n    runID \u003d self.view.custom.runID\n    scheduleID \u003d self.view.custom.scheduleID\n    \n    # Log transform execution with session, component, and parameter details\n    logger \u003d system.util.getLogger(\"CountHistoryTransform\")\n    session_id \u003d self.session.props.id if hasattr(self.session, \u0027props\u0027) and hasattr(self.session.props, \u0027id\u0027) else \"Unknown\"\n    component_name \u003d self.meta.name if hasattr(self.meta, \u0027name\u0027) else \"Unknown Component\"\n    logger.info(\"Transform started for counthistory sum at {} (Session: {}, Component: {}, runID: {}, scheduleID: {})\".format(\n        system.date.now(), session_id, component_name, runID, scheduleID))\n    \n    # Log input value, quality, and tag path (if available)\n    tag_path \u003d self.props.path if hasattr(self, \u0027props\u0027) and hasattr(self.props, \u0027path\u0027) else \"Unknown Tag Path\"\n    logger.info(\"Input value type: {}, Quality: {}, Tag Path: {}\".format(type(value), str(quality), tag_path))\n    \n    # Check if runID is missing\n    if runID is None:\n        logger.error(\"runID parameter is missing or undefined in view.params\")\n        return 0\n    \n    # Note: scheduleID is retrieved but not used in the query (add if needed)\n    if scheduleID is None:\n        logger.warning(\"scheduleID parameter is missing or undefined in view.params\")\n        # Continue, as scheduleID is not used in the query\n    \n    # Query to get sum from counthistory\n    query \u003d \"\"\"\n        SELECT IFNULL(SUM(count), 0) AS Total\n        FROM counthistory\n        WHERE runid \u003d ?\n        AND CountTypeID \u003d 3\n    \"\"\"\n    \n    try:\n        # Check database connection status\n        try:\n            system.db.runQuery(\"SELECT 1\", database\u003ddbName)\n            logger.info(\"Database connection \u0027{}\u0027 is accessible\".format(dbName))\n        except Exception as db_error:\n            logger.error(\"Database connection \u0027{}\u0027 failed: {}\".format(dbName, str(db_error)))\n            return 0\n        \n        # Check if quality is bad (e.g., Bad, OutOfRange)\n        if not quality.isGood():\n            logger.info(\"Bad quality detected: {}\".format(str(quality)))\n            return 0\n        \n        # Log query execution attempt\n        logger.info(\"Executing query: {} with runID: {} in database: {}\".format(query.replace(\u0027\\n\u0027, \u0027 \u0027).strip(), runID, dbName))\n        \n        # Execute the query with runID parameter\n        data \u003d system.db.runPrepQuery(query, [runID], dbName)\n        \n        # Log row count and column names\n        row_count \u003d data.getRowCount() if hasattr(data, \u0027getRowCount\u0027) else 0\n        column_names \u003d data.getColumnNames()\n        logger.info(\"Query returned {} rows with columns: {}\".format(row_count, column_names))\n        \n        # Get the Total value\n        if row_count \u003e 0:\n            total \u003d data.getValueAt(0, \"Total\")\n            logger.info(\"Returning Total: {}\".format(total))\n            return total if total is not None else 0\n        else:\n            logger.info(\"No rows returned, returning 0\")\n            return 0\n        \n    except Exception as e:\n        logger.error(\"Query failed: {}\".format(str(e)))\n        return 0",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "total"
+                },
+                "position": {
+                  "basis": "37px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "spacer"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "144px"
+                    },
+                    "props": {
+                      "text": "Reported:",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 16,
+                        "wordSpacing": "0.5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "142px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Retrieve runID and scheduleID from view parameters at the start\n    runID \u003d self.view.custom.runID\n    scheduleID \u003d self.view.custom.scheduleID\n    \n    # Log transform execution with session, component, and parameter details\n    logger \u003d system.util.getLogger(\"DefectLogTransform\")\n    session_id \u003d self.session.props.id if hasattr(self.session, \u0027props\u0027) and hasattr(self.session.props, \u0027id\u0027) else \"Unknown\"\n    component_name \u003d self.meta.name if hasattr(self.meta, \u0027name\u0027) else \"Unknown Component\"\n    logger.info(\"Transform started for defect_log sum at {} (Session: {}, Component: {}, runID: {}, scheduleID: {})\".format(\n        system.date.now(), session_id, component_name, runID, scheduleID))\n    \n    # Log input value, quality, and tag path (if available)\n    tag_path \u003d self.props.path if hasattr(self, \u0027props\u0027) and hasattr(self.props, \u0027path\u0027) else \"Unknown Tag Path\"\n    logger.info(\"Input value type: {}, Quality: {}, Tag Path: {}\".format(type(value), str(quality), tag_path))\n    \n    # Check if runID is missing\n    if runID is None:\n        logger.error(\"runID parameter is missing or undefined in view.params\")\n        return 0\n    \n    # Note: scheduleID is retrieved but not used in the query (add if needed)\n    if scheduleID is None:\n        logger.warning(\"scheduleID parameter is missing or undefined in view.params\")\n        # Continue, as scheduleID is not used in the query\n    \n    # Query to get sum from defect_log\n    query \u003d \"\"\"\n        SELECT IFNULL(SUM(quantity), 0) AS Reported\n        FROM defect_log\n        WHERE run_id \u003d ?\n    \"\"\"\n    \n    try:\n        # Check database connection status\n        try:\n            system.db.runQuery(\"SELECT 1\", database\u003ddbName)\n            logger.info(\"Database connection \u0027{}\u0027 is accessible\".format(dbName))\n        except Exception as db_error:\n            logger.error(\"Database connection \u0027{}\u0027 failed: {}\".format(dbName, str(db_error)))\n            return 0\n        \n        # Check if quality is bad (e.g., Bad, OutOfRange)\n        if not quality.isGood():\n            logger.info(\"Bad quality detected: {}\".format(str(quality)))\n            return 0\n        \n        # Log query execution attempt\n        logger.info(\"Executing query: {} with runID: {} in database: {}\".format(query.replace(\u0027\\n\u0027, \u0027 \u0027).strip(), runID, dbName))\n        \n        # Execute the query with runID parameter\n        data \u003d system.db.runPrepQuery(query, [runID], dbName)\n        \n        # Log row count and column names\n        row_count \u003d data.getRowCount() if hasattr(data, \u0027getRowCount\u0027) else 0\n        column_names \u003d data.getColumnNames()\n        logger.info(\"Query returned {} rows with columns: {}\".format(row_count, column_names))\n        \n        # Get the Reported value\n        if row_count \u003e 0:\n            reported \u003d data.getValueAt(0, \"Reported\")\n            logger.info(\"Returning Reported defect quantity: {}\".format(reported))\n            return reported if reported is not None else 0\n        else:\n            logger.info(\"No rows returned, returning 0\")\n            return 0\n        \n    except Exception as e:\n        logger.error(\"Query failed: {}\".format(str(e)))\n        return 0",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "reported"
+                },
+                "position": {
+                  "basis": "37px"
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": 5,
+                    "marginTop": 5
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "spacer"
+                    },
+                    "position": {
+                      "basis": "30px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "144px"
+                    },
+                    "props": {
+                      "text": "Unreported:",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 16,
+                        "wordSpacing": "0.5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "142px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{.../total/Label_0.props.text} - {.../reported/Label_0.props.text}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 18,
+                        "fontWeight": "600"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "unreported"
+                },
+                "position": {
+                  "basis": "37px"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "scrap"
+            },
+            "position": {
+              "basis": "398px"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#21262d",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "marginBottom": 5,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 5
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "run"
+        },
+        "position": {
+          "basis": "305px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "table"
+        },
+        "position": {
+          "basis": "211px"
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "expression": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Retrieve runID and scheduleID from view parameters at the start\n    runID \u003d self.view.custom.runID\n    scheduleID \u003d self.view.custom.scheduleID\n    \n    # Log transform execution with session, component, and parameter details\n    logger \u003d system.util.getLogger(\"DefectLogDataTransform\")\n    session_id \u003d self.session.props.id if hasattr(self.session, \u0027props\u0027) and hasattr(self.session.props, \u0027id\u0027) else \"Unknown\"\n    component_name \u003d self.meta.name if hasattr(self.meta, \u0027name\u0027) else \"Unknown Component\"\n    logger.info(\"Transform started for defect_log data at {} (Session: {}, Component: {}, runID: {}, scheduleID: {})\".format(\n        system.date.now(), session_id, component_name, runID, scheduleID))\n    \n    # Log input value, quality, and tag path (if available)\n    tag_path \u003d self.props.path if hasattr(self, \u0027props\u0027) and hasattr(self.props, \u0027path\u0027) else \"Unknown Tag Path\"\n    logger.info(\"Input value type: {}, Quality: {}, Tag Path: {}\".format(type(value), str(quality), tag_path))\n    \n    # Check if runID is missing\n    if runID is None:\n        logger.error(\"runID parameter is missing or undefined in view.params\")\n        return [{\n            \u0027Code\u0027: None,\n            \u0027Quantity\u0027: None,\n            \u0027Description\u0027: None,\n            \u0027User\u0027: None,\n            \u0027Timestamp\u0027: None\n        }]\n    \n    # Note: scheduleID is retrieved but not used in the query (add if needed)\n    if scheduleID is None:\n        logger.warning(\"scheduleID parameter is missing or undefined in view.params\")\n        # Continue, as scheduleID is not used in the query\n    \n    # Query to get data from defect_log, defect_list, and run\n    query \u003d \"\"\"\n        SELECT\n            dlist.defect_code AS Code,\n            dlog.quantity AS Quantity,\n            dlist.defect_description AS Description,\n            dlog.user AS User,\n            dlog.timestamp AS Timestamp\n        FROM defect_log dlog\n        INNER JOIN defect_list dlist ON dlist.ID \u003d dlog.defect_code_id\n        INNER JOIN run r ON r.ID \u003d ?\n        WHERE dlog.run_id \u003d r.id\n        ORDER BY dlog.timestamp DESC\n    \"\"\"\n    \n    try:\n        # Check database connection status\n        try:\n            system.db.runQuery(\"SELECT 1\", database\u003ddbName)\n            logger.info(\"Database connection \u0027{}\u0027 is accessible\".format(dbName))\n        except Exception as db_error:\n            logger.error(\"Database connection \u0027{}\u0027 failed: {}\".format(dbName, str(db_error)))\n            return [{\n                \u0027Code\u0027: None,\n                \u0027Quantity\u0027: None,\n                \u0027Description\u0027: None,\n                \u0027User\u0027: None,\n                \u0027Timestamp\u0027: None\n            }]\n        \n        # Check if quality is bad (e.g., Bad, OutOfRange)\n        if not quality.isGood():\n            logger.info(\"Bad quality detected: {}\".format(str(quality)))\n            return [{\n                \u0027Code\u0027: None,\n                \u0027Quantity\u0027: None,\n                \u0027Description\u0027: None,\n                \u0027User\u0027: None,\n                \u0027Timestamp\u0027: None\n            }]\n        \n        # Log query execution attempt\n        logger.info(\"Executing query: {} with runID: {} in database: {}\".format(query.replace(\u0027\\n\u0027, \u0027 \u0027).strip(), runID, dbName))\n        \n        # Execute the query with runID parameter\n        data \u003d system.db.runPrepQuery(query, [runID], dbName)\n        \n        # Log row count and column names\n        row_count \u003d data.getRowCount() if hasattr(data, \u0027getRowCount\u0027) else 0\n        column_names \u003d data.getColumnNames()\n        logger.info(\"Query returned {} rows with columns: {}\".format(row_count, column_names))\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        \n        # Check if there\u0027s data\n        if row_count \u003e 0:\n            # Return data with all rows\n            result \u003d [\n                {\n                    col: row[col]\n                    for col in column_names\n                }\n                for row in json_data\n            ]\n            logger.info(\"Returning {} rows of data: {}\".format(len(result), result))\n        else:\n            # Return empty row with column headers (None values)\n            result \u003d [{\n                \u0027Code\u0027: None,\n                \u0027Quantity\u0027: None,\n                \u0027Description\u0027: None,\n                \u0027User\u0027: None,\n                \u0027Timestamp\u0027: None\n            }]\n            logger.info(\"No rows returned, sending empty structure\")\n        \n        return result\n        \n    except Exception as e:\n        logger.error(\"Query failed: {}\".format(str(e)))\n        # Return empty structure with expected column headers\n        return [{\n            \u0027Code\u0027: None,\n            \u0027Quantity\u0027: None,\n            \u0027Description\u0027: None,\n            \u0027User\u0027: None,\n            \u0027Timestamp\u0027: None\n        }]",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "bodyStyle": {
+            "backgroundColor": "#0d1117"
+          },
+          "cells": {
+            "style": {
+              "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+              "padding": "12px"
+            }
+          },
+          "headerStyle": {
+            "backgroundColor": "#21262d",
+            "borderBottom": "2px solid #10b981",
+            "color": "#ffffff",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "letterSpacing": "0.5px",
+            "textTransform": "uppercase"
+          },
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "highlight": {
+              "color": "rgba(16, 185, 129, 0.1)"
+            },
+            "striped": {
+              "color": {
+                "even": "#101418",
+                "odd": "#161b22"
+              }
+            },
+            "style": {
+              "color": "#ffffff",
+              "fontSize": "14px",
+              "fontWeight": "400"
+            }
+          },
+          "selection": {
+            "style": {
+              "backgroundColor": "rgba(16, 185, 129, 0.2)",
+              "border": "1px solid #10b981"
+            }
+          },
+          "style": {
+            "backgroundColor": "transparent",
+            "border": "1px solid rgba(255, 255, 255, 0.08)",
+            "boxShadow": "0 16px 64px rgba(0, 0, 0, 0.4)",
+            "fontFamily": "\u0027Helvetica Neue\u0027, Arial, sans-serif",
+            "margin": 10
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Retrieve runID and scheduleID from view parameters at the start\n    runID \u003d self.view.custom.runID\n    scheduleID \u003d self.view.custom.scheduleID\n    \n    # Log execution with session, component, and parameter details\n    logger \u003d system.util.getLogger(\"DefectLogInsert\")\n    session_id \u003d self.session.props.id if hasattr(self.session, \u0027props\u0027) and hasattr(self.session.props, \u0027id\u0027) else \"Unknown\"\n    component_name \u003d self.meta.name if hasattr(self.meta, \u0027name\u0027) else \"Unknown Component\"\n    logger.info(\"Insert started for defect_log at {} (Session: {}, Component: {}, runID: {}, scheduleID: {})\".format(\n        system.date.now(), session_id, component_name, runID, scheduleID))\n    \n    # Check runID and scheduleID\n    if runID is None:\n        logger.error(\"runID parameter is missing or undefined in view.params\")\n        return\n    if scheduleID is None:\n        logger.error(\"scheduleID parameter is missing or undefined in view.params\")\n        return\n    \n    try:\n        # Retrieve other required information\n        line \u003d self.view.custom.line\n        if line is None:\n            logger.error(\"line property is missing in view.custom\")\n            return\n        \n        productCode \u003d self.parent.parent.getChild(\"run\").getChild(\"record\").getChild(\"part _number\").getChild(\"Label_0\").props.text\n        if not productCode:\n            logger.error(\"productCode is missing or empty from Label_0.props.text\")\n            return\n        \n        # Get defect_code_id from Table_0 selection\n        table \u003d self.parent.parent.getChild(\"run\").getChild(\"record\").getChild(\"Table_0\")\n        selection \u003d table.props.selection.data\n        if not selection or len(selection) \u003d\u003d 0:\n            logger.error(\"No row selected in Table_0\")\n            return\n        defectCodeID \u003d selection[0].get(\u0027id\u0027, None)\n        if defectCodeID is None:\n            logger.error(\"defect_code_id is missing in Table_0 selection\")\n            return\n        \n        # Get quantity from NumericEntryField\n        quantity \u003d self.parent.parent.getChild(\"run\").getChild(\"record\").getChild(\"quantity\").getChild(\"NumericEntryField\").props.value\n        if quantity is None:\n            logger.error(\"quantity is missing or undefined in NumericEntryField\")\n            return\n        \n        # Set constants\n        defect_entry_type \u003d 1  # MACHINE_SETUP_SCRAP_ATTRIBUTED\n        user \u003d \"Randy Lesovsky\"\n        \n        # SQL query to insert into defect_log\n        query \u003d \"\"\"\n            INSERT INTO defect_log (schedule_id, run_id, line, product_code, defect_entry_type, defect_code_id, quantity, timestamp, user)\n            VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), ?)\n        \"\"\"\n        \n        # Log query execution attempt\n        logger.info(\"Executing query: {} with params: [scheduleID: {}, runID: {}, line: {}, productCode: {}, defect_entry_type: {}, defectCodeID: {}, quantity: {}, user: {}]\".format(\n            query.replace(\u0027\\n\u0027, \u0027 \u0027).strip(), scheduleID, runID, line, productCode, defect_entry_type, defectCodeID, quantity, user))\n        \n        # Execute the query\n        system.db.runPrepUpdate(query, [scheduleID, runID, line, productCode, defect_entry_type, defectCodeID, quantity, user], dbName)\n        logger.info(\"Successfully inserted defect_log entry\")\n        \n    except Exception as e:\n        logger.error(\"Insert failed: {}\".format(str(e)))\n\t\n\tsystem.perspective.closePopup(\"\")\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "record"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#d1d5db"
+                }
+              },
+              "style": {
+                "backgroundColor": "#10b981",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#9ca3af",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginRight": 5
+              },
+              "text": "Record",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\"\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "cancel"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#FAFAFB8C"
+                }
+              },
+              "style": {
+                "backgroundColor": "#FCA5A5A8",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#ef4444",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginLeft": 5
+              },
+              "text": "Cancel",
+              "textStyle": {
+                "color": "#FAFAFB8C",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "record"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "backgroundColor": "#0d1117",
+            "marginTop": 10,
+            "padding": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

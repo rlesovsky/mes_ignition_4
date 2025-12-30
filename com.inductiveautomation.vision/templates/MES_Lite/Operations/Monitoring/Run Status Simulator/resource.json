@@ -1,0 +1,18 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ OEE ]\n\nSummary: Run status data for operator.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModificationSignature": "df22a0a162df18d7b43141c0003d429daf3965b296969216a4cdd06e76fe8332",
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    }
+  }
+}

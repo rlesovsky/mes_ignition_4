@@ -1,0 +1,18 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ OEE ]\n\nSummary: Production data bucketted by hour, for a shift.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModificationSignature": "0f3246b38ae6c86ab8b417a21d62b76b11a7e6c813927901ebd5a91ca1afb5c6",
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    }
+  }
+}

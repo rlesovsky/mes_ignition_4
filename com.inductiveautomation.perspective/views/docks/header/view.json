@@ -1,0 +1,332 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 983
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "spacer_left"
+        },
+        "position": {
+          "basis": "5px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "id": "menu",
+                "type": "toggle"
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#d1d5db",
+          "path": "material/menu",
+          "style": {
+            "classes": "ui_ux/hover_highlight views/icons_normal",
+            "cursor": "pointer"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "logo"
+        },
+        "position": {
+          "basis": "200px",
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "fit": {
+            "mode": "contain"
+          },
+          "source": "/system/images/TAS_transparentback-TAS-Only-white.png",
+          "style": {
+            "margin": "0.3em"
+          },
+          "tint": {
+            "color": "#FFFFFF"
+          }
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "307px",
+          "grow": 1
+        },
+        "props": {
+          "text": "MES 4.0",
+          "textStyle": {
+            "color": "#3b82f6",
+            "fontFamily": "Arial",
+            "fontSize": 18,
+            "fontWeight": "600",
+            "marginLeft": 20
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t\n\ttag \u003d \"[SCADA]Rockwell NC 436/Production/Edge/ESD Reset\"\n\t\n\tvalue \u003d 1\n\t\n\tsystem.tag.writeBlocking(tag, value)\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "backgroundColor": "#FF0000",
+                "color": "#FFFFFF"
+              },
+              "text": "Safety Reset"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t\n\t# This script toggles the session locale between English and Spanish\n\t\n\t# Get the current locale from the session properties\n\t#current_locale \u003d self.session.props.locale\n\t\n\t# Check if the current locale is English\n\t#if current_locale \u003d\u003d \u0027en-US\u0027:\n\t    # If current locale is English, change it to Spanish\n\t    #new_locale \u003d \u0027es\u0027\n\t#else:\n\t    # If current locale is not English, change it to English\n\t    #new_locale \u003d \u0027en-US\u0027\n\t\n\t# Set the new locale to the session properties\n\t#self.session.props.locale \u003d new_locale"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "language",
+          "tooltip": {
+            "delay": 250,
+            "enabled": true,
+            "text": "Your Info"
+          }
+        },
+        "position": {
+          "display": false
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "ui_ux/hover_highlight",
+            "min-width": "100px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "spacer_middle"
+        },
+        "position": {
+          "basis": "5px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/access_alarms",
+              "style": {
+                "classes": "views/icons_normal"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "hasDelegate": true,
+              "name": "user_name"
+            },
+            "position": {
+              "basis": "90px"
+            },
+            "props": {
+              "style": {
+                "classes": "labels/color_normal labels/font labels/size_normal",
+                "cursor": "pointer",
+                "marginLeft": "4px"
+              },
+              "text": "alarms"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/alarms"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "alarms",
+          "tooltip": {
+            "delay": 250,
+            "enabled": true,
+            "text": "Your Info"
+          }
+        },
+        "position": {
+          "basis": "100px"
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "ui_ux/hover_highlight",
+            "min-width": "100px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/person",
+              "style": {
+                "classes": "views/icons_normal"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "hasDelegate": true,
+              "name": "user_name"
+            },
+            "position": {
+              "basis": "90px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "session.props.auth.user.userName"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "if({value} \u003d null || len({value}) \u003d 0, \"Sign In\", {value})",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "labels/color_normal labels/font labels/size_normal",
+                "cursor": "pointer",
+                "marginLeft": "4px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "user_1",
+          "tooltip": {
+            "delay": 250,
+            "enabled": true,
+            "text": "Your Info"
+          }
+        },
+        "position": {
+          "basis": "100px"
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "ui_ux/hover_highlight",
+            "min-width": "100px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "id": "qc",
+            "type": "close"
+          },
+          "scope": "C",
+          "type": "dock"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "#21262d",
+        "borderBottomColor": "black",
+        "borderBottomStyle": "none",
+        "borderBottomWidth": "1px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

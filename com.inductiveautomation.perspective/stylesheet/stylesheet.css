@@ -1,0 +1,54 @@
+/* Direct stylesheet authoring is an advanced feature. Knowledge of CSS required.*/
+.docked-view-left{
+	width: auto !important;	
+}
+
+.psc-leftdock{
+	width: 45px;
+	transition: width 0.4s ease-in-out;
+}
+
+.psc-leftdock:hover{
+	width: 300px;
+}
+
+/*.psc-leftdockitem{*/
+/*	opacity: 0;*/
+/*	transition: opacity 0.3s linear;*/
+/*}*/
+/*.psc-leftdock:hover .psc-leftdockitem{*/
+/*	opacity: 1;*/
+/*}*/
+
+.psc-leftdockitem{
+	transform: translateX(50px);
+	white-space: nowrap;
+	transition: transform 0.4s ease-in-out;
+}
+
+.psc-leftdock:hover .psc-leftdockitem{
+	transform: translateX(0px);
+}
+
+.menu-tree .menu-wrapper.wrapper-submenu.submenu-left.slide-enter-done{
+	left:0%;
+	overflow: hidden;
+}
+
+.psc-charge-running {
+	width: 140px; /* Adjusted width to accommodate 7 dots */
+	height: 15px;
+	aspect-ratio: 7;
+	background: radial-gradient(circle closest-side, #007A51 90%, #0000) 0/calc(100%/7) 100% space;
+	clip-path: inset(0 100% 0 0);
+	animation: l1 1.5s linear infinite; /* Changed to linear for smooth animation */
+}
+
+@keyframes l1 {
+	0% { clip-path: inset(0 100% 0 0);
+	}
+	50% { clip-path: inset(0 -34% 0 0);
+	}
+	100% { clip-path: inset(0 100% 0 0);
+	}
+}

@@ -1,0 +1,939 @@
+{
+  "custom": {
+    "id": null
+  },
+  "params": {},
+  "propConfig": {
+    "custom.id": {
+      "binding": {
+        "config": {
+          "path": "/root/workorder_table/Table_0.props.selection.data[0].ID"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "307px",
+                  "grow": 1
+                },
+                "props": {
+                  "text": "Work Orders",
+                  "textStyle": {
+                    "color": "#ffffff",
+                    "fontFamily": "Arial",
+                    "fontSize": 18,
+                    "fontWeight": "600",
+                    "marginLeft": 20
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "draggable": true,
+                        "id": "LkRnMMg2",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "title": "Create New Work Order",
+                        "type": "open",
+                        "viewPath": "desktop/mes_core/operations/templates/popup/create_new_work_order",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "add_0"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "color": "#10b981",
+                  "path": "material/add_circle_outline"
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "delete"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "color": "#ef4444",
+                  "path": "material/delete_forever"
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "header"
+            },
+            "position": {
+              "basis": "70px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#21262d"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Table_0"
+            },
+            "position": {
+              "basis": "887px"
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "now()"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Base query with join and parameterized LineID\n    query \u003d \"\"\"\n        SELECT w.ID as \u0027ID\u0027, w.WorkOrder as \u0027Work Order\u0027, w.ProductCode as \u0027Product Code\u0027, \n               w.Quantity as \u0027QTY\u0027, w.Closed as \u0027Closed\u0027, w.TimeStamp as \u0027TimeStamp\u0027 \n        FROM workorder w\n        LEFT JOIN productcode pc\n        ON w.ProductCode \u003d pc.ProductCode\n        LEFT JOIN productcodeline pcl\n        ON pc.ID \u003d pcl.ProductCodeID\n        WHERE pcl.LineID \u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Get LineID from component property (adjust path as needed)\n        lineID \u003d 1  # Adjust based on your Perspective property path\n        \n        # Optional: Handle closed work order filter\n        includeClosed \u003d False # Assume a boolean property; adjust path as needed\n        if not includeClosed:\n            query +\u003d \" AND w.Closed \u003d 0\"\n        \n        params.append(lineID)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "bodyStyle": {
+                "backgroundColor": "#0d1117"
+              },
+              "cells": {
+                "style": {
+                  "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                  "padding": "12px"
+                }
+              },
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Work Order",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Product Code",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Closed",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "QTY",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                  "editable": false,
+                  "field": "TimeStamp",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "ID",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                }
+              ],
+              "headerStyle": {
+                "backgroundColor": "#21262d",
+                "borderBottom": "2px solid #10b981",
+                "color": "#ffffff",
+                "fontSize": "14px",
+                "fontWeight": "600",
+                "letterSpacing": "0.5px",
+                "textTransform": "uppercase"
+              },
+              "pager": {
+                "bottom": false
+              },
+              "rows": {
+                "highlight": {
+                  "color": "rgba(16, 185, 129, 0.1)"
+                },
+                "striped": {
+                  "color": {
+                    "even": "#101418",
+                    "odd": "#161b22"
+                  }
+                },
+                "style": {
+                  "color": "#ffffff",
+                  "fontSize": "14px",
+                  "fontWeight": "400"
+                }
+              },
+              "selection": {
+                "style": {
+                  "backgroundColor": "rgba(16, 185, 129, 0.2)",
+                  "border": "1px solid #10b981"
+                }
+              },
+              "style": {
+                "backgroundColor": "transparent",
+                "border": "1px solid rgba(255, 255, 255, 0.08)",
+                "boxShadow": "0 16px 64px rgba(0, 0, 0, 0.4)",
+                "fontFamily": "\u0027Helvetica Neue\u0027, Arial, sans-serif",
+                "margin": 10
+              }
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "workorder_table"
+        },
+        "position": {
+          "basis": "470px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#21262d",
+            "borderBottomLeftRadius": 12,
+            "borderBottomRightRadius": 12,
+            "borderTopLeftRadius": 12,
+            "borderTopRightRadius": 12,
+            "margin": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "307px",
+                  "grow": 1
+                },
+                "props": {
+                  "text": "Schedule",
+                  "textStyle": {
+                    "color": "#ffffff",
+                    "fontFamily": "Arial",
+                    "fontSize": 18,
+                    "fontWeight": "600",
+                    "marginLeft": 20
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "draggable": true,
+                        "id": "tMVGLlPp",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "title": "Schedule Work Order",
+                        "type": "open",
+                        "viewParams": {
+                          "id": "{view.custom.id}",
+                          "lineID": "1"
+                        },
+                        "viewPath": "desktop/mes_core/operations/templates/popup/schedule_work_order",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "add_0"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "color": "#10b981",
+                  "path": "material/add_circle_outline"
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "delete"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "color": "#ef4444",
+                  "path": "material/delete_forever"
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "header"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#21262d",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "marginTop": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "EquipmentSchedule"
+            },
+            "position": {
+              "basis": "500px"
+            },
+            "propConfig": {
+              "props.scheduledEvents": {
+                "binding": {
+                  "config": {
+                    "expression": "now()"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Define query to fetch schedules from the last month\n    query \u003d \"\"\"\n        SELECT s.ID, s.LineID, s.WorkOrderID,\n               s.ScheduleStartDateTime AS StartDateTime,\n               s.ScheduleFinishDateTime AS FinishDateTime,\n               s.Quantity, s.ActualQuantity, w.WorkOrder\n        FROM schedule s\n        INNER JOIN workorder w ON s.WorkOrderID \u003d w.ID\n        WHERE s.ScheduleStartDateTime \u003e\u003d ? AND s.ScheduleStartDateTime \u003c\u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Calculate date range for the last month\n        end_date \u003d system.date.now()\n        start_date \u003d system.date.addDays(end_date, -30)\n        \n        params.append(start_date)\n        params.append(end_date)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON in the required format\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d []\n        \n        for row in json_data:\n            # Get datetime values\n            start_date_time \u003d row[\"StartDateTime\"]\n            finish_date_time \u003d row[\"FinishDateTime\"]\n            \n            # Log what we\u0027re working with\n            system.util.getLogger(\"ScriptLogger\").info(\"Row {}: Start\u003d{}, End\u003d{}\".format(\n                row[\"ID\"], start_date_time, finish_date_time))\n            \n            # Initialize with None\n            start_date_output \u003d None\n            end_date_output \u003d None\n            \n            # Process StartDateTime - create native Ignition timestamp\n            if start_date_time is not None:\n                try:\n                    # Convert to milliseconds first\n                    start_millis \u003d system.date.toMillis(start_date_time)\n                    \n                    # Create native Ignition timestamp object\n                    start_date_output \u003d system.date.fromMillis(start_millis)\n                    \n                    system.util.getLogger(\"ScriptLogger\").info(\"StartDate converted: {} -\u003e {}\".format(start_millis, start_date_output))\n                    \n                except Exception as e:\n                    system.util.getLogger(\"ScriptLogger\").error(\"StartDate conversion failed: {}\".format(str(e)))\n                    # Try alternative method\n                    try:\n                        start_millis \u003d start_date_time.getTime()\n                        start_date_output \u003d system.date.fromMillis(start_millis)\n                        system.util.getLogger(\"ScriptLogger\").info(\"StartDate alternative method worked: {} -\u003e {}\".format(start_millis, start_date_output))\n                    except Exception as e2:\n                        system.util.getLogger(\"ScriptLogger\").error(\"StartDate alternative also failed: {}\".format(str(e2)))\n            \n            # Process FinishDateTime - create native Ignition timestamp\n            if finish_date_time is not None:\n                try:\n                    # Convert to milliseconds first\n                    end_millis \u003d system.date.toMillis(finish_date_time)\n                    \n                    # Create native Ignition timestamp object\n                    end_date_output \u003d system.date.fromMillis(end_millis)\n                    \n                    system.util.getLogger(\"ScriptLogger\").info(\"EndDate converted: {} -\u003e {}\".format(end_millis, end_date_output))\n                    \n                except Exception as e:\n                    system.util.getLogger(\"ScriptLogger\").error(\"EndDate conversion failed: {}\".format(str(e)))\n                    # Try alternative method\n                    try:\n                        end_millis \u003d finish_date_time.getTime()\n                        end_date_output \u003d system.date.fromMillis(end_millis)\n                        system.util.getLogger(\"ScriptLogger\").info(\"EndDate alternative method worked: {} -\u003e {}\".format(end_millis, end_date_output))\n                    except Exception as e2:\n                        system.util.getLogger(\"ScriptLogger\").error(\"EndDate alternative also failed: {}\".format(str(e2)))\n            \n            # Build the result row\n            row_result \u003d {\n                \"itemId\": \"\",\n                \"eventId\": \"\",\n                \"startDate\": start_date_output,\n                \"endDate\": end_date_output,\n                \"label\": \"Scheduled Event\",\n                \"leadTime\": 0,\n                \"leadStyle\": {\"classes\": \"\"},\n                \"percentDone\": 0,\n                \"style\": {\"classes\": \"\"}\n            }\n            \n            # Log the final structure\n            system.util.getLogger(\"ScriptLogger\").info(\"Final row: startDate\u003d{}, endDate\u003d{}\".format(\n                start_date_output, end_date_output))\n            \n            result.append(row_result)\n        \n        system.util.getLogger(\"ScriptLogger\").info(\"Returning {} rows\".format(len(result)))\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "items": [
+                {
+                  "headerStyle": {
+                    "classes": ""
+                  },
+                  "iconConfig": {
+                    "color": "",
+                    "path": "",
+                    "style": {}
+                  },
+                  "id": "",
+                  "label": "Line 1",
+                  "rowStyle": {
+                    "classes": ""
+                  }
+                }
+              ],
+              "style": {
+                "borderStyle": "none",
+                "padding": 10
+              }
+            },
+            "type": "ia.display.equipmentschedule"
+          }
+        ],
+        "meta": {
+          "name": "schedule_table"
+        },
+        "position": {
+          "basis": "470px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#21262d",
+            "borderBottomLeftRadius": 12,
+            "borderBottomRightRadius": 12,
+            "borderTopLeftRadius": 12,
+            "borderTopRightRadius": 12,
+            "margin": 10
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}
