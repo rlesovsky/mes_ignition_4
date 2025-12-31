@@ -36,139 +36,254 @@
   },
   "props": {
     "defaultSize": {
-      "height": 402,
+      "height": 420,
       "width": 652
     }
   },
   "root": {
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 16,
+        "padding": 16
+      }
+    },
+    "type": "ia.container.flex",
     "children": [
       {
+        "meta": {
+          "name": "card_header"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+            "marginBottom": 12,
+            "paddingBottom": 8
+          }
+        },
+        "type": "ia.container.flex",
         "children": [
           {
-            "children": [
-              {
-                "meta": {
-                  "name": "RadioGroup"
-                },
-                "position": {
-                  "basis": "48px"
-                },
-                "propConfig": {
-                  "props.radios[0].selected": {
-                    "binding": {
-                      "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
-                      },
-                      "type": "tag"
-                    }
-                  },
-                  "props.value": {
-                    "binding": {
-                      "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
-                      },
-                      "type": "tag"
-                    }
-                  }
-                },
-                "props": {
-                  "radios": [
-                    {
-                      "text": "",
-                      "value": ""
-                    }
-                  ],
-                  "selectedIcon": {
-                    "color": {
-                      "disabled": "#ef4444",
-                      "enabled": "#10b981"
-                    }
-                  },
-                  "unselectedIcon": {
-                    "color": {
-                      "enabled": "#ef4444"
-                    }
-                  }
-                },
-                "type": "ia.input.radio-group"
-              },
-              {
-                "meta": {
-                  "name": "Label_0"
-                },
-                "position": {
-                  "basis": "593px"
-                },
-                "propConfig": {
-                  "props.text": {
-                    "binding": {
-                      "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "{view.params.tagPath} + \"/Line/OEE/WorkOrder[0,1]\""
-                      },
-                      "type": "tag"
-                    }
-                  }
-                },
-                "props": {
-                  "textStyle": {
-                    "color": "#ffffff",
-                    "fontFamily": "Arial",
-                    "fontSize": 18,
-                    "fontWeight": "600"
-                  }
-                },
-                "type": "ia.display.label"
-              }
-            ],
             "meta": {
-              "name": "active_work_order"
+              "name": "status_indicator"
             },
             "position": {
-              "basis": "65px"
+              "basis": "32px",
+              "shrink": 0
             },
-            "type": "ia.container.flex"
+            "propConfig": {
+              "props.radios[0].selected": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "radios": [
+                {
+                  "text": "",
+                  "value": ""
+                }
+              ],
+              "selectedIcon": {
+                "color": {
+                  "disabled": "#ef4444",
+                  "enabled": "#10b981"
+                }
+              },
+              "unselectedIcon": {
+                "color": {
+                  "enabled": "#ef4444"
+                }
+              }
+            },
+            "type": "ia.input.radio-group"
           },
           {
+            "meta": {
+              "name": "work_order_label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/WorkOrder[0,1]\""
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#ffffff",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "status_badge"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\""
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value:\n\t\treturn \"#10b981\"\n\telse:\n\t\treturn \"#ef4444\""
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value:\n\t\treturn \"Running\"\n\telse:\n\t\treturn \"Stopped\""
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderRadius": 12,
+                "fontFamily": "Arial",
+                "fontSize": 12,
+                "fontWeight": 600,
+                "paddingBottom": 4,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 4,
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ]
+      },
+      {
+        "meta": {
+          "name": "order_details"
+        },
+        "position": {
+          "basis": "100px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "gap": 6,
+            "marginBottom": 12,
+            "paddingLeft": 8
+          }
+        },
+        "type": "ia.container.flex",
+        "children": [
+          {
+            "meta": {
+              "name": "quantity_row"
+            },
+            "position": {
+              "basis": "22px"
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "gap": 8
+              }
+            },
+            "type": "ia.container.flex",
             "children": [
               {
                 "meta": {
-                  "name": "spacer"
+                  "name": "lbl_quantity"
                 },
                 "position": {
-                  "basis": "30px"
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label"
-                },
-                "position": {
-                  "basis": "76px"
+                  "basis": "100px"
                 },
                 "props": {
                   "text": "Quantity:",
-                  "textStyle": {
-                    "color": "#d1d5db",
+                  "style": {
+                    "color": "#9ca3af",
                     "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "wordSpacing": "0.5px"
+                    "fontSize": 14
                   }
                 },
                 "type": "ia.display.label"
               },
               {
                 "meta": {
-                  "name": "Label_0"
+                  "name": "val_quantity"
                 },
                 "position": {
-                  "basis": "142px"
+                  "grow": 1
                 },
                 "propConfig": {
                   "props.text": {
@@ -180,7 +295,7 @@
                       },
                       "transforms": [
                         {
-                          "code": "\n    # Check if quality is bad (including out of range)\n    if not quality.isGood():\n        return 0  # Return 0 for bad quality or out of range\n    \n    # If quality is good, return the original value\n    return value",
+                          "code": "\tif not quality.isGood():\n\t\treturn 0\n\treturn value",
                           "type": "script"
                         }
                       ],
@@ -189,59 +304,55 @@
                   }
                 },
                 "props": {
-                  "textStyle": {
+                  "style": {
                     "color": "#ffffff",
                     "fontFamily": "Arial",
-                    "fontSize": 18,
+                    "fontSize": 14,
                     "fontWeight": "600"
                   }
                 },
                 "type": "ia.display.label"
               }
-            ],
-            "meta": {
-              "name": "order"
-            },
-            "position": {
-              "basis": "37px"
-            },
-            "type": "ia.container.flex"
+            ]
           },
           {
+            "meta": {
+              "name": "remaining_row"
+            },
+            "position": {
+              "basis": "22px"
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "gap": 8
+              }
+            },
+            "type": "ia.container.flex",
             "children": [
               {
                 "meta": {
-                  "name": "spacer"
+                  "name": "lbl_remaining"
                 },
                 "position": {
-                  "basis": "30px"
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_1"
-                },
-                "position": {
-                  "basis": "75px"
+                  "basis": "100px"
                 },
                 "props": {
-                  "text": "Remaing:",
-                  "textStyle": {
-                    "color": "#d1d5db",
+                  "text": "Remaining:",
+                  "style": {
+                    "color": "#9ca3af",
                     "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "wordSpacing": "0.5px"
+                    "fontSize": 14
                   }
                 },
                 "type": "ia.display.label"
               },
               {
                 "meta": {
-                  "name": "Label_2"
+                  "name": "val_remaining"
                 },
                 "position": {
-                  "basis": "86px"
+                  "grow": 1
                 },
                 "propConfig": {
                   "props.text": {
@@ -257,7 +368,7 @@
                           "type": "expression"
                         },
                         {
-                          "code": "\n    # Check if quality is bad (including out of range)\n    if not quality.isGood():\n        return 0  # Return 0 for bad quality or out of range\n    \n    # If quality is good, return the original value\n    return value",
+                          "code": "\tif not quality.isGood():\n\t\treturn 0\n\treturn value",
                           "type": "script"
                         }
                       ],
@@ -266,59 +377,55 @@
                   }
                 },
                 "props": {
-                  "textStyle": {
+                  "style": {
                     "color": "#ffffff",
                     "fontFamily": "Arial",
-                    "fontSize": 18,
+                    "fontSize": 14,
                     "fontWeight": "600"
                   }
                 },
                 "type": "ia.display.label"
               }
-            ],
-            "meta": {
-              "name": "order_0"
-            },
-            "position": {
-              "basis": "37px"
-            },
-            "type": "ia.container.flex"
+            ]
           },
           {
+            "meta": {
+              "name": "started_row"
+            },
+            "position": {
+              "basis": "22px"
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "gap": 8
+              }
+            },
+            "type": "ia.container.flex",
             "children": [
               {
                 "meta": {
-                  "name": "spacer"
+                  "name": "lbl_started"
                 },
                 "position": {
-                  "basis": "30px"
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_1"
-                },
-                "position": {
-                  "basis": "65px"
+                  "basis": "100px"
                 },
                 "props": {
                   "text": "Started:",
-                  "textStyle": {
-                    "color": "#d1d5db",
+                  "style": {
+                    "color": "#9ca3af",
                     "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "wordSpacing": "0.5px"
+                    "fontSize": 14
                   }
                 },
                 "type": "ia.display.label"
               },
               {
                 "meta": {
-                  "name": "Label_2"
+                  "name": "val_started"
                 },
                 "position": {
-                  "basis": "228px"
+                  "grow": 1
                 },
                 "propConfig": {
                   "props.text": {
@@ -343,59 +450,55 @@
                   }
                 },
                 "props": {
-                  "textStyle": {
+                  "style": {
                     "color": "#ffffff",
                     "fontFamily": "Arial",
-                    "fontSize": 18,
-                    "wordSpacing": "0.5px"
+                    "fontSize": 14,
+                    "fontWeight": "600"
                   }
                 },
                 "type": "ia.display.label"
               }
-            ],
-            "meta": {
-              "name": "times"
-            },
-            "position": {
-              "basis": "37px"
-            },
-            "type": "ia.container.flex"
+            ]
           },
           {
+            "meta": {
+              "name": "est_completion_row"
+            },
+            "position": {
+              "basis": "22px"
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "gap": 8
+              }
+            },
+            "type": "ia.container.flex",
             "children": [
               {
                 "meta": {
-                  "name": "spacer"
+                  "name": "lbl_est_completion"
                 },
                 "position": {
-                  "basis": "30px"
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_3"
-                },
-                "position": {
-                  "basis": "127px"
+                  "basis": "100px"
                 },
                 "props": {
                   "text": "Est Completion:",
-                  "textStyle": {
-                    "color": "#d1d5db",
+                  "style": {
+                    "color": "#9ca3af",
                     "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "wordSpacing": "0.5px"
+                    "fontSize": 14
                   }
                 },
                 "type": "ia.display.label"
               },
               {
                 "meta": {
-                  "name": "Label_4"
+                  "name": "val_est_completion"
                 },
                 "position": {
-                  "basis": "211px"
+                  "grow": 1
                 },
                 "propConfig": {
                   "props.text": {
@@ -420,63 +523,61 @@
                   }
                 },
                 "props": {
-                  "textStyle": {
+                  "style": {
                     "color": "#ffffff",
                     "fontFamily": "Arial",
-                    "fontSize": 18,
-                    "wordSpacing": "0.5px"
+                    "fontSize": 14,
+                    "fontWeight": "600"
                   }
                 },
                 "type": "ia.display.label"
               }
-            ],
-            "meta": {
-              "name": "times_0"
-            },
-            "position": {
-              "basis": "37px"
-            },
-            "type": "ia.container.flex"
+            ]
           }
-        ],
-        "meta": {
-          "name": "status"
-        },
-        "position": {
-          "basis": "162px",
-          "grow": 1
-        },
-        "props": {
-          "direction": "column"
-        },
-        "type": "ia.container.flex"
+        ]
       },
       {
+        "meta": {
+          "name": "progress_section"
+        },
+        "position": {
+          "basis": "42px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "marginBottom": 16
+          }
+        },
+        "type": "ia.container.flex",
         "children": [
           {
             "meta": {
-              "name": "Label_3"
+              "name": "lbl_progress"
             },
             "position": {
-              "basis": "25px"
+              "basis": "20px"
             },
             "props": {
               "text": "Progress",
-              "textStyle": {
-                "color": "#d1d5db",
+              "style": {
+                "color": "#9ca3af",
                 "fontFamily": "Arial",
-                "fontSize": 16,
-                "wordSpacing": "0.5px"
+                "fontSize": 12,
+                "fontWeight": 500,
+                "marginBottom": 4
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "Progress"
+              "name": "progress_bar"
             },
             "position": {
-              "basis": "8px"
+              "basis": "10px"
             },
             "propConfig": {
               "props.max": {
@@ -488,7 +589,7 @@
                   },
                   "transforms": [
                     {
-                      "code": "\n    # Check if quality is bad (including out of range)\n    if not quality.isGood():\n        return 0  # Return 0 for bad quality or out of range\n    \n    # If quality is good, return the original value\n    return value",
+                      "code": "\tif not quality.isGood():\n\t\treturn 0\n\treturn value",
                       "type": "script"
                     }
                   ],
@@ -508,7 +609,7 @@
             },
             "props": {
               "bar": {
-                "color": "21262d",
+                "color": "#21262d",
                 "determinate": {
                   "color": "#3b82f6"
                 },
@@ -516,9 +617,12 @@
                   "color": "#6b7280"
                 }
               },
+              "style": {
+                "borderRadius": 5
+              },
               "track": {
                 "determinate": {
-                  "color": "21262d"
+                  "color": "#101418"
                 },
                 "indeterminate": {
                   "color": "#6b7280"
@@ -527,505 +631,390 @@
             },
             "type": "ia.display.progress"
           }
-        ],
-        "meta": {
-          "name": "progress"
-        },
-        "position": {
-          "basis": "50px",
-          "grow": 1
-        },
-        "props": {
-          "direction": "column",
-          "justify": "center",
-          "style": {
-            "marginLeft": 30,
-            "marginRight": 30
-          }
-        },
-        "type": "ia.container.flex"
+        ]
       },
       {
+        "meta": {
+          "name": "section_headers"
+        },
+        "position": {
+          "basis": "28px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center"
+        },
+        "type": "ia.container.flex",
         "children": [
           {
             "meta": {
-              "name": "spacer_0"
+              "name": "lbl_metrics"
             },
             "position": {
-              "basis": "20px",
-              "grow": 1
-            },
-            "props": {
-              "textStyle": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
-              }
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "Label"
-            },
-            "position": {
-              "basis": "250px"
+              "basis": "280px"
             },
             "props": {
               "text": "Production Metrics",
-              "textStyle": {
+              "style": {
                 "color": "#d1d5db",
                 "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center"
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "spacer"
+              "name": "lbl_actions"
             },
             "position": {
-              "basis": "20px",
-              "grow": 1
-            },
-            "props": {
-              "textStyle": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
-              }
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "Label_0"
-            },
-            "position": {
-              "basis": "250px",
               "grow": 1
             },
             "props": {
               "text": "Actions",
-              "textStyle": {
+              "style": {
                 "color": "#d1d5db",
                 "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center"
               }
             },
             "type": "ia.display.label"
           }
-        ],
-        "meta": {
-          "name": "header_0"
-        },
-        "position": {
-          "basis": "38px",
-          "grow": 1
-        },
-        "type": "ia.container.flex"
+        ]
       },
       {
+        "meta": {
+          "name": "metrics_actions_row"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "gap": 12
+          }
+        },
+        "type": "ia.container.flex",
         "children": [
           {
             "meta": {
-              "name": "FlexContainer"
+              "name": "metrics_container"
             },
             "position": {
-              "basis": "10px"
-            },
-            "type": "ia.container.flex"
-          },
-          {
-            "children": [
-              {
-                "meta": {
-                  "name": "Label"
-                },
-                "position": {
-                  "basis": "60px"
-                },
-                "props": {
-                  "text": "Produced",
-                  "textStyle": {
-                    "color": "#d1d5db",
-                    "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "textAlign": "center",
-                    "wordSpacing": "0.5px"
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_0"
-                },
-                "position": {
-                  "basis": "70px"
-                },
-                "propConfig": {
-                  "props.text": {
-                    "binding": {
-                      "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "{view.params.tagPath} + \"/Line/Outfeed\""
-                      },
-                      "type": "tag"
-                    }
-                  }
-                },
-                "props": {
-                  "textStyle": {
-                    "color": "#ffffff",
-                    "fontFamily": "Arial",
-                    "fontSize": 35,
-                    "fontWeight": "300",
-                    "textAlign": "center",
-                    "wordSpacing": "0.8px"
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_2"
-                },
-                "position": {
-                  "basis": "60px"
-                },
-                "props": {
-                  "text": "Scrap",
-                  "textStyle": {
-                    "color": "#d1d5db",
-                    "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "textAlign": "center",
-                    "wordSpacing": "0.5px"
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_1"
-                },
-                "position": {
-                  "basis": "70px"
-                },
-                "propConfig": {
-                  "props.text": {
-                    "binding": {
-                      "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "{view.params.tagPath} + \"/Line/Waste\""
-                      },
-                      "type": "tag"
-                    }
-                  }
-                },
-                "props": {
-                  "textStyle": {
-                    "color": "#ffffff",
-                    "fontFamily": "Arial",
-                    "fontSize": 35,
-                    "fontWeight": "300",
-                    "textAlign": "center",
-                    "wordSpacing": "0.8px"
-                  }
-                },
-                "type": "ia.display.label"
-              }
-            ],
-            "meta": {
-              "name": "produced_scrap"
-            },
-            "position": {
-              "basis": "135px",
-              "grow": 1
+              "basis": "280px",
+              "shrink": 0
             },
             "props": {
-              "direction": "column",
               "style": {
                 "backgroundColor": "#101418",
-                "borderBottomLeftRadius": 12,
-                "borderTopLeftRadius": 12,
-                "marginLeft": 5
+                "borderRadius": 12,
+                "gap": 0
               }
             },
-            "type": "ia.container.flex"
-          },
-          {
+            "type": "ia.container.flex",
             "children": [
               {
                 "meta": {
-                  "name": "Label"
+                  "name": "produced_scrap"
                 },
                 "position": {
-                  "basis": "60px"
-                },
-                "props": {
-                  "text": "Cycle Time",
-                  "textStyle": {
-                    "color": "#d1d5db",
-                    "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "textAlign": "center",
-                    "wordSpacing": "0.5px"
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_0"
-                },
-                "position": {
-                  "basis": "70px"
-                },
-                "propConfig": {
-                  "props.text": {
-                    "binding": {
-                      "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "{view.params.tagPath} + \"/Line/Cycle Time\""
-                      },
-                      "transforms": [
-                        {
-                          "expression": "{value} + \"s\"",
-                          "type": "expression"
-                        }
-                      ],
-                      "type": "tag"
-                    }
-                  }
-                },
-                "props": {
-                  "textStyle": {
-                    "color": "#ffffff",
-                    "fontFamily": "Arial",
-                    "fontSize": 35,
-                    "fontWeight": "300",
-                    "textAlign": "center",
-                    "wordSpacing": "0.8px"
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_2"
-                },
-                "position": {
-                  "basis": "60px"
-                },
-                "props": {
-                  "text": "Production Rate",
-                  "textStyle": {
-                    "color": "#d1d5db",
-                    "fontFamily": "Arial",
-                    "fontSize": 16,
-                    "textAlign": "center",
-                    "wordSpacing": "0.5px"
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "Label_1"
-                },
-                "position": {
-                  "basis": "70px"
-                },
-                "propConfig": {
-                  "props.text": {
-                    "binding": {
-                      "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "{view.params.tagPath} + \"/Line/OEE/Production Rate\""
-                      },
-                      "transforms": [
-                        {
-                          "expression": "{value} + \"hr\"",
-                          "type": "expression"
-                        }
-                      ],
-                      "type": "tag"
-                    }
-                  }
-                },
-                "props": {
-                  "textStyle": {
-                    "color": "#ffffff",
-                    "fontFamily": "Arial",
-                    "fontSize": 35,
-                    "fontWeight": "300",
-                    "textAlign": "center",
-                    "wordSpacing": "0.8px"
-                  }
-                },
-                "type": "ia.display.label"
-              }
-            ],
-            "meta": {
-              "name": "cycle_rate"
-            },
-            "position": {
-              "basis": "135px",
-              "grow": 1
-            },
-            "props": {
-              "direction": "column",
-              "style": {
-                "backgroundColor": "#101418",
-                "borderBottomRightRadius": 12,
-                "borderTopLeftRadius": 0,
-                "borderTopRightRadius": 12,
-                "marginRight": 5
-              }
-            },
-            "type": "ia.container.flex"
-          },
-          {
-            "children": [
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "pause",
-                      "visible": false
-                    },
-                    "position": {
-                      "basis": "55px"
-                    },
-                    "props": {
-                      "enabled": false,
-                      "image": {
-                        "icon": {
-                          "color": "#d1d5db",
-                          "path": "material/pause_circle_outline"
-                        }
-                      },
-                      "primary": false,
-                      "style": {
-                        "backgroundColor": "#6b7280",
-                        "borderBottomLeftRadius": 12,
-                        "borderBottomRightRadius": 12,
-                        "borderColor": "#9ca3af",
-                        "borderStyle": "solid",
-                        "borderTopLeftRadius": 12,
-                        "borderTopRightRadius": 12,
-                        "borderWidth": 2,
-                        "margin": 5,
-                        "marginBottom": 10
-                      },
-                      "text": "Pause",
-                      "textStyle": {
-                        "color": "#d1d5db",
-                        "fontFamily": "Arial",
-                        "fontSize": 18,
-                        "fontWeight": "600"
-                      }
-                    },
-                    "type": "ia.input.button"
-                  },
-                  {
-                    "events": {
-                      "component": {
-                        "onActionPerformed": {
-                          "config": {
-                            "draggable": true,
-                            "id": "Clrr4kYZ",
-                            "modal": false,
-                            "overlayDismiss": false,
-                            "resizable": true,
-                            "showCloseIcon": true,
-                            "type": "open",
-                            "viewParams": {
-                              "runID": "{view.custom.runID}",
-                              "scheduleID": "{view.custom.scheduleID}",
-                              "tagPath": "{view.params.tagPath}"
-                            },
-                            "viewPath": "desktop/mes_core/operations/templates/popup/report_product_defect",
-                            "viewportBound": false
-                          },
-                          "scope": "C",
-                          "type": "popup"
-                        }
-                      }
-                    },
-                    "meta": {
-                      "name": "Button_0"
-                    },
-                    "position": {
-                      "basis": "55px"
-                    },
-                    "props": {
-                      "image": {
-                        "icon": {
-                          "color": "#d1d5db",
-                          "path": "material/assignment"
-                        }
-                      },
-                      "style": {
-                        "backgroundColor": "#6b7280",
-                        "borderBottomLeftRadius": 12,
-                        "borderBottomRightRadius": 12,
-                        "borderColor": "#9ca3af",
-                        "borderStyle": "solid",
-                        "borderTopLeftRadius": 12,
-                        "borderTopRightRadius": 12,
-                        "borderWidth": 2,
-                        "margin": 5,
-                        "marginBottom": 10
-                      },
-                      "text": "Categorize Scrap",
-                      "textStyle": {
-                        "color": "#d1d5db",
-                        "fontFamily": "Arial",
-                        "fontSize": 18,
-                        "fontWeight": "600"
-                      }
-                    },
-                    "type": "ia.input.button"
-                  }
-                ],
-                "meta": {
-                  "name": "start_scrap"
-                },
-                "position": {
-                  "basis": "160px",
                   "grow": 1
                 },
                 "props": {
                   "direction": "column",
+                  "alignItems": "center",
                   "justify": "center"
+                },
+                "type": "ia.container.flex",
+                "children": [
+                  {
+                    "meta": {
+                      "name": "lbl_produced"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "props": {
+                      "text": "Produced",
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "Arial",
+                        "fontSize": 12,
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "val_produced"
+                    },
+                    "position": {
+                      "basis": "45px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/Outfeed\""
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 32,
+                        "fontWeight": "300",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "lbl_scrap"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "props": {
+                      "text": "Scrap",
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "Arial",
+                        "fontSize": 12,
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "val_scrap"
+                    },
+                    "position": {
+                      "basis": "45px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/Waste\""
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 32,
+                        "fontWeight": "300",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ]
+              },
+              {
+                "meta": {
+                  "name": "divider"
+                },
+                "position": {
+                  "basis": "1px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "rgba(255, 255, 255, 0.05)",
+                    "marginBottom": 12,
+                    "marginTop": 12
+                  }
                 },
                 "type": "ia.container.flex"
               },
               {
+                "meta": {
+                  "name": "cycle_rate"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "alignItems": "center",
+                  "justify": "center"
+                },
+                "type": "ia.container.flex",
                 "children": [
                   {
+                    "meta": {
+                      "name": "lbl_cycle"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "props": {
+                      "text": "Cycle Time",
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "Arial",
+                        "fontSize": 12,
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "val_cycle"
+                    },
+                    "position": {
+                      "basis": "45px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/Cycle Time\""
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \"s\"",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 32,
+                        "fontWeight": "300",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "lbl_rate"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "props": {
+                      "text": "Production Rate",
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "Arial",
+                        "fontSize": 12,
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "val_rate"
+                    },
+                    "position": {
+                      "basis": "45px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/Production Rate\""
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \"hr\"",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "Arial",
+                        "fontSize": 32,
+                        "fontWeight": "300",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "meta": {
+              "name": "actions_container"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "gap": 8
+              }
+            },
+            "type": "ia.container.flex",
+            "children": [
+              {
+                "meta": {
+                  "name": "left_actions"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": 8
+                  }
+                },
+                "type": "ia.container.flex",
+                "children": [
+                  {
+                    "meta": {
+                      "name": "btn_end_order"
+                    },
+                    "position": {
+                      "basis": "48px"
+                    },
                     "events": {
                       "component": {
                         "onActionPerformed": [
                           {
                             "config": {
-                              "script": "\t\n\ttagPath \u003d self.view.params.tagPath + \"/Line\"\n\t\n\trunID \u003d system.tag.readBlocking(tagPath + \"/OEE/RunID\")[0].value\n\t\n\tmes_core.run.stopRun(runID)"
+                              "script": "\t\n\ttagPath = self.view.params.tagPath + \"/Line\"\n\t\n\trunID = system.tag.readBlocking(tagPath + \"/OEE/RunID\")[0].value\n\t\n\tmes_core.run.stopRun(runID)"
                             },
                             "scope": "G",
                             "type": "script"
@@ -1052,42 +1041,134 @@
                         ]
                       }
                     },
-                    "meta": {
-                      "name": "Button"
-                    },
-                    "position": {
-                      "basis": "55px"
-                    },
                     "props": {
+                      "text": "End Order",
                       "image": {
                         "icon": {
-                          "color": "#FAFAFB8C",
+                          "color": "#fca5a5",
                           "path": "material/stop"
                         }
                       },
                       "style": {
-                        "backgroundColor": "#FCA5A5A8",
-                        "borderBottomLeftRadius": 12,
-                        "borderBottomRightRadius": 12,
+                        "backgroundColor": "rgba(239, 68, 68, 0.15)",
                         "borderColor": "#ef4444",
+                        "borderRadius": 12,
                         "borderStyle": "solid",
-                        "borderTopLeftRadius": 12,
-                        "borderTopRightRadius": 12,
-                        "borderWidth": 2,
-                        "margin": 5,
-                        "marginBottom": 10
+                        "borderWidth": 1
                       },
-                      "text": "End Order",
                       "textStyle": {
-                        "color": "#FAFAFB8C",
+                        "color": "#fca5a5",
                         "fontFamily": "Arial",
-                        "fontSize": 18,
+                        "fontSize": 14,
+                        "fontWeight": "600"
+                      }
+                    },
+                    "type": "ia.input.button"
+                  }
+                ]
+              },
+              {
+                "meta": {
+                  "name": "right_actions"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "path": "../../../card_header/work_order_label.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": true,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "No Active Work Order",
+                              "output": false
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "gap": 8
+                  }
+                },
+                "type": "ia.container.flex",
+                "children": [
+                  {
+                    "meta": {
+                      "name": "btn_categorize_scrap"
+                    },
+                    "position": {
+                      "basis": "48px"
+                    },
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "draggable": true,
+                            "id": "Clrr4kYZ",
+                            "modal": false,
+                            "overlayDismiss": false,
+                            "resizable": true,
+                            "showCloseIcon": true,
+                            "type": "open",
+                            "viewParams": {
+                              "runID": "{view.custom.runID}",
+                              "scheduleID": "{view.custom.scheduleID}",
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "viewPath": "desktop/mes_core/operations/templates/popup/report_product_defect",
+                            "viewportBound": false
+                          },
+                          "scope": "C",
+                          "type": "popup"
+                        }
+                      }
+                    },
+                    "props": {
+                      "text": "Categorize Scrap",
+                      "image": {
+                        "icon": {
+                          "color": "#d1d5db",
+                          "path": "material/assignment"
+                        }
+                      },
+                      "style": {
+                        "backgroundColor": "#374151",
+                        "borderColor": "#4b5563",
+                        "borderRadius": 12,
+                        "borderStyle": "solid",
+                        "borderWidth": 1
+                      },
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "Arial",
+                        "fontSize": 14,
                         "fontWeight": "600"
                       }
                     },
                     "type": "ia.input.button"
                   },
                   {
+                    "meta": {
+                      "name": "btn_cancel_order"
+                    },
+                    "position": {
+                      "basis": "48px"
+                    },
                     "events": {
                       "component": {
                         "onActionPerformed": {
@@ -1111,13 +1192,8 @@
                         }
                       }
                     },
-                    "meta": {
-                      "name": "Button_0"
-                    },
-                    "position": {
-                      "basis": "55px"
-                    },
                     "props": {
+                      "text": "Cancel Order",
                       "image": {
                         "icon": {
                           "color": "#d1d5db",
@@ -1125,107 +1201,27 @@
                         }
                       },
                       "style": {
-                        "backgroundColor": "#6b7280",
-                        "borderBottomLeftRadius": 12,
-                        "borderBottomRightRadius": 12,
-                        "borderColor": "#9ca3af",
+                        "backgroundColor": "#374151",
+                        "borderColor": "#4b5563",
+                        "borderRadius": 12,
                         "borderStyle": "solid",
-                        "borderTopLeftRadius": 12,
-                        "borderTopRightRadius": 12,
-                        "borderWidth": 2,
-                        "margin": 5,
-                        "marginBottom": 10
+                        "borderWidth": 1
                       },
-                      "text": "Cancel Order",
                       "textStyle": {
                         "color": "#d1d5db",
                         "fontFamily": "Arial",
-                        "fontSize": 18,
+                        "fontSize": 14,
                         "fontWeight": "600"
                       }
                     },
                     "type": "ia.input.button"
                   }
-                ],
-                "meta": {
-                  "name": "end_cancel"
-                },
-                "position": {
-                  "basis": "164px",
-                  "grow": 1
-                },
-                "propConfig": {
-                  "meta.visible": {
-                    "binding": {
-                      "config": {
-                        "path": "..../status/active_work_order/Label_0.props.text"
-                      },
-                      "transforms": [
-                        {
-                          "fallback": true,
-                          "inputType": "scalar",
-                          "mappings": [
-                            {
-                              "input": "No Active Work Order",
-                              "output": false
-                            }
-                          ],
-                          "outputType": "scalar",
-                          "type": "map"
-                        }
-                      ],
-                      "type": "property"
-                    }
-                  }
-                },
-                "props": {
-                  "direction": "column",
-                  "justify": "center"
-                },
-                "type": "ia.container.flex"
+                ]
               }
-            ],
-            "meta": {
-              "name": "actions"
-            },
-            "position": {
-              "basis": "371px",
-              "grow": 1
-            },
-            "props": {
-              "justify": "center"
-            },
-            "type": "ia.container.flex"
+            ]
           }
-        ],
-        "meta": {
-          "name": "production"
-        },
-        "position": {
-          "basis": "160px",
-          "grow": 1
-        },
-        "props": {
-          "style": {
-            "marginBottom": 5
-          }
-        },
-        "type": "ia.container.flex"
+        ]
       }
-    ],
-    "meta": {
-      "name": "root"
-    },
-    "props": {
-      "direction": "column",
-      "style": {
-        "backgroundColor": "#21262d",
-        "borderBottomLeftRadius": 12,
-        "borderBottomRightRadius": 12,
-        "borderTopLeftRadius": 12,
-        "borderTopRightRadius": 12
-      }
-    },
-    "type": "ia.container.flex"
+    ]
   }
 }

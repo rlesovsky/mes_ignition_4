@@ -16,59 +16,62 @@
     }
   },
   "root": {
+    "type": "ia.container.flex",
+    "version": 0,
     "meta": {
       "name": "root"
     },
+    "position": {},
     "props": {
       "direction": "column",
       "style": {
         "backgroundColor": "#21262d",
-        "borderBottomLeftRadius": 16,
-        "borderBottomRightRadius": 16,
-        "borderTopLeftRadius": 16,
-        "borderTopRightRadius": 16,
         "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 16,
         "padding": 16
       }
     },
-    "type": "ia.container.flex",
     "children": [
       {
+        "type": "ia.container.flex",
+        "version": 0,
         "meta": {
           "name": "card_header"
         },
         "position": {
-          "basis": "32px",
-          "shrink": 0
+          "shrink": 0,
+          "basis": "32px"
         },
         "props": {
           "alignItems": "center",
           "style": {
             "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-            "marginBottom": 12,
-            "paddingBottom": 12
+            "marginBottom": 8,
+            "paddingBottom": 8
           }
         },
-        "type": "ia.container.flex",
         "children": [
           {
+            "type": "ia.display.icon",
+            "version": 0,
             "meta": {
               "name": "title_icon"
             },
             "position": {
-              "basis": "24px",
-              "shrink": 0
+              "shrink": 0,
+              "basis": "24px"
             },
             "props": {
-              "color": "#10b981",
               "path": "material/speed",
+              "color": "#10b981",
               "style": {
                 "marginRight": 10
               }
-            },
-            "type": "ia.display.icon"
+            }
           },
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "title_label"
             },
@@ -83,30 +86,34 @@
                 "fontSize": 18,
                 "fontWeight": "600"
               }
-            },
-            "type": "ia.display.label"
+            }
           }
         ]
       },
       {
+        "type": "ia.container.flex",
+        "version": 0,
         "meta": {
           "name": "gauge_labels_row"
         },
         "position": {
-          "basis": "24px",
-          "shrink": 0
+          "shrink": 0,
+          "basis": "22px"
         },
         "props": {
-          "alignItems": "center"
+          "alignItems": "center",
+          "justify": "space-around"
         },
-        "type": "ia.container.flex",
         "children": [
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "lbl_availability"
             },
             "position": {
-              "grow": 1
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "text": "Availability",
@@ -117,15 +124,17 @@
                 "fontWeight": 500,
                 "textAlign": "center"
               }
-            },
-            "type": "ia.display.label"
+            }
           },
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "lbl_quality"
             },
             "position": {
-              "grow": 1
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "text": "Quality",
@@ -136,15 +145,17 @@
                 "fontWeight": 500,
                 "textAlign": "center"
               }
-            },
-            "type": "ia.display.label"
+            }
           },
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "lbl_performance"
             },
             "position": {
-              "grow": 1
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "text": "Performance",
@@ -155,15 +166,17 @@
                 "fontWeight": 500,
                 "textAlign": "center"
               }
-            },
-            "type": "ia.display.label"
+            }
           },
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "lbl_oee"
             },
             "position": {
-              "grow": 1
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "text": "OEE",
@@ -174,63 +187,37 @@
                 "fontWeight": 500,
                 "textAlign": "center"
               }
-            },
-            "type": "ia.display.label"
+            }
           }
         ]
       },
       {
+        "type": "ia.container.flex",
+        "version": 0,
         "meta": {
           "name": "status_labels_row"
         },
         "position": {
-          "basis": "20px",
-          "shrink": 0
+          "shrink": 0,
+          "basis": "20px"
         },
         "props": {
           "alignItems": "center",
+          "justify": "space-around",
           "style": {
             "marginBottom": 4
           }
         },
-        "type": "ia.container.flex",
         "children": [
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "status_availability"
             },
             "position": {
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_availability.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_availability.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to status text\n\t\"\"\"\n\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "style": {
@@ -240,44 +227,46 @@
                 "textAlign": "center"
               }
             },
-            "type": "ia.display.label"
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_availability.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
+                    }
+                  ]
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_availability.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\""
+                    }
+                  ]
+                }
+              }
+            }
           },
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "status_quality"
             },
             "position": {
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_quality.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_quality.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to status text\n\t\"\"\"\n\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "style": {
@@ -287,44 +276,46 @@
                 "textAlign": "center"
               }
             },
-            "type": "ia.display.label"
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_quality.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
+                    }
+                  ]
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_quality.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\""
+                    }
+                  ]
+                }
+              }
+            }
           },
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "status_performance"
             },
             "position": {
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_performance.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_performance.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to status text\n\t\"\"\"\n\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "style": {
@@ -334,44 +325,46 @@
                 "textAlign": "center"
               }
             },
-            "type": "ia.display.label"
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_performance.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
+                    }
+                  ]
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_performance.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\""
+                    }
+                  ]
+                }
+              }
+            }
           },
           {
+            "type": "ia.display.label",
+            "version": 0,
             "meta": {
               "name": "status_oee"
             },
             "position": {
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_oee.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": "../gauges_row/gauge_oee.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to status text\n\t\"\"\"\n\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
               "style": {
@@ -381,11 +374,42 @@
                 "textAlign": "center"
               }
             },
-            "type": "ia.display.label"
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_oee.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
+                    }
+                  ]
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "../gauges_row/gauge_oee.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\""
+                    }
+                  ]
+                }
+              }
+            }
           }
         ]
       },
       {
+        "type": "ia.container.flex",
+        "version": 0,
         "meta": {
           "name": "gauges_row"
         },
@@ -393,50 +417,68 @@
           "grow": 1
         },
         "props": {
-          "alignItems": "center",
-          "justify": "space-around"
+          "justify": "space-around",
+          "alignItems": "center"
         },
-        "type": "ia.container.flex",
         "children": [
           {
+            "type": "ia.chart.simple-gauge",
+            "version": 0,
             "meta": {
               "name": "gauge_availability"
             },
             "position": {
-              "basis": "150px",
-              "grow": 1
+              "grow": 1,
+              "basis": "150px"
+            },
+            "props": {
+              "startAngle": 0,
+              "arc": {
+                "width": 5
+              },
+              "arcBackground": {},
+              "label": {
+                "size": 42,
+                "offsetY": 20,
+                "color": "#d1d5db",
+                "maxDecimal": 0
+              },
+              "style": {
+                "padding": 8
+              }
             },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.arcBackground.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage to faded background color\n\t\"\"\"\n\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.value": {
                 "binding": {
+                  "type": "tag",
                   "config": {
                     "fallbackDelay": 2.5,
                     "mode": "expression",
@@ -444,72 +486,73 @@
                   },
                   "transforms": [
                     {
+                      "type": "format",
                       "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "formatValue": "percent"
                     }
-                  ],
-                  "type": "tag"
+                  ]
                 }
               }
+            }
+          },
+          {
+            "type": "ia.chart.simple-gauge",
+            "version": 0,
+            "meta": {
+              "name": "gauge_quality"
+            },
+            "position": {
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
+              "startAngle": 0,
               "arc": {
                 "width": 5
               },
               "arcBackground": {},
               "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
+                "size": 42,
                 "offsetY": 20,
-                "size": 42
+                "color": "#d1d5db",
+                "maxDecimal": 0
               },
-              "startAngle": 0,
               "style": {
                 "padding": 8
               }
             },
-            "type": "ia.chart.simple-gauge"
-          },
-          {
-            "meta": {
-              "name": "gauge_quality"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.arcBackground.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage to faded background color\n\t\"\"\"\n\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.value": {
                 "binding": {
+                  "type": "tag",
                   "config": {
                     "fallbackDelay": 2.5,
                     "mode": "expression",
@@ -517,72 +560,73 @@
                   },
                   "transforms": [
                     {
+                      "type": "format",
                       "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "formatValue": "percent"
                     }
-                  ],
-                  "type": "tag"
+                  ]
                 }
               }
+            }
+          },
+          {
+            "type": "ia.chart.simple-gauge",
+            "version": 0,
+            "meta": {
+              "name": "gauge_performance"
+            },
+            "position": {
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
+              "startAngle": 0,
               "arc": {
                 "width": 5
               },
               "arcBackground": {},
               "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
+                "size": 42,
                 "offsetY": 20,
-                "size": 42
+                "color": "#d1d5db",
+                "maxDecimal": 0
               },
-              "startAngle": 0,
               "style": {
                 "padding": 8
               }
             },
-            "type": "ia.chart.simple-gauge"
-          },
-          {
-            "meta": {
-              "name": "gauge_performance"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.arcBackground.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage to faded background color\n\t\"\"\"\n\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.value": {
                 "binding": {
+                  "type": "tag",
                   "config": {
                     "fallbackDelay": 2.5,
                     "mode": "expression",
@@ -590,72 +634,73 @@
                   },
                   "transforms": [
                     {
+                      "type": "format",
                       "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "formatValue": "percent"
                     }
-                  ],
-                  "type": "tag"
+                  ]
                 }
               }
+            }
+          },
+          {
+            "type": "ia.chart.simple-gauge",
+            "version": 0,
+            "meta": {
+              "name": "gauge_oee"
+            },
+            "position": {
+              "grow": 1,
+              "basis": "150px"
             },
             "props": {
+              "startAngle": 0,
               "arc": {
                 "width": 5
               },
               "arcBackground": {},
               "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
+                "size": 42,
                 "offsetY": 20,
-                "size": 42
+                "color": "#d1d5db",
+                "maxDecimal": 0
               },
-              "startAngle": 0,
               "style": {
                 "padding": 8
               }
             },
-            "type": "ia.chart.simple-gauge"
-          },
-          {
-            "meta": {
-              "name": "gauge_oee"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage (0-100) to color hex codes\n\t\"\"\"\n\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.arcBackground.color": {
                 "binding": {
+                  "type": "property",
                   "config": {
                     "path": "this.props.value"
                   },
                   "transforms": [
                     {
-                      "code": "\t\"\"\"\n\tTransform OEE percentage to faded background color\n\t\"\"\"\n\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
+                      "type": "script",
+                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str = str(value).strip()\n\t\tif value_str.endswith('%'):\n\t\t\tvalue_str = value_str[:-1]\n\t\tpercentage = float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage >= 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage >= 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage >= 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\""
                     }
-                  ],
-                  "type": "property"
+                  ]
                 }
               },
               "props.value": {
                 "binding": {
+                  "type": "tag",
                   "config": {
                     "fallbackDelay": 2.5,
                     "mode": "expression",
@@ -663,32 +708,14 @@
                   },
                   "transforms": [
                     {
+                      "type": "format",
                       "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "formatValue": "percent"
                     }
-                  ],
-                  "type": "tag"
+                  ]
                 }
               }
-            },
-            "props": {
-              "arc": {
-                "width": 5
-              },
-              "arcBackground": {},
-              "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
-                "offsetY": 20,
-                "size": 42
-              },
-              "startAngle": 0,
-              "style": {
-                "padding": 8
-              }
-            },
-            "type": "ia.chart.simple-gauge"
+            }
           }
         ]
       }
