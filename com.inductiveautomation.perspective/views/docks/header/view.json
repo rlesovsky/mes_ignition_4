@@ -14,7 +14,7 @@
           "name": "spacer_left"
         },
         "position": {
-          "basis": "5px",
+          "basis": "8px",
           "shrink": 0
         },
         "type": "ia.container.flex"
@@ -33,21 +33,34 @@
           }
         },
         "meta": {
-          "name": "Icon"
+          "name": "menu_toggle"
         },
         "position": {
-          "basis": "30px",
+          "basis": "36px",
           "shrink": 0
         },
         "props": {
           "color": "#d1d5db",
           "path": "material/menu",
           "style": {
-            "classes": "ui_ux/hover_highlight views/icons_normal",
-            "cursor": "pointer"
+            "backgroundColor": "rgba(255, 255, 255, 0.05)",
+            "borderRadius": "8px",
+            "classes": "ui_ux/hover_highlight",
+            "cursor": "pointer",
+            "padding": "6px"
           }
         },
         "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "spacer_after_menu"
+        },
+        "position": {
+          "basis": "12px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
       },
       {
         "meta": {
@@ -74,23 +87,29 @@
       },
       {
         "meta": {
-          "name": "Label"
+          "name": "brand_title"
         },
         "position": {
-          "basis": "307px",
-          "grow": 1
+          "basis": "120px",
+          "shrink": 0
         },
         "props": {
           "text": "MES 4.0",
-          "textStyle": {
-            "color": "#3b82f6",
-            "fontFamily": "Arial",
-            "fontSize": 18,
-            "fontWeight": "600",
-            "marginLeft": 20
+          "style": {
+            "classes": "mes-brand-title"
           }
         },
         "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "spacer_middle"
+        },
+        "position": {
+          "basis": "5px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
       },
       {
         "children": [
@@ -99,7 +118,7 @@
               "dom": {
                 "onClick": {
                   "config": {
-                    "script": "\t\n\ttag \u003d \"[SCADA]Rockwell NC 436/Production/Edge/ESD Reset\"\n\t\n\tvalue \u003d 1\n\t\n\tsystem.tag.writeBlocking(tag, value)\t"
+                    "script": "\t\n\ttag = \"[SCADA]Rockwell NC 436/Production/Edge/ESD Reset\"\n\t\n\tvalue = 1\n\t\n\tsystem.tag.writeBlocking(tag, value)\t"
                   },
                   "scope": "G",
                   "type": "script"
@@ -107,19 +126,25 @@
               }
             },
             "meta": {
-              "name": "Button"
+              "name": "safety_reset_btn"
             },
             "position": {
-              "basis": "80px",
+              "basis": "110px",
               "grow": 1
             },
             "props": {
               "primary": false,
+              "text": "Safety Reset",
               "style": {
-                "backgroundColor": "#FF0000",
-                "color": "#FFFFFF"
-              },
-              "text": "Safety Reset"
+                "backgroundColor": "rgba(239, 68, 68, 0.25)",
+                "borderColor": "#ef4444",
+                "borderRadius": "8px",
+                "borderStyle": "solid",
+                "borderWidth": "1px",
+                "color": "#fca5a5",
+                "fontSize": "13px",
+                "fontWeight": "600"
+              }
             },
             "type": "ia.input.button"
           }
@@ -128,7 +153,7 @@
           "dom": {
             "onClick": {
               "config": {
-                "script": "\t\n\t# This script toggles the session locale between English and Spanish\n\t\n\t# Get the current locale from the session properties\n\t#current_locale \u003d self.session.props.locale\n\t\n\t# Check if the current locale is English\n\t#if current_locale \u003d\u003d \u0027en-US\u0027:\n\t    # If current locale is English, change it to Spanish\n\t    #new_locale \u003d \u0027es\u0027\n\t#else:\n\t    # If current locale is not English, change it to English\n\t    #new_locale \u003d \u0027en-US\u0027\n\t\n\t# Set the new locale to the session properties\n\t#self.session.props.locale \u003d new_locale"
+                "script": "\t\n\t# This script toggles the session locale between English and Spanish\n\t\n\t# Get the current locale from the session properties\n\t#current_locale = self.session.props.locale\n\t\n\t# Check if the current locale is English\n\t#if current_locale == 'en-US':\n\t    # If current locale is English, change it to Spanish\n\t    #new_locale = 'es'\n\t#else:\n\t    # If current locale is not English, change it to English\n\t    #new_locale = 'en-US'\n\t\n\t# Set the new locale to the session properties\n\t#self.session.props.locale = new_locale"
               },
               "scope": "G",
               "type": "script"
@@ -150,18 +175,25 @@
           "justify": "center",
           "style": {
             "classes": "ui_ux/hover_highlight",
-            "min-width": "100px"
+            "minWidth": "100px"
           }
         },
         "type": "ia.container.flex"
       },
       {
         "meta": {
-          "name": "spacer_middle"
+          "name": "header_divider"
         },
         "position": {
-          "basis": "5px",
-          "grow": 1
+          "basis": "1px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "rgba(255, 255, 255, 0.08)",
+            "marginBottom": "10px",
+            "marginTop": "10px"
+          }
         },
         "type": "ia.container.flex"
       },
@@ -169,34 +201,35 @@
         "children": [
           {
             "meta": {
-              "name": "Icon"
+              "name": "alarm_icon"
             },
             "position": {
-              "basis": "20px"
+              "basis": "20px",
+              "shrink": 0
             },
             "props": {
-              "path": "material/access_alarms",
+              "color": "#d1d5db",
+              "path": "material/notifications_none",
               "style": {
-                "classes": "views/icons_normal"
+                "marginRight": "6px"
               }
             },
             "type": "ia.display.icon"
           },
           {
             "meta": {
-              "hasDelegate": true,
-              "name": "user_name"
+              "name": "alarm_label"
             },
             "position": {
-              "basis": "90px"
+              "basis": "55px"
             },
             "props": {
+              "text": "alarms",
               "style": {
-                "classes": "labels/color_normal labels/font labels/size_normal",
-                "cursor": "pointer",
-                "marginLeft": "4px"
-              },
-              "text": "alarms"
+                "classes": "labels/font labels/size_normal",
+                "color": "#d1d5db",
+                "cursor": "pointer"
+              }
             },
             "type": "ia.display.label"
           }
@@ -213,21 +246,47 @@
           }
         },
         "meta": {
-          "name": "alarms",
+          "name": "alarms_container",
           "tooltip": {
             "delay": 250,
             "enabled": true,
-            "text": "Your Info"
+            "text": "View Alarms"
           }
         },
         "position": {
-          "basis": "100px"
+          "basis": "100px",
+          "shrink": 0
         },
         "props": {
+          "alignItems": "center",
           "justify": "center",
           "style": {
+            "borderRadius": "8px",
             "classes": "ui_ux/hover_highlight",
-            "min-width": "100px"
+            "cursor": "pointer",
+            "marginLeft": "8px",
+            "marginRight": "4px",
+            "paddingBottom": "6px",
+            "paddingLeft": "12px",
+            "paddingRight": "12px",
+            "paddingTop": "6px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "header_divider_2"
+        },
+        "position": {
+          "basis": "1px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "rgba(255, 255, 255, 0.08)",
+            "marginBottom": "10px",
+            "marginTop": "10px"
           }
         },
         "type": "ia.container.flex"
@@ -236,15 +295,17 @@
         "children": [
           {
             "meta": {
-              "name": "Icon"
+              "name": "user_icon"
             },
             "position": {
-              "basis": "20px"
+              "basis": "20px",
+              "shrink": 0
             },
             "props": {
+              "color": "#10b981",
               "path": "material/person",
               "style": {
-                "classes": "views/icons_normal"
+                "marginRight": "6px"
               }
             },
             "type": "ia.display.icon"
@@ -255,7 +316,7 @@
               "name": "user_name"
             },
             "position": {
-              "basis": "90px"
+              "basis": "80px"
             },
             "propConfig": {
               "props.text": {
@@ -265,7 +326,7 @@
                   },
                   "transforms": [
                     {
-                      "expression": "if({value} \u003d null || len({value}) \u003d 0, \"Sign In\", {value})",
+                      "expression": "if({value} = null || len({value}) = 0, \"Sign In\", {value})",
                       "type": "expression"
                     }
                   ],
@@ -275,31 +336,49 @@
             },
             "props": {
               "style": {
-                "classes": "labels/color_normal labels/font labels/size_normal",
-                "cursor": "pointer",
-                "marginLeft": "4px"
+                "classes": "labels/font labels/size_normal",
+                "color": "#d1d5db",
+                "cursor": "pointer"
               }
             },
             "type": "ia.display.label"
           }
         ],
         "meta": {
-          "name": "user_1",
+          "name": "user_container",
           "tooltip": {
             "delay": 250,
             "enabled": true,
-            "text": "Your Info"
+            "text": "User Profile"
           }
         },
         "position": {
-          "basis": "100px"
+          "basis": "110px",
+          "shrink": 0
         },
         "props": {
+          "alignItems": "center",
           "justify": "center",
           "style": {
+            "borderRadius": "8px",
             "classes": "ui_ux/hover_highlight",
-            "min-width": "100px"
+            "cursor": "pointer",
+            "marginLeft": "4px",
+            "paddingBottom": "6px",
+            "paddingLeft": "12px",
+            "paddingRight": "12px",
+            "paddingTop": "6px"
           }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "spacer_right"
+        },
+        "position": {
+          "basis": "12px",
+          "shrink": 0
         },
         "type": "ia.container.flex"
       }
@@ -320,11 +399,11 @@
       "name": "root"
     },
     "props": {
+      "alignItems": "center",
       "style": {
         "backgroundColor": "#21262d",
-        "borderBottomColor": "black",
-        "borderBottomStyle": "none",
-        "borderBottomWidth": "1px"
+        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+        "classes": "mes-header"
       }
     },
     "type": "ia.container.flex"

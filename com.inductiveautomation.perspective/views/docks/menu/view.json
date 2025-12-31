@@ -10,7 +10,7 @@
     "children": [
       {
         "meta": {
-          "name": "menu_1"
+          "name": "menu_tree"
         },
         "position": {
           "grow": 1
@@ -18,13 +18,23 @@
         "props": {
           "headerStyle": {
             "classes": "labels/font labels/size_heading_2",
-            "color": "#FFFFFF",
+            "color": "#ffffff",
             "overflow": "hidden"
           },
           "itemStyle": {
+            "backgroundColor": "transparent",
+            "borderRadius": "8px",
             "borderStyle": "none",
-            "classes": "labels/color_normal labels/font labels/size_normal ui_ux/hover_highlight ui_ux/hover_underline",
-            "overflow": "hidden"
+            "classes": "labels/font labels/size_normal ui_ux/hover_highlight",
+            "color": "#d1d5db",
+            "marginBottom": "2px",
+            "marginLeft": "8px",
+            "marginRight": "8px",
+            "overflow": "hidden",
+            "paddingBottom": "10px",
+            "paddingLeft": "12px",
+            "paddingRight": "12px",
+            "paddingTop": "10px"
           },
           "items": [
             {
@@ -32,10 +42,10 @@
               "items": [],
               "label": {
                 "icon": {
-                  "color": "#FFFFFF",
+                  "color": "#d1d5db",
                   "path": "material/home",
                   "style": {
-                    "transform": "scale(1.2) translateX(-4px)"
+                    "marginRight": "12px"
                   }
                 },
                 "text": "Home"
@@ -47,8 +57,8 @@
               "resetOnClick": false,
               "showHeader": true,
               "style": {
-                "classes": "",
-                "color": "#FFFFFF"
+                "classes": "psc-leftdockitem",
+                "color": "#d1d5db"
               },
               "target": "/",
               "visible": true
@@ -63,7 +73,11 @@
                   "items": [],
                   "label": {
                     "icon": {
-                      "path": ""
+                      "color": "#10b981",
+                      "path": "material/chevron_right",
+                      "style": {
+                        "marginRight": "8px"
+                      }
                     },
                     "text": "Line 1"
                   },
@@ -73,8 +87,8 @@
                   "resetOnClick": true,
                   "showHeader": true,
                   "style": {
-                    "classes": "leftdockitem",
-                    "color": "#FFFFFF"
+                    "classes": "psc-leftdockitem",
+                    "color": "#d1d5db"
                   },
                   "target": "/line",
                   "visible": true
@@ -82,23 +96,23 @@
               ],
               "label": {
                 "icon": {
-                  "color": "#FFFFFF",
+                  "color": "#3b82f6",
                   "path": "material/dashboard",
                   "style": {
-                    "transform": "scale(1.2) translateX(-4px)"
+                    "marginRight": "12px"
                   }
                 },
                 "text": "Lines"
               },
               "navIcon": {
-                "color": "#FFFFFF",
+                "color": "#6b7280",
                 "path": "material/chevron_right"
               },
               "resetOnClick": false,
               "showHeader": true,
               "style": {
-                "classes": "",
-                "color": "#FFFFFF"
+                "classes": "psc-leftdockitem",
+                "color": "#d1d5db"
               },
               "target": "",
               "visible": true
@@ -113,7 +127,11 @@
                   "items": [],
                   "label": {
                     "icon": {
-                      "path": ""
+                      "color": "#10b981",
+                      "path": "material/chevron_right",
+                      "style": {
+                        "marginRight": "8px"
+                      }
                     },
                     "text": "Work Order"
                   },
@@ -123,7 +141,8 @@
                   "resetOnClick": false,
                   "showHeader": true,
                   "style": {
-                    "classes": ""
+                    "classes": "psc-leftdockitem",
+                    "color": "#d1d5db"
                   },
                   "target": "/work order",
                   "visible": true
@@ -131,20 +150,23 @@
               ],
               "label": {
                 "icon": {
-                  "color": "#FFFFFF",
-                  "path": "material/assignment"
+                  "color": "#10b981",
+                  "path": "material/assignment",
+                  "style": {
+                    "marginRight": "12px"
+                  }
                 },
                 "text": "Production"
               },
               "navIcon": {
-                "color": "",
+                "color": "#6b7280",
                 "path": "material/chevron_right"
               },
               "resetOnClick": false,
               "showHeader": true,
               "style": {
-                "classes": "",
-                "color": "#FFFFFF"
+                "classes": "psc-leftdockitem",
+                "color": "#d1d5db"
               },
               "target": "",
               "visible": true
@@ -159,7 +181,11 @@
                   "items": [],
                   "label": {
                     "icon": {
-                      "path": ""
+                      "color": "#10b981",
+                      "path": "material/chevron_right",
+                      "style": {
+                        "marginRight": "8px"
+                      }
                     },
                     "text": "Production Model"
                   },
@@ -169,7 +195,8 @@
                   "resetOnClick": false,
                   "showHeader": true,
                   "style": {
-                    "classes": ""
+                    "classes": "psc-leftdockitem",
+                    "color": "#d1d5db"
                   },
                   "target": "/production model",
                   "visible": true
@@ -180,7 +207,11 @@
                   "items": [],
                   "label": {
                     "icon": {
-                      "path": ""
+                      "color": "#10b981",
+                      "path": "material/chevron_right",
+                      "style": {
+                        "marginRight": "8px"
+                      }
                     },
                     "text": "Product Codes"
                   },
@@ -190,7 +221,8 @@
                   "resetOnClick": false,
                   "showHeader": true,
                   "style": {
-                    "classes": ""
+                    "classes": "psc-leftdockitem",
+                    "color": "#d1d5db"
                   },
                   "target": "/product codes",
                   "visible": true
@@ -198,26 +230,31 @@
               ],
               "label": {
                 "icon": {
-                  "color": "#FFFFFF",
-                  "path": "material/admin_panel_settings"
+                  "color": "#f59e0b",
+                  "path": "material/admin_panel_settings",
+                  "style": {
+                    "marginRight": "12px"
+                  }
                 },
                 "text": "Admin"
               },
               "navIcon": {
-                "color": "",
+                "color": "#6b7280",
                 "path": "material/chevron_right"
               },
               "resetOnClick": false,
               "showHeader": true,
               "style": {
-                "classes": ""
+                "classes": "psc-leftdockitem",
+                "color": "#d1d5db"
               },
               "target": "",
               "visible": true
             }
           ],
           "style": {
-            "backgroundColor": "#21262d"
+            "backgroundColor": "#21262d",
+            "paddingTop": "8px"
           }
         },
         "type": "ia.navigation.menutree"
@@ -229,10 +266,9 @@
     "props": {
       "direction": "column",
       "style": {
-        "borderRightColor": "black",
-        "borderRightStyle": "none",
-        "borderRightWidth": "1px",
-        "classes": "leftdock",
+        "backgroundColor": "#21262d",
+        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+        "classes": "psc-leftdock",
         "overflow": "hidden"
       }
     },

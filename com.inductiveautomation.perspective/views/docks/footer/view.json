@@ -3,7 +3,7 @@
   "params": {},
   "props": {
     "defaultSize": {
-      "height": 29
+      "height": 32
     }
   },
   "root": {
@@ -12,16 +12,37 @@
         "children": [
           {
             "meta": {
-              "name": "Company"
+              "name": "company_label"
             },
             "position": {
-              "grow": 1
+              "basis": "40px",
+              "shrink": 0
             },
             "props": {
+              "text": "TAS",
               "style": {
-                "classes": "labels/color_normal labels/font labels/size_normal"
-              },
-              "text": "TAS"
+                "classes": "labels/font",
+                "color": "#10b981",
+                "fontSize": "14px",
+                "fontWeight": "700"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "divider_dot"
+            },
+            "position": {
+              "basis": "16px",
+              "shrink": 0
+            },
+            "props": {
+              "text": "•",
+              "style": {
+                "color": "#6b7280",
+                "textAlign": "center"
+              }
             },
             "type": "ia.display.label"
           },
@@ -29,14 +50,14 @@
             "children": [
               {
                 "meta": {
-                  "name": "Icon"
+                  "name": "theme_icon"
                 },
                 "position": {
                   "basis": "18px",
                   "shrink": 0
                 },
                 "props": {
-                  "color": "--neutral-70",
+                  "color": "#9ca3af",
                   "path": "material/brightness_medium"
                 },
                 "type": "ia.display.icon"
@@ -46,7 +67,7 @@
               "dom": {
                 "onClick": {
                   "config": {
-                    "script": "\tif self.session.props.theme \u003d\u003d \u0027light\u0027:\n\t\tself.session.props.theme \u003d \u0027dark\u0027\n\telse:\n\t\tself.session.props.theme \u003d \u0027light\u0027"
+                    "script": "\tif self.session.props.theme == 'light':\n\t\tself.session.props.theme = 'dark'\n\telse:\n\t\tself.session.props.theme = 'light'"
                   },
                   "scope": "G",
                   "type": "script"
@@ -54,19 +75,22 @@
               }
             },
             "meta": {
-              "name": "DarkLightMode",
+              "name": "theme_toggle",
               "tooltip": {
                 "enabled": true,
-                "text": "LightDark"
+                "text": "Toggle Light/Dark Mode"
               }
             },
             "position": {
-              "basis": "60px",
+              "basis": "32px",
               "shrink": 0
             },
             "props": {
+              "alignItems": "center",
               "justify": "center",
               "style": {
+                "borderRadius": "6px",
+                "classes": "ui_ux/hover_highlight",
                 "cursor": "pointer"
               }
             },
@@ -74,17 +98,20 @@
           }
         ],
         "meta": {
-          "name": "left"
+          "name": "left_section"
         },
         "position": {
-          "basis": "86px",
+          "basis": "120px",
           "shrink": 0
+        },
+        "props": {
+          "alignItems": "center"
         },
         "type": "ia.container.flex"
       },
       {
         "meta": {
-          "name": "middle"
+          "name": "timestamp"
         },
         "position": {
           "grow": 1
@@ -102,7 +129,7 @@
                   "formatType": "datetime",
                   "formatValue": {
                     "date": "short",
-                    "time": "short"
+                    "time": "medium"
                   },
                   "type": "format"
                 }
@@ -113,39 +140,77 @@
         },
         "props": {
           "style": {
-            "classes": "labels/color_normal labels/font labels/size_normal",
+            "classes": "labels/font labels/size_normal",
+            "color": "#d1d5db",
             "textAlign": "center"
           }
         },
         "type": "ia.display.label"
       },
       {
+        "children": [
+          {
+            "meta": {
+              "name": "status_dot"
+            },
+            "position": {
+              "basis": "8px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#10b981",
+                "borderRadius": "50%",
+                "boxShadow": "0 0 6px #10b981",
+                "height": "8px",
+                "marginRight": "8px",
+                "width": "8px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "redundancy_role"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[System]Gateway/Redundancy/Role"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "labels/font labels/size_normal",
+                "color": "#9ca3af",
+                "textAlign": "right"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
         "meta": {
-          "name": "right"
+          "name": "right_section"
         },
         "position": {
           "basis": "100px",
           "shrink": 0
         },
-        "propConfig": {
-          "props.text": {
-            "binding": {
-              "config": {
-                "fallbackDelay": 2.5,
-                "mode": "direct",
-                "tagPath": "[System]Gateway/Redundancy/Role"
-              },
-              "type": "tag"
-            }
-          }
-        },
         "props": {
-          "style": {
-            "classes": "labels/color_normal labels/font labels/size_normal",
-            "textAlign": "right"
-          }
+          "alignItems": "center",
+          "justify": "flex-end"
         },
-        "type": "ia.display.label"
+        "type": "ia.container.flex"
       }
     ],
     "meta": {
@@ -156,12 +221,11 @@
       "justify": "space-between",
       "style": {
         "backgroundColor": "#21262d",
-        "borderTopColor": "black",
-        "borderTopStyle": "none",
-        "borderTopWidth": "1px",
+        "borderTop": "1px solid rgba(255, 255, 255, 0.05)",
+        "classes": "mes-footer",
         "overflow": "hidden",
-        "paddingLeft": "10px",
-        "paddingRight": "10px"
+        "paddingLeft": "12px",
+        "paddingRight": "12px"
       }
     },
     "type": "ia.container.flex"
