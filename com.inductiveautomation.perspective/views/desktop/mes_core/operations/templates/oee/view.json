@@ -1,5 +1,7 @@
 {
-  "custom": {},
+  "custom": {
+    "oeeColorScript": "\"\"\"\nOEE Color Transform - Reusable script for consistent color coding\nUsed by both arc colors and status text colors\n\nColor Mapping:\n  85-100%: Excellent (Green) - #10b981\n  70-84%:  Good (Blue) - #3b82f6\n  50-69%:  Average (Yellow) - #f59e0b\n  30-49%:  Poor (Orange) - #f97316\n  0-29%:   Critical (Red) - #ef4444\n\"\"\""
+  },
   "params": {
     "tagPath": "[default]Enterprise/Site/Area/Line 1"
   },
@@ -11,394 +13,425 @@
   },
   "props": {
     "defaultSize": {
-      "height": 250,
+      "height": 280,
       "width": 650
     }
   },
   "root": {
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "mes-card",
+        "gap": 0,
+        "padding": 16
+      }
+    },
+    "type": "ia.container.flex",
     "children": [
       {
+        "meta": {
+          "name": "card_header"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+            "marginBottom": 12,
+            "paddingBottom": 12
+          }
+        },
+        "type": "ia.container.flex",
         "children": [
           {
             "meta": {
-              "name": "Label"
+              "name": "title_icon"
             },
             "position": {
-              "basis": "307px",
+              "basis": "24px",
+              "shrink": 0
+            },
+            "props": {
+              "color": "#10b981",
+              "path": "material/speed",
+              "style": {
+                "marginRight": 10
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "title_label"
+            },
+            "position": {
               "grow": 1
             },
             "props": {
               "text": "OEE",
-              "textStyle": {
-                "color": "#ffffff",
-                "fontFamily": "Arial",
-                "fontSize": 18,
-                "fontWeight": "600",
-                "marginLeft": 10
+              "style": {
+                "classes": "mes-title-primary"
               }
             },
             "type": "ia.display.label"
           }
-        ],
-        "meta": {
-          "name": "header"
-        },
-        "position": {
-          "basis": "30px"
-        },
-        "type": "ia.container.flex"
+        ]
       },
       {
+        "meta": {
+          "name": "gauge_labels_row"
+        },
+        "position": {
+          "basis": "24px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center"
+        },
+        "type": "ia.container.flex",
         "children": [
           {
             "meta": {
-              "name": "Label"
+              "name": "lbl_availability"
             },
             "position": {
-              "basis": "193px",
               "grow": 1
             },
             "props": {
-              "style": {
-                "textAlign": "center"
-              },
               "text": "Availability",
-              "textStyle": {
+              "style": {
+                "classes": "labels/font",
                 "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center"
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "Label_0"
+              "name": "lbl_quality"
             },
             "position": {
-              "basis": "198px",
               "grow": 1
             },
             "props": {
-              "style": {
-                "textAlign": "center"
-              },
               "text": "Quality",
-              "textStyle": {
+              "style": {
+                "classes": "labels/font",
                 "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center"
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "Label_1"
+              "name": "lbl_performance"
             },
             "position": {
-              "basis": "194px",
               "grow": 1
             },
             "props": {
-              "style": {
-                "textAlign": "center"
-              },
               "text": "Performance",
-              "textStyle": {
+              "style": {
+                "classes": "labels/font",
                 "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center"
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "Label_2"
+              "name": "lbl_oee"
             },
             "position": {
-              "basis": "196px",
               "grow": 1
             },
             "props": {
-              "style": {
-                "textAlign": "center"
-              },
               "text": "OEE",
-              "textStyle": {
+              "style": {
+                "classes": "labels/font",
                 "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "textAlign": "center",
-                "wordSpacing": "0.5px"
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center"
               }
             },
             "type": "ia.display.label"
           }
-        ],
-        "meta": {
-          "name": "header_0"
-        },
-        "position": {
-          "basis": "25px"
-        },
-        "type": "ia.container.flex"
+        ]
       },
       {
+        "meta": {
+          "name": "status_labels_row"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "marginBottom": 4
+          }
+        },
+        "type": "ia.container.flex",
         "children": [
           {
             "meta": {
-              "name": "Label"
+              "name": "status_availability"
             },
             "position": {
-              "basis": "193px",
               "grow": 1
             },
             "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Availability\""
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
               "props.text": {
                 "binding": {
                   "config": {
-                    "path": ".../oee/availability.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Availability\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to status text\n    \n    Status Mapping:\n    0-29%: Critical\n    30-49%: Needs Improvement \n    50-69%: Average\n    70-84%: Good\n    85-100%: Excellent\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"No Data\"\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"Invalid Data\"\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define OEE status text thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100%\n        return \"Excellent\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84%\n        return \"Good\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69%\n        return \"Average\"\n    elif percentage \u003e\u003d 30:\n        # Needs Improvement: 30-49%\n        return \"Needs Improvement\"\n    else:\n        # Critical: 0-29%\n        return \"Critical\"",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.textStyle.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../oee/availability.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               }
             },
             "props": {
               "style": {
+                "classes": "labels/font",
+                "fontSize": 12,
+                "fontWeight": 600,
                 "textAlign": "center"
-              },
-              "textStyle": {
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "wordSpacing": "0.5px"
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "Label_0"
+              "name": "status_quality"
             },
             "position": {
-              "basis": "198px",
               "grow": 1
             },
             "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Quality\""
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
               "props.text": {
                 "binding": {
                   "config": {
-                    "path": ".../oee/quality.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Quality\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to status text\n    \n    Status Mapping:\n    0-29%: Critical\n    30-49%: Needs Improvement \n    50-69%: Average\n    70-84%: Good\n    85-100%: Excellent\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"No Data\"\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"Invalid Data\"\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define OEE status text thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100%\n        return \"Excellent\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84%\n        return \"Good\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69%\n        return \"Average\"\n    elif percentage \u003e\u003d 30:\n        # Needs Improvement: 30-49%\n        return \"Needs Improvement\"\n    else:\n        # Critical: 0-29%\n        return \"Critical\"",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.textStyle.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../oee/quality.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               }
             },
             "props": {
               "style": {
+                "classes": "labels/font",
+                "fontSize": 12,
+                "fontWeight": 600,
                 "textAlign": "center"
-              },
-              "textStyle": {
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "wordSpacing": "0.5px"
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "Label_1"
+              "name": "status_performance"
             },
             "position": {
-              "basis": "195px",
               "grow": 1
             },
             "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Performance\""
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
               "props.text": {
                 "binding": {
                   "config": {
-                    "path": ".../oee/performance.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Performance\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to status text\n    \n    Status Mapping:\n    0-29%: Critical\n    30-49%: Needs Improvement \n    50-69%: Average\n    70-84%: Good\n    85-100%: Excellent\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"No Data\"\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"Invalid Data\"\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define OEE status text thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100%\n        return \"Excellent\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84%\n        return \"Good\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69%\n        return \"Average\"\n    elif percentage \u003e\u003d 30:\n        # Needs Improvement: 30-49%\n        return \"Needs Improvement\"\n    else:\n        # Critical: 0-29%\n        return \"Critical\"",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.textStyle.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../oee/performance.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               }
             },
             "props": {
               "style": {
+                "classes": "labels/font",
+                "fontSize": 12,
+                "fontWeight": 600,
                 "textAlign": "center"
-              },
-              "textStyle": {
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "wordSpacing": "0.5px"
               }
             },
             "type": "ia.display.label"
           },
           {
             "meta": {
-              "name": "Label_2"
+              "name": "status_oee"
             },
             "position": {
-              "basis": "192px",
               "grow": 1
             },
             "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE\""
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
               "props.text": {
                 "binding": {
                   "config": {
-                    "path": ".../oee/oee.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to status text\n    \n    Status Mapping:\n    0-29%: Critical\n    30-49%: Needs Improvement \n    50-69%: Average\n    70-84%: Good\n    85-100%: Excellent\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"No Data\"\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"Invalid Data\"\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define OEE status text thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100%\n        return \"Excellent\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84%\n        return \"Good\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69%\n        return \"Average\"\n    elif percentage \u003e\u003d 30:\n        # Needs Improvement: 30-49%\n        return \"Needs Improvement\"\n    else:\n        # Critical: 0-29%\n        return \"Critical\"",
+                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"Excellent\"\n\telif percentage >= 70:\n\t\treturn \"Good\"\n\telif percentage >= 50:\n\t\treturn \"Average\"\n\telif percentage >= 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.textStyle.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../oee/oee.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               }
             },
             "props": {
               "style": {
+                "classes": "labels/font",
+                "fontSize": 12,
+                "fontWeight": 600,
                 "textAlign": "center"
-              },
-              "textStyle": {
-                "fontFamily": "Arial",
-                "fontSize": 16,
-                "wordSpacing": "0.5px"
               }
             },
             "type": "ia.display.label"
           }
-        ],
-        "meta": {
-          "name": "header_1"
-        },
-        "position": {
-          "basis": "25px"
-        },
-        "type": "ia.container.flex"
+        ]
       },
       {
+        "meta": {
+          "name": "gauges_row"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-around"
+        },
+        "type": "ia.container.flex",
         "children": [
           {
             "meta": {
-              "name": "availability"
+              "name": "gauge_availability"
             },
             "position": {
-              "basis": "140px",
+              "basis": "150px",
               "grow": 1
             },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
                   "config": {
-                    "path": "this.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Availability\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               },
               "props.value": {
@@ -410,9 +443,8 @@
                   },
                   "transforms": [
                     {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "code": "\tif value is None:\n\t\treturn \"0%\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\t\treturn str(int(round(percentage))) + \"%\"\n\texcept (ValueError, TypeError):\n\t\treturn \"0%\"",
+                      "type": "script"
                     }
                   ],
                   "type": "tag"
@@ -421,57 +453,47 @@
             },
             "props": {
               "arc": {
-                "width": 4
+                "width": 5
               },
-              "arcBackground": {},
+              "arcBackground": {
+                "color": "rgba(255, 255, 255, 0.08)"
+              },
               "label": {
                 "color": "#d1d5db",
                 "maxDecimal": 0,
                 "offsetY": 20,
-                "size": 45
+                "size": 42
               },
               "startAngle": 0,
               "style": {
-                "padding": 5
+                "padding": 8
               }
             },
             "type": "ia.chart.simple-gauge"
           },
           {
             "meta": {
-              "name": "quality"
+              "name": "gauge_quality"
             },
             "position": {
-              "basis": "140px",
+              "basis": "150px",
               "grow": 1
             },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
                   "config": {
-                    "path": "this.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Quality\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               },
               "props.value": {
@@ -483,9 +505,8 @@
                   },
                   "transforms": [
                     {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "code": "\tif value is None:\n\t\treturn \"0%\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\t\treturn str(int(round(percentage))) + \"%\"\n\texcept (ValueError, TypeError):\n\t\treturn \"0%\"",
+                      "type": "script"
                     }
                   ],
                   "type": "tag"
@@ -494,57 +515,47 @@
             },
             "props": {
               "arc": {
-                "width": 4
+                "width": 5
               },
-              "arcBackground": {},
+              "arcBackground": {
+                "color": "rgba(255, 255, 255, 0.08)"
+              },
               "label": {
                 "color": "#d1d5db",
                 "maxDecimal": 0,
                 "offsetY": 20,
-                "size": 45
+                "size": 42
               },
               "startAngle": 0,
               "style": {
-                "padding": 5
+                "padding": 8
               }
             },
             "type": "ia.chart.simple-gauge"
           },
           {
             "meta": {
-              "name": "performance"
+              "name": "gauge_performance"
             },
             "position": {
-              "basis": "140px",
+              "basis": "150px",
               "grow": 1
             },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
                   "config": {
-                    "path": "this.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Performance\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               },
               "props.value": {
@@ -556,9 +567,8 @@
                   },
                   "transforms": [
                     {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "code": "\tif value is None:\n\t\treturn \"0%\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\t\treturn str(int(round(percentage))) + \"%\"\n\texcept (ValueError, TypeError):\n\t\treturn \"0%\"",
+                      "type": "script"
                     }
                   ],
                   "type": "tag"
@@ -567,57 +577,47 @@
             },
             "props": {
               "arc": {
-                "width": 4
+                "width": 5
               },
-              "arcBackground": {},
+              "arcBackground": {
+                "color": "rgba(255, 255, 255, 0.08)"
+              },
               "label": {
                 "color": "#d1d5db",
                 "maxDecimal": 0,
                 "offsetY": 20,
-                "size": 45
+                "size": 42
               },
               "startAngle": 0,
               "style": {
-                "padding": 5
+                "padding": 8
               }
             },
             "type": "ia.chart.simple-gauge"
           },
           {
             "meta": {
-              "name": "oee"
+              "name": "gauge_oee"
             },
             "position": {
-              "basis": "140px",
+              "basis": "150px",
               "grow": 1
             },
             "propConfig": {
               "props.arc.color": {
                 "binding": {
                   "config": {
-                    "path": "this.props.value"
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE\""
                   },
                   "transforms": [
                     {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
                       "type": "script"
                     }
                   ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n    \"\"\"\n    Transform OEE percentage (0-100) to Tesla-style color hex codes\n    \n    Color Mapping:\n    0-29%: Critical (Red) - #ef4444\n    30-49%: Poor (Orange) - #f97316 \n    50-69%: Average (Yellow) - #f59e0b\n    70-84%: Good (Blue) - #3b82f6\n    85-100%: Excellent (Green) - #10b981\n    \n    For smooth gradients, interpolates between threshold colors\n    \"\"\"\n    \n    # Handle None or invalid values\n    if value is None:\n        return \"#6b7280\"  # Gray for null values\n    \n    # Convert value to string and strip % sign if present\n    try:\n        value_str \u003d str(value).strip()\n        if value_str.endswith(\u0027%\u0027):\n            value_str \u003d value_str[:-1]  # Remove the % sign\n        percentage \u003d float(value_str)\n    except (ValueError, TypeError):\n        return \"#6b7280\"  # Gray for invalid values\n    \n    # Ensure value is between 0 and 100\n    percentage \u003d max(0, min(100, percentage))\n    \n    # Define Tesla OEE color thresholds\n    if percentage \u003e\u003d 85:\n        # Excellent: 85-100% -\u003e Green\n        return \"#10b981\"\n    elif percentage \u003e\u003d 70:\n        # Good: 70-84% -\u003e Blue \n        return \"#3b82f6\"\n    elif percentage \u003e\u003d 50:\n        # Average: 50-69% -\u003e Yellow\n        return \"#f59e0b\"\n    elif percentage \u003e\u003d 30:\n        # Poor: 30-49% -\u003e Orange\n        return \"#f97316\"\n    else:\n        # Critical: 0-29% -\u003e Red\n        return \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
+                  "type": "tag"
                 }
               },
               "props.value": {
@@ -629,9 +629,8 @@
                   },
                   "transforms": [
                     {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
+                      "code": "\tif value is None:\n\t\treturn \"0%\"\n\ttry:\n\t\tpercentage = float(value) * 100 if float(value) <= 1 else float(value)\n\t\treturn str(int(round(percentage))) + \"%\"\n\texcept (ValueError, TypeError):\n\t\treturn \"0%\"",
+                      "type": "script"
                     }
                   ],
                   "type": "tag"
@@ -640,47 +639,26 @@
             },
             "props": {
               "arc": {
-                "width": 4
+                "width": 5
               },
-              "arcBackground": {},
+              "arcBackground": {
+                "color": "rgba(255, 255, 255, 0.08)"
+              },
               "label": {
                 "color": "#d1d5db",
                 "maxDecimal": 0,
                 "offsetY": 20,
-                "size": 45
+                "size": 42
               },
               "startAngle": 0,
               "style": {
-                "padding": 5
+                "padding": 8
               }
             },
             "type": "ia.chart.simple-gauge"
           }
-        ],
-        "meta": {
-          "name": "oee"
-        },
-        "position": {
-          "basis": "166px",
-          "grow": 1
-        },
-        "type": "ia.container.flex"
+        ]
       }
-    ],
-    "meta": {
-      "name": "root"
-    },
-    "props": {
-      "direction": "column",
-      "style": {
-        "backgroundColor": "#21262d",
-        "borderBottomLeftRadius": 12,
-        "borderBottomRightRadius": 12,
-        "borderStyle": "none",
-        "borderTopLeftRadius": 12,
-        "borderTopRightRadius": 12
-      }
-    },
-    "type": "ia.container.flex"
+    ]
   }
 }
