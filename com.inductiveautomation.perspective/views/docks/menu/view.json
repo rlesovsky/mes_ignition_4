@@ -45,7 +45,9 @@
                   "color": "#d1d5db",
                   "path": "material/home",
                   "style": {
-                    "marginRight": "12px"
+                    "fontSize": "24px",
+                    "marginRight": "12px",
+                    "transform": "scale(1.3) translateX(-4px)"
                   }
                 },
                 "text": "Home"
@@ -76,6 +78,7 @@
                       "color": "#10b981",
                       "path": "material/chevron_right",
                       "style": {
+                        "fontSize": "20px",
                         "marginRight": "8px"
                       }
                     },
@@ -99,14 +102,19 @@
                   "color": "#3b82f6",
                   "path": "material/dashboard",
                   "style": {
-                    "marginRight": "12px"
+                    "fontSize": "24px",
+                    "marginRight": "12px",
+                    "transform": "scale(1.3) translateX(-4px)"
                   }
                 },
                 "text": "Lines"
               },
               "navIcon": {
-                "color": "#6b7280",
-                "path": "material/chevron_right"
+                "color": "#d1d5db",
+                "path": "material/chevron_right",
+                "style": {
+                  "fontSize": "20px"
+                }
               },
               "resetOnClick": false,
               "showHeader": true,
@@ -130,6 +138,7 @@
                       "color": "#10b981",
                       "path": "material/chevron_right",
                       "style": {
+                        "fontSize": "20px",
                         "marginRight": "8px"
                       }
                     },
@@ -153,14 +162,19 @@
                   "color": "#10b981",
                   "path": "material/assignment",
                   "style": {
-                    "marginRight": "12px"
+                    "fontSize": "24px",
+                    "marginRight": "12px",
+                    "transform": "scale(1.3) translateX(-4px)"
                   }
                 },
                 "text": "Production"
               },
               "navIcon": {
-                "color": "#6b7280",
-                "path": "material/chevron_right"
+                "color": "#d1d5db",
+                "path": "material/chevron_right",
+                "style": {
+                  "fontSize": "20px"
+                }
               },
               "resetOnClick": false,
               "showHeader": true,
@@ -184,6 +198,7 @@
                       "color": "#10b981",
                       "path": "material/chevron_right",
                       "style": {
+                        "fontSize": "20px",
                         "marginRight": "8px"
                       }
                     },
@@ -210,6 +225,7 @@
                       "color": "#10b981",
                       "path": "material/chevron_right",
                       "style": {
+                        "fontSize": "20px",
                         "marginRight": "8px"
                       }
                     },
@@ -233,14 +249,19 @@
                   "color": "#f59e0b",
                   "path": "material/admin_panel_settings",
                   "style": {
-                    "marginRight": "12px"
+                    "fontSize": "24px",
+                    "marginRight": "12px",
+                    "transform": "scale(1.3) translateX(-4px)"
                   }
                 },
                 "text": "Admin"
               },
               "navIcon": {
-                "color": "#6b7280",
-                "path": "material/chevron_right"
+                "color": "#d1d5db",
+                "path": "material/chevron_right",
+                "style": {
+                  "fontSize": "20px"
+                }
               },
               "resetOnClick": false,
               "showHeader": true,
@@ -267,7 +288,9 @@
       "direction": "column",
       "style": {
         "backgroundColor": "#21262d",
-        "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRightColor": "rgba(255, 255, 255, 0.05)",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "1px",
         "classes": "psc-leftdock",
         "overflow": "hidden"
       }
