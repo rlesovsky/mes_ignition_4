@@ -50,19 +50,23 @@
   width: auto !important;
 }
 
-.psc-leftdock {
+/* Support both class names */
+.psc-leftdock,
+.leftdock {
   width: 45px;
   background-color: #21262d;
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.psc-leftdock:hover {
+.psc-leftdock:hover,
+.leftdock:hover {
   width: 300px;
   box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
 }
 
-.psc-leftdockitem {
+.psc-leftdockitem,
+.leftdockitem {
   transform: translateX(50px);
   white-space: nowrap;
   opacity: 0;
@@ -70,7 +74,10 @@
               opacity 0.3s ease;
 }
 
-.psc-leftdock:hover .psc-leftdockitem {
+.psc-leftdock:hover .psc-leftdockitem,
+.psc-leftdock:hover .leftdockitem,
+.leftdock:hover .psc-leftdockitem,
+.leftdock:hover .leftdockitem {
   transform: translateX(0px);
   opacity: 1;
 }
