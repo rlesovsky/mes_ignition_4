@@ -46,7 +46,10 @@
     "props": {
       "direction": "column",
       "style": {
-        "classes": "mes-card-solid mes-p-md"
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 16,
+        "padding": 16
       }
     },
     "meta": {
@@ -96,13 +99,13 @@
                   ],
                   "selectedIcon": {
                     "color": {
-                      "enabled": "var(--mes-status-excellent)",
-                      "disabled": "var(--mes-status-critical)"
+                      "enabled": "#10b981",
+                      "disabled": "#ef4444"
                     }
                   },
                   "unselectedIcon": {
                     "color": {
-                      "enabled": "var(--mes-status-critical)"
+                      "enabled": "#ef4444"
                     }
                   }
                 },
@@ -140,7 +143,10 @@
                 "version": 0,
                 "props": {
                   "style": {
-                    "classes": "mes-title-primary"
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 18,
+                    "fontWeight": 600
                   }
                 },
                 "meta": {
@@ -167,7 +173,17 @@
                 "version": 0,
                 "props": {
                   "style": {
-                    "classes": "mes-badge mes-rounded-full"
+                    "borderRadius": 9999,
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 12,
+                    "fontWeight": 600,
+                    "paddingBottom": 4,
+                    "paddingLeft": 12,
+                    "paddingRight": 12,
+                    "paddingTop": 4,
+                    "textAlign": "center",
+                    "textTransform": "uppercase",
+                    "letterSpacing": "0.5px"
                   }
                 },
                 "meta": {
@@ -175,10 +191,10 @@
                 },
                 "position": {
                   "shrink": 0,
-                  "basis": "80px"
+                  "basis": "85px"
                 },
                 "propConfig": {
-                  "props.style.classes": {
+                  "props.style.backgroundColor": {
                     "binding": {
                       "config": {
                         "fallbackDelay": 2.5,
@@ -187,7 +203,39 @@
                       },
                       "transforms": [
                         {
-                          "code": "\tif value:\n\t\treturn \"mes-badge mes-badge-success mes-rounded-full\"\n\telse:\n\t\treturn \"mes-badge mes-badge-error mes-rounded-full\"",
+                          "code": "\tif value:\n\t\treturn \"rgba(16, 185, 129, 0.15)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.15)\"",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.style.border": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value:\n\t\treturn \"1px solid rgba(16, 185, 129, 0.3)\"\n\telse:\n\t\treturn \"1px solid rgba(239, 68, 68, 0.3)\"",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value:\n\t\treturn \"#10b981\"\n\telse:\n\t\treturn \"#ef4444\"",
                           "type": "script"
                         }
                       ],
@@ -233,7 +281,9 @@
                 "props": {
                   "text": "Quantity:",
                   "style": {
-                    "classes": "labels/color_muted labels/font labels/size_normal"
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14
                   }
                 },
                 "meta": {
@@ -248,8 +298,10 @@
                 "version": 0,
                 "props": {
                   "style": {
-                    "classes": "labels/color_white labels/font labels/size_normal",
-                    "fontWeight": "600"
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
                   }
                 },
                 "meta": {
@@ -298,7 +350,9 @@
                 "props": {
                   "text": "Remaining:",
                   "style": {
-                    "classes": "labels/color_muted labels/font labels/size_normal"
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14
                   }
                 },
                 "meta": {
@@ -313,8 +367,10 @@
                 "version": 0,
                 "props": {
                   "style": {
-                    "classes": "labels/color_white labels/font labels/size_normal",
-                    "fontWeight": "600"
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
                   }
                 },
                 "meta": {
@@ -367,7 +423,9 @@
                 "props": {
                   "text": "Started:",
                   "style": {
-                    "classes": "labels/color_muted labels/font labels/size_normal"
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14
                   }
                 },
                 "meta": {
@@ -382,8 +440,10 @@
                 "version": 0,
                 "props": {
                   "style": {
-                    "classes": "labels/color_white labels/font labels/size_normal",
-                    "fontWeight": "600"
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
                   }
                 },
                 "meta": {
@@ -436,7 +496,9 @@
                 "props": {
                   "text": "Est Completion:",
                   "style": {
-                    "classes": "labels/color_muted labels/font labels/size_normal"
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14
                   }
                 },
                 "meta": {
@@ -451,8 +513,10 @@
                 "version": 0,
                 "props": {
                   "style": {
-                    "classes": "labels/color_white labels/font labels/size_normal",
-                    "fontWeight": "600"
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
                   }
                 },
                 "meta": {
@@ -512,7 +576,10 @@
             "props": {
               "text": "Progress",
               "style": {
-                "classes": "labels/color_muted labels/font labels/size_small"
+                "color": "#9ca3af",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": 500
               }
             },
             "meta": {
@@ -527,23 +594,20 @@
             "version": 0,
             "props": {
               "bar": {
-                "color": "var(--mes-bg-card)",
+                "color": "#21262d",
                 "determinate": {
-                  "color": "var(--mes-blue)"
+                  "color": "#3b82f6"
                 },
                 "indeterminate": {
-                  "color": "var(--mes-text-disabled)"
+                  "color": "#6b7280"
                 }
-              },
-              "style": {
-                "classes": "mes-rounded-full"
               },
               "track": {
                 "determinate": {
-                  "color": "var(--mes-bg-card-inner)"
+                  "color": "#101418"
                 },
                 "indeterminate": {
-                  "color": "var(--mes-text-disabled)"
+                  "color": "#6b7280"
                 }
               }
             },
@@ -603,7 +667,13 @@
             "props": {
               "text": "Production Metrics",
               "style": {
-                "classes": "mes-title-secondary mes-text-center"
+                "color": "#d1d5db",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center",
+                "textTransform": "uppercase",
+                "letterSpacing": "0.5px"
               }
             },
             "meta": {
@@ -619,7 +689,13 @@
             "props": {
               "text": "Actions",
               "style": {
-                "classes": "mes-title-secondary mes-text-center"
+                "color": "#d1d5db",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "center",
+                "textTransform": "uppercase",
+                "letterSpacing": "0.5px"
               }
             },
             "meta": {
@@ -651,7 +727,10 @@
             "version": 0,
             "props": {
               "style": {
-                "classes": "mes-card-inner mes-rounded-md mes-m-xs"
+                "backgroundColor": "#101418",
+                "borderRadius": 12,
+                "marginLeft": 5,
+                "marginRight": 5
               }
             },
             "meta": {
@@ -682,7 +761,10 @@
                     "props": {
                       "text": "Produced",
                       "style": {
-                        "classes": "labels/color_muted labels/font labels/size_normal mes-text-center"
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -697,7 +779,12 @@
                     "version": 0,
                     "props": {
                       "style": {
-                        "classes": "mes-metric-medium mes-text-center"
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "textAlign": "center",
+                        "letterSpacing": "-0.5px"
                       }
                     },
                     "meta": {
@@ -725,7 +812,10 @@
                     "props": {
                       "text": "Scrap",
                       "style": {
-                        "classes": "labels/color_muted labels/font labels/size_normal mes-text-center"
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -740,7 +830,12 @@
                     "version": 0,
                     "props": {
                       "style": {
-                        "classes": "mes-metric-medium mes-text-center"
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "textAlign": "center",
+                        "letterSpacing": "-0.5px"
                       }
                     },
                     "meta": {
@@ -785,7 +880,10 @@
                     "props": {
                       "text": "Cycle Time",
                       "style": {
-                        "classes": "labels/color_muted labels/font labels/size_normal mes-text-center"
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -800,7 +898,12 @@
                     "version": 0,
                     "props": {
                       "style": {
-                        "classes": "mes-metric-medium mes-text-center"
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "textAlign": "center",
+                        "letterSpacing": "-0.5px"
                       }
                     },
                     "meta": {
@@ -834,7 +937,10 @@
                     "props": {
                       "text": "Production Rate",
                       "style": {
-                        "classes": "labels/color_muted labels/font labels/size_normal mes-text-center"
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -849,7 +955,12 @@
                     "version": 0,
                     "props": {
                       "style": {
-                        "classes": "mes-metric-medium mes-text-center"
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "textAlign": "center",
+                        "letterSpacing": "-0.5px"
                       }
                     },
                     "meta": {
@@ -913,13 +1024,25 @@
                     "version": 0,
                     "props": {
                       "text": "End Order",
+                      "primary": false,
                       "style": {
-                        "classes": "mes-button mes-button-danger mes-button-sm mes-m-xs"
+                        "backgroundColor": "rgba(239, 68, 68, 0.15)",
+                        "borderColor": "rgba(239, 68, 68, 0.4)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "margin": 5
+                      },
+                      "textStyle": {
+                        "color": "#fca5a5",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
                       },
                       "image": {
                         "icon": {
                           "path": "material/stop",
-                          "color": "var(--mes-status-critical)"
+                          "color": "#fca5a5"
                         }
                       }
                     },
@@ -927,7 +1050,7 @@
                       "name": "Button"
                     },
                     "position": {
-                      "basis": "48px"
+                      "basis": "44px"
                     },
                     "events": {
                       "component": {
@@ -1007,13 +1130,25 @@
                     "version": 0,
                     "props": {
                       "text": "Categorize Scrap",
+                      "primary": false,
                       "style": {
-                        "classes": "mes-button mes-button-secondary mes-button-sm mes-m-xs"
+                        "backgroundColor": "rgba(75, 85, 99, 0.4)",
+                        "borderColor": "rgba(107, 114, 128, 0.5)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "margin": 5
+                      },
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
                       },
                       "image": {
                         "icon": {
                           "path": "material/assignment",
-                          "color": "var(--mes-text-secondary)"
+                          "color": "#9ca3af"
                         }
                       }
                     },
@@ -1021,7 +1156,7 @@
                       "name": "Button_0"
                     },
                     "position": {
-                      "basis": "48px"
+                      "basis": "44px"
                     },
                     "events": {
                       "component": {
@@ -1053,13 +1188,25 @@
                     "version": 0,
                     "props": {
                       "text": "Cancel Order",
+                      "primary": false,
                       "style": {
-                        "classes": "mes-button mes-button-secondary mes-button-sm mes-m-xs"
+                        "backgroundColor": "rgba(75, 85, 99, 0.4)",
+                        "borderColor": "rgba(107, 114, 128, 0.5)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "margin": 5
+                      },
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
                       },
                       "image": {
                         "icon": {
                           "path": "material/cancel",
-                          "color": "var(--mes-text-secondary)"
+                          "color": "#9ca3af"
                         }
                       }
                     },
@@ -1067,7 +1214,7 @@
                       "name": "Button_1"
                     },
                     "position": {
-                      "basis": "48px"
+                      "basis": "44px"
                     },
                     "events": {
                       "component": {
