@@ -12,34 +12,68 @@
         "children": [
           {
             "meta": {
+              "name": "icon"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "path": "material/note",
+              "style": {
+                "color": "#f59e0b",
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
               "name": "Label"
             },
             "position": {
-              "basis": "307px",
               "grow": 1
             },
             "props": {
               "text": "Notes",
-              "textStyle": {
+              "style": {
                 "color": "#ffffff",
-                "fontFamily": "Arial",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                 "fontSize": 18,
-                "fontWeight": "600",
-                "marginLeft": 20
+                "fontWeight": 600,
+                "letterSpacing": "-0.3px",
+                "marginLeft": 10
               }
             },
             "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "save_icon"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "path": "material/save",
+              "style": {
+                "color": "#9ca3af",
+                "cursor": "pointer",
+                "marginRight": 10
+              }
+            },
+            "type": "ia.display.icon"
           }
         ],
         "meta": {
           "name": "header"
         },
         "position": {
-          "basis": "30px"
+          "basis": "50px"
         },
         "props": {
+          "alignItems": "center",
           "style": {
-            "backgroundColor": "#21262d"
+            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
           }
         },
         "type": "ia.container.flex"
@@ -49,18 +83,23 @@
           "name": "TextArea"
         },
         "position": {
-          "basis": "271px",
           "grow": 1
         },
         "props": {
           "style": {
-            "backgroundColor": "rgba(33, 38, 45, 0.95)",
-            "borderStyle": "none",
-            "borderWidth": 0,
+            "backgroundColor": "#101418",
+            "borderColor": "rgba(255, 255, 255, 0.08)",
+            "borderRadius": 12,
+            "borderStyle": "solid",
+            "borderWidth": 1,
             "color": "#d1d5db",
-            "margin": 5
+            "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+            "fontSize": 14,
+            "lineHeight": 1.6,
+            "margin": 10,
+            "padding": 16
           },
-          "text": "This is my note pad."
+          "text": "Add your notes here..."
         },
         "type": "ia.input.text-area"
       }
@@ -71,7 +110,10 @@
     "props": {
       "direction": "column",
       "style": {
-        "backgroundColor": "#21262d"
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 16,
+        "padding": 6
       }
     },
     "type": "ia.container.flex"

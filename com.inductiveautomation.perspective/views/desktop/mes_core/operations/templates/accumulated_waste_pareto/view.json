@@ -71,20 +71,36 @@
         "children": [
           {
             "meta": {
+              "name": "icon"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "path": "material/delete_sweep",
+              "style": {
+                "color": "#f97316",
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
               "name": "Label"
             },
             "position": {
-              "basis": "307px",
               "grow": 1
             },
             "props": {
               "text": "Accumulated Waste",
-              "textStyle": {
+              "style": {
                 "color": "#ffffff",
-                "fontFamily": "Arial",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                 "fontSize": 18,
-                "fontWeight": "600",
-                "marginLeft": 20
+                "fontWeight": 600,
+                "letterSpacing": "-0.3px",
+                "marginLeft": 10
               }
             },
             "type": "ia.display.label"
@@ -94,11 +110,12 @@
           "name": "header"
         },
         "position": {
-          "basis": "30px"
+          "basis": "50px"
         },
         "props": {
+          "alignItems": "center",
           "style": {
-            "backgroundColor": "#21262d"
+            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
           }
         },
         "type": "ia.container.flex"
@@ -108,7 +125,6 @@
           "name": "WasteCountChart"
         },
         "position": {
-          "basis": "300px",
           "grow": 1
         },
         "propConfig": {
@@ -119,7 +135,7 @@
               },
               "transforms": [
                 {
-                  "code": "\n\tlogger \u003d system.util.getLogger(\"WasteCountChart\")\n\t\n\ttry:\n\t\t# Get view parameter for runID\n\t\trunID \u003d self.view.custom.runID if hasattr(self.view.custom, \u0027runID\u0027) else 1\n\t\t\n\t\tlogger.info(\"Query parameter - RunID: {}\".format(runID))\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Parameter error: \" + str(e))\n\t\treturn {\"waste_data\": []}\n\t\n\ttry:\n\t\tsql_query \u003d \"\"\"\n\t\tSELECT EXTRACT(HOUR FROM \\\"TimeStamp\\\") as Hour, sum(count) as Actual \n\t\tFROM counthistory\n\t\tWHERE counttypeid \u003d 3\n\t\t  AND runid \u003d ?\n\t\tGROUP BY DATE(\\\"TimeStamp\\\"), EXTRACT(HOUR FROM \\\"TimeStamp\\\")\n\t\tORDER BY DATE(\\\"TimeStamp\\\") DESC, EXTRACT(HOUR FROM \\\"TimeStamp\\\") DESC\n\t\tLIMIT 8\n\t\t\"\"\"\n\t\t\n\t\tdataset \u003d system.db.runPrepQuery(sql_query, [runID], \u0027mes_core\u0027)\n\t\t\n\t\tlogger.info(\"Query executed, found {} rows\".format(dataset.getRowCount()))\n\t\t\n\t\tresult \u003d []\n\t\tfor row in range(dataset.getRowCount()):\n\t\t\thour \u003d dataset.getValueAt(row, \"Hour\")\n\t\t\tactual \u003d dataset.getValueAt(row, \"Actual\")\n\t\t\t\n\t\t\tif hour is not None and actual is not None:\n\t\t\t\tresult.append({\n\t\t\t\t\t\"Hour\": \"{}:00\".format(int(hour)),  # Format as \"14:00\", \"15:00\", etc.\n\t\t\t\t\t\"Actual\": int(actual)\n\t\t\t\t})\n\t\t\t\tlogger.info(\"Added: Hour {} \u003d {} units\".format(hour, actual))\n\t\t\n\t\t# Reverse to show chronological order (oldest to newest)\n\t\tresult.reverse()\n\t\t\n\t\treturn {\"waste_data\": result}\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Query error: \" + str(e))\n\t\treturn {\"waste_data\": []}",
+                  "code": "\n\tlogger = system.util.getLogger(\"WasteCountChart\")\n\t\n\ttry:\n\t\t# Get view parameter for runID\n\t\trunID = self.view.custom.runID if hasattr(self.view.custom, 'runID') else 1\n\t\t\n\t\tlogger.info(\"Query parameter - RunID: {}\".format(runID))\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Parameter error: \" + str(e))\n\t\treturn {\"waste_data\": []}\n\t\n\ttry:\n\t\tsql_query = \"\"\"\n\t\tSELECT EXTRACT(HOUR FROM \\\"TimeStamp\\\") as Hour, sum(count) as Actual \n\t\tFROM counthistory\n\t\tWHERE counttypeid = 3\n\t\t  AND runid = ?\n\t\tGROUP BY DATE(\\\"TimeStamp\\\"), EXTRACT(HOUR FROM \\\"TimeStamp\\\")\n\t\tORDER BY DATE(\\\"TimeStamp\\\") DESC, EXTRACT(HOUR FROM \\\"TimeStamp\\\") DESC\n\t\tLIMIT 8\n\t\t\"\"\"\n\t\t\n\t\tdataset = system.db.runPrepQuery(sql_query, [runID], 'mes_core')\n\t\t\n\t\tlogger.info(\"Query executed, found {} rows\".format(dataset.getRowCount()))\n\t\t\n\t\tresult = []\n\t\tfor row in range(dataset.getRowCount()):\n\t\t\thour = dataset.getValueAt(row, \"Hour\")\n\t\t\tactual = dataset.getValueAt(row, \"Actual\")\n\t\t\t\n\t\t\tif hour is not None and actual is not None:\n\t\t\t\tresult.append({\n\t\t\t\t\t\"Hour\": \"{}:00\".format(int(hour)),  # Format as \"14:00\", \"15:00\", etc.\n\t\t\t\t\t\"Actual\": int(actual)\n\t\t\t\t})\n\t\t\t\tlogger.info(\"Added: Hour {} = {} units\".format(hour, actual))\n\t\t\n\t\t# Reverse to show chronological order (oldest to newest)\n\t\tresult.reverse()\n\t\t\n\t\treturn {\"waste_data\": result}\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Query error: \" + str(e))\n\t\treturn {\"waste_data\": []}",
                   "type": "script"
                 }
               ],
@@ -129,7 +145,7 @@
         },
         "props": {
           "background": {
-            "color": "#161b22",
+            "color": "#101418",
             "render": "color"
           },
           "series": [
@@ -380,10 +396,10 @@
               },
               "tooltip": {
                 "background": {
-                  "color": "",
-                  "opacity": 1
+                  "color": "#21262d",
+                  "opacity": 0.95
                 },
-                "cornerRadius": 3,
+                "cornerRadius": 8,
                 "enabled": true,
                 "pointerLength": 4,
                 "text": "Hour {categoryX}: [bold]{valueY} units[/]"
@@ -395,25 +411,27 @@
             }
           ],
           "style": {
-            "padding": 10
+            "borderRadius": 12,
+            "margin": 10,
+            "overflow": "hidden"
           },
           "xAxes": [
             {
               "appearance": {
                 "font": {
-                  "size": "",
+                  "size": 12,
                   "weight": 500
                 },
                 "grid": {
-                  "color": "#404040",
+                  "color": "rgba(255, 255, 255, 0.05)",
                   "dashArray": "",
                   "minDistance": null,
-                  "opacity": 0.5,
+                  "opacity": 1,
                   "position": 0.5
                 },
                 "inside": false,
                 "labels": {
-                  "color": "#ffffff",
+                  "color": "#9ca3af",
                   "horizontalCenter": "middle",
                   "opacity": 1,
                   "rotation": 0,
@@ -452,7 +470,7 @@
               },
               "inversed": false,
               "label": {
-                "color": "",
+                "color": "#9ca3af",
                 "enabled": true,
                 "text": "Hour"
               },
@@ -460,10 +478,10 @@
               "render": "category",
               "tooltip": {
                 "background": {
-                  "color": "",
-                  "opacity": 1
+                  "color": "#21262d",
+                  "opacity": 0.95
                 },
-                "cornerRadius": 3,
+                "cornerRadius": 8,
                 "enabled": true,
                 "pointerLength": 4,
                 "text": ""
@@ -490,19 +508,19 @@
             {
               "appearance": {
                 "font": {
-                  "size": "",
+                  "size": 12,
                   "weight": 500
                 },
                 "grid": {
-                  "color": "#404040",
+                  "color": "rgba(255, 255, 255, 0.05)",
                   "dashArray": "",
                   "minDistance": null,
-                  "opacity": 0.5,
+                  "opacity": 1,
                   "position": 0.5
                 },
                 "inside": false,
                 "labels": {
-                  "color": "#ffffff",
+                  "color": "#9ca3af",
                   "horizontalCenter": "middle",
                   "opacity": 1,
                   "rotation": 0,
@@ -541,7 +559,7 @@
               },
               "inversed": false,
               "label": {
-                "color": "",
+                "color": "#9ca3af",
                 "enabled": true,
                 "text": "Waste Count"
               },
@@ -549,10 +567,10 @@
               "render": "value",
               "tooltip": {
                 "background": {
-                  "color": "",
-                  "opacity": 1
+                  "color": "#21262d",
+                  "opacity": 0.95
                 },
-                "cornerRadius": 3,
+                "cornerRadius": 8,
                 "enabled": true,
                 "pointerLength": 4,
                 "text": ""
@@ -585,7 +603,10 @@
     "props": {
       "direction": "column",
       "style": {
-        "backgroundColor": "#21262d"
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 16,
+        "padding": 6
       }
     },
     "type": "ia.container.flex"
