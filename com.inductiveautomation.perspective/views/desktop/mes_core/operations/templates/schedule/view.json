@@ -20,20 +20,36 @@
         "children": [
           {
             "meta": {
+              "name": "icon"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "path": "material/schedule",
+              "style": {
+                "color": "#3b82f6",
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
               "name": "Label"
             },
             "position": {
-              "basis": "307px",
               "grow": 1
             },
             "props": {
-              "text": "Qued Scheduled Orders",
-              "textStyle": {
+              "text": "Queued Scheduled Orders",
+              "style": {
                 "color": "#ffffff",
-                "fontFamily": "Arial",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                 "fontSize": 18,
-                "fontWeight": "600",
-                "marginLeft": 20
+                "fontWeight": 600,
+                "letterSpacing": "-0.3px",
+                "marginLeft": 10
               }
             },
             "type": "ia.display.label"
@@ -43,14 +59,14 @@
               "name": "Label_0"
             },
             "position": {
-              "basis": "307px",
-              "grow": 1
+              "shrink": 0,
+              "basis": "280px"
             },
             "propConfig": {
               "position.display": {
                 "binding": {
                   "config": {
-                    "path": ".../schedule_table/table.props.data[0][\u0027Work Order\u0027]"
+                    "path": ".../schedule_table/table.props.data[0]['Work Order']"
                   },
                   "transforms": [
                     {
@@ -72,12 +88,22 @@
             },
             "props": {
               "text": "No Scheduled Work Orders For This Line",
-              "textStyle": {
+              "style": {
+                "backgroundColor": "rgba(239, 68, 68, 0.15)",
+                "border": "1px solid rgba(239, 68, 68, 0.3)",
+                "borderRadius": 9999,
                 "color": "#ef4444",
-                "fontFamily": "Arial",
-                "fontSize": 18,
-                "fontWeight": "600",
-                "marginLeft": 20
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": 600,
+                "letterSpacing": "0.5px",
+                "marginRight": 10,
+                "paddingBottom": 6,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+                "paddingTop": 6,
+                "textAlign": "center",
+                "textTransform": "uppercase"
               }
             },
             "type": "ia.display.label"
@@ -90,8 +116,9 @@
           "basis": "50px"
         },
         "props": {
+          "alignItems": "center",
           "style": {
-            "backgroundColor": "#21262d"
+            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
           }
         },
         "type": "ia.container.flex"
@@ -103,7 +130,7 @@
               "name": "table"
             },
             "position": {
-              "basis": "887px"
+              "grow": 1
             },
             "propConfig": {
               "props.data": {
@@ -115,7 +142,7 @@
                   },
                   "transforms": [
                     {
-                      "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Define the query with a placeholder for the parameter\n    query \u003d \"\"\"\n    SELECT\n    sch.id AS \\\"ID\\\",\n    wo.workorder AS \\\"Work Order\\\",\n    wo.productcode AS \\\"Product Code\\\",\n    wo.quantity AS \\\"Quantity\\\",\n    sch.schedulestartdatetime AS \\\"Start Date\\\"\n    FROM workorder wo\n    INNER JOIN schedule sch ON sch.workorderid \u003d wo.id\n    WHERE wo.closed \u003d false\n    AND sch.lineid \u003d ?\n    AND sch.id NOT IN (SELECT scheduleid FROM run)\n    ORDER BY sch.schedulestartdatetime, sch.schedulefinishdatetime, wo.workorder\n    \"\"\"\n    \n    try:\n        # Read the line_id value from the client tag\n        tag_path \u003d self.view.params.tagPath + \"/Line/Line ID\"\n        line_id_result \u003d system.tag.readBlocking([tag_path])[0]\n        if line_id_result.quality.isGood():\n            line_id \u003d line_id_result.value\n        else:\n            raise ValueError(\"Failed to read tag value for line_id\")\n        \n        # Execute the query with the parameter\n        data \u003d system.db.runPrepQuery(query, [line_id], dbName)\n        \n        # Get column names from the dataset\n        column_names \u003d data.getColumnNames()\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        \n        # Check if there\u0027s data\n        if data.getRowCount() \u003e 0:\n            # Return data with all rows\n            result \u003d [\n                {\n                    col: row[col]\n                    for col in column_names\n                }\n                for row in json_data\n            ]\n        else:\n            # Return empty row with column headers (None values)\n            result \u003d [\n                {\n                    col: None\n                    for col in column_names\n                }\n            ]\n        \n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        # Return empty structure with expected column headers\n        return [\n            {\n                \u0027ID\u0027: None,\n                \u0027Work Order\u0027: None,\n                \u0027Product Code\u0027: None,\n                \u0027Quantity\u0027: None,\n                \u0027Start Date\u0027: None\n            }\n        ]",
+                      "code": "\n    # Define database name\n    dbName = \"mes_core\"\n    \n    # Define the query with a placeholder for the parameter\n    query = \"\"\"\n    SELECT\n    sch.id AS \\\"ID\\\",\n    wo.workorder AS \\\"Work Order\\\",\n    wo.productcode AS \\\"Product Code\\\",\n    wo.quantity AS \\\"Quantity\\\",\n    sch.schedulestartdatetime AS \\\"Start Date\\\"\n    FROM workorder wo\n    INNER JOIN schedule sch ON sch.workorderid = wo.id\n    WHERE wo.closed = false\n    AND sch.lineid = ?\n    AND sch.id NOT IN (SELECT scheduleid FROM run)\n    ORDER BY sch.schedulestartdatetime, sch.schedulefinishdatetime, wo.workorder\n    \"\"\"\n    \n    try:\n        # Read the line_id value from the client tag\n        tag_path = self.view.params.tagPath + \"/Line/Line ID\"\n        line_id_result = system.tag.readBlocking([tag_path])[0]\n        if line_id_result.quality.isGood():\n            line_id = line_id_result.value\n        else:\n            raise ValueError(\"Failed to read tag value for line_id\")\n        \n        # Execute the query with the parameter\n        data = system.db.runPrepQuery(query, [line_id], dbName)\n        \n        # Get column names from the dataset\n        column_names = data.getColumnNames()\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data = system.dataset.toPyDataSet(data)\n        \n        # Check if there's data\n        if data.getRowCount() > 0:\n            # Return data with all rows\n            result = [\n                {\n                    col: row[col]\n                    for col in column_names\n                }\n                for row in json_data\n            ]\n        else:\n            # Return empty row with column headers (None values)\n            result = [\n                {\n                    col: None\n                    for col in column_names\n                }\n            ]\n        \n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        # Return empty structure with expected column headers\n        return [\n            {\n                'ID': None,\n                'Work Order': None,\n                'Product Code': None,\n                'Quantity': None,\n                'Start Date': None\n            }\n        ]",
                       "type": "script"
                     }
                   ],
@@ -125,12 +152,12 @@
             },
             "props": {
               "bodyStyle": {
-                "backgroundColor": "#0d1117"
+                "backgroundColor": "#101418"
               },
               "cells": {
                 "style": {
                   "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
-                  "padding": "12px"
+                  "padding": "12px 16px"
                 }
               },
               "columns": [
@@ -596,12 +623,14 @@
                 }
               ],
               "headerStyle": {
-                "backgroundColor": "#21262d",
-                "borderBottom": "2px solid #10b981",
+                "backgroundColor": "#161b22",
+                "borderBottom": "2px solid #3b82f6",
                 "color": "#ffffff",
-                "fontSize": "14px",
-                "fontWeight": "600",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                "fontSize": "13px",
+                "fontWeight": 600,
                 "letterSpacing": "0.5px",
+                "padding": "12px 16px",
                 "textTransform": "uppercase"
               },
               "pager": {
@@ -609,7 +638,7 @@
               },
               "rows": {
                 "highlight": {
-                  "color": "rgba(16, 185, 129, 0.1)"
+                  "color": "rgba(59, 130, 246, 0.1)"
                 },
                 "striped": {
                   "color": {
@@ -619,22 +648,24 @@
                 },
                 "style": {
                   "color": "#ffffff",
+                  "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                   "fontSize": "14px",
-                  "fontWeight": "400"
+                  "fontWeight": 400
                 }
               },
               "selection": {
                 "style": {
-                  "backgroundColor": "rgba(16, 185, 129, 0.2)",
-                  "border": "1px solid #10b981"
+                  "backgroundColor": "rgba(59, 130, 246, 0.15)",
+                  "border": "1px solid #3b82f6"
                 }
               },
               "style": {
                 "backgroundColor": "transparent",
                 "border": "1px solid rgba(255, 255, 255, 0.08)",
-                "boxShadow": "0 16px 64px rgba(0, 0, 0, 0.4)",
-                "fontFamily": "\u0027Helvetica Neue\u0027, Arial, sans-serif",
-                "margin": 10
+                "borderRadius": 12,
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                "margin": 10,
+                "overflow": "hidden"
               }
             },
             "type": "ia.display.table"
@@ -644,14 +675,10 @@
           "name": "schedule_table"
         },
         "position": {
-          "basis": "470px",
           "grow": 1
         },
         "props": {
-          "direction": "column",
-          "style": {
-            "backgroundColor": "#21262d"
-          }
+          "direction": "column"
         },
         "type": "ia.container.flex"
       },
@@ -686,35 +713,35 @@
               "name": "Button"
             },
             "position": {
-              "basis": "55px",
+              "basis": "48px",
               "grow": 1
             },
             "props": {
+              "primary": false,
               "image": {
                 "icon": {
-                  "color": "#d1d5db",
+                  "color": "#ffffff",
                   "path": "material/play_circle_outline"
                 }
               },
               "style": {
                 "backgroundColor": "#10b981",
-                "borderBottomLeftRadius": 12,
-                "borderBottomRightRadius": 12,
-                "borderColor": "#9ca3af",
+                "borderColor": "#34d399",
+                "borderRadius": 10,
                 "borderStyle": "solid",
-                "borderTopLeftRadius": 12,
-                "borderTopRightRadius": 12,
-                "borderWidth": 2,
-                "margin": 20,
-                "marginBottom": 5,
-                "marginTop": 0
+                "borderWidth": 1,
+                "boxShadow": "0 4px 16px rgba(16, 185, 129, 0.3)",
+                "marginBottom": 10,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "marginTop": 5
               },
               "text": "Start Selected Order",
               "textStyle": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 18,
-                "fontWeight": "600"
+                "color": "#ffffff",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                "fontSize": 16,
+                "fontWeight": 600
               }
             },
             "type": "ia.input.button"
@@ -724,13 +751,9 @@
           "name": "start"
         },
         "position": {
-          "basis": "80px"
+          "basis": "70px"
         },
-        "props": {
-          "style": {
-            "backgroundColor": "#21262d"
-          }
-        },
+        "props": {},
         "type": "ia.container.flex"
       }
     ],
@@ -740,8 +763,10 @@
     "props": {
       "direction": "column",
       "style": {
-        "backgroundColor": "#0d1117",
-        "borderTopLeftRadius": 1
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 16,
+        "padding": 6
       }
     },
     "type": "ia.container.flex"

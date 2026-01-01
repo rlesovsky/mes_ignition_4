@@ -55,6 +55,8 @@
     "meta": {
       "name": "root"
     },
+    "position": {},
+    "custom": {},
     "children": [
       {
         "type": "ia.container.flex",
@@ -73,6 +75,7 @@
           "shrink": 0,
           "basis": "140px"
         },
+        "custom": {},
         "children": [
           {
             "type": "ia.container.flex",
@@ -86,6 +89,7 @@
             "position": {
               "basis": "50px"
             },
+            "custom": {},
             "children": [
               {
                 "type": "ia.input.radio-group",
@@ -115,6 +119,7 @@
                 "position": {
                   "basis": "32px"
                 },
+                "custom": {},
                 "propConfig": {
                   "props.radios[0].selected": {
                     "binding": {
@@ -155,6 +160,7 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "propConfig": {
                   "props.text": {
                     "binding": {
@@ -177,13 +183,13 @@
                     "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                     "fontSize": 12,
                     "fontWeight": 600,
+                    "letterSpacing": "0.5px",
                     "paddingBottom": 4,
                     "paddingLeft": 12,
                     "paddingRight": 12,
                     "paddingTop": 4,
                     "textAlign": "center",
-                    "textTransform": "uppercase",
-                    "letterSpacing": "0.5px"
+                    "textTransform": "uppercase"
                   }
                 },
                 "meta": {
@@ -193,6 +199,7 @@
                   "shrink": 0,
                   "basis": "85px"
                 },
+                "custom": {},
                 "propConfig": {
                   "props.style.backgroundColor": {
                     "binding": {
@@ -272,8 +279,10 @@
               "name": "order"
             },
             "position": {
+              "grow": 1,
               "basis": "24px"
             },
+            "custom": {},
             "children": [
               {
                 "type": "ia.display.label",
@@ -290,8 +299,9 @@
                   "name": "Label"
                 },
                 "position": {
-                  "basis": "100px"
-                }
+                  "basis": "110px"
+                },
+                "custom": {}
               },
               {
                 "type": "ia.display.label",
@@ -310,6 +320,7 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "propConfig": {
                   "props.text": {
                     "binding": {
@@ -341,8 +352,10 @@
               "name": "order_0"
             },
             "position": {
+              "grow": 1,
               "basis": "24px"
             },
+            "custom": {},
             "children": [
               {
                 "type": "ia.display.label",
@@ -359,8 +372,9 @@
                   "name": "Label_1"
                 },
                 "position": {
-                  "basis": "100px"
-                }
+                  "basis": "110px"
+                },
+                "custom": {}
               },
               {
                 "type": "ia.display.label",
@@ -379,6 +393,7 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "propConfig": {
                   "props.text": {
                     "binding": {
@@ -414,8 +429,10 @@
               "name": "times"
             },
             "position": {
+              "grow": 1,
               "basis": "24px"
             },
+            "custom": {},
             "children": [
               {
                 "type": "ia.display.label",
@@ -432,8 +449,9 @@
                   "name": "Label_1"
                 },
                 "position": {
-                  "basis": "100px"
-                }
+                  "basis": "110px"
+                },
+                "custom": {}
               },
               {
                 "type": "ia.display.label",
@@ -452,6 +470,7 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "propConfig": {
                   "props.text": {
                     "binding": {
@@ -487,8 +506,10 @@
               "name": "times_0"
             },
             "position": {
+              "grow": 1,
               "basis": "24px"
             },
+            "custom": {},
             "children": [
               {
                 "type": "ia.display.label",
@@ -505,8 +526,9 @@
                   "name": "Label_3"
                 },
                 "position": {
-                  "basis": "100px"
-                }
+                  "basis": "110px"
+                },
+                "custom": {}
               },
               {
                 "type": "ia.display.label",
@@ -525,6 +547,7 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "propConfig": {
                   "props.text": {
                     "binding": {
@@ -569,25 +592,87 @@
         "position": {
           "basis": "50px"
         },
+        "custom": {},
         "children": [
           {
-            "type": "ia.display.label",
+            "type": "ia.container.flex",
             "version": 0,
             "props": {
-              "text": "Progress",
-              "style": {
-                "color": "#9ca3af",
-                "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
-                "fontSize": 12,
-                "fontWeight": 500
-              }
+              "justify": "space-between",
+              "alignItems": "center"
             },
             "meta": {
-              "name": "Label_3"
+              "name": "progress_header"
             },
             "position": {
               "basis": "25px"
-            }
+            },
+            "custom": {},
+            "children": [
+              {
+                "type": "ia.display.label",
+                "version": 0,
+                "props": {
+                  "text": "Progress",
+                  "style": {
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 12,
+                    "fontWeight": 500
+                  }
+                },
+                "meta": {
+                  "name": "Label_3"
+                },
+                "position": {
+                  "basis": "80px"
+                },
+                "custom": {}
+              },
+              {
+                "type": "ia.display.label",
+                "version": 0,
+                "props": {
+                  "style": {
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                    "fontSize": 12,
+                    "fontWeight": 600,
+                    "textAlign": "right"
+                  }
+                },
+                "meta": {
+                  "name": "percent_label"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "custom": {},
+                "propConfig": {
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") > 0,\n  tag({view.params.tagPath} + \"/Line/Outfeed\") / tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") * 100,\n  0)"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") > 0,\n  round(tag({view.params.tagPath} + \"/Line/Outfeed\") / tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") * 100, 1) + \"%\",\n  \"0%\")"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                }
+              }
+            ]
           },
           {
             "type": "ia.display.progress",
@@ -595,9 +680,7 @@
             "props": {
               "bar": {
                 "color": "#21262d",
-                "determinate": {
-                  "color": "#3b82f6"
-                },
+                "determinate": {},
                 "indeterminate": {
                   "color": "#6b7280"
                 }
@@ -617,7 +700,22 @@
             "position": {
               "basis": "10px"
             },
+            "custom": {},
             "propConfig": {
+              "props.bar.determinate.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if(tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") > 0,\n  tag({view.params.tagPath} + \"/Line/Outfeed\") / tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") * 100,\n  0)"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage = float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage = max(0, min(100, percentage))\n\tif percentage >= 85:\n\t\treturn \"#10b981\"\n\telif percentage >= 70:\n\t\treturn \"#3b82f6\"\n\telif percentage >= 50:\n\t\treturn \"#f59e0b\"\n\telif percentage >= 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
               "props.max": {
                 "binding": {
                   "config": {
@@ -660,6 +758,7 @@
         "position": {
           "basis": "30px"
         },
+        "custom": {},
         "children": [
           {
             "type": "ia.display.label",
@@ -671,9 +770,9 @@
                 "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                 "fontSize": 14,
                 "fontWeight": 500,
+                "letterSpacing": "0.5px",
                 "textAlign": "center",
-                "textTransform": "uppercase",
-                "letterSpacing": "0.5px"
+                "textTransform": "uppercase"
               }
             },
             "meta": {
@@ -681,7 +780,8 @@
             },
             "position": {
               "grow": 1
-            }
+            },
+            "custom": {}
           },
           {
             "type": "ia.display.label",
@@ -693,9 +793,9 @@
                 "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                 "fontSize": 14,
                 "fontWeight": 500,
+                "letterSpacing": "0.5px",
                 "textAlign": "center",
-                "textTransform": "uppercase",
-                "letterSpacing": "0.5px"
+                "textTransform": "uppercase"
               }
             },
             "meta": {
@@ -703,7 +803,8 @@
             },
             "position": {
               "grow": 1
-            }
+            },
+            "custom": {}
           }
         ]
       },
@@ -721,6 +822,7 @@
         "position": {
           "grow": 1
         },
+        "custom": {},
         "children": [
           {
             "type": "ia.container.flex",
@@ -739,6 +841,7 @@
             "position": {
               "grow": 1
             },
+            "custom": {},
             "children": [
               {
                 "type": "ia.container.flex",
@@ -754,6 +857,7 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "children": [
                   {
                     "type": "ia.display.label",
@@ -772,7 +876,8 @@
                     },
                     "position": {
                       "grow": 1
-                    }
+                    },
+                    "custom": {}
                   },
                   {
                     "type": "ia.display.label",
@@ -783,8 +888,8 @@
                         "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                         "fontSize": 32,
                         "fontWeight": 300,
-                        "textAlign": "center",
-                        "letterSpacing": "-0.5px"
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -793,6 +898,7 @@
                     "position": {
                       "grow": 1
                     },
+                    "custom": {},
                     "propConfig": {
                       "props.text": {
                         "binding": {
@@ -823,7 +929,8 @@
                     },
                     "position": {
                       "grow": 1
-                    }
+                    },
+                    "custom": {}
                   },
                   {
                     "type": "ia.display.label",
@@ -834,8 +941,8 @@
                         "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                         "fontSize": 32,
                         "fontWeight": 300,
-                        "textAlign": "center",
-                        "letterSpacing": "-0.5px"
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -844,6 +951,7 @@
                     "position": {
                       "grow": 1
                     },
+                    "custom": {},
                     "propConfig": {
                       "props.text": {
                         "binding": {
@@ -873,6 +981,7 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "children": [
                   {
                     "type": "ia.display.label",
@@ -891,7 +1000,8 @@
                     },
                     "position": {
                       "grow": 1
-                    }
+                    },
+                    "custom": {}
                   },
                   {
                     "type": "ia.display.label",
@@ -902,8 +1012,8 @@
                         "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                         "fontSize": 32,
                         "fontWeight": 300,
-                        "textAlign": "center",
-                        "letterSpacing": "-0.5px"
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -912,6 +1022,7 @@
                     "position": {
                       "grow": 1
                     },
+                    "custom": {},
                     "propConfig": {
                       "props.text": {
                         "binding": {
@@ -948,7 +1059,8 @@
                     },
                     "position": {
                       "grow": 1
-                    }
+                    },
+                    "custom": {}
                   },
                   {
                     "type": "ia.display.label",
@@ -959,8 +1071,8 @@
                         "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
                         "fontSize": 32,
                         "fontWeight": 300,
-                        "textAlign": "center",
-                        "letterSpacing": "-0.5px"
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
                       }
                     },
                     "meta": {
@@ -969,6 +1081,7 @@
                     "position": {
                       "grow": 1
                     },
+                    "custom": {},
                     "propConfig": {
                       "props.text": {
                         "binding": {
@@ -1004,6 +1117,7 @@
             "position": {
               "grow": 1
             },
+            "custom": {},
             "children": [
               {
                 "type": "ia.container.flex",
@@ -1018,13 +1132,26 @@
                 "position": {
                   "grow": 1
                 },
+                "custom": {},
                 "children": [
                   {
                     "type": "ia.input.button",
                     "version": 0,
                     "props": {
                       "text": "End Order",
+                      "textStyle": {
+                        "color": "#fca5a5",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      },
                       "primary": false,
+                      "image": {
+                        "icon": {
+                          "path": "material/stop",
+                          "color": "#fca5a5"
+                        }
+                      },
                       "style": {
                         "backgroundColor": "rgba(239, 68, 68, 0.15)",
                         "borderColor": "rgba(239, 68, 68, 0.4)",
@@ -1032,18 +1159,6 @@
                         "borderStyle": "solid",
                         "borderWidth": 1,
                         "margin": 5
-                      },
-                      "textStyle": {
-                        "color": "#fca5a5",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 600
-                      },
-                      "image": {
-                        "icon": {
-                          "path": "material/stop",
-                          "color": "#fca5a5"
-                        }
                       }
                     },
                     "meta": {
@@ -1052,6 +1167,7 @@
                     "position": {
                       "basis": "44px"
                     },
+                    "custom": {},
                     "events": {
                       "component": {
                         "onActionPerformed": [
@@ -1100,37 +1216,26 @@
                 "position": {
                   "grow": 1
                 },
-                "propConfig": {
-                  "meta.visible": {
-                    "binding": {
-                      "config": {
-                        "path": "../../status/active_work_order/Label_0.props.text"
-                      },
-                      "transforms": [
-                        {
-                          "fallback": true,
-                          "inputType": "scalar",
-                          "mappings": [
-                            {
-                              "input": "No Active Work Order",
-                              "output": false
-                            }
-                          ],
-                          "outputType": "scalar",
-                          "type": "map"
-                        }
-                      ],
-                      "type": "property"
-                    }
-                  }
-                },
+                "custom": {},
                 "children": [
                   {
                     "type": "ia.input.button",
                     "version": 0,
                     "props": {
                       "text": "Categorize Scrap",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      },
                       "primary": false,
+                      "image": {
+                        "icon": {
+                          "path": "material/assignment",
+                          "color": "#9ca3af"
+                        }
+                      },
                       "style": {
                         "backgroundColor": "rgba(75, 85, 99, 0.4)",
                         "borderColor": "rgba(107, 114, 128, 0.5)",
@@ -1138,18 +1243,6 @@
                         "borderStyle": "solid",
                         "borderWidth": 1,
                         "margin": 5
-                      },
-                      "textStyle": {
-                        "color": "#d1d5db",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 600
-                      },
-                      "image": {
-                        "icon": {
-                          "path": "material/assignment",
-                          "color": "#9ca3af"
-                        }
                       }
                     },
                     "meta": {
@@ -1158,6 +1251,7 @@
                     "position": {
                       "basis": "44px"
                     },
+                    "custom": {},
                     "events": {
                       "component": {
                         "onActionPerformed": {
@@ -1188,7 +1282,19 @@
                     "version": 0,
                     "props": {
                       "text": "Cancel Order",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      },
                       "primary": false,
+                      "image": {
+                        "icon": {
+                          "path": "material/cancel",
+                          "color": "#9ca3af"
+                        }
+                      },
                       "style": {
                         "backgroundColor": "rgba(75, 85, 99, 0.4)",
                         "borderColor": "rgba(107, 114, 128, 0.5)",
@@ -1196,18 +1302,6 @@
                         "borderStyle": "solid",
                         "borderWidth": 1,
                         "margin": 5
-                      },
-                      "textStyle": {
-                        "color": "#d1d5db",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 600
-                      },
-                      "image": {
-                        "icon": {
-                          "path": "material/cancel",
-                          "color": "#9ca3af"
-                        }
                       }
                     },
                     "meta": {
@@ -1216,6 +1310,7 @@
                     "position": {
                       "basis": "44px"
                     },
+                    "custom": {},
                     "events": {
                       "component": {
                         "onActionPerformed": {
@@ -1240,7 +1335,31 @@
                       }
                     }
                   }
-                ]
+                ],
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "path": "../../status/active_work_order/Label_0.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": true,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "No Active Work Order",
+                              "output": false
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                }
               }
             ]
           }
