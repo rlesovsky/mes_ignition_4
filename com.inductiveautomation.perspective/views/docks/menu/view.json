@@ -32,11 +32,8 @@
               "items": [],
               "label": {
                 "icon": {
-                  "color": "#FFFFFF",
-                  "path": "material/home",
-                  "style": {
-                    "transform": "scale(1.2) translateX(-4px)"
-                  }
+                  "color": "#10b981",
+                  "path": "material/home"
                 },
                 "text": "Home"
               },
@@ -83,10 +80,7 @@
               "label": {
                 "icon": {
                   "color": "#3b82f6",
-                  "path": "material/dashboard",
-                  "style": {
-                    "transform": "scale(1.2) translateX(-4px)"
-                  }
+                  "path": "material/dashboard"
                 },
                 "text": "Lines"
               },
@@ -132,15 +126,12 @@
               "label": {
                 "icon": {
                   "color": "#10b981",
-                  "path": "material/assignment",
-                  "style": {
-                    "transform": "scale(1.2) translateX(-4px)"
-                  }
+                  "path": "material/assignment"
                 },
                 "text": "Production"
               },
               "navIcon": {
-                "color": "",
+                "color": "#FFFFFF",
                 "path": "material/chevron_right"
               },
               "resetOnClick": false,
@@ -202,15 +193,12 @@
               "label": {
                 "icon": {
                   "color": "#f59e0b",
-                  "path": "material/admin_panel_settings",
-                  "style": {
-                    "transform": "scale(1.2) translateX(-4px)"
-                  }
+                  "path": "material/admin_panel_settings"
                 },
                 "text": "Admin"
               },
               "navIcon": {
-                "color": "",
+                "color": "#FFFFFF",
                 "path": "material/chevron_right"
               },
               "resetOnClick": false,

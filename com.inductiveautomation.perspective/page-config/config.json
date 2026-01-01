@@ -43,7 +43,7 @@
       {
         "anchor": "fixed",
         "autoBreakpoint": 480,
-        "content": "overlay",
+        "content": "push",
         "handle": "hide",
         "iconUrl": "",
         "id": "menu",
