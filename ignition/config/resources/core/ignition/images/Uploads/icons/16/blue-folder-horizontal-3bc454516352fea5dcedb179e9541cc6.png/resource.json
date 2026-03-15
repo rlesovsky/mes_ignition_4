@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-folder-horizontal-3bc454516352fea5dcedb179e9541cc6.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 366,
+    "lastModificationSignature": "fa76dd0e197062924d22eda9e34dbbe59c3dae2a0660345fc93a61343674c34b",
+    "height": 16
+  }
+}

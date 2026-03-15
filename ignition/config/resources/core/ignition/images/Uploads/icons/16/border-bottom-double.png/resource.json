@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "border-bottom-double.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 366,
+    "lastModificationSignature": "a3ef75ff967bfce1733def98183dd1177aa4a8d3373d2ddbafea86e12a6e2294",
+    "height": 16
+  }
+}

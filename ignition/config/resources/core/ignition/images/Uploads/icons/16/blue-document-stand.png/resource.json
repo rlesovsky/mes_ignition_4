@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-stand.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 760,
+    "lastModificationSignature": "14304eea3fc8f02e4548755d03b9d25fa8f82cbff38f87d74c9b655ccfe5fa9a",
+    "height": 16
+  }
+}

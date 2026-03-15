@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drawer--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 727,
+    "lastModificationSignature": "5428c3a6ce8e47e55f876c44a42628dfdf1052f879d914632acd29e73cbbb751",
+    "height": 16
+  }
+}

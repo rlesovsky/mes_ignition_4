@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "compass--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 959,
+    "lastModificationSignature": "3e4f1111961d70633b1ff1745f08dd3fe68b195f4a5514d0ed421bbcde5d795e",
+    "height": 16
+  }
+}

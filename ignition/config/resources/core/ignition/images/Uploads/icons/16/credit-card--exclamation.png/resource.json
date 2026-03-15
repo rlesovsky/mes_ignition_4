@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "credit-card--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 722,
+    "lastModificationSignature": "70b35b47e3c93705629f1ac482dafbceb3355b69801e57dfe4764a239ea5fa0d",
+    "height": 16
+  }
+}

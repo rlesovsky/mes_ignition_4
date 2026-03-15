@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "monitor--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 625,
+    "lastModificationSignature": "8effaea0cdc9da20ead00e393ffeaac06a03af6c8557fba643e420b3fcb39b3b",
+    "height": 16
+  }
+}

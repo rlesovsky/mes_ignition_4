@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "opml-document.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 680,
+    "lastModificationSignature": "5d0db0557c9ab52917b1293f9e2eaeb7a0f9b65321984776caf3088844de2684",
+    "height": 16
+  }
+}

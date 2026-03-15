@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "box-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 494,
+    "lastModificationSignature": "6df5b44bc3dc2a6bd10cb3152a66fe2b03205873acd407590c2f14e11982e130",
+    "height": 16
+  }
+}

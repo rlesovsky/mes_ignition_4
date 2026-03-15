@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "zones.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 532,
+    "lastModificationSignature": "b87dee1518719c34d88c2f00cf39457c7aeb51deac3e4c04aae8016bfe9f4c4f",
+    "height": 16
+  }
+}

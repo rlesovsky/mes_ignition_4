@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-illustrator.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 778,
+    "lastModificationSignature": "b1f3d918ebc2b87771999726e5dc5ca39d3ee637987c04f83ade32be62334547",
+    "height": 16
+  }
+}

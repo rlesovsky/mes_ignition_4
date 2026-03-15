@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "disabled 2 icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 869,
+    "lastModificationSignature": "a2728ba139e9c5e2b30109acac955fcfc12f2defccedaf64d56fac04e74ea92b",
+    "height": 24
+  }
+}

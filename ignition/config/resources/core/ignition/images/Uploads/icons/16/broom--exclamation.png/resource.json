@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "broom--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 931,
+    "lastModificationSignature": "4afc9040552b5147c17197bf888f5581d39d26c7dfc00e553d1700d741311cea",
+    "height": 16
+  }
+}

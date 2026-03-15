@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-hf-insert-footer.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 635,
+    "lastModificationSignature": "6e8e9028dc08b98a3b21ad08d7619ac8388d9b1a82c7be8ea2b209675f1ae789",
+    "height": 16
+  }
+}

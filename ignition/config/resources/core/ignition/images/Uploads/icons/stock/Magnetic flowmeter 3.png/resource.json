@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Magnetic flowmeter 3.png"
+  ],
+  "attributes": {
+    "width": 92,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1712,
+    "lastModificationSignature": "62bf2a9fefa5fb6a9885ea3d12a0e4739490f0348d0ad3bb60d90e8484de6868",
+    "height": 138
+  }
+}

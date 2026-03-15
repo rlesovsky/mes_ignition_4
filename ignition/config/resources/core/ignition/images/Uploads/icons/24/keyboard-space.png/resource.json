@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "keyboard-space.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 559,
+    "lastModificationSignature": "6376eb229d61cc6f082abfac6835ad94ba63ffb8a7ebd5e71fd5f96242b23b9f",
+    "height": 24
+  }
+}

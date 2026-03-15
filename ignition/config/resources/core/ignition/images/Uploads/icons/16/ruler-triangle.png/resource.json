@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ruler-triangle.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 716,
+    "lastModificationSignature": "6c21e73bf1d3e0a75188cbbd612d4df79bf98da9a458ca9c78dfb5b625c65c79",
+    "height": 16
+  }
+}

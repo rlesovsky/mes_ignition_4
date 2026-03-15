@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cookie-bite.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 834,
+    "lastModificationSignature": "72bf5e82b7e9e709f3a19bffbc93f7d1036b156db11ff9b62a9549582fb06e30",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Remove_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4004,
+    "lastModificationSignature": "89601b8f9a8058d0bd81294290d7513eda4fe56200336ab9a609ff42a51c6a6d",
+    "height": 48
+  }
+}

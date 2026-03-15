@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "grey arrow.png"
+  ],
+  "attributes": {
+    "width": 90,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1426,
+    "lastModificationSignature": "c7f6a17acde754353f04927be061c202b9d383ac3438f1c9368ca7dc0cef6966",
+    "height": 90
+  }
+}

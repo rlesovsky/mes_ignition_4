@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-small-caps.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 274,
+    "lastModificationSignature": "df425bdb9f9b49558a0e0a5ae62631f96a7c2c130fd8b43afb262ff85200d58e",
+    "height": 16
+  }
+}

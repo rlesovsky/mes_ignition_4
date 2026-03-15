@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "soap-header.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 393,
+    "lastModificationSignature": "d389c9b915d181a01a250ad13e107c6580a727d0db1bb0309e2d3ef49d9eec8d",
+    "height": 16
+  }
+}

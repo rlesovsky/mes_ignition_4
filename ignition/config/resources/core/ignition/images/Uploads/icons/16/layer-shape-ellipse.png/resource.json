@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layer-shape-ellipse.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 740,
+    "lastModificationSignature": "d86a88e4b2a02b26d70c0a6e596ff0b5289f06f7d684a6b5c1fcf33457df4118",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paint-can--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 803,
+    "lastModificationSignature": "5273bd8b65f6dc9d0305970c2fd925fa71db4b80e3000627f5067c922bd9e80d",
+    "height": 16
+  }
+}

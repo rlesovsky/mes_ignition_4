@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "compile-error.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 629,
+    "lastModificationSignature": "b967a800bc8d5f43f3741909f9fb93697fbb91a7f9f1fbb1968441c988bfbf7a",
+    "height": 16
+  }
+}

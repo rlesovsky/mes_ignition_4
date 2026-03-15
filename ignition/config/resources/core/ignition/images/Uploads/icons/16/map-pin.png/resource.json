@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "map-pin.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 683,
+    "lastModificationSignature": "571e0131f2a94249336bf8dbdb4658f6d77ecc8663ffdde893868c6fafe60f9f",
+    "height": 16
+  }
+}

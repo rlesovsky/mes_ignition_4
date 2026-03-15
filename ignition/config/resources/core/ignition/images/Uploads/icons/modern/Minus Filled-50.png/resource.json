@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Minus Filled-50.png"
+  ],
+  "attributes": {
+    "width": 50,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 766,
+    "lastModificationSignature": "7d04d9cf8b54d1a9de5b86899113414b0fb613e586413c82612b7faa21f39f0c",
+    "height": 50
+  }
+}

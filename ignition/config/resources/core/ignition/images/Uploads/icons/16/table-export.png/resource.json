@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "table-export.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 640,
+    "lastModificationSignature": "7618a68575eeaa2765fd5ccdf28e8bf29f0dbdca43c252ca949f3a71cd9c2255",
+    "height": 16
+  }
+}

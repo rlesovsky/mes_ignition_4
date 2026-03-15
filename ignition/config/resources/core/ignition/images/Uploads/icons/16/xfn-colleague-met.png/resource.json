@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "xfn-colleague-met.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 559,
+    "lastModificationSignature": "921126b2eae304887512145d27d27e57e65310a6c76d2ecc30790038a80ce600",
+    "height": 16
+  }
+}

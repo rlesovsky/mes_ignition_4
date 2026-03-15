@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paper-plane--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 738,
+    "lastModificationSignature": "df67669f0a752dbd024b24f884d62d9840c84c2f4f696e49fe1ccfae8f279b43",
+    "height": 16
+  }
+}

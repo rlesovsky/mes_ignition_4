@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "inbox-document-music.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1069,
+    "lastModificationSignature": "e0267c2fd935b865eebc957d6845555e6b15b5f1a8fa6d476871140331c60e06",
+    "height": 24
+  }
+}

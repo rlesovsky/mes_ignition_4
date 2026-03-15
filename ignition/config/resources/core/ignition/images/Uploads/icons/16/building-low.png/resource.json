@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "building-low.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 581,
+    "lastModificationSignature": "519c5aff1417e4c75a1efd24e24038fd49e614d29b7e7271e5ebdaf2b3a62e41",
+    "height": 16
+  }
+}

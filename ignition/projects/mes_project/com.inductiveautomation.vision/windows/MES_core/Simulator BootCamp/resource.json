@@ -1,0 +1,19 @@
+{
+  "scope": "C",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "window.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "xml-format-version": 1,
+    "lastModificationSignature": "4f29d078bd6ea9173fde7c69a2e1aa321cc8532a6847bd6fbc333e65fe50a8cc",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2026-01-02T15:05:36Z"
+    },
+    "parameter-names": "edgePath,linePath"
+  }
+}

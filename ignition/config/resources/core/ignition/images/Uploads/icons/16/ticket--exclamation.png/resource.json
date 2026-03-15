@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ticket--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 804,
+    "lastModificationSignature": "975154f36a175d1870969bcef2e3cff7a6ff00f9aa5082df49674d287d546858",
+    "height": 16
+  }
+}

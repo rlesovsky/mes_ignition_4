@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-detective-gray.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 738,
+    "lastModificationSignature": "de85710b7e60d021e0f1760da7d19192c8262909543f627a37b2eebbc31c9b63",
+    "height": 16
+  }
+}

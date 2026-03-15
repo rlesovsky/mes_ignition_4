@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "network-firewall.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 509,
+    "lastModificationSignature": "3a0cc6c9210b07ffba1c3a27bcf4cc4de4c818b65faf0f5c1351f4f5629a6c84",
+    "height": 16
+  }
+}

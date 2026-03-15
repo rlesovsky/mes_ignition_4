@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "media-player-phone-horizontal.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 512,
+    "lastModificationSignature": "350b96c5d128f8b7d2bac61c110021822e27af9f215a6dbb37fb3892d5cd67c0",
+    "height": 16
+  }
+}

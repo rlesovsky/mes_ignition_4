@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pencil-field.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 549,
+    "lastModificationSignature": "c5f1926f77bca2b19d28079b1ab674098225478ee10ba662697cfd6738f042bb",
+    "height": 16
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ Scheduling ]\n\nSummary: List orders ready to be run, and schedule them.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModificationSignature": "ce89bfb4b4fffae9c07280c48c5df2877795e5ae5d2e1b68181c506db2cce1b4",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2026-01-02T16:30:29Z"
+    }
+  }
+}

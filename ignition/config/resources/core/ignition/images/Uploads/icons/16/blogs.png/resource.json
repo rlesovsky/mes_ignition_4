@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blogs.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 741,
+    "lastModificationSignature": "11e83279c0c1d60db49562efa68d215ceb97ff7aad314b892740614d4c2f1e5a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "headphone--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 747,
+    "lastModificationSignature": "6a39a8e6254e4ef4c7ce241e8eabc2f40a990820d7e8db5268676b0239141045",
+    "height": 16
+  }
+}

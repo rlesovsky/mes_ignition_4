@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-sad.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 755,
+    "lastModificationSignature": "dc599c2d680c31c1cacfcb82d0ccf2ccdb332cef522ff940ed7d91f47d60feee",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wrench icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 498,
+    "lastModificationSignature": "b0995f1567e432b8539f1bcbac9e1b0399a85f1a0b97d395c877dbed5096fabf",
+    "height": 16
+  }
+}

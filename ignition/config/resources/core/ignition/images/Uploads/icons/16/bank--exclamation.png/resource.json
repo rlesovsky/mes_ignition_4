@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "bank--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 939,
+    "lastModificationSignature": "0416f0a344df5071b6c5bbf0a4fff13b0e6739c763cf68648e75d78b135eee88",
+    "height": 16
+  }
+}

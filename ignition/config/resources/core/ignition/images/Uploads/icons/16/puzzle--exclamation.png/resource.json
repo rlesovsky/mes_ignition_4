@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "puzzle--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 878,
+    "lastModificationSignature": "452603b1c7974615c21f9ff837d43fcd570fbd117334866d5c259b7025071ec0",
+    "height": 16
+  }
+}

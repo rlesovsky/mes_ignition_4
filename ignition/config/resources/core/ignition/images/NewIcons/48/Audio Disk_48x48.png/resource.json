@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Audio Disk_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4729,
+    "lastModificationSignature": "48e92b03dcde3fdad9ab9fb9a6bd12ff0594b6c0f03aa07c70be0a62b5dd6a46",
+    "height": 48
+  }
+}

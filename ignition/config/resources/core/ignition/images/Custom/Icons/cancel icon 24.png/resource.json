@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cancel icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1010,
+    "lastModificationSignature": "24cd9b768dfff6814feb2a65ccc8b5aade1f1df752d840bdd34a7341741f52f6",
+    "height": 24
+  }
+}

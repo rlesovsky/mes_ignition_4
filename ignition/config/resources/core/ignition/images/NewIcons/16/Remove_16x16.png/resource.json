@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Remove_16x16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 829,
+    "lastModificationSignature": "9b8191e26dec03d5a3a25cc17402dd6a38aabed5926dc655167ce691c66a1fe1",
+    "height": 16
+  }
+}

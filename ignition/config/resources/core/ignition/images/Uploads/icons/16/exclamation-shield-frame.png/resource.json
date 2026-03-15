@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "exclamation-shield-frame.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 693,
+    "lastModificationSignature": "1c63f1f783c241f0e90384a428fe8dd2687fbc6df3bb862eca8c9826ceb81ab6",
+    "height": 16
+  }
+}

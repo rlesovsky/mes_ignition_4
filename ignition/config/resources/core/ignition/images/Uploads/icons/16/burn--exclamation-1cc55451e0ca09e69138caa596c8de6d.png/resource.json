@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "burn--exclamation-1cc55451e0ca09e69138caa596c8de6d.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 813,
+    "lastModificationSignature": "b08c096401fd51afe08a1e8dd95d5e694c416a22e38eaefd9f83257735161a7f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pencil--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 695,
+    "lastModificationSignature": "62fb0e1d4f46afeb04dc78d52e57cbc27fcc6331ddcbb02beaf487cdabc66143",
+    "height": 16
+  }
+}

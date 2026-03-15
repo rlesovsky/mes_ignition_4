@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-female.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2009,
+    "lastModificationSignature": "db9d15c0620d87d94aa9c085693db0ad0d74e4a81cce429ef2e922595ecfeb85",
+    "height": 24
+  }
+}

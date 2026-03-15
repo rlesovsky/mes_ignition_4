@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "MES 48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2992,
+    "lastModificationSignature": "79aa07db3056dfc0cb8b8dbbf300f654ece2d22f02e68ba415c84004e18294ff",
+    "height": 48
+  }
+}

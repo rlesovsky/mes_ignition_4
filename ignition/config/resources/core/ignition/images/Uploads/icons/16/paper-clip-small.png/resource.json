@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paper-clip-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 354,
+    "lastModificationSignature": "a81b6851dab1527c2879c1a601ea163b23bff765ef32a25bae568aebf3268f70",
+    "height": 16
+  }
+}

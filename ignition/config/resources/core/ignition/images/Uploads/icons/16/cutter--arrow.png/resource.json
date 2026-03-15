@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cutter--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 675,
+    "lastModificationSignature": "03ff4ea36389ba8636e7c52f31d12a57cd4e351514f34b8d7bd1ff57b5d91de3",
+    "height": 16
+  }
+}

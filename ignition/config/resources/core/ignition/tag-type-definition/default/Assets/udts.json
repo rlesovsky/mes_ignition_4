@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Simulator",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "memory",
+        "dataType": "String",
+        "name": "A_Notes",
+        "value": "Quality Setpoint Determines how Simulator Runs, Refresh to Zero, Enable to Start",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "Boolean",
+        "name": "Enable",
+        "value": false,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Infeed",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Outfeed",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "Float4",
+        "name": "Quality Setpoint",
+        "value": 0.95,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\t\n\tif currentValue.value \u003d\u003d 1 and not initialChange:\n\t\tsystem.tag.writeBlocking([\"[.]Infeed\",\"[.]Outfeed\",\"[.]Waste\",\"[.]State\"], [0,0,0,0])"
+          }
+        ],
+        "dataType": "Boolean",
+        "name": "Refresh",
+        "value": false,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\tfrom random import randint\n\tif not initialChange and currentValue.value % 5 \u003d\u003d 0: #every five seconds\n\t\ttags \u003d system.tag.readBlocking([\"[.]Infeed\",\"[.]Outfeed\",\"[.]Waste\",\"[.]Quality Setpoint\"])\n\t\tinfeed \u003d tags[0].value\n\t\toutfeed \u003d tags[1].value\n\t\twaste \u003d tags[2].value\n\t\tsetpoint \u003d tags[3].value*100\n\t\tx \u003d randint(0,100)\n\t\tif x \u003c setpoint:\n\t\t\tsystem.tag.writeAsync([\"[.]Infeed\",\"[.]Outfeed\",\"[.]Waste\"], [infeed+1,outfeed+1,waste])\n\t\telse:\n\t\t\tsystem.tag.writeAsync([\"[.]Infeed\",\"[.]Outfeed\",\"[.]Waste\"], [infeed+1,outfeed,waste+1])"
+          }
+        ],
+        "expression": "//This simulator tag is designed to create a running count from 0 to 60\r\nif(\r\n{[.]Enable}\u003d1,\r\ngetSecond(now()),\r\n-1\r\n)",
+        "name": "Simulator",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "State",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Waste",
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
+    "name": "Most Common Edge Example",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "expr",
+        "expression": "try(\r\n{[.]Outfeed}-{[.]Waste},\r\n-1\r\n)",
+        "name": "Infeed",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "opc",
+        "name": "Outfeed",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "opc",
+        "name": "State",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Waste",
+        "tagType": "AtomicTag"
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-folder-bookmark.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 622,
+    "lastModificationSignature": "5afa89ec87f128f93a4cdc7dd4d187533b8027031f29861efc6f0813b87e754b",
+    "height": 16
+  }
+}

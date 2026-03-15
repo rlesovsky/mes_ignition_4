@@ -1,0 +1,22 @@
+{
+  "dataFormatTypeWrapper": "Sparkplug_B_v1_0_Protobuf",
+  "hostnameVerification": true,
+  "keepAlive": 30,
+  "mqttServerConnectionEnabled": true,
+  "password": {
+    "data": {
+      "ciphertext": "Tu1men6sPdg",
+      "encrypted_key": "3Vwj90McaOmuCMvGEMl8qe9z8KE1HErPgqTyoAI5VjpOFZwuLVyDGw",
+      "iv": "Rz13ItRxJGo9rtl8",
+      "protected": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIiwiaWF0IjoxNzY3NDEzODAyLCJ6aXAiOiJERUYifQ",
+      "tag": "hUzCH7jitrVx7dcfa2EkmQ"
+    },
+    "type": "Embedded"
+  },
+  "reconnectDelay": 1000,
+  "rpcHostnameVerification": true,
+  "serverSet": "Bootcamp",
+  "subscribeToLegacyStateTopic": true,
+  "url": "tcp://mes-hive-edge:1883",
+  "username": "admin"
+}

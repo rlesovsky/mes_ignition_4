@@ -1,0 +1,53 @@
+[
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Line State",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "LineID",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "State Run Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DateTime"
+    },
+    "name": "State Start Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DataSet",
+      "datasource": "mes_core",
+      "query": "SELECT\r\n\tid,\r\n\treasoncode,\r\n\treasonname,\r\n\tparentid,\r\n\tplannedreason\r\nFROM statereason\r\nWHERE parentid \u003d {lineID}\r\nORDER BY reasoncode"
+    },
+    "name": "State Reason",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Enable",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "RunID",
+    "tagType": "AtomicTag"
+  }
+]

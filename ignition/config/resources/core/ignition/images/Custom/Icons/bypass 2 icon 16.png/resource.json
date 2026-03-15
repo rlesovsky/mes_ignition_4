@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "bypass 2 icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 694,
+    "lastModificationSignature": "d6fd41508be500ca6ff4a4c06e50ab22f6d1347c99f0ca9174af7db949a931b0",
+    "height": 16
+  }
+}

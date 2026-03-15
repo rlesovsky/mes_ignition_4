@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chain--arrow-23c6545105e0c00d4240bbf9d0dbce75.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 576,
+    "lastModificationSignature": "5ff43414fdc17b21656585bff979f155df9ea26a8bd13ba282c55351d797fb86",
+    "height": 16
+  }
+}

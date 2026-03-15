@@ -1,0 +1,11 @@
+{
+  "profile": {
+    "type": "com.flowsoftware.timebase.historian"
+  },
+  "settings": {
+    "BASE_URL": "http://192.168.10.253:4511",
+    "CLIENT_ID": "",
+    "DATASET_PREFIX": "ignition",
+    "IDP_URL": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "glass_numbers_2 icon 24 sepia.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1340,
+    "lastModificationSignature": "8de54b4a413b31dcad28be35a1f3e96806e2c5027eeb007f2acc5746855be238",
+    "height": 24
+  }
+}

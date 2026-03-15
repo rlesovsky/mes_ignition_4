@@ -1,0 +1,1312 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "icon"
+                        },
+                        "props": {
+                          "path": "material/account_tree",
+                          "style": {
+                            "color": "#3b82f6",
+                            "fontSize": "22px"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--mes-text-primary, #ffffff)",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": "16px",
+                            "fontWeight": "600",
+                            "letterSpacing": "-0.3px"
+                          },
+                          "text": "Production Model"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "56px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "classes": "mes-card-header",
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+                        "gap": "12px",
+                        "padding": "16px 20px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Tree"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "appearance": {
+                        "defaultNodeIcons": {
+                          "collapsed": {
+                            "path": "material/folder",
+                            "style": {
+                              "color": "#f59e0b"
+                            }
+                          },
+                          "empty": {
+                            "path": "material/circle",
+                            "style": {
+                              "color": "#6b7280",
+                              "fontSize": "8px"
+                            }
+                          },
+                          "expanded": {
+                            "path": "material/folder_open",
+                            "style": {
+                              "color": "#f59e0b"
+                            }
+                          }
+                        },
+                        "expandIcons": {
+                          "collapsed": {
+                            "path": "material/chevron_right",
+                            "style": {
+                              "color": "#6b7280"
+                            }
+                          },
+                          "expanded": {
+                            "path": "material/expand_more",
+                            "style": {
+                              "color": "#9ca3af"
+                            }
+                          }
+                        },
+                        "itemStyle": {
+                          "borderRadius": "6px",
+                          "color": "var(--mes-text-primary, #ffffff)",
+                          "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "fontSize": "13px",
+                          "fontWeight": "400",
+                          "marginBottom": "2px",
+                          "padding": "8px 12px"
+                        },
+                        "selectedStyle": {
+                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
+                          "borderLeft": "3px solid #10b981",
+                          "borderRadius": "8px"
+                        }
+                      },
+                      "items": [
+                        {
+                          "data": "I am string data for Item 1",
+                          "expanded": true,
+                          "icon": {
+                            "color": "#3b82f6",
+                            "path": "material/corporate_fare"
+                          },
+                          "items": [
+                            {
+                              "data": {
+                                "someKey": "Information here."
+                              },
+                              "expanded": true,
+                              "icon": {
+                                "color": "#9ca3af",
+                                "path": "material/business",
+                                "style": {}
+                              },
+                              "items": [
+                                {
+                                  "data": {
+                                    "things": [
+                                      "one potato",
+                                      "two potato",
+                                      "three potato",
+                                      "four",
+                                      "boilem, mash em, put em in a stew"
+                                    ]
+                                  },
+                                  "expanded": true,
+                                  "icon": {
+                                    "color": "#9ca3af",
+                                    "path": "material/domain",
+                                    "style": {}
+                                  },
+                                  "items": [
+                                    {
+                                      "data": {},
+                                      "expanded": false,
+                                      "icon": {
+                                        "color": "#10b981",
+                                        "path": "material/precision_manufacturing"
+                                      },
+                                      "items": [],
+                                      "label": "Line 1"
+                                    },
+                                    {
+                                      "data": {},
+                                      "expanded": false,
+                                      "icon": {
+                                        "color": "#10b981",
+                                        "path": "material/precision_manufacturing"
+                                      },
+                                      "items": [],
+                                      "label": "Line 2"
+                                    }
+                                  ],
+                                  "label": "Area"
+                                }
+                              ],
+                              "label": "Site"
+                            }
+                          ],
+                          "label": "Enterprise"
+                        }
+                      ],
+                      "selection": [
+                        "0/0/0/0"
+                      ],
+                      "selectionData": [
+                        {
+                          "itemPath": "0/0/0/0",
+                          "value": {}
+                        }
+                      ],
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "padding": "12px"
+                      }
+                    },
+                    "type": "ia.display.tree"
+                  }
+                ],
+                "meta": {
+                  "name": "treeCard"
+                },
+                "position": {
+                  "basis": "280px",
+                  "grow": 1
+                },
+                "props": {
+                  "classes": "mes-card mes-shadow-md",
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--mes-bg-card, #21262d)",
+                    "border": "1px solid rgba(255, 255, 255, 0.05)",
+                    "borderRadius": "16px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "icon"
+                        },
+                        "props": {
+                          "path": "material/sell",
+                          "style": {
+                            "color": "#f59e0b",
+                            "fontSize": "22px"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--mes-text-primary, #ffffff)",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": "16px",
+                            "fontWeight": "600",
+                            "letterSpacing": "-0.3px"
+                          },
+                          "text": "Tag Browser"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "56px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "classes": "mes-card-header",
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+                        "gap": "12px",
+                        "padding": "16px 20px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "TagBrowseTree"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "root": {
+                        "path": "[default]Enterprise/Site/Area/Line 1/Line"
+                      },
+                      "selection": {
+                        "values": [
+                          "[default]Enterprise/Site/Area/Line 1/Line/Parameters.lineID"
+                        ]
+                      },
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": "13px",
+                        "margin": 5,
+                        "padding": "12px"
+                      }
+                    },
+                    "type": "ia.display.tag-browse-tree"
+                  }
+                ],
+                "meta": {
+                  "name": "tagBrowseCard"
+                },
+                "position": {
+                  "basis": "350px",
+                  "grow": 1
+                },
+                "props": {
+                  "classes": "mes-card mes-shadow-md",
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--mes-bg-card, #21262d)",
+                    "border": "1px solid rgba(255, 255, 255, 0.05)",
+                    "borderRadius": "16px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "data_config"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "icon"
+                        },
+                        "props": {
+                          "path": "material/report_problem",
+                          "style": {
+                            "color": "#f59e0b",
+                            "fontSize": "22px"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--mes-text-primary, #ffffff)",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": "16px",
+                            "fontWeight": "600",
+                            "letterSpacing": "-0.3px"
+                          },
+                          "text": "State Reasons"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "subtitle"
+                        },
+                        "props": {
+                          "style": {
+                            "borderRadius": "9999px",
+                            "color": "#9ca3af",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": "12px",
+                            "fontWeight": "500",
+                            "marginLeft": "8px",
+                            "padding": "4px 10px"
+                          },
+                          "text": "Downtime Reasons"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "spacer"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "flexGrow": 1
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "addIcon"
+                                },
+                                "props": {
+                                  "path": "material/add",
+                                  "style": {
+                                    "color": "#10b981",
+                                    "fontSize": "20px"
+                                  }
+                                },
+                                "type": "ia.display.icon"
+                              }
+                            ],
+                            "meta": {
+                              "name": "addBtn"
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "classes": "ui_ux/hover_glow_green",
+                              "justifyContent": "center",
+                              "style": {
+                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
+                                "border": "1px solid rgba(16, 185, 129, 0.2)",
+                                "borderRadius": "8px",
+                                "cursor": "pointer",
+                                "height": "36px",
+                                "width": "36px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "deleteIcon"
+                                },
+                                "props": {
+                                  "path": "material/delete_outline",
+                                  "style": {
+                                    "color": "#ef4444",
+                                    "fontSize": "20px"
+                                  }
+                                },
+                                "type": "ia.display.icon"
+                              }
+                            ],
+                            "meta": {
+                              "name": "deleteBtn"
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "justifyContent": "center",
+                              "style": {
+                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                                "border": "1px solid rgba(239, 68, 68, 0.2)",
+                                "borderRadius": "8px",
+                                "cursor": "pointer",
+                                "height": "36px",
+                                "width": "36px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "actions"
+                        },
+                        "props": {
+                          "style": {
+                            "gap": "8px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "56px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "classes": "mes-card-header",
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+                        "gap": "12px",
+                        "padding": "16px 20px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "stateReasonsTable"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    # Define database name (replace with your actual database name)\n    dbName \u003d \"mes_core\"\n    \n    # Define the query with hardcoded ParentID (PostgreSQL with column aliases)\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        parentid AS \\\"ParentID\\\",\n        reasonname AS \\\"ReasonName\\\", \n        reasoncode AS \\\"ReasonCode\\\",\n        recorddowntime AS \\\"RecordDowntime\\\",\n        planneddowntime AS \\\"PlannedDowntime\\\",\n        operatorselectable AS \\\"OperatorSelectable\\\",\n        subreasonof AS \\\"SubReasonOf\\\"\n    FROM statereason WHERE parentid \u003d ?\"\"\"\n    try:\n        # Execute the query with ParentID \u003d 1\n        data \u003d system.db.runPrepQuery(query, [1], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n        # Uncomment the following line to return the dataset directly (e.g., for Vision)\n        # return data\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "bodyStyle": {
+                        "backgroundColor": "#101418"
+                      },
+                      "cells": {
+                        "style": {
+                          "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
+                          "padding": "12px 16px"
+                        }
+                      },
+                      "classes": "mes-table",
+                      "columns": [
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "ReasonName",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "REASON NAME"
+                          },
+                          "justify": "left",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": ""
+                        },
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "ReasonCode",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "REASON CODE"
+                          },
+                          "justify": "left",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "140px"
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "editable": false,
+                          "field": "PlannedDowntime",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "PLANNED"
+                          },
+                          "justify": "center",
+                          "render": "boolean",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "100px"
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "editable": false,
+                          "field": "OperatorSelectable",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "OPERATOR SELECT"
+                          },
+                          "justify": "center",
+                          "render": "boolean",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "140px"
+                        },
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "SubReasonOf",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "SUB-REASON OF"
+                          },
+                          "justify": "left",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "140px"
+                        }
+                      ],
+                      "headerStyle": {
+                        "backgroundColor": "#21262d",
+                        "borderBottom": "2px solid #10b981",
+                        "color": "var(--mes-text-primary, #ffffff)",
+                        "fontSize": "13px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.5px",
+                        "padding": "14px 16px",
+                        "textTransform": "uppercase"
+                      },
+                      "pager": {
+                        "bottom": false
+                      },
+                      "rows": {
+                        "highlight": {
+                          "color": "rgba(16, 185, 129, 0.08)"
+                        },
+                        "striped": {
+                          "color": {
+                            "even": "#101418",
+                            "odd": "#161b22"
+                          }
+                        },
+                        "style": {
+                          "color": "var(--mes-text-primary, #ffffff)",
+                          "fontSize": "14px",
+                          "fontWeight": "400"
+                        }
+                      },
+                      "selection": {
+                        "style": {
+                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
+                          "borderLeft": "3px solid #10b981"
+                        }
+                      },
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 10,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.table"
+                  }
+                ],
+                "meta": {
+                  "name": "state_reasons"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "classes": "mes-card mes-shadow-md",
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--mes-bg-card, #21262d)",
+                    "border": "1px solid rgba(255, 255, 255, 0.05)",
+                    "borderRadius": "16px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "icon"
+                        },
+                        "props": {
+                          "path": "material/tag",
+                          "style": {
+                            "color": "#3b82f6",
+                            "fontSize": "22px"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--mes-text-primary, #ffffff)",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": "16px",
+                            "fontWeight": "600",
+                            "letterSpacing": "-0.3px"
+                          },
+                          "text": "Count Tags"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "addIcon"
+                                },
+                                "props": {
+                                  "path": "material/add",
+                                  "style": {
+                                    "color": "#10b981",
+                                    "fontSize": "20px"
+                                  }
+                                },
+                                "type": "ia.display.icon"
+                              }
+                            ],
+                            "meta": {
+                              "name": "addBtn"
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "classes": "ui_ux/hover_glow_green",
+                              "justifyContent": "center",
+                              "style": {
+                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
+                                "border": "1px solid rgba(16, 185, 129, 0.2)",
+                                "borderRadius": "8px",
+                                "cursor": "pointer",
+                                "height": "36px",
+                                "width": "36px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "deleteIcon"
+                                },
+                                "props": {
+                                  "path": "material/delete_outline",
+                                  "style": {
+                                    "color": "#ef4444",
+                                    "fontSize": "20px"
+                                  }
+                                },
+                                "type": "ia.display.icon"
+                              }
+                            ],
+                            "meta": {
+                              "name": "deleteBtn"
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "justifyContent": "center",
+                              "style": {
+                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                                "border": "1px solid rgba(239, 68, 68, 0.2)",
+                                "borderRadius": "8px",
+                                "cursor": "pointer",
+                                "height": "36px",
+                                "width": "36px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "actions"
+                        },
+                        "props": {
+                          "style": {
+                            "gap": "8px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "56px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "flex-end",
+                      "classes": "mes-card-header",
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+                        "gap": "12px",
+                        "padding": "16px 20px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "countTagTable"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    # Define database name (replace with your actual database name)\n    dbName \u003d \"mes_core\"\n    \n    # Define the query with hardcoded ParentID (PostgreSQL with column aliases)\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        tagpath AS \\\"TagPath\\\",\n        parentid AS \\\"ParentID\\\"\n    FROM counttag WHERE parentid \u003d ?\"\"\"\n    try:\n        # Execute the query with ParentID \u003d 1\n        data \u003d system.db.runPrepQuery(query, [1], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n        # Uncomment the following line to return the dataset directly (e.g., for Vision)\n        # return data\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "bodyStyle": {
+                        "backgroundColor": "#101418"
+                      },
+                      "cells": {
+                        "style": {
+                          "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
+                          "padding": "12px 16px"
+                        }
+                      },
+                      "classes": "mes-table",
+                      "columns": [
+                        {
+                          "align": "center",
+                          "editable": false,
+                          "field": "ID",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "ID"
+                          },
+                          "justify": "center",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "80px"
+                        },
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "TagPath",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "TAG PATH"
+                          },
+                          "justify": "left",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": ""
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "toggleSwitch",
+                          "editable": false,
+                          "field": "ParentID",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "PARENT ID"
+                          },
+                          "justify": "center",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "toggleSwitch": {
+                            "color": {
+                              "selected": "#10b981",
+                              "unselected": "rgba(255, 255, 255, 0.3)"
+                            }
+                          },
+                          "visible": true,
+                          "width": "120px"
+                        }
+                      ],
+                      "headerStyle": {
+                        "backgroundColor": "#21262d",
+                        "borderBottom": "2px solid #3b82f6",
+                        "color": "var(--mes-text-primary, #ffffff)",
+                        "fontSize": "13px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.5px",
+                        "padding": "14px 16px",
+                        "textTransform": "uppercase"
+                      },
+                      "pager": {
+                        "bottom": false
+                      },
+                      "rows": {
+                        "highlight": {
+                          "color": "rgba(16, 185, 129, 0.08)"
+                        },
+                        "striped": {
+                          "color": {
+                            "even": "#101418",
+                            "odd": "#161b22"
+                          }
+                        },
+                        "style": {
+                          "color": "var(--mes-text-primary, #ffffff)",
+                          "fontSize": "14px",
+                          "fontWeight": "400"
+                        }
+                      },
+                      "selection": {
+                        "style": {
+                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
+                          "borderLeft": "3px solid #10b981"
+                        }
+                      },
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 10,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.table"
+                  }
+                ],
+                "meta": {
+                  "name": "count_tag"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "classes": "mes-card mes-shadow-md",
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--mes-bg-card, #21262d)",
+                    "border": "1px solid rgba(255, 255, 255, 0.05)",
+                    "borderRadius": "16px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "icon"
+                        },
+                        "props": {
+                          "path": "material/format_list_numbered",
+                          "style": {
+                            "color": "#10b981",
+                            "fontSize": "22px"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--mes-text-primary, #ffffff)",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": "16px",
+                            "fontWeight": "600",
+                            "letterSpacing": "-0.3px"
+                          },
+                          "text": "Count Types"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "addIcon"
+                                },
+                                "props": {
+                                  "path": "material/add",
+                                  "style": {
+                                    "color": "#10b981",
+                                    "fontSize": "20px"
+                                  }
+                                },
+                                "type": "ia.display.icon"
+                              }
+                            ],
+                            "meta": {
+                              "name": "addBtn"
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "classes": "ui_ux/hover_glow_green",
+                              "justifyContent": "center",
+                              "style": {
+                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
+                                "border": "1px solid rgba(16, 185, 129, 0.2)",
+                                "borderRadius": "8px",
+                                "cursor": "pointer",
+                                "height": "36px",
+                                "width": "36px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "deleteIcon"
+                                },
+                                "props": {
+                                  "path": "material/delete_outline",
+                                  "style": {
+                                    "color": "#ef4444",
+                                    "fontSize": "20px"
+                                  }
+                                },
+                                "type": "ia.display.icon"
+                              }
+                            ],
+                            "meta": {
+                              "name": "deleteBtn"
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "justifyContent": "center",
+                              "style": {
+                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                                "border": "1px solid rgba(239, 68, 68, 0.2)",
+                                "borderRadius": "8px",
+                                "cursor": "pointer",
+                                "height": "36px",
+                                "width": "36px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "actions"
+                        },
+                        "props": {
+                          "style": {
+                            "gap": "8px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "56px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "classes": "mes-card-header",
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+                        "gap": "12px",
+                        "padding": "16px 20px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "countTypesTable"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    # Define database name (replace with your actual database name)\n    dbName \u003d \"mes_core\"\n    \n    # Define the query (PostgreSQL with column aliases)\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        counttype AS \\\"CountType\\\"\n    FROM counttype\"\"\"\n    try:\n        # Execute the query\n        data \u003d system.db.runQuery(query, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n        # Uncomment the following line to return the dataset directly (e.g., for Vision)\n        # return data\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "bodyStyle": {
+                        "backgroundColor": "#101418"
+                      },
+                      "cells": {
+                        "style": {
+                          "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
+                          "padding": "12px 16px"
+                        }
+                      },
+                      "classes": "mes-table",
+                      "columns": [
+                        {
+                          "align": "center",
+                          "editable": false,
+                          "field": "ID",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "ID"
+                          },
+                          "justify": "center",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "80px"
+                        },
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "CountType",
+                          "header": {
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "COUNT TYPE"
+                          },
+                          "justify": "left",
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": ""
+                        }
+                      ],
+                      "headerStyle": {
+                        "backgroundColor": "#21262d",
+                        "borderBottom": "2px solid #10b981",
+                        "color": "var(--mes-text-primary, #ffffff)",
+                        "fontSize": "13px",
+                        "fontWeight": "600",
+                        "letterSpacing": "0.5px",
+                        "padding": "14px 16px",
+                        "textTransform": "uppercase"
+                      },
+                      "pager": {
+                        "bottom": false
+                      },
+                      "rows": {
+                        "highlight": {
+                          "color": "rgba(16, 185, 129, 0.08)"
+                        },
+                        "striped": {
+                          "color": {
+                            "even": "#101418",
+                            "odd": "#161b22"
+                          }
+                        },
+                        "style": {
+                          "color": "var(--mes-text-primary, #ffffff)",
+                          "fontSize": "14px",
+                          "fontWeight": "400"
+                        }
+                      },
+                      "selection": {
+                        "style": {
+                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
+                          "borderLeft": "3px solid #10b981"
+                        }
+                      },
+                      "style": {
+                        "backgroundColor": "#101418",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 10,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.table"
+                  }
+                ],
+                "meta": {
+                  "name": "count_types"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "classes": "mes-card mes-shadow-md",
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--mes-bg-card, #21262d)",
+                    "border": "1px solid rgba(255, 255, 255, 0.05)",
+                    "borderRadius": "16px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "tag_config"
+            },
+            "position": {
+              "grow": 3
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "root"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--mes-bg-primary, #0d1117)",
+            "gap": "16px",
+            "padding": "16px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

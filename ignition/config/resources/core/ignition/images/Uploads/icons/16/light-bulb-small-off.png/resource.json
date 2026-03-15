@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "light-bulb-small-off.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 312,
+    "lastModificationSignature": "829ee76f2f2d631eb5e0b15a90b0f1734e55f8eb6fb910f0048e81f3e7c03a7b",
+    "height": 16
+  }
+}

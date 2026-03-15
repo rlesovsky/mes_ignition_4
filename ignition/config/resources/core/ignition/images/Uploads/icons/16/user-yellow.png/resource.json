@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-yellow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 671,
+    "lastModificationSignature": "ded0a134278f20f3538c196b4c613b063a8e739fe1d8ce00002a1839f738a6cd",
+    "height": 16
+  }
+}

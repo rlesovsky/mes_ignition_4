@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-scroll-bar-horizontal.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 335,
+    "lastModificationSignature": "b27bb743e6ce4d25ff2c9f903310b972c4913cb746fb42edf382d64b14b06a0d",
+    "height": 16
+  }
+}

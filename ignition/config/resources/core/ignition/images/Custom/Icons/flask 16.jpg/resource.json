@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "flask 16.jpg"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "JPEG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 827,
+    "lastModificationSignature": "beed437614dc1940a1b47c43a8aa47400e2344d2b60bfb8804f31c094aa36d69",
+    "height": 16
+  }
+}

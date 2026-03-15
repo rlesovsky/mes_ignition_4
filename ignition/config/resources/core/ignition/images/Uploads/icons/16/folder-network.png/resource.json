@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "folder-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 573,
+    "lastModificationSignature": "39d8fa20a98d30892dbc3dd63885bdaecd6a7fa706389216875c81f6179cd359",
+    "height": 16
+  }
+}

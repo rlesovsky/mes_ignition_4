@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-list-order.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 299,
+    "lastModificationSignature": "6a61ca23d010f9d668432a9ebbcd06e28ebbde174d6ac73aba75044f9389fec5",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "recycling24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1088,
+    "lastModificationSignature": "207e951b5a25834105bb5e151fb33fda547b2c7b117b13a09ce2a1c4dfbb931f",
+    "height": 24
+  }
+}

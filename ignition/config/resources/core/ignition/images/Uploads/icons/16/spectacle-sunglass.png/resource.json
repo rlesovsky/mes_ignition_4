@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "spectacle-sunglass.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 326,
+    "lastModificationSignature": "c2bf10356b4c049e2b8737cd28861357f6d99d40317d442247a732fa9f71afd9",
+    "height": 16
+  }
+}

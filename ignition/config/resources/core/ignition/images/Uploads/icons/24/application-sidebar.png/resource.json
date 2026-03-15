@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "application-sidebar.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 599,
+    "lastModificationSignature": "77de7b00d3e9caccde88eb8a08cef98cadc5a11e84776d869ef4337a19e87e04",
+    "height": 24
+  }
+}

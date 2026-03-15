@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mail-forward.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 794,
+    "lastModificationSignature": "dc0f6cc0ea361e58100ed35a1fd287719a3c778f838634cd55966642d8827a62",
+    "height": 16
+  }
+}

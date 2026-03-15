@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "lightning.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 631,
+    "lastModificationSignature": "f05f8b1cdf5121ab5a40e30661d2ef339026a0a9b4a494e3edbb1fe0ad743cda",
+    "height": 16
+  }
+}

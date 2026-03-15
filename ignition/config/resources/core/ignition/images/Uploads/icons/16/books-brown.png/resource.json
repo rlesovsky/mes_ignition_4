@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "books-brown.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 646,
+    "lastModificationSignature": "166a9bcf7e032bc0b753830bcb8afc235fd09d652f33691d9bf092b8b9c98539",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "speaker--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 777,
+    "lastModificationSignature": "d5140d5fed710439322759e776b8f576130ca9670bb9cba747c5c132d21ab50a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "refresh icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1328,
+    "lastModificationSignature": "1991b8ab1a22b3d7c34c7157692e7d01c29835218b10899d4a5f96899966ee03",
+    "height": 16
+  }
+}

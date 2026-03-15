@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cutter.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 548,
+    "lastModificationSignature": "3543c38f46915b4a71b6484e138e6c61a40583d7bb616098bf0caf3d435f6db2",
+    "height": 16
+  }
+}

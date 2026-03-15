@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "reject icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 531,
+    "lastModificationSignature": "8093950f3fd7c1b84b4abb329a3abcbecff4be3b5a5cc082bfdca58420cd76d6",
+    "height": 16
+  }
+}

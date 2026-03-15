@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mobile-phone.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 614,
+    "lastModificationSignature": "e679f1e6606bfe55a109455ccb9154bbade76c70db876730a1c7f3f47866400d",
+    "height": 24
+  }
+}

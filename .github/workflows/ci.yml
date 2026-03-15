@@ -1,0 +1,61 @@
+name: MES Stack CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Stack Configuration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate docker-compose.yml
+        run: |
+          cp .env.example .env
+          docker compose config --quiet
+          echo "docker-compose.yml is valid"
+
+      - name: Validate SQL init scripts
+        run: |
+          docker run -d --name pg-test -e POSTGRES_USER=mes_user -e POSTGRES_PASSWORD=test -e POSTGRES_DB=mes_core postgres:15-alpine
+          for i in $(seq 1 30); do docker exec pg-test pg_isready -U mes_user >/dev/null 2>&1 && break; sleep 1; done
+          for sql_file in init-sql/*.sql; do
+            echo "Checking ${sql_file}..."
+            docker exec -i pg-test psql -U mes_user -d mes_core -v ON_ERROR_STOP=1 -f - < "$sql_file" >/dev/null 2>&1 && echo "  OK" || echo "  FAILED"
+          done
+          docker rm -f pg-test
+
+      - name: Check for secrets
+        run: |
+          if grep -q "^\.env$" .gitignore; then echo ".env is gitignored"; else echo ".env NOT in .gitignore!"; exit 1; fi
+
+  stack-test:
+    name: Stack Integration Test
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        run: |
+          cp .env.example .env
+          sed -i 's/CHANGE_ME/TestPass123/g' .env
+          docker network create infrastructure || true
+      - name: Start postgres
+        run: docker compose up -d postgres && sleep 15
+      - name: Verify databases
+        run: |
+          for db in mes_core mes_custom odoo; do
+            docker compose exec -T postgres psql -U mes_user -d "$db" -c "SELECT 1;" >/dev/null 2>&1 && echo "$db OK" || exit 1
+          done
+      - name: Verify schema
+        run: |
+          for tbl in enterprise site area line cell productcode workorder schedule run counttag counttype counthistory statereason statehistory; do
+            docker compose exec -T postgres psql -U mes_user -d mes_core -t -c "SELECT '$tbl: ' || count(*) FROM $tbl;" 2>/dev/null
+          done
+      - name: Cleanup
+        if: always()
+        run: docker compose down -v

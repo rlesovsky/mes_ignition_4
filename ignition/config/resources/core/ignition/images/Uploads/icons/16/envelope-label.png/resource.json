@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "envelope-label.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 518,
+    "lastModificationSignature": "03eb14e65afeeb187c987cc776377002657034effca9f4809eb564614ded5afa",
+    "height": 16
+  }
+}

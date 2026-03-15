@@ -1,0 +1,579 @@
+{
+  "custom": {},
+  "params": {
+    "profile": {
+      "additionalProperties": [],
+      "category": {
+        "description": "",
+        "iconUrl": null,
+        "name": "ADI"
+      },
+      "contributor": {
+        "contactEmail": "webmaster@opcfoundation.org",
+        "description": "",
+        "logoUrl": "https://opcfoundation.org/wp-content/themes/opc/images/logo.jpg",
+        "name": "OPC Foundation",
+        "website": "https://www.opcfoundation.org/"
+      },
+      "copyrightText": "Copyright © 2013-2022 OPC Foundation",
+      "creationTime": "0001-01-01T00:00:00",
+      "description": "This specification defines an object model that describes analysers  separated into a definition of AnalyserDevice, AnalyserChannel, Stream, Accessory and AccessorySlot.\r\nIn general terms AnalyserDevice represents the instrument as a whole. Each AnalyserDevice has at least one AnalyserChannel and may have AccessorySlots through which an Accessory can be connected. Similarly, each AnalyserChannel may have AccessorySlots through which Accessories can be connected. Data acquisition occurs through the AnalyserChannel or through the Accessory connected to that AnalyserChannel. Accessories can only be connected through the AccessorySlots. \r\n",
+      "documentationUrl": "https://reference.opcfoundation.org/ADI/v101a/docs/",
+      "iconUrl": null,
+      "keywords": [
+        "ADI"
+      ],
+      "license": "Custom",
+      "licenseUrl": "https://reference.opcfoundation.org/ADI/v101a/docs/4-License",
+      "nodeset": {
+        "identifier": 605472403,
+        "lastModifiedDate": "2013-07-31T00:00:00Z",
+        "namespaceUri": "http://opcfoundation.org/UA/ADI/",
+        "nodesetXml": null,
+        "publicationDate": "2013-07-31T00:00:00Z",
+        "requiredModels": [
+          {
+            "availableModel": {
+              "identifier": 1060041392,
+              "lastModifiedDate": "2021-09-07T00:00:00Z",
+              "namespaceUri": "http://opcfoundation.org/UA/DI/",
+              "nodesetXml": null,
+              "publicationDate": "2021-09-07T00:00:00Z",
+              "requiredModels": [
+                {
+                  "availableModel": {
+                    "identifier": 3738239190,
+                    "lastModifiedDate": "2020-07-15T00:00:00Z",
+                    "namespaceUri": "http://opcfoundation.org/UA/",
+                    "nodesetXml": null,
+                    "publicationDate": "2020-07-15T00:00:00Z",
+                    "requiredModels": [],
+                    "validationStatus": "Indexed",
+                    "version": "1.04.7"
+                  },
+                  "namespaceUri": "http://opcfoundation.org/UA/",
+                  "publicationDate": "2020-01-08T00:00:00Z",
+                  "version": "1.04.4"
+                }
+              ],
+              "validationStatus": "Indexed",
+              "version": "1.03.1"
+            },
+            "namespaceUri": "http://opcfoundation.org/UA/DI/",
+            "publicationDate": "2012-12-31T00:00:00Z",
+            "version": "1.01"
+          },
+          {
+            "availableModel": {
+              "identifier": 3338611482,
+              "lastModifiedDate": "2022-11-01T00:00:00Z",
+              "namespaceUri": "http://opcfoundation.org/UA/",
+              "nodesetXml": null,
+              "publicationDate": "2022-11-01T00:00:00Z",
+              "requiredModels": [],
+              "validationStatus": "Indexed",
+              "version": "1.05.02"
+            },
+            "namespaceUri": "http://opcfoundation.org/UA/",
+            "publicationDate": "2013-12-02T00:00:00Z",
+            "version": "1.03"
+          }
+        ],
+        "validationStatus": "Indexed",
+        "version": "1.01"
+      },
+      "nodesetId": 605472403,
+      "nodesetNamespaceUri": "http://opcfoundation.org/UA/ADI/",
+      "nodesetTitle": "Analyzer Devices",
+      "numberOfDownloads": 699,
+      "orgName": "OPC Foundation",
+      "publicationDate": "2013-07-31T00:00:00Z",
+      "purchasingInformationUrl": null,
+      "releaseNotesUrl": null,
+      "requiredNodesets": [
+        {
+          "availableModel": {
+            "identifier": 1060041392,
+            "lastModifiedDate": "2021-09-07T00:00:00Z",
+            "namespaceUri": "http://opcfoundation.org/UA/DI/",
+            "nodesetXml": null,
+            "publicationDate": "2021-09-07T00:00:00Z",
+            "requiredModels": [
+              {
+                "availableModel": {
+                  "identifier": 3738239190,
+                  "lastModifiedDate": "2020-07-15T00:00:00Z",
+                  "namespaceUri": "http://opcfoundation.org/UA/",
+                  "nodesetXml": null,
+                  "publicationDate": "2020-07-15T00:00:00Z",
+                  "requiredModels": [],
+                  "validationStatus": "Indexed",
+                  "version": "1.04.7"
+                },
+                "namespaceUri": "http://opcfoundation.org/UA/",
+                "publicationDate": "2020-01-08T00:00:00Z",
+                "version": "1.04.4"
+              }
+            ],
+            "validationStatus": "Indexed",
+            "version": "1.03.1"
+          },
+          "namespaceUri": "http://opcfoundation.org/UA/DI/",
+          "publicationDate": "2012-12-31T00:00:00Z",
+          "version": "1.01"
+        },
+        {
+          "availableModel": {
+            "identifier": 3338611482,
+            "lastModifiedDate": "2022-11-01T00:00:00Z",
+            "namespaceUri": "http://opcfoundation.org/UA/",
+            "nodesetXml": null,
+            "publicationDate": "2022-11-01T00:00:00Z",
+            "requiredModels": [],
+            "validationStatus": "Indexed",
+            "version": "1.05.02"
+          },
+          "namespaceUri": "http://opcfoundation.org/UA/",
+          "publicationDate": "2013-12-02T00:00:00Z",
+          "version": "1.03"
+        }
+      ],
+      "supportedLocales": [],
+      "testSpecificationUrl": null,
+      "title": "Analyzer Devices - Filtration Systems",
+      "version": 1.01
+    }
+  },
+  "propConfig": {
+    "params.profile": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 350
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.profile.title"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "20px",
+                    "fontWeight": "bold"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "\"by \" + {view.params.profile.contributor.name}"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "16px"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "justify": "center",
+              "style": {
+                "marginRight": "10px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.tooltip.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.profile.category.name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.profile.category.name"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#007bff",
+                    "borderRadius": "4px",
+                    "color": "#FFFFFF",
+                    "fontSize": "12px",
+                    "fontWeight": "bold",
+                    "maxWidth": "100px",
+                    "paddingBottom": "2px",
+                    "paddingLeft": "4px",
+                    "paddingRight": "4px",
+                    "paddingTop": "2px"
+                  },
+                  "textStyle": {
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "90px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "rgba(0,0,0,.03)",
+            "borderBottomColor": "#ced4da",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "padding": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "44px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.profile.description"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "classes": "twoLineClip"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\"License: \" + {view.params.profile.license}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\"Version: \" + {view.params.profile.version}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\"Downloads: \" + {view.params.profile.numberOfDownloads}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#FFFFFF",
+            "overflow": "hidden",
+            "paddingBottom": "15px",
+            "paddingLeft": "10px",
+            "paddingRight": "10px",
+            "paddingTop": "15px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Progress"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "false"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "mode": "indeterminate"
+            },
+            "type": "ia.display.progress"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\timport traceback\n\t\t\n\tidentifier \u003d self.view.params.profile.nodesetId\n\tnodesetTitle \u003d self.view.params.profile.nodesetTitle\n\t\n\tself.getSibling(\"Progress\").position.display \u003d True\n\t\n\ttry:\n\t\txml \u003d CESMII.UALibraryRESTService.downloadXML(self.session, identifier)\n\t\t(success, error, name, tags) \u003d CESMII.Converter.convert_UANodeSet_to_Ignition(xml, self.session)\n\t\tif success:\n\t\t\tCESMII.Converter.importPopup(name, tags)\n\t\telse:\n\t\t\tCESMII.Converter.showErrorMessage(\"Import Error\", error)\n\texcept:\n\t\tCESMII.Converter.showErrorMessage(\"Import Error\", \"Error importing profile: %s\" % traceback.format_exc())\n\t\t\n\tself.getSibling(\"Progress\").position.display \u003d False"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Import"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginLeft": "10px",
+                "paddingLeft": "6px",
+                "paddingRight": "6px"
+              },
+              "text": "Import"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\timport traceback\n\t\n\tidentifier \u003d self.view.params.profile.nodesetId\n\turl \u003d self.session.custom.settings.library\n\tusername \u003d self.session.custom.settings.username\n\tpassword \u003d self.session.custom.settings.password\n\tnodesetTitle \u003d self.view.params.profile.nodesetTitle\n\t\n\ttry:\n\t\txml \u003d CESMII.UALibraryRESTService.downloadXML(self.session, identifier)\n\t\tsystem.perspective.download(\"%s.xml\" % nodesetTitle, xml, \"text/xml\")\n\texcept:\n\t\tCESMII.Converter.showErrorMessage(\"Download Error\", \"Error downloading profile: %s\" % traceback.format_exc())"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Download_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginLeft": "10px",
+                "paddingLeft": "6px",
+                "paddingRight": "6px"
+              },
+              "text": "Download XML"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": true,
+                    "id": "profile",
+                    "modal": false,
+                    "overlayDismiss": true,
+                    "resizable": true,
+                    "showCloseIcon": false,
+                    "title": "Profile Details",
+                    "type": "open",
+                    "viewParams": {
+                      "profile": "{view.params.profile}"
+                    },
+                    "viewPath": "CESMII/Profile Details",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "More"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginLeft": "10px",
+                "paddingLeft": "6px",
+                "paddingRight": "6px"
+              },
+              "text": "More..."
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "flex-end",
+          "style": {
+            "backgroundColor": "rgba(0,0,0,.03)",
+            "borderTopColor": "#ced4da",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "1px",
+            "padding": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "CESMII/Border",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

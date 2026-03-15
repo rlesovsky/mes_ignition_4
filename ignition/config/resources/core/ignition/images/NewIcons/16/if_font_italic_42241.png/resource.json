@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "if_font_italic_42241.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 175,
+    "lastModificationSignature": "aa943184df9c0ce704ad1e2466cb732202903577c157c9cc5737ef83e555eb0b",
+    "height": 16
+  }
+}

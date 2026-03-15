@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-tab--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 485,
+    "lastModificationSignature": "9c8e419a15a9767a7211eb107d0af15c7180b6008cb763c56d57c19c3a5b7a3f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "crown.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 608,
+    "lastModificationSignature": "b730f9bc82056b22a83dd037fbed04313fe74feb9a4637442c48a94079d59201",
+    "height": 16
+  }
+}

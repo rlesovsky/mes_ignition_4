@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Cancel_24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1374,
+    "lastModificationSignature": "9c6bf66f239fc90ecab7ca2797f6910420a3f09d0e29b3da42549ba44a62e858",
+    "height": 24
+  }
+}

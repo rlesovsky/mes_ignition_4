@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "usb-flash-drive--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 610,
+    "lastModificationSignature": "8ae76449e67641c2f392093c7569ec2eab0ba3601eb09e61595f1bf99e88be99",
+    "height": 16
+  }
+}

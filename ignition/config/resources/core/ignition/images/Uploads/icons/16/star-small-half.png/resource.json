@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "star-small-half.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 404,
+    "lastModificationSignature": "b3eeb489d703d357c59372111fc4745acd3ea59347cbfda90812acd5d1893139",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "meter_blue.png"
+  ],
+  "attributes": {
+    "width": 21,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3684,
+    "lastModificationSignature": "04d878a814386530634a2769f78c825b43980a8ef9b1c3d7b6f8a6e92742189e",
+    "height": 32
+  }
+}

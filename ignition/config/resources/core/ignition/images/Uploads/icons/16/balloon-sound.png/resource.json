@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balloon-sound.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 750,
+    "lastModificationSignature": "64835d0a0ac7408eea8b9cb48a0129e6105f617723d867fbeca53d28961dc06c",
+    "height": 16
+  }
+}

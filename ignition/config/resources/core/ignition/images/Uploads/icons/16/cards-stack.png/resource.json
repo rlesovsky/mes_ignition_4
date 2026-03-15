@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cards-stack.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 566,
+    "lastModificationSignature": "76bef69c2e4cc81de842e7c25bbe5d39d26c740816145c29e639c92825d1d441",
+    "height": 16
+  }
+}

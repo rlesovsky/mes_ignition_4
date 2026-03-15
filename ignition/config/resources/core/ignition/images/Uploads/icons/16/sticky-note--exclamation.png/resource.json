@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "sticky-note--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 627,
+    "lastModificationSignature": "94ea8a8f443d14ca4d696f8ed3988ca6735783f600c9a6bf0bda1ce0fd6ebc53",
+    "height": 16
+  }
+}

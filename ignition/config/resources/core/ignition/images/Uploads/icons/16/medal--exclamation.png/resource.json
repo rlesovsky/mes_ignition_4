@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "medal--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 900,
+    "lastModificationSignature": "db6f0638fbd02c7fec092d23e31d1b80c34fb4920144bb715cd81f31b6a4facf",
+    "height": 16
+  }
+}

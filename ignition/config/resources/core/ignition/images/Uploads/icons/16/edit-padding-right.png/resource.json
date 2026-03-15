@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-padding-right.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 372,
+    "lastModificationSignature": "12276dc8153061bd5372d1fc5b50a44749094f52d5cbacc89183eb0ebe59d4bd",
+    "height": 16
+  }
+}

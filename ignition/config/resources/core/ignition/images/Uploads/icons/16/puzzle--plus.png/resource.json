@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "puzzle--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 825,
+    "lastModificationSignature": "f1e067e13e733f11b526497d836d5d05e2b3e542cad29c1e0a565507ce17758f",
+    "height": 16
+  }
+}

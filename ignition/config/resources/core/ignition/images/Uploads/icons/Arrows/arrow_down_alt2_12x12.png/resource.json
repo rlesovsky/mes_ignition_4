@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow_down_alt2_12x12.png"
+  ],
+  "attributes": {
+    "width": 12,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 206,
+    "lastModificationSignature": "18d7a46b5a7c004d3b7f913839a8b0d0e8e9f2bfa6b2ee14819491090a03c896",
+    "height": 12
+  }
+}

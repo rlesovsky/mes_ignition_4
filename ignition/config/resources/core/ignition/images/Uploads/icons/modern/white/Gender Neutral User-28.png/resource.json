@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Gender Neutral User-28.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 483,
+    "lastModificationSignature": "a8c2847f8f4e50c13285be94efff211cd44883b19232437fc27910344f231855",
+    "height": 28
+  }
+}

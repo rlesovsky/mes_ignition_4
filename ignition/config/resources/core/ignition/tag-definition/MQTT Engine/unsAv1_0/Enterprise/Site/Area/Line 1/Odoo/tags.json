@@ -1,0 +1,110 @@
+[
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "bom_component_name",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "product_name",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "bom_compoenent_quantity",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "product_quality",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "WorkOrderDS_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "WorkOrderDS",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "bom_compoenent_quantity_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "bom_component_name_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "product_quality_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "manufacturing_order_number",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "product_name_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "manufacturing_order_number_props",
+    "tagType": "AtomicTag"
+  }
+]

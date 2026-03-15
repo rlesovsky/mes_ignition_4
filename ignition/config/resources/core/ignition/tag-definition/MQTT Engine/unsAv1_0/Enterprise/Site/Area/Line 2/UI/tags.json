@@ -1,0 +1,20 @@
+[
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "UI_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "UI",
+    "tagType": "AtomicTag"
+  }
+]

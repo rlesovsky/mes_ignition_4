@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layout-header-3-mix.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 366,
+    "lastModificationSignature": "2afe9c9cc656484bee10b4c4e626eac259571d339fb8a59c46f02c856b2b718f",
+    "height": 16
+  }
+}

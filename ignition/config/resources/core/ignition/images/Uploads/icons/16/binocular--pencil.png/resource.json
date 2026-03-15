@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "binocular--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 825,
+    "lastModificationSignature": "781c4624f6ba7a68f2c834788df3711bbb7815667aaa192f4f753bdced993a2f",
+    "height": 16
+  }
+}

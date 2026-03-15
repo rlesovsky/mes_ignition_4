@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cassette--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 696,
+    "lastModificationSignature": "dd64369f1f88ebcce5338f74a2fe41fe20feeb1261a19e44ff436b31cb8e63ef",
+    "height": 16
+  }
+}

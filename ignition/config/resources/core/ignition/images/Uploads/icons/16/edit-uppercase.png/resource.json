@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-uppercase.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 413,
+    "lastModificationSignature": "219cc97d207126f0a93acc54684db232e24a1bd61d6481e29d65a56ee1238eb1",
+    "height": 16
+  }
+}

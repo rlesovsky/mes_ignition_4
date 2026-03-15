@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wall-brick.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 428,
+    "lastModificationSignature": "c7281315b240570daff379227ccdce3135ad809c4fb0dfec22ac542ec1a99b7d",
+    "height": 16
+  }
+}

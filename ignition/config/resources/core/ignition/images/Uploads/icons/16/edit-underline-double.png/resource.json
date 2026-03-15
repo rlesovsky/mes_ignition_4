@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-underline-double.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 257,
+    "lastModificationSignature": "527903aa490c41c32055eaf957e2936ca4a4b95883926e1e5b3ffda7cefb3681",
+    "height": 16
+  }
+}

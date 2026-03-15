@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-merge-000-left.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 645,
+    "lastModificationSignature": "8091fc8c2e1408fa35273f8f113789cbf556e0d67c74c1633435f41260bc3e03",
+    "height": 16
+  }
+}

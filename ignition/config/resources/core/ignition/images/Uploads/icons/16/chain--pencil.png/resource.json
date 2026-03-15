@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chain--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 748,
+    "lastModificationSignature": "80abb90974ac76f791b7308ed438a1b5e2a67bd14482a6ea75cb1ca488432df9",
+    "height": 16
+  }
+}

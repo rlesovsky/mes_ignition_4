@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "megaphone--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 677,
+    "lastModificationSignature": "f8c1e72cf7f8187440a09feb1cc39812315b9287a175299e6f6a29c9c66da737",
+    "height": 16
+  }
+}

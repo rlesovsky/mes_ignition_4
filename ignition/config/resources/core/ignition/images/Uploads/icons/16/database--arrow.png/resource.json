@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "database--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 619,
+    "lastModificationSignature": "5caa90aeebc17ae101c444f488ff56f01b71dd1f6ccaf41c88e26f968d361098",
+    "height": 16
+  }
+}

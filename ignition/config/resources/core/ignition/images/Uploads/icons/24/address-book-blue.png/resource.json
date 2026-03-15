@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "address-book-blue.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1104,
+    "lastModificationSignature": "bf17386bcfff08d1e79b0cb6ae8330414a851b3dc47c1efdecdc3642f107db03",
+    "height": 24
+  }
+}

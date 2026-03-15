@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Burn Disk_24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1322,
+    "lastModificationSignature": "5f97ef807f492ba43fd05b5cfcc9fcf0bfefa371dc367725c07bb9cff50e7600",
+    "height": 24
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Circled Chevron Left-32.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 630,
+    "lastModificationSignature": "60b3cb8c2a405fcfeaefb76714bc2bd93819819210f0e143e746ff90c09e42ce",
+    "height": 32
+  }
+}

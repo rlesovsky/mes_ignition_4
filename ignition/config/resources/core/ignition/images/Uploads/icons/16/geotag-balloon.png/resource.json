@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "geotag-balloon.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 708,
+    "lastModificationSignature": "68c69ac799449ed643e4bb9f318663d7edeef63513f686d5f15b0c1bbbd7214e",
+    "height": 16
+  }
+}

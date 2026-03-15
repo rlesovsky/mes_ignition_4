@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wand--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 720,
+    "lastModificationSignature": "c6d4d71d0d0a84df1c278d7b3e41e0b1889fed43a4dfbb73ff75c4cba73bc187",
+    "height": 16
+  }
+}

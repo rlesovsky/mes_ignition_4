@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tick-shield.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 754,
+    "lastModificationSignature": "381ce05152253e1257d5d6e774752a9378582fa949ddbd2d808f9399f15c009d",
+    "height": 16
+  }
+}

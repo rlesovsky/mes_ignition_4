@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pipes-horiz-hot-cold.png"
+  ],
+  "attributes": {
+    "width": 347,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 11607,
+    "lastModificationSignature": "f14a0c8065fc994e49cd491e4074f4b12a02229ea85847d2356dbff3579d5192",
+    "height": 100
+  }
+}

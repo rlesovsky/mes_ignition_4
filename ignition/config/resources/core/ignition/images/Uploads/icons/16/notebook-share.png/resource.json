@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "notebook-share.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 809,
+    "lastModificationSignature": "ee0634d0f53e8287c81a41b6f77274a61894d4ae3417b5d0bf99de94d804068d",
+    "height": 16
+  }
+}

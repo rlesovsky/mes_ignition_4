@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "information-octagon-frame.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 762,
+    "lastModificationSignature": "f6b8f48764269e199b24b0e5428d805a4e48ba26cead0c77c7c26048b4239b81",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-silhouette.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 491,
+    "lastModificationSignature": "50d9a622b077dd41a1fc261d13d1413a64092542e1084bfd68305f73030b1911",
+    "height": 16
+  }
+}

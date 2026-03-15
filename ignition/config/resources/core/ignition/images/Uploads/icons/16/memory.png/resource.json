@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "memory.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 331,
+    "lastModificationSignature": "630d63e489f0b6812a24acd099f2af0d594b7cc82869bffae0a30acbf7e1f049",
+    "height": 16
+  }
+}

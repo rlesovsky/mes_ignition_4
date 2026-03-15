@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-yellow-female.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 678,
+    "lastModificationSignature": "38f04a3b8db6ba2f0e7014ab9fc25da77e417fefe488217251d7f177287b0d26",
+    "height": 16
+  }
+}

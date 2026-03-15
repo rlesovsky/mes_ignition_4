@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "heart--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 843,
+    "lastModificationSignature": "718bf7f04b28ee9f6b2ebb7620927fa2dfcfb36f5641662cb5fad581836d2585",
+    "height": 16
+  }
+}

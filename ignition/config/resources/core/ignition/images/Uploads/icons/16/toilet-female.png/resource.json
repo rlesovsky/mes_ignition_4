@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "toilet-female.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1210,
+    "lastModificationSignature": "58b552f2bbaf5c28a524f368f74139d14bf63bc36adc0a3a25ce4bc0da11367f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1356,
+    "lastModificationSignature": "69ea9d964464f31eb62ec7cc26419ec7a4ae357b1cf30a0d6957fda3c9b454a7",
+    "height": 24
+  }
+}

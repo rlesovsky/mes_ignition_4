@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "exclamation-red-frame.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 873,
+    "lastModificationSignature": "731fd76d830eabafdfc1c70f302f8ce06a8adb15f0f91892a56ab9f55b3a8f41",
+    "height": 16
+  }
+}

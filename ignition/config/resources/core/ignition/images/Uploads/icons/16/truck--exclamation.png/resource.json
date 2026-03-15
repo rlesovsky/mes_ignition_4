@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "truck--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 828,
+    "lastModificationSignature": "2ab61df7a732a2fcc451e735ff4d89cd219b29a65b7b219ec3e9b25145e76a14",
+    "height": 16
+  }
+}

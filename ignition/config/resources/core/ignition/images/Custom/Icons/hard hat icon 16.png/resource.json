@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hard hat icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 694,
+    "lastModificationSignature": "a62c334f77ee18e7e4d39ef5272389da5ec091b8b866a158860e36248d3156b3",
+    "height": 16
+  }
+}

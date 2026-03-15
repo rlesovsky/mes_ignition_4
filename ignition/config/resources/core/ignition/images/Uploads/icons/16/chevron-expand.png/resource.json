@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chevron-expand.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 490,
+    "lastModificationSignature": "7e6d99ff0eb314fe00ffe5e7394f837534992bbd9f6a8c24d23f16be25d9b90b",
+    "height": 16
+  }
+}

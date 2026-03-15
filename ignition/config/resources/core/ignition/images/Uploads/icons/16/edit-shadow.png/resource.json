@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-shadow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 335,
+    "lastModificationSignature": "b4a662f823651696d3dcc3d84af2295ce50d9d157736ae259eb69fe145fdd47e",
+    "height": 16
+  }
+}

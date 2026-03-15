@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Work Order icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 557,
+    "lastModificationSignature": "ee8b4d1f3b988616da93f7932e97bd5c61b9a6b68a1908aca7a6debcf8ce1828",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "socket--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 628,
+    "lastModificationSignature": "73999813364800a7d8efdc6b0ff731c80141e0122bb0c4979bc7787d66e82ee7",
+    "height": 16
+  }
+}

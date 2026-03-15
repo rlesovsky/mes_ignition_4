@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chart-down-color.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 680,
+    "lastModificationSignature": "7df817eebb90e21b48cfc71bcb54ff465605b59e511aa4f344e2ce720de4b679",
+    "height": 16
+  }
+}

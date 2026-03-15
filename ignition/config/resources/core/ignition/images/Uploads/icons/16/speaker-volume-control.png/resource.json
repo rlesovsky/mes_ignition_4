@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "speaker-volume-control.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 630,
+    "lastModificationSignature": "9d4d9c4d50b0e36e9ec79c919cc5d139d8fff477d0fce4e54aea7d95ce9cb642",
+    "height": 16
+  }
+}

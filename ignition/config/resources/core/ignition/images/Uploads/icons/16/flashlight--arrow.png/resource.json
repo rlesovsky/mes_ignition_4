@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "flashlight--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 699,
+    "lastModificationSignature": "321d4ed72dbd863d5b37991b822404ba140b3c1fb6b71746e77196951969cf07",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "door.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 446,
+    "lastModificationSignature": "8892a5547a7e3b58431416419ff72a12c129dc07b7f563949c4f0da60dd34859",
+    "height": 16
+  }
+}

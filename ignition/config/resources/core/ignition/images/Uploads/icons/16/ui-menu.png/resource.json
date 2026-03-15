@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-menu.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 346,
+    "lastModificationSignature": "b78dee4394fc99b20b93ad51fb4510d74b0e84c38b45dbd205e3ff5d69178e07",
+    "height": 16
+  }
+}

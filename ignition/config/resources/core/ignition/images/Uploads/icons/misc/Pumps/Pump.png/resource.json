@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Pump.png"
+  ],
+  "attributes": {
+    "width": 655,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 175966,
+    "lastModificationSignature": "98821605e049f2b66ba8370be7e77734061c7f3fa3a172f1871940f31528ee05",
+    "height": 271
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "battery-plug.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 986,
+    "lastModificationSignature": "70db10170c2de2d9984115f0a93604842d78e9a1b05d4e2f999870d88e098486",
+    "height": 24
+  }
+}

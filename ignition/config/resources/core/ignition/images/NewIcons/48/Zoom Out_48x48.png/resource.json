@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Zoom Out_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3248,
+    "lastModificationSignature": "ddeb25a758ef56c377cd640b63f1c340b9bcf74747ecaf93be553d154fe91bf2",
+    "height": 48
+  }
+}

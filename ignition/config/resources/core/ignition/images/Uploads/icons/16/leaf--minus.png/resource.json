@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "leaf--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 605,
+    "lastModificationSignature": "8bf56d030096229318c0a8dbd6b88a42c2f635b9e80868c0f26b51f170d9c350",
+    "height": 16
+  }
+}

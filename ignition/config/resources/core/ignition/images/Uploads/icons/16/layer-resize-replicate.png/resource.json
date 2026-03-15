@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layer-resize-replicate.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 637,
+    "lastModificationSignature": "49cebb5a8b128eb84b7b61a6ae2b71c5c70f6ba487c9a47982ab1268927b806a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calendar-select-days.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 736,
+    "lastModificationSignature": "9af5b318c107299711b0ced48051b9ba5b344d07ba2ffc0ce534c41954967cc2",
+    "height": 16
+  }
+}

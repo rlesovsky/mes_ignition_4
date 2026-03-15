@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "flashlight--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 701,
+    "lastModificationSignature": "2f165a686d4e44fcb5a04fde9c59012af14b45edace90957acb34126aa06b63c",
+    "height": 16
+  }
+}

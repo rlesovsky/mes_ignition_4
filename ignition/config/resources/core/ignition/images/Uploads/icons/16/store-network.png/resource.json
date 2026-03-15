@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "store-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 729,
+    "lastModificationSignature": "89a5a19900f91cb05c2427dcb98d4bb1aa07ad9daabd56242f7afd1e356e141e",
+    "height": 16
+  }
+}

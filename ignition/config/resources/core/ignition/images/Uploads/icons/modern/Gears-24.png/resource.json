@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Gears-24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 566,
+    "lastModificationSignature": "b827a0a73498244fcc7892f41086127620242caffd28ab33674f97b7acb76bd0",
+    "height": 24
+  }
+}

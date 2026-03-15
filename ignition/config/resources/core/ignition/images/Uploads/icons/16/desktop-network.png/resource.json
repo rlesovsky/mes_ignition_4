@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "desktop-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 812,
+    "lastModificationSignature": "c85baee06cbb4610b03520965a22009a9d04e3bd32da459c37b66683eeb7abee",
+    "height": 16
+  }
+}

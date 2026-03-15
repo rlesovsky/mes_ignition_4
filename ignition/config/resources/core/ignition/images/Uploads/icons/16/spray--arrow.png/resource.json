@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "spray--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 667,
+    "lastModificationSignature": "70ee2a75da835cb64f46b206e75a4e2ea1cf1cf11893b683af73e73e288d6b47",
+    "height": 16
+  }
+}

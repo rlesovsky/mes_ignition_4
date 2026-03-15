@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "palette--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 919,
+    "lastModificationSignature": "37f54fd5c3761994b58c7d27f048c9d9f46195fe1a5ea91a8e6ce26404f182a8",
+    "height": 16
+  }
+}

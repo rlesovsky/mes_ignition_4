@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-rotate.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 425,
+    "lastModificationSignature": "4fc83a96e27c920b9d3f8d2598dd094970b5e4e459d8ab28d2fca7f8cabd3fba",
+    "height": 16
+  }
+}

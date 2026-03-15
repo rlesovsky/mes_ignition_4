@@ -1,0 +1,78 @@
+version: "3.9"
+
+# =============================================================================
+# Infrastructure Stack - Traefik Reverse Proxy + Technitium DNS
+# =============================================================================
+# This stack MUST be started BEFORE the MES stack.
+# It creates and owns the 'infrastructure' bridge network.
+#
+# Start:  docker compose -f infrastructure/docker-compose.yml up -d
+# Or:     ./scripts/mes-stack.sh infra-up
+# =============================================================================
+
+services:
+
+  traefik:
+    image: traefik:v3.0
+    container_name: infra-traefik
+    command:
+      - "--api.dashboard=true"
+      - "--api.insecure=false"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--log.level=${TRAEFIK_LOG_LEVEL:-INFO}"
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - infrastructure
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik-dashboard.rule=Host(`traefik.infrastructure.local`)"
+      - "traefik.http.routers.traefik-dashboard.entrypoints=web"
+      - "traefik.http.routers.traefik-dashboard.service=api@internal"
+      - "traefik.http.routers.traefik-dashboard.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=admin:$$apr1$$uWHV4VCi$$3Pjv1Cm1UXj3cHQHhieos/"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  dns:
+    image: technitium/dns-server:latest
+    container_name: infra-dns
+    hostname: infra-dns-server
+    ports:
+      - "5380:5380"
+    networks:
+      - infrastructure
+    volumes:
+      - infra-dns-data:/etc/dns
+    environment:
+      DNS_SERVER_DOMAIN: infra-dns
+      DNS_SERVER_PREFER_IPV6: "false"
+      TZ: ${TZ:-America/Chicago}
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dns.rule=Host(`dns.infrastructure.local`)"
+      - "traefik.http.routers.dns.entrypoints=web"
+      - "traefik.http.services.dns.loadbalancer.server.port=5380"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  infrastructure:
+    driver: bridge
+    name: infrastructure
+
+volumes:
+  infra-dns-data:

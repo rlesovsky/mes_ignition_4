@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Large Tank Liquid Cutaway.png"
+  ],
+  "attributes": {
+    "width": 278,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 29331,
+    "lastModificationSignature": "f714ffaada6e4c061e06f23a1863f5b706f3b8a0ae459918edba900ba5d5bbf3",
+    "height": 373
+  }
+}

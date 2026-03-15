@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drive--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 558,
+    "lastModificationSignature": "9e3ee079fd76381f0744a4ba66a9d088c99e8b13e4be42b04fcf2dfaa43e06a2",
+    "height": 16
+  }
+}

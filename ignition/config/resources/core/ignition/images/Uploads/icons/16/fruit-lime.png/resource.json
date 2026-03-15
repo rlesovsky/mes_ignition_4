@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "fruit-lime.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 846,
+    "lastModificationSignature": "c11e5130735371f27b47d30f41a9773aca71cf0ff5dc8be4cda87798d7376a40",
+    "height": 16
+  }
+}

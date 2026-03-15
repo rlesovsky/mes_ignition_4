@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pipe grey.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4186,
+    "lastModificationSignature": "e887d5fc8c2e8a8dc86799b4bbbb85cf34cf654eb89ceff7cb6bc2890afe291a",
+    "height": 100
+  }
+}

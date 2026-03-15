@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "car--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 866,
+    "lastModificationSignature": "3303d62426aeeb8849839ea0021814b625b079e42ef50da2532a8e73fa3cca8c",
+    "height": 16
+  }
+}

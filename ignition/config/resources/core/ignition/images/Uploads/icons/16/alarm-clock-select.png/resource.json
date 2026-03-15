@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "alarm-clock-select.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 942,
+    "lastModificationSignature": "bb987d63869da6c3f95291b04a2a0bf4bd54afc9d58a2d241c5f6a38a769c02a",
+    "height": 16
+  }
+}

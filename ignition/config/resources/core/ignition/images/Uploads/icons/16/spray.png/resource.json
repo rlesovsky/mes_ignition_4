@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "spray.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 536,
+    "lastModificationSignature": "a25f842a2a56462e981ee049fd5900dac253a7d6dbc0588ddfae6d85b3f7900e",
+    "height": 16
+  }
+}

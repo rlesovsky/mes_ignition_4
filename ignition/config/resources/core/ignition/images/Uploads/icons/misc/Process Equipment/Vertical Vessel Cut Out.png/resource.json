@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Vertical Vessel Cut Out.png"
+  ],
+  "attributes": {
+    "width": 160,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 22855,
+    "lastModificationSignature": "5f0ba12abe7a34413f02a7a64f7652db5845dabd608bc77eeedab3ebe92af3e5",
+    "height": 400
+  }
+}

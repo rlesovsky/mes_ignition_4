@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "zone-money.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 653,
+    "lastModificationSignature": "a286228dfd07a5421154111185f5a60e0a95f3067f76ff7b313837ea2b82ce94",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-tooltip--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1293,
+    "lastModificationSignature": "dbac9e6839d7f33842e9b5e1832faaafb76f5d705f1aec3f71c2cc8f329d741e",
+    "height": 16
+  }
+}

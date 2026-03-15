@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "eye-half.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 605,
+    "lastModificationSignature": "410d0cf8e978167ba671d513b6f9cc31699ced231ec1c305a04139e8eb01f4ff",
+    "height": 16
+  }
+}

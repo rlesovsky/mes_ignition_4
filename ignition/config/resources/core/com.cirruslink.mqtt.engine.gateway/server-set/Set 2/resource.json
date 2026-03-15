@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "Server Set 2",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2026-01-03T04:16:41Z"
+    },
+    "uuid": "c2bdefc4-1f1f-4bd6-9f13-d5639a9d52ac",
+    "lastModificationSignature": "7994d4dc70b790599f0060951ddaa01e58b14d267b086f018eb7902f55a34688",
+    "enabled": true
+  }
+}

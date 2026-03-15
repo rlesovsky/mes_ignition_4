@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "disk-share.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 745,
+    "lastModificationSignature": "21e4f8b9f2709c718ccd0180ba7395620fda7227ebbf0a1c9b4d8df487924a21",
+    "height": 16
+  }
+}

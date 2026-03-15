@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "monitor-off.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 499,
+    "lastModificationSignature": "5f09dd8216ae6a09570fed3d7a0e8c89b88b11d7c0663cf75687b0fa249e23b5",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balloon--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 828,
+    "lastModificationSignature": "14ed58fe591b64e1b51c943ffabd0fa25f0dbaeba432b68adda7a31272e0c460",
+    "height": 16
+  }
+}

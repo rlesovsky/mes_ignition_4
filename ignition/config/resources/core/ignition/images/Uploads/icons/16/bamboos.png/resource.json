@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "bamboos.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 675,
+    "lastModificationSignature": "f898619c8e896bb06d27a64ab0bda49efe3135af5c6878d38bb8572ba5e7f29f",
+    "height": 16
+  }
+}

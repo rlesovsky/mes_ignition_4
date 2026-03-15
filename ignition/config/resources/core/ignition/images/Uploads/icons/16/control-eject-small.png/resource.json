@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "control-eject-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 298,
+    "lastModificationSignature": "78d61a82d32dac039e7d4fe712b9f307cc9d5edc4b7421f62eb4e9948e1c0ecd",
+    "height": 16
+  }
+}

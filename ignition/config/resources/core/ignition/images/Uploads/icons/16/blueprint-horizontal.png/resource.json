@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blueprint-horizontal.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 656,
+    "lastModificationSignature": "d53f7f66866d6ef93afb6e4e0bc84bf429a083492517d66055a5f0b7eec6ee72",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "double-tick-indicator24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 726,
+    "lastModificationSignature": "77152a843fd106380fedd5b1a4d6d3a4c9df833f5d2f9f70315aa19dbec90a62",
+    "height": 24
+  }
+}

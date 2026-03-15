@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Nelson_Rule_1_WE_Zone_Rule_1.png"
+  ],
+  "attributes": {
+    "width": 914,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 58337,
+    "lastModificationSignature": "a1d31356f6c9965f3e351c20e8945b3c304e70081eac1e4273b3d8c5d573e489",
+    "height": 601
+  }
+}

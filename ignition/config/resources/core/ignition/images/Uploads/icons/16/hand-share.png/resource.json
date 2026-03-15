@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hand-share.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 524,
+    "lastModificationSignature": "b71d726a87ab1706f10698616964a67aaf7f2a6ab795fedce67e541c98622a92",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-folders-stack.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 597,
+    "lastModificationSignature": "39378d06a5eddfcaa013ec508108d5d4391a20e642135b8265a0357c43802ec9",
+    "height": 16
+  }
+}

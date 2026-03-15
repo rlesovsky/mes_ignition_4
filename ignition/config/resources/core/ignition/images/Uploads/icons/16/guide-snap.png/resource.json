@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "guide-snap.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 483,
+    "lastModificationSignature": "e593fc54eeca3735d64d8be93a3fcaf2e38619595f6cecc2b602e9f15b5e206f",
+    "height": 16
+  }
+}

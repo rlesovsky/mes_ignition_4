@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ruler--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 729,
+    "lastModificationSignature": "16fe0c552093252f7f6ca84883fdecf0b9f7dc2fe6573ba1eceb152751167eb4",
+    "height": 16
+  }
+}

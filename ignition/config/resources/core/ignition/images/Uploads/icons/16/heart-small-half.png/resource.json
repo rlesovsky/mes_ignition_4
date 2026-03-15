@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "heart-small-half.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 433,
+    "lastModificationSignature": "4fd3669912be6be5ffc9483ab9aa5c3f617469089fd04fb51598716723717e5b",
+    "height": 16
+  }
+}

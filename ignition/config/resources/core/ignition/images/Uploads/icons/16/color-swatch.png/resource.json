@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "color-swatch.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 537,
+    "lastModificationSignature": "1d63c68a2647475f8b2d37ae67e0f0308d438263b91a7ecad1c8af3c2fd0d77e",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "folder-tree.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 512,
+    "lastModificationSignature": "8dd5554be88d11b208177797e00534387a896b99be34d250e1c641d563161f48",
+    "height": 16
+  }
+}

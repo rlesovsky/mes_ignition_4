@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Plus-50.png"
+  ],
+  "attributes": {
+    "width": 50,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1131,
+    "lastModificationSignature": "818f5a890a25a1df98121afe336ac4eba285dc603e1dcd40d0f71c0afbfcfaa3",
+    "height": 50
+  }
+}

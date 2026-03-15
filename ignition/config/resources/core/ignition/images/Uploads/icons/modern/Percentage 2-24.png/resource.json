@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Percentage 2-24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 468,
+    "lastModificationSignature": "423855658d64a0dd3da51bc18d70d3d16cf75a4349d97bab588c129654ee796b",
+    "height": 24
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "document-shred.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 578,
+    "lastModificationSignature": "319f8ad3d8e438c936fb00a6d1922047429d7764d3846240a5b79e73fbbb8e9f",
+    "height": 16
+  }
+}

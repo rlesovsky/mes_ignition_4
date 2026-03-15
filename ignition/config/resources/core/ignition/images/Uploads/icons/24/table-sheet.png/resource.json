@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "table-sheet.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 804,
+    "lastModificationSignature": "758b8490f81881969f42838fc7a74325a8799c92ddad3d440bd048dc13fa7997",
+    "height": 24
+  }
+}

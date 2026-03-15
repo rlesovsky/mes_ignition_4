@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calendar-select-days-span.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 736,
+    "lastModificationSignature": "54eda1802f3c17497589ec870160f6a855e8b1cb120ba0166f2451068f71a777",
+    "height": 16
+  }
+}

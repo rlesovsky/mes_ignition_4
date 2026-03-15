@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Feed In-24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 361,
+    "lastModificationSignature": "3ae0161b81532370e1f53e4b54db044a6ac5fb80365e0eed1c6e8e0a235ee9e2",
+    "height": 24
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drive--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 612,
+    "lastModificationSignature": "c7afc8990234151d20d4e692a06163cc179e9af5a4ca2ad5a8c60fe596d70a89",
+    "height": 16
+  }
+}

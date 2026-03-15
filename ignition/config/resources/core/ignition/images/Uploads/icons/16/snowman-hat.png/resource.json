@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "snowman-hat.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 818,
+    "lastModificationSignature": "f23dc4fd53c2f37870c0c00fd1f3ca014c703d457e6412d9c3823b254fe0fc7c",
+    "height": 16
+  }
+}

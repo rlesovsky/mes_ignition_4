@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "flashlight-shine.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 657,
+    "lastModificationSignature": "6065dc438675c4eed008f6a6b5b14b32ffe806e65b50433d9cd53c6174700b91",
+    "height": 16
+  }
+}

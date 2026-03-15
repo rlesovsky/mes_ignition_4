@@ -1,0 +1,176 @@
+{
+  "custom": {
+    "numPages": 2
+  },
+  "params": {
+    "currentPage": 1,
+    "itemsPerPage": 6,
+    "totalItems": 10
+  },
+  "propConfig": {
+    "custom.numPages": {
+      "binding": {
+        "config": {
+          "expression": "toInt(ceil({view.params.totalItems} / {view.params.itemsPerPage}))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.currentPage": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.itemsPerPage": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.totalItems": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 36
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tcurrentPage \u003d self.view.params.currentPage\n\t\n\tif (currentPage - 1) \u003e\u003d 1:\n\t\tself.view.params.currentPage -\u003d 1"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "borderRightColor": "#ced4da",
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "cursor": "pointer",
+                "paddingLeft": "10px",
+                "paddingRight": "10px"
+              },
+              "text": "Previous"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "FlexRepeater"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.instances": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "currentPage": "{view.params.currentPage}",
+                      "numPages": "{view.custom.numPages}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\timport math\n\tret \u003d []\n\t\n\tstartEllipsis \u003d False\n\tendEllipsis \u003d False\n\t\n\tnumPages \u003d value[\"numPages\"]\n\tcurrentPage \u003d value[\"currentPage\"]\n\t\n\tcurrentWindow \u003d 0\n\ttotalWindows \u003d math.ceil(numPages / 5.0)\n\t\n\tif numPages \u003e 6:\n\t\tcurrentWindow \u003d int(math.floor((currentPage - 1) / 5.0))\n\t\t\t\t\n\t\tif currentWindow \u003e 0:\n\t\t\tstartEllipsis \u003d True\n\t\t\n\t\tif currentWindow \u003c (totalWindows - 1):\n\t\t\tendEllipsis \u003d True\n\t\n\tif startEllipsis:\n\t\tret.append({\n\t\t  \"ellipsis\": False,\n\t\t  \"page\": 1,\n\t\t  \"selected\": 1 \u003d\u003d currentPage\n\t\t})\n\t\tret.append({\n\t\t  \"ellipsis\": True,\n\t\t  \"page\": currentWindow * 5,\n\t\t  \"selected\": False\n\t\t})\n\t\n\tif startEllipsis or endEllipsis:\n\t\tpageOffset \u003d currentWindow * 5\n\t\tlenPages \u003d numPages - pageOffset\n\t\tif lenPages \u003e 5:\n\t\t\tlenPages \u003d 5\n\telse:\n\t\tlenPages \u003d numPages\n\t\tpageOffset \u003d 0\n\t\n\tfor i in range(lenPages):\n\t\tpage \u003d i + 1 + pageOffset\n\t\tret.append({\n\t\t  \"ellipsis\": False,\n\t\t  \"page\": page,\n\t\t  \"selected\": page \u003d\u003d currentPage\n\t\t})\n\t\t\n\tif endEllipsis:\n\t\tret.append({\n\t\t  \"ellipsis\": True,\n\t\t  \"page\": (currentWindow + 1) * 5 + 1,\n\t\t  \"selected\": False\n\t\t})\n\t\tret.append({\n\t\t  \"ellipsis\": False,\n\t\t  \"page\": numPages,\n\t\t  \"selected\": numPages \u003d\u003d currentPage\n\t\t})\n\t\n\treturn ret",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "elementPosition": {
+                "basis": "auto",
+                "grow": 0,
+                "shrink": 0
+              },
+              "path": "CESMII/Page",
+              "useDefaultViewHeight": false,
+              "useDefaultViewWidth": false
+            },
+            "type": "ia.display.flex-repeater"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tnumPages \u003d self.view.custom.numPages\n\tcurrentPage \u003d self.view.params.currentPage\n\t\n\tif (currentPage + 1) \u003c\u003d numPages:\n\t\tself.view.params.currentPage +\u003d 1"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "cursor": "pointer",
+                "paddingLeft": "10px",
+                "paddingRight": "10px"
+              },
+              "text": "Next"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "CESMII/Border"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "center"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "paginator",
+          "pageScope": true,
+          "script": "\tpage \u003d payload[\"page\"]\n\tself.view.params.currentPage \u003d page",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

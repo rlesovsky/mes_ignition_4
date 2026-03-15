@@ -1,0 +1,12 @@
+{
+  "dataFormatTypeWrapper": "Sparkplug_B_v1_0_Protobuf",
+  "hostnameVerification": true,
+  "keepAlive": 30,
+  "mqttServerConnectionEnabled": true,
+  "password": "REDACTED",
+  "reconnectDelay": 1000,
+  "serverSet": "Bootcamp",
+  "subscribeToLegacyStateTopic": true,
+  "url": "tcp://hivemq:1883",
+  "username": "admin"
+}

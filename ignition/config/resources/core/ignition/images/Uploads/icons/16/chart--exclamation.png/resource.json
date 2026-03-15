@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chart--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 785,
+    "lastModificationSignature": "6b537c0f5fed06665b7fffe18c147d25cdfe01e96f00b6260bf11509fc6e13ad",
+    "height": 16
+  }
+}

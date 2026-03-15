@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "microphone--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 830,
+    "lastModificationSignature": "be227ecc2881e3a534483caf7862a2d13e2b68d8a972f6c39f10a21c615c4bd1",
+    "height": 16
+  }
+}

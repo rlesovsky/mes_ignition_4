@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "network-wireless.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1245,
+    "lastModificationSignature": "35faa5ddb197bccc6a091b8c1c47ca18dde1a168d48ff3c1d83b9accb5a1df0e",
+    "height": 16
+  }
+}

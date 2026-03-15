@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-scroll-pane-form.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 501,
+    "lastModificationSignature": "578d8d992c3dcb3e968b9d4fefa9a0d7e5cee36ed5221ad101a37f532f040ea2",
+    "height": 16
+  }
+}

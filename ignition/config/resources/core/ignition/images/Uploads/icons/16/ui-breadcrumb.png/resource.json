@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-breadcrumb.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 407,
+    "lastModificationSignature": "88f33736764d829c0defffb7da7fc298ab2a6d2cfc9e8375fa187f970b329860",
+    "height": 16
+  }
+}

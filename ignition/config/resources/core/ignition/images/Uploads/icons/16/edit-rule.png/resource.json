@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-rule.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 470,
+    "lastModificationSignature": "bafa734d884bbd53ab25015ff0b488e31d8836217484f5a90af6c3c56a059045",
+    "height": 16
+  }
+}

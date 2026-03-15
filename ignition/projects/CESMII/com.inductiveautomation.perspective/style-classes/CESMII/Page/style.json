@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "fontSize": "14px",
+      "lineHeight": "20px"
+    }
+  }
+}

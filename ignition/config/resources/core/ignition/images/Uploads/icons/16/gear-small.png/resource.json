@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "gear-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 443,
+    "lastModificationSignature": "d7320f8d22f45c7edab72a37a629a7fb3f40215b4b1ad75b70b8bc3f5112b6a6",
+    "height": 16
+  }
+}

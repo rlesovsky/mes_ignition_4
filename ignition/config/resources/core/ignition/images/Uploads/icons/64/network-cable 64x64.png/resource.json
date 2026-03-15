@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "network-cable 64x64.png"
+  ],
+  "attributes": {
+    "width": 64,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1814,
+    "lastModificationSignature": "ea9ab75267c10fae2592265cab6988bded6e85c01e92a3105b25704cf9fae20e",
+    "height": 64
+  }
+}

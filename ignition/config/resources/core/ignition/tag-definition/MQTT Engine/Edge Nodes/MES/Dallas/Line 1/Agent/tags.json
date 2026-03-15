@@ -1,0 +1,31 @@
+[
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Shift",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Availability",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Analysis",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String",
+      "sourceTagPath": "[MQTT Engine]unsAv1_0/Enterprise/Site/Area/Line 1/Agent/Observations"
+    },
+    "name": "Observations",
+    "tagType": "AtomicTag"
+  }
+]

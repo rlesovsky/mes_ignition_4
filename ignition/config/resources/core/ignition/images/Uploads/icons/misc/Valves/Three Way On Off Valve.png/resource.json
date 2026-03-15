@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Three Way On Off Valve.png"
+  ],
+  "attributes": {
+    "width": 215,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 14778,
+    "lastModificationSignature": "95216cdd6dc5c8afc49de7c9b88a14c25ad6d95b31977427fdd1e9922d018a77",
+    "height": 525
+  }
+}

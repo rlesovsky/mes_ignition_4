@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "heart.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 602,
+    "lastModificationSignature": "2dfd2db5699368cfb410a8b3b8cec9cb5456eac47c9b9fb721e7fdbfa4daf39f",
+    "height": 24
+  }
+}

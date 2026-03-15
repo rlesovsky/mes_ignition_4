@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "point--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 863,
+    "lastModificationSignature": "4c832572b67bb65ca7f7392667b49fb2d1eb9276efd95fa4a88fafcd18818f76",
+    "height": 16
+  }
+}

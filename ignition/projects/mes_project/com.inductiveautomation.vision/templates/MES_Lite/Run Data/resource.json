@@ -1,0 +1,18 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ OEE, Process, UI ]\n\nSummary: Feeds back live line data from various templates.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModificationSignature": "9475a82daa605f9e67b3e0181df694604b44d2d17e4e3c0f85b6f799c51b06a8",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2026-01-02T16:30:29Z"
+    }
+  }
+}

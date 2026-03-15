@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "beaker--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 844,
+    "lastModificationSignature": "9035ffede89caf3d928fb0beae645866e17b9a1630c23f2144d7750d8e2cbe3a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "equalizer-flat.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 382,
+    "lastModificationSignature": "8920fc26f7bfcbc222d943e66364a9b8a9ae3c9a0faf34da2b98e90e55c7508c",
+    "height": 16
+  }
+}

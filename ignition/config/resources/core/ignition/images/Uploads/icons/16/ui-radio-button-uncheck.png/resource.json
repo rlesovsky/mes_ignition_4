@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-radio-button-uncheck.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 403,
+    "lastModificationSignature": "7bbb1d67e649837d22f90cf67ece36dec5483067a13d7f94fad65ce36e56aa5f",
+    "height": 16
+  }
+}

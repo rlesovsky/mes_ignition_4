@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "control-stop-square.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 365,
+    "lastModificationSignature": "9ed55b965cb1b6490bebdc3e28208a3a95fbdcc8dabd78ab96b7cb91a308068f",
+    "height": 16
+  }
+}

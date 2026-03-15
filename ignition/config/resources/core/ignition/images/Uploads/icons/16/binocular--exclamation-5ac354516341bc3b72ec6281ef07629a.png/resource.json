@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "binocular--exclamation-5ac354516341bc3b72ec6281ef07629a.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 742,
+    "lastModificationSignature": "acf777ffcd165600f27306040a578bfb02f0d397f5352721c05401d1457eca40",
+    "height": 16
+  }
+}

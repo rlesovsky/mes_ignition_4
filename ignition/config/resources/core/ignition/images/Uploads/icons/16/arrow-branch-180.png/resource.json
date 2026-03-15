@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-branch-180.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 732,
+    "lastModificationSignature": "5c126e49a5ace14f3292f4120d5fed579f52413f3202f653d43724344b2b73cb",
+    "height": 16
+  }
+}

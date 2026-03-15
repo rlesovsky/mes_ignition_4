@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-paginator.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 567,
+    "lastModificationSignature": "e1765bef325ea1bb584cb887a89d7c269f5fa1613108d453af78580f5cbba9fe",
+    "height": 16
+  }
+}

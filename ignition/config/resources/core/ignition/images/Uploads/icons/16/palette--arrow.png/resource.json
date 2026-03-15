@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "palette--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 871,
+    "lastModificationSignature": "9cf66af4287b57f517a2c2fbf3973523334fe852b7bed9734ed7f0842f6957e3",
+    "height": 16
+  }
+}

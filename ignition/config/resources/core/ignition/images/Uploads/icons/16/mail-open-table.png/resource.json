@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mail-open-table.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 720,
+    "lastModificationSignature": "9e81a17002b4f9617f6c6c818b258c2fe7b723fb8947d4ec37d0f9112f55ac80",
+    "height": 16
+  }
+}

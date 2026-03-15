@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wooden-box--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 609,
+    "lastModificationSignature": "0d05e79c176d7789325e07c94793ecd1df180214575c240b1b00ef09ec45ec51",
+    "height": 16
+  }
+}

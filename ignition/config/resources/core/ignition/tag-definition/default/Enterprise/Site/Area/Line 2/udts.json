@@ -1,0 +1,64 @@
+[
+  {
+    "name": "BigQuery",
+    "typeId": "mes_custom/Cloud",
+    "tagType": "UdtInstance"
+  },
+  {
+    "name": "Dashboard",
+    "typeId": "mes_core/UI",
+    "tagType": "UdtInstance"
+  },
+  {
+    "name": "Odoo",
+    "typeId": "mes_custom/OdooWorkOrder",
+    "tagType": "UdtInstance"
+  },
+  {
+    "name": "Edge",
+    "typeId": "Assets/Simulator",
+    "tagType": "UdtInstance"
+  },
+  {
+    "name": "Line",
+    "typeId": "mes_core/Line",
+    "parameters": {
+      "line": {
+        "dataType": "String",
+        "value": "Line 2"
+      },
+      "lineID": {
+        "dataType": "Integer",
+        "value": 5
+      },
+      "units": {
+        "dataType": "String",
+        "value": "Parts"
+      }
+    },
+    "tagType": "UdtInstance",
+    "tags": [
+      {
+        "name": "OEE",
+        "tagType": "UdtInstance",
+        "tags": [
+          {
+            "value": 14,
+            "name": "Bad Count",
+            "tagType": "AtomicTag"
+          },
+          {
+            "value": 104,
+            "name": "Good Count",
+            "tagType": "AtomicTag"
+          },
+          {
+            "value": 1670652000000,
+            "name": "Start Time",
+            "tagType": "AtomicTag"
+          }
+        ]
+      }
+    ]
+  }
+]

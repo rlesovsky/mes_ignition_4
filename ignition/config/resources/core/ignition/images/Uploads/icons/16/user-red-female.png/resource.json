@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-red-female.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 676,
+    "lastModificationSignature": "e27684d803dfba2d7c4781b548387928765101374af2fd9f1eb4cfdd0b6f88c7",
+    "height": 16
+  }
+}

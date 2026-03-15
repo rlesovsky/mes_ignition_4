@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "usb-flash-drive--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 554,
+    "lastModificationSignature": "eb7cc2af790688923509e2a754f0b18b00a6c6f9815cfe5b1741d04c5695a673",
+    "height": 16
+  }
+}

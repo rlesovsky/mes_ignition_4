@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "megaphone--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 775,
+    "lastModificationSignature": "c2c00321a351be0f84ec7428d4b6c9715426cee0fc6746b8e91ee60c3930ee3d",
+    "height": 16
+  }
+}

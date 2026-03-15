@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "television--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 634,
+    "lastModificationSignature": "5cc08ee075dc13f11d9a693855701819ce5fb2f5804211778c0ebb8800b2bb8f",
+    "height": 16
+  }
+}

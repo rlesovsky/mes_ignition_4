@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "scissors--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 811,
+    "lastModificationSignature": "c87ddbf152163d05e131b306faa3fba8bae32ad69dae35f00c3aa4570a59a3d0",
+    "height": 16
+  }
+}

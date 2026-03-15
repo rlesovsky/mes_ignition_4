@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "globe-network-ethernet.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 866,
+    "lastModificationSignature": "1b6e0c6d9a8c36fc2ce262bc48fb7ada8b7a83f2922162ba2763f5dd554d6e5e",
+    "height": 16
+  }
+}

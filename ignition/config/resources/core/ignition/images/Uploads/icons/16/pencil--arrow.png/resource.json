@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pencil--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 633,
+    "lastModificationSignature": "b5ebccd839c93f4a614ebc7956d57c7bb4f975cd9ba765f1dfbdff3dc14b86b9",
+    "height": 16
+  }
+}

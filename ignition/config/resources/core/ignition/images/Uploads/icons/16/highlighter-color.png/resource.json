@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "highlighter-color.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 458,
+    "lastModificationSignature": "7f95674e6dc5cc9da4b6ecac241e18fa175365f30758e5e0e39a84c7a9e49955",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tank_flat_yellow.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3433,
+    "lastModificationSignature": "8e1ab998530eef7a5193899bdfcad40dab59c75c73392c00d93e7ac518d55e79",
+    "height": 28
+  }
+}

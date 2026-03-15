@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "EXHAUST FAN GUTS.png"
+  ],
+  "attributes": {
+    "width": 170,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 26534,
+    "lastModificationSignature": "d4251b9fb0b9f83708aa72264b992dc9bd092b1962ab36ae867754117577a78f",
+    "height": 170
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Seperator.png"
+  ],
+  "attributes": {
+    "width": 370,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4240,
+    "lastModificationSignature": "1ebfaed297b66cb208981d1e3f96577a95201882ae3adb66e581386393db39c3",
+    "height": 142
+  }
+}

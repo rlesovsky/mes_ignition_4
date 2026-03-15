@@ -1,0 +1,65 @@
+# =============================================================================
+# MES Ignition 4.0 - Git Ignore
+# =============================================================================
+
+# ---- Environment & Secrets ----
+.env
+.env.local
+.env.*.local
+
+# ---- Third-Party Modules (licensed binaries — never commit) ----
+*.modl
+!gw-build/modules/README.md
+
+# ---- Ignition Internal (from gateway backup) ----
+ignition/db_backup_sqlite.idb
+ignition/*.sqlite
+ignition/config/**/*.idb
+ignition/*.sqlite-journal
+ignition/*.gwbk
+ignition/certificates/
+ignition/modules/
+ignition/user-lib/
+ignition/email-profiles/
+ignition/config/local/
+ignition/config/resources/local/
+ignition/redundancy.xml
+ignition/ignition.conf
+ignition/log4j.properties
+ignition/logback.xml
+ignition/backupinfo.xml
+ignition/projects/conversion-report.txt
+
+# ---- Perspective thumbnails & caches ----
+**/thumbnail.png
+**/.cache/
+**/.resources/
+
+# ---- Python / Jython ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.class
+.jython_cache/
+.pytest_cache/
+
+# ---- IDE / Editor ----
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---- Gateway Backups (large binary files) ----
+backups/*.gwbk
+!backups/.gitkeep
+
+# ---- Logs ----
+*.log
+logs/

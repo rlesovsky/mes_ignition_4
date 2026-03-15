@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hourglass--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 787,
+    "lastModificationSignature": "c6e63e6bcb8e0539a5ec19ea46b94ba33c9ba8421ec3279b6f5220513c3f5adf",
+    "height": 16
+  }
+}

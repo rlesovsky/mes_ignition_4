@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "document-visual-studio.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 698,
+    "lastModificationSignature": "37b9c3762b9ab98bbdc1075e07288c5c13d95dcdb0912eb94185f47f6e7096a4",
+    "height": 16
+  }
+}

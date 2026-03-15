@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Log Out_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2316,
+    "lastModificationSignature": "661d6e4011d4f86fc6dac8f74ae6165bde9244b24844902157e4071196dd5478",
+    "height": 48
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-text-field-password-green.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 282,
+    "lastModificationSignature": "ce165e1a36981aadcf8c172131acc9a6f95153de506381ff20d372cac5a3675b",
+    "height": 16
+  }
+}

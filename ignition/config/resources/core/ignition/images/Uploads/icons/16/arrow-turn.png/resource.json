@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-turn.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 747,
+    "lastModificationSignature": "51aed9a53c055ed245f204f18d598479f505a0a6b6dcd933f421c16cdd48bea4",
+    "height": 16
+  }
+}

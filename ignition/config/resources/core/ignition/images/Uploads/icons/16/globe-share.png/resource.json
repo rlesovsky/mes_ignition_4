@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "globe-share.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 865,
+    "lastModificationSignature": "63cad7b984e13f83a7f4137a8eadae7fd9bb1abcf2972b2bddee709b56f378f2",
+    "height": 16
+  }
+}

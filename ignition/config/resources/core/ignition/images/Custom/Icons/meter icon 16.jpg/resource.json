@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "meter icon 16.jpg"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "JPEG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 893,
+    "lastModificationSignature": "c73f97a069037389295e9ade3a43f2749f2a54a6bf8d78613b80ea38f66339ef",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "headphone--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 801,
+    "lastModificationSignature": "c8180c32a4d0a0674b461aa1db6e5c65e73bee335e357896b08e587b0509743f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Compact Disk_16x16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 778,
+    "lastModificationSignature": "c29040b3f02f98668c90cb96d7ca5d1ec097e6ba421b46fadd4fcee5a0c3e5e8",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "telephone-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 538,
+    "lastModificationSignature": "4b096165f636b0d733845d3dce459e9d48082c146cf9468c5c24a3ae9f202fab",
+    "height": 16
+  }
+}

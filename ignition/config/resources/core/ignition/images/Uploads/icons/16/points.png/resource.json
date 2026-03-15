@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "points.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 717,
+    "lastModificationSignature": "0e042d24571fdc867f8cb147feb1fda0663cf55de74fa46c66ebb9985b4781a0",
+    "height": 16
+  }
+}

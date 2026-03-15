@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-globe.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 774,
+    "lastModificationSignature": "1f477322cdff8a33886e24268aa7d882b789328cf2b0c25b7de579a3951d9849",
+    "height": 16
+  }
+}

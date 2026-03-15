@@ -1,0 +1,485 @@
+{
+  "custom": {},
+  "params": {
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "icon"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "path": "material/widgets",
+              "style": {
+                "color": "#3b82f6",
+                "marginLeft": 16
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "#ffffff",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 18,
+                "fontWeight": 600,
+                "letterSpacing": "-0.3px",
+                "marginLeft": 10
+              },
+              "text": "Line 1 Production"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "status_badge"
+            },
+            "position": {
+              "basis": "120px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "rgba(239, 68, 68, 0.15)",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Running",
+                          "output": "rgba(16, 185, 129, 0.15)"
+                        },
+                        {
+                          "input": "Stopped",
+                          "output": "rgba(239, 68, 68, 0.15)"
+                        },
+                        {
+                          "input": "E-Stop",
+                          "output": "rgba(239, 68, 68, 0.15)"
+                        },
+                        {
+                          "input": "Blocked",
+                          "output": "rgba(249, 115, 22, 0.15)"
+                        },
+                        {
+                          "input": "Starved",
+                          "output": "rgba(249, 115, 22, 0.15)"
+                        },
+                        {
+                          "input": "Change Over",
+                          "output": "rgba(59, 130, 246, 0.15)"
+                        }
+                      ],
+                      "outputType": "color",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.border": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "1px solid rgba(239, 68, 68, 0.3)",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Running",
+                          "output": "1px solid rgba(16, 185, 129, 0.3)"
+                        },
+                        {
+                          "input": "Stopped",
+                          "output": "1px solid rgba(239, 68, 68, 0.3)"
+                        },
+                        {
+                          "input": "E-Stop",
+                          "output": "1px solid rgba(239, 68, 68, 0.3)"
+                        },
+                        {
+                          "input": "Blocked",
+                          "output": "1px solid rgba(249, 115, 22, 0.3)"
+                        },
+                        {
+                          "input": "Starved",
+                          "output": "1px solid rgba(249, 115, 22, 0.3)"
+                        },
+                        {
+                          "input": "Change Over",
+                          "output": "1px solid rgba(59, 130, 246, 0.3)"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "#ef4444",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Running",
+                          "output": "#10b981"
+                        },
+                        {
+                          "input": "Stopped",
+                          "output": "#ef4444"
+                        },
+                        {
+                          "input": "E-Stop",
+                          "output": "#ef4444"
+                        },
+                        {
+                          "input": "Blocked",
+                          "output": "#f97316"
+                        },
+                        {
+                          "input": "Starved",
+                          "output": "#f97316"
+                        },
+                        {
+                          "input": "Change Over",
+                          "output": "#3b82f6"
+                        }
+                      ],
+                      "outputType": "color",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": 0,
+                          "output": "Stopped"
+                        },
+                        {
+                          "input": 1,
+                          "output": "Running"
+                        },
+                        {
+                          "input": 2,
+                          "output": "E-Stop"
+                        },
+                        {
+                          "input": 3,
+                          "output": "Blocked"
+                        },
+                        {
+                          "input": 4,
+                          "output": "Starved"
+                        },
+                        {
+                          "input": 5,
+                          "output": "Change Over"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderRadius": 9999,
+                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": 600,
+                "letterSpacing": "0.5px",
+                "paddingBottom": 6,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+                "paddingTop": 6,
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "draggable": true,
+                    "id": "_6WHVY2d",
+                    "modal": false,
+                    "overlayDismiss": false,
+                    "resizable": true,
+                    "showCloseIcon": true,
+                    "title": "Simulator",
+                    "type": "open",
+                    "viewParams": {
+                      "tagPath": "{view.params.tagPath}"
+                    },
+                    "viewPath": "desktop/mes_core/simulator",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "simulator_icon"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "path": "material/bug_report",
+              "style": {
+                "color": "#f97316",
+                "cursor": "pointer",
+                "marginLeft": 12,
+                "marginRight": 16
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "backgroundColor": "#21262d",
+            "border": "1px solid rgba(255, 255, 255, 0.05)",
+            "borderRadius": 16,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 5
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/production_status"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_1"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/oee"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_2"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10,
+                "marginRight": 10
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "middle"
+        },
+        "position": {
+          "basis": "489px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginTop": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/metrics"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_1"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/trend"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "card_2"
+            },
+            "position": {
+              "basis": "960px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "marginLeft": 10,
+                "marginRight": 10
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "bottom"
+        },
+        "position": {
+          "basis": "489px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginBottom": 10,
+            "marginTop": 10
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

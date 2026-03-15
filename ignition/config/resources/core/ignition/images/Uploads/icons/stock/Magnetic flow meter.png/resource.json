@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Magnetic flow meter.png"
+  ],
+  "attributes": {
+    "width": 107,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1576,
+    "lastModificationSignature": "fdfd71d2743100fc01fdbdc00360c4a8109ebb686ece5daadd36947a2b1ada97",
+    "height": 138
+  }
+}

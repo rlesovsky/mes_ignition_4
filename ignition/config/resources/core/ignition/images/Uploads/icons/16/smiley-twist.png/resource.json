@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-twist.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 813,
+    "lastModificationSignature": "bc821853a6a5117f999dc0c74a653503aaf05584bc113e02d4bec291e761b125",
+    "height": 16
+  }
+}

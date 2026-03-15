@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "database-medium.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1371,
+    "lastModificationSignature": "a3fa41c843f8a78b7a073e8947b41df42e33445f08ed9568b308211c0a8a7632",
+    "height": 16
+  }
+}

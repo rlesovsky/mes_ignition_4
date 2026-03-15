@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paint-can--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 787,
+    "lastModificationSignature": "03971c120fed4bdd6ad6df743b37768d1bbda057cb7e1c86eb1839f3ad31eab7",
+    "height": 16
+  }
+}

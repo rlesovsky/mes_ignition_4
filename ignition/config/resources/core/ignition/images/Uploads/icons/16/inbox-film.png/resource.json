@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "inbox-film.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 700,
+    "lastModificationSignature": "63268ba158c8c10bd6d76619b2550a610406c41f28738839182632111a6b5c45",
+    "height": 16
+  }
+}

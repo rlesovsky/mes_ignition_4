@@ -1,0 +1,7 @@
+{
+  "title": "MES 4.0",
+  "description": "",
+  "enabled": true,
+  "inheritable": false,
+  "parent": "mes_core"
+}

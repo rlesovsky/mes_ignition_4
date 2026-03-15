@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "gear icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1325,
+    "lastModificationSignature": "a433453bd2a68338903d181f8eb65f0cb202a1fd427827fb943a592a749f9606",
+    "height": 24
+  }
+}

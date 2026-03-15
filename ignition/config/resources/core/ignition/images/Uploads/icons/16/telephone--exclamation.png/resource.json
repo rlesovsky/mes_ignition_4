@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "telephone--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 630,
+    "lastModificationSignature": "7df98563d3e954764c29917d8ad3e48d3ec57fa17e66a853485f652a6523d77a",
+    "height": 16
+  }
+}

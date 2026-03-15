@@ -1,0 +1,44 @@
+{
+  "profile": {
+    "type": "ModbusTcp"
+  },
+  "settings": {
+    "advanced": {
+      "maxRetryCount": 1,
+      "reconnectAfterConsecutiveTimeouts": true,
+      "reverseWordOrder": false,
+      "zeroBasedAddressing": false
+    },
+    "connectivity": {
+      "communicationTimeout": 2000,
+      "hostname": "172.18.5.9",
+      "localAddress": null,
+      "port": 502
+    },
+    "deviceSettings": "test",
+    "readRequests": {
+      "readMultipleCoilsAllowed": true,
+      "readMultipleDiscreteInputsAllowed": true,
+      "readMultipleRegistersRequestAllowed": true
+    },
+    "requestOptimization": {
+      "concurrentRequests": 1,
+      "maxCoilsPerRequest": 2000,
+      "maxDiscreteInputsPerRequest": 2000,
+      "maxHoldingRegistersPerRequest": 125,
+      "maxHoldingRegistersPerWriteRequest": 123,
+      "maxInputRegistersPerRequest": 125,
+      "spanGaps": true
+    },
+    "stringHandling": {
+      "readRawStrings": false,
+      "reverseByteOrder": false,
+      "rightJustifyStrings": false
+    },
+    "writeRequests": {
+      "forceMultipleRegisterWritesEnabled": false,
+      "writeMultipleCoilsRequestAllowed": true,
+      "writeMultipleRegistersRequestAllowed": true
+    }
+  }
+}

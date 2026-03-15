@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layout-hf.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 300,
+    "lastModificationSignature": "93ec1fbbe7680d431a58aeeaf213e91d858a4d68c7e26782a446c47726214c64",
+    "height": 16
+  }
+}

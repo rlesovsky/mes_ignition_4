@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-skip.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 667,
+    "lastModificationSignature": "a82fe5466b0acdc2c658ae283a9148ee712fc2cf0b928bee7523586d3c6fcf4d",
+    "height": 16
+  }
+}

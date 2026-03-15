@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "eye.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 536,
+    "lastModificationSignature": "703503d07f0bc2a3328d55c46a09742f40b65b76a4755fb73d23231c96860b02",
+    "height": 16
+  }
+}

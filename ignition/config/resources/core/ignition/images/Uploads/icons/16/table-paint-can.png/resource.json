@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "table-paint-can.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 709,
+    "lastModificationSignature": "ab530ea33374177dd4f71cfa659fb1a443f78460836617674503456c96d33e3b",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "keyboard--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 575,
+    "lastModificationSignature": "c32709f6315aab15e604cd6bb6e77cac238e6fdf05fe921155a8d604426fe0dd",
+    "height": 16
+  }
+}

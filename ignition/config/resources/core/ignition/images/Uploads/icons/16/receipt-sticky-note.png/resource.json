@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "receipt-sticky-note.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1486,
+    "lastModificationSignature": "34917495628a161977ca23fc3c561c1dd563e9d209082e6ffce24c6b997901b6",
+    "height": 16
+  }
+}

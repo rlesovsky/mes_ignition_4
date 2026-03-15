@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "medal.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 796,
+    "lastModificationSignature": "f5903e426ac00965f4eff228618cea56e5951e853f3a77ec0dc95ec126bbd132",
+    "height": 16
+  }
+}

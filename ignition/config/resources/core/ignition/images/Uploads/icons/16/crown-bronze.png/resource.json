@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "crown-bronze.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 601,
+    "lastModificationSignature": "281bef6eb133428a95cfb57fc6bd0d8df4a776ec188683f248141b0630d0dcc6",
+    "height": 16
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "CountTypeID",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "LastCount",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "RunID",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Enable",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Count",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "TagID",
+    "tagType": "AtomicTag"
+  }
+]

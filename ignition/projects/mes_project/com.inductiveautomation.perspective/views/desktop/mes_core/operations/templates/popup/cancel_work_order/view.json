@@ -1,0 +1,149 @@
+{
+  "custom": {},
+  "params": {
+    "lineID": 28,
+    "tagPath": "[default]Enterprise/Site/Area/Line 1/Line"
+  },
+  "propConfig": {
+    "params.lineID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 73,
+      "width": 297
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t\n\ttagPath \u003d self.view.params.tagPath + \"/Line\"\n\n\tlineID \u003d system.tag.readBlocking(tagPath + \"/Line ID\")[0].value\n\t\n\tmes_core.run.cancelRun(runID, tagPath)\n\t\n\tsystem.perspective.closePopup(\"\")\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "yes"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#d1d5db"
+                }
+              },
+              "style": {
+                "backgroundColor": "#10b981",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#9ca3af",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginRight": 5
+              },
+              "text": "Yes",
+              "textStyle": {
+                "color": "#d1d5db",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\"\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "no"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#FAFAFB8C"
+                }
+              },
+              "style": {
+                "backgroundColor": "#FCA5A5A8",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderColor": "#ef4444",
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "borderWidth": 2,
+                "marginLeft": 5
+              },
+              "text": "No",
+              "textStyle": {
+                "color": "#FAFAFB8C",
+                "fontFamily": "Arial",
+                "fontSize": 18,
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "end"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "backgroundColor": "#0d1117",
+            "marginTop": 10,
+            "padding": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117",
+        "borderTopLeftRadius": 1
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

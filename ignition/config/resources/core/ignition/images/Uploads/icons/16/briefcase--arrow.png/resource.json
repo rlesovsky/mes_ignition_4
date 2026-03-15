@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "briefcase--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 760,
+    "lastModificationSignature": "91bdb4dc8da7ad0ef9491bee40d5fbf969cbd8b0f613c5dcb248ab2eca9cc545",
+    "height": 16
+  }
+}

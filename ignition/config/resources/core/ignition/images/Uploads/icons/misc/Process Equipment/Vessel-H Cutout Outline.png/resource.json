@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Vessel-H Cutout Outline.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 20273,
+    "lastModificationSignature": "dd36424729861b5ed7f67e97585bcffbf5a7ee3a66e46da5a491b214e3d6b727",
+    "height": 158
+  }
+}

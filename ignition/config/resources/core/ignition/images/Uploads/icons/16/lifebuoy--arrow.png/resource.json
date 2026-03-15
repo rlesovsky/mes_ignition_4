@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "lifebuoy--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 939,
+    "lastModificationSignature": "75196af1f902b2fe3f5ed21e3f8eafe660888084275a948d58c6ec785d3fd988",
+    "height": 16
+  }
+}

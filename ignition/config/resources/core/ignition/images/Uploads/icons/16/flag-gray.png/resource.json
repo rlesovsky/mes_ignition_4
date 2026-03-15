@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "flag-gray.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 710,
+    "lastModificationSignature": "93877b8aeb6225ab6c650568ca37d6cacbffeb29e9c96476dc35917a36d95979",
+    "height": 16
+  }
+}

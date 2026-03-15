@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "line icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1440,
+    "lastModificationSignature": "720c8b530f37ff5df798a73fae94fc3c504f3c42fa28eb7e4931eafb2900dbf4",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "odata-balloon.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 632,
+    "lastModificationSignature": "c4c0dff098bc3663b204fcb20bce5e0d85ea8dc762811186b6fe75dc16eae21a",
+    "height": 16
+  }
+}

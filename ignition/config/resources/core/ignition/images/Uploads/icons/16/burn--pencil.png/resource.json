@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "burn--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 901,
+    "lastModificationSignature": "45ad4d9d97000a38f4e37a1e0c85c585174b5c70767ec0c2dbca3376493ecc7d",
+    "height": 16
+  }
+}

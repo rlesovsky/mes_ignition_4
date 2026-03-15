@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "question-shield.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 805,
+    "lastModificationSignature": "ed0026168f91605b5e87ce9713957f649399c1e148bcb901995e9edf0f930361",
+    "height": 16
+  }
+}

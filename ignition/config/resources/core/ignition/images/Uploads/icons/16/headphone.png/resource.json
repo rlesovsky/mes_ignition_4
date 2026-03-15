@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "headphone.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 575,
+    "lastModificationSignature": "1c189a3f66ddf207f48cededca33d64226e57b13863eb66d81b730b883c7aec4",
+    "height": 16
+  }
+}

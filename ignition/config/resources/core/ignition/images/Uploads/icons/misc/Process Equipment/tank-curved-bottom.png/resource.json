@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tank-curved-bottom.png"
+  ],
+  "attributes": {
+    "width": 366,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 10887,
+    "lastModificationSignature": "1b01d5232bd399a538d312266df85310ac8af1156a238a9ede8d4aa364763b7b",
+    "height": 112
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "man 24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 612,
+    "lastModificationSignature": "7eebc15c5be49a2ba99a7d0a01000fae593d0810558838733e4629f608c7ded8",
+    "height": 24
+  }
+}

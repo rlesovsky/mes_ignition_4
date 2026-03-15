@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "magnifier--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 863,
+    "lastModificationSignature": "8f6b9a72465956e77477a07e05c8ed138f4d6be06b4f22158f85869eb09f3ee1",
+    "height": 16
+  }
+}

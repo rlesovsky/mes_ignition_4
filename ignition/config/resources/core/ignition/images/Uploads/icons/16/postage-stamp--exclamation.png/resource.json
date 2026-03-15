@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "postage-stamp--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 795,
+    "lastModificationSignature": "a3727c973dd58299ce6664e560aad2a2b9a90f83c718296174c6394861b0b308",
+    "height": 16
+  }
+}

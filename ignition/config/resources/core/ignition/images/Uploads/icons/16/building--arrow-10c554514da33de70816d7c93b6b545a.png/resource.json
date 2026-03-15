@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "building--arrow-10c554514da33de70816d7c93b6b545a.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 703,
+    "lastModificationSignature": "9fc656aa0ed0f999a558500b353094eb7c986e45ae64409fc2f473d6f29bec53",
+    "height": 16
+  }
+}

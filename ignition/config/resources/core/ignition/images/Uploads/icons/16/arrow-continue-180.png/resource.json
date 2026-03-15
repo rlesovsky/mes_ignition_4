@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-continue-180.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 863,
+    "lastModificationSignature": "7eaa4d38a62f02b641709a2ac3b8cf5ae9a6435319ef698e6fb258b392d4f08b",
+    "height": 16
+  }
+}

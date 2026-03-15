@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drawer--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 753,
+    "lastModificationSignature": "5aa5b914facab786ad63ea59af6810a31fbcb90744215711b838e71cc7a7e7d1",
+    "height": 16
+  }
+}

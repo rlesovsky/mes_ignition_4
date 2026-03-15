@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "image-sunset.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 705,
+    "lastModificationSignature": "ffcc406367c58a08c6a63e9ddfa07ac063b75dfb53a682ed8a74829eb3806e43",
+    "height": 24
+  }
+}

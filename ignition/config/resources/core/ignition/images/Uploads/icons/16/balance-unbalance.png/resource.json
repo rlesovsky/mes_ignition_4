@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balance-unbalance.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 876,
+    "lastModificationSignature": "a013bd813dca082bc6e3b0371de00664d76a0a178dd78418b222ff26c0ab9066",
+    "height": 16
+  }
+}

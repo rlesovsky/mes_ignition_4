@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cutlery-fork.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 434,
+    "lastModificationSignature": "0a55afb8d2f5b8c8d0b1930d96e68ce47c0613369cbb1958b83017562de2103e",
+    "height": 16
+  }
+}

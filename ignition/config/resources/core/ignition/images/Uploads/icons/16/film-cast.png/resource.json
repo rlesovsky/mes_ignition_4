@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "film-cast.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 674,
+    "lastModificationSignature": "d38adce8ac8dc6fdd2e0c0bf021ed4d8cb74bfa4cfe81f8fe75c8ecc954a4016",
+    "height": 16
+  }
+}

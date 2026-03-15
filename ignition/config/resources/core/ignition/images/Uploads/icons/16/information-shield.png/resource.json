@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "information-shield.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 775,
+    "lastModificationSignature": "f8137350d90e7223566ca69d06cac7b6de4257330f3d775d0cb52aa79831971c",
+    "height": 16
+  }
+}

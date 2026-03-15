@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balloon-twitter-retweet.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 782,
+    "lastModificationSignature": "b4bc387d9ccb2bf66049ad74321b8e59d29c7344bfba187e5cab9aade0c6dbb8",
+    "height": 16
+  }
+}

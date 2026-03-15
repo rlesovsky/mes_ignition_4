@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "lifebuoy--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 947,
+    "lastModificationSignature": "df5b2a675b1b31fa257082e1238b29359b8ee815d455095969ec8dbe40e6f06f",
+    "height": 16
+  }
+}

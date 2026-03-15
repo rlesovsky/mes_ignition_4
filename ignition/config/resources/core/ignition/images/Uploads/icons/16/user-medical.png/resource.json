@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-medical.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 743,
+    "lastModificationSignature": "237957b14dd374456e109f8c88d4396e6d0792ddc526a0b16fbed1bea971d965",
+    "height": 16
+  }
+}

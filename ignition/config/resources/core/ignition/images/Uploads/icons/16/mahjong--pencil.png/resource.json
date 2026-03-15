@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mahjong--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 704,
+    "lastModificationSignature": "850087f758e4b695dc7bddb91da4e1bc7a387b04cbf3900d8ddf2069bf0d5bc4",
+    "height": 16
+  }
+}

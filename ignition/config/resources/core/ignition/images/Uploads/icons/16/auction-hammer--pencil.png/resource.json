@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "auction-hammer--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 902,
+    "lastModificationSignature": "bd8d4ee50351ca67645b2eaa60010a0cd8e1e4b1bb17bc172b59d0b03abafd66",
+    "height": 16
+  }
+}

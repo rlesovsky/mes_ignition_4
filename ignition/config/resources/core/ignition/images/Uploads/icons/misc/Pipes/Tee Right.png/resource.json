@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Tee Right.png"
+  ],
+  "attributes": {
+    "width": 218,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 7194,
+    "lastModificationSignature": "4de6fb62c4b2354f4ff8ff57e1702fb6af8a2223827a3f036c76808c9bd6ff01",
+    "height": 337
+  }
+}

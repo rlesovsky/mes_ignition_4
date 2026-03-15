@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "dashboard--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 719,
+    "lastModificationSignature": "29d755ea4c0de9f4541370ef4f14d5cc899646ffd02c43289a834d50cfe6bfc9",
+    "height": 16
+  }
+}

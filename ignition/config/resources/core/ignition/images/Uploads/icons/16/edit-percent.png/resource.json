@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-percent.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 266,
+    "lastModificationSignature": "d80bb34c1097873a51cec89f2da67a31c0a5f9d93eb2e71114806bd397a9e163",
+    "height": 16
+  }
+}

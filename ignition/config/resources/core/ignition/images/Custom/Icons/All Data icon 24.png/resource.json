@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "All Data icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1379,
+    "lastModificationSignature": "53e04b4cf01ec9c854e3b26f499f67cfd8f32b0d546ea45cf61438671a808cf1",
+    "height": 24
+  }
+}

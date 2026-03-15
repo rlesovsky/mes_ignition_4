@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calendar-blue.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 849,
+    "lastModificationSignature": "137447340e888de0b9e7fc29c5ca9456bb84203ea11f9007b77ea04c99038b31",
+    "height": 24
+  }
+}

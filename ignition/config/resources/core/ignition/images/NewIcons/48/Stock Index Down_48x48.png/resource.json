@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Stock Index Down_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1337,
+    "lastModificationSignature": "46b20eac48fd0de808a20d9b8177a9fbfb36916065af7d2ed3f99566fb7b50b8",
+    "height": 48
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "navigation-090-frame.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 915,
+    "lastModificationSignature": "eff3a2fb0ffa3c33f8eda76ec571c9f0a7c733b753c8342b92491b464fbffb7e",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "media-player-medium-orange.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 509,
+    "lastModificationSignature": "7bf764c53f903e4728c9a2b53c37eb6630de90380cee54c12608b42060f12ee9",
+    "height": 16
+  }
+}

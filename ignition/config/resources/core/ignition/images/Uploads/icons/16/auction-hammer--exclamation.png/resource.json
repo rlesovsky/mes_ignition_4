@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "auction-hammer--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 922,
+    "lastModificationSignature": "9a506a559152a47d558c4fbef531cdeff8473e786b9b72f967bfc2652256f443",
+    "height": 16
+  }
+}

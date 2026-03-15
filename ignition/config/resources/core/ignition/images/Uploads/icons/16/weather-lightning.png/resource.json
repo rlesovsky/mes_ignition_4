@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "weather-lightning.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 775,
+    "lastModificationSignature": "edcea4ab9c5ff880bd738da20ff2d9542731230c8b942ee5220c8477df0611bf",
+    "height": 16
+  }
+}

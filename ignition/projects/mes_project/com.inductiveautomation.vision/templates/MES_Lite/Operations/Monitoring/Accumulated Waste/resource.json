@@ -1,0 +1,17 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ OEE ]\n\nSummary: Actual versus Standard production data graph.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "lastModificationSignature": "60a406783d2b74d0077e900e6985d7e6c758ae26e2c8d54b63cae51e7d82217b"
+  }
+}

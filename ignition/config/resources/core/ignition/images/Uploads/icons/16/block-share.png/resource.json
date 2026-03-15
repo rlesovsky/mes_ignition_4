@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "block-share.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 954,
+    "lastModificationSignature": "9670eef53e22d4443525b62418e7ab7411fc96d2b598ed9e7cd5abdedac84a20",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "microformats.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 555,
+    "lastModificationSignature": "bc9719917c805d439c4fba7acfa7846d399e4b7ae87da9ba6954628454ace7c9",
+    "height": 16
+  }
+}

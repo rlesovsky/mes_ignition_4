@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-lol.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 804,
+    "lastModificationSignature": "f1b5f149cf6bd71a474d80ea9be44caae458eab79b937bee9262d2c7c996bbb6",
+    "height": 16
+  }
+}

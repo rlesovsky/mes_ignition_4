@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "italic_24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 486,
+    "lastModificationSignature": "49dfccc1f4302aaa2a31ffa78a407b67f1774e4aed5e06538f4e6d2032a1cc55",
+    "height": 24
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "waste bin icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1160,
+    "lastModificationSignature": "f12d8c5acd78982fb644e690551c8d7a305396a966f3cec60a09f288a26b2557",
+    "height": 24
+  }
+}

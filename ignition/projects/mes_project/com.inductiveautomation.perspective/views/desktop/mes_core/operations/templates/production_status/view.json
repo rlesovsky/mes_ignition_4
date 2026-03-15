@@ -1,0 +1,1195 @@
+{
+  "custom": {
+    "runID": 2,
+    "scheduleID": [
+      2
+    ]
+  },
+  "params": {
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "custom.runID": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.tagPath} + \"/Line/OEE/RunID\""
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.scheduleID": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.tagPath} + \"/Line/OEE/WorkOrder[0]\""
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 402,
+      "width": 652
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "RadioGroup"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.radios[0].selected": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/Run Enabled\""
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "radios": [
+                    {
+                      "text": "",
+                      "value": ""
+                    }
+                  ],
+                  "selectedIcon": {
+                    "color": {
+                      "disabled": "#ef4444",
+                      "enabled": "#10b981"
+                    }
+                  },
+                  "style": {
+                    "marginRight": 20
+                  },
+                  "unselectedIcon": {
+                    "color": {
+                      "enabled": "#ef4444"
+                    }
+                  }
+                },
+                "type": "ia.input.radio-group"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/OEE/WorkOrder[0,1]\""
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 18,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "active_work_order"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "alignItems": "center"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "110px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14
+                  },
+                  "text": "Quantity:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\""
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif not quality.isGood():\n\t\treturn 0\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "order"
+            },
+            "position": {
+              "basis": "24px",
+              "grow": 1
+            },
+            "props": {
+              "alignItems": "center"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "basis": "110px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14
+                  },
+                  "text": "Remaining:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_2"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\""
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} - tag({view.params.tagPath} + \"/Line/Outfeed\")",
+                          "type": "expression"
+                        },
+                        {
+                          "code": "\tif not quality.isGood():\n\t\treturn 0\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "order_0"
+            },
+            "position": {
+              "basis": "24px",
+              "grow": 1
+            },
+            "props": {
+              "alignItems": "center"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "basis": "110px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14
+                  },
+                  "text": "Started:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_2"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/Start Time\""
+                      },
+                      "transforms": [
+                        {
+                          "formatType": "datetime",
+                          "formatValue": {
+                            "date": "medium",
+                            "time": "medium"
+                          },
+                          "type": "format"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "times"
+            },
+            "position": {
+              "basis": "24px",
+              "grow": 1
+            },
+            "props": {
+              "alignItems": "center"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_3"
+                },
+                "position": {
+                  "basis": "110px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14
+                  },
+                  "text": "Est Completion:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Line/OEE/Estimated Finish Time\""
+                      },
+                      "transforms": [
+                        {
+                          "formatType": "datetime",
+                          "formatValue": {
+                            "date": "medium",
+                            "time": "medium"
+                          },
+                          "type": "format"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "times_0"
+            },
+            "position": {
+              "basis": "24px",
+              "grow": 1
+            },
+            "props": {
+              "alignItems": "center"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "status"
+        },
+        "position": {
+          "basis": "140px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "paddingLeft": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_3"
+                },
+                "position": {
+                  "basis": "80px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#9ca3af",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 12,
+                    "fontWeight": 500
+                  },
+                  "text": "Progress"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "percent_label"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") \u003e 0,\n  tag({view.params.tagPath} + \"/Line/Outfeed\") / tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") * 100,\n  0)"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage \u003d float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") \u003e 0,\n  round(tag({view.params.tagPath} + \"/Line/Outfeed\") / tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") * 100, 1) + \"%\",\n  \"0%\")"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 12,
+                    "fontWeight": 600,
+                    "textAlign": "right"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "progress_header"
+            },
+            "position": {
+              "basis": "25px"
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-between"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Progress"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "propConfig": {
+              "props.bar.determinate.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if(tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") \u003e 0,\n  tag({view.params.tagPath} + \"/Line/Outfeed\") / tag({view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\") * 100,\n  0)"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tpercentage \u003d float(value)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.max": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/WorkOrder[0,4]\""
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif not quality.isGood():\n\t\treturn 0\n\treturn value",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.params.tagPath} + \"/Line/Outfeed\""
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "bar": {
+                "color": "#21262d",
+                "determinate": {},
+                "indeterminate": {
+                  "color": "#6b7280"
+                }
+              },
+              "track": {
+                "determinate": {
+                  "color": "#101418"
+                },
+                "indeterminate": {
+                  "color": "#6b7280"
+                }
+              }
+            },
+            "type": "ia.display.progress"
+          }
+        ],
+        "meta": {
+          "name": "progress"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "marginLeft": 10,
+            "marginRight": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "#d1d5db",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 14,
+                "fontWeight": 500,
+                "letterSpacing": "0.5px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              },
+              "text": "Production Metrics"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "#d1d5db",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 14,
+                "fontWeight": 500,
+                "letterSpacing": "0.5px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              },
+              "text": "Actions"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header_0"
+        },
+        "position": {
+          "basis": "30px"
+        },
+        "props": {
+          "alignItems": "center"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
+                      },
+                      "text": "Produced"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/Outfeed\""
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
+                      },
+                      "text": "Scrap"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/Waste\""
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "produced_scrap"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
+                      },
+                      "text": "Cycle Time"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/Cycle Time\""
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \"s\"",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9ca3af",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "textAlign": "center"
+                      },
+                      "text": "Production Rate"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/Production Rate\""
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \"/hr\"",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 32,
+                        "fontWeight": 300,
+                        "letterSpacing": "-0.5px",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "cycle_rate"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "metrics_container"
+            },
+            "position": {
+              "basis": "300px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#101418",
+                "borderRadius": 12,
+                "marginLeft": 5,
+                "marginRight": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": [
+                          {
+                            "config": {
+                              "script": "\t\n\ttagPath \u003d self.view.params.tagPath + \"/Line\"\n\t\n\trunID \u003d system.tag.readBlocking(tagPath + \"/OEE/RunID\")[0].value\n\t\n\tmes_core.run.stopRun(runID)"
+                            },
+                            "scope": "G",
+                            "type": "script"
+                          },
+                          {
+                            "config": {
+                              "draggable": true,
+                              "id": "I1SNFZdJ",
+                              "modal": false,
+                              "overlayDismiss": false,
+                              "resizable": true,
+                              "showCloseIcon": true,
+                              "title": "Confirm Stop Work Order",
+                              "type": "open",
+                              "viewParams": {
+                                "tagPath": "{view.params.tagPath}"
+                              },
+                              "viewPath": "desktop/mes_core/operations/templates/popup/end_work_order",
+                              "viewportBound": false
+                            },
+                            "scope": "C",
+                            "type": "popup"
+                          }
+                        ]
+                      }
+                    },
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "44px"
+                    },
+                    "props": {
+                      "image": {
+                        "icon": {
+                          "color": "#fca5a5",
+                          "path": "material/stop"
+                        }
+                      },
+                      "primary": false,
+                      "style": {
+                        "backgroundColor": "rgba(239, 68, 68, 0.15)",
+                        "borderColor": "rgba(239, 68, 68, 0.4)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "margin": 5
+                      },
+                      "text": "End Order",
+                      "textStyle": {
+                        "color": "#fca5a5",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "end_column"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "draggable": true,
+                            "id": "Clrr4kYZ",
+                            "modal": false,
+                            "overlayDismiss": false,
+                            "resizable": true,
+                            "showCloseIcon": true,
+                            "type": "open",
+                            "viewParams": {
+                              "runID": "{view.custom.runID}",
+                              "scheduleID": "{view.custom.scheduleID}",
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "viewPath": "desktop/mes_core/operations/templates/popup/report_product_defect",
+                            "viewportBound": false
+                          },
+                          "scope": "C",
+                          "type": "popup"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Button_0"
+                    },
+                    "position": {
+                      "basis": "44px"
+                    },
+                    "props": {
+                      "image": {
+                        "icon": {
+                          "color": "#9ca3af",
+                          "path": "material/assignment"
+                        }
+                      },
+                      "primary": false,
+                      "style": {
+                        "backgroundColor": "rgba(75, 85, 99, 0.4)",
+                        "borderColor": "rgba(107, 114, 128, 0.5)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "margin": 5
+                      },
+                      "text": "Categorize Scrap",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "draggable": true,
+                            "id": "Pyvtoue9",
+                            "modal": false,
+                            "overlayDismiss": false,
+                            "resizable": true,
+                            "showCloseIcon": true,
+                            "title": "Confirm Cancel Work Order",
+                            "type": "open",
+                            "viewParams": {
+                              "tagPath": "{view.params.tagPath}"
+                            },
+                            "viewPath": "desktop/mes_core/operations/templates/popup/cancel_work_order",
+                            "viewportBound": false
+                          },
+                          "scope": "C",
+                          "type": "popup"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Button_1"
+                    },
+                    "position": {
+                      "basis": "44px"
+                    },
+                    "props": {
+                      "image": {
+                        "icon": {
+                          "color": "#9ca3af",
+                          "path": "material/cancel"
+                        }
+                      },
+                      "primary": false,
+                      "style": {
+                        "backgroundColor": "rgba(75, 85, 99, 0.4)",
+                        "borderColor": "rgba(107, 114, 128, 0.5)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "margin": 5
+                      },
+                      "text": "Cancel Order",
+                      "textStyle": {
+                        "color": "#d1d5db",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "scrap_cancel_column"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "path": "../../status/active_work_order/Label_0.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": true,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "No Active Work Order",
+                              "output": false
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "actions"
+            },
+            "position": {
+              "basis": "300px",
+              "grow": 1
+            },
+            "props": {
+              "justify": "center"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "production"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginBottom": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 16,
+        "padding": 16
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

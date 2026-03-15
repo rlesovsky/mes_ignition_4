@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cigarette-stop.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 519,
+    "lastModificationSignature": "c124d16d9ef1af9eb4956ec5ab39a53543415f2d5eb926b8b242ab21560b7ee5",
+    "height": 16
+  }
+}

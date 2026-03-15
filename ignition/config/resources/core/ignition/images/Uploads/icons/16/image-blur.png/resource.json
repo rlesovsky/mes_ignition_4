@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "image-blur.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 725,
+    "lastModificationSignature": "80d3d0944e762e2dd4f6dc205a1c8ce39c2607fef85b36160e43878fcedc4da3",
+    "height": 16
+  }
+}

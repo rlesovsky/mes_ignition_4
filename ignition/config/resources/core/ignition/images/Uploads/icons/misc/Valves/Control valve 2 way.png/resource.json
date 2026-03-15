@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Control valve 2 way.png"
+  ],
+  "attributes": {
+    "width": 84,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1534,
+    "lastModificationSignature": "96ab211af68714fa28c732f98e62ff1b956e0bc918591b1372a997d5456ea58c",
+    "height": 141
+  }
+}

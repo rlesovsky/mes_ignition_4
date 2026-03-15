@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Nelson_Rule_7.png"
+  ],
+  "attributes": {
+    "width": 914,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 56761,
+    "lastModificationSignature": "b0548afba86b8353bfe36ab1490af7d756bd014112691f628847aee32223ab90",
+    "height": 599
+  }
+}

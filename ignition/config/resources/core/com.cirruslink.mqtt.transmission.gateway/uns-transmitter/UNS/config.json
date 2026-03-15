@@ -1,0 +1,23 @@
+{
+  "birthSettleDelay": 0,
+  "convertUdts": true,
+  "dataQos": 0,
+  "dataRetain": true,
+  "deviceLevelUdtsAsDevices": false,
+  "discoveryDelay": 0,
+  "enableStoreForwardByDefault": true,
+  "filteredProperties": "accessRights;clampMode;deadband;deadbandMode;formatString;historicalDeadband;historicalDeadbandMode;historicalDeadbandStyle;historyEnabled;historyMaxAge;historyMaxAgeUnits;historyProvider;historySampleRate;historySampleRateUnits;historyTagGroup;historyTimeDeadband;historyTimeDeadbandUnits;opcItemPath;opcServer;permissionModel;rawHigh;rawLow;sampleMode;scaleFactor;scaleMode;scaledHigh;scaledLow;tagGroup;valueSource;expression;expressionType;ConfiguredTagPath;eventScripts;readPermissions;writePermissions;eventScripts;parentEnabled;sourceTagPath",
+  "inOrderHistory": true,
+  "includeSparkplugDataTypes": true,
+  "optimizeUdts": true,
+  "propsQos": 1,
+  "propsRetain": true,
+  "publishUdtDefinitions": true,
+  "sendAllProps": false,
+  "serverSet": "Bootcamp",
+  "tagPacingPeriod": 100,
+  "tagPath": "",
+  "tagProvider": "default",
+  "transmitterMqttClientCount": 1,
+  "useTopicPrefixToken": true
+}

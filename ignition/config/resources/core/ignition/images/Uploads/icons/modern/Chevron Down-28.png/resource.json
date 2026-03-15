@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Chevron Down-28.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 401,
+    "lastModificationSignature": "aa9d308e37756341af851c2ea5608954dc37c557541c1de300aa6125f64b4aa2",
+    "height": 28
+  }
+}

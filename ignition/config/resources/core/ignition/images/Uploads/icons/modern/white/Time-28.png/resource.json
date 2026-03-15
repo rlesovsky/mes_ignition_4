@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Time-28.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 586,
+    "lastModificationSignature": "8b21a2b805252142ff57dbaabff5bb9f97c16c5fa5d9c4d064e20f3caffd7449",
+    "height": 28
+  }
+}

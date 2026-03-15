@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paper-bag-label.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 832,
+    "lastModificationSignature": "61ce0b75b1ec89025f37ceed14dae07077b5ba01ead073542eeaa122bbea31e6",
+    "height": 24
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-money.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 915,
+    "lastModificationSignature": "8b8804ac549ee2d1bdc540637dc93fa41a4a4a7b2eae44c6d433336ba8c05649",
+    "height": 16
+  }
+}

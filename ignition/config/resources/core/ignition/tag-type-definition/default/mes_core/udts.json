@@ -1,0 +1,660 @@
+[
+  {
+    "name": "Line",
+    "parameters": {
+      "line": {
+        "dataType": "String",
+        "value": null
+      },
+      "lineID": {
+        "dataType": "Integer",
+        "value": null
+      },
+      "dbConnection": {
+        "dataType": "String",
+        "value": "mes_core"
+      },
+      "units": {
+        "dataType": "String",
+        "value": null
+      }
+    },
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "memory",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\tif currentValue.value \u003d\u003d 1 and not initialChange:\n\t\tsystem.tag.writeBlocking(\"[.]Dispatch/Enable\", 1)\n\t\t\n\telse:\n\t\tsystem.tag.writeBlocking(\"[.]Dispatch/Enable\", 0)"
+          }
+        ],
+        "dataType": "Boolean",
+        "name": "Collect Data",
+        "value": false,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "now()",
+        "dataType": "DateTime",
+        "name": "Current Time",
+        "formatString": "yyyy-MM-dd h:mm:ss aa",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "Float4",
+        "name": "Cycle Time",
+        "tagType": "AtomicTag",
+        "enabled": true
+      },
+      {
+        "name": "Dispatch",
+        "typeId": "mes_core/Query Dispatch",
+        "tagType": "UdtInstance",
+        "tags": [
+          {
+            "name": "OEE Outfeed",
+            "tagType": "UdtInstance",
+            "tags": [
+              {
+                "expression": "{[.]../../Outfeed}",
+                "historyProvider": "timebase",
+                "historyEnabled": true,
+                "name": "Count",
+                "tagType": "AtomicTag"
+              }
+            ]
+          },
+          {
+            "name": "OEE Infeed",
+            "tagType": "UdtInstance",
+            "tags": [
+              {
+                "expression": "{[.]../../Infeed}",
+                "historyProvider": "timebase",
+                "historyEnabled": true,
+                "name": "Count",
+                "tagType": "AtomicTag"
+              }
+            ]
+          },
+          {
+            "name": "OEE Waste",
+            "tagType": "UdtInstance",
+            "tags": [
+              {
+                "expression": "{[.]../../Waste}",
+                "historyProvider": "timebase",
+                "historyEnabled": true,
+                "name": "Count",
+                "tagType": "AtomicTag"
+              }
+            ]
+          },
+          {
+            "expression": "{[.]../OEE/RunID}",
+            "name": "RunID",
+            "tagType": "AtomicTag"
+          }
+        ]
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{[.]../Edge/Infeed}",
+        "name": "Infeed",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{lineID}",
+        "name": "Line ID",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{line}",
+        "dataType": "String",
+        "name": "Line Name",
+        "tagType": "AtomicTag"
+      },
+      {
+        "name": "OEE",
+        "typeId": "mes_core/OEE-Downtime",
+        "tagType": "UdtInstance",
+        "tags": [
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": true,
+            "name": "OEE",
+            "tagType": "AtomicTag"
+          },
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": true,
+            "name": "OEE Availability",
+            "tagType": "AtomicTag"
+          },
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": true,
+            "name": "Production Rate",
+            "tagType": "AtomicTag"
+          },
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": false,
+            "name": "WorkOrder",
+            "tagType": "AtomicTag"
+          },
+          {
+            "valueSource": "reference",
+            "expression": "addHours({[.]../Start Time},6)",
+            "sourceTagPath": "[.]../Start Time",
+            "name": "Start Time",
+            "tagType": "AtomicTag"
+          },
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": true,
+            "name": "OEE Performance",
+            "tagType": "AtomicTag"
+          },
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": true,
+            "name": "Total Count",
+            "tagType": "AtomicTag"
+          },
+          {
+            "valueSource": "reference",
+            "sourceTagPath": "[.]../Dispatch/OEE Waste/Count",
+            "name": "Bad Count",
+            "tagType": "AtomicTag"
+          },
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": true,
+            "name": "OEE Quality",
+            "tagType": "AtomicTag"
+          },
+          {
+            "historyProvider": "timebase",
+            "historyEnabled": true,
+            "name": "Standard Rate",
+            "tagType": "AtomicTag"
+          },
+          {
+            "valueSource": "reference",
+            "sourceTagPath": "[.]../Dispatch/OEE Outfeed/Count",
+            "name": "Good Count",
+            "tagType": "AtomicTag"
+          }
+        ]
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\timport system\n\tif not initialChange:\n\t\tlastTS \u003d previousValue.timestamp\n\t\tnewTS \u003d currentValue.timestamp\n\t\tdelta \u003d system.date.millisBetween(lastTS, newTS)/1000\n\t\tsystem.tag.writeBlocking(\"[.]Cycle Time\", float(delta))"
+          }
+        ],
+        "expression": "{[.]../Edge/Outfeed}",
+        "name": "Outfeed",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Rate Setpoint",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "Boolean",
+        "name": "Run Enabled",
+        "value": false,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "dateDiff({[.]Start Time},{[.]Current Time},\u0027Second\u0027)",
+        "name": "Run Time",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "DateTime",
+        "name": "Start Time",
+        "formatString": "yyyy-MM-dd h:mm:ss aa",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{[.]../Edge/State}",
+        "name": "State",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{[.]../Edge/Waste}",
+        "name": "Waste",
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
+    "name": "Query Dispatch",
+    "parameters": {
+      "dbConnection": {
+        "dataType": "String",
+        "value": {
+          "bindType": "parameter",
+          "binding": "{dbConnection}"
+        }
+      },
+      "lineID": {
+        "dataType": "Integer",
+        "value": {
+          "bindType": "parameter",
+          "binding": "{lineID}"
+        }
+      }
+    },
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "memory",
+        "dataType": "Boolean",
+        "name": "Enable",
+        "value": true,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\n\tdb \u003d \u0027mes_core\u0027\n\tenable \u003d system.tag.readBlocking([\"[.]Enable\"])[0].value\n\t\n\tif not initialChange:\n\t\tstamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking([\"[.]State Start Time\"], [stamp])\n\t\t\n\t\tif enable \u003d\u003d 1:\n\t\t\tlineID \u003d system.tag.readBlocking([\"[.]LineID\"])[0].value\n\t\t\trunID \u003d system.tag.readBlocking([\"[.]RunID\"])[0].value\n\t\t\treasonCode \u003d currentValue.value if currentValue.quality.isGood() else 0\n\t\t\t\n\t\t\t# Get state reason info from database\n\t\t\treasonQuery \u003d \u0027SELECT id, reasonname FROM statereason WHERE reasoncode \u003d ? AND parentid \u003d ?\u0027\n\t\t\tdata \u003d system.db.runPrepQuery(reasonQuery, [reasonCode, lineID], db)\n\t\t\t\n\t\t\tfor row in data:\n\t\t\t\treasonID \u003d row[0]\n\t\t\t\treasonName \u003d row[1]\n\t\t\t\t\n\t\t\t\t# End the previous state (set EndDateTime where it\u0027s NULL)\n\t\t\t\tendQuery \u003d \u0027UPDATE statehistory SET enddatetime \u003d ? WHERE lineid \u003d ? AND enddatetime IS NULL\u0027\n\t\t\t\tsystem.db.runPrepUpdate(endQuery, [stamp, lineID], db)\n\t\t\t\t\n\t\t\t\t# Insert new state record\n\t\t\t\tinsertQuery \u003d \u0027\u0027\u0027INSERT INTO statehistory (statereasonid, runid, reasonname, lineid, reasoncode, startdatetime)\n\t\t\t\t\tVALUES (?,?,?,?,?,?)\u0027\u0027\u0027\n\t\t\t\tsystem.db.runPrepUpdate(insertQuery, [reasonID, runID, reasonName, lineID, reasonCode, stamp], db)\n\t\n"
+          }
+        ],
+        "expression": "{[.]../State}",
+        "name": "Line State",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{lineID}",
+        "name": "LineID",
+        "tagType": "AtomicTag"
+      },
+      {
+        "name": "OEE Infeed",
+        "typeId": "mes_core/Count Dispatch",
+        "tagType": "UdtInstance"
+      },
+      {
+        "name": "OEE Outfeed",
+        "typeId": "mes_core/Count Dispatch",
+        "parameters": {
+          "dbConnection": {
+            "dataType": "String",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{dbConnection}"
+            }
+          },
+          "lineID": {
+            "dataType": "Integer",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{lineID}"
+            }
+          }
+        },
+        "tagType": "UdtInstance"
+      },
+      {
+        "name": "OEE Waste",
+        "typeId": "mes_core/Count Dispatch",
+        "parameters": {
+          "dbConnection": {
+            "dataType": "String",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{dbConnection}"
+            }
+          },
+          "lineID": {
+            "dataType": "Integer",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{lineID}"
+            }
+          }
+        },
+        "tagType": "UdtInstance"
+      },
+      {
+        "valueSource": "expr",
+        "name": "RunID",
+        "tagType": "AtomicTag"
+      },
+      {
+        "datasource": {
+          "bindType": "parameter",
+          "binding": "{dbConnection}"
+        },
+        "valueSource": "db",
+        "dataType": "DataSet",
+        "query": "SELECT\r\n\tid,\r\n\treasoncode,\r\n\treasonname,\r\n\tparentid,\r\n\tplannedreason\r\nFROM statereason\r\nWHERE parentid \u003d {lineID}\r\nORDER BY reasoncode",
+        "name": "State Reason",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "datediff({[.]State Start Time},now(),\u0027second\u0027)",
+        "name": "State Run Time",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "DateTime",
+        "name": "State Start Time",
+        "formatString": "yyyy-MM-dd h:mm:ss aa",
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
+    "readOnly": false,
+    "dataType": "Int4",
+    "writePermissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "name": "UI",
+    "readPermissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "tagGroup": "Default",
+    "enabled": true,
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "memory",
+        "readOnly": false,
+        "dataType": "DataSet",
+        "writePermissions": {
+          "type": "AllOf",
+          "securityLevels": []
+        },
+        "name": "UI",
+        "readPermissions": {
+          "type": "AllOf",
+          "securityLevels": []
+        },
+        "value": "{\"columns\":[{\"name\":\"name\",\"type\":\"java.lang.String\"},{\"name\":\"template\",\"type\":\"java.lang.String\"},{\"name\":\"layout\",\"type\":\"java.lang.String\"},{\"name\":\"parameters\",\"type\":\"java.lang.String\"}],\"rows\":[[\"OEE\",\"MES_Lite/Operations/Monitoring/OEE\",\"cell 3 0 3 2, grow\",\"{\\\"title\\\":\\\"OEE\\\",\\\"linePath\\\":\\\"SAP1082/Molding/I37\\\"}\"],[\"Run Data\",\"MES_Lite/Run Data\",\"cell 0 4 3 2, grow\",\"{\\\"title\\\":\\\"Run Data\\\",\\\"LinePath\\\":\\\"SAP1082/Molding/I37\\\",\\\"TagPath\\\":\\\"SAP1082/Molding/I37\\\"}\"],[\"Batch Management\",\"MES_Lite/Shenzhen/Batch Management\",\"cell 3 4 3 2, grow\",\"\"],[\"Run Status\",\"MES_Lite/Operations/Monitoring/Run Status Simulator\",\"cell 0 0 3 2, grow\",\"\"]]}",
+        "tagGroup": "Default",
+        "enabled": true,
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
+    "name": "OEE-Downtime",
+    "parameters": {
+      "lineID": {
+        "dataType": "Integer",
+        "value": {
+          "bindType": "parameter",
+          "binding": "{lineID}"
+        }
+      },
+      "dbConnection": {
+        "dataType": "String",
+        "value": {
+          "bindType": "parameter",
+          "binding": "{dbConnection}"
+        }
+      }
+    },
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "memory",
+        "name": "Bad Count",
+        "value": 0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "now()",
+        "dataType": "DateTime",
+        "name": "Current Time",
+        "formatString": "yyyy-MM-dd h:mm:ss aa",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "now()",
+        "dataType": "DateTime",
+        "name": "End Time",
+        "formatString": "yyyy-MM-dd h:mm:ss",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "String",
+        "name": "Estimated Finish Time",
+        "formatString": "#,##0.##",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Good Count",
+        "value": 0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{lineID}",
+        "name": "ID",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "if(\r\n  isNull({[.]OEE Availability}) || \r\n  isNull({[.]OEE Performance}) || \r\n  isNull({[.]OEE Quality}),\r\n  0,\r\n  {[.]OEE Availability} * {[.]OEE Performance} * {[.]OEE Quality}\r\n)",
+        "dataType": "Float4",
+        "name": "OEE",
+        "value": 0.0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "Float4",
+        "name": "OEE Availability",
+        "value": 0.0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "Float4",
+        "name": "OEE Performance",
+        "value": 0.0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "Float4",
+        "name": "OEE Quality",
+        "value": 0.0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Planned Downtime",
+        "value": 0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "if({[.]Total Time}\u003e300,\r\ntry(\r\n{[.]Good Count}/({[.]Total Time}/60/60),\r\n0\r\n)\r\n,\r\n0\r\n)",
+        "name": "Production Rate",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "name": "Quantity",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{[.]Total Time}-{[.]Unplanned Downtime}-{[.]Planned Downtime}",
+        "name": "Run Time",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "RunID",
+        "value": -1,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "name": "Schedule ID",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Scheduled Rate",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Standard Rate",
+        "value": 0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "datasource": {
+          "bindType": "parameter",
+          "binding": "{dbConnection}"
+        },
+        "valueSource": "expr",
+        "dataType": "DateTime",
+        "name": "Start Time",
+        "formatString": "yyyy-MM-dd h:mm:ss",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "try(\r\n({[.]Standard Rate}/3600) * \r\n{[.]Run Time},\r\n-1\r\n)",
+        "name": "Target Count",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Total Count",
+        "value": 0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "({[.]Current Time} - {[.]Start Time}) / 1000",
+        "name": "Total Time",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "String",
+        "name": "Units",
+        "value": "Parts",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "Unplanned Downtime",
+        "value": 0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "datasource": {
+          "bindType": "parameter",
+          "binding": "{dbConnection}"
+        },
+        "valueSource": "db",
+        "dataType": "DataSet",
+        "query": "SELECT\r\n\tr.id AS \"ID\",\r\n\two.workorder AS \"WorkOrder\",\r\n\tr.runstartdatetime AS \"StartTime\",\r\n\tsch.schedulefinishdatetime AS \"FinishTime\",\r\n\tsch.quantity AS \"Quantity\"\r\nFROM run r\r\nLEFT JOIN schedule sch ON r.scheduleid \u003d sch.id\r\nLEFT JOIN workorder wo ON sch.workorderid \u003d wo.id\r\nWHERE sch.lineid \u003d {[.]ID}\r\nAND r.id \u003d {[.]RunID}",
+        "name": "WorkOrder",
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
+    "name": "Count Dispatch",
+    "parameters": {
+      "dbConnection": {
+        "dataType": "String",
+        "value": {
+          "bindType": "parameter",
+          "binding": "{dbConnection}"
+        }
+      },
+      "lineID": {
+        "dataType": "Integer",
+        "value": {
+          "bindType": "parameter",
+          "binding": "{lineID}"
+        }
+      }
+    },
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\n\tenable \u003d system.tag.readBlocking([\"[.]Enable\"])[0].value\n\t\n\tif enable \u003d\u003d 1 and not initialChange:\n\t\tlastCountTagPath \u003d \"[.]LastCount\"\n\t\t\n\t\t# Treat a current value of 0 as a reset/rollover event\n\t\tif currentValue.value \u003d\u003d 0:\n\t\t\t# Make sure the last count doesn\u0027t remember the drop and subtract on rise\n\t\t\tsystem.tag.writeBlocking([lastCountTagPath], [0])\n\t\telse:\n\t\t\tdb \u003d \u0027mes_core\u0027\n\t\t\tstamp \u003d system.date.now()\n\t\t\t\n\t\t\tcurrentCount \u003d currentValue.value\n\t\t\tlastCount \u003d system.tag.readBlocking([\"[.]LastCount\"])[0].value\n\t\t\ttagID \u003d system.tag.readBlocking([\"[.]TagID\"])[0].value\n\t\t\trunID \u003d system.tag.readBlocking([\"[.]RunID\"])[0].value\n\t\t\tcountTypeID \u003d system.tag.readBlocking([\"[.]CountTypeID\"])[0].value\n\t\t\t\n\t\t\tcountDelta \u003d currentCount - lastCount\n\t\t\t\n\t\t\t# PostgreSQL query with lowercase columns and quoted \"TimeStamp\"\n\t\t\tquery \u003d \u0027INSERT INTO counthistory (tagid, runid, counttypeid, count, \"TimeStamp\") VALUES (?,?,?,?,?)\u0027\n\t\t\t\n\t\t\tsystem.db.runPrepUpdate(query, [tagID, runID, countTypeID, countDelta, stamp], db)\n\t\t\t\n\t\t\tsystem.tag.writeBlocking([lastCountTagPath], [currentCount])"
+          }
+        ],
+        "name": "Count",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "CountTypeID",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{[.]../Enable}",
+        "dataType": "Boolean",
+        "name": "Enable",
+        "value": true,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "LastCount",
+        "value": 0,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "{[.]../RunID}",
+        "name": "RunID",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "name": "TagID",
+        "value": -1,
+        "tagType": "AtomicTag"
+      }
+    ]
+  }
+]

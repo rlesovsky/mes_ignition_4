@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "shield--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 783,
+    "lastModificationSignature": "ad16dd8255d35f91586eb5705600d1095016fff0950f03360560846aaad1ddc1",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "folder-shred.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 548,
+    "lastModificationSignature": "45d4dc797faa518430afcbc66e63ef468b0bffefe905cd318baaf98644fe61c5",
+    "height": 16
+  }
+}

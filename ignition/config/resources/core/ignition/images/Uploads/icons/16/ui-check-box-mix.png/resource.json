@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-check-box-mix.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 362,
+    "lastModificationSignature": "1ba07e0308cad25b076339728d5219cd0db27962e21f2c2c5344645e0cf9c684",
+    "height": 16
+  }
+}

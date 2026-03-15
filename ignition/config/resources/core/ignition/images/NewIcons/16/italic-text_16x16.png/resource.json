@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "italic-text_16x16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 477,
+    "lastModificationSignature": "13dce8fbf4e3f171a3f115c4a513d55c6d0b8646918e0fbf10221aef81e685ea",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "films.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 643,
+    "lastModificationSignature": "42e3b7c2542a9d0aaf5b8e635f0a610ccb2509169100b3f1c9733db758ababf6",
+    "height": 16
+  }
+}

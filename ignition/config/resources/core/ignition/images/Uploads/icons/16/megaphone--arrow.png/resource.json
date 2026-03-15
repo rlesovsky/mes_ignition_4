@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "megaphone--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 767,
+    "lastModificationSignature": "0741007d20d1ae3fc655c54abe06d5514695298447fc0c75e997ce42d54f3e34",
+    "height": 16
+  }
+}

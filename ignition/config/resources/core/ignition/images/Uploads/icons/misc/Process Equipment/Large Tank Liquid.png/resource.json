@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Large Tank Liquid.png"
+  ],
+  "attributes": {
+    "width": 278,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 43208,
+    "lastModificationSignature": "d242d1c405a613f92e887e1f6aeee1c979fb39ac29b62876ebf0c2f15444bdf9",
+    "height": 373
+  }
+}

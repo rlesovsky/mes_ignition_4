@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hard-hat--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 844,
+    "lastModificationSignature": "a2a9c1b84fbfd2efada7ab6cac3f95e14ce875d6074be814c2bfb407d58ec650",
+    "height": 16
+  }
+}

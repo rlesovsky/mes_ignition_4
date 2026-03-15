@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "newspaper--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 734,
+    "lastModificationSignature": "33f5188bce1bcb841c609ce689d8413243d88d07d18a15c60d267e61268e6d7c",
+    "height": 16
+  }
+}

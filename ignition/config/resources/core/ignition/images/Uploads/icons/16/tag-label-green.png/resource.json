@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tag-label-green.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 753,
+    "lastModificationSignature": "773c033e2a8182b63666bdf5a59c705260ef79a9161d777a58cbe067424a0058",
+    "height": 16
+  }
+}

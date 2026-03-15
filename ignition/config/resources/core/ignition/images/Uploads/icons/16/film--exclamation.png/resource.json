@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "film--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 765,
+    "lastModificationSignature": "bff0e46951b590cf96ce9536bf11096fefac65c807e1f3d2d75eee7abc2fd022",
+    "height": 16
+  }
+}

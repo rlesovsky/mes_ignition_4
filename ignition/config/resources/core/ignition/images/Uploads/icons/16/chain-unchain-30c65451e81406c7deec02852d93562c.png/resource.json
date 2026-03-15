@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chain-unchain-30c65451e81406c7deec02852d93562c.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 671,
+    "lastModificationSignature": "14deddbd34001efbfc31eba573dcd201fb0dce7911ddc338d638250803e508a6",
+    "height": 16
+  }
+}

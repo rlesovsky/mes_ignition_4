@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-folder-export.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 929,
+    "lastModificationSignature": "30a66396d4fde43702048cc9e2c74b4bf4131a1860d67b4d68ad760469ec989f",
+    "height": 24
+  }
+}

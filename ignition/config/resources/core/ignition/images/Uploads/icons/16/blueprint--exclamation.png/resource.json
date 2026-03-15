@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blueprint--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 804,
+    "lastModificationSignature": "d3836e971e62ffc0eb87b14f512c2ad440199df38d68e20d84d1b105105334e0",
+    "height": 16
+  }
+}

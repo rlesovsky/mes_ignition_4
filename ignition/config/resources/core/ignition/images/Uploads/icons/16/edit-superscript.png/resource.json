@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-superscript.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 277,
+    "lastModificationSignature": "4828d7fbf3addf4a81f838be936465266c5c01c273d767a87e95ae9064374088",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "luggage--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 673,
+    "lastModificationSignature": "0e4fe5ff167f1eb2e74e15458b6db77bd67df333bfb5721ffc478e919c764e30",
+    "height": 16
+  }
+}

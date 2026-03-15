@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "eraser--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 754,
+    "lastModificationSignature": "bfd879ee427b325c9d3ee74e087413520eb88a2e7f8d4eb41e887a9763027526",
+    "height": 16
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "C",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "window.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "xml-format-version": 1,
+    "parameter-names": "lineID,now,prodCode,quantity,schedule,unitsScheduled,workOrder,workOrderID,workOrders",
+    "lastModificationSignature": "2cae9739d11b724d184ca7475cbc288890965c1599ae940e0ef8d1e514feaea7"
+  }
+}

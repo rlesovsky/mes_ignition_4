@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hammer--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 719,
+    "lastModificationSignature": "e9f7b3bdc3235b78a3e3bc4fc25d55c374dfcd26865b27ad72c36a41bf434676",
+    "height": 16
+  }
+}

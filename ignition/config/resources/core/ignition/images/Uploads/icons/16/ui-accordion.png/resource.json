@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-accordion.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 550,
+    "lastModificationSignature": "f34d6aa9ae35b0838eabf95066333b7239a285d777107cfc794e440f04bf9ac8",
+    "height": 16
+  }
+}

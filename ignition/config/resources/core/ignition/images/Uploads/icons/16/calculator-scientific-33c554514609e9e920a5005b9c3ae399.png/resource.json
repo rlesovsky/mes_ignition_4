@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calculator-scientific-33c554514609e9e920a5005b9c3ae399.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 393,
+    "lastModificationSignature": "e5b935784e9ee9eb622c0eaf5b8c23c062d75aebc7d6678e8a7e7be9ab2a4b66",
+    "height": 16
+  }
+}

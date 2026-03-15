@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-zipper.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 793,
+    "lastModificationSignature": "0dd0cbc0587b205a98d58b5491bc5cb687067f9831368e0d5ecd2280a8e9f226",
+    "height": 16
+  }
+}

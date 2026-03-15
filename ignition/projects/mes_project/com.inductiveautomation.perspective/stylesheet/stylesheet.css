@@ -1,0 +1,1255 @@
+/* ============================================================
+   MES 4.0 - iOS Style Design System
+   Randy Lesovsky
+   Ignition 8.3.2 Perspective Stylesheet
+   ============================================================ */
+
+/* ============================================================
+   CSS VARIABLES - Design Tokens
+   Note: Supported in Ignition 8.1+ Perspective
+   ============================================================ */
+:root {
+  /* Primary Colors */
+  --mes-blue: #3b82f6;
+  --mes-blue-light: #60a5fa;
+  --mes-blue-dark: #2563eb;
+  --mes-green: #10b981;
+  --mes-green-light: #34d399;
+  --mes-green-dark: #059669;
+  
+  /* Background Colors */
+  --mes-bg-primary: #0d1117;
+  --mes-bg-secondary: #21262d;
+  --mes-bg-tertiary: #161b22;
+  --mes-bg-card: #21262d;
+  --mes-bg-card-inner: #101418;
+  
+  /* Text Colors */
+  --mes-text-primary: #ffffff;
+  --mes-text-secondary: #d1d5db;
+  --mes-text-muted: #9ca3af;
+  --mes-text-disabled: #6b7280;
+  
+  /* Status Colors */
+  --mes-status-excellent: #10b981;
+  --mes-status-good: #3b82f6;
+  --mes-status-average: #f59e0b;
+  --mes-status-poor: #f97316;
+  --mes-status-critical: #ef4444;
+  
+  /* Border Colors */
+  --mes-border-subtle: rgba(255, 255, 255, 0.05);
+  --mes-border-light: rgba(255, 255, 255, 0.08);
+  --mes-border-medium: rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================================
+   EXISTING STYLES - Left Dock Navigation
+   ============================================================ */
+.docked-view-left {
+  width: auto !important;
+}
+
+/* Support both class names */
+.psc-leftdock,
+.leftdock {
+  width: 45px;
+  background-color: #21262d;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.psc-leftdock:hover,
+.leftdock:hover {
+  width: 300px;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+}
+
+.psc-leftdockitem,
+.leftdockitem {
+  transform: translateX(50px);
+  white-space: nowrap;
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+
+.psc-leftdock:hover .psc-leftdockitem,
+.psc-leftdock:hover .leftdockitem,
+.leftdock:hover .psc-leftdockitem,
+.leftdock:hover .leftdockitem {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.menu-tree .menu-wrapper.wrapper-submenu.submenu-left.slide-enter-done {
+  left: 0%;
+  overflow: hidden;
+}
+
+/* Charging Dots Animation */
+.psc-charge-running {
+  width: 140px;
+  height: 15px;
+  aspect-ratio: 7;
+  background: radial-gradient(circle closest-side, #10b981 90%, transparent) 0/calc(100%/7) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1.5s linear infinite;
+}
+
+@keyframes l1 {
+  0% { clip-path: inset(0 100% 0 0); }
+  50% { clip-path: inset(0 -34% 0 0); }
+  100% { clip-path: inset(0 100% 0 0); }
+}
+
+/* ============================================================
+   CARDS - iOS Glass-style Containers
+   ============================================================ */
+.mes-card {
+  background-color: rgba(33, 38, 45, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mes-card-solid {
+  background-color: #21262d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mes-card-inner {
+  background-color: #101418;
+  border-radius: 12px;
+}
+
+.mes-card-header {
+  background-color: transparent;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mes-card-body {
+  padding: 20px;
+}
+
+.mes-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mes-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   HEADER & FOOTER - Navigation Bars
+   ============================================================ */
+.mes-header {
+  background-color: #21262d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mes-footer {
+  background-color: #21262d;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mes-brand-title {
+  color: #3b82f6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.mes-brand-title-green {
+  color: #10b981;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ============================================================
+   TYPOGRAPHY - Labels & Text Styles
+   ============================================================ */
+.labels\/color_normal {
+  color: #d1d5db;
+}
+
+.labels\/color_white {
+  color: #ffffff;
+}
+
+.labels\/color_muted {
+  color: #9ca3af;
+}
+
+.labels\/font {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+.labels\/size_normal {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.labels\/size_heading_1 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.labels\/size_heading_2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.labels\/size_heading_3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.labels\/size_small {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.labels\/size_caption {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Card Titles */
+.mes-title-primary {
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.mes-title-secondary {
+  color: #d1d5db;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Metric Values - Large Numbers */
+.mes-metric-large {
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+.mes-metric-medium {
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+}
+
+.mes-metric-small {
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.mes-metric-unit {
+  color: #9ca3af;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* ============================================================
+   STATUS INDICATORS - Line Status & OEE Colors
+   ============================================================ */
+.mes-status-running {
+  color: #10b981;
+}
+
+.mes-status-stopped {
+  color: #ef4444;
+}
+
+.mes-status-warning {
+  color: #f59e0b;
+}
+
+/* Status Badges - Pill Style */
+.mes-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mes-badge-success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.mes-badge-error {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.mes-badge-warning {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.mes-badge-info {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* OEE Status Text Colors */
+.mes-oee-excellent {
+  color: #10b981 !important;
+}
+
+.mes-oee-good {
+  color: #3b82f6 !important;
+}
+
+.mes-oee-average {
+  color: #f59e0b !important;
+}
+
+.mes-oee-poor {
+  color: #f97316 !important;
+}
+
+.mes-oee-critical {
+  color: #ef4444 !important;
+}
+
+/* Status Indicator Dots */
+.mes-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mes-status-dot-running {
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: mes-pulse-green 2s infinite;
+}
+
+.mes-status-dot-stopped {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+@keyframes mes-pulse-green {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #10b981;
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 16px #10b981;
+  }
+}
+
+/* ============================================================
+   BUTTONS - iOS Style Actions
+   ============================================================ */
+.mes-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mes-button:hover {
+  transform: scale(1.02);
+}
+
+.mes-button:active {
+  transform: scale(0.98);
+}
+
+.mes-button-primary {
+  background-color: #10b981;
+  border-color: #34d399;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.mes-button-primary:hover {
+  background-color: #34d399;
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.4);
+}
+
+.mes-button-secondary {
+  background-color: rgba(107, 114, 128, 0.4);
+  border-color: rgba(156, 163, 175, 0.5);
+  color: #d1d5db;
+}
+
+.mes-button-secondary:hover {
+  background-color: rgba(107, 114, 128, 0.6);
+  color: #ffffff;
+}
+
+.mes-button-danger {
+  background-color: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.mes-button-danger:hover {
+  background-color: rgba(239, 68, 68, 0.4);
+  color: #ffffff;
+}
+
+.mes-button-blue {
+  background-color: #3b82f6;
+  border-color: #60a5fa;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+}
+
+.mes-button-blue:hover {
+  background-color: #60a5fa;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.4);
+}
+
+/* Button Size Variants */
+.mes-button-sm {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.mes-button-lg {
+  padding: 16px 32px;
+  font-size: 18px;
+  border-radius: 14px;
+}
+
+.mes-button-full {
+  width: 100%;
+}
+
+/* ============================================================
+   TABLES - Data Grid Styling
+   ============================================================ */
+.mes-table {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+.mes-table-header {
+  background-color: #21262d;
+  border-bottom: 2px solid #10b981;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mes-table-row-even {
+  background-color: #101418;
+}
+
+.mes-table-row-odd {
+  background-color: #161b22;
+}
+
+.mes-table-row-hover:hover {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
+.mes-table-row-selected {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid #10b981;
+}
+
+.mes-table-cell {
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================================
+   PROGRESS BARS
+   ============================================================ */
+.mes-progress-track {
+  background-color: #101418;
+  border-radius: 9999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.mes-progress-bar {
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  border-radius: 9999px;
+  height: 100%;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.4);
+}
+
+.mes-progress-bar-green {
+  background: #10b981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.4);
+}
+
+.mes-progress-bar-blue {
+  background: #3b82f6;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.4);
+}
+
+/* ============================================================
+   TABS - Navigation Tabs
+   ============================================================ */
+.mes-tab {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.mes-tab:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mes-tab-active {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.mes-tab-active-blue {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* ============================================================
+   ICONS - Icon Styling
+   ============================================================ */
+.views\/icons_normal {
+  color: #d1d5db;
+}
+
+.views\/icons_green {
+  color: #10b981;
+}
+
+.views\/icons_blue {
+  color: #3b82f6;
+}
+
+.views\/icons_white {
+  color: #ffffff;
+}
+
+/* ============================================================
+   UI/UX - Interactive States
+   ============================================================ */
+.ui_ux\/hover_highlight {
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.ui_ux\/hover_highlight:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.ui_ux\/hover_underline:hover {
+  text-decoration: underline;
+}
+
+.ui_ux\/hover_scale {
+  transition: transform 0.3s ease;
+}
+
+.ui_ux\/hover_scale:hover {
+  transform: scale(1.02);
+}
+
+.ui_ux\/hover_glow_green:hover {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.ui_ux\/hover_glow_blue:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* ============================================================
+   GAUGES - OEE Circular Gauge Styling
+   ============================================================ */
+.mes-gauge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.mes-gauge-label {
+  color: #d1d5db;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.mes-gauge-status {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.mes-gauge-value {
+  color: #d1d5db;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* ============================================================
+   INPUTS - Form Elements
+   ============================================================ */
+.mes-input {
+  background-color: #101418;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 10px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.mes-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.mes-input-green:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* ============================================================
+   DROPDOWN / SELECT
+   ============================================================ */
+.mes-dropdown {
+  background-color: #101418;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.mes-dropdown-option {
+  background-color: #21262d;
+  color: #ffffff;
+}
+
+.mes-dropdown-option:hover {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+/* ============================================================
+   DIVIDERS & SEPARATORS
+   ============================================================ */
+.mes-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 16px 0;
+}
+
+.mes-divider-accent {
+  border-top: 2px solid #10b981;
+}
+
+.mes-divider-accent-blue {
+  border-top: 2px solid #3b82f6;
+}
+
+/* ============================================================
+   LOADING STATES & ANIMATIONS
+   ============================================================ */
+.mes-loading-dots {
+  width: 140px;
+  height: 15px;
+  aspect-ratio: 7;
+  background: radial-gradient(circle closest-side, #10b981 90%, transparent) 0/calc(100%/7) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: mes-loading-dots 1.5s linear infinite;
+}
+
+@keyframes mes-loading-dots {
+  0% { clip-path: inset(0 100% 0 0); }
+  50% { clip-path: inset(0 -34% 0 0); }
+  100% { clip-path: inset(0 100% 0 0); }
+}
+
+.mes-loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  border-top-color: #10b981;
+  border-radius: 50%;
+  animation: mes-spin 1s linear infinite;
+}
+
+@keyframes mes-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Fade In Animation */
+.mes-fade-in {
+  animation: mes-fadeIn 0.3s ease-out;
+}
+
+@keyframes mes-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide Up Animation */
+.mes-slide-up {
+  animation: mes-slideUp 0.3s ease-out;
+}
+
+@keyframes mes-slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Scale In Animation */
+.mes-scale-in {
+  animation: mes-scaleIn 0.3s ease-out;
+}
+
+@keyframes mes-scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+/* ============================================================
+   SHADOWS & ELEVATION
+   ============================================================ */
+.mes-shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mes-shadow-md {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.mes-shadow-lg {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.mes-shadow-xl {
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5);
+}
+
+.mes-shadow-glow-green {
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.3);
+}
+
+.mes-shadow-glow-blue {
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.3);
+}
+
+/* ============================================================
+   POPUPS & MODALS
+   ============================================================ */
+.mes-popup {
+  background-color: #21262d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+.mes-popup-header {
+  background-color: #161b22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px 20px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.mes-popup-body {
+  padding: 20px;
+}
+
+.mes-popup-footer {
+  background-color: #161b22;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px 20px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* ============================================================
+   UTILITY CLASSES - Spacing
+   ============================================================ */
+.mes-p-xs { padding: 4px; }
+.mes-p-sm { padding: 8px; }
+.mes-p-md { padding: 16px; }
+.mes-p-lg { padding: 24px; }
+.mes-p-xl { padding: 32px; }
+
+.mes-m-xs { margin: 4px; }
+.mes-m-sm { margin: 8px; }
+.mes-m-md { margin: 16px; }
+.mes-m-lg { margin: 24px; }
+.mes-m-xl { margin: 32px; }
+
+.mes-gap-sm { gap: 8px; }
+.mes-gap-md { gap: 16px; }
+.mes-gap-lg { gap: 24px; }
+
+/* ============================================================
+   UTILITY CLASSES - Border Radius
+   ============================================================ */
+.mes-rounded-sm { border-radius: 8px; }
+.mes-rounded-md { border-radius: 12px; }
+.mes-rounded-lg { border-radius: 16px; }
+.mes-rounded-xl { border-radius: 20px; }
+.mes-rounded-full { border-radius: 9999px; }
+
+/* ============================================================
+   UTILITY CLASSES - Flex Layout
+   ============================================================ */
+.mes-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mes-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mes-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   UTILITY CLASSES - Text Alignment
+   ============================================================ */
+.mes-text-center { text-align: center; }
+.mes-text-left { text-align: left; }
+.mes-text-right { text-align: right; }
+
+/* ============================================================
+   PERSPECTIVE-SPECIFIC OVERRIDES
+   ============================================================ */
+/* Simple Gauge Arc Glow Effect */
+.ia-simpleGaugeComponent .arc {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* Table Component Styling */
+.ia-tableComponent {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Button Component Base Override */
+.ia-button.mes-button-primary {
+  background-color: #10b981 !important;
+  border-color: #34d399 !important;
+}
+
+.ia-button.mes-button-danger {
+  background-color: rgba(239, 68, 68, 0.25) !important;
+  border-color: #ef4444 !important;
+}
+
+.ia-button.mes-button-secondary {
+  background-color: rgba(107, 114, 128, 0.4) !important;
+  border-color: rgba(156, 163, 175, 0.5) !important;
+}
+
+/* Progress Bar Component Override */
+.ia-progressComponent .bar {
+  border-radius: 9999px;
+}
+
+.ia-progressComponent .track {
+  border-radius: 9999px;
+  background-color: #101418;
+}
+
+/* Menu Tree Styling */
+.ia-menutreeComponent {
+  background-color: #21262d;
+}
+
+.ia-menutreeComponent .menu-item {
+  transition: background-color 0.2s ease;
+}
+
+.ia-menutreeComponent .menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ia-menutreeComponent .menu-item.selected {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-left: 3px solid #10b981;
+}
+
+/* Tab Container Styling */
+.ia-tabContainerComponent .tab {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.ia-tabContainerComponent .tab.selected {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+/* Dropdown Styling */
+.ia-dropdownComponent {
+  background-color: #101418;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.ia-dropdownComponent .dropdown-menu {
+  background-color: #21262d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Radio Group / Toggle Styling */
+.ia-radioGroupComponent .radio-selected {
+  color: #10b981;
+}
+
+.ia-radioGroupComponent .radio-unselected {
+  color: #ef4444;
+}
+
+/* ============================================================
+   POWER CHART - Dark Theme Override
+   Usage: Add class "mes-powerchart-dark" to Power Chart component
+   ============================================================ */
+
+/* Main chart background and plot area */
+.mes-powerchart-dark .psc-chart-group,
+.mes-powerchart-dark .psc-plot-background,
+.mes-powerchart-dark .psc-chart-container,
+.mes-powerchart-dark .psc-chart-svg {
+  fill: #101418 !important;
+  background-color: #101418 !important;
+}
+
+.mes-powerchart-dark rect.psc-plot-background {
+  fill: #101418 !important;
+}
+
+/* Range selector (mini chart at bottom) */
+.mes-powerchart-dark .psc-range-selector,
+.mes-powerchart-dark .psc-range-selector-plot,
+.mes-powerchart-dark .psc-range-selector rect,
+.mes-powerchart-dark .psc-range-selector-background {
+  fill: #161b22 !important;
+  background-color: #161b22 !important;
+}
+
+.mes-powerchart-dark .psc-range-selector-selection {
+  fill: rgba(59, 130, 246, 0.3) !important;
+  stroke: #3b82f6 !important;
+}
+
+/* Toolbar styling */
+.mes-powerchart-dark .psc-toolbar {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+  border-bottom: 1px solid #30363d !important;
+}
+
+.mes-powerchart-dark .psc-toolbar button,
+.mes-powerchart-dark .psc-toolbar .psc-toolbar-button {
+  color: #8b949e !important;
+  background-color: #21262d !important;
+  border-color: #30363d !important;
+  border-radius: 6px !important;
+}
+
+.mes-powerchart-dark .psc-toolbar button:hover,
+.mes-powerchart-dark .psc-toolbar .psc-toolbar-button:hover {
+  background-color: #30363d !important;
+  color: #f0f6fc !important;
+}
+
+.mes-powerchart-dark .psc-toolbar button.active,
+.mes-powerchart-dark .psc-toolbar .psc-toolbar-button.active {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  color: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Time range dropdown */
+.mes-powerchart-dark .psc-time-range-dropdown,
+.mes-powerchart-dark .psc-date-range-picker {
+  background-color: #161b22 !important;
+  color: #3b82f6 !important;
+  border-color: #30363d !important;
+}
+
+.mes-powerchart-dark .psc-time-range-dropdown:hover {
+  background-color: #21262d !important;
+}
+
+/* Legend styling */
+.mes-powerchart-dark .psc-legend {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+  border: 1px solid #30363d !important;
+}
+
+.mes-powerchart-dark .psc-legend-item {
+  color: #8b949e !important;
+}
+
+.mes-powerchart-dark .psc-legend-item:hover {
+  color: #f0f6fc !important;
+}
+
+.mes-powerchart-dark .psc-legend-item-label {
+  color: #d1d5db !important;
+}
+
+/* Axis styling */
+.mes-powerchart-dark .psc-axis text,
+.mes-powerchart-dark .psc-axis-label,
+.mes-powerchart-dark .psc-axis .tick text {
+  fill: #8b949e !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+  font-size: 11px !important;
+}
+
+.mes-powerchart-dark .psc-axis line,
+.mes-powerchart-dark .psc-axis path,
+.mes-powerchart-dark .psc-axis .domain {
+  stroke: #30363d !important;
+}
+
+/* Grid lines */
+.mes-powerchart-dark .psc-grid line,
+.mes-powerchart-dark .psc-grid-line {
+  stroke: #21262d !important;
+  stroke-width: 1px !important;
+}
+
+/* Tooltip styling */
+.mes-powerchart-dark .psc-tooltip,
+.mes-powerchart-dark .psc-tooltip-container {
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  color: #f0f6fc !important;
+}
+
+.mes-powerchart-dark .psc-tooltip-header {
+  color: #8b949e !important;
+  border-bottom: 1px solid #30363d !important;
+}
+
+.mes-powerchart-dark .psc-tooltip-value {
+  color: #f0f6fc !important;
+  font-weight: 600 !important;
+}
+
+/* Crosshair */
+.mes-powerchart-dark .psc-crosshair line {
+  stroke: #3b82f6 !important;
+  stroke-dasharray: 4, 4 !important;
+}
+
+/* Selection brush */
+.mes-powerchart-dark .psc-brush .selection {
+  fill: rgba(59, 130, 246, 0.2) !important;
+  stroke: #3b82f6 !important;
+}
+
+/* Scrollbar styling */
+.mes-powerchart-dark .psc-scrollbar {
+  background-color: #161b22 !important;
+}
+
+.mes-powerchart-dark .psc-scrollbar-thumb {
+  background-color: #30363d !important;
+  border-radius: 4px !important;
+}
+
+.mes-powerchart-dark .psc-scrollbar-thumb:hover {
+  background-color: #3b82f6 !important;
+}
+
+/* Date picker popup */
+.mes-powerchart-dark .psc-date-picker,
+.mes-powerchart-dark .psc-calendar {
+  background-color: #21262d !important;
+  border: 1px solid #30363d !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.mes-powerchart-dark .psc-calendar-day {
+  color: #d1d5db !important;
+}
+
+.mes-powerchart-dark .psc-calendar-day:hover {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+.mes-powerchart-dark .psc-calendar-day.selected {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+/* Settings/config popups */
+.mes-powerchart-dark .psc-settings,
+.mes-powerchart-dark .psc-pen-settings,
+.mes-powerchart-dark .psc-popup {
+  background-color: #21262d !important;
+  border: 1px solid #30363d !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+  color: #d1d5db !important;
+}
+
+/* Alternative class name for flexibility */
+.dark-powerchart .psc-chart-group,
+.dark-powerchart .psc-plot-background,
+.dark-powerchart .psc-chart-container {
+  fill: #101418 !important;
+  background-color: #101418 !important;
+}
+
+.dark-powerchart rect.psc-plot-background {
+  fill: #101418 !important;
+}
+
+.dark-powerchart .psc-toolbar {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+}
+
+.dark-powerchart .psc-toolbar button {
+  color: #8b949e !important;
+  background-color: #21262d !important;
+  border-color: #30363d !important;
+}
+
+.dark-powerchart .psc-toolbar button:hover {
+  background-color: #30363d !important;
+}
+
+.dark-powerchart .psc-range-selector,
+.dark-powerchart .psc-range-selector-plot,
+.dark-powerchart .psc-range-selector rect {
+  fill: #161b22 !important;
+  background-color: #161b22 !important;
+}
+
+.dark-powerchart .psc-legend {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+}
+
+.dark-powerchart .psc-legend-item {
+  color: #8b949e !important;
+}
+
+.dark-powerchart .psc-axis text,
+.dark-powerchart .psc-axis-label {
+  fill: #8b949e !important;
+}
+
+.dark-powerchart .psc-axis line,
+.dark-powerchart .psc-axis path {
+  stroke: #30363d !important;
+}
+
+.dark-powerchart .psc-grid line {
+  stroke: #21262d !important;
+}
+
+.dark-powerchart .psc-tooltip {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+  color: #f0f6fc !important;
+}
+
+.dark-powerchart .psc-time-range-dropdown {
+  background-color: #161b22 !important;
+  color: #3b82f6 !important;
+}

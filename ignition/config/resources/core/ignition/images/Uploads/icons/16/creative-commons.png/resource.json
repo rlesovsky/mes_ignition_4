@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "creative-commons.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 576,
+    "lastModificationSignature": "612ae8a033c3e24ccdd2a50858b582ac3b2b320f8925b0ad2e5682bdffa27b57",
+    "height": 16
+  }
+}

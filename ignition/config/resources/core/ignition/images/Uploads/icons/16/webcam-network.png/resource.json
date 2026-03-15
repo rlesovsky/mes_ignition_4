@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "webcam-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 662,
+    "lastModificationSignature": "a1dfaa6a2f3fcd58576a15a7e361cdcbcb847ed59da0a3f246860cb3c202e8db",
+    "height": 16
+  }
+}

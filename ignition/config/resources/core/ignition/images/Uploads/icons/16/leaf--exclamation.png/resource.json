@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "leaf--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 708,
+    "lastModificationSignature": "d1facc53cbe55d3abf49b0a262ffa44b869eb84724f798f0ca77c0b55ea65e64",
+    "height": 16
+  }
+}

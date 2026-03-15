@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "work instructions 24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 686,
+    "lastModificationSignature": "c8b546ed0a470eaee31a801658b458adca5a76d88670631f7f9b6aa69fab1c74",
+    "height": 24
+  }
+}

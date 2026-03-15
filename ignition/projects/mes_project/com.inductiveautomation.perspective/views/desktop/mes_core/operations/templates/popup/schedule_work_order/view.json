@@ -1,0 +1,766 @@
+{
+  "custom": {
+    "unitScheduled": [
+      {
+        "TotalQuantity": 10000
+      }
+    ],
+    "workOrders": [
+      {
+        "ID": 10,
+        "ProductCode": "This is my New Product",
+        "Quantity": 1000,
+        "WorkOrder": "WO__This_is_my_New_Product_2026-01-08_20-25-36"
+      }
+    ]
+  },
+  "params": {
+    "id": 10,
+    "lineID": 1
+  },
+  "propConfig": {
+    "custom.unitScheduled": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Base query with parameterized WorkOrderID\n    query \u003d \"\"\"\n        SELECT SUM(quantity) AS \\\"TotalQuantity\\\"\n        FROM schedule\n        WHERE workorderid \u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Get WorkOrderID from root container property\n        workOrderID \u003d self.custom.workOrders[0].ID\n        \n        params.append(workOrderID)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.workOrders": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Base query matching your Vision query\n    query \u003d \"\"\"\n        SELECT id AS \\\"ID\\\", workorder AS \\\"WorkOrder\\\", productcode AS \\\"ProductCode\\\", quantity AS \\\"Quantity\\\"\n        FROM workorder\n        WHERE id \u003d ?\n    \"\"\"\n    \n    params \u003d []\n    try:\n        # Get WorkOrderID from root container property\n        workOrderID \u003d self.params.id\n        \n        params.append(workOrderID)\n        \n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.id": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.lineID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 601
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "path": "material/event",
+                  "style": {
+                    "color": "#3b82f6",
+                    "marginLeft": 16
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 18,
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.3px",
+                    "marginLeft": 10
+                  },
+                  "text": "Schedule Work Order"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "header"
+            },
+            "position": {
+              "basis": "50px",
+              "display": false
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "backgroundColor": "#21262d",
+                "borderBottom": "1px solid rgba(255, 255, 255, 0.1)"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "section_title"
+                },
+                "position": {
+                  "basis": "24px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#8b949e",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 11,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.5px",
+                    "marginBottom": 12,
+                    "textTransform": "uppercase"
+                  },
+                  "text": "WORK ORDER DETAILS"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "120px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14
+                      },
+                      "text": "Work Order"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "value"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.workOrders[0].WorkOrder"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 500
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "workorder_row"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "alignItems": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "120px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14
+                      },
+                      "text": "Product Code"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "value"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.workOrders[0].ProductCode"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 500
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "product_code_row"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "alignItems": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "120px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14
+                      },
+                      "text": "Total Quantity"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "value"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.workOrders[0].Quantity"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#10b981",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "scheduled_label"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14
+                      },
+                      "text": "Scheduled"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "scheduled_value"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "..../schedule_details/quantity/NumericEntryField.props.value"
+                          },
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "number",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#f97316",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "quantity_row"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "alignItems": "center"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "work_order_info"
+            },
+            "position": {
+              "basis": "160px"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#161b22",
+                "borderRadius": 12,
+                "margin": 16,
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "section_title"
+                },
+                "position": {
+                  "basis": "24px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#8b949e",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 11,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.5px",
+                    "marginBottom": 12,
+                    "textTransform": "uppercase"
+                  },
+                  "text": "SCHEDULE DETAILS"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "start_label"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14
+                      },
+                      "text": "Start Time"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "DateTimeInput"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "props": {
+                      "dateFormat": "MMM d, yyyy h:mm a",
+                      "formattedValue": "Jan 2, 2026 8:00 PM",
+                      "style": {
+                        "backgroundColor": "#21262d",
+                        "border": "1px solid rgba(255, 255, 255, 0.1)",
+                        "borderRadius": 8,
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif"
+                      },
+                      "value": {
+                        "$": [
+                          "ts",
+                          0,
+                          1767406095232
+                        ],
+                        "$ts": 1767405600000
+                      }
+                    },
+                    "type": "ia.input.date-time-input"
+                  },
+                  {
+                    "meta": {
+                      "name": "end_label"
+                    },
+                    "position": {
+                      "basis": "70px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "marginLeft": 16
+                      },
+                      "text": "End Time"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "DateTimeInput_0"
+                    },
+                    "props": {
+                      "dateFormat": "MMM d, yyyy h:mm a",
+                      "formattedValue": "Jan 3, 2026 8:00 AM",
+                      "style": {
+                        "backgroundColor": "#21262d",
+                        "border": "1px solid rgba(255, 255, 255, 0.1)",
+                        "borderRadius": 8,
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif"
+                      },
+                      "value": {
+                        "$": [
+                          "ts",
+                          0,
+                          1767406101490
+                        ],
+                        "$ts": 1767448800000
+                      }
+                    },
+                    "type": "ia.input.date-time-input"
+                  }
+                ],
+                "meta": {
+                  "name": "schedule"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "props": {
+                  "style": {
+                    "margin": 5
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14
+                      },
+                      "text": "Quantity"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "NumericEntryField"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "#21262d",
+                        "border": "1px solid rgba(255, 255, 255, 0.1)",
+                        "borderRadius": 8,
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14
+                      },
+                      "value": 1000
+                    },
+                    "type": "ia.input.numeric-entry-field"
+                  }
+                ],
+                "meta": {
+                  "name": "quantity"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "props": {
+                  "style": {
+                    "margin": 5
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "marginTop": 8
+                      },
+                      "text": "Notes"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "TextArea"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "#21262d",
+                        "border": "1px solid rgba(255, 255, 255, 0.1)",
+                        "borderRadius": 8,
+                        "color": "#ffffff",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "minHeight": 80
+                      }
+                    },
+                    "type": "ia.input.text-area"
+                  }
+                ],
+                "meta": {
+                  "name": "notes"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "margin": 5
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "schedule_details"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#161b22",
+                "borderRadius": 12,
+                "marginBottom": 16,
+                "marginLeft": 16,
+                "marginRight": 16,
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\n    logger \u003d system.util.getLogger(\u0027Schedule\u0027)\n    \n    # Get current timestamp\n    timestamp \u003d system.date.now()\n    \n    # Define database name\n    db \u003d \u0027mes_core\u0027\n    \n    # Define insert query for PostgreSQL\n    query \u003d \u0027\u0027\u0027INSERT INTO schedule (lineid, workorderid, scheduletype, note, schedulestartdatetime, schedulefinishdatetime, quantity, enteredby, \"TimeStamp\") \n               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)\u0027\u0027\u0027\n    \n    # Define validation query for WorkOrderID\n    validation_query \u003d \u0027\u0027\u0027SELECT id FROM workorder WHERE id \u003d ?\u0027\u0027\u0027\n    \n    try:\n        # Gather parameters\n        lineID \u003d self.view.params.lineID\n        \n        # Use dictionary-style access for array items\n        workOrders \u003d list(self.view.custom.workOrders)\n        if not workOrders or len(workOrders) \u003d\u003d 0:\n            logger.error(\"No work orders selected\")\n            return\n        workOrderID \u003d workOrders[0][\"ID\"]\n        \n        scheduleType \u003d 1\n        \n        logger.info(\"lineID: {}, workOrderID: {}\".format(lineID, workOrderID))\n        \n        # Get input values from the new structure\n        schedule_details \u003d self.parent.parent.getChild(\u0027schedule_details\u0027)\n        startDate \u003d schedule_details.getChild(\u0027schedule\u0027).getChild(\u0027DateTimeInput\u0027).props.value\n        finishDate \u003d schedule_details.getChild(\u0027schedule\u0027).getChild(\u0027DateTimeInput_0\u0027).props.value\n        quantity \u003d schedule_details.getChild(\u0027quantity\u0027).getChild(\u0027NumericEntryField\u0027).props.value\n        note \u003d schedule_details.getChild(\u0027notes\u0027).getChild(\u0027TextArea\u0027).props.text\n        userName \u003d \u0027Randy L\u0027\n        \n        logger.info(\"startDate: {}, type: {}\".format(startDate, type(startDate)))\n        logger.info(\"finishDate: {}, type: {}\".format(finishDate, type(finishDate)))\n        logger.info(\"quantity: {}, type: {}\".format(quantity, type(quantity)))\n        logger.info(\"note: {}\".format(note))\n        \n        # Check for None values\n        if lineID is None:\n            logger.error(\"lineID is None\")\n            return\n        if workOrderID is None:\n            logger.error(\"workOrderID is None\")\n            return\n        if startDate is None:\n            logger.error(\"startDate is None\")\n            return\n        if finishDate is None:\n            logger.error(\"finishDate is None\")\n            return\n        \n        # Convert dates if they\u0027re strings (Perspective DateTimeInput returns ISO strings)\n        if isinstance(startDate, basestring) or isinstance(startDate, str):\n            startDate \u003d system.date.parse(startDate, \"yyyy-MM-dd\u0027T\u0027HH:mm:ss\")\n        if isinstance(finishDate, basestring) or isinstance(finishDate, str):\n            finishDate \u003d system.date.parse(finishDate, \"yyyy-MM-dd\u0027T\u0027HH:mm:ss\")\n        \n        logger.info(\"Converted startDate: {}, finishDate: {}\".format(startDate, finishDate))\n        \n        # Validate WorkOrderID exists\n        validation_result \u003d system.db.runPrepQuery(validation_query, [workOrderID], db)\n        \n        if validation_result.getRowCount() \u003d\u003d 0:\n            logger.error(\u0027Invalid WorkOrderID: {} does not exist\u0027.format(workOrderID))\n            return\n        \n        logger.info(\"WorkOrderID validated\")\n        \n        # Ensure quantity is an integer\n        if quantity is None:\n            quantity \u003d 0\n        quantity \u003d int(quantity)\n        \n        # Ensure note is not None\n        if note is None:\n            note \u003d \"\"\n        \n        logger.info(\"About to insert with params: lineID\u003d{}, workOrderID\u003d{}, scheduleType\u003d{}, note\u003d{}, startDate\u003d{}, finishDate\u003d{}, quantity\u003d{}, userName\u003d{}, timestamp\u003d{}\".format(\n            lineID, workOrderID, scheduleType, note, startDate, finishDate, quantity, userName, timestamp))\n        \n        # Execute the insert query\n        result \u003d system.db.runPrepUpdate(query, [lineID, workOrderID, scheduleType, note, startDate, finishDate, quantity, userName, timestamp], db)\n        \n        logger.info(\"Insert result: {}\".format(result))\n        \n        # Close the popup if insert is successful\n        if result \u003d\u003d 1:\n            system.perspective.closePopup(\u0027\u0027)\n            \n    except Exception as e:\n        import traceback\n        logger.error(\u0027Insert failed: {}\u0027.format(str(e)))\n        logger.error(\u0027Traceback: {}\u0027.format(traceback.format_exc()))"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "create"
+                },
+                "position": {
+                  "basis": "40px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#10b981",
+                    "borderColor": "#34d399",
+                    "borderRadius": 10,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "boxShadow": "0 4px 16px rgba(16, 185, 129, 0.3)",
+                    "marginRight": 8
+                  },
+                  "text": "Schedule",
+                  "textStyle": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tsystem.perspective.closePopup(\u0027\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "cancel"
+                },
+                "position": {
+                  "basis": "40px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "rgba(239, 68, 68, 0.15)",
+                    "borderColor": "rgba(239, 68, 68, 0.3)",
+                    "borderRadius": 10,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "marginLeft": 8
+                  },
+                  "text": "Cancel",
+                  "textStyle": {
+                    "color": "#ef4444",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "buttons"
+            },
+            "position": {
+              "basis": "70px"
+            },
+            "props": {
+              "style": {
+                "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "root"
+        },
+        "position": {
+          "basis": "601px"
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#0d1117"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

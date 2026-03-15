@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "availability icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 767,
+    "lastModificationSignature": "fa2978244f6c4a4965c9b2857abb197024e7f560f95ff2bab47162679b9a34c4",
+    "height": 15
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wall-break.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 589,
+    "lastModificationSignature": "8c69108e82c1afb14a68ae76020f993b2c5b754771d3d50db46fc62541f33b7a",
+    "height": 16
+  }
+}

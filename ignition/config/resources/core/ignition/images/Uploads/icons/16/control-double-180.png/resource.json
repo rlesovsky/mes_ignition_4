@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "control-double-180.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 479,
+    "lastModificationSignature": "e0c66a43d3bd39692a32b58e24f759c310450cc1c0ad17a503a13e8621a63f32",
+    "height": 16
+  }
+}

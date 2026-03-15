@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "application-task.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 583,
+    "lastModificationSignature": "66bcfe637ceffcbd99a0a9a463c09b4eb068a01c8b173c824c016f7bcc1f1102",
+    "height": 16
+  }
+}

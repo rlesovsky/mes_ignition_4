@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blog-blue.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 638,
+    "lastModificationSignature": "282144ff0184f9cef551b9b11e9364d80cc01e90f05c6164d377091acb46281f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "credit-cards.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 700,
+    "lastModificationSignature": "2ef81106830c6814c7a84f61561998f67f1f0f2723ee27e60ae8f9e9a9a56309",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "card-medium.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1345,
+    "lastModificationSignature": "6d8150b121c060202f2b22043fa7158cbebaba8c9c899abfd6cc39da0a528b84",
+    "height": 16
+  }
+}

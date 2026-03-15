@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "beans.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 932,
+    "lastModificationSignature": "83d5464c06eb5c78b7c6ffc8b3349b0c01ba9c5a7bc9727e254bc12d1be433f9",
+    "height": 16
+  }
+}

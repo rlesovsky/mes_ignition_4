@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "runchart 16.png"
+  ],
+  "attributes": {
+    "width": 15,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 761,
+    "lastModificationSignature": "9796f131c6788d37171855d5d375802ce5dd1286d5e47bd7484be19b0d5b7b9c",
+    "height": 15
+  }
+}

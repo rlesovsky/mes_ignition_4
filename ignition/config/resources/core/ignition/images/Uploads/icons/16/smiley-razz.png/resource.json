@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-razz.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 796,
+    "lastModificationSignature": "a75741f8fd9a89f69c97b9ca5114383a97087a57d34201689a7fb88182428f6e",
+    "height": 16
+  }
+}

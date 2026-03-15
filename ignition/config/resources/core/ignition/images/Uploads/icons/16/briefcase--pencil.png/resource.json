@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "briefcase--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 782,
+    "lastModificationSignature": "9308417685b788caeeb2e0e586e85856e206a2097bf4a66da9583227830cca9a",
+    "height": 16
+  }
+}

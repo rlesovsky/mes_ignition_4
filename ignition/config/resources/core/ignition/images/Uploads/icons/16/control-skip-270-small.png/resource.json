@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "control-skip-270-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 330,
+    "lastModificationSignature": "c1cec61e1cbdceb4e99fad639bbc056ed6c5cb4979fb0b23bd9b8fe82989b8c5",
+    "height": 16
+  }
+}

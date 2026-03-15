@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "subversion.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 697,
+    "lastModificationSignature": "7707ff4d30d822fc65b95197a1de305e8608776e81a8d5e079fbcab9e474c1ad",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tower-gr.png"
+  ],
+  "attributes": {
+    "width": 118,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 25110,
+    "lastModificationSignature": "123a65fef3b4b805ba7c429f9891cc1b7b06259f3a559392d2a0e6abc4c2a6d6",
+    "height": 622
+  }
+}

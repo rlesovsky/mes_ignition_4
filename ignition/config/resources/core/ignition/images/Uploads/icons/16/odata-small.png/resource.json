@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "odata-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 397,
+    "lastModificationSignature": "e26c211aa2b395aac69c9268e02c804a1f375c8bd43dba69a735631340eaefe2",
+    "height": 16
+  }
+}

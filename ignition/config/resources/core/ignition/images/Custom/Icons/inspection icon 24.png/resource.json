@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "inspection icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1496,
+    "lastModificationSignature": "e180360e8249b06826a34bcffd71db2ae9d103dfc484a607e7d7f8d6c9624606",
+    "height": 24
+  }
+}

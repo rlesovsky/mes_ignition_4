@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wand-hat.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1152,
+    "lastModificationSignature": "93855ef7b7172b4ff4c7dfac3df69e550189d04ba3868c863ab9d39948c9b8bd",
+    "height": 24
+  }
+}

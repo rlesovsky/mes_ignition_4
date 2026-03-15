@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "inbox.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 472,
+    "lastModificationSignature": "ad3ed860b89a5ef334303756cf43fb3c5ec7c8227d0f520919578133ce483861",
+    "height": 16
+  }
+}

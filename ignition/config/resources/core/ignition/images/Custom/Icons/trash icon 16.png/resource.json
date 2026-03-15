@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "trash icon 16.png"
+  ],
+  "attributes": {
+    "width": 20,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1196,
+    "lastModificationSignature": "1b8a6661ad7013a3c9b04e88bf055933785d64587f07bf9db34eb9cba6e82c26",
+    "height": 16
+  }
+}

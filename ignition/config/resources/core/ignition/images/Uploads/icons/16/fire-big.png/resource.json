@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "fire-big.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 722,
+    "lastModificationSignature": "6a0116e6293a2c4cabc9927794aa3751fc1b9c21917fb93fd7d65156528e5611",
+    "height": 16
+  }
+}

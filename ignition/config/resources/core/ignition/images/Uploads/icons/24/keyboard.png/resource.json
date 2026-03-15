@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "keyboard.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 648,
+    "lastModificationSignature": "b2e95075e260b869465c7202bf51babbd7fbd6c344aafb42c55180950f946ce9",
+    "height": 24
+  }
+}

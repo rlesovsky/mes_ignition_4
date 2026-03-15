@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "clipboard-sign-out.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 617,
+    "lastModificationSignature": "ec3f88c31f9f121534956b95c1367edbb11016dc71d956aad1c83fd3eea3fce8",
+    "height": 16
+  }
+}

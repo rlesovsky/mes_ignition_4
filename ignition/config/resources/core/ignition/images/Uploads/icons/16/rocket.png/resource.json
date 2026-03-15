@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "rocket.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 655,
+    "lastModificationSignature": "ff7383cf7fb6ec3d1ec40e01e4c33cddba37d827c8016a799634a9256bb7b778",
+    "height": 16
+  }
+}

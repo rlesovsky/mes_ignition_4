@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paint-tube--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 780,
+    "lastModificationSignature": "183936e61b16c436844afb7e30b57984b48397602f15fabd7ca9c2a375f05460",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-diff.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 619,
+    "lastModificationSignature": "2ff33106b0e1c02c7847cc71e412058f94468e2677130b70b618b9469b5b2eea",
+    "height": 16
+  }
+}

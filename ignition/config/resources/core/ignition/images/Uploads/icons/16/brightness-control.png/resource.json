@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "brightness-control.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 792,
+    "lastModificationSignature": "257873338447921e158bd5690354200a8af7de9c1558d6a7839738f2bc79675b",
+    "height": 16
+  }
+}

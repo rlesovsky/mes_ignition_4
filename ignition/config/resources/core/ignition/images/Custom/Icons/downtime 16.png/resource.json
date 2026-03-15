@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "downtime 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 898,
+    "lastModificationSignature": "7db23280be6737d7febcb404be88fa929a228c91301c39043f58d41139e7cd9b",
+    "height": 16
+  }
+}

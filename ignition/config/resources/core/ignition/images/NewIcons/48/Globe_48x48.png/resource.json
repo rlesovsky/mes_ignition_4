@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Globe_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4370,
+    "lastModificationSignature": "ec0fc124c97c77f41a37d308a05b9a88e2759f4ab66120a78db85d79f853e317",
+    "height": 48
+  }
+}

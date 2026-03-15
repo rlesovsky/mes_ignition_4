@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "control-record.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 484,
+    "lastModificationSignature": "e02ebffc6ed9584270e661dbb2cf2690cc085d1fcdd3e91cf12f3fdc6366b06a",
+    "height": 16
+  }
+}

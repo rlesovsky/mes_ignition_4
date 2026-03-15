@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layer-shape-round.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 623,
+    "lastModificationSignature": "fcf3491e00146481c2e47a54c3ac7702d20156609f6dc668f33b246cf9b242a9",
+    "height": 16
+  }
+}

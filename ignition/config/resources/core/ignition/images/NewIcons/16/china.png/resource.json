@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "china.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 276,
+    "lastModificationSignature": "0ca998ce4bf71082b2bbac24c1b15de0802bda8dbdca07bc312e29d2105a8a8a",
+    "height": 16
+  }
+}

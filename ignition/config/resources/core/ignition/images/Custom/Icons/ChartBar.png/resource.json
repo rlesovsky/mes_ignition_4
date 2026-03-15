@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ChartBar.png"
+  ],
+  "attributes": {
+    "width": 20,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 225,
+    "lastModificationSignature": "2f55b1463849e702a565da8c2975e5390567614b68a9200fb2d180e2933dbffa",
+    "height": 20
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layers-alignment-middle.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 603,
+    "lastModificationSignature": "d54808fbff7ce5789124722c31014ae76abb86afd0f6ad5a658eb59082183332",
+    "height": 16
+  }
+}

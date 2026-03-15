@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "globe-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 820,
+    "lastModificationSignature": "6cac38696dbf8567dff51dbda528fff4b03ce40b9366dadc0cc77eba92c605d6",
+    "height": 16
+  }
+}

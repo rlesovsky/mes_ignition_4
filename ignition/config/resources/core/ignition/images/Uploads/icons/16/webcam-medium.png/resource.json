@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "webcam-medium.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1426,
+    "lastModificationSignature": "11b1529a1c936f1858b19c03bddab75fb2ddc42444be767c32fe7cfbaefa8745",
+    "height": 16
+  }
+}

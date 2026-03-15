@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Control valve horizontal.png"
+  ],
+  "attributes": {
+    "width": 138,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1488,
+    "lastModificationSignature": "880f5634abe76042278d3a79a6c0d70b67a952a0840c335858c41e876c0e6f96",
+    "height": 72
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "television-off.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 501,
+    "lastModificationSignature": "0bf4a0d1eb8924396d2eaca011b44e22ccfd294d3b255252fd03d6578a2ca40d",
+    "height": 16
+  }
+}

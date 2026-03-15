@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "rsz_report.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1451,
+    "lastModificationSignature": "e3607fe4a6e75efaee27580ba1917fce885d7f8219837fd7e3628619208ffbab",
+    "height": 18
+  }
+}

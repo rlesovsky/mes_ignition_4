@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tank-open.png"
+  ],
+  "attributes": {
+    "width": 366,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 11244,
+    "lastModificationSignature": "6da8d5395acd5a9c80cb59b39da073e2752cdc9df924b17ce162ec2a71c80c28",
+    "height": 400
+  }
+}

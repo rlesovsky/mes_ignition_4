@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "application-tile-vertical.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 390,
+    "lastModificationSignature": "561b140c6150c7c96619780a4562c195322715ea1be82da9f843872f8f18ad01",
+    "height": 16
+  }
+}

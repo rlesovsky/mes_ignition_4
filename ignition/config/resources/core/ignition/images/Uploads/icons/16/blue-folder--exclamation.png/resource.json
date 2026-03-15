@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-folder--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 709,
+    "lastModificationSignature": "d25862b80e9173183f1d623f3d7b4269b150a09339cfcdf73adb7dbc5f8650a5",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "china24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 346,
+    "lastModificationSignature": "32494da59bb177673dca5aa1ed87af286bb13367b2c0bbc726e31d31a9f48860",
+    "height": 24
+  }
+}

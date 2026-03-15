@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-status-bar.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 397,
+    "lastModificationSignature": "ab470dd66ba6e043d7e53c9d9f4e16d986b6b996f9916b8e93cc9f183713a17a",
+    "height": 16
+  }
+}

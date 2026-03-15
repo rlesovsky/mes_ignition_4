@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "card--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 497,
+    "lastModificationSignature": "7744e8600751a0862a9e6525a5a9cfca493c39bb1e5b6b4e5e69b29d02f342cb",
+    "height": 16
+  }
+}

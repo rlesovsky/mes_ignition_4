@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calendar-delete-46c55451f51c7685bfeff51ce85e280a.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 652,
+    "lastModificationSignature": "b2155c17856adcea4c9cab98ba8d1b15b097d599bfa5f7cb7385145bf93240ee",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "health icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 560,
+    "lastModificationSignature": "7c1cf15463f722cb7a30000dd63e81d88eb1e41e54213ddd7d7861106ae036f4",
+    "height": 16
+  }
+}

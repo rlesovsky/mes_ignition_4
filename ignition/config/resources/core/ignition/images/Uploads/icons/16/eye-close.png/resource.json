@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "eye-close.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 573,
+    "lastModificationSignature": "d83c23bf64195d4a293d30a821fd2e1e08f4c0b1d65c23788477a1724fc67857",
+    "height": 16
+  }
+}

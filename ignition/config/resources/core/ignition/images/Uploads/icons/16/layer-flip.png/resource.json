@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layer-flip.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 455,
+    "lastModificationSignature": "881b368ac14d946f5bcb83829bd6f2ff3248582add82bbfe7660e2795a278495",
+    "height": 16
+  }
+}

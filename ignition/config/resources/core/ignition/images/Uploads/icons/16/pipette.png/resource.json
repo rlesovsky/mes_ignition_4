@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pipette.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 543,
+    "lastModificationSignature": "2994e7dd98d98c96094fe0024b06a48ea81765ee2530291d20aff8088f864ab6",
+    "height": 16
+  }
+}

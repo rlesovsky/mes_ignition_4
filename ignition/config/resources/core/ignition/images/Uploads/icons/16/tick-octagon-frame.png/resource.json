@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tick-octagon-frame.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 777,
+    "lastModificationSignature": "e3240cb65782a7ae02ea07b2a6c282d20482c1588f425f71b0456330b86dd9e8",
+    "height": 16
+  }
+}

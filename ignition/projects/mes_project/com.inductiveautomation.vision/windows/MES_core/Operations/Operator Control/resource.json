@@ -1,0 +1,19 @@
+{
+  "scope": "C",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "window.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "xml-format-version": 1,
+    "lastModificationSignature": "18c41d9de1201408fb894346840ea6b1ff0dd1f105025e8ee847ad62b0b2b4c3",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2026-01-02T16:30:29Z"
+    },
+    "parameter-names": "canvasDS,datetime,line,lineID,lineTagPath,partno,partrev,selectedDropdownLine,workOrderStatus,workorder"
+  }
+}

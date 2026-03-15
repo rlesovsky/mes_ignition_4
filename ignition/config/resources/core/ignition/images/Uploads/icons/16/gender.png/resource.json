@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "gender.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 642,
+    "lastModificationSignature": "0e7e716577d5893a0831995ff230dbc1276886c6368b9aab8c53c00d95f8002e",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hammer-left.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 629,
+    "lastModificationSignature": "0c3020565a6a1b17ae79553aeab4bb92a7bd1ea7b2008b4fdaebd4064de44350",
+    "height": 16
+  }
+}

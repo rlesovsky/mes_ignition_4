@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-tooltip--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1407,
+    "lastModificationSignature": "89a1b7b3b1d18ac89827003e13329c69e6ddba3951aa5bf2ba17f9722796d6f8",
+    "height": 16
+  }
+}

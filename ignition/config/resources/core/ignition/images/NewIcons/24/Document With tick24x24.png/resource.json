@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Document With tick24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 880,
+    "lastModificationSignature": "4663c3ec1fb7c1dc8cfc6dec5d8ad4663e77fb63994806086dab8d05baa7c366",
+    "height": 24
+  }
+}

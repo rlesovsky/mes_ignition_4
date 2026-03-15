@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "EXHAUST FAN.png"
+  ],
+  "attributes": {
+    "width": 170,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 50837,
+    "lastModificationSignature": "2ecfae3a6073a928128644919b4bc7da35dd82668826501df47d020a80f530c4",
+    "height": 170
+  }
+}

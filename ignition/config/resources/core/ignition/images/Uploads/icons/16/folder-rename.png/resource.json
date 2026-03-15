@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "folder-rename.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 698,
+    "lastModificationSignature": "4393666a21672dee1d5140edacb79738f2fe2c38b5d62afb6043381ac7e8cb19",
+    "height": 16
+  }
+}

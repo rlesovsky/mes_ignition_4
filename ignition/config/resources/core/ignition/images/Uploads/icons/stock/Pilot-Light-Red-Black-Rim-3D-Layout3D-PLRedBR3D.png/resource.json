@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Pilot-Light-Red-Black-Rim-3D-Layout3D-PLRedBR3D.png"
+  ],
+  "attributes": {
+    "width": 114,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 17534,
+    "lastModificationSignature": "ec4fbc56b2f31b2ae794e4fd189e1170059db147dd55d29b511ba79da9443f91",
+    "height": 114
+  }
+}

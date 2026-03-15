@@ -1,0 +1,65 @@
+{
+  "pages": {
+    "/": {
+      "title": "Profile Explorer",
+      "viewPath": "CESMII/Explorer"
+    },
+    "/import": {
+      "title": "Import from XML",
+      "viewPath": "CESMII/Import"
+    }
+  },
+  "sharedDocks": {
+    "cornerPriority": "top-bottom",
+    "left": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 768,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "menu",
+        "modal": false,
+        "resizable": false,
+        "show": "auto",
+        "size": 210,
+        "viewParams": {},
+        "viewPath": "CESMII/Menu"
+      }
+    ],
+    "right": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "show",
+        "iconUrl": "material/settings",
+        "id": "settings",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 250,
+        "viewParams": {},
+        "viewPath": "CESMII/Settings"
+      }
+    ],
+    "top": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 58,
+        "viewParams": {
+          "params": {}
+        },
+        "viewPath": "CESMII/Header"
+      }
+    ]
+  }
+}

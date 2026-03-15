@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "sample 2 icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 932,
+    "lastModificationSignature": "c0593a48c47c4fe694a5a6125472cc296ccb0e885efa119e39faf4b5a664b5f4",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hammer-screwdriver.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 768,
+    "lastModificationSignature": "8eb0d331520ee573f44ddd5e8d30ec76c02cdfbdd46643c6626f6756fc7c4d7f",
+    "height": 16
+  }
+}

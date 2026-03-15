@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "camcorder--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 813,
+    "lastModificationSignature": "4c35fb7958599d2f3a911baf416aac8b88528e561aaee6c561efdfc15906a7b3",
+    "height": 16
+  }
+}

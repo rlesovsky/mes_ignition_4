@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "traffic-cone--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 770,
+    "lastModificationSignature": "927e3818ca68a803a50912e8bcd3aca8af671d0e7e35944afde0ba2243a17f06",
+    "height": 16
+  }
+}

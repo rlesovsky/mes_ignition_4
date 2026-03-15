@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pillow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 511,
+    "lastModificationSignature": "21e6d54b6fa03211a7856169f9845504d8ea8dcebd9df6cfbb0785902c943c5e",
+    "height": 16
+  }
+}

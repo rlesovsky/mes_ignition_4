@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "valve_yellow.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3587,
+    "lastModificationSignature": "a00d4d2c8884dad49a733a2769f4f40a5542a0d8df8e7dbb428c61564bdafa14",
+    "height": 32
+  }
+}

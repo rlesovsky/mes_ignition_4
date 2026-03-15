@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "party-hat.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 748,
+    "lastModificationSignature": "4838f567d1f9d858248cc5a3b8860867b86cd38c58d6f3d6c22cbc36a62c4f93",
+    "height": 16
+  }
+}

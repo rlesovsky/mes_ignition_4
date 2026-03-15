@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blog--exclamation-6fc354519c23a8d6f774525ea00dfa40.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 672,
+    "lastModificationSignature": "e8fa7a56e62cbca0f57e6f9ddd40f47ca727e7d474fdf4bc22b7d658fab7713f",
+    "height": 16
+  }
+}

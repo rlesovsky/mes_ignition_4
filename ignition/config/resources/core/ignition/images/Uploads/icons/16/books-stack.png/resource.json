@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "books-stack.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 613,
+    "lastModificationSignature": "8b7256839a1b8b98a2e07aa3f47ee1c905678c818234629392aad1aaec788db5",
+    "height": 16
+  }
+}

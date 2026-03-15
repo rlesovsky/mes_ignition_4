@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-layered-pane.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 370,
+    "lastModificationSignature": "fd742467596d359c63db818917205953b288c0fbc6761e72ff290ebb3ed1ccaa",
+    "height": 16
+  }
+}

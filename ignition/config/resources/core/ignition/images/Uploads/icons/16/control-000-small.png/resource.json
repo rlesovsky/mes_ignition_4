@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "control-000-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 248,
+    "lastModificationSignature": "591b530a2dfee3935e25238df9530bdebf153474bd34a4d0c4a1bb7c94414eda",
+    "height": 16
+  }
+}

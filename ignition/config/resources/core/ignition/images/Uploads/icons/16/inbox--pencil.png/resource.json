@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "inbox--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 652,
+    "lastModificationSignature": "5b3dbd2404f375b8d8a38ddbd83c604f79c3d0c0ab244d6284ed1bbbeb17d658",
+    "height": 16
+  }
+}

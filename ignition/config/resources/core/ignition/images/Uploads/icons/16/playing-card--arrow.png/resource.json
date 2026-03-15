@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "playing-card--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 797,
+    "lastModificationSignature": "ae0f7808fa085ff915d472393647f6eeb002a6e47d6129509778141f1159ac47",
+    "height": 16
+  }
+}

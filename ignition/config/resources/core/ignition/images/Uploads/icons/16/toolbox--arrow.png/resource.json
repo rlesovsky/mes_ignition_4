@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "toolbox--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1503,
+    "lastModificationSignature": "e4ce0b9924f2f27f694b7a7bc269051c4edf7e4a591c22ae5414e460503406e8",
+    "height": 16
+  }
+}

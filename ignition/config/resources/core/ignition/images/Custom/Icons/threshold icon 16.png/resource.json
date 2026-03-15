@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "threshold icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 555,
+    "lastModificationSignature": "45f0c7e330a1af2e24c39bc918c878d25e852a977c711fb24cba0221a2aed067",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "desktop-share.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 871,
+    "lastModificationSignature": "61fd329deea6135434ecff44722d6e94479afd4445ff2068bd1e98c1914d1ce1",
+    "height": 16
+  }
+}

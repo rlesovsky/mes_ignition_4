@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paint-brush-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 345,
+    "lastModificationSignature": "a6428bda27edc28a2fe84ba04481874886e03c346f1dce74f4c2c789482ce259",
+    "height": 16
+  }
+}

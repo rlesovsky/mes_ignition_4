@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "feed-balloon.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 703,
+    "lastModificationSignature": "a7ad942797300389afd998078ef79a0e510b146c3a1edae4f23810e1f15b2a09",
+    "height": 16
+  }
+}

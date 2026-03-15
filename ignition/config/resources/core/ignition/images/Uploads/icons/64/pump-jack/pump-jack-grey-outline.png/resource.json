@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pump-jack-grey-outline.png"
+  ],
+  "attributes": {
+    "width": 64,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2523,
+    "lastModificationSignature": "954ad0e768f3043379d7f0b915395f7a35824111fb7695ef9a551e4f4dbc9fe1",
+    "height": 54
+  }
+}

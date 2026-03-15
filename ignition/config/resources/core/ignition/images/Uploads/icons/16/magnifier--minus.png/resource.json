@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "magnifier--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 724,
+    "lastModificationSignature": "82342b07fbadcd4a7ffe5cb8b2c9c7fe74841ab5433cdcd03e606e4915b27e46",
+    "height": 16
+  }
+}

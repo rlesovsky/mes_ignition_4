@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "toolbox--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1546,
+    "lastModificationSignature": "96d5890d2d380feaaf3e4612a22d3b1a3cdaf324420d58595da9df58bccc1dd3",
+    "height": 16
+  }
+}

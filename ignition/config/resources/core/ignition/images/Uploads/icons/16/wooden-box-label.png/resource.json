@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wooden-box-label.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 500,
+    "lastModificationSignature": "26f046bec7d4be564455bea0e661be3b196886bb0d1c253ba18452652cef77a8",
+    "height": 16
+  }
+}

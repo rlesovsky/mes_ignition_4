@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "information-octagon.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 639,
+    "lastModificationSignature": "749050465655f2f3d99ec1c038ad62bf902cdc0b00061de9f5f57ed2049246ef",
+    "height": 16
+  }
+}

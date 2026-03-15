@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "upper-and-lower-case-a-letter_16x16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 510,
+    "lastModificationSignature": "833aa48e2bee4dc453148542a4854000b73ecff898a5ae90bbd995291c05c2c8",
+    "height": 16
+  }
+}

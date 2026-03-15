@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "report icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1282,
+    "lastModificationSignature": "a9c4dd82d698883e121a2c5a543f23cd8ca3f3058f1342dfb00bf186d3b634a3",
+    "height": 24
+  }
+}

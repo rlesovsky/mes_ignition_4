@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-business-gray.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 689,
+    "lastModificationSignature": "3e0fa9c0a1c533c9add26c9a35b2fe5b36fbf8a73d35876109dd706568b385b0",
+    "height": 16
+  }
+}

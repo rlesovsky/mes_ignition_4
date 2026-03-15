@@ -1,0 +1,18 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ OEE ]\n\nSummary: Downtime event table.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "lastModificationSignature": "bf834052eb754d7699b5437fa8e23effd8e58e14b9b653cb71b205533f68b0bb"
+  }
+}

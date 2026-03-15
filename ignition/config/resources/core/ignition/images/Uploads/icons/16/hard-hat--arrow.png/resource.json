@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "hard-hat--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 820,
+    "lastModificationSignature": "8f64d3fee1c0caca3e53098b8bef5cb29c4fda8a725652ce163f7a806b029d32",
+    "height": 16
+  }
+}

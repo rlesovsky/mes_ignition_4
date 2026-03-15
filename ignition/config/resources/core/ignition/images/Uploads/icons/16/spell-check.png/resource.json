@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "spell-check.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 585,
+    "lastModificationSignature": "d23b4d56639caeeca2d777a14ee60d133a4850ee86a141b41560f6f3d84d2228",
+    "height": 16
+  }
+}

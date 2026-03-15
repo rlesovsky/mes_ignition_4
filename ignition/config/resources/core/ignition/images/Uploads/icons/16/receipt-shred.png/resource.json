@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "receipt-shred.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 468,
+    "lastModificationSignature": "00f523b40bbcde72d3ebf2c763124ea89c0b5b30db09c94152af4ca71153756d",
+    "height": 16
+  }
+}

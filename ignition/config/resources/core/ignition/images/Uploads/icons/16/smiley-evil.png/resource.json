@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-evil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 823,
+    "lastModificationSignature": "f73e64680dc275eff038d8688e1a31c34f64128ccbf9c5d9dce4b3d0331abf6b",
+    "height": 16
+  }
+}

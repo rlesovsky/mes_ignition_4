@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "process icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1033,
+    "lastModificationSignature": "0abe25118f6366b6186f0a577b6e48476f841036e14ff9dabe67e10f59760aa4",
+    "height": 16
+  }
+}

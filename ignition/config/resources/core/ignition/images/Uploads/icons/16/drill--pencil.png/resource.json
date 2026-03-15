@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drill--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 814,
+    "lastModificationSignature": "e8d0055ec901c5c34f594a33bf87cc2115965eb7799643edc3cad730dc06ae7c",
+    "height": 16
+  }
+}

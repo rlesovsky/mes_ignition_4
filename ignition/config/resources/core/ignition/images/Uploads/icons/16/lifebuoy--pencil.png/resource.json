@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "lifebuoy--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 948,
+    "lastModificationSignature": "86da68e4c6d500fb263757d55211db32cc6b3b8fee27f982f7e16af88f021608",
+    "height": 16
+  }
+}

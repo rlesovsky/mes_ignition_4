@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drive-rename.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 600,
+    "lastModificationSignature": "67eb341e8fa533e0c921d596a4b66186f96a96b99b7320e43f3986308a8fc75d",
+    "height": 16
+  }
+}

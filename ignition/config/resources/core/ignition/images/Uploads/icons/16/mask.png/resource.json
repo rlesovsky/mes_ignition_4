@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mask.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 745,
+    "lastModificationSignature": "b8dcf02e063a8813a786d3410796910ee03fec822ffa4e875f2318cef4b44d70",
+    "height": 16
+  }
+}

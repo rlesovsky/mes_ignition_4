@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-excel.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 767,
+    "lastModificationSignature": "ff8aad6a5c462bd8e1b269c36829c2019e42795fe3c2e5884efe3e92317b53df",
+    "height": 16
+  }
+}

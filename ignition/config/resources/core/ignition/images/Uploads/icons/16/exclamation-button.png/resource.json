@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "exclamation-button.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 539,
+    "lastModificationSignature": "b46591752f3360be5b02f991b86c6a9e5a36e9af3acc16febda01d32db0e25a3",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "folder-horizontal.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 390,
+    "lastModificationSignature": "30c5d8e587d8a06121e2362a3d8929ab92788e3cf5e51606de0e25b02e064a9a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "flashlight--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 687,
+    "lastModificationSignature": "bb01bccfe68b5465e2eaf1d5a4ad6e615d8e53ef16d467c58b4c55f516d0da62",
+    "height": 16
+  }
+}

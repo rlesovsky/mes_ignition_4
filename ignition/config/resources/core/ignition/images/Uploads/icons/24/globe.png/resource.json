@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "globe.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1487,
+    "lastModificationSignature": "f0668b66774b1dd3f8b572c7d5321e09a42f71f8b7ff79d4a73d39398a8bf739",
+    "height": 24
+  }
+}

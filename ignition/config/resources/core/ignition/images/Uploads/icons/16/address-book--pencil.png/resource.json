@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "address-book--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 908,
+    "lastModificationSignature": "995647ab9bac83feec36531a79453547469a7d7c3fb9d3ab69ad1a07b6bf90a4",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drill--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 807,
+    "lastModificationSignature": "9be51c2433b37bef3355cc97830c573f5ebf17ab5f81e6e54d04c3e1b308659e",
+    "height": 16
+  }
+}

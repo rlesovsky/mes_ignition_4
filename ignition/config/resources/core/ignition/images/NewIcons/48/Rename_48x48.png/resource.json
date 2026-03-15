@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Rename_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 696,
+    "lastModificationSignature": "656d76006a5d830b6ce4443ed481cf3bcfe6e8f94ffbe6e85299e312403f3474",
+    "height": 48
+  }
+}

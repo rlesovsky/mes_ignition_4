@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "trophy--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 919,
+    "lastModificationSignature": "1b3e5b9ed5117b07974b21c62c4e2418ddd3b5bb7de90ee44578bb0527415c8d",
+    "height": 16
+  }
+}

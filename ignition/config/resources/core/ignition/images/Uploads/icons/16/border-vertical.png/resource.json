@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "border-vertical.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 413,
+    "lastModificationSignature": "6342898b482f691cef9e3620b4ac11d72cac5825fb362bb33dc1bacaa87605b2",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "monitor-wallpaper.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 777,
+    "lastModificationSignature": "a597bf62c7fa2153ef109c4b8b4d5fcc67bb15d30249b627388ed2d30ef63276",
+    "height": 16
+  }
+}

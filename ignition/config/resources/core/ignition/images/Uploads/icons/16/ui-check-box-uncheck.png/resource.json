@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-check-box-uncheck.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 312,
+    "lastModificationSignature": "0ce6b7974b0518a34f8944f4f8d4858af1fa8769dc9b58d64d1ec50ff64b9e98",
+    "height": 16
+  }
+}

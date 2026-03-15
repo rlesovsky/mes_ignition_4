@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "point--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 844,
+    "lastModificationSignature": "7c9f585cf828bf2430446f420050b911b8f431cc5377dcc78394baf6f8ede1ed",
+    "height": 16
+  }
+}

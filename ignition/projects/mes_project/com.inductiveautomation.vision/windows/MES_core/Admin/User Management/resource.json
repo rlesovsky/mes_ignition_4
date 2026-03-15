@@ -1,0 +1,17 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ Admin ]\n\nSummary: Manage the Ignition users from within an Ignition client.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "data.bin"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "lastModificationSignature": "3cdc5bc275a258827c6f12cdef5bdc87596ba34e2079289aac37037749c9bf0c"
+  }
+}

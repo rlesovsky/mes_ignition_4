@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Feed Out-24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 381,
+    "lastModificationSignature": "f2533db1ee71670c31851f3e308f72b4d7b2b8db2de6499301b19ee005541f82",
+    "height": 24
+  }
+}

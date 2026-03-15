@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-slider-vertical-100.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 348,
+    "lastModificationSignature": "54810e88952b0ac38acb5853bd59236aba0a8076738f87fab5a733a495cf0aa5",
+    "height": 16
+  }
+}

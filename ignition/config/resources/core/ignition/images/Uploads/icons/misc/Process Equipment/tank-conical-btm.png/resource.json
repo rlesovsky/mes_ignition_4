@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tank-conical-btm.png"
+  ],
+  "attributes": {
+    "width": 366,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 15581,
+    "lastModificationSignature": "3e38b3537d3a03961a37d59acc56dab3c4447626a40d6860c4e2dd8cc156c4fd",
+    "height": 133
+  }
+}

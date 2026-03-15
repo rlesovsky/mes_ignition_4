@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-documents-stack.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 720,
+    "lastModificationSignature": "bbd858121a3b5708298ae4d5d334c65a0cfa2dfd5fc64063fbd23fb9a75627d9",
+    "height": 16
+  }
+}

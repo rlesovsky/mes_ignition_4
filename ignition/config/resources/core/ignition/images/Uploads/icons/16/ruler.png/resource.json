@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ruler.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 588,
+    "lastModificationSignature": "3eede7670097299555a15e8b2fece1a510b20347e32b4a635bfdbe9de6b9fe73",
+    "height": 16
+  }
+}

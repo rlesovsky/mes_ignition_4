@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "geotag.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 661,
+    "lastModificationSignature": "a04799aae9beaa8dbcdc71ae8df3e44258348deb2be68f9b6c992d31fbed195a",
+    "height": 16
+  }
+}

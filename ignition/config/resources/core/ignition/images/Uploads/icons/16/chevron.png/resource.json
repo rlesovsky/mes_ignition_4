@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chevron.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 493,
+    "lastModificationSignature": "e1743c2cd2de9995531854c3d3f6e9e9b3dcd4827ebdb572124a4720d52b591d",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "heart--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 860,
+    "lastModificationSignature": "d3f2e563f92e311f87e9ab6d4caea8fd7486cd889d4d84bca6712675ad00bdbf",
+    "height": 16
+  }
+}

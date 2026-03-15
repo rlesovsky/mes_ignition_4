@@ -1,0 +1,8 @@
+/* Direct stylesheet authoring is an advanced feature. Knowledge of CSS required.*/
+
+.psc-twoLineClip {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Flash Disk_24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 840,
+    "lastModificationSignature": "70b63b801d909a5538c3ae67fa6b9c604f8be8fa782dc1b17cc4d0fe82249138",
+    "height": 24
+  }
+}

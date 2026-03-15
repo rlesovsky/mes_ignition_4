@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cookie-chocolate.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 703,
+    "lastModificationSignature": "38870a18520094a1ec1770761a8cb9a5d6651687560b2e741d0b7c7edef74f3a",
+    "height": 16
+  }
+}

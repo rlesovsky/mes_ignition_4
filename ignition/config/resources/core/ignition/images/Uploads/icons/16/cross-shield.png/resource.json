@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cross-shield.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 757,
+    "lastModificationSignature": "f3f55eeb6f7d0b93d9001b721f00b34f240e1a5033a3f822b6bf57f887860d28",
+    "height": 16
+  }
+}

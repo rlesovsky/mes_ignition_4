@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "broom--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 938,
+    "lastModificationSignature": "9eda68642bc01197a756bbda1c84ce3ba292746b45f241a0f9756809bd8da1db",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "sofa--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 780,
+    "lastModificationSignature": "434029b7b36a6ead95d8c4ee4ac09d204100ca15861f2c8777646de0ca60efde",
+    "height": 16
+  }
+}

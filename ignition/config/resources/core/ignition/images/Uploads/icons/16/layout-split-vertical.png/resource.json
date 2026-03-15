@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layout-split-vertical.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 443,
+    "lastModificationSignature": "8e674c150265b4b772a593761298a0de98b6a3efe02c0315e9bd963a19a281eb",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "document-music-playlist.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 620,
+    "lastModificationSignature": "667dc5dd9cb902a9eb1760d4d195e301c5bb20a9d74eff02b0e9a8ad24f186f0",
+    "height": 16
+  }
+}

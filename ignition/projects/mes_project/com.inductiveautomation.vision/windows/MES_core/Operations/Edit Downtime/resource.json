@@ -1,0 +1,19 @@
+{
+  "scope": "C",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "window.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "xml-format-version": 1,
+    "parameter-names": "OrderNumber,line,lineID,linePath,runID,startTime",
+    "lastModificationSignature": "9286fbd87231f9846777069da478cd219ab5240962967e0e28de5964e0f0f2b8"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-nude.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 643,
+    "lastModificationSignature": "48c96eedab048980613488d6d9971b2d89ae8ae0aaf8f71d835d0e4f5053ae1b",
+    "height": 16
+  }
+}

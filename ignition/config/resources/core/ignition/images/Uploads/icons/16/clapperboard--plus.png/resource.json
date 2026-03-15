@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "clapperboard--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 509,
+    "lastModificationSignature": "eb65ce2e52116ca2147a7b00321ef07d158afad2504ef7ebc1b1d4ca1f0c6344",
+    "height": 16
+  }
+}

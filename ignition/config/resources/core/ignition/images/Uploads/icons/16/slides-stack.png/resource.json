@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "slides-stack.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 510,
+    "lastModificationSignature": "21e34ceaf5b0cca126dd79cae64c4add640bb4f73a64e0d205ce4e44651b4454",
+    "height": 16
+  }
+}

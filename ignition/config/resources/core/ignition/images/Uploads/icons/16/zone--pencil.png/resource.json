@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "zone--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 619,
+    "lastModificationSignature": "ce2db3ecfc2bfecff72b3395462fd657517af907a5ac37de4cb3cb00c6685e39",
+    "height": 16
+  }
+}

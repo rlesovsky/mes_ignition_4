@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "system-monitor-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 628,
+    "lastModificationSignature": "9cade62613f425127a68efbca2d78847693e4bceb53a7f3f5f41df588cbe671a",
+    "height": 16
+  }
+}

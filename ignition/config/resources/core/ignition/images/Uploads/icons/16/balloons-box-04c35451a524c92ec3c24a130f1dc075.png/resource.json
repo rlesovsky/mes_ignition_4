@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balloons-box-04c35451a524c92ec3c24a130f1dc075.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 527,
+    "lastModificationSignature": "1eeabb338e209728443d677d8e5f5d36d4ffc1b3a053e994dab4b6919f8c0dbc",
+    "height": 16
+  }
+}

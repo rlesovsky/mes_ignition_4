@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "projection-screen--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 521,
+    "lastModificationSignature": "e90a0b74a78a30cf7bc28cd7e1f76a0a66e066f4abaa7de3a61a426fb33b737c",
+    "height": 16
+  }
+}

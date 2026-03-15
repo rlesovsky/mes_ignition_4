@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "heart--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 781,
+    "lastModificationSignature": "93f2781d3fc5e05e1248863f980cbfa5ff6b814772cecfafa34f5271b89c1ca7",
+    "height": 16
+  }
+}

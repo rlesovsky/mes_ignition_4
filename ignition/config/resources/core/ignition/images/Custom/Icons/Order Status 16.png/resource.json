@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Order Status 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 921,
+    "lastModificationSignature": "9b428eb51dbac1ecaeab0c1751f3cabb041919930998376e0c025bbbf5b1cbce",
+    "height": 16
+  }
+}

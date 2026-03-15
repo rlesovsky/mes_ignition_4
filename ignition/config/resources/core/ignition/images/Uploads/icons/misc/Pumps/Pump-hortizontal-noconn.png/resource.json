@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Pump-hortizontal-noconn.png"
+  ],
+  "attributes": {
+    "width": 360,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 36067,
+    "lastModificationSignature": "70fedde073a663705ce9264c2943d48c493f7f56e5960f8bae09f99b2c775d43",
+    "height": 250
+  }
+}

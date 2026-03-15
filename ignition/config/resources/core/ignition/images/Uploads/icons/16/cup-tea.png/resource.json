@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cup-tea.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 705,
+    "lastModificationSignature": "e95296e1d698e371b1cc9d3e13334212c0f3e58d3514e41efd304d2ed1accbfa",
+    "height": 16
+  }
+}

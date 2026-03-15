@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-shade.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 398,
+    "lastModificationSignature": "e7ecbf457de3d5b4900427642cfeb3b6f7d2d9e8b9c7f3f8eee7ce51ead4c638",
+    "height": 16
+  }
+}

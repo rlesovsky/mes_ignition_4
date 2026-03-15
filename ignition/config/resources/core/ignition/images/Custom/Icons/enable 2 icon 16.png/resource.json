@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "enable 2 icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 694,
+    "lastModificationSignature": "3cae0e49879043febb4e5c27402ac5a484a7514254b24de517dce1a8c55a3ce7",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "music--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 653,
+    "lastModificationSignature": "d8ad3e7855fc5f6600bfb790cb48f4212836d03f313d7446653fdb3a4de5101c",
+    "height": 16
+  }
+}

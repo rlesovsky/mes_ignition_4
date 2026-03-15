@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "car icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 401,
+    "lastModificationSignature": "4a05e45da3a8d0a2c45697e5137d5412fb1639cb894857c0c8add69de8b93246",
+    "height": 16
+  }
+}

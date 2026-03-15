@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "glass--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 755,
+    "lastModificationSignature": "a893b93eb76f12be654fa8e53be1907f511c78f5f17498ab6cc59e8b238abe5a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "clapperboard--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 596,
+    "lastModificationSignature": "fafd8892c85fa19fad2e027f49143255f261f5e2d588c9343345a476d0be117d",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tick-button.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 568,
+    "lastModificationSignature": "66e451a3a245ccdc4ccd72cde649b0ecad1e23955e93d8916e7dc6ddce7b702e",
+    "height": 16
+  }
+}

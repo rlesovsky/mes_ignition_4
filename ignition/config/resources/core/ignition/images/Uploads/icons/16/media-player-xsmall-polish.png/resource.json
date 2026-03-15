@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "media-player-xsmall-polish.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 365,
+    "lastModificationSignature": "08c123e0d14989f3118b01b1826a40c95e6c039092021ec63ca65cb9d82c8097",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "node-select-child.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 576,
+    "lastModificationSignature": "f98a63b3bca0cb9c830bff426c3257f42ebd48977a3cdbcb053a3d74c6ac9c77",
+    "height": 16
+  }
+}

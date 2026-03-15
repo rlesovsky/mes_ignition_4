@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "table-split.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 533,
+    "lastModificationSignature": "e4d4606aad1850bc1b36ad602db5d4ec0e9f55a0ab1ac512724f5dd381faa4b8",
+    "height": 16
+  }
+}

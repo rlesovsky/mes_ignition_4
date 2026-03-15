@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "slash.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 714,
+    "lastModificationSignature": "220beb252730384496c0be111a72e1c2ed060a4abc9d94705cb6f3657a50c5b4",
+    "height": 16
+  }
+}

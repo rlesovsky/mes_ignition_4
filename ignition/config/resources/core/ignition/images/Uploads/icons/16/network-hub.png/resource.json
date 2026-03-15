@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "network-hub.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 421,
+    "lastModificationSignature": "df7eaab5620892965f7b1dc0af4e744017816ee36389d58346d6f9dc2bc08242",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "service-bell--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 726,
+    "lastModificationSignature": "ab4cb840b7c8a487c8503ae16500ab48a4509fefdce4f2bf16382057d24a9b83",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Stocks-28.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 507,
+    "lastModificationSignature": "7f5496ed8e152208a211f4dad9e4c6f03e6bdcd79ec6e898b3560badc508395f",
+    "height": 28
+  }
+}

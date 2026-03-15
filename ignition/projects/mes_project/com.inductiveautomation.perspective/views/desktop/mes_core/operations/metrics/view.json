@@ -1,0 +1,160 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 399
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "EmbeddedView"
+            },
+            "props": {
+              "path": "desktop/mes_core/operations/templates/schedule",
+              "style": {
+                "backgroundColor": "#0d1117"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_0"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "path": "desktop/mes_core/operations/templates/downtime"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_1"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "props": {
+              "path": "desktop/mes_core/operations/templates/downtime_pareto",
+              "style": {
+                "backgroundColor": "#0d1117"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_2"
+            },
+            "position": {
+              "tabIndex": 3
+            },
+            "props": {
+              "path": "desktop/mes_core/operations/templates/notes"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_3"
+            },
+            "position": {
+              "tabIndex": 4
+            },
+            "props": {
+              "params": {
+                "tagPath": "[default]Enterprise/Site/Area/Line 1"
+              },
+              "path": "desktop/mes_core/operations/templates/accumulated_waste_pareto"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_4"
+            },
+            "position": {
+              "tabIndex": 5
+            },
+            "props": {
+              "path": "desktop/mes_core/operations/templates/agent"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1
+        },
+        "props": {
+          "contentStyle": {
+            "borderColor": "transparent",
+            "borderStyle": "none",
+            "borderWidth": 0,
+            "boxShadow": "none",
+            "outlineStyle": "none"
+          },
+          "menuStyle": {
+            "borderStyle": "none",
+            "borderWidth": 0,
+            "boxShadow": "none",
+            "outlineStyle": "none"
+          },
+          "menuType": "modern",
+          "style": {
+            "backgroundColor": "#21262d",
+            "borderColor": "transparent",
+            "borderStyle": "none",
+            "borderWidth": 0,
+            "boxShadow": "none",
+            "margin": 5,
+            "outlineColor": "transparent",
+            "outlineStyle": "none",
+            "outlineWidth": 0
+          },
+          "tabStyle": {
+            "active": {
+              "color": "#3b82f6"
+            },
+            "inactive": {
+              "color": "#9ca3af"
+            }
+          },
+          "tabs": [
+            "Schedule",
+            "Downtime",
+            "Pareto",
+            "Notes",
+            "Waste",
+            "Agent"
+          ]
+        },
+        "type": "ia.container.tab"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#21262d",
+        "borderBottomLeftRadius": 12,
+        "borderBottomRightRadius": 12,
+        "borderTopLeftRadius": 12,
+        "borderTopRightRadius": 12
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

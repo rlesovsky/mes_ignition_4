@@ -1,0 +1,234 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 260
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "56px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "icon": "settings",
+            "text": "Settings"
+          },
+          "path": "CESMII/Title"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "text": "Cloud Library"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Library"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.options": {
+                    "binding": {
+                      "config": {
+                        "path": "session.custom.settings.cloudLibrary"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "path": "session.custom.settings.library"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.input.dropdown"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "draggable": true,
+                        "id": "cloud-library",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": false,
+                        "title": "Cloud Library",
+                        "type": "open",
+                        "viewPath": "CESMII/Cloud Library",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "path": "material/settings",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginLeft": "5px"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "36px",
+              "shrink": 0
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginTop": "10px"
+              },
+              "text": "Username:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Username"
+            },
+            "position": {
+              "basis": "36px",
+              "shrink": 0
+            },
+            "type": "ia.input.text-field"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginTop": "10px"
+              },
+              "text": "Password:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Password"
+            },
+            "position": {
+              "basis": "36px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.input.password-field"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.session.custom.settings.library \u003d self.parent.getChild(\"FlexContainer\").getChild(\"Library\").props.value\n\tself.session.custom.settings.username \u003d self.getSibling(\"Username\").props.text\n\tself.session.custom.settings.password \u003d self.getSibling(\"Password\").props.text\n\tself.session.custom.settings.credsChange \u003d system.date.now()\n\t\n\tif self.session.custom.settings.username !\u003d \"\" and self.session.custom.settings.password !\u003d \"\":\n\t\tsystem.perspective.toggleDock(\"settings\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "36px",
+              "shrink": 0
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/save"
+                }
+              },
+              "style": {
+                "marginTop": "10px"
+              },
+              "text": "Save"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "margin": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "borderLeftColor": "var(--neutral-60)",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "1px",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

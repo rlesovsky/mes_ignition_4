@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cookie-medium.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1508,
+    "lastModificationSignature": "4712769a0d6dd3c9d088b7e0a0177f413c0f3f000ab355595baf533d2de74bff",
+    "height": 16
+  }
+}

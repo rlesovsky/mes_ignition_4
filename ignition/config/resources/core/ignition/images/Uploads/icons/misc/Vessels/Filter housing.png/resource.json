@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Filter housing.png"
+  ],
+  "attributes": {
+    "width": 53,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1145,
+    "lastModificationSignature": "fa2967b5d882205033378f2c8f93fcdc1f4fc93aac59cb31399151529118556f",
+    "height": 138
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "convertUdts": true,
+  "edgeNodeId": "Dallas",
+  "enableStoreForwardByDefault": true,
+  "groupId": "MES",
+  "includeSparkplugDataTypes": true,
+  "optimizeUdts": true,
+  "publishUdtDefinitions": true,
+  "rebirthDebounceDelay": 5000,
+  "serverSet": "Bootcamp",
+  "tagPacingPeriod": 1000,
+  "tagPath": "Enterprise/Site/Area",
+  "tagProvider": "default",
+  "useCirrusEncoder": true
+}

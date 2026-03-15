@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "application-tile-horizontal.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 497,
+    "lastModificationSignature": "08dc8169d169ecbc4c3f02b03e1d0d4f297f8c4c4b5e006b3ab447005931cbcb",
+    "height": 16
+  }
+}

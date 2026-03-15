@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balance--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 937,
+    "lastModificationSignature": "0f450e4b71b2f811a6ef97c8bfda3c73075699abac96b8ded1b643ca91dfc578",
+    "height": 16
+  }
+}

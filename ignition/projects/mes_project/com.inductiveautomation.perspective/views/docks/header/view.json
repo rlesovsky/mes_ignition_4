@@ -1,0 +1,411 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 983
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "spacer_left"
+        },
+        "position": {
+          "basis": "8px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "id": "menu",
+                "type": "toggle"
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "menu_toggle"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#d1d5db",
+          "path": "material/menu",
+          "style": {
+            "backgroundColor": "rgba(255, 255, 255, 0.05)",
+            "borderRadius": "8px",
+            "classes": "ui_ux/hover_highlight",
+            "cursor": "pointer",
+            "padding": "6px"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "spacer_after_menu"
+        },
+        "position": {
+          "basis": "12px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "logo"
+        },
+        "position": {
+          "basis": "200px",
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "fit": {
+            "mode": "contain"
+          },
+          "source": "/system/images/TAS_transparentback-TAS-Only-white.png",
+          "style": {
+            "margin": "0.3em"
+          },
+          "tint": {
+            "color": "#FFFFFF"
+          }
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "brand_title"
+        },
+        "position": {
+          "basis": "120px",
+          "shrink": 0
+        },
+        "props": {
+          "text": "MES 4.0",
+          "style": {
+            "classes": "mes-brand-title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "spacer_middle"
+        },
+        "position": {
+          "basis": "5px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t\n\ttag = \"[SCADA]Rockwell NC 436/Production/Edge/ESD Reset\"\n\t\n\tvalue = 1\n\t\n\tsystem.tag.writeBlocking(tag, value)\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "safety_reset_btn"
+            },
+            "position": {
+              "basis": "110px",
+              "grow": 1
+            },
+            "props": {
+              "primary": false,
+              "text": "Safety Reset",
+              "style": {
+                "backgroundColor": "rgba(239, 68, 68, 0.25)",
+                "borderColor": "#ef4444",
+                "borderRadius": "8px",
+                "borderStyle": "solid",
+                "borderWidth": "1px",
+                "color": "#fca5a5",
+                "fontSize": "13px",
+                "fontWeight": "600"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t\n\t# This script toggles the session locale between English and Spanish\n\t\n\t# Get the current locale from the session properties\n\t#current_locale = self.session.props.locale\n\t\n\t# Check if the current locale is English\n\t#if current_locale == 'en-US':\n\t    # If current locale is English, change it to Spanish\n\t    #new_locale = 'es'\n\t#else:\n\t    # If current locale is not English, change it to English\n\t    #new_locale = 'en-US'\n\t\n\t# Set the new locale to the session properties\n\t#self.session.props.locale = new_locale"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "language",
+          "tooltip": {
+            "delay": 250,
+            "enabled": true,
+            "text": "Your Info"
+          }
+        },
+        "position": {
+          "display": false
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "ui_ux/hover_highlight",
+            "minWidth": "100px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "header_divider"
+        },
+        "position": {
+          "basis": "1px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "rgba(255, 255, 255, 0.08)",
+            "marginBottom": "10px",
+            "marginTop": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "alarm_icon"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "props": {
+              "color": "#d1d5db",
+              "path": "material/notifications_none",
+              "style": {
+                "marginRight": "6px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "alarm_label"
+            },
+            "position": {
+              "basis": "55px"
+            },
+            "props": {
+              "text": "alarms",
+              "style": {
+                "classes": "labels/font labels/size_normal",
+                "color": "#d1d5db",
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/alarms"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "alarms_container",
+          "tooltip": {
+            "delay": 250,
+            "enabled": true,
+            "text": "View Alarms"
+          }
+        },
+        "position": {
+          "basis": "100px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "center",
+          "style": {
+            "borderRadius": "8px",
+            "classes": "ui_ux/hover_highlight",
+            "cursor": "pointer",
+            "marginLeft": "8px",
+            "marginRight": "4px",
+            "paddingBottom": "6px",
+            "paddingLeft": "12px",
+            "paddingRight": "12px",
+            "paddingTop": "6px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "header_divider_2"
+        },
+        "position": {
+          "basis": "1px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "rgba(255, 255, 255, 0.08)",
+            "marginBottom": "10px",
+            "marginTop": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "user_icon"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "props": {
+              "color": "#10b981",
+              "path": "material/person",
+              "style": {
+                "marginRight": "6px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "hasDelegate": true,
+              "name": "user_name"
+            },
+            "position": {
+              "basis": "80px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "session.props.auth.user.userName"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "if({value} = null || len({value}) = 0, \"Sign In\", {value})",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "labels/font labels/size_normal",
+                "color": "#d1d5db",
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "user_container",
+          "tooltip": {
+            "delay": 250,
+            "enabled": true,
+            "text": "User Profile"
+          }
+        },
+        "position": {
+          "basis": "110px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "center",
+          "style": {
+            "borderRadius": "8px",
+            "classes": "ui_ux/hover_highlight",
+            "cursor": "pointer",
+            "marginLeft": "4px",
+            "paddingBottom": "6px",
+            "paddingLeft": "12px",
+            "paddingRight": "12px",
+            "paddingTop": "6px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "spacer_right"
+        },
+        "position": {
+          "basis": "12px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "id": "qc",
+            "type": "close"
+          },
+          "scope": "C",
+          "type": "dock"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "style": {
+        "backgroundColor": "#21262d",
+        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+        "classes": "mes-header"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

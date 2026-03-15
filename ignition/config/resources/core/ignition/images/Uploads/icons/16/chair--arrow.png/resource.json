@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chair--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 849,
+    "lastModificationSignature": "7c7f82e92db7748d77dbc87425ba00d7ae434d99fd0757806bb5b22169b79955",
+    "height": 16
+  }
+}

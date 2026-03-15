@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "battery-charge.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1044,
+    "lastModificationSignature": "f2f1f43d044a80b067d7df083580ad0bb270af7603f10968324179dcf3149aaa",
+    "height": 24
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "office-material.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 629,
+    "lastModificationSignature": "41bb609abc8bf7f8881113938df3ce189d92695cec058ce65d16d756d113b208",
+    "height": 24
+  }
+}

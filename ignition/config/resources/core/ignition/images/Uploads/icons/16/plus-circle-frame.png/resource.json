@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "plus-circle-frame.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 893,
+    "lastModificationSignature": "4d3fb2c554ce11881e79513cc581c5217e29e96288f0f1cbb31263de488b5f5b",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "report--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 576,
+    "lastModificationSignature": "5ffcf1cc3c739e8fd7ba039c6c10056e048f93203972309a3bf60119b841435d",
+    "height": 16
+  }
+}

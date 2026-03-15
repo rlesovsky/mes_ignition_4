@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "scorecard 16.jpg"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "JPEG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 890,
+    "lastModificationSignature": "dda1d431877b98e6c6fb62393daa6df21c7f92f105030915970e5d27b2803870",
+    "height": 16
+  }
+}

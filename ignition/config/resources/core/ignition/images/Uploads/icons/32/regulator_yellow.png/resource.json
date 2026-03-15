@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "regulator_yellow.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3685,
+    "lastModificationSignature": "39cecdd92d2d2e6fff330eecf64fffa3fcf9366f74a26c640d729929ecddeb12",
+    "height": 20
+  }
+}

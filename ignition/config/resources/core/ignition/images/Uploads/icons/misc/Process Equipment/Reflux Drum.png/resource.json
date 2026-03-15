@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Reflux Drum.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 27969,
+    "lastModificationSignature": "ec5f3872f5b318d4adfdeb0e0d659d82488cd724b1142b2d5a74112069abb373",
+    "height": 272
+  }
+}

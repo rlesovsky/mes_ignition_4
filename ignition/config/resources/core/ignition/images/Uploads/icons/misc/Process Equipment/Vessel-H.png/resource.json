@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Vessel-H.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 15038,
+    "lastModificationSignature": "044506d62a66750f8db2c32ae645a3649ab9cf3df897e38061c38500ac2c3b54",
+    "height": 158
+  }
+}

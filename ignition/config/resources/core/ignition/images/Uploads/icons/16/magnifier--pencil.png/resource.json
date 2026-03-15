@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "magnifier--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 801,
+    "lastModificationSignature": "56032d31cb8bc2db3d8ee8d85f8e22f0ba821c32afe1eb5be31ae328b0e43808",
+    "height": 16
+  }
+}

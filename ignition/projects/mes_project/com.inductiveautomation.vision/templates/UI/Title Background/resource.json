@@ -1,0 +1,17 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ UI ]\n\nSummary: Look and feel element.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "data.bin"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "lastModificationSignature": "917ec4956854a703fc4c6e0c79c788260b805d2c8900d8fbd5f0b0d2f12e196e"
+  }
+}

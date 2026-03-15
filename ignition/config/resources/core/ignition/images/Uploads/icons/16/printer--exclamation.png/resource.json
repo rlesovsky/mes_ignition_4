@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "printer--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 839,
+    "lastModificationSignature": "e6cb111bd7f32328d7fae22ae848cb256846ac5e88eea20e413857a40c0dd0f2",
+    "height": 16
+  }
+}

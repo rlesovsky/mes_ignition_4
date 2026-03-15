@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "alarm-clock--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1011,
+    "lastModificationSignature": "7f45fb4496873b54e12059e3eaf61de3343e3fbe4b64ebc18a8050fefaeb86cf",
+    "height": 16
+  }
+}

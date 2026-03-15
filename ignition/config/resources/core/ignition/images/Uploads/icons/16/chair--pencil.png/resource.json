@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chair--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 867,
+    "lastModificationSignature": "3bc0780ba3fe64e62fa865d595b23439bc4cf40a5d334784e61ed13aa94c7542",
+    "height": 16
+  }
+}

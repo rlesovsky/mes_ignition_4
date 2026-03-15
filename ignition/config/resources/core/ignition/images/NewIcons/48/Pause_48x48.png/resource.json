@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Pause_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1225,
+    "lastModificationSignature": "7d0413a9d29fd02b8cc3e270560ec0f274b709fe6b21d9b62113f79a8c115d26",
+    "height": 48
+  }
+}

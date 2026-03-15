@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calculator--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 749,
+    "lastModificationSignature": "efc6e6246da2c3281dcdb8f8d14f47733a3e187e5f8f5d3ef5e58c8abd1a464b",
+    "height": 16
+  }
+}

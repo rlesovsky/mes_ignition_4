@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "envelope--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 654,
+    "lastModificationSignature": "680617462b0bc71f8afa3a5e9393816d59ceeb179cdbe1d98bf15b092319ec3d",
+    "height": 16
+  }
+}

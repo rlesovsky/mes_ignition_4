@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "united-states.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 391,
+    "lastModificationSignature": "d844c5ba124debb10c0e560890fa74e9ad510dbab3bc8d8ab16eb6cfb383bdab",
+    "height": 16
+  }
+}

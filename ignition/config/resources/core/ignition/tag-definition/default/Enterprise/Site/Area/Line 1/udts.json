@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Dashboard",
+    "typeId": "mes_core/UI",
+    "tagType": "UdtInstance"
+  },
+  {
+    "name": "Line",
+    "typeId": "mes_core/Line",
+    "parameters": {
+      "line": {
+        "dataType": "String",
+        "value": "Line 1"
+      },
+      "lineID": {
+        "dataType": "Integer",
+        "value": 1
+      },
+      "units": {
+        "dataType": "String",
+        "value": "Parts"
+      }
+    },
+    "tagType": "UdtInstance",
+    "tags": [
+      {
+        "historyProvider": "timebase",
+        "historyEnabled": true,
+        "name": "Cycle Time",
+        "tagType": "AtomicTag"
+      },
+      {
+        "name": "Dispatch",
+        "tagType": "UdtInstance",
+        "tags": [
+          {
+            "query": "SELECT\r\n\tid,\r\n\treasoncode,\r\n\treasonname,\r\n\tparentid,\r\n\tplannedreason\r\nFROM statereason\r\nWHERE parentid \u003d {[.]LineID}\r\nORDER BY reasoncode",
+            "name": "State Reason",
+            "tagType": "AtomicTag"
+          }
+        ]
+      },
+      {
+        "name": "OEE",
+        "tagType": "UdtInstance",
+        "tags": [
+          {
+            "expression": "({[.]Current Time} - {[.]Start Time}) / 1000",
+            "name": "Total Time",
+            "tagType": "AtomicTag"
+          }
+        ]
+      },
+      {
+        "historyProvider": "timebase",
+        "historyEnabled": true,
+        "name": "State",
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
+    "name": "Edge",
+    "typeId": "Assets/Simulator",
+    "tagType": "UdtInstance"
+  },
+  {
+    "name": "Odoo",
+    "typeId": "mes_custom/OdooWorkOrder",
+    "tagType": "UdtInstance"
+  },
+  {
+    "name": "BigQuery",
+    "typeId": "mes_custom/Cloud",
+    "tagType": "UdtInstance"
+  }
+]

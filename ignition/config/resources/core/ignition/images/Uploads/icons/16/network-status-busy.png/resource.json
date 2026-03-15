@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "network-status-busy.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1423,
+    "lastModificationSignature": "e5c7b1adda3f4bb9e7dea31b47650a0ee7e5504a0c99711474e4c81ed9bd65c8",
+    "height": 16
+  }
+}

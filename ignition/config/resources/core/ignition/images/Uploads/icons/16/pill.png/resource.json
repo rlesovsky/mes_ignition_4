@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pill.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 562,
+    "lastModificationSignature": "6a1af140806b1ad9ac772cada13a53541a7ccf4d085d1249e88ac890edbdd15c",
+    "height": 16
+  }
+}

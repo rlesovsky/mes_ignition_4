@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Vessel-H Cutout.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 23237,
+    "lastModificationSignature": "80c7a620b828d4c29513a92c175f4edc40550ed81f1b52c3f2c3bb7417ee02c2",
+    "height": 158
+  }
+}

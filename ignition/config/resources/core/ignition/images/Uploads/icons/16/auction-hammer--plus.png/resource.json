@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "auction-hammer--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 915,
+    "lastModificationSignature": "599459a0b0cbf8cc183ecb5535ccb04c067028c06e9ba86b96626267f4cc4b0a",
+    "height": 16
+  }
+}

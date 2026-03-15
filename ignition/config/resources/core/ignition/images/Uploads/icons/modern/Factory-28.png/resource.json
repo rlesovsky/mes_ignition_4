@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Factory-28.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 464,
+    "lastModificationSignature": "7fc162e2f277ba0b3dd28f87c537fb06c03bca2a8af5d94f169733eb1e3fec51",
+    "height": 28
+  }
+}

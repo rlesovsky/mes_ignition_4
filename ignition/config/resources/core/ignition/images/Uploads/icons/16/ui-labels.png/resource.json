@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-labels.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 579,
+    "lastModificationSignature": "c0ed650037ce9195b24f1139e18baa0368684ce0d97384b434a2350b0639d15a",
+    "height": 16
+  }
+}

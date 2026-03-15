@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "socket--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 702,
+    "lastModificationSignature": "905ec448cf070cd37cfd41468743e13c3fed69e237525fa55590bdfdc26e77d5",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Progress.png"
+  ],
+  "attributes": {
+    "width": 150,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 7360,
+    "lastModificationSignature": "5d21c4d96dd89e2e446a5e57a45ce4113e65edab705011cc50182f52fd6e68d2",
+    "height": 150
+  }
+}

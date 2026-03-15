@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "price-tag--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 795,
+    "lastModificationSignature": "a7deaef38a2eff68f10aa40be6205f117c2ba51532c9162e596a8876ce8a14ae",
+    "height": 16
+  }
+}

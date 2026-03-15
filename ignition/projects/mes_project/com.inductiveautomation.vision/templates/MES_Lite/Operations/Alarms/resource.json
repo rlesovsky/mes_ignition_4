@@ -1,0 +1,18 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ Alarm ]\n\nSummary: List alarm events for a line.",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "template.bin",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "lastModificationSignature": "c167b1b9f9c0854291d5d91a090ce623473d3f06e63158bc7d60506e09090369"
+  }
+}

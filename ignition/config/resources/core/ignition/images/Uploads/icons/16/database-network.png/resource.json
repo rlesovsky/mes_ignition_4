@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "database-network.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 626,
+    "lastModificationSignature": "a32c1b6deead1db0a389b8f4d1f20e1a613fcaa85a70f4343f08aa8884fcec99",
+    "height": 16
+  }
+}

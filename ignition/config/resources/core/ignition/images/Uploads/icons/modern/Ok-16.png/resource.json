@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Ok-16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 369,
+    "lastModificationSignature": "f529a6543fc9c360113308d71fb5ec508d8f1ed1ade916afab4789f35335c7be",
+    "height": 16
+  }
+}

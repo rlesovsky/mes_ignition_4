@@ -1,0 +1,94 @@
+[
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Line ID",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DateTime"
+    },
+    "name": "Start Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "Line Name",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "State",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Infeed",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Outfeed",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Collect Data",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Rate Setpoint",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DateTime"
+    },
+    "name": "Current Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Run Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Waste",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Run Enabled",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Float4",
+      "enabled": true
+    },
+    "name": "Cycle Time",
+    "tagType": "AtomicTag"
+  }
+]

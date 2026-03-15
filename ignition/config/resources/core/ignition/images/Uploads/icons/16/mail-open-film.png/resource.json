@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mail-open-film.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 802,
+    "lastModificationSignature": "cf1c5fabb466e24ce0e1cacd786871f224dd5c8622df1d506c2f0486561c853a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "network-ethernet.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 569,
+    "lastModificationSignature": "3023e3bc7610a164bd9d7f3046ef0e1f1aa36963b4537de8f455f6f4da618b69",
+    "height": 16
+  }
+}

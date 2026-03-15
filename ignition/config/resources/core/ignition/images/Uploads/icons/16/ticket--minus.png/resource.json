@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ticket--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 762,
+    "lastModificationSignature": "51311a6c6eb8d07dd4fecfd5c8fb40c238677b536ef11d311dd4f02e032bee50",
+    "height": 16
+  }
+}

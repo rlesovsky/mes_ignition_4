@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "exclamation-small-red.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 334,
+    "lastModificationSignature": "6d7d9c391f4530c1158a0ca9c0812f7d739ae4a4805402e106e6530546b5a3ba",
+    "height": 16
+  }
+}

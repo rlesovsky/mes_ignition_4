@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Stock Index Up_24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 878,
+    "lastModificationSignature": "9d483f4bf99f683a0173310345b29fccde4218a44c224c27b4ab4a7df5ad3715",
+    "height": 24
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-comma.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 198,
+    "lastModificationSignature": "c4c2cf8ee732d18cdc4e06324fc4ed7d57859ae41f76fd9c87ce63ebd52d3743",
+    "height": 16
+  }
+}

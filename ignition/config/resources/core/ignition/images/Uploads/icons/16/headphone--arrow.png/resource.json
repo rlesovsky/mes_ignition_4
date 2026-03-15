@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "headphone--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 734,
+    "lastModificationSignature": "8665eb100cfc347b12201c99690a77f9deb7743ab465cafbe1792031dffb2224",
+    "height": 16
+  }
+}

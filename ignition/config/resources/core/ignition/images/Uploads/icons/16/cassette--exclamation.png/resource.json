@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cassette--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 706,
+    "lastModificationSignature": "3085b25e19fca2a6e73eed8bef161fd214be2cd24f09a5ef2bc1b6b6651a1e50",
+    "height": 16
+  }
+}

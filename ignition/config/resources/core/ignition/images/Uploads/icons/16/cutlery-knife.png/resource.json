@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cutlery-knife.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 381,
+    "lastModificationSignature": "07cf0d07e7b905d9d5c66a14239c8dcea00bd6bb8da1187e6b1a39dbaff10bb6",
+    "height": 16
+  }
+}

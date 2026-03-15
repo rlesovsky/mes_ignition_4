@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "if_ic_format_color_text_48px_352385.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 268,
+    "lastModificationSignature": "7688c30ec899a2198ee01ae9d9d3452f38c31bfd5f7035ed73a4c79f4829bb4d",
+    "height": 16
+  }
+}

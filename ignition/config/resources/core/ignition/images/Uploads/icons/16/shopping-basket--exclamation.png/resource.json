@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "shopping-basket--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 869,
+    "lastModificationSignature": "f825400ba98f94416aa0a6a7ab6be45d855f6ad101328a54eaaffac991b024aa",
+    "height": 16
+  }
+}

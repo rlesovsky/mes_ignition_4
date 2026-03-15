@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "puzzle--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 866,
+    "lastModificationSignature": "b7f00b9e158817652555778ae606663db15f22dc438f6a7090c84552c88d68e3",
+    "height": 16
+  }
+}

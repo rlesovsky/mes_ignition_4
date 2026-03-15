@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "megaphone--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 753,
+    "lastModificationSignature": "a0dbf2f23cefaa097760a6d9d5cd93a6bf341e3d0071565a73f99833b08c5524",
+    "height": 16
+  }
+}

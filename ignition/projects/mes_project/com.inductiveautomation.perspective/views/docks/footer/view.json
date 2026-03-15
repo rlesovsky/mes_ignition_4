@@ -1,0 +1,233 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 32
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "company_label"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "text": "TAS",
+              "style": {
+                "classes": "labels/font",
+                "color": "#10b981",
+                "fontSize": "14px",
+                "fontWeight": "700"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "divider_dot"
+            },
+            "position": {
+              "basis": "16px",
+              "shrink": 0
+            },
+            "props": {
+              "text": "•",
+              "style": {
+                "color": "#6b7280",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "theme_icon"
+                },
+                "position": {
+                  "basis": "18px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#9ca3af",
+                  "path": "material/brightness_medium"
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.session.props.theme == 'light':\n\t\tself.session.props.theme = 'dark'\n\telse:\n\t\tself.session.props.theme = 'light'"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "theme_toggle",
+              "tooltip": {
+                "enabled": true,
+                "text": "Toggle Light/Dark Mode"
+              }
+            },
+            "position": {
+              "basis": "32px",
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "center",
+              "style": {
+                "borderRadius": "6px",
+                "classes": "ui_ux/hover_highlight",
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "left_section"
+        },
+        "position": {
+          "basis": "120px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "timestamp"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[System]Gateway/CurrentDateTime"
+              },
+              "transforms": [
+                {
+                  "formatType": "datetime",
+                  "formatValue": {
+                    "date": "short",
+                    "time": "medium"
+                  },
+                  "type": "format"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "labels/font labels/size_normal",
+            "color": "#d1d5db",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "status_dot"
+            },
+            "position": {
+              "basis": "8px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#10b981",
+                "borderRadius": "50%",
+                "boxShadow": "0 0 6px #10b981",
+                "height": "8px",
+                "marginRight": "8px",
+                "width": "8px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "redundancy_role"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[System]Gateway/Redundancy/Role"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "labels/font labels/size_normal",
+                "color": "#9ca3af",
+                "textAlign": "right"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "right_section"
+        },
+        "position": {
+          "basis": "100px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "flex-end"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "justify": "space-between",
+      "style": {
+        "backgroundColor": "#21262d",
+        "borderTop": "1px solid rgba(255, 255, 255, 0.05)",
+        "classes": "mes-footer",
+        "overflow": "hidden",
+        "paddingLeft": "12px",
+        "paddingRight": "12px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

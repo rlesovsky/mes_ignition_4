@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "address-book--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 898,
+    "lastModificationSignature": "4032863e5445b3eb6d781b3ad6b58754d3fdc9505c88f027f57ddbb0533a283f",
+    "height": 16
+  }
+}

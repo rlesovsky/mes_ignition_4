@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "border-outside.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 416,
+    "lastModificationSignature": "c9f5c5b3c0da16b3fd58ef270923e942bd4f00f5f2763cc6b4afdb00c4e0c167",
+    "height": 16
+  }
+}

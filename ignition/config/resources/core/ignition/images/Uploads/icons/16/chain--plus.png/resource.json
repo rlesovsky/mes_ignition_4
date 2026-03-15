@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chain--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 683,
+    "lastModificationSignature": "20e6d934926fe6961897ca697b11d2a76e7293b5e8c203900ccf114c0e8c226f",
+    "height": 16
+  }
+}

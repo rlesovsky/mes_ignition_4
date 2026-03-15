@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-buttons.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 465,
+    "lastModificationSignature": "2f3c674153018be932024e5391a8e41eed18f9255228814b8b7c42d46b36c4a0",
+    "height": 16
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "tcox",
+      "timestamp": "2026-02-14T01:52:26Z"
+    },
+    "lastModificationSignature": "6a15e3be7ec68bc67680a6a3bb7cc9a09db05e2f3bf0f044bd2cccdef6184d61"
+  }
+}

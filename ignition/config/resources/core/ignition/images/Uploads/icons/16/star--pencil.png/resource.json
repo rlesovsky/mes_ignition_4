@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "star--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 821,
+    "lastModificationSignature": "cfb43106095b3efa0f3961b9f3a0115c7ee044e00af4f345d1e104f45ffaac7f",
+    "height": 16
+  }
+}

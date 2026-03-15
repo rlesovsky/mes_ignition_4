@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-letter-spacing.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 452,
+    "lastModificationSignature": "7bd608142f82431304302920f556fd8b96037b175af4a4ffa54059f5bb883afe",
+    "height": 16
+  }
+}

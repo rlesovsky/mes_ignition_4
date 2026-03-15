@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "light-bulb--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 776,
+    "lastModificationSignature": "afe72d8df0a2dd8cef4d022215a267bfb19b876a0792ee29b45db8eeb8fee07a",
+    "height": 16
+  }
+}

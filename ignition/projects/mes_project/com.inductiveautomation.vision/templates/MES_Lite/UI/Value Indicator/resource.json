@@ -1,0 +1,17 @@
+{
+  "scope": "C",
+  "documentation": "Feature: [ UI ]\n\nSummary: Look and feel element. Feeds back a datapoint live.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "data.bin"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-12-23T03:35:05Z"
+    },
+    "lastModificationSignature": "e78d7cfb9d5a502c51e2312e5943f21cf57fb0d6c7eb62e6a79af5d76ca3369f"
+  }
+}

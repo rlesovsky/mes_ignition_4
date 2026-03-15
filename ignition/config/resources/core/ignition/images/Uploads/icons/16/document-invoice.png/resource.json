@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "document-invoice.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 583,
+    "lastModificationSignature": "38fdd1cff19f5c1da7e7337058c56d8c38ea094316baa68e2e88d63ae079c1c6",
+    "height": 16
+  }
+}

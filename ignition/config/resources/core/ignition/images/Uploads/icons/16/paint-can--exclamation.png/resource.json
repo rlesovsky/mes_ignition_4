@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paint-can--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 823,
+    "lastModificationSignature": "f7575d9518568b78c46eaae8af52a183da238c0a4b8af9d902add8af77ac5ca3",
+    "height": 16
+  }
+}

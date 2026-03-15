@@ -1,0 +1,229 @@
+{
+  "custom": {
+    "refreshTrigger": 0
+  },
+  "params": {
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "custom.refreshTrigger": {
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "path": "material/history",
+                  "style": {
+                    "color": "#f59e0b",
+                    "marginLeft": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 18,
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.3px",
+                    "marginLeft": 10
+                  },
+                  "text": "AI Analysis"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\n\ttagPath \u003d self.view.params.tagPath\n\ttag \u003d tagPath + \"/Agent/Analysis\"\n\t\n\t# Read current value\n\tcurrentValue \u003d system.tag.readBlocking([tag])[0].value\n\t\n\t# Toggle the value\n\tnewValue \u003d not currentValue\n\t\n\t# Write the toggled value back\n\tsystem.tag.writeBlocking([tag], [newValue])"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "refreshButton"
+                },
+                "position": {
+                  "basis": "100px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "rgba(59, 130, 246, 0.15)",
+                    "borderColor": "rgba(59, 130, 246, 0.3)",
+                    "borderRadius": 10,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "marginLeft": 8
+                  },
+                  "text": "Refresh",
+                  "textStyle": {
+                    "color": "#3b82f6",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "header"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+                "paddingBottom": "8px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "analysisTable"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[MQTT Engine]unsAv1_0/Enterprise/Site/Area/Line 1/Agent/Observations"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\n\timport re\n\timport system\n\t\n\tif not value or value \u003d\u003d \u0027\u0027:\n\t\theaders \u003d [\u0027section\u0027, \u0027content\u0027]\n\t\treturn system.dataset.toDataSet(headers, [[\u0027Status\u0027, \u0027No data available\u0027]])\n\t\n\ttry:\n\t\t# Recursively decode nested JSON until we get the actual data\n\t\tdata \u003d value\n\t\tmax_depth \u003d 20  # Prevent infinite loops\n\t\tdepth \u003d 0\n\t\t\n\t\twhile isinstance(data, (str, unicode)) and depth \u003c max_depth:\n\t\t\ttry:\n\t\t\t\tdecoded \u003d system.util.jsonDecode(data)\n\t\t\t\t# Check if this is a UNS-style wrapper\n\t\t\t\tif isinstance(decoded, dict) and \u0027value\u0027 in decoded:\n\t\t\t\t\tdata \u003d decoded[\u0027value\u0027]\n\t\t\t\telse:\n\t\t\t\t\tdata \u003d decoded\n\t\t\t\t\tbreak\n\t\t\texcept:\n\t\t\t\t# Not valid JSON, we\u0027ve reached the actual content\n\t\t\t\tbreak\n\t\t\tdepth +\u003d 1\n\t\t\n\t\t# Now data should be the actual payload\n\t\tif isinstance(data, dict):\n\t\t\t# Extract fields\n\t\t\tts \u003d data.get(\u0027timestamp\u0027, \u0027\u0027)\n\t\t\tline \u003d data.get(\u0027line\u0027, \u0027Unknown\u0027)\n\t\t\tcategory \u003d data.get(\u0027category\u0027, \u0027Unknown\u0027)\n\t\t\tmessage \u003d data.get(\u0027message\u0027, \u0027\u0027)\n\t\telse:\n\t\t\t# If still a string, treat as message\n\t\t\tts \u003d \u0027\u0027\n\t\t\tline \u003d \u0027Unknown\u0027\n\t\t\tcategory \u003d \u0027Unknown\u0027\n\t\t\tmessage \u003d str(data)\n\t\t\n\t\t# Format timestamp\n\t\tif ts:\n\t\t\ttry:\n\t\t\t\tts_clean \u003d ts.replace(\u0027Z\u0027, \u0027\u0027).split(\u0027.\u0027)[0]\n\t\t\t\tts_date \u003d system.date.parse(ts_clean, \"yyyy-MM-dd\u0027T\u0027HH:mm:ss\")\n\t\t\t\tts_display \u003d system.date.format(ts_date, \u0027MMM dd, yyyy h:mm a\u0027)\n\t\t\texcept:\n\t\t\t\tts_display \u003d ts[:19] if len(ts) \u003e\u003d 19 else ts\n\t\telse:\n\t\t\tts_display \u003d \u0027Unknown\u0027\n\t\t\n\t\t# Extract Status\n\t\tstatus_match \u003d re.search(r\u0027Status:\\s*(\\w+)\u0027, message)\n\t\tstatus \u003d status_match.group(1) if status_match else \u0027Unknown\u0027\n\t\t\n\t\t# Extract OEE metrics\n\t\toee_match \u003d re.search(r\u0027OEE:\\s*([\\d.]+)%\\s*\\(A:\\s*([\\d.]+)%\\s*\\|\\s*P:\\s*([\\d.]+)%\\s*\\|\\s*Q:\\s*([\\d.]+)%\\)\u0027, message)\n\t\tif oee_match:\n\t\t\toee \u003d oee_match.group(1)\n\t\t\tavailability \u003d oee_match.group(2)\n\t\t\tperformance \u003d oee_match.group(3)\n\t\t\tquality_metric \u003d oee_match.group(4)  # Renamed to avoid conflict with quality parameter\n\t\telse:\n\t\t\toee \u003d availability \u003d performance \u003d quality_metric \u003d \u0027N/A\u0027\n\t\t\n\t\t# Extract Priority\n\t\tpriority_match \u003d re.search(r\u0027Priority Level[:\\s]*(\\w+)\u0027, message, re.IGNORECASE)\n\t\tpriority \u003d priority_match.group(1).upper() if priority_match else \u0027NORMAL\u0027\n\t\t\n\t\t# Build dataset\n\t\theaders \u003d [\u0027section\u0027, \u0027content\u0027]\n\t\trows \u003d []\n\t\t\n\t\t# Header info\n\t\trows.append([\u0027📊 Overview\u0027, \u0027\u0027])\n\t\trows.append([\u0027Timestamp\u0027, ts_display])\n\t\trows.append([\u0027Line\u0027, line])\n\t\trows.append([\u0027Status\u0027, status])\n\t\trows.append([\u0027Priority\u0027, priority])\n\t\trows.append([\u0027\u0027, \u0027\u0027])\n\t\t\n\t\t# OEE Metrics\n\t\trows.append([\u0027📈 OEE Metrics\u0027, \u0027\u0027])\n\t\trows.append([\u0027Overall OEE\u0027, oee + \u0027%\u0027])\n\t\trows.append([\u0027Availability\u0027, availability + \u0027%\u0027])\n\t\trows.append([\u0027Performance\u0027, performance + \u0027%\u0027])\n\t\trows.append([\u0027Quality\u0027, quality_metric + \u0027%\u0027])\n\t\trows.append([\u0027\u0027, \u0027\u0027])\n\t\t\n\t\t# Extract and parse AI Analysis\n\t\tai_section \u003d re.search(r\u0027--- AI ANALYSIS ---\\s*(.+)\u0027, message, re.DOTALL)\n\t\tif ai_section:\n\t\t\tanalysis_text \u003d ai_section.group(1).strip()\n\t\t\t\n\t\t\trows.append([\u0027🤖 AI Analysis\u0027, \u0027\u0027])\n\t\t\t\n\t\t\t# Extract numbered items\n\t\t\titems \u003d re.findall(r\u0027(\\d+)\\.\\s*\\*\\*([^*:]+)\\*\\*:\\s*([^\\n]+(?:\\n(?!\\d+\\.|\\*\\*)[^\\n]+)*)\u0027, analysis_text)\n\t\t\t\n\t\t\tfor num, title, detail in items:\n\t\t\t\ttitle_clean \u003d title.strip()\n\t\t\t\tdetail_clean \u003d detail.strip()\n\t\t\t\tdetail_clean \u003d re.sub(r\u0027\\s+\u0027, \u0027 \u0027, detail_clean)\n\t\t\t\t\n\t\t\t\trows.append([str(num) + \u0027. \u0027 + title_clean, detail_clean])\n\t\t\t\n\t\t\t# Extract Additional Note\n\t\t\tnote \u003d re.search(r\u0027\\*\\*Additional Note\\*\\*:\\s*(.+)\u0027, analysis_text, re.DOTALL)\n\t\t\tif note:\n\t\t\t\tnote_text \u003d note.group(1).strip()\n\t\t\t\tnote_text \u003d re.sub(r\u0027\\s+\u0027, \u0027 \u0027, note_text)\n\t\t\t\trows.append([\u0027\u0027, \u0027\u0027])\n\t\t\t\trows.append([\u0027📝 Additional Note\u0027, note_text])\n\t\t\n\t\treturn system.dataset.toDataSet(headers, rows)\n\t\t\n\texcept Exception as e:\n\t\theaders \u003d [\u0027section\u0027, \u0027content\u0027]\n\t\treturn system.dataset.toDataSet(headers, [\n\t\t\t[\u0027❌ Error\u0027, str(e)],\n\t\t\t[\u0027Decoding Depth\u0027, str(depth) if \u0027depth\u0027 in locals() else \u0027N/A\u0027],\n\t\t\t[\u0027Data Type\u0027, str(type(data)) if \u0027data\u0027 in locals() else \u0027N/A\u0027]\n\t\t])",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "columns": [
+                {
+                  "field": "section",
+                  "header": {
+                    "style": {
+                      "color": "#9ca3af",
+                      "fontWeight": 600
+                    },
+                    "title": "Section"
+                  },
+                  "render": "auto",
+                  "style": {
+                    "color": "#f59e0b",
+                    "fontSize": "14px",
+                    "fontWeight": 600
+                  },
+                  "width": 180
+                },
+                {
+                  "field": "content",
+                  "header": {
+                    "style": {
+                      "color": "#9ca3af",
+                      "fontWeight": 600
+                    },
+                    "title": "Details"
+                  },
+                  "render": "auto",
+                  "style": {
+                    "color": "#d1d5db",
+                    "fontSize": "14px",
+                    "whiteSpace": "normal",
+                    "wordWrap": "break-word"
+                  }
+                }
+              ],
+              "pager": {
+                "bottom": false
+              },
+              "props": {
+                "rowHeight": "auto"
+              },
+              "selection": {
+                "enableRowSelection": false
+              },
+              "style": {
+                "backgroundColor": "#2d333b",
+                "borderRadius": 8
+              }
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "root"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#21262d",
+            "border": "1px solid rgba(255, 255, 255, 0.05)",
+            "borderRadius": 0,
+            "gap": "8px",
+            "padding": 6
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 0,
+        "padding": 6
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

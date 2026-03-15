@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "TAS_transparentback-TAS-Only-white.png"
+  ],
+  "attributes": {
+    "width": 736,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4479,
+    "lastModificationSignature": "12e59b2c1f9dab05eef519ea73fba5fc05af6e7acfc3cc61f7a1313b1550f71d",
+    "height": 239
+  }
+}

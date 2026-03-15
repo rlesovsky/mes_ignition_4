@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "route icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 829,
+    "lastModificationSignature": "38bbec2cb279c96d79a94ef5f18d57ad9117ccc6c21dbada1679538c2b0761ef",
+    "height": 24
+  }
+}

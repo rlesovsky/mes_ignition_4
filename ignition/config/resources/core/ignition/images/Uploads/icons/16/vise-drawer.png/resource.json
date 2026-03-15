@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "vise-drawer.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 674,
+    "lastModificationSignature": "d5260ede9ea3eec569fb910e9ab8e0d23fdcce8f8300dd4ed963adc9d0480e28",
+    "height": 16
+  }
+}

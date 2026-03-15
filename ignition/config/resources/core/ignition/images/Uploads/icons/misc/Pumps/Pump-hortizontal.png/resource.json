@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Pump-hortizontal.png"
+  ],
+  "attributes": {
+    "width": 360,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 39373,
+    "lastModificationSignature": "8f0b5126221e696884dbd7caa1020bb0babc704d635b477bef4194d55f417bd0",
+    "height": 250
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "do-not-disturb-sign.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 612,
+    "lastModificationSignature": "802edb60d55e04f06370142c9dc73615f3c9ad16288d4d3ceefa74bdc5edaed0",
+    "height": 16
+  }
+}

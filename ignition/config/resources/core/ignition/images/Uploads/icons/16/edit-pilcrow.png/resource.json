@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-pilcrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 238,
+    "lastModificationSignature": "d1b0b0336c1c29ecca99cda10b33f560675d306261d783053f7bd0e09f7cf23f",
+    "height": 16
+  }
+}

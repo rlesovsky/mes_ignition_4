@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-outline.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 311,
+    "lastModificationSignature": "f32f956ae3dc45b94e9870d01ffefc8acfe755fe82d9f5215912c00c2979e5e5",
+    "height": 16
+  }
+}

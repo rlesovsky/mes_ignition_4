@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "gradient.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 398,
+    "lastModificationSignature": "138f8067f1eb1fc06c52576374288340e73b58ac725420e0d3587b006203dcdf",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "sd-memory-card.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1296,
+    "lastModificationSignature": "d1cb486dfbbeefeb760c66d8b7bab931288b3a517fa1d259e735215bbeea1204",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "projection-screen--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 580,
+    "lastModificationSignature": "dd68d91481d66c1a2aacbd642488643f11f1c7479386314c3cdffe0783f30e8a",
+    "height": 16
+  }
+}

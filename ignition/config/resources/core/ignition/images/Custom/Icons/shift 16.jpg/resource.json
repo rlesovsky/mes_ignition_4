@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "shift 16.jpg"
+  ],
+  "attributes": {
+    "width": 10,
+    "format": "JPEG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 852,
+    "lastModificationSignature": "d99a964ebabc5566d92446c10be6eb92dc990c83580eab0ae3aaaf661b762887",
+    "height": 16
+  }
+}

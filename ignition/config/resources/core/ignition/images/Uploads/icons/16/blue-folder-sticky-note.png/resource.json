@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-folder-sticky-note.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1604,
+    "lastModificationSignature": "90cb21b272bfba725d05ab219ad09128090dc8a55ac4b303b620a33cc3376e9a",
+    "height": 16
+  }
+}

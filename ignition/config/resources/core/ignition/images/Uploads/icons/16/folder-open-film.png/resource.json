@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "folder-open-film.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 732,
+    "lastModificationSignature": "ea6a05270cca6ebaba701c558c6329a9e250c9fe63d18243d8f73807b0289ea1",
+    "height": 16
+  }
+}

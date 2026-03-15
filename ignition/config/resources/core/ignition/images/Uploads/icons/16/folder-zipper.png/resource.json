@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "folder-zipper.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 606,
+    "lastModificationSignature": "17773eb1747e576a910690b264317e5c8887e9b079e36b80ee9b47a218a543f4",
+    "height": 16
+  }
+}

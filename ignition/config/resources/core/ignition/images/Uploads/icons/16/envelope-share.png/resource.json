@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "envelope-share.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 755,
+    "lastModificationSignature": "0d8475ca8d5a8778378d34c2c7c9fcf61b750bbb3af625e97f38f751b935a408",
+    "height": 16
+  }
+}

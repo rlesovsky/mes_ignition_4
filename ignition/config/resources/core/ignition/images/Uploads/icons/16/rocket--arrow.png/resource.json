@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "rocket--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 776,
+    "lastModificationSignature": "23737389952fd2fbac5ec41f69ffec646808199f0703b39bd721f1819b9eea57",
+    "height": 16
+  }
+}

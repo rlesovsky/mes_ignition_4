@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "flag-yellow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 686,
+    "lastModificationSignature": "ba175ef70e12706873f27d1b9d0a8cd0890fd93b7a98d21e60aeb883f492d860",
+    "height": 16
+  }
+}

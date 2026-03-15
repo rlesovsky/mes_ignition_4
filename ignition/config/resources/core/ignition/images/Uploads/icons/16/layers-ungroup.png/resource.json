@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layers-ungroup.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 828,
+    "lastModificationSignature": "495b9b67b667831c80ea440e86aadb27d53d89db7e099640083b17b7d450e7b9",
+    "height": 16
+  }
+}

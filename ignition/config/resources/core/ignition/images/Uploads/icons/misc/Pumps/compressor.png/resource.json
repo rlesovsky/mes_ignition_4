@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "compressor.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 22256,
+    "lastModificationSignature": "95d98a138f9e413753e154d403f45f9d036b5135ce903c76dc1e0736a1f5967a",
+    "height": 152
+  }
+}

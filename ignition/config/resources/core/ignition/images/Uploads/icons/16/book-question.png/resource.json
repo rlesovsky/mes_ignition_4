@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "book-question.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 650,
+    "lastModificationSignature": "77bba8c5e62d76f8f3e54ec8300912385cd1a8ba5a0662b2ffd044ddc2478475",
+    "height": 16
+  }
+}

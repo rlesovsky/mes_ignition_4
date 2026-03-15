@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "music-beam-16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 708,
+    "lastModificationSignature": "b8af41b375dd3ba2a34bea83ebed4be34e37d148995e21429454e0ff652f9951",
+    "height": 16
+  }
+}

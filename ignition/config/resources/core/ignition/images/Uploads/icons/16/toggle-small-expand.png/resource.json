@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "toggle-small-expand.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 361,
+    "lastModificationSignature": "420e1b0a3348f8f7e995d57896cbe09796baf9d10febcebc3077061ff94818ee",
+    "height": 16
+  }
+}

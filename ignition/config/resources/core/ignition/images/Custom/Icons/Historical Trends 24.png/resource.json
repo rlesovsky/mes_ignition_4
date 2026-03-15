@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Historical Trends 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 993,
+    "lastModificationSignature": "c54d1a281bea5ac786759338e0d93a40d823e17b1252c5d29eadeb7557ff1ee7",
+    "height": 24
+  }
+}

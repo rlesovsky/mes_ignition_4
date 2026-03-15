@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "launcher 48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4214,
+    "lastModificationSignature": "56c3cede8448142666bac7350ebf2e6b2602244d38f27b6723381fdecc1564c0",
+    "height": 48
+  }
+}

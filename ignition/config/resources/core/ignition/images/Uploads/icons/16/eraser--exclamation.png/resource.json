@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "eraser--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 799,
+    "lastModificationSignature": "1a6ab0e9fb70bffb6f21062dd194cd7660e2a653a0c99d70a1a1ba33ef57827a",
+    "height": 16
+  }
+}

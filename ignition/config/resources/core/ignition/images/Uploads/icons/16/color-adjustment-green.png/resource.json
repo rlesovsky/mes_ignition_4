@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "color-adjustment-green.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 592,
+    "lastModificationSignature": "08d68ccc3549c2bfc104e03138e98952e90291c2fb74288f8526650daa0f93cf",
+    "height": 16
+  }
+}

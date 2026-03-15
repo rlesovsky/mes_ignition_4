@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-strike-double.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 268,
+    "lastModificationSignature": "8d5c37f06475d5e18c2d90a345dfeb1c26c96fd86a17052bcc7af3cd1894ed43",
+    "height": 16
+  }
+}

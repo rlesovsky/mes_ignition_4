@@ -1,0 +1,44 @@
+[
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "bom_compoenent_quantity",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "bom_component_name",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "manufacturing_order_number",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DataSet"
+    },
+    "name": "WorkOrderDS",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "product_name",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "product_quality",
+    "tagType": "AtomicTag"
+  }
+]

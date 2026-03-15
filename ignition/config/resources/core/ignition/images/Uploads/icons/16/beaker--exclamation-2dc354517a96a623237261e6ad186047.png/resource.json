@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "beaker--exclamation-2dc354517a96a623237261e6ad186047.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 752,
+    "lastModificationSignature": "e362579b8d80fb89078416a481533e5f12f30c6c047798c05ea8db12f31f4582",
+    "height": 16
+  }
+}

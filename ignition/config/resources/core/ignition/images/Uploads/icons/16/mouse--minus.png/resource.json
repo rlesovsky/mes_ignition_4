@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mouse--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 679,
+    "lastModificationSignature": "75bd957d0881aefeeed76085ac64b03562c0bc32bf0a1dd8c1d35c53e3a8597c",
+    "height": 16
+  }
+}

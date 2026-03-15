@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Crude Heater.png"
+  ],
+  "attributes": {
+    "width": 280,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 88984,
+    "lastModificationSignature": "f4e73c2f32a3bf3257cdf095daf7ce79cb063eb2462b156facc7d31fb61bfa45",
+    "height": 400
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "box-search-result.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 894,
+    "lastModificationSignature": "4d37eff433b52f9066ac9d839ed5674471125e5abe3bb391d9a1ce6d8e39989f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "toggle.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 448,
+    "lastModificationSignature": "6eb8a1abbe6e558ff0d74df2c737a3b38d6c981c2f61f3d5cefe65f74e5320a5",
+    "height": 16
+  }
+}

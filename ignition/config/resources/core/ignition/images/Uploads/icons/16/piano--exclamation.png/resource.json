@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "piano--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 580,
+    "lastModificationSignature": "c23ec96c8227f2f3edf0aab5c52f496578da5329d2dbebc23f7129aa0a2c1767",
+    "height": 16
+  }
+}

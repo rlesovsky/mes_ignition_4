@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mouse--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 765,
+    "lastModificationSignature": "cae5b0b78d020e962d55e6b8fe968b6b15368bfe6420ba308967daf61ef1641f",
+    "height": 16
+  }
+}

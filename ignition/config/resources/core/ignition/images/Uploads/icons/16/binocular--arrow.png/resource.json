@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "binocular--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 825,
+    "lastModificationSignature": "e2fbffe2a8119c5d14e0b3bff378375cac282b4151a47d9d4821c2f934ef10c0",
+    "height": 16
+  }
+}

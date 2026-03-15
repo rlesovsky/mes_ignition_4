@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-lowercase.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 411,
+    "lastModificationSignature": "2b1c5200d69fc0789e2d69cb138e278035449150a65a54bf40e04934f4602b44",
+    "height": 16
+  }
+}

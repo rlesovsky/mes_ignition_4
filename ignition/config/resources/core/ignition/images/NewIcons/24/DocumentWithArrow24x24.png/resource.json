@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "DocumentWithArrow24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 681,
+    "lastModificationSignature": "269429001d86cf974b89872fc2a4d5ae73f04aa64ff944093112c4117e05c6b3",
+    "height": 24
+  }
+}

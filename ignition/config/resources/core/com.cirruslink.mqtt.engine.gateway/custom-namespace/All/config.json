@@ -1,0 +1,10 @@
+{
+  "charset": "UTF_8",
+  "jsonPayload": false,
+  "numbersAsFloats": false,
+  "qoS1": false,
+  "rootFolder": null,
+  "subscription": "#",
+  "tagName": null,
+  "writableTags": false
+}

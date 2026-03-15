@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "sofa--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 746,
+    "lastModificationSignature": "0badf40acea6bb2793f080f2485795a7148b0c1701b17f8c752fd31183df13c6",
+    "height": 16
+  }
+}

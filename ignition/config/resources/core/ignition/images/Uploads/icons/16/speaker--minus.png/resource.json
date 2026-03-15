@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "speaker--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 735,
+    "lastModificationSignature": "dd3c106123ae52a1f0b212b1a5203f5fb451eb57fd0f12e8718973390e0247a2",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-list-box-blue.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 420,
+    "lastModificationSignature": "16cc5ed9cb23612e4061a059fe09fffc967894a68c8c9eff6ac81adfe3ca4d59",
+    "height": 16
+  }
+}

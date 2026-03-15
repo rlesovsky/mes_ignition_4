@@ -1,0 +1,96 @@
+{
+  "custom": {
+    "settings": {
+      "cloudLibrary": [
+        {
+          "label": "CESMII Cloud Library",
+          "value": "https://cloudlib.cesmii.net"
+        },
+        {
+          "label": "UA Cloud Library",
+          "value": "https://uacloudlibrary.opcfoundation.org"
+        }
+      ],
+      "credsChange": null,
+      "currentPage": 1,
+      "itemsPerPage": 6,
+      "library": "https://cloudlib.cesmii.net",
+      "password": "",
+      "username": ""
+    }
+  },
+  "propConfig": {
+    "custom.settings.noCredentials": {
+      "binding": {
+        "config": {
+          "expression": "{this.custom.settings.username} \u003d null || len({this.custom.settings.username}) \u003d 0 || \r\n{this.custom.settings.password} \u003d null || len({this.custom.settings.password}) \u003d 0"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.settings.password": {
+      "access": "PRIVATE",
+      "persistent": true
+    },
+    "custom.settings.username": {
+      "persistent": true
+    },
+    "props.auth": {
+      "access": "PRIVATE",
+      "persistent": false
+    },
+    "props.device.accelerometer": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.identifier": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.timezone": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.type": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.userAgent": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.gateway": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.data": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.permissionGranted": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.host": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.id": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.lastActivity": {
+      "access": "SYSTEM",
+      "persistent": false
+    }
+  },
+  "props": {
+    "address": "[0:0:0:0:0:0:0:1]",
+    "device": {},
+    "geolocation": {},
+    "locale": "en-US",
+    "securityLevels": [],
+    "theme": "light-cool",
+    "timeZoneId": "America/Los_Angeles"
+  }
+}

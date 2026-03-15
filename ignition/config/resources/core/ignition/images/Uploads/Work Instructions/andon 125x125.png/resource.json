@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "andon 125x125.png"
+  ],
+  "attributes": {
+    "width": 125,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2283,
+    "lastModificationSignature": "0af99d42b2d2f7e2eb1f0d9c0c0dae3b1f718dc404e8b86351906160d82d9a84",
+    "height": 125
+  }
+}

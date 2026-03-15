@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Valve Body.png"
+  ],
+  "attributes": {
+    "width": 1265,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 18056,
+    "lastModificationSignature": "6758946fc79b2d1277b3ddee07b4186b085f33864463ba8f2eb5eff3464ec829",
+    "height": 1002
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "plug--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 672,
+    "lastModificationSignature": "59f39f989631e16dbd2d2a9b794b098cd486584f44b8c625a3f21f88e236fcd8",
+    "height": 16
+  }
+}

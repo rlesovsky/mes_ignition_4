@@ -1,0 +1,115 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 260
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Features"
+        },
+        "position": {
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.items[0].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[0].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.items[1].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[1].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "backActionStyle": {
+            "backgroundColor": "var(--neutral-80)",
+            "color": "var(--neutral-10)",
+            "fontSize": "14px",
+            "fontWeight": "bold",
+            "lineHeight": "17px",
+            "textTransform": "none"
+          },
+          "backActionText": "All Features",
+          "itemStyle": {
+            "classes": "CESMII/Item"
+          },
+          "items": [
+            {
+              "items": [],
+              "label": {
+                "icon": {
+                  "path": "material/explore"
+                },
+                "text": "Explorer"
+              },
+              "navIcon": {},
+              "showHeader": false,
+              "style": {
+                "classes": ""
+              },
+              "target": "/"
+            },
+            {
+              "items": [],
+              "label": {
+                "icon": {
+                  "path": "material/cloud_upload"
+                },
+                "text": "Import from XML"
+              },
+              "navIcon": {},
+              "showHeader": false,
+              "style": {
+                "classes": ""
+              },
+              "target": "/import"
+            }
+          ],
+          "style": {
+            "backgroundColor": "var(--neutral-30)",
+            "overflow": "auto"
+          }
+        },
+        "type": "ia.navigation.menutree"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "var(--neutral-30)",
+        "borderRightColor": "var(--neutral-60)",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "1px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

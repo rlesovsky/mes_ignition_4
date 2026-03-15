@@ -1,0 +1,318 @@
+version: "3.9"
+
+# =============================================================================
+# MES Ignition 4.0 Stack - Docker Compose
+# =============================================================================
+# Git-integrated Ignition 8.3.2 MES development stack
+# Database auto-provisioning via init-sql scripts
+# Bind-mount projects directory for version control
+# =============================================================================
+
+services:
+
+  # ==================== IGNITION 8.3 ====================
+  ignition:
+    build:
+      context: ./gw-build
+      args:
+        IGNITION_VERSION: "8.3.2"
+    container_name: mes-ignition
+    hostname: ignition
+    networks:
+      - mes
+      - infrastructure
+    ports:
+      - "${IGNITION_HTTP_PORT:-8088}:8088"
+    volumes:
+      - ignition-data:/usr/local/bin/ignition/data
+      # Bind-mount projects for git version control
+      - ./ignition/projects:/usr/local/bin/ignition/data/projects
+      # Restore gateway backup on first start (uncomment when backup exists)
+      # - ./backups/gateway.gwbk:/restore.gwbk
+    environment:
+      ACCEPT_IGNITION_EULA: "Y"
+      GATEWAY_ADMIN_USERNAME: ${GATEWAY_ADMIN_USERNAME:-admin}
+      GATEWAY_ADMIN_PASSWORD: ${GATEWAY_ADMIN_PASSWORD:-password}
+      GATEWAY_HTTP_PORT: 8088
+      GATEWAY_HTTPS_PORT: 8043
+      GATEWAY_EDITION: standard
+      IGNITION_EDITION: standard
+      GATEWAY_INIT_MEMORY: ${GATEWAY_INIT_MEMORY:-4096}
+      GATEWAY_MAX_MEMORY: ${GATEWAY_MAX_MEMORY:-8192}
+      IGNITION_UID: ${IGNITION_UID:-1000}
+      IGNITION_GID: ${IGNITION_GID:-1000}
+      TZ: ${TZ:-America/Chicago}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 10G
+        reservations:
+          memory: 4G
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ignition.rule=Host(`ignition.mes.local`)"
+      - "traefik.http.routers.ignition.entrypoints=web"
+      - "traefik.http.services.ignition.loadbalancer.server.port=8088"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+
+  # ==================== POSTGRES ====================
+  postgres:
+    image: postgres:15-alpine
+    container_name: mes-postgres
+    hostname: postgres
+    networks:
+      - mes
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      # Auto-run SQL scripts on first start (alphabetical order)
+      - ./init-sql:/docker-entrypoint-initdb.d:ro
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-mes_core}
+      POSTGRES_USER: ${POSTGRES_USER:-mes_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-StrongPostgres123}
+      TZ: ${TZ:-America/Chicago}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mes_user} -d ${POSTGRES_DB:-mes_core}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==================== PGADMIN ====================
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: mes-pgadmin
+    hostname: pgadmin
+    networks:
+      - mes
+      - infrastructure
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@example.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-PgAdmin123}
+      TZ: ${TZ:-America/Chicago}
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pgadmin.rule=Host(`pgadmin.mes.local`)"
+      - "traefik.http.routers.pgadmin.entrypoints=web"
+      - "traefik.http.services.pgadmin.loadbalancer.server.port=80"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==================== HIVEMQ 4 ====================
+  hivemq:
+    image: hivemq/hivemq4:latest
+    container_name: mes-hivemq
+    hostname: hivemq
+    networks:
+      - mes
+      - infrastructure
+    ports:
+      - "${MQTT_PORT:-1883}:1883"
+      - "${HIVEMQ_WEB_PORT:-8083}:8080"
+      - "${HIVEMQ_WS_PORT:-8000}:8000"
+    volumes:
+      - hivemq4-data:/opt/hivemq/data
+      - hivemq4-config:/opt/hivemq/conf
+      - hivemq4-extensions:/opt/hivemq/extensions
+      - hivemq4-license:/opt/hivemq/license
+    environment:
+      HIVEMQ_ALLOW_ALL_CLIENTS: "true"
+      TZ: ${TZ:-America/Chicago}
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hivemq.rule=Host(`hivemq.mes.local`)"
+      - "traefik.http.routers.hivemq.entrypoints=web"
+      - "traefik.http.services.hivemq.loadbalancer.server.port=8080"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "3"
+
+  # ==================== TIMEBASE HISTORIAN ====================
+  historian:
+    image: timebase/historian:latest
+    container_name: mes-timebase-historian
+    hostname: historian
+    networks:
+      - mes
+      - infrastructure
+    ports:
+      - "4511:4511"
+      - "4512:4512"
+    volumes:
+      - historian:/historian
+    environment:
+      Settings: /historian/settings
+      Data: /historian/data
+      Logs: /historian/logs
+      TZ: ${TZ:-America/Chicago}
+    restart: unless-stopped
+    stop_grace_period: 60s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.historian.rule=Host(`historian.mes.local`)"
+      - "traefik.http.routers.historian.entrypoints=web"
+      - "traefik.http.routers.historian.middlewares=timebase-auth"
+      - "traefik.http.services.historian.loadbalancer.server.port=4511"
+      - "traefik.http.middlewares.timebase-auth.basicauth.users=admin:$$apr1$$uWHV4VCi$$3Pjv1Cm1UXj3cHQHhieos/,operator:$$apr1$$lE62i74G$$Ss.PoDLl5PAo8/L4m2S0F."
+      - "traefik.http.middlewares.timebase-auth.basicauth.realm=MES TimeBase"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "3"
+
+  # ==================== TIMEBASE EXPLORER ====================
+  explorer:
+    image: timebase/explorer:latest
+    container_name: mes-timebase-explorer
+    hostname: explorer
+    networks:
+      - mes
+      - infrastructure
+    ports:
+      - "4531:4531"
+      - "4532:4532"
+    volumes:
+      - explorer:/explorer
+    environment:
+      Settings: /explorer/settings
+      Config: /explorer/config
+      Data: /explorer/data
+      Logs: /explorer/logs
+      TZ: ${TZ:-America/Chicago}
+    restart: unless-stopped
+    depends_on:
+      - historian
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.explorer.rule=Host(`explorer.mes.local`)"
+      - "traefik.http.routers.explorer.entrypoints=web"
+      - "traefik.http.services.explorer.loadbalancer.server.port=4531"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==================== TIMEBASE MQTT COLLECTOR ====================
+  mqtt-collector:
+    image: timebase/collector:latest
+    container_name: mes-timebase-mqtt
+    hostname: mqtt-collector
+    networks:
+      - mes
+      - infrastructure
+    ports:
+      - "4521:4521"
+      - "4522:4522"
+    volumes:
+      - mqtt-collector:/mqtt
+    environment:
+      Active: "true"
+      Settings: /mqtt/settings
+      Config: /mqtt/config
+      Data: /mqtt/data
+      Logs: /mqtt/logs
+      TZ: ${TZ:-America/Chicago}
+    depends_on:
+      - hivemq
+      - historian
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.collector.rule=Host(`collector.mes.local`)"
+      - "traefik.http.routers.collector.entrypoints=web"
+      - "traefik.http.routers.collector.middlewares=timebase-auth"
+      - "traefik.http.services.collector.loadbalancer.server.port=4521"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "3"
+
+  # ==================== TIMEBASE SIMULATOR COLLECTOR ====================
+  simulator-collector:
+    image: timebase/collector:latest
+    container_name: mes-timebase-simulator
+    hostname: simulator-collector
+    networks:
+      - mes
+      - infrastructure
+    ports:
+      - "4523:4521"
+      - "4524:4522"
+    volumes:
+      - simulator-collector:/simulator
+    environment:
+      Active: "true"
+      Settings: /simulator/settings
+      Config: /simulator/config
+      Data: /simulator/data
+      Logs: /simulator/logs
+      TZ: ${TZ:-America/Chicago}
+    depends_on:
+      - historian
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.simulator.rule=Host(`simulator.mes.local`)"
+      - "traefik.http.routers.simulator.entrypoints=web"
+      - "traefik.http.routers.simulator.middlewares=timebase-auth"
+      - "traefik.http.services.simulator.loadbalancer.server.port=4521"
+      - "traefik.docker.network=infrastructure"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "3"
+
+networks:
+  mes:
+    driver: bridge
+  infrastructure:
+    external: true
+
+volumes:
+  ignition-data:
+  postgres-data:
+  pgadmin-data:
+  hivemq4-data:
+  hivemq4-config:
+  hivemq4-extensions:
+  hivemq4-license:
+  historian:
+  explorer:
+  mqtt-collector:
+  simulator-collector:

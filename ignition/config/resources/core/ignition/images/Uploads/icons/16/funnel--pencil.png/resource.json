@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "funnel--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 691,
+    "lastModificationSignature": "f81b6f31a419d7b9851bca10a3161dc3b1109834b8b9ecdac952ce76f48ba365",
+    "height": 16
+  }
+}

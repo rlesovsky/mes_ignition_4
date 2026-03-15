@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "if_font_bold_42240.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 294,
+    "lastModificationSignature": "57be56268a183de37616e858456455de30a85b31e81e1d410c276a969698db3a",
+    "height": 16
+  }
+}

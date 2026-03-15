@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cards-bind.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 486,
+    "lastModificationSignature": "407cc330f94c193e21b128d9aa8987c2833adb910c65a700d6fe78816337460f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tank-closed.png"
+  ],
+  "attributes": {
+    "width": 336,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 12860,
+    "lastModificationSignature": "04f6ee2d09800a952b3c7ae575e849292c2bb87146ff1b63334448cf6fefd50e",
+    "height": 376
+  }
+}

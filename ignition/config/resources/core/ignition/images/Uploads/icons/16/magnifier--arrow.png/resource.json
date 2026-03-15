@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "magnifier--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 793,
+    "lastModificationSignature": "2f301ef3c391f0abee26273ff2d54b14981ee2002a8f4ad844be67d50bd8bc00",
+    "height": 16
+  }
+}

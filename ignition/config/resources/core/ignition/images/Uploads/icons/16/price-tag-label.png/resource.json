@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "price-tag-label.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 759,
+    "lastModificationSignature": "5069df83b7f230d6b7fd9fe700bf8f398b1177fa38dfa6c63ccbd82ab8e169c8",
+    "height": 16
+  }
+}

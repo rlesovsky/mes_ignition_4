@@ -1,0 +1,251 @@
+{
+  "custom": {},
+  "params": {},
+  "propConfig": {
+    "params.feature": {
+      "paramDirection": "input"
+    },
+    "params.key": {
+      "paramDirection": "input"
+    },
+    "params.tier1": {
+      "paramDirection": "input"
+    },
+    "params.tier2": {
+      "paramDirection": "input"
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "56px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "icon": "cloud_upload",
+            "text": "Import from XML"
+          },
+          "path": "CESMII/Title"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginBottom": "10px"
+              },
+              "text": "To import a profile upload your Nodeset XML file below."
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#D90000"
+                  },
+                  "text": "No credentials are specified. You will have to upload all dependent NodeSets when offline."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "NoCredentials"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "session.custom.settings.noCredentials"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginBottom": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "custom": {
+              "files": []
+            },
+            "events": {
+              "component": {
+                "onFileReceived": {
+                  "config": {
+                    "script": "\tself.custom.files.append({\"name\":event.file.name, \"xml\":event.file.getString()})"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                },
+                "onUploadsCleared": {
+                  "config": {
+                    "script": "\tself.custom.files \u003d []"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "FileUpload"
+            },
+            "position": {
+              "basis": "145px",
+              "shrink": 0
+            },
+            "props": {
+              "maxUploads": 10
+            },
+            "type": "ia.input.fileupload"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Progress"
+                },
+                "position": {
+                  "basis": "200px",
+                  "shrink": 0
+                },
+                "props": {
+                  "mode": "indeterminate"
+                },
+                "type": "ia.display.progress"
+              }
+            ],
+            "meta": {
+              "name": "Progress"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "false"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "justify": "center"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\timport traceback\n\t\t\t\t\t\n\tself.parent.parent.getChild(\"Progress\").position.display \u003d True\n\tself.parent.parent.getChild(\"FileUpload\").position.display \u003d False\n\tself.position.display \u003d False\n\t\n\ttry:\n\t\txmlFiles \u003d []\n\t\tfor xmlFile in self.parent.parent.getChild(\"FileUpload\").custom.files:\n\t\t\txmlFiles.append({\"name\": xmlFile[\"name\"], \"xml\": xmlFile[\"xml\"]})\t\n\t\t(success, error, name, tags) \u003d CESMII.Converter.convert_UANodeSet_to_Ignition(xmlFiles, self.session)\n\t\tif success:\n\t\t\tCESMII.Converter.importPopup(name, tags)\n\t\telse:\n\t\t\tCESMII.Converter.showErrorMessage(\"Import Error\", error)\n\texcept:\n\t\tCESMII.Converter.showErrorMessage(\"Import Error\", \"Error importing profile: %s\" % traceback.format_exc())\n\t\t\n\tself.parent.parent.getChild(\"Progress\").position.display \u003d False\n\tself.parent.parent.getChild(\"FileUpload\").position.display \u003d True\n\tself.position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Import"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "len({.../FileUpload.custom.files}) \u003e 0"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "paddingLeft": "6px",
+                    "paddingRight": "6px"
+                  },
+                  "text": "Import UDTs"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginBottom": "10px",
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "margin": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "CESMII/Page"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

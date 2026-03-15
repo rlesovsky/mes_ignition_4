@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Circled Chevron Up-16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 382,
+    "lastModificationSignature": "7c43709ad4253ee2ef472e1b63c989d946840c4d033545a152d7d3fac60b6cac",
+    "height": 16
+  }
+}

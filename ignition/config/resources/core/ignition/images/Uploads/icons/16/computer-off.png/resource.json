@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "computer-off.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 532,
+    "lastModificationSignature": "f93399f5142c31d3004371f082d6843011a4e065e59b245e5125c7e49f500656",
+    "height": 16
+  }
+}

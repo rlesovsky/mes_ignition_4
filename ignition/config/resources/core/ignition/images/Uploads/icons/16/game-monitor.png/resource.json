@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "game-monitor.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 603,
+    "lastModificationSignature": "e52953f33f766b4a43f4ee429958d2e1d038b70e74f398a899ebdb7570484de1",
+    "height": 16
+  }
+}

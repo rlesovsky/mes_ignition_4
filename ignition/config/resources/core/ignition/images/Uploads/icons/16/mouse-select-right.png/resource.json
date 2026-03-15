@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mouse-select-right.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 658,
+    "lastModificationSignature": "318108a5360756af112a171d846eb0c97e1fa8a9b95c83e247789409f4cf2fef",
+    "height": 16
+  }
+}

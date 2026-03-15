@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "vessel_vert.png"
+  ],
+  "attributes": {
+    "width": 181,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 11952,
+    "lastModificationSignature": "78dc06a8e1555cd642f82e6497e6f0ee901acf89009201e566fec07b45f01e88",
+    "height": 386
+  }
+}

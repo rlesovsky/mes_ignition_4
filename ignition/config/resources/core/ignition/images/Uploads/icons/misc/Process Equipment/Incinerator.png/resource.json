@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Incinerator.png"
+  ],
+  "attributes": {
+    "width": 78,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 11497,
+    "lastModificationSignature": "a5013645a2e494d831451d25cc1d978c8ef94776a18dbdac0d42605d7a26f3a9",
+    "height": 393
+  }
+}

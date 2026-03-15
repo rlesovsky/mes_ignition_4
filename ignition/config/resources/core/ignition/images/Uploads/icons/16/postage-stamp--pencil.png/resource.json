@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "postage-stamp--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 809,
+    "lastModificationSignature": "9973fa7a452d713ffeb09447e47f01002c3aee7c125907c3681cc96fe1042d9d",
+    "height": 16
+  }
+}

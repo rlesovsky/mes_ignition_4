@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tables-relation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 671,
+    "lastModificationSignature": "593503cbe80d5201b3c809bceedc5db3c65664d0be6e35a1bce5d59fba416ca7",
+    "height": 16
+  }
+}

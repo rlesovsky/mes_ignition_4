@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "monitor-screensaver.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 615,
+    "lastModificationSignature": "053afafd690634cfa36c0e109c80fb13155a7f675e12c14e1fe319475f7e3336",
+    "height": 16
+  }
+}

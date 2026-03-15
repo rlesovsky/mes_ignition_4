@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "control chart icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1180,
+    "lastModificationSignature": "9164c7301c7dcdf9e1e7fc5068fbeeeedf12a7f91ac7afb42c3e9c961e3823a8",
+    "height": 24
+  }
+}

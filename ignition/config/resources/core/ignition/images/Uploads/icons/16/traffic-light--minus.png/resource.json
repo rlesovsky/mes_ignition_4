@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "traffic-light--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 671,
+    "lastModificationSignature": "58a185cd24cb18674fe920ffc6eab46611bd938a73301435dd6ecffe76c64d3c",
+    "height": 16
+  }
+}

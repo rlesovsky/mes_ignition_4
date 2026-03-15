@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "burn-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 557,
+    "lastModificationSignature": "f52c1c655858d7ded4b16bfc8085c9101aaf57007acb2e1177982d7a2805045c",
+    "height": 16
+  }
+}

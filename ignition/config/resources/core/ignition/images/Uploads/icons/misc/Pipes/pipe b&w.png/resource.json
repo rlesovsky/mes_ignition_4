@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pipe b\u0026w.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4203,
+    "lastModificationSignature": "2dff51550a69c6ec1477f29f6b5849d51f7418b3d0f958ad3819160568f8fbde",
+    "height": 100
+  }
+}

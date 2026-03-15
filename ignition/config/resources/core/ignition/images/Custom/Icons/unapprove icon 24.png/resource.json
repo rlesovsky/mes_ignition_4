@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "unapprove icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2001,
+    "lastModificationSignature": "15eab78138865c509d6dd2ae07fabff0713d7224528888cf7a125e6dd4f1727f",
+    "height": 24
+  }
+}

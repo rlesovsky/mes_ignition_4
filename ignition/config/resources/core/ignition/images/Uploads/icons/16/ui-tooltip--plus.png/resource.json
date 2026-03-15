@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-tooltip--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1301,
+    "lastModificationSignature": "419a746351b9453e4ccdcef3ae5c440abcaa676f60318a618ad48a0d193489fd",
+    "height": 16
+  }
+}

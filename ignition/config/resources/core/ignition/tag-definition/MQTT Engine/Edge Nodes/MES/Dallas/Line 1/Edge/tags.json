@@ -1,0 +1,65 @@
+[
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Outfeed",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "State",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Float4"
+    },
+    "name": "Quality Setpoint",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Refresh",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Waste",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "A_Notes",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Infeed",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Boolean"
+    },
+    "name": "Enable",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Simulator",
+    "tagType": "AtomicTag"
+  }
+]

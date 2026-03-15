@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "beaker--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 848,
+    "lastModificationSignature": "a337aa25abf31ca02560a635694f432b0ca4d08eeeb373645c328ce2325e2044",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "card--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 644,
+    "lastModificationSignature": "6faf62bd795cfe849379f4ddd860d99b824e4dd3eecf0d7789b5d95e59a588de",
+    "height": 16
+  }
+}

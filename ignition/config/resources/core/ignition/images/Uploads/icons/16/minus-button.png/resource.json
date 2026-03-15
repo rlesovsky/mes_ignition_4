@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "minus-button.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 451,
+    "lastModificationSignature": "8ed0b96c63ee7518f4af0718f2225485c0f52f225f9f8fa38d8d3eef33020f5f",
+    "height": 16
+  }
+}

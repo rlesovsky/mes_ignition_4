@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-flow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 436,
+    "lastModificationSignature": "b916a1de6c76d133b1696e8fb556fa6642f50cf5c4526cc8d87279fabc98bf0a",
+    "height": 16
+  }
+}

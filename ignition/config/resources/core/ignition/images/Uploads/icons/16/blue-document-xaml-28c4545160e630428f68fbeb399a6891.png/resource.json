@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-xaml-28c4545160e630428f68fbeb399a6891.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1560,
+    "lastModificationSignature": "e9a642c1a09dca528a772e690308494b5378e4a25d7c764c1a88a4f82a777a86",
+    "height": 16
+  }
+}

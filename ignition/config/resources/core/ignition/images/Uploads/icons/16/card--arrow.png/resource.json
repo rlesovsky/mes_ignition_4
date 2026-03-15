@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "card--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 608,
+    "lastModificationSignature": "7b8d33d194afa3477fcf998a941c99eaac6aaec0514ad1eb582b6d41bd500430",
+    "height": 16
+  }
+}

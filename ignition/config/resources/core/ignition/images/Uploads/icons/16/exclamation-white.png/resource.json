@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "exclamation-white.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 644,
+    "lastModificationSignature": "88597c0dba4bfe584097397a029fa58c4b66b466c1d9bf55610444b2dfb0a0f9",
+    "height": 16
+  }
+}

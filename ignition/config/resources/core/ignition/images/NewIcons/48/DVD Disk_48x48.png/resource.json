@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "DVD Disk_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4733,
+    "lastModificationSignature": "200ee0a3863a8f5ae4a4c4efdd385da9ef557fd3448a848026763f94289f579a",
+    "height": 48
+  }
+}

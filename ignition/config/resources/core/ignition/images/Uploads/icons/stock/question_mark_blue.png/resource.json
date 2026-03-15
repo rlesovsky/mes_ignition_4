@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "question_mark_blue.png"
+  ],
+  "attributes": {
+    "width": 1375,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 76586,
+    "lastModificationSignature": "300a561a49b325852677c27a4a922b28f7f1651503d3a93d3dcda52740ad0fe4",
+    "height": 1388
+  }
+}

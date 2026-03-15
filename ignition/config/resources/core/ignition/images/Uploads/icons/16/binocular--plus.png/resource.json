@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "binocular--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 801,
+    "lastModificationSignature": "bd5a3ee8fa122eb614e9db5ed5a3b7a3bfcd4d757ab473e4dab6af6689deb0d1",
+    "height": 16
+  }
+}

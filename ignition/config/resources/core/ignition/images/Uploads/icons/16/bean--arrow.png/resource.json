@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "bean--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 824,
+    "lastModificationSignature": "11e1c08f2179db49ce3cb5f6bd8842cbe234c53295ec18ee7d43336d1690f1e0",
+    "height": 16
+  }
+}

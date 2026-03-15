@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "script-php.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 654,
+    "lastModificationSignature": "2f32b55e550fcb790cffac7b46fa242baaeae573cec416ee576ed64c076ce635",
+    "height": 16
+  }
+}

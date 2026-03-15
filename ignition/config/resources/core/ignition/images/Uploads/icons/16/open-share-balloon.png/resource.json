@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "open-share-balloon.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 756,
+    "lastModificationSignature": "84c69b3b15743cec1dc1d2a5d22d0380e901bfa729c399bdeb71822228f2c8c6",
+    "height": 16
+  }
+}

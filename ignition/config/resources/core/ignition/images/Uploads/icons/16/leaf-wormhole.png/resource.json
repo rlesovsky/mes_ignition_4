@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "leaf-wormhole.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 602,
+    "lastModificationSignature": "79f790b44696589754118b9e7a8f4a9381cccbefbc3457221fd6fdcc12226744",
+    "height": 16
+  }
+}

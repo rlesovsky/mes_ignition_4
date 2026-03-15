@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Cancel 2-16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 384,
+    "lastModificationSignature": "eea3b2c8e5259ee4ded2be7e7cba1857242300fdebfcb2dda4fb2efb6d6eb9f5",
+    "height": 16
+  }
+}

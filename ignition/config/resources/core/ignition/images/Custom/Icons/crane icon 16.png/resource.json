@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "crane icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 584,
+    "lastModificationSignature": "aac8e6d4ea48ccfb5e663fbc79fbcbe91f961c958e011aa5b64530848ce690b1",
+    "height": 16
+  }
+}

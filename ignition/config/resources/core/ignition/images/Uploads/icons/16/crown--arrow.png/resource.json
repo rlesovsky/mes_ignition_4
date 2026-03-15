@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "crown--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 711,
+    "lastModificationSignature": "88e3d92efe94d0fa1ab2970e293a71775c7d735afe8f6c4d4138d2820f145ec5",
+    "height": 16
+  }
+}

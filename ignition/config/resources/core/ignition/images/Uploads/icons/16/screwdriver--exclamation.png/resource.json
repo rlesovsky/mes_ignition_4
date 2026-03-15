@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "screwdriver--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 748,
+    "lastModificationSignature": "e15590e218eb7076e0075b62cda869d78d96bd7f684050423d184ffb0fe7d488",
+    "height": 16
+  }
+}

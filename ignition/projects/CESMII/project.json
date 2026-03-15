@@ -1,0 +1,7 @@
+{
+  "title": "CESMII SM Profile Converter",
+  "description": "Converts CESMII or OPC Foundation SM profiles to Ignition UDTs. Allows you to explore available profiles or import one directly.",
+  "enabled": true,
+  "inheritable": false,
+  "parent": ""
+}

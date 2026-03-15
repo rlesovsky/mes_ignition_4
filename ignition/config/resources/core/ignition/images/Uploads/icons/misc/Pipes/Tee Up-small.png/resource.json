@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Tee Up-small.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3054,
+    "lastModificationSignature": "5d3e8a397af45a2d68334e02bbefdca3ffa74711fef06f4318c5825fa4decf7c",
+    "height": 22
+  }
+}

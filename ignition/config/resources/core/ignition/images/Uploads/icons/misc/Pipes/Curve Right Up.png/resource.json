@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Curve Right Up.png"
+  ],
+  "attributes": {
+    "width": 170,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 19840,
+    "lastModificationSignature": "7224b0934d0fb35244cc15dbaa29952c8a7e9d4302a19d895ddf108fca04d173",
+    "height": 170
+  }
+}

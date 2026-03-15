@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "palette--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 893,
+    "lastModificationSignature": "6eef4c652c67cecee8d6490fa90fb8cd7de1e0be5d72fa659b52ef2408533851",
+    "height": 16
+  }
+}

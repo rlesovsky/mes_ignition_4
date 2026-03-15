@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "sitemap.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 498,
+    "lastModificationSignature": "f022bf98e169bee8943f74d28cfce2a1f037bdd7c3720fe4996d8bcf1f033bdc",
+    "height": 16
+  }
+}

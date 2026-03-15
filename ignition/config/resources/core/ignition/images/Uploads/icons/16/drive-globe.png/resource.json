@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "drive-globe.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 786,
+    "lastModificationSignature": "9db420a6bc7946377de153eb8d1f57a84c51cc836981eee9ad9afdbc8246630a",
+    "height": 16
+  }
+}

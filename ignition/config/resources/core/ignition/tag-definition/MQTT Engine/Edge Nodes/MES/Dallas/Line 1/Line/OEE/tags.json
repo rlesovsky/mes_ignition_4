@@ -1,0 +1,183 @@
+[
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "Estimated Finish Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DateTime"
+    },
+    "name": "End Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DateTime"
+    },
+    "name": "Current Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Total Count",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Total Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Quantity",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "ID",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4",
+      "sourceTagPath": "[.]../Dispatch/OEE Outfeed/Count"
+    },
+    "name": "Good Count",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Production Rate",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Planned Downtime",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Float4"
+    },
+    "name": "OEE Performance",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Float4"
+    },
+    "name": "OEE Availability",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Float4"
+    },
+    "name": "OEE",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "Units",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Unplanned Downtime",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4",
+      "sourceTagPath": "[.]../Dispatch/OEE Waste/Count"
+    },
+    "name": "Bad Count",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Scheduled Rate",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Float4"
+    },
+    "name": "OEE Quality",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Standard Rate",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Target Count",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Run Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DataSet",
+      "datasource": "mes_core",
+      "query": "SELECT\r\n\tr.id AS \"ID\",\r\n\two.workorder AS \"WorkOrder\",\r\n\tr.runstartdatetime AS \"StartTime\",\r\n\tsch.schedulefinishdatetime AS \"FinishTime\",\r\n\tsch.quantity AS \"Quantity\"\r\nFROM run r\r\nLEFT JOIN schedule sch ON r.scheduleid \u003d sch.id\r\nLEFT JOIN workorder wo ON sch.workorderid \u003d wo.id\r\nWHERE sch.lineid \u003d {[.]ID}\r\nAND r.id \u003d {[.]RunID}"
+    },
+    "name": "WorkOrder",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "Schedule ID",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DateTime",
+      "datasource": "mes_core",
+      "sourceTagPath": "[.]../Start Time"
+    },
+    "name": "Start Time",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "Int4"
+    },
+    "name": "RunID",
+    "tagType": "AtomicTag"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "industrial_robot.png"
+  ],
+  "attributes": {
+    "width": 256,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 50189,
+    "lastModificationSignature": "a6b54c151902317b66538f44f6a500309c9e71a3ad5ffc89523d99866178c439",
+    "height": 256
+  }
+}

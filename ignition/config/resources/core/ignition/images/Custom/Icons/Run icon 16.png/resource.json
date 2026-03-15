@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Run icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1185,
+    "lastModificationSignature": "a4cf99f37b68459364b68e6602d46900c50f63c139a19ee5f25ec8f59a18e4d3",
+    "height": 16
+  }
+}

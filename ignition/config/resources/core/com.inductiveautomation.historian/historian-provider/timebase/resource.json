@@ -1,0 +1,14 @@
+{
+  "scope": "A",
+  "description": "Flow Software Timebase Historian. ",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "uuid": "369f334b-7ca2-492a-ab56-7f0a57f66d0f",
+    "enabled": true
+  }
+}

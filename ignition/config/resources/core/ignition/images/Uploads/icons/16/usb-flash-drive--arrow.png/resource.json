@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "usb-flash-drive--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 561,
+    "lastModificationSignature": "56ade7be9390fbf467a875969c5b42d96d3b38ca128b1b96ddffc02a30af0425",
+    "height": 16
+  }
+}

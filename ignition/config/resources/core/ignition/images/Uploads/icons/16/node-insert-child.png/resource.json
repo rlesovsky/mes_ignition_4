@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "node-insert-child.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 419,
+    "lastModificationSignature": "96bd68e11aa0db27c3358e6c30e10821d4e906dfe7c6da5ea0ddaba0d3c409f0",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "xfn-friend.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 490,
+    "lastModificationSignature": "937edaaf4b737cff6fed5e258816571b655fadb7c93591fa0393293a408eddab",
+    "height": 16
+  }
+}

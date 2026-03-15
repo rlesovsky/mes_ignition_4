@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "desktop-image.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 689,
+    "lastModificationSignature": "5e5a302d6af71b71d9e5fd3d2b2eeb2d82a40f97d45a8d6dfd044c0e04e032a2",
+    "height": 16
+  }
+}

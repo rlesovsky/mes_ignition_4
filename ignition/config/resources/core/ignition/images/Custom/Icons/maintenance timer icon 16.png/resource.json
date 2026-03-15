@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "maintenance timer icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2653,
+    "lastModificationSignature": "0ff69a3605f9c5d9101c7b7e774e072857d548404f76b64231ee9abcaacb33dd",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-toolbar-bookmark.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 504,
+    "lastModificationSignature": "fb494f58ef7890f1f44a785a27e43db11ada4490b32b770a3a319665b0736e22",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-slim.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 719,
+    "lastModificationSignature": "c0a70c3a825fd4350018e4a32aab259948ecf0be7528bda2914e10a472a67187",
+    "height": 16
+  }
+}

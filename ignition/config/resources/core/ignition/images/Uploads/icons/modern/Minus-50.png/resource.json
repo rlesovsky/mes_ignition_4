@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Minus-50.png"
+  ],
+  "attributes": {
+    "width": 50,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1120,
+    "lastModificationSignature": "7b98e53f99738d7abdfa9cfe7de9756e1035583f5033017e81325c84f2b469e5",
+    "height": 50
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "bandaid--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 924,
+    "lastModificationSignature": "57e3d6f138e101b70a63c5e69a5a5fc2c73346bda18f583b038f2d6e52ee5c29",
+    "height": 16
+  }
+}

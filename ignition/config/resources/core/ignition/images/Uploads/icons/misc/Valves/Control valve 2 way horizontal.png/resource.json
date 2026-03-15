@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Control valve 2 way horizontal.png"
+  ],
+  "attributes": {
+    "width": 141,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1596,
+    "lastModificationSignature": "f8d56641284220f94326dbb3104f8b6c7a9823c36905e86a81f16183f514c56c",
+    "height": 84
+  }
+}

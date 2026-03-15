@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balloon-buzz.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 800,
+    "lastModificationSignature": "8053bf886584be2c0d2aee802929c7bc9220847dc8415a1d909ee65e4a21c4b7",
+    "height": 16
+  }
+}

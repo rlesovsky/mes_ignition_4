@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wrench--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 821,
+    "lastModificationSignature": "8b63ca465922ba8436c4cff6d0b839e7c905d60b0b8eb0c2660d8579e6a48114",
+    "height": 16
+  }
+}

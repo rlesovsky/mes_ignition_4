@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "traffic-cone--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 776,
+    "lastModificationSignature": "dda5e4a25c54be96bfb4be6e6b0d33474157d2b2fa88c0997e7409b7e06176fd",
+    "height": 16
+  }
+}

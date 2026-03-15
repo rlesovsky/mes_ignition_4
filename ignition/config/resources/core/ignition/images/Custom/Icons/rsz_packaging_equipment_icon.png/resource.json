@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "rsz_packaging_equipment_icon.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1503,
+    "lastModificationSignature": "61bc0e03bef3ac1134b0cf2ff5ad6a04b939c5e6d00231baf69bae9218284de1",
+    "height": 16
+  }
+}

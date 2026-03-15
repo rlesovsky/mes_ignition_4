@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "car--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 893,
+    "lastModificationSignature": "0f17bb4d811c6025b576fa0d2ed6e53d87dd5299b7f72115755131e590390f06",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "monitor-sidebar.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 869,
+    "lastModificationSignature": "af388c9c1d3c01ece865d4754ec5da6661815f67971692be9e8628cb358808b0",
+    "height": 24
+  }
+}

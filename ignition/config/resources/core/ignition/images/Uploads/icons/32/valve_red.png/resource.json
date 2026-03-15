@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "valve_red.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3569,
+    "lastModificationSignature": "21a321aa09a0f4dfd0d4db1992bd060e19accfadd7f7f671760e298c26d7c4cc",
+    "height": 32
+  }
+}

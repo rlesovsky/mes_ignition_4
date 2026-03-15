@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "credit-card-green.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 502,
+    "lastModificationSignature": "ce81c47dacc70a6a13d98f8fd3b1f904bad0aa38f196d57797379f29ad6dac8d",
+    "height": 16
+  }
+}

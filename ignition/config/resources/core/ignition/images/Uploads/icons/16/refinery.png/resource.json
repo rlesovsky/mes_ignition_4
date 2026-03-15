@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "refinery.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 616,
+    "lastModificationSignature": "26f4cc20dd9ab307717e51fdf42934d0d8f452fb9c9140be4493f34c21f37cb9",
+    "height": 14
+  }
+}

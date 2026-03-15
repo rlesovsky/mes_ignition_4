@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "sigma.jpg"
+  ],
+  "attributes": {
+    "width": 30,
+    "format": "JPEG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 962,
+    "lastModificationSignature": "f73c7970f87cddfeb0ecc0c4771ff6e36ff07ee90b7bcebce7f781d58f7bed09",
+    "height": 24
+  }
+}

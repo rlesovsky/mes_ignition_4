@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Purchase Order-28.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 426,
+    "lastModificationSignature": "0219ce2f98ae83a60ecb42baf9ddc4df16ca23c14d3651630d2ec820b9f5bf7d",
+    "height": 28
+  }
+}

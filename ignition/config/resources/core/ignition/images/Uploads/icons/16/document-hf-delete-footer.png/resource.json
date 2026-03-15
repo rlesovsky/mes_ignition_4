@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "document-hf-delete-footer.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 539,
+    "lastModificationSignature": "f81c465640f920efc0e0e20bb58c64fba33a8e06557056ae553a58ed924d342d",
+    "height": 16
+  }
+}

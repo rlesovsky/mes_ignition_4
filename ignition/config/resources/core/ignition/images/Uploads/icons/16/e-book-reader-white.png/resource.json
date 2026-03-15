@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "e-book-reader-white.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 440,
+    "lastModificationSignature": "f2ea9bb45d29cb8cb27d9fd63e9ffadad3a1f7a4acbe87e3c24b370ee27300b5",
+    "height": 16
+  }
+}

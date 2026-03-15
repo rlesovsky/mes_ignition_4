@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-eek.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 817,
+    "lastModificationSignature": "19c0c3f677d5eb76fb49786a1676da4053e88c47a3213926b12517ad29ca8b2b",
+    "height": 16
+  }
+}

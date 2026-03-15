@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-cool.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 828,
+    "lastModificationSignature": "ce7d9ce5d93ec2e2f86f63b1785eed2a6c8e80223700d9333a2810fc7df63706",
+    "height": 16
+  }
+}

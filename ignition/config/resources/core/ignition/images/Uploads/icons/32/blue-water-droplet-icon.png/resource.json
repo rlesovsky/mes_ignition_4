@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-water-droplet-icon.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3244,
+    "lastModificationSignature": "a706b60629081231be587fb577990c6ce7cbba23f5dee8a59b5ff2804575b60b",
+    "height": 48
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "profile": { "type": "SqlHistorian" },
+  "settings": {
+    "database": "mes_custom",
+    "partition": { "enabled": true, "optimized": false, "optimizedWindowSeconds": 60, "size": 1, "sizeUnits": "MONTH" },
+    "profile": "mes_custom",
+    "pruning": { "age": 1, "ageUnits": "YEAR", "enabled": false },
+    "staleMultiplier": 2,
+    "trackSce": true
+  }
+}

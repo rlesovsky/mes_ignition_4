@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-alignment.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 233,
+    "lastModificationSignature": "b949bfca75952df0b7805a2b8254156ad3f30a6ab9c3c93b531c5c40ec6779d1",
+    "height": 16
+  }
+}

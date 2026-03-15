@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "broom--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 955,
+    "lastModificationSignature": "8ff84e7dc722668bc0e5704ad31b3f2f372f86d80587add06d0ca5580180b554",
+    "height": 16
+  }
+}

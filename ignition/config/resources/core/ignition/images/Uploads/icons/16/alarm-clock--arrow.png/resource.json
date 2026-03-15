@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "alarm-clock--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 996,
+    "lastModificationSignature": "39ecbeb38d0ea64c474091540a184bb7debd082c8ed559b98d018137c608bbb3",
+    "height": 16
+  }
+}

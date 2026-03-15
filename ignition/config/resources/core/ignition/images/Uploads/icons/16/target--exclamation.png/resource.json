@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "target--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 805,
+    "lastModificationSignature": "d33698038489ea0deb63f8cdf59ec3b2ec65c83652cbce392a23238b72e94839",
+    "height": 16
+  }
+}

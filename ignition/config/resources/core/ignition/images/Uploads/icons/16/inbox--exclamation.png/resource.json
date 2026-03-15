@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "inbox--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 664,
+    "lastModificationSignature": "47bdee36c4451e62f21c5ddd28bc51cdf31bbe5b8e0baed08b282a166c668ef0",
+    "height": 16
+  }
+}

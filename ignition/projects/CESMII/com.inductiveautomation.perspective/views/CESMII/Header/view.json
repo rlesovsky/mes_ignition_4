@@ -1,0 +1,165 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 58
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "id": "menu",
+                "type": "toggle"
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Menu Dock"
+        },
+        "position": {
+          "basis": "24px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#FFFFFF",
+          "path": "material/menu",
+          "style": {
+            "classes": "",
+            "marginRight": "10px"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Image"
+        },
+        "position": {
+          "basis": "100px",
+          "shrink": 0
+        },
+        "props": {
+          "fit": {
+            "mode": "contain"
+          },
+          "source": "data:image/octet-stream;base64,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"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "hasDelegate": true,
+          "name": "Title"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "color": "#FFFFFF",
+            "fontSize": "20px",
+            "fontWeight": "bold",
+            "marginLeft": "10px",
+            "marginRight": "10px"
+          },
+          "text": "SM Profile Converter"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tif self.session.props.auth.authenticated:\n\t\tsystem.perspective.logout()\n\telse:\n\t\tsystem.perspective.login()"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "User"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#FFFFFF",
+          "path": "material/person",
+          "style": {
+            "classes": ""
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tif self.session.props.auth.authenticated:\n\t\tsystem.perspective.logout()\n\telse:\n\t\tsystem.perspective.login()"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "hasDelegate": true,
+          "name": "Sign In"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "session.props.auth.user.userName"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003d null || len({value}) \u003d 0, \"Sign In\", {value})",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FFFFFF",
+            "cursor": "pointer",
+            "marginLeft": "4px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "background": "#4084ef",
+        "fill": "#FFFFFF",
+        "fontSize": "14px",
+        "lineHeight": "17px",
+        "paddingLeft": "10px",
+        "paddingRight": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

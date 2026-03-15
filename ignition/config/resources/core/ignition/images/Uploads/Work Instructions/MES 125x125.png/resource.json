@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "MES 125x125.png"
+  ],
+  "attributes": {
+    "width": 125,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 11684,
+    "lastModificationSignature": "f6c753e872551864ff537d8a15d86784ddb5640fc63b454f3fa2f6e7c8f43864",
+    "height": 125
+  }
+}

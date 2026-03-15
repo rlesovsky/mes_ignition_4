@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cross-small-circle.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 329,
+    "lastModificationSignature": "0ce26e20e4062cb96a0a9b36ab5f108b5be2662b2211c024f8a36d78e21466f4",
+    "height": 16
+  }
+}

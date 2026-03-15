@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "telephone-medium.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1278,
+    "lastModificationSignature": "e4b620731d00167403b08622fa17e90dad0d09d29daecb49bf1be6a12f36532c",
+    "height": 16
+  }
+}

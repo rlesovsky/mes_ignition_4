@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Document with wheel 48x48_New.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1543,
+    "lastModificationSignature": "9b7b79884e27c5538578ad5ed8076ee6d01e1be448adc9875d35b26833e6500b",
+    "height": 48
+  }
+}

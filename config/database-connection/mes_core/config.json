@@ -1,0 +1,18 @@
+{
+  "connectURL": "jdbc:postgresql://postgres:5432/mes_core",
+  "driver": "PostgreSQL",
+  "translator": "POSTGRES",
+  "username": "mes_user",
+  "password": "REDACTED",
+  "poolMaxActive": 8,
+  "poolMaxIdle": 8,
+  "poolMaxWait": 5000,
+  "poolMinIdle": 0,
+  "poolInitSize": 0,
+  "testOnBorrow": true,
+  "validationQuery": "SELECT 1",
+  "validationSleepTime": 10000,
+  "slowQueryLogThreshold": 60000,
+  "defaultTransactionLevel": "DEFAULT",
+  "failoverMode": "STANDARD"
+}

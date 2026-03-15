@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "receipt-import.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 730,
+    "lastModificationSignature": "15e4d2d7e4a8d53dfdb08631a3ab3ccaeb2f183620ae2227cdb00cdba1216077",
+    "height": 24
+  }
+}

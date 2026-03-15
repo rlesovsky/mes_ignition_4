@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "code 16.jpg"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "JPEG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 863,
+    "lastModificationSignature": "8cb36cb1879ce3e8fbb1770c7bb7f0c9341caff5e70667208dfb3b26b65b7c2a",
+    "height": 16
+  }
+}

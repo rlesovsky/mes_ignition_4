@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "grid-snap.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 535,
+    "lastModificationSignature": "c613b4cdfb13a0ad25f8d65ba8f8875abbb97664fd15d50141303e6324e2c5ae",
+    "height": 16
+  }
+}

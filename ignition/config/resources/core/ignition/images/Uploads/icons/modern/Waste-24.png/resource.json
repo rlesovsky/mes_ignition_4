@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Waste-24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 457,
+    "lastModificationSignature": "93442f8a2ac5103903bade23dfc30c2b84859b276fd5970123f0e01a4b322198",
+    "height": 24
+  }
+}

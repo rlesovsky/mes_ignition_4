@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layer-shade.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 375,
+    "lastModificationSignature": "9c8b0bb38162f48692ad3ecf03446478085002e4d22933b7d43bdd13b9f5d048",
+    "height": 16
+  }
+}

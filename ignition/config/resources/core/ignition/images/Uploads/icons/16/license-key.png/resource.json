@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "license-key.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 580,
+    "lastModificationSignature": "3c97f287c2dfd3b6a989425ea337ed9b0ad04dc53173b9bbaeb3dea76474cd9a",
+    "height": 16
+  }
+}

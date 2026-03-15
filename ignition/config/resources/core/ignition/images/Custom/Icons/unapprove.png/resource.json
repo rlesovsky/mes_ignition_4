@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "unapprove.png"
+  ],
+  "attributes": {
+    "width": 256,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 31284,
+    "lastModificationSignature": "b24f0b753a1e4b4a26d1af1447978517ddb7f57c284a6458930a5954f37e5093",
+    "height": 256
+  }
+}

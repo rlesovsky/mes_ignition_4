@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "luggage-tag.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 607,
+    "lastModificationSignature": "4890ab123695495b557b2b2cd11706b24699025f4ddf8ee72db01f2ce4d2da47",
+    "height": 16
+  }
+}

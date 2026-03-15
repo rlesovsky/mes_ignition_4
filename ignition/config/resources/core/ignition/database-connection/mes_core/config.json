@@ -1,0 +1,36 @@
+{
+  "connectURL": "jdbc:postgresql://mes-postgres:5432/mes_core",
+  "connectionProps": "",
+  "connectionResetParams": "",
+  "defaultTransactionLevel": "DEFAULT",
+  "driver": "PostgreSQL",
+  "evictionRate": -1,
+  "evictionTests": 3,
+  "evictionTime": 1800000,
+  "failoverMode": "STANDARD",
+  "failoverProfile": "",
+  "includeSchemaInTableName": false,
+  "password": {
+    "data": {
+      "ciphertext": "VTeXr4cTj99W4sIyhgX150qp5A",
+      "encrypted_key": "iqe7wLsqQDhMqaljsw00MGv6mGZjxTkvWT8-crXe1sUL0kxZh2e2aA",
+      "iv": "6ExnonP6IRkpZdSZ",
+      "protected": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIiwiaWF0IjoxNzY2ODM5MTgwLCJ6aXAiOiJERUYifQ",
+      "tag": "2sc-K5l7duKGf-WOLUp09w"
+    },
+    "type": "Embedded"
+  },
+  "poolInitSize": 0,
+  "poolMaxActive": 8,
+  "poolMaxIdle": 8,
+  "poolMaxWait": 5000,
+  "poolMinIdle": 0,
+  "slowQueryLogThreshold": 60000,
+  "testOnBorrow": true,
+  "testOnReturn": false,
+  "testWhileIdle": false,
+  "translator": "POSTGRES",
+  "username": "mes_user",
+  "validationQuery": "SELECT 1",
+  "validationSleepTime": 10000
+}

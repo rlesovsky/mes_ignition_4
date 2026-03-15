@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "microphone--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 809,
+    "lastModificationSignature": "f254771d3a51cc178d3edcf532654a20ed13faca01b27bf6eded367736bd27bc",
+    "height": 16
+  }
+}

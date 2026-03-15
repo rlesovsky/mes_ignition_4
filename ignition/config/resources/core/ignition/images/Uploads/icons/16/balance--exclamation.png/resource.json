@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balance--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 961,
+    "lastModificationSignature": "ad8e65d302c8620b1e9c7d8cc43ac5d4034a68516dc684ebf584a1c1a52fdcd6",
+    "height": 16
+  }
+}

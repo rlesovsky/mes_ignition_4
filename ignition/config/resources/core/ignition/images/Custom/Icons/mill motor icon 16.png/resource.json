@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mill motor icon 16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 621,
+    "lastModificationSignature": "088baec371da250ccf90407efbbf445623e17e3f27438cd815689cd21a2a3a8a",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "compass--minus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 867,
+    "lastModificationSignature": "5d34aed96731eb6c2cf68a2df9da2faf23665b326945b4ec35a0356e400c5386",
+    "height": 16
+  }
+}

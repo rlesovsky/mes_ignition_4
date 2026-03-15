@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "diamond.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 601,
+    "lastModificationSignature": "db790739054997d6a55204b30c7a63d5d22440583ae7fa11dd25d36b633c1792",
+    "height": 16
+  }
+}

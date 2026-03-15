@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "car-red.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 771,
+    "lastModificationSignature": "92abeac5c4fd23ca0192e6f580b178ff73e6a3a809e2e0da3eb926a9738728b1",
+    "height": 16
+  }
+}

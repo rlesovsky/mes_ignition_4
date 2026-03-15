@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "chart-up-color.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 691,
+    "lastModificationSignature": "85d70e9759a74277d5d5cae19374be8d43950b1b75ca00f3f86b7a5dabf01a32",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "currency-euro.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 535,
+    "lastModificationSignature": "5738215f6b0427c468caff4c4d70e2d8f6c0a8d49f181c8048728c3dfe834a9d",
+    "height": 16
+  }
+}

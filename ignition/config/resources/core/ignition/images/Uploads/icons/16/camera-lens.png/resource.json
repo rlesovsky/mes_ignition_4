@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "camera-lens.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 845,
+    "lastModificationSignature": "06ba2c22967f08deaf6836c6617f266f11853e1f047d78249397aaa975b24adf",
+    "height": 16
+  }
+}

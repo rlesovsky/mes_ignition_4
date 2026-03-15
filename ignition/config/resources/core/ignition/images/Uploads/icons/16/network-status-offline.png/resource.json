@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "network-status-offline.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1461,
+    "lastModificationSignature": "7c2cdb48680ba5d2bf6c7159c8189c933bc35e928fd0f6bf377f4a7b3f83a19a",
+    "height": 16
+  }
+}

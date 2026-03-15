@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-group-box.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 501,
+    "lastModificationSignature": "e0a2d615df5447aca73ce030e48ec8495b8392242190c636e46593f4caea5d51",
+    "height": 16
+  }
+}

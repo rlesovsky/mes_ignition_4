@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Chevron Left-28_FILLED.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 172,
+    "lastModificationSignature": "a73d598237f646ac803db40f0d34ab50fd530c5aa63345f5d7e1927a3e03e461",
+    "height": 28
+  }
+}

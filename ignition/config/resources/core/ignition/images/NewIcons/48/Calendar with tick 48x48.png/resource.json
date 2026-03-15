@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Calendar with tick 48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1726,
+    "lastModificationSignature": "3bc701304b356754aa71d1e85a9b6e3ff436074f8179e68f0f437be9bdd983a7",
+    "height": 48
+  }
+}

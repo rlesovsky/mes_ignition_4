@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paper-plane-return.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 637,
+    "lastModificationSignature": "c11d6edbc46b711a8c4049a5b092bfd2287437eacd53a2f560f4fab242125f61",
+    "height": 16
+  }
+}

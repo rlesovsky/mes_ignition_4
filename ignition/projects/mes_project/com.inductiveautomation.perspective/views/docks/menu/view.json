@@ -1,0 +1,235 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 272
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "menu_1"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "headerStyle": {
+            "classes": "labels/font labels/size_heading_2",
+            "color": "#FFFFFF",
+            "overflow": "hidden"
+          },
+          "itemStyle": {
+            "borderStyle": "none",
+            "classes": "labels/color_normal labels/font labels/size_normal ui_ux/hover_highlight ui_ux/hover_underline",
+            "overflow": "hidden"
+          },
+          "items": [
+            {
+              "enabled": true,
+              "items": [],
+              "label": {
+                "icon": {
+                  "color": "#10b981",
+                  "path": "material/home"
+                },
+                "text": "Home"
+              },
+              "navIcon": {
+                "color": "",
+                "path": ""
+              },
+              "resetOnClick": false,
+              "showHeader": true,
+              "style": {
+                "classes": "leftdockitem",
+                "color": "#FFFFFF"
+              },
+              "target": "/",
+              "visible": true
+            },
+            {
+              "backActionText": "",
+              "enabled": true,
+              "items": [
+                {
+                  "backActionText": "",
+                  "enabled": true,
+                  "items": [],
+                  "label": {
+                    "icon": {
+                      "path": ""
+                    },
+                    "text": "Line 1"
+                  },
+                  "navIcon": {
+                    "path": ""
+                  },
+                  "resetOnClick": true,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem",
+                    "color": "#FFFFFF"
+                  },
+                  "target": "/line",
+                  "visible": true
+                }
+              ],
+              "label": {
+                "icon": {
+                  "color": "#3b82f6",
+                  "path": "material/dashboard"
+                },
+                "text": "Lines"
+              },
+              "navIcon": {
+                "color": "#FFFFFF",
+                "path": "material/chevron_right"
+              },
+              "resetOnClick": false,
+              "showHeader": true,
+              "style": {
+                "classes": "leftdockitem",
+                "color": "#FFFFFF"
+              },
+              "target": "",
+              "visible": true
+            },
+            {
+              "backActionText": "",
+              "enabled": true,
+              "items": [
+                {
+                  "backActionText": "",
+                  "enabled": true,
+                  "items": [],
+                  "label": {
+                    "icon": {
+                      "path": ""
+                    },
+                    "text": "Work Order"
+                  },
+                  "navIcon": {
+                    "path": ""
+                  },
+                  "resetOnClick": false,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem"
+                  },
+                  "target": "/work order",
+                  "visible": true
+                }
+              ],
+              "label": {
+                "icon": {
+                  "color": "#10b981",
+                  "path": "material/assignment"
+                },
+                "text": "Production"
+              },
+              "navIcon": {
+                "color": "#FFFFFF",
+                "path": "material/chevron_right"
+              },
+              "resetOnClick": false,
+              "showHeader": true,
+              "style": {
+                "classes": "leftdockitem",
+                "color": "#FFFFFF"
+              },
+              "target": "",
+              "visible": true
+            },
+            {
+              "backActionText": "",
+              "enabled": true,
+              "items": [
+                {
+                  "backActionText": "",
+                  "enabled": true,
+                  "items": [],
+                  "label": {
+                    "icon": {
+                      "path": ""
+                    },
+                    "text": "Production Model"
+                  },
+                  "navIcon": {
+                    "path": ""
+                  },
+                  "resetOnClick": false,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem"
+                  },
+                  "target": "/production model",
+                  "visible": true
+                },
+                {
+                  "backActionText": "",
+                  "enabled": true,
+                  "items": [],
+                  "label": {
+                    "icon": {
+                      "path": ""
+                    },
+                    "text": "Product Codes"
+                  },
+                  "navIcon": {
+                    "path": ""
+                  },
+                  "resetOnClick": false,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem"
+                  },
+                  "target": "/product codes",
+                  "visible": true
+                }
+              ],
+              "label": {
+                "icon": {
+                  "color": "#f59e0b",
+                  "path": "material/admin_panel_settings"
+                },
+                "text": "Admin"
+              },
+              "navIcon": {
+                "color": "#FFFFFF",
+                "path": "material/chevron_right"
+              },
+              "resetOnClick": false,
+              "showHeader": true,
+              "style": {
+                "classes": "leftdockitem"
+              },
+              "target": "",
+              "visible": true
+            }
+          ],
+          "style": {
+            "backgroundColor": "#21262d"
+          }
+        },
+        "type": "ia.navigation.menutree"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "borderRightColor": "black",
+        "borderRightStyle": "none",
+        "borderRightWidth": "1px",
+        "classes": "leftdock",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

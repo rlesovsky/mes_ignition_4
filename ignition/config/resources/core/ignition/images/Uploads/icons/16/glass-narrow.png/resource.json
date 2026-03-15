@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "glass-narrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 563,
+    "lastModificationSignature": "f5084929ecee9189981fa068c60710daf05f27afe04b7bc5f6de4712aa4c0aff",
+    "height": 16
+  }
+}

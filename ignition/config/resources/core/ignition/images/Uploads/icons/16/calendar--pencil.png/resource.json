@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "calendar--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 746,
+    "lastModificationSignature": "eb8dff37c0cbafc3f83993835fd41caa7ff1edd39d28ceea996baabb314e1546",
+    "height": 16
+  }
+}

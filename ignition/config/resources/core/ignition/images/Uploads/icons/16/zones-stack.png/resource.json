@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "zones-stack.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 482,
+    "lastModificationSignature": "f25cf5f686618fad71d96c7273ea5f53aee2a0dc01415dfd546861561ddb0449",
+    "height": 16
+  }
+}

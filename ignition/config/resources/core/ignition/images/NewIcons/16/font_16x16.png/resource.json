@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "font_16x16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 487,
+    "lastModificationSignature": "e6fc6a1c3370b0d776e401f479bd9535969c0d4439ab074f3d95dddbe3eea19c",
+    "height": 16
+  }
+}

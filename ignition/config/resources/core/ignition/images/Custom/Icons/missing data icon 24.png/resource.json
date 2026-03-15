@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "missing data icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1577,
+    "lastModificationSignature": "287ecf238a946d61b26297e153fb19ba855fb3753a9ed2b1e2182ce40e35338b",
+    "height": 24
+  }
+}

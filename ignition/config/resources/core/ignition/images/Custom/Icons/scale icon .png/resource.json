@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "scale icon .png"
+  ],
+  "attributes": {
+    "width": 204,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2685,
+    "lastModificationSignature": "1a70790f4719ea61e2e334ba3dabc2855ecf1712e1c1df4c79edd8abda957211",
+    "height": 204
+  }
+}

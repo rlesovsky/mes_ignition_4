@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "compass--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 957,
+    "lastModificationSignature": "48b77fee49f13cd1a81033a67d3a9f39ce27cc4cfb688c4d4f149648f09ed296",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "if_font_underline_42244.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 239,
+    "lastModificationSignature": "71c3391cd22818e77b2571865b5a01a583116eb7b1152eceae59e84131d61559",
+    "height": 16
+  }
+}

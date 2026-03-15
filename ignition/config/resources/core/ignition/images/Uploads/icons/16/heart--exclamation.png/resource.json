@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "heart--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 846,
+    "lastModificationSignature": "42a5ee161758ed87b9dfe90ce54b04796ded6545f53bdb4e72c22e0c41c9f9a1",
+    "height": 16
+  }
+}

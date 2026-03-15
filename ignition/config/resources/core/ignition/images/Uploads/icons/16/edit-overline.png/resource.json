@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-overline.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 280,
+    "lastModificationSignature": "72be8cceca535d4c47a613ee9eca2dee844504b7b0ff146206f000d40b3b355b",
+    "height": 16
+  }
+}

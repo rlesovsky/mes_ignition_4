@@ -1,0 +1,535 @@
+{
+  "custom": {
+    "loading": false,
+    "search": "*"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.loading": {
+      "persistent": true
+    },
+    "custom.profiles": {
+      "binding": {
+        "config": {
+          "struct": {
+            "credsChange": "{session.custom.settings.credsChange}",
+            "noCredentials": "{session.custom.settings.noCredentials}",
+            "search": "{view.custom.search}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\timport traceback\n\t\n\tif value[\"noCredentials\"]:\n\t\tret \u003d {\"success\":True, \"error\":\"\", \"profiles\":[]}\n\telse:\n\t\tret \u003d {\"success\":True, \"error\":\"\", \"profiles\":[]}\n\t\tself.custom.loading \u003d True\n\t\ttry:\n\t\t\tkeywords \u003d value[\"search\"]\n\t\t\tret[\"profiles\"] \u003d CESMII.UALibraryRESTService.find(self.session, keywords)\n\t\texcept:\n\t\t\tret[\"success\"] \u003d False\n\t\t\tret[\"error\"] \u003d traceback.format_exc()\n\t\t\n\t\tself.custom.loading \u003d False\n\t\t\t\t\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": false
+    },
+    "custom.search": {
+      "persistent": true
+    },
+    "params.feature": {
+      "paramDirection": "input"
+    },
+    "params.key": {
+      "paramDirection": "input"
+    },
+    "params.tier1": {
+      "paramDirection": "input"
+    },
+    "params.tier2": {
+      "paramDirection": "input"
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "56px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "icon": "explore",
+            "text": "Explorer"
+          },
+          "path": "CESMII/Title"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#e9ecef",
+                    "borderRightColor": "#ced4da",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": "1px",
+                    "paddingLeft": "10px",
+                    "paddingRight": "10px"
+                  },
+                  "text": "Search"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Search"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.search"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "none"
+                  }
+                },
+                "type": "ia.input.text-field"
+              }
+            ],
+            "meta": {
+              "name": "Search"
+            },
+            "position": {
+              "basis": "38px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "CESMII/Border"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#D90000"
+                  },
+                  "text": "No credentials are specified. Please input your credentials on the settings pane on the right."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "NoCredentials"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "session.custom.settings.noCredentials"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginBottom": "10px",
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "\"Error getting profiles: \" + {view.custom.profiles.error}"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "#D90000"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "APIError"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{session.custom.settings.noCredentials} \u0026\u0026 !{view.custom.profiles.success} \u0026\u0026 !{view.custom.loading}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginBottom": "10px",
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexRepeater"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.instances": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "currentPage": "{session.custom.settings.currentPage}",
+                          "itemsPerPage": "{session.custom.settings.itemsPerPage}",
+                          "profiles": "{view.custom.profiles}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tret \u003d []\n\t\n\tif value[\"profiles\"][\"success\"]:\n\t\tprofiles \u003d value[\"profiles\"][\"profiles\"]\n\t\tif profiles \u003d\u003d None:\n\t\t\tprofiles \u003d []\n\t\t\n\t\tpage \u003d value[\"currentPage\"]\n\t\titemsPerPage \u003d value[\"itemsPerPage\"]\n\t\tstartIndex \u003d (page - 1) * itemsPerPage\n\t\tendIndex \u003d startIndex + itemsPerPage\n\t\t\n\t\tif len(profiles) \u003c endIndex:\n\t\t\tendIndex \u003d len(profiles)\n\t\t\t\n\t\tif len(profiles):\n\t\t\tprofiles \u003d profiles[startIndex:endIndex]\n\t\t\n\t\tfor profile in profiles:\n\t\t\tret.append({\"profile\":profile})\n\t\t\t\n\t\treturn ret",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "alignContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "elementPosition": {
+                    "basis": "auto",
+                    "grow": 0,
+                    "shrink": 0
+                  },
+                  "elementStyle": {
+                    "marginBottom": "20px",
+                    "marginRight": "20px"
+                  },
+                  "justify": "center",
+                  "path": "CESMII/Profile",
+                  "wrap": "wrap"
+                },
+                "type": "ia.display.flex-repeater"
+              }
+            ],
+            "meta": {
+              "name": "Profiles"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{session.custom.settings.noCredentials} \u0026\u0026 {view.custom.profiles.success} \u0026\u0026 !{view.custom.loading}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginBottom": "10px",
+                "marginTop": "20px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          },
+                          "text": "Loading..."
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Progress"
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "props": {
+                          "mode": "indeterminate"
+                        },
+                        "type": "ia.display.progress"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "150px",
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Loading"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{session.custom.settings.noCredentials} \u0026\u0026 {view.custom.loading}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "justify": "center",
+              "style": {
+                "marginBottom": "10px",
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Paginator"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.currentPage": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "session.custom.settings.currentPage"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.itemsPerPage": {
+                    "binding": {
+                      "config": {
+                        "path": "session.custom.settings.itemsPerPage"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.totalItems": {
+                    "binding": {
+                      "config": {
+                        "expression": "len({view.custom.profiles.profiles})"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "CESMII/Paginator"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Paginator"
+            },
+            "position": {
+              "basis": "38px",
+              "shrink": 0
+            },
+            "props": {
+              "justify": "center",
+              "style": {
+                "marginBottom": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#e9ecef",
+                    "borderRightColor": "#ced4da",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": "1px",
+                    "paddingLeft": "10px",
+                    "paddingRight": "10px"
+                  },
+                  "text": "Items per page"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "ItemsPerPage"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "session.custom.settings.itemsPerPage"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "align": "left",
+                  "inputBounds": {
+                    "minimum": 1
+                  },
+                  "style": {
+                    "borderStyle": "none"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              }
+            ],
+            "meta": {
+              "name": "ItemsPerPage"
+            },
+            "position": {
+              "basis": "38px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "CESMII/Border"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "margin": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "CESMII/Page"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "scales icon 16.jpg"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "JPEG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 884,
+    "lastModificationSignature": "159eeae3c95a2580a5560d1cf16fda4429f5fbc0a46a714a8349705a9c67559c",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "magnet--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 778,
+    "lastModificationSignature": "d39ef086b0bc16dfb8ef8cc4e3cf9984bee75605047bf0a1bdc2d1057c3d22b7",
+    "height": 16
+  }
+}

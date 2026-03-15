@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "guitar--plus.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 897,
+    "lastModificationSignature": "1b749ca6f2e4be481a792c8a6f768fbdbb7b46489986b3b24b4e20b897e5c2ac",
+    "height": 16
+  }
+}

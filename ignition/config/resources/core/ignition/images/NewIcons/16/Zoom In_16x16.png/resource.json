@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Zoom In_16x16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 730,
+    "lastModificationSignature": "ea4e3f9ffd7f8ca807475c46d85dc6f74ffa23987bbf0c69f37cf6bb61d56dfe",
+    "height": 16
+  }
+}

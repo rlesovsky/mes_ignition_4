@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "paint-brush--arrow.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 719,
+    "lastModificationSignature": "9c365870e9b07cac095e5b9e5207cded8a5bf035b2d1d7555a1da8d4224fec65",
+    "height": 16
+  }
+}

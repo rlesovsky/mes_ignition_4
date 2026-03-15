@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Redo_24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 943,
+    "lastModificationSignature": "ea6352d127ce27da2ca8cb3775ef58dd3d421beacee753e663c0aec0a013fe3d",
+    "height": 24
+  }
+}

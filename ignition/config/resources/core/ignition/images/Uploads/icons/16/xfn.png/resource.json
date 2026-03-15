@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "xfn.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 378,
+    "lastModificationSignature": "1f126965b4c7ac52d52bd8f48d9f59a244b48b3579a6dec56345c499304c42a6",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mail-send-receive.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 770,
+    "lastModificationSignature": "d9119468c69e5024fefdda3681c2a9795b57918cf67792130e94c0afc70b6c5b",
+    "height": 16
+  }
+}

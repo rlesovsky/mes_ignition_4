@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cup--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 836,
+    "lastModificationSignature": "136036d2e5c7daaa5d650702a33e60c8f33fbdf97d6ec90983a14f4edf2a532f",
+    "height": 16
+  }
+}

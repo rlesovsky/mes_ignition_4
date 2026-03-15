@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "plug-disconnect-slash.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1514,
+    "lastModificationSignature": "95e7cb737e9205803f7e19593b72c009efc96581200c81edec8f84f7261f8079",
+    "height": 16
+  }
+}

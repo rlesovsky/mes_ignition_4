@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "bluetooth.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 816,
+    "lastModificationSignature": "609327dbe5621aff796a0451069614da1e4a46de0b4be24b3ed5b658aad5f614",
+    "height": 16
+  }
+}

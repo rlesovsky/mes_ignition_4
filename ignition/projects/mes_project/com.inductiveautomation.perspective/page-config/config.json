@@ -1,0 +1,75 @@
+{
+  "pages": {
+    "/": {
+      "title": "",
+      "viewPath": "desktop/mes_core/operations/line_main"
+    },
+    "/line": {
+      "title": "",
+      "viewPath": "desktop/mes_core/operations/line_main"
+    },
+    "/product codes": {
+      "title": "",
+      "viewPath": "desktop/mes_core/admin/product_codes"
+    },
+    "/production model": {
+      "title": "",
+      "viewPath": "desktop/mes_core/admin/production_model"
+    },
+    "/work order": {
+      "title": "",
+      "viewPath": "desktop/mes_core/operations/work_order_management"
+    }
+  },
+  "sharedDocks": {
+    "bottom": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "footer",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 32,
+        "viewParams": {},
+        "viewPath": "docks/footer"
+      }
+    ],
+    "cornerPriority": "top-bottom",
+    "left": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "menu",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 45,
+        "viewParams": {},
+        "viewPath": "docks/menu"
+      }
+    ],
+    "top": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "header",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 50,
+        "viewParams": {},
+        "viewPath": "docks/header"
+      }
+    ]
+  }
+}

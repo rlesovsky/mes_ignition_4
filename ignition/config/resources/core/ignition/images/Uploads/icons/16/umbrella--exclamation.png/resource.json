@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "umbrella--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 688,
+    "lastModificationSignature": "e05f85fb114e9d4cfbc616bec061291c1606511cb87531761cd2d717a23c6d46",
+    "height": 16
+  }
+}

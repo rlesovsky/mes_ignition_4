@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "wallet--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 635,
+    "lastModificationSignature": "654a359eaae6f9149ed380b09e93270cbe4db30d7c12b91cf71fc10f23309d94",
+    "height": 16
+  }
+}

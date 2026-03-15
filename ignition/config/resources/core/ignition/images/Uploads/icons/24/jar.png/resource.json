@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "jar.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1045,
+    "lastModificationSignature": "52a412e5c70f9d9153d0c99b93032ff202494fe34224f44a178cc56f0a816054",
+    "height": 24
+  }
+}

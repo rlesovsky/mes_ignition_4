@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "cookie--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 832,
+    "lastModificationSignature": "95fc9167a3e0a3dd0532570d42302dc79b2c83cea12314f5605119e93d7a28bf",
+    "height": 16
+  }
+}

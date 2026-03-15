@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "t-shirt-gray.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 670,
+    "lastModificationSignature": "9d19033e3ed3ae339ea9aaf0e65adda65802b34067fc70e61475537af8d3401d",
+    "height": 16
+  }
+}

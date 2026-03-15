@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Synchronize_24x24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1359,
+    "lastModificationSignature": "37dbbf67b51b9087b4da038e5ee86195e4d7d07bac3eef4cd8d7416c4ac73ae5",
+    "height": 24
+  }
+}

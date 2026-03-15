@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-mathematics.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 320,
+    "lastModificationSignature": "fc37ff2e26586bc636137bcd4fdaba0817dad23788272ace20e8a81b190b274f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "table-delete-column.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 660,
+    "lastModificationSignature": "9e7cdd12393d9ed3a10f5f8cf973125b936de3ddb1663bf88bf2c1270f89be70",
+    "height": 16
+  }
+}

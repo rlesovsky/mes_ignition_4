@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "switch.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 520,
+    "lastModificationSignature": "32251c8bb5de3e8495d3d12c366b524375769224507cf4f22f40612c1b64c0cb",
+    "height": 16
+  }
+}

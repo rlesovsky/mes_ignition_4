@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "dashboard 125x125.png"
+  ],
+  "attributes": {
+    "width": 125,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4586,
+    "lastModificationSignature": "e95f250186d1a8e5854c91ba081c717b28f72868f0d3bc9bebdaca6a149ad374",
+    "height": 125
+  }
+}

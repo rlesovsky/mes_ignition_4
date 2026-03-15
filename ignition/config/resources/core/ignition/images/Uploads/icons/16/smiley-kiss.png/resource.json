@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "smiley-kiss.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 870,
+    "lastModificationSignature": "1cdbf89082a5d61e9ff24a227c64c551c25a96574ca474d4435933435f7a1ef1",
+    "height": 16
+  }
+}

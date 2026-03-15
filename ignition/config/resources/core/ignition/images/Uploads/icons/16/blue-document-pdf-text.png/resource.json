@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-pdf-text.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 847,
+    "lastModificationSignature": "9ff34e30945462f3e05d67f2bd240ddfac3a1cdb979706b3d41c357b04ef6d72",
+    "height": 16
+  }
+}

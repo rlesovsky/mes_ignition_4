@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "layers-alignment-center.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 592,
+    "lastModificationSignature": "08de85ac13c7045c04f1cce1b82f4976a66c4eb0eb52064193b562ef0489563f",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-indent.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 464,
+    "lastModificationSignature": "e439d4ebae2cfd9641de2411e202ad99d2746bf92a42ff3e09e08e818ca9105d",
+    "height": 16
+  }
+}

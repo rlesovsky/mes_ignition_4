@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "service-bell--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 771,
+    "lastModificationSignature": "ce29394b87867dfc33bc34c102da3003dd714d1734e82a63025cdfceb97c8cf0",
+    "height": 16
+  }
+}

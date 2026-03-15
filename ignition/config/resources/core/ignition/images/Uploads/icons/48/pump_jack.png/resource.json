@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pump_jack.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 5167,
+    "lastModificationSignature": "bffefb1c927e7d75fbe6c3501df3a4e5761e794c9af63a65c1f1fdca23154ba2",
+    "height": 38
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "custom": {},
+  "params": {
+    "lineID": 1,
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "params.lineID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 298
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "icon"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "path": "material/timer_off",
+              "style": {
+                "color": "#ef4444",
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "#ffffff",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 18,
+                "fontWeight": 600,
+                "letterSpacing": "-0.3px",
+                "marginLeft": 10
+              },
+              "text": "Downtime Events"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "add"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "path": "material/edit",
+              "style": {
+                "color": "#9ca3af",
+                "cursor": "pointer",
+                "marginRight": 10
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Table_0"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\n\tdbName \u003d \"mes_core\"\n\tlogger \u003d system.util.getLogger(\"ScriptLogger\")\n\t\n\tquery \u003d \"\"\"\n\t\tSELECT\n\t\t\ts.id AS \"ID\",\n\t\t\ts.reasonname AS \"ReasonName\",\n\t\t\ts.reasoncode AS \"ReasonCode\",\n\t\t\ts.startdatetime AS \"StartDateTime\",\n\t\t\ts.enddatetime AS \"EndDateTime\",\n\t\t\tEXTRACT(EPOCH FROM (s.enddatetime - s.startdatetime)) AS \"Total in Seconds\",\n\t\t\ts.note AS \"Note\"\n\t\tFROM statehistory s\n\t\tLEFT JOIN statereason st ON s.statereasonid \u003d st.id\n\t\tWHERE (\n\t\t\tst.recorddowntime \u003d true\n\t\t\tAND s.startdatetime \u003e\u003d ?\n\t\t\tAND s.enddatetime \u003c CURRENT_TIMESTAMP\n\t\t\tAND s.enddatetime \u003e s.startdatetime\n\t\t\tAND s.lineid \u003d ?\n\t\t)\n\t\tOR (\n\t\t\tst.recorddowntime \u003d true\n\t\t\tAND s.lineid \u003d ?\n\t\t\tAND s.enddatetime IS NULL\n\t\t)\n\t\tORDER BY s.startdatetime DESC\n\t\"\"\"\n\t\n\ttry:\n\t\t# Get lineID from view params or tag\n\t\tlineID \u003d 1\n\t\tlogger.info(\"lineID: {}\".format(lineID))\n\t\t\n\t\t# Read startTime tag with quality check\n\t\ttagPath \u003d \"[default]Enterprise/Site/Area/Line 1/Line/Start Time\"\n\t\tstartTimeResult \u003d system.tag.readBlocking([tagPath])[0]\n\t\t\n\t\tif not startTimeResult.quality.isGood():\n\t\t\tlogger.error(\"Start Time tag quality is bad: {}\".format(startTimeResult.quality))\n\t\t\traise ValueError(\"Start Time tag quality is not good\")\n\t\t\n\t\tstartTime \u003d startTimeResult.value\n\t\tlogger.info(\"startTime value: {}\".format(startTime))\n\t\tlogger.info(\"startTime type: {}\".format(type(startTime)))\n\t\t\n\t\t# Check if startTime is null\n\t\tif startTime is None:\n\t\t\tlogger.error(\"Start Time tag value is None\")\n\t\t\traise ValueError(\"Start Time is null\")\n\t\t\n\t\tparams \u003d [startTime, lineID, lineID]\n\t\tlogger.info(\"Query params: {}\".format(params))\n\t\t\n\t\t# Execute the query\n\t\tdata \u003d system.db.runPrepQuery(query, params, dbName)\n\t\tlogger.info(\"Query returned {} rows\".format(data.getRowCount()))\n\t\t\n\t\tcolumn_names \u003d data.getColumnNames()\n\t\tjson_data \u003d system.dataset.toPyDataSet(data)\n\t\t\n\t\tif data.getRowCount() \u003e 0:\n\t\t\tresult \u003d [\n\t\t\t\t{col: row[col] for col in column_names}\n\t\t\t\tfor row in json_data\n\t\t\t]\n\t\telse:\n\t\t\tresult \u003d [\n\t\t\t\t{col: None for col in column_names}\n\t\t\t]\n\t\t\n\t\treturn result\n\t\n\texcept Exception as e:\n\t\tlogger.error(\"Query failed: {}\".format(str(e)))\n\t\treturn [\n\t\t\t{\n\t\t\t\t\u0027ID\u0027: None,\n\t\t\t\t\u0027ReasonName\u0027: None,\n\t\t\t\t\u0027ReasonCode\u0027: None,\n\t\t\t\t\u0027StartDateTime\u0027: None,\n\t\t\t\t\u0027EndDateTime\u0027: None,\n\t\t\t\t\u0027Total in Seconds\u0027: None,\n\t\t\t\t\u0027Note\u0027: None\n\t\t\t}\n\t\t]",
+                  "type": "script"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "bodyStyle": {
+            "backgroundColor": "#101418"
+          },
+          "cells": {
+            "style": {
+              "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+              "padding": "12px 16px"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "ReasonName",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Reason"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "ReasonCode",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Code"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY HH:mm:ss",
+              "editable": false,
+              "field": "StartDateTime",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Start"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY HH:mm:ss",
+              "editable": false,
+              "field": "EndDateTime",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "End"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Total in Seconds",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Duration (s)"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Note",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Note"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            }
+          ],
+          "headerStyle": {
+            "backgroundColor": "#161b22",
+            "borderBottom": "2px solid #ef4444",
+            "color": "#ffffff",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+            "fontSize": "13px",
+            "fontWeight": 600,
+            "letterSpacing": "0.5px",
+            "padding": "12px 16px",
+            "textTransform": "uppercase"
+          },
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "highlight": {
+              "color": "rgba(239, 68, 68, 0.1)"
+            },
+            "striped": {
+              "color": {
+                "even": "#101418",
+                "odd": "#161b22"
+              }
+            },
+            "style": {
+              "color": "#ffffff",
+              "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+              "fontSize": "14px",
+              "fontWeight": 400
+            }
+          },
+          "selection": {
+            "style": {
+              "backgroundColor": "rgba(239, 68, 68, 0.15)",
+              "border": "1px solid #ef4444"
+            }
+          },
+          "style": {
+            "backgroundColor": "transparent",
+            "border": "1px solid rgba(255, 255, 255, 0.08)",
+            "borderRadius": 12,
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+            "margin": 10,
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.table"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#21262d",
+        "border": "1px solid rgba(255, 255, 255, 0.05)",
+        "borderRadius": 0,
+        "padding": 6
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

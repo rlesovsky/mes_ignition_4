@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Pump-vertical.png"
+  ],
+  "attributes": {
+    "width": 250,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 40089,
+    "lastModificationSignature": "fbafad4201cf8632ea31305b46540557371d8a84981470e654299e05a9446d34",
+    "height": 360
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "application-tile.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 463,
+    "lastModificationSignature": "7e88e166b3400dfb78ec4766c6bf557e6cb6f3955064d9bfb72b29b70c2dca5f",
+    "height": 16
+  }
+}

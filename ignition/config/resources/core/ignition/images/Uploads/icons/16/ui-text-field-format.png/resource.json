@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ui-text-field-format.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 307,
+    "lastModificationSignature": "b090dd55a7f9bad01f18f3963b1fe7dc0fc75c2be902914f54aaee431916165d",
+    "height": 16
+  }
+}

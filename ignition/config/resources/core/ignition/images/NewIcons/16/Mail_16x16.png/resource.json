@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Mail_16x16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 502,
+    "lastModificationSignature": "cb02519395766e2f3f0a2600b0ad82408810bdb2fb1e631d2bc78a03f9b67135",
+    "height": 16
+  }
+}

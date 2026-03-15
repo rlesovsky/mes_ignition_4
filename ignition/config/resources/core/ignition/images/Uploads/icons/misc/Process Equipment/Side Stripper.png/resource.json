@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Side Stripper.png"
+  ],
+  "attributes": {
+    "width": 67,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 8517,
+    "lastModificationSignature": "ea7929125d3adf00a2c2a5179eef2a35590dab947bb0cf26466c3fc54817bd2f",
+    "height": 385
+  }
+}

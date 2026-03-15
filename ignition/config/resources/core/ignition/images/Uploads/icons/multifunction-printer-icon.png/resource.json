@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "multifunction-printer-icon.png"
+  ],
+  "attributes": {
+    "width": 256,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 55771,
+    "lastModificationSignature": "71b227a91097e96ddcf79d19e1ec857f118d1a991a5888f2b71246d1f068aab4",
+    "height": 256
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "luggage--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 705,
+    "lastModificationSignature": "4bd526756d3dbdc7f2032a17e0ab4d9e05055c0cce1f37677be23cdca9747fd7",
+    "height": 16
+  }
+}

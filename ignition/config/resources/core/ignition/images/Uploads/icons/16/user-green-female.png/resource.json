@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "user-green-female.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 713,
+    "lastModificationSignature": "91702b176e5ed1e815fed0071030d71a6fa859945fb3cdd4e4ce1308d53091c1",
+    "height": 16
+  }
+}

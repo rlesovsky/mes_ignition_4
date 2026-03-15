@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "magnet--exclamation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 788,
+    "lastModificationSignature": "aa9fd1af4c5635e2c891ae22e030ceb88df6a1e74f444e65aea41f8c6718127f",
+    "height": 16
+  }
+}

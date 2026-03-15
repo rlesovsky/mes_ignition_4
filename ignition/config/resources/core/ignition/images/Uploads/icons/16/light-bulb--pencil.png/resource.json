@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "light-bulb--pencil.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 771,
+    "lastModificationSignature": "f723c8e9d88d380a44cdd15355e71b9b1dfa039c8d15f12db8db3748af1f4556",
+    "height": 16
+  }
+}

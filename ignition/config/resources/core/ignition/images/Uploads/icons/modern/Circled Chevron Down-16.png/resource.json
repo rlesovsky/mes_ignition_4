@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Circled Chevron Down-16.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 382,
+    "lastModificationSignature": "982c5a4aa5455f6b0128777333fe2828c1b9668850e2010cfbd12ef96e249301",
+    "height": 16
+  }
+}

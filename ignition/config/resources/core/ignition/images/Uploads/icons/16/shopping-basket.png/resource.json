@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "shopping-basket.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 679,
+    "lastModificationSignature": "339fe3a2b597e2d1e3cfe4f61db00362c0132b4e0dfcbc9e3982c794e186a342",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "left_round_white.png"
+  ],
+  "attributes": {
+    "width": 32,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 892,
+    "lastModificationSignature": "92cbab703b2649844293d1ae8052745b9c60e571f836ce82f53094d3a68c66bf",
+    "height": 32
+  }
+}

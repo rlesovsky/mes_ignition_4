@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "balance.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 798,
+    "lastModificationSignature": "316d5f20847a80821f8bc1f68935e5c9cd3d005193b40e20d81097be70c26265",
+    "height": 16
+  }
+}

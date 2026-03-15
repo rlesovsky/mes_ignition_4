@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Positive_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3432,
+    "lastModificationSignature": "28406c70bbcdc1e4ae5df7ef7faee727bed7d2ebd72138b01d020272dce4a384",
+    "height": 48
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Chevron Right-28_FILLED.png"
+  ],
+  "attributes": {
+    "width": 28,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 171,
+    "lastModificationSignature": "520663a900bc79ec6e533945123f42dc7fa64ce81d72465912b8d3e1dd8d7406",
+    "height": 28
+  }
+}

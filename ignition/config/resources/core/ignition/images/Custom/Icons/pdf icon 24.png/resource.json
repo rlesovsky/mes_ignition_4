@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pdf icon 24.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 590,
+    "lastModificationSignature": "8dc32ab2a3df3cb8946163efe73e832c29fbbd5bab6d80804b21f69e0c8b96e4",
+    "height": 24
+  }
+}

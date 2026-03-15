@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "image-cast.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 664,
+    "lastModificationSignature": "67c2b8de19f19c1d3e7ea49a22700bb09d004bfb3571b7b2bc3f60900045b395",
+    "height": 16
+  }
+}

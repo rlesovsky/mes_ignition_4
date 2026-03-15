@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Hard Disk_48x48.png"
+  ],
+  "attributes": {
+    "width": 48,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 2107,
+    "lastModificationSignature": "14b7fbeb26f7c8215cbf50167a1332961d2f1b76663d4d10cb0f7145092f52b4",
+    "height": 48
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-resize.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 484,
+    "lastModificationSignature": "cbbac4b63efb2d36e465a3b477d24fa786c27884b2aa84505968ec968cec536f",
+    "height": 16
+  }
+}

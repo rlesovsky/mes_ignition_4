@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-quotation.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 195,
+    "lastModificationSignature": "e92e8a4586e83d6e3fe2e89126b0bb336e110e0beaca10c600198c6ab20b81e2",
+    "height": 16
+  }
+}

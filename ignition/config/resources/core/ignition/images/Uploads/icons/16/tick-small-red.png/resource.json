@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "tick-small-red.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 1162,
+    "lastModificationSignature": "1310a5ca753f02ac21d93fe3801eec37c534eb7a8820168295cb65c85b2e1462",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-turn-180-left.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 742,
+    "lastModificationSignature": "f9fbe555fd3ddffc91b7e6fdb1f99d3117497f0ea7be6e2df583cde4e6c156b9",
+    "height": 16
+  }
+}

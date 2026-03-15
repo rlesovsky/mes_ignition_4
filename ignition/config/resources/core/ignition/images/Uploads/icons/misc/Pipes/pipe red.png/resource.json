@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "pipe red.png"
+  ],
+  "attributes": {
+    "width": 400,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 4201,
+    "lastModificationSignature": "bc8a06bc3c033d334d8f9ede798e0f2565f5be74fd5437d035c3b00f1451e199",
+    "height": 100
+  }
+}

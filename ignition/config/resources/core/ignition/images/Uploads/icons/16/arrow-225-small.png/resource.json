@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "arrow-225-small.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 443,
+    "lastModificationSignature": "693bbd2e96c09ebfd2904d0a2f056ed925fbb9a1bddc36629082ab7a73d7d785",
+    "height": 16
+  }
+}

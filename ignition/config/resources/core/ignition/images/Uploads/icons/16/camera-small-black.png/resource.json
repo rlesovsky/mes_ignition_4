@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "camera-small-black.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 449,
+    "lastModificationSignature": "7ea3cb3147481f9e2b6de2216cff248c0792d6c56b02031fb84ca9a67dbb5aa0",
+    "height": 16
+  }
+}

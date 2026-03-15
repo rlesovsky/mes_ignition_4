@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-break.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 626,
+    "lastModificationSignature": "62db59aa59e697909522e0c303ccfd741c1535b3293ccebeaaa1e267e66c0d7d",
+    "height": 16
+  }
+}

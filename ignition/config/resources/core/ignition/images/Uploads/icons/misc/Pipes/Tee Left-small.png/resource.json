@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "Tee Left-small.png"
+  ],
+  "attributes": {
+    "width": 22,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 3100,
+    "lastModificationSignature": "923ec2a5e1e9eb1b671546b189fb3860cd26b91277a15832d7a88fc63af48989",
+    "height": 34
+  }
+}

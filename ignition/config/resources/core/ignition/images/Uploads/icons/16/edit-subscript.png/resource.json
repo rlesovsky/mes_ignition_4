@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "edit-subscript.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 260,
+    "lastModificationSignature": "58c1e9480f64f874375c227ae8ac78ef9bc98f0d609df3ae142ebd2147456566",
+    "height": 16
+  }
+}

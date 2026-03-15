@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-folder-stand.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 705,
+    "lastModificationSignature": "d9ca4e4764ac0874b1ea632f8c6444a634865ce98b8dce21db3b2b6357111140",
+    "height": 16
+  }
+}

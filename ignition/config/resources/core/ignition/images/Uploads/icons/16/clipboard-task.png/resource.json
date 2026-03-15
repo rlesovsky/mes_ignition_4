@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "clipboard-task.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 605,
+    "lastModificationSignature": "063ef2485185c50968db8775f81ed5eae4c7b0696aa96913b19f4985ea4b58bb",
+    "height": 16
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "blue-document-excel-csv.png"
+  ],
+  "attributes": {
+    "width": 16,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2025-12-23T03:33:59Z"
+    },
+    "size": 789,
+    "lastModificationSignature": "a6ac8b4a442222bd080cf2006c9d55825db3b93bbec257a832e2691e00b27486",
+    "height": 16
+  }
+}
