@@ -161,7 +161,7 @@ cmd_reset_db() {
     docker compose rm -f postgres
 
     info "Removing postgres volume..."
-    docker volume rm "${COMPOSE_PROJECT_NAME:-mes-ignition-4.0}_postgres-data" 2>/dev/null || true
+    docker volume rm "${COMPOSE_PROJECT_NAME:-mes-ignition-4}_postgres-data" 2>/dev/null || true
 
     info "Restarting postgres (will run init-sql scripts)..."
     docker compose up -d postgres

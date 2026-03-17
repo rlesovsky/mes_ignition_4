@@ -5,8 +5,8 @@ Industry 4.0 MES stack built on Ignition 8.3.2 with Docker, PostgreSQL, HiveMQ M
 ## One-Command Deploy
 
 ```bash
-git clone https://github.com/rlesovsky/mes_Ignition_4.0.git
-cd mes_Ignition_4.0
+git clone https://github.com/rlesovsky/mes_ignition_4.git
+cd mes_ignition_4
 cp .env.example .env    # Edit credentials
 chmod +x scripts/*.sh
 ./scripts/mes-stack.sh deploy
@@ -97,7 +97,7 @@ Equipment hierarchy (OF → Dallas → Production/Packaging/QC → Line 1/Line 2
 
 ## Portainer
 
-Deploy via Portainer UI → Stacks → Add Stack → Repository → `https://github.com/rlesovsky/mes_Ignition_4.0`. Or `./scripts/portainer-deploy.sh`.
+Deploy via Portainer UI → Stacks → Add Stack → Repository → `https://github.com/rlesovsky/mes_ignition_4`. Or `./scripts/portainer-deploy.sh`.
 
 ## Git Workflow
 
