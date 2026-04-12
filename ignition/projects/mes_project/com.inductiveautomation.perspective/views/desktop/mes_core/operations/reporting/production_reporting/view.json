@@ -1,0 +1,2121 @@
+{
+  "custom": {
+    "id": 14
+  },
+  "params": {},
+  "propConfig": {
+    "custom.id": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "title"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#22c55e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": 700,
+                        "letterSpacing": "-0.3px"
+                      },
+                      "text": "Line 1 — Run History"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "dateFilter_0"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "options": [
+                        {
+                          "label": "Line 1",
+                          "value": 1
+                        },
+                        {
+                          "label": "Line 2",
+                          "value": 2
+                        }
+                      ],
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #223044",
+                        "borderRadius": 6,
+                        "color": "#a8b8ce",
+                        "fontSize": 12
+                      },
+                      "value": 0
+                    },
+                    "type": "ia.input.dropdown"
+                  },
+                  {
+                    "meta": {
+                      "name": "searchInput"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "placeholder": "Search work order, product code...",
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #223044",
+                        "borderRadius": 6,
+                        "color": "#e2e8f2",
+                        "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                        "fontSize": 13
+                      }
+                    },
+                    "type": "ia.input.text-field"
+                  },
+                  {
+                    "meta": {
+                      "name": "dateFilter"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "options": [
+                        {
+                          "label": "All Time",
+                          "value": 0
+                        },
+                        {
+                          "label": "Last 7 days",
+                          "value": 7
+                        },
+                        {
+                          "label": "Last 30 days",
+                          "value": 30
+                        },
+                        {
+                          "label": "Last 90 days",
+                          "value": 90
+                        }
+                      ],
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #223044",
+                        "borderRadius": 6,
+                        "color": "#a8b8ce",
+                        "fontSize": 12
+                      },
+                      "value": 0
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "searchArea"
+                },
+                "position": {
+                  "basis": "150px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "borderBottom": "1px solid #1b2432",
+                    "gap": 8,
+                    "padding": 12
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "runListTable"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "expression": "{../searchArea/searchInput.props.text} + \u0027|\u0027 + {../searchArea/dateFilter.props.value}"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tlogger \u003d system.util.getLogger(\u0027RunList\u0027)\n\ttry:\n\t\t# Parse the combined expression value\n\t\tparts \u003d str(value).split(\u0027|\u0027) if value is not None else [\u0027\u0027, \u00270\u0027]\n\t\tsearchText \u003d parts[0].strip() if len(parts) \u003e 0 else \u0027\u0027\n\t\tdateFilterVal \u003d int(parts[1].strip()) if len(parts) \u003e 1 and parts[1].strip().isdigit() else 0\n\t\t\n\t\t# Build WHERE conditions\n\t\tconditions \u003d [\"l.name \u003d \u0027Line 1\u0027\"]\n\t\tparams \u003d []\n\t\t\n\t\t# Search filter\n\t\tif searchText is not None and len(searchText) \u003e 0:\n\t\t\tsearchPattern \u003d \u0027%\u0027 + searchText + \u0027%\u0027\n\t\t\tconditions.append(\u0027(w.workorder ILIKE ? OR w.productcode ILIKE ?)\u0027)\n\t\t\tparams.append(searchPattern)\n\t\t\tparams.append(searchPattern)\n\t\t\n\t\t# Date range filter\n\t\tif dateFilterVal \u003e 0:\n\t\t\tconditions.append(\"r.runstartdatetime \u003e\u003d NOW() - INTERVAL \u0027\" + str(dateFilterVal) + \" days\u0027\")\n\t\t\n\t\twhereClause \u003d \u0027 AND \u0027.join(conditions)\n\t\t\n\t\tsql \u003d \"\"\"\n\t\tSELECT r.id, w.workorder, w.productcode, r.oee, r.goodcount,\n\t\t       r.wastecount, r.runstartdatetime,\n\t\t       CASE WHEN r.closed \u003d TRUE THEN \u0027Closed\u0027 ELSE \u0027Open\u0027 END AS status,\n\t\t       r.closed,\n\t\t       r.availability, r.quality, r.performance,\n\t\t       r.runtime, r.unplanneddowntime, r.planneddowntime, r.totaltime,\n\t\t       r.totalcount,\n\t\t       r.startinfeed, r.currentinfeed,\n\t\t       r.startoutfeed, r.currentoutfeed,\n\t\t       r.startwaste, r.currentwaste,\n\t\t       r.runstopdatetime, r.estimatedfinishtime,\n\t\t       s.quantity AS target_qty\n\t\tFROM run r\n\t\tJOIN schedule s ON r.scheduleid \u003d s.id\n\t\tJOIN workorder w ON s.workorderid \u003d w.id\n\t\tJOIN line l ON s.lineid \u003d l.id\n\t\tWHERE \"\"\" + whereClause + \"\"\"\n\t\tORDER BY r.runstartdatetime DESC\n\t\tLIMIT 50\n\t\t\"\"\"\n\t\treturn system.db.runPrepQuery(sql, params, \u0027mes_core\u0027)\n\texcept Exception as e:\n\t\tlogger.error(\u0027RunList error: \u0027 + str(e))\n\t\treturn []",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "bodyStyle": {
+                    "backgroundColor": "#0D1117"
+                  },
+                  "cells": {
+                    "style": {
+                      "borderRight": "1px solid #141C28",
+                      "padding": "8px 10px"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "field": "id",
+                      "header": {
+                        "title": "ID"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "workorder",
+                      "header": {
+                        "style": {
+                          "backgroundColor": "#16202e",
+                          "color": "#4a6080",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": "0.07em",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Work Order"
+                      },
+                      "sortable": true,
+                      "style": {
+                        "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                        "fontSize": 12,
+                        "fontWeight": "500"
+                      },
+                      "visible": true,
+                      "width": 260
+                    },
+                    {
+                      "field": "productcode",
+                      "header": {
+                        "style": {
+                          "backgroundColor": "#16202e",
+                          "color": "#4a6080",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": "0.07em",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Product"
+                      },
+                      "sortable": true,
+                      "visible": true,
+                      "width": 120
+                    },
+                    {
+                      "field": "status",
+                      "header": {
+                        "style": {
+                          "backgroundColor": "#16202e",
+                          "color": "#4a6080",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": "0.07em",
+                          "textTransform": "uppercase"
+                        },
+                        "title": "Status"
+                      },
+                      "justify": "center",
+                      "sortable": true,
+                      "visible": true,
+                      "width": 70
+                    },
+                    {
+                      "field": "oee",
+                      "header": {
+                        "title": "OEE %"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "goodcount",
+                      "header": {
+                        "title": "Good"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "wastecount",
+                      "header": {
+                        "title": "Waste"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "closed",
+                      "header": {
+                        "title": "Closed"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "runstartdatetime",
+                      "header": {
+                        "title": "Start"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "runstopdatetime",
+                      "header": {
+                        "title": "Stop"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "estimatedfinishtime",
+                      "header": {
+                        "title": "Est Finish"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "availability",
+                      "header": {
+                        "title": "Availability"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "quality",
+                      "header": {
+                        "title": "Quality"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "performance",
+                      "header": {
+                        "title": "Performance"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "target_qty",
+                      "header": {
+                        "title": "Target Qty"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "totalcount",
+                      "header": {
+                        "title": "Total Count"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "runtime",
+                      "header": {
+                        "title": "Runtime"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "unplanneddowntime",
+                      "header": {
+                        "title": "Unplanned DT"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "planneddowntime",
+                      "header": {
+                        "title": "Planned DT"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "totaltime",
+                      "header": {
+                        "title": "Total Time"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "startinfeed",
+                      "header": {
+                        "title": "Start Infeed"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "currentinfeed",
+                      "header": {
+                        "title": "Current Infeed"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "startoutfeed",
+                      "header": {
+                        "title": "Start Outfeed"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "currentoutfeed",
+                      "header": {
+                        "title": "Current Outfeed"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "startwaste",
+                      "header": {
+                        "title": "Start Waste"
+                      },
+                      "visible": false
+                    },
+                    {
+                      "field": "currentwaste",
+                      "header": {
+                        "title": "Current Waste"
+                      },
+                      "visible": false
+                    }
+                  ],
+                  "headerStyle": {
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "color": "#4A6080",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": "9px",
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "padding": "6px 10px",
+                    "textTransform": "uppercase"
+                  },
+                  "pager": {
+                    "bottom": false
+                  },
+                  "rows": {
+                    "highlight": {
+                      "color": "rgba(59, 130, 246, 0.08)"
+                    },
+                    "striped": {
+                      "color": {
+                        "even": "#0D1117",
+                        "odd": "#111822"
+                      }
+                    },
+                    "style": {
+                      "color": "#A8B8CE",
+                      "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                      "fontSize": "11px",
+                      "fontWeight": 400
+                    }
+                  },
+                  "selection": {
+                    "style": {
+                      "backgroundColor": "rgba(59, 130, 246, 0.12)",
+                      "borderLeft": "3px solid #3B82F6"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "borderRadius": 0,
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "margin": 10,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "leftPanel"
+            },
+            "position": {
+              "basis": "570px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#0d1117",
+                "borderRight": "1px solid #1b2432",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "woLabel"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({...../leftPanel/runListTable.props.selection.data[0].workorder} !\u003d \u0027\u0027, {...../leftPanel/runListTable.props.selection.data[0].workorder}, \u0027Select a run\u0027)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#e2e8f2",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 16,
+                            "fontWeight": "700",
+                            "letterSpacing": "-0.3px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "subLabel"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({...../leftPanel/runListTable.props.selection.data[0].productcode} !\u003d \u0027\u0027, {...../leftPanel/runListTable.props.selection.data[0].productcode} + \u0027 — Line 1 — HPP Area\u0027, \u0027Browse Line 1 runs on the left\u0027)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4a6080",
+                            "fontSize": 12
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "headerLeft"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": 2
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "oeeBig"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/runListTable.props.selection.data[0].oee"
+                              },
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "percent",
+                                  "type": "format"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#f59e0b",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 28,
+                            "fontWeight": "700"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "oeeLabel"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4a6080",
+                            "fontSize": 9,
+                            "fontWeight": "600",
+                            "letterSpacing": "0.08em"
+                          },
+                          "text": "OVERALL OEE"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "headerRight"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "flex-end",
+                      "direction": "column",
+                      "style": {
+                        "gap": 0
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "detailHeader"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justifyContent": "space-between",
+                  "style": {
+                    "backgroundColor": "#0d1117",
+                    "borderBottom": "1px solid #1b2432",
+                    "padding": "12px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "t"
+                                },
+                                "props": {
+                                  "style": {
+                                    "color": "#7088a8",
+                                    "fontSize": 10,
+                                    "fontWeight": "600",
+                                    "letterSpacing": "0.07em"
+                                  },
+                                  "text": "OEE"
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "cardHead"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "style": {
+                                "backgroundColor": "#16202e",
+                                "borderBottom": "1px solid #1b2432",
+                                "padding": "5px 10px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "availGauge"
+                                },
+                                "position": {
+                                  "basis": "0px",
+                                  "grow": 1
+                                },
+                                "propConfig": {
+                                  "props.series": {
+                                    "binding": {
+                                      "config": {
+                                        "expression": "{......./leftPanel/runListTable.props.selection.data[0]}"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "code": "\ttry:\n\t\tif value is None:\n\t\t\treturn [0]\n\t\td \u003d value[0] if isinstance(value, list) else value\n\t\tv \u003d float(d[\u0027availability\u0027])\n\t\tif v \u003c\u003d 1.0:\n\t\t\tv \u003d v * 100\n\t\treturn [round(v, 1)]\n\texcept:\n\t\treturn [0]",
+                                          "type": "script"
+                                        }
+                                      ],
+                                      "type": "expr"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "options": {
+                                    "chart": {
+                                      "background": "transparent",
+                                      "events": {
+                                        "animationEnd": false,
+                                        "beforeMount": false,
+                                        "beforeResetZoom": false,
+                                        "beforeZoom": false,
+                                        "brushScrolled": false,
+                                        "click": false,
+                                        "dataPointMouseEnter": false,
+                                        "dataPointMouseLeave": false,
+                                        "dataPointSelection": false,
+                                        "legendClick": false,
+                                        "markerClick": false,
+                                        "mounted": false,
+                                        "mouseLeave": false,
+                                        "mouseMove": false,
+                                        "scrolled": false,
+                                        "selection": false,
+                                        "updated": false,
+                                        "xAxisLabelClick": false,
+                                        "zoomed": false
+                                      },
+                                      "height": "100%",
+                                      "sparkline": {
+                                        "enabled": true
+                                      },
+                                      "toolbar": {
+                                        "show": false
+                                      },
+                                      "type": "radialBar"
+                                    },
+                                    "colors": [
+                                      "#22c55e"
+                                    ],
+                                    "labels": [
+                                      "Availability"
+                                    ],
+                                    "plotOptions": {
+                                      "radialBar": {
+                                        "dataLabels": {
+                                          "name": {
+                                            "color": "#4a6080",
+                                            "fontSize": "10px",
+                                            "offsetY": 30,
+                                            "show": true
+                                          },
+                                          "value": {
+                                            "color": "#22c55e",
+                                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                            "fontSize": "20px",
+                                            "fontWeight": "700",
+                                            "formatter": "function(val) { return Math.round(val) + \u0027%\u0027; }",
+                                            "offsetY": -6,
+                                            "show": true
+                                          }
+                                        },
+                                        "hollow": {
+                                          "size": "58%"
+                                        },
+                                        "track": {
+                                          "background": "#1c2838"
+                                        }
+                                      }
+                                    },
+                                    "stroke": {
+                                      "lineCap": "round"
+                                    }
+                                  },
+                                  "style": {
+                                    "overflow": "hidden"
+                                  },
+                                  "type": "radialBar"
+                                },
+                                "type": "kyvislabs.display.apexchart"
+                              },
+                              {
+                                "meta": {
+                                  "name": "qualGauge"
+                                },
+                                "position": {
+                                  "basis": "0px",
+                                  "grow": 1
+                                },
+                                "propConfig": {
+                                  "props.series": {
+                                    "binding": {
+                                      "config": {
+                                        "expression": "{......./leftPanel/runListTable.props.selection.data[0]}"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "code": "\ttry:\n\t\tif value is None:\n\t\t\treturn [0]\n\t\td \u003d value[0] if isinstance(value, list) else value\n\t\tv \u003d float(d[\u0027quality\u0027])\n\t\tif v \u003c\u003d 1.0:\n\t\t\tv \u003d v * 100\n\t\treturn [round(v, 1)]\n\texcept:\n\t\treturn [0]",
+                                          "type": "script"
+                                        }
+                                      ],
+                                      "type": "expr"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "options": {
+                                    "chart": {
+                                      "background": "transparent",
+                                      "events": {
+                                        "animationEnd": false,
+                                        "beforeMount": false,
+                                        "beforeResetZoom": false,
+                                        "beforeZoom": false,
+                                        "brushScrolled": false,
+                                        "click": false,
+                                        "dataPointMouseEnter": false,
+                                        "dataPointMouseLeave": false,
+                                        "dataPointSelection": false,
+                                        "legendClick": false,
+                                        "markerClick": false,
+                                        "mounted": false,
+                                        "mouseLeave": false,
+                                        "mouseMove": false,
+                                        "scrolled": false,
+                                        "selection": false,
+                                        "updated": false,
+                                        "xAxisLabelClick": false,
+                                        "zoomed": false
+                                      },
+                                      "height": "100%",
+                                      "sparkline": {
+                                        "enabled": true
+                                      },
+                                      "toolbar": {
+                                        "show": false
+                                      },
+                                      "type": "radialBar"
+                                    },
+                                    "colors": [
+                                      "#06b6d4"
+                                    ],
+                                    "labels": [
+                                      "Quality"
+                                    ],
+                                    "plotOptions": {
+                                      "radialBar": {
+                                        "dataLabels": {
+                                          "name": {
+                                            "color": "#4a6080",
+                                            "fontSize": "10px",
+                                            "offsetY": 30,
+                                            "show": true
+                                          },
+                                          "value": {
+                                            "color": "#06b6d4",
+                                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                            "fontSize": "20px",
+                                            "fontWeight": "700",
+                                            "formatter": "function(val) { return Math.round(val) + \u0027%\u0027; }",
+                                            "offsetY": -6,
+                                            "show": true
+                                          }
+                                        },
+                                        "hollow": {
+                                          "size": "58%"
+                                        },
+                                        "track": {
+                                          "background": "#1c2838"
+                                        }
+                                      }
+                                    },
+                                    "stroke": {
+                                      "lineCap": "round"
+                                    }
+                                  },
+                                  "style": {
+                                    "overflow": "hidden"
+                                  },
+                                  "type": "radialBar"
+                                },
+                                "type": "kyvislabs.display.apexchart"
+                              }
+                            ],
+                            "meta": {
+                              "name": "gaugeRow1"
+                            },
+                            "position": {
+                              "basis": "0px",
+                              "grow": 1
+                            },
+                            "props": {
+                              "style": {
+                                "gap": 0
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "perfGauge"
+                                },
+                                "position": {
+                                  "basis": "0px",
+                                  "grow": 1
+                                },
+                                "propConfig": {
+                                  "props.series": {
+                                    "binding": {
+                                      "config": {
+                                        "expression": "{......./leftPanel/runListTable.props.selection.data[0]}"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "code": "\ttry:\n\t\tif value is None:\n\t\t\treturn [0]\n\t\td \u003d value[0] if isinstance(value, list) else value\n\t\tv \u003d float(d[\u0027performance\u0027])\n\t\tif v \u003c\u003d 1.0:\n\t\t\tv \u003d v * 100\n\t\treturn [round(v, 1)]\n\texcept:\n\t\treturn [0]",
+                                          "type": "script"
+                                        }
+                                      ],
+                                      "type": "expr"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "options": {
+                                    "chart": {
+                                      "background": "transparent",
+                                      "events": {
+                                        "animationEnd": false,
+                                        "beforeMount": false,
+                                        "beforeResetZoom": false,
+                                        "beforeZoom": false,
+                                        "brushScrolled": false,
+                                        "click": false,
+                                        "dataPointMouseEnter": false,
+                                        "dataPointMouseLeave": false,
+                                        "dataPointSelection": false,
+                                        "legendClick": false,
+                                        "markerClick": false,
+                                        "mounted": false,
+                                        "mouseLeave": false,
+                                        "mouseMove": false,
+                                        "scrolled": false,
+                                        "selection": false,
+                                        "updated": false,
+                                        "xAxisLabelClick": false,
+                                        "zoomed": false
+                                      },
+                                      "height": "100%",
+                                      "sparkline": {
+                                        "enabled": true
+                                      },
+                                      "toolbar": {
+                                        "show": false
+                                      },
+                                      "type": "radialBar"
+                                    },
+                                    "colors": [
+                                      "#3b82f6"
+                                    ],
+                                    "labels": [
+                                      "Performance"
+                                    ],
+                                    "plotOptions": {
+                                      "radialBar": {
+                                        "dataLabels": {
+                                          "name": {
+                                            "color": "#4a6080",
+                                            "fontSize": "10px",
+                                            "offsetY": 30,
+                                            "show": true
+                                          },
+                                          "value": {
+                                            "color": "#3b82f6",
+                                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                            "fontSize": "20px",
+                                            "fontWeight": "700",
+                                            "formatter": "function(val) { return Math.round(val) + \u0027%\u0027; }",
+                                            "offsetY": -6,
+                                            "show": true
+                                          }
+                                        },
+                                        "hollow": {
+                                          "size": "58%"
+                                        },
+                                        "track": {
+                                          "background": "#1c2838"
+                                        }
+                                      }
+                                    },
+                                    "stroke": {
+                                      "lineCap": "round"
+                                    }
+                                  },
+                                  "style": {
+                                    "overflow": "hidden"
+                                  },
+                                  "type": "radialBar"
+                                },
+                                "type": "kyvislabs.display.apexchart"
+                              },
+                              {
+                                "meta": {
+                                  "name": "oeeGauge"
+                                },
+                                "position": {
+                                  "basis": "0px",
+                                  "grow": 1
+                                },
+                                "propConfig": {
+                                  "props.series": {
+                                    "binding": {
+                                      "config": {
+                                        "expression": "{......./leftPanel/runListTable.props.selection.data[0]}"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "code": "\ttry:\n\t\tif value is None:\n\t\t\treturn [0]\n\t\td \u003d value[0] if isinstance(value, list) else value\n\t\tv \u003d float(d[\u0027oee\u0027])\n\t\tif v \u003c\u003d 1.0:\n\t\t\tv \u003d v * 100\n\t\treturn [round(v, 1)]\n\texcept:\n\t\treturn [0]",
+                                          "type": "script"
+                                        }
+                                      ],
+                                      "type": "expr"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "options": {
+                                    "chart": {
+                                      "background": "transparent",
+                                      "events": {
+                                        "animationEnd": false,
+                                        "beforeMount": false,
+                                        "beforeResetZoom": false,
+                                        "beforeZoom": false,
+                                        "brushScrolled": false,
+                                        "click": false,
+                                        "dataPointMouseEnter": false,
+                                        "dataPointMouseLeave": false,
+                                        "dataPointSelection": false,
+                                        "legendClick": false,
+                                        "markerClick": false,
+                                        "mounted": false,
+                                        "mouseLeave": false,
+                                        "mouseMove": false,
+                                        "scrolled": false,
+                                        "selection": false,
+                                        "updated": false,
+                                        "xAxisLabelClick": false,
+                                        "zoomed": false
+                                      },
+                                      "height": "100%",
+                                      "sparkline": {
+                                        "enabled": true
+                                      },
+                                      "toolbar": {
+                                        "show": false
+                                      },
+                                      "type": "radialBar"
+                                    },
+                                    "colors": [
+                                      "#f59e0b"
+                                    ],
+                                    "labels": [
+                                      "OEE"
+                                    ],
+                                    "plotOptions": {
+                                      "radialBar": {
+                                        "dataLabels": {
+                                          "name": {
+                                            "color": "#4a6080",
+                                            "fontSize": "10px",
+                                            "offsetY": 30,
+                                            "show": true
+                                          },
+                                          "value": {
+                                            "color": "#f59e0b",
+                                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                            "fontSize": "20px",
+                                            "fontWeight": "700",
+                                            "formatter": "function(val) { return Math.round(val) + \u0027%\u0027; }",
+                                            "offsetY": -6,
+                                            "show": true
+                                          }
+                                        },
+                                        "hollow": {
+                                          "size": "58%"
+                                        },
+                                        "track": {
+                                          "background": "#1c2838"
+                                        }
+                                      }
+                                    },
+                                    "stroke": {
+                                      "lineCap": "round"
+                                    }
+                                  },
+                                  "style": {
+                                    "overflow": "hidden"
+                                  },
+                                  "type": "radialBar"
+                                },
+                                "type": "kyvislabs.display.apexchart"
+                              }
+                            ],
+                            "meta": {
+                              "name": "gaugeRow2"
+                            },
+                            "position": {
+                              "basis": "0px",
+                              "grow": 1
+                            },
+                            "props": {
+                              "style": {
+                                "gap": 0
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "oeeCard"
+                        },
+                        "position": {
+                          "basis": "600px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #1b2432",
+                            "borderRadius": 6,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "t"
+                                },
+                                "props": {
+                                  "style": {
+                                    "color": "#7088a8",
+                                    "fontSize": 10,
+                                    "fontWeight": "600",
+                                    "letterSpacing": "0.07em"
+                                  },
+                                  "text": "DOWNTIME PARETO"
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "cardHead"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "style": {
+                                "backgroundColor": "#16202e",
+                                "borderBottom": "1px solid #1b2432",
+                                "padding": "5px 10px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "meta": {
+                              "name": "downtimeChart"
+                            },
+                            "position": {
+                              "basis": "0px",
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.series": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{....../leftPanel/runListTable.props.selection.data[0].id}"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\tlogger \u003d system.util.getLogger(\u0027DowntimePareto\u0027)\n\ttry:\n\t\trunID \u003d value\n\t\tif runID is None:\n\t\t\treturn [{\u0027name\u0027: \u0027Duration\u0027, \u0027data\u0027: []}]\n\t\t\n\t\tsql \u003d \"\"\"\n\t\tSELECT sr.reasonname,\n\t\t       sr.planneddowntime,\n\t\t       COUNT(*) AS occurrences,\n\t\t       SUM(\n\t\t           EXTRACT(EPOCH FROM\n\t\t               (COALESCE(sh.enddatetime, NOW()) - sh.startdatetime)\n\t\t           ) / 60\n\t\t       ) AS total_minutes\n\t\tFROM statehistory sh\n\t\tJOIN statereason sr ON sh.statereasonid \u003d sr.id\n\t\tWHERE sh.runid \u003d ?\n\t\t  AND sr.recorddowntime \u003d TRUE\n\t\tGROUP BY sr.reasonname, sr.planneddowntime\n\t\tORDER BY total_minutes DESC\n\t\tLIMIT 8\n\t\t\"\"\"\n\t\tds \u003d system.db.runPrepQuery(sql, [runID], \u0027mes_core\u0027)\n\t\t\n\t\tdata \u003d []\n\t\tfor row in range(ds.getRowCount()):\n\t\t\treason \u003d ds.getValueAt(row, \u0027reasonname\u0027)\n\t\t\tminutes \u003d ds.getValueAt(row, \u0027total_minutes\u0027)\n\t\t\tplanned \u003d ds.getValueAt(row, \u0027planneddowntime\u0027)\n\t\t\tif reason is not None and minutes is not None:\n\t\t\t\tdata.append({\n\t\t\t\t\t\u0027x\u0027: str(reason),\n\t\t\t\t\t\u0027y\u0027: round(float(minutes), 1)\n\t\t\t\t})\n\t\t\n\t\treturn [{\u0027name\u0027: \u0027Duration\u0027, \u0027data\u0027: data}]\n\texcept Exception as e:\n\t\tlogger.error(\u0027DowntimePareto error: \u0027 + str(e))\n\t\treturn [{\u0027name\u0027: \u0027Duration\u0027, \u0027data\u0027: []}]",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "options": {
+                                "chart": {
+                                  "background": "#111822",
+                                  "events": {
+                                    "animationEnd": false,
+                                    "beforeMount": false,
+                                    "beforeResetZoom": false,
+                                    "beforeZoom": false,
+                                    "brushScrolled": false,
+                                    "click": false,
+                                    "dataPointMouseEnter": false,
+                                    "dataPointMouseLeave": false,
+                                    "dataPointSelection": false,
+                                    "legendClick": false,
+                                    "markerClick": false,
+                                    "mounted": false,
+                                    "mouseLeave": false,
+                                    "mouseMove": false,
+                                    "scrolled": false,
+                                    "selection": false,
+                                    "updated": false,
+                                    "xAxisLabelClick": false,
+                                    "zoomed": false
+                                  },
+                                  "height": "100%",
+                                  "toolbar": {
+                                    "show": true
+                                  },
+                                  "type": "bar"
+                                },
+                                "colors": [
+                                  "#ef4444",
+                                  "#f97316",
+                                  "#f59e0b",
+                                  "#eab308",
+                                  "#3b82f6",
+                                  "#06b6d4",
+                                  "#8b5cf6",
+                                  "#ec4899"
+                                ],
+                                "dataLabels": {
+                                  "enabled": true,
+                                  "formatter": "function(val) { return Math.round(val) + \u0027m\u0027; }",
+                                  "style": {
+                                    "colors": [
+                                      "#e2e8f2"
+                                    ],
+                                    "fontSize": "11px"
+                                  }
+                                },
+                                "grid": {
+                                  "borderColor": "#1b2432"
+                                },
+                                "legend": {
+                                  "show": false
+                                },
+                                "plotOptions": {
+                                  "bar": {
+                                    "barHeight": "65%",
+                                    "borderRadius": 3,
+                                    "distributed": true,
+                                    "horizontal": true
+                                  }
+                                },
+                                "theme": {
+                                  "mode": "dark"
+                                },
+                                "tooltip": {
+                                  "theme": "dark",
+                                  "y": {
+                                    "formatter": "function(val) { return Math.round(val) + \u0027 min\u0027; }"
+                                  }
+                                },
+                                "xaxis": {
+                                  "labels": {
+                                    "style": {
+                                      "colors": "#4a6080",
+                                      "fontSize": "10px"
+                                    }
+                                  },
+                                  "title": {
+                                    "style": {
+                                      "color": "#4a6080"
+                                    },
+                                    "text": "Minutes"
+                                  }
+                                },
+                                "yaxis": {
+                                  "labels": {
+                                    "style": {
+                                      "colors": "#a8b8ce",
+                                      "fontSize": "11px"
+                                    }
+                                  }
+                                }
+                              },
+                              "style": {
+                                "overflow": "hidden",
+                                "padding": 4
+                              },
+                              "type": "bar"
+                            },
+                            "type": "kyvislabs.display.apexchart"
+                          }
+                        ],
+                        "meta": {
+                          "name": "downtimeCard"
+                        },
+                        "position": {
+                          "basis": "600px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #1b2432",
+                            "borderRadius": 6,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "row1"
+                    },
+                    "position": {
+                      "basis": "280px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "gap": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "t"
+                                },
+                                "props": {
+                                  "style": {
+                                    "color": "#7088a8",
+                                    "fontSize": 10,
+                                    "fontWeight": "600",
+                                    "letterSpacing": "0.07em"
+                                  },
+                                  "text": "HOURLY PRODUCTION"
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "cardHead"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "style": {
+                                "backgroundColor": "#16202e",
+                                "borderBottom": "1px solid #1b2432",
+                                "padding": "5px 10px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "meta": {
+                              "name": "productionChart"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.series": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{....../leftPanel/runListTable.props.selection.data[0].id}"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\tlogger \u003d system.util.getLogger(\u0027ProductionChart\u0027)\n\ttry:\n\t\trunID \u003d value\n\t\tif runID is None:\n\t\t\treturn [\n\t\t\t\t{\u0027name\u0027: \u0027Good Count\u0027, \u0027type\u0027: \u0027area\u0027, \u0027data\u0027: []},\n\t\t\t\t{\u0027name\u0027: \u0027Waste Count\u0027, \u0027type\u0027: \u0027column\u0027, \u0027data\u0027: []}\n\t\t\t]\n\t\t\n\t\tsql \u003d \"\"\"\n\t\tSELECT EXTRACT(HOUR FROM \"TimeStamp\") as hour,\n\t\t       SUM(CASE WHEN counttypeid \u003d 2 THEN count ELSE 0 END) as good,\n\t\t       SUM(CASE WHEN counttypeid \u003d 3 THEN count ELSE 0 END) as waste\n\t\tFROM counthistory\n\t\tWHERE runid \u003d ?\n\t\t  AND counttypeid IN (2, 3)\n\t\t  AND count \u003e 0\n\t\tGROUP BY DATE(\"TimeStamp\"), EXTRACT(HOUR FROM \"TimeStamp\")\n\t\tORDER BY DATE(\"TimeStamp\"), EXTRACT(HOUR FROM \"TimeStamp\")\n\t\t\"\"\"\n\t\tds \u003d system.db.runPrepQuery(sql, [runID], \u0027mes_core\u0027)\n\t\t\n\t\tgoodData \u003d []\n\t\twasteData \u003d []\n\t\tfor row in range(ds.getRowCount()):\n\t\t\thour \u003d ds.getValueAt(row, \u0027hour\u0027)\n\t\t\tgood \u003d ds.getValueAt(row, \u0027good\u0027)\n\t\t\twaste \u003d ds.getValueAt(row, \u0027waste\u0027)\n\t\t\tif hour is not None:\n\t\t\t\tlabel \u003d \u0027{}:00\u0027.format(int(hour))\n\t\t\t\tgoodData.append({\u0027x\u0027: label, \u0027y\u0027: int(good) if good else 0})\n\t\t\t\twasteData.append({\u0027x\u0027: label, \u0027y\u0027: int(waste) if waste else 0})\n\t\t\n\t\treturn [\n\t\t\t{\u0027name\u0027: \u0027Good Count\u0027, \u0027type\u0027: \u0027area\u0027, \u0027data\u0027: goodData},\n\t\t\t{\u0027name\u0027: \u0027Waste Count\u0027, \u0027type\u0027: \u0027column\u0027, \u0027data\u0027: wasteData}\n\t\t]\n\texcept Exception as e:\n\t\tlogger.error(\u0027ProductionChart error: \u0027 + str(e))\n\t\treturn [\n\t\t\t{\u0027name\u0027: \u0027Good Count\u0027, \u0027type\u0027: \u0027area\u0027, \u0027data\u0027: []},\n\t\t\t{\u0027name\u0027: \u0027Waste Count\u0027, \u0027type\u0027: \u0027column\u0027, \u0027data\u0027: []}\n\t\t]",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "options": {
+                                "chart": {
+                                  "background": "#111822",
+                                  "events": {
+                                    "animationEnd": false,
+                                    "beforeMount": false,
+                                    "beforeResetZoom": false,
+                                    "beforeZoom": false,
+                                    "brushScrolled": false,
+                                    "click": false,
+                                    "dataPointMouseEnter": false,
+                                    "dataPointMouseLeave": false,
+                                    "dataPointSelection": false,
+                                    "legendClick": false,
+                                    "markerClick": false,
+                                    "mounted": false,
+                                    "mouseLeave": false,
+                                    "mouseMove": false,
+                                    "scrolled": false,
+                                    "selection": false,
+                                    "updated": false,
+                                    "xAxisLabelClick": false,
+                                    "zoomed": false
+                                  },
+                                  "height": "100%",
+                                  "toolbar": {
+                                    "show": true
+                                  },
+                                  "type": "line"
+                                },
+                                "colors": [
+                                  "#22c55e",
+                                  "#f97316"
+                                ],
+                                "dataLabels": {
+                                  "enabled": false
+                                },
+                                "fill": {
+                                  "gradient": {
+                                    "opacityFrom": 0.3,
+                                    "opacityTo": 0.05,
+                                    "shadeIntensity": 1,
+                                    "stops": [
+                                      0,
+                                      100
+                                    ]
+                                  },
+                                  "opacity": [
+                                    1,
+                                    0.9
+                                  ],
+                                  "type": [
+                                    "gradient",
+                                    "solid"
+                                  ]
+                                },
+                                "grid": {
+                                  "borderColor": "#1b2432",
+                                  "strokeDashArray": 3
+                                },
+                                "legend": {
+                                  "fontSize": "11px",
+                                  "horizontalAlign": "left",
+                                  "labels": {
+                                    "colors": "#7088a8"
+                                  },
+                                  "markers": {
+                                    "height": 8,
+                                    "radius": 2,
+                                    "width": 8
+                                  },
+                                  "position": "top"
+                                },
+                                "markers": {
+                                  "colors": [
+                                    "#22c55e",
+                                    "#f97316"
+                                  ],
+                                  "size": [
+                                    3,
+                                    0
+                                  ],
+                                  "strokeWidth": 0
+                                },
+                                "plotOptions": {
+                                  "bar": {
+                                    "borderRadius": 3,
+                                    "columnWidth": "50%"
+                                  }
+                                },
+                                "stroke": {
+                                  "curve": "smooth",
+                                  "width": [
+                                    2,
+                                    0
+                                  ]
+                                },
+                                "theme": {
+                                  "mode": "dark"
+                                },
+                                "tooltip": {
+                                  "shared": true,
+                                  "theme": "dark",
+                                  "y": {
+                                    "formatter": "function(val) { return val + \u0027 units\u0027; }"
+                                  }
+                                },
+                                "xaxis": {
+                                  "axisBorder": {
+                                    "color": "#1b2432"
+                                  },
+                                  "axisTicks": {
+                                    "color": "#1b2432"
+                                  },
+                                  "labels": {
+                                    "style": {
+                                      "colors": "#4a6080",
+                                      "fontSize": "10px"
+                                    }
+                                  },
+                                  "type": "category"
+                                },
+                                "yaxis": [
+                                  {
+                                    "labels": {
+                                      "formatter": "function(val) { return Math.round(val); }",
+                                      "style": {
+                                        "colors": "#4a6080",
+                                        "fontSize": "10px"
+                                      }
+                                    },
+                                    "min": 0,
+                                    "title": {
+                                      "style": {
+                                        "color": "#22c55e",
+                                        "fontSize": "10px"
+                                      },
+                                      "text": "Good Count"
+                                    }
+                                  },
+                                  {
+                                    "labels": {
+                                      "formatter": "function(val) { return Math.round(val); }",
+                                      "style": {
+                                        "colors": "#4a6080",
+                                        "fontSize": "10px"
+                                      }
+                                    },
+                                    "min": 0,
+                                    "opposite": true,
+                                    "title": {
+                                      "style": {
+                                        "color": "#f97316",
+                                        "fontSize": "10px"
+                                      },
+                                      "text": "Waste Count"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "overflow": "hidden",
+                                "padding": 4
+                              }
+                            },
+                            "type": "kyvislabs.display.apexchart"
+                          }
+                        ],
+                        "meta": {
+                          "name": "productionCard"
+                        },
+                        "position": {
+                          "basis": "300px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #1b2432",
+                            "borderRadius": 6,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "t"
+                                },
+                                "position": {
+                                  "grow": 1
+                                },
+                                "props": {
+                                  "style": {
+                                    "color": "#7088a8",
+                                    "fontSize": 10,
+                                    "fontWeight": "600",
+                                    "letterSpacing": "0.07em"
+                                  },
+                                  "text": "DEFECT LOG"
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "defectCount"
+                                },
+                                "position": {
+                                  "shrink": 0
+                                },
+                                "propConfig": {
+                                  "props.style.color": {
+                                    "binding": {
+                                      "config": {
+                                        "expression": "if({......./leftPanel/runListTable.props.selection.data[0].id} \u003e 0, \u0027#ef4444\u0027, \u0027#4a6080\u0027)"
+                                      },
+                                      "type": "expr"
+                                    }
+                                  },
+                                  "props.text": {
+                                    "binding": {
+                                      "config": {
+                                        "expression": "{......./leftPanel/runListTable.props.selection.data[0].id}"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "code": "\n\ttry:\n\t\trunID \u003d value\n\t\tif runID is None or runID \u003d\u003d 0:\n\t\t\treturn \u0027No run selected\u0027\n\t\t\n\t\tsql \u003d \"SELECT COALESCE(SUM(quantity), 0) as total FROM defect_log WHERE run_id \u003d ?\"\n\t\tresult \u003d system.db.runPrepQuery(sql, [runID], \u0027mes_core\u0027)\n\t\ttotal \u003d result.getValueAt(0, \u0027total\u0027)\n\t\t\n\t\tif total \u003d\u003d 0:\n\t\t\treturn \u0027No defects\u0027\n\t\telse:\n\t\t\treturn str(int(total)) + \u0027 defects\u0027\n\t\t\n\texcept:\n\t\treturn \u0027\u0027",
+                                          "type": "script"
+                                        }
+                                      ],
+                                      "type": "expr"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "style": {
+                                    "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                    "fontSize": 10,
+                                    "fontWeight": "600"
+                                  }
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "cardHead"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "alignItems": "center",
+                              "style": {
+                                "backgroundColor": "#16202e",
+                                "borderBottom": "1px solid #1b2432",
+                                "padding": "5px 10px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "meta": {
+                              "name": "defectTable"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.data": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{....../leftPanel/runListTable.props.selection.data[0].id}"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "code": "\n\tlogger \u003d system.util.getLogger(\"DefectTable\")\n\t\n\ttry:\n\t\trunID \u003d value\n\t\t\n\t\tif runID is None or runID \u003d\u003d 0:\n\t\t\treturn []\n\t\t\n\t\tsql_query \u003d \"\"\"\n\t\tSELECT dfl.defect_code,\n\t\t       dfl.defect_description AS description,\n\t\t       dfl.area,\n\t\t       dl.quantity,\n\t\t       TO_CHAR(dl.\"timestamp\", \u0027MM/DD/YY HH24:MI:SS\u0027) AS timestamp\n\t\tFROM defect_log dl\n\t\tJOIN defect_list dfl ON dl.defect_code_id \u003d dfl.id\n\t\tWHERE dl.run_id \u003d ?\n\t\tORDER BY dl.\"timestamp\" DESC\n\t\t\"\"\"\n\t\t\n\t\treturn system.db.runPrepQuery(sql_query, [runID], \u0027mes_core\u0027)\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Defect table error: \" + str(e))\n\t\treturn []",
+                                      "type": "script"
+                                    }
+                                  ],
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "bodyStyle": {
+                                "backgroundColor": "#0D1117"
+                              },
+                              "cells": {
+                                "style": {
+                                  "borderRight": "1px solid #141C28",
+                                  "padding": "8px 10px"
+                                }
+                              },
+                              "columns": [
+                                {
+                                  "field": "defect_code",
+                                  "header": {
+                                    "style": {
+                                      "backgroundColor": "#16202e",
+                                      "color": "#4a6080",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": "0.07em",
+                                      "textTransform": "uppercase"
+                                    },
+                                    "title": "Code"
+                                  },
+                                  "sortable": true,
+                                  "style": {
+                                    "color": "#ef4444",
+                                    "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                    "fontSize": 12,
+                                    "fontWeight": "600"
+                                  },
+                                  "visible": true,
+                                  "width": 110
+                                },
+                                {
+                                  "field": "description",
+                                  "header": {
+                                    "style": {
+                                      "backgroundColor": "#16202e",
+                                      "color": "#4a6080",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": "0.07em",
+                                      "textTransform": "uppercase"
+                                    },
+                                    "title": "Description"
+                                  },
+                                  "sortable": true,
+                                  "style": {
+                                    "fontSize": 12
+                                  },
+                                  "visible": true
+                                },
+                                {
+                                  "field": "area",
+                                  "header": {
+                                    "style": {
+                                      "backgroundColor": "#16202e",
+                                      "color": "#4a6080",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": "0.07em",
+                                      "textTransform": "uppercase"
+                                    },
+                                    "title": "Area"
+                                  },
+                                  "sortable": true,
+                                  "style": {
+                                    "fontSize": 12
+                                  },
+                                  "visible": true,
+                                  "width": 100
+                                },
+                                {
+                                  "field": "quantity",
+                                  "header": {
+                                    "style": {
+                                      "backgroundColor": "#16202e",
+                                      "color": "#4a6080",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": "0.07em",
+                                      "textTransform": "uppercase"
+                                    },
+                                    "title": "Qty"
+                                  },
+                                  "justify": "center",
+                                  "sortable": true,
+                                  "style": {
+                                    "color": "#ffffff",
+                                    "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                    "fontSize": 13,
+                                    "fontWeight": "700"
+                                  },
+                                  "visible": true,
+                                  "width": 70
+                                },
+                                {
+                                  "field": "timestamp",
+                                  "header": {
+                                    "style": {
+                                      "backgroundColor": "#16202e",
+                                      "color": "#4a6080",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": "0.07em",
+                                      "textTransform": "uppercase"
+                                    },
+                                    "title": "Time"
+                                  },
+                                  "sortable": true,
+                                  "style": {
+                                    "color": "#6b7280",
+                                    "fontSize": 11
+                                  },
+                                  "visible": true,
+                                  "width": 150
+                                }
+                              ],
+                              "headerStyle": {
+                                "backgroundColor": "#16202E",
+                                "borderBottom": "1px solid #1B2432",
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                "fontSize": "9px",
+                                "fontWeight": 600,
+                                "letterSpacing": "0.07em",
+                                "padding": "6px 10px",
+                                "textTransform": "uppercase"
+                              },
+                              "pager": {
+                                "bottom": false
+                              },
+                              "rows": {
+                                "highlight": {
+                                  "color": "rgba(59, 130, 246, 0.08)"
+                                },
+                                "striped": {
+                                  "color": {
+                                    "even": "#0D1117",
+                                    "odd": "#111822"
+                                  }
+                                },
+                                "style": {
+                                  "color": "#A8B8CE",
+                                  "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                  "fontSize": "11px",
+                                  "fontWeight": 400
+                                }
+                              },
+                              "selection": {
+                                "style": {
+                                  "backgroundColor": "rgba(59, 130, 246, 0.12)",
+                                  "borderLeft": "3px solid #3B82F6"
+                                }
+                              },
+                              "style": {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "borderRadius": 0,
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                "margin": 0,
+                                "overflow": "hidden"
+                              }
+                            },
+                            "type": "ia.display.table"
+                          }
+                        ],
+                        "meta": {
+                          "name": "defectTableCard"
+                        },
+                        "position": {
+                          "basis": "300px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #1b2432",
+                            "borderRadius": 6,
+                            "overflow": "hidden",
+                            "padding": 0
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "row2"
+                    },
+                    "position": {
+                      "basis": "240px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "gap": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "t"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#7088a8",
+                                "fontSize": 10,
+                                "fontWeight": "600",
+                                "letterSpacing": "0.07em"
+                              },
+                              "text": "LINE 1 STATE TIMELINE"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "cardHead"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "backgroundColor": "#16202e",
+                            "borderBottom": "1px solid #1b2432",
+                            "padding": "5px 10px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "stateChart"
+                        },
+                        "position": {
+                          "basis": "0px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.series": {
+                            "binding": {
+                              "config": {
+                                "expression": "{...../leftPanel/runListTable.props.selection.data[0].id}"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tlogger \u003d system.util.getLogger(\u0027StateTimeline\u0027)\n\ttry:\n\t\trunID \u003d value\n\t\tif runID is None:\n\t\t\treturn []\n\t\t\n\t\tsql \u003d \"\"\"\n\t\tSELECT sh.startdatetime, sh.enddatetime, sh.reasonname,\n\t\t       COALESCE(sr.planneddowntime, FALSE) AS planned,\n\t\t       COALESCE(sr.recorddowntime, FALSE) AS is_downtime\n\t\tFROM statehistory sh\n\t\tLEFT JOIN statereason sr ON sh.statereasonid \u003d sr.id\n\t\tWHERE sh.runid \u003d ?\n\t\tORDER BY sh.startdatetime\n\t\t\"\"\"\n\t\tds \u003d system.db.runPrepQuery(sql, [runID], \u0027mes_core\u0027)\n\t\t\n\t\trunning \u003d []\n\t\tunplanned \u003d []\n\t\tplanned \u003d []\n\t\t\n\t\tfor row in range(ds.getRowCount()):\n\t\t\tstart \u003d ds.getValueAt(row, \u0027startdatetime\u0027)\n\t\t\tend \u003d ds.getValueAt(row, \u0027enddatetime\u0027)\n\t\t\tis_dt \u003d ds.getValueAt(row, \u0027is_downtime\u0027)\n\t\t\tis_planned \u003d ds.getValueAt(row, \u0027planned\u0027)\n\t\t\t\n\t\t\tif start is None or end is None:\n\t\t\t\tcontinue\n\t\t\t\n\t\t\tentry \u003d {\u0027x\u0027: \u0027Line 1\u0027, \u0027y\u0027: [int(start.getTime()), int(end.getTime())]}\n\t\t\t\n\t\t\tif not is_dt:\n\t\t\t\trunning.append(entry)\n\t\t\telif is_planned:\n\t\t\t\tplanned.append(entry)\n\t\t\telse:\n\t\t\t\tunplanned.append(entry)\n\t\t\n\t\treturn [\n\t\t\t{\u0027name\u0027: \u0027Running\u0027, \u0027data\u0027: running},\n\t\t\t{\u0027name\u0027: \u0027Unplanned DT\u0027, \u0027data\u0027: unplanned},\n\t\t\t{\u0027name\u0027: \u0027Planned DT\u0027, \u0027data\u0027: planned}\n\t\t]\n\texcept Exception as e:\n\t\tlogger.error(\u0027StateTimeline error: \u0027 + str(e))\n\t\treturn []",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "options": {
+                            "chart": {
+                              "background": "#111822",
+                              "events": {
+                                "animationEnd": false,
+                                "beforeMount": false,
+                                "beforeResetZoom": false,
+                                "beforeZoom": false,
+                                "brushScrolled": false,
+                                "click": false,
+                                "dataPointMouseEnter": false,
+                                "dataPointMouseLeave": false,
+                                "dataPointSelection": false,
+                                "legendClick": false,
+                                "markerClick": false,
+                                "mounted": false,
+                                "mouseLeave": false,
+                                "mouseMove": false,
+                                "scrolled": false,
+                                "selection": false,
+                                "updated": false,
+                                "xAxisLabelClick": false,
+                                "zoomed": false
+                              },
+                              "height": "100%",
+                              "toolbar": {
+                                "show": true
+                              },
+                              "type": "rangeBar"
+                            },
+                            "colors": [
+                              "#22c55e",
+                              "#ef4444",
+                              "#3b82f6"
+                            ],
+                            "grid": {
+                              "borderColor": "#1b2432"
+                            },
+                            "legend": {
+                              "labels": {
+                                "colors": "#7088a8"
+                              },
+                              "position": "bottom"
+                            },
+                            "plotOptions": {
+                              "bar": {
+                                "barHeight": "60%",
+                                "horizontal": true,
+                                "rangeBarGroupRows": true
+                              }
+                            },
+                            "theme": {
+                              "mode": "dark"
+                            },
+                            "tooltip": {
+                              "theme": "dark"
+                            },
+                            "xaxis": {
+                              "labels": {
+                                "datetimeFormatter": {
+                                  "hour": "HH:mm"
+                                },
+                                "style": {
+                                  "colors": "#4a6080",
+                                  "fontSize": "10px"
+                                }
+                              },
+                              "type": "datetime"
+                            },
+                            "yaxis": {
+                              "labels": {
+                                "style": {
+                                  "colors": "#a8b8ce",
+                                  "fontSize": "11px"
+                                }
+                              }
+                            }
+                          },
+                          "style": {
+                            "overflow": "hidden",
+                            "padding": 4
+                          },
+                          "type": "rangeBar"
+                        },
+                        "type": "kyvislabs.display.apexchart"
+                      }
+                    ],
+                    "meta": {
+                      "name": "stateTimelineCard"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #1b2432",
+                        "borderRadius": 6,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "chartsArea"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "gap": 10,
+                    "padding": 10
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "rightPanel"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#0a0e14"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "runHistoryRoot"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "custom.runData": {
+            "binding": {
+              "config": {
+                "expression": "{this.custom.selectedRunId}"
+              },
+              "transforms": [
+                {
+                  "code": "\tlogger \u003d system.util.getLogger(\u0027RunHistoryDetail\u0027)\n\ttry:\n\t\trunID \u003d value\n\t\tif runID is None:\n\t\t\treturn None\n\t\t\n\t\tsql \u003d \"\"\"\n\t\tSELECT r.id, r.runstartdatetime, r.runstopdatetime, r.estimatedfinishtime,\n\t\t       r.totalcount, r.goodcount, r.wastecount,\n\t\t       r.startinfeed, r.currentinfeed, r.startoutfeed, r.currentoutfeed,\n\t\t       r.startwaste, r.currentwaste,\n\t\t       r.availability, r.performance, r.quality, r.oee,\n\t\t       r.runtime, r.unplanneddowntime, r.planneddowntime, r.totaltime,\n\t\t       r.closed,\n\t\t       s.quantity AS target_qty,\n\t\t       w.workorder, w.productcode,\n\t\t       l.name AS line_name, a.name AS area_name\n\t\tFROM run r\n\t\tJOIN schedule s ON r.scheduleid \u003d s.id\n\t\tJOIN workorder w ON s.workorderid \u003d w.id\n\t\tJOIN line l ON s.lineid \u003d l.id\n\t\tJOIN area a ON l.parentid \u003d a.id\n\t\tWHERE r.id \u003d ?\n\t\t\"\"\"\n\t\tds \u003d system.db.runPrepQuery(sql, [runID], \u0027mes_core\u0027)\n\t\tif ds.getRowCount() \u003d\u003d 0:\n\t\t\treturn None\n\t\t\n\t\tresult \u003d {}\n\t\tfor col in range(ds.getColumnCount()):\n\t\t\tcolName \u003d ds.getColumnName(col)\n\t\t\tresult[colName] \u003d ds.getValueAt(0, col)\n\t\t\n\t\treturn result\n\texcept Exception as e:\n\t\tlogger.error(\u0027RunData error: \u0027 + str(e))\n\t\treturn None",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "custom.selectedRunId": {
+            "binding": {
+              "config": {
+                "expression": "{./leftPanel/runListTable.props.selection}"
+              },
+              "transforms": [
+                {
+                  "code": "\ttry:\n\t\tif value is None or len(value) \u003d\u003d 0:\n\t\t\treturn None\n\t\trowIndex \u003d value[0]\n\t\tdata \u003d self.getSibling(\u0027leftPanel\u0027).getChild(\u0027runListTable\u0027).props.data\n\t\tif data is not None and rowIndex \u003c len(data):\n\t\t\treturn data[rowIndex][\u0027id\u0027]\n\t\treturn None\n\texcept:\n\t\treturn None",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#0a0e14",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

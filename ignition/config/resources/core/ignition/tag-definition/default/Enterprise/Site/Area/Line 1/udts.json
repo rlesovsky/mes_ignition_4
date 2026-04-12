@@ -5,6 +5,11 @@
     "tagType": "UdtInstance"
   },
   {
+    "name": "Maintain X",
+    "typeId": "mes_custom/maintainx",
+    "tagType": "UdtInstance"
+  },
+  {
     "name": "Line",
     "typeId": "mes_core/Line",
     "parameters": {

@@ -1,5 +1,18 @@
 {
-  "custom": {},
+  "custom": {
+    "showCreateForm": false
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\t\n\tself.getChild(\"root\").getChild(\"root\").custom.selectedLineId \u003d 0\n\tself.getChild(\"root\").getChild(\"root\").custom.selectedLineName \u003d \u0027\u0027\n\tself.getChild(\"root\").getChild(\"root\").custom.showAssignProduct \u003d False\n\tself.getChild(\"root\").getChild(\"root\").custom.showCreateProduct \u003d False"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
   "params": {},
   "props": {
     "defaultSize": {
@@ -17,35 +30,21 @@
                 "children": [
                   {
                     "meta": {
-                      "name": "icon"
-                    },
-                    "props": {
-                      "classes": "views/icons_blue",
-                      "path": "material/account_tree",
-                      "style": {
-                        "color": "#3b82f6",
-                        "fontSize": "22px"
-                      }
-                    },
-                    "type": "ia.display.icon"
-                  },
-                  {
-                    "meta": {
                       "name": "title"
                     },
                     "position": {
                       "grow": 1
                     },
                     "props": {
-                      "classes": "mes-title-primary",
                       "style": {
-                        "color": "var(--mes-text-primary, #ffffff)",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": "16px",
-                        "fontWeight": "600",
-                        "letterSpacing": "-0.3px"
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textTransform": "uppercase"
                       },
-                      "text": "Data Configuration"
+                      "text": "DATA CONFIGURATION"
                     },
                     "type": "ia.display.label"
                   }
@@ -54,174 +53,253 @@
                   "name": "header"
                 },
                 "position": {
-                  "basis": "56px",
+                  "basis": "32px",
                   "shrink": 0
                 },
                 "props": {
                   "alignItems": "center",
-                  "classes": "mes-card-header",
                   "style": {
-                    "backgroundColor": "transparent",
-                    "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                    "gap": "12px",
-                    "padding": "16px 20px"
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "5px 12px"
                   }
                 },
                 "type": "ia.container.flex"
               },
               {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "sectionLabel"
+                    },
+                    "position": {
+                      "basis": "20px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 9,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "marginBottom": 6,
+                        "paddingLeft": 10,
+                        "textTransform": "uppercase"
+                      },
+                      "text": "EQUIPMENT HIERARCHY"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "breadcrumb"
+                    },
+                    "position": {
+                      "basis": "18px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#2A3A50",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 11,
+                        "marginBottom": 4,
+                        "paddingLeft": 10
+                      },
+                      "text": "  Enterprise / Site / Area"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tself.parent.parent.parent.parent.getChild(\"root\").custom.selectedLineId \u003d 1\n\tself.parent.parent.parent.parent.getChild(\"root\").custom.selectedLineName \u003d \u0027Line 1\u0027"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "line1Btn"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "rgba(34, 197, 94, 0.1)",
+                        "borderColor": "transparent",
+                        "borderLeftColor": "#22C55E",
+                        "borderLeftWidth": 3,
+                        "borderRadius": 4,
+                        "borderStyle": "solid",
+                        "borderWidth": 0,
+                        "paddingLeft": 12,
+                        "textAlign": "left"
+                      },
+                      "text": "Line 1",
+                      "textStyle": {
+                        "color": "#E2E8F0",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 13,
+                        "fontWeight": 500
+                      }
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tself.parent.parent.parent.parent.getChild(\"root\").custom.selectedLineId \u003d 2\n\tself.parent.parent.parent.parent.getChild(\"root\").custom.selectedLineName \u003d \u0027Line 2\u0027"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "line2Btn"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "borderColor": "transparent",
+                        "borderLeftColor": "transparent",
+                        "borderLeftWidth": 3,
+                        "borderRadius": 4,
+                        "borderStyle": "solid",
+                        "borderWidth": 0,
+                        "paddingLeft": 12,
+                        "textAlign": "left"
+                      },
+                      "text": "Line 2",
+                      "textStyle": {
+                        "color": "#A8B8CE",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 13,
+                        "fontWeight": 400
+                      }
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
                 "meta": {
-                  "name": "Tree"
+                  "name": "navList"
                 },
                 "position": {
                   "grow": 1
                 },
                 "props": {
-                  "appearance": {
-                    "defaultNodeIcons": {
-                      "collapsed": {
-                        "path": "material/folder",
-                        "style": {
-                          "color": "#f59e0b"
-                        }
-                      },
-                      "empty": {
-                        "path": "material/circle",
-                        "style": {
-                          "color": "#6b7280",
-                          "fontSize": "8px"
-                        }
-                      },
-                      "expanded": {
-                        "path": "material/folder_open",
-                        "style": {
-                          "color": "#f59e0b"
-                        }
-                      }
-                    },
-                    "expandIcons": {
-                      "collapsed": {
-                        "path": "material/chevron_right",
-                        "style": {
-                          "color": "#6b7280"
-                        }
-                      },
-                      "expanded": {
-                        "path": "material/expand_more",
-                        "style": {
-                          "color": "#9ca3af"
-                        }
-                      }
-                    },
-                    "hoverStyle": {
-                      "backgroundColor": "rgba(255, 255, 255, 0.05)"
-                    },
-                    "itemStyle": {
-                      "borderRadius": "6px",
-                      "color": "var(--mes-text-primary, #ffffff)",
-                      "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                      "fontSize": "13px",
-                      "fontWeight": "400",
-                      "marginBottom": "2px",
-                      "padding": "8px 12px"
-                    },
-                    "selectedStyle": {
-                      "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                      "borderLeft": "3px solid #10b981",
-                      "borderRadius": "8px"
-                    }
-                  },
-                  "items": [
-                    {
-                      "data": "I am string data for Item 1",
-                      "expanded": true,
-                      "icon": {
-                        "color": "#3b82f6",
-                        "path": "material/corporate_fare"
-                      },
-                      "items": [
-                        {
-                          "data": {
-                            "someKey": "Information here."
-                          },
-                          "expanded": true,
-                          "icon": {
-                            "color": "#9ca3af",
-                            "path": "material/business",
-                            "style": {}
-                          },
-                          "items": [
-                            {
-                              "data": {},
-                              "expanded": true,
-                              "icon": {
-                                "color": "#9ca3af",
-                                "path": "material/domain",
-                                "style": {}
-                              },
-                              "items": [
-                                {
-                                  "data": {},
-                                  "expanded": false,
-                                  "icon": {
-                                    "color": "#10b981",
-                                    "path": "material/precision_manufacturing"
-                                  },
-                                  "items": [],
-                                  "label": "Line 1"
-                                },
-                                {
-                                  "data": {},
-                                  "expanded": false,
-                                  "icon": {
-                                    "color": "#10b981",
-                                    "path": "material/precision_manufacturing"
-                                  },
-                                  "items": [],
-                                  "label": "Line 2"
-                                }
-                              ],
-                              "label": "Area"
-                            }
-                          ],
-                          "label": "Site"
-                        }
-                      ],
-                      "label": "Enterprise"
-                    }
-                  ],
-                  "selection": [
-                    "0/0/0/0"
-                  ],
-                  "selectionData": [
-                    {
-                      "itemPath": "0/0/0/0",
-                      "value": {}
-                    }
-                  ],
+                  "direction": "column",
                   "style": {
-                    "backgroundColor": "transparent",
-                    "padding": "12px"
+                    "gap": 2,
+                    "padding": "12px 10px"
                   }
                 },
-                "type": "ia.display.tree"
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "lineLabel"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "...../root.custom.selectedLineName"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or value \u003d\u003d \u0027\u0027:\n\t\treturn \u0027No Line Selected\u0027\n\treturn str(value)",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#E2E8F0",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 12,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "lineStats"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{...../root.custom.selectedLineId}"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    try:\n        lineId \u003d value\n        if lineId is None:\n            return \u0027\u0027\n        total \u003d system.db.runPrepQuery(\u0027SELECT COUNT(*) FROM productcode WHERE disable \u003d false\u0027, [], \u0027mes_core\u0027).getValueAt(0, 0)\n        assigned \u003d system.db.runPrepQuery(\u0027SELECT COUNT(*) FROM productcodeline WHERE lineid \u003d ? AND enable \u003d true\u0027, [int(lineId)], \u0027mes_core\u0027).getValueAt(0, 0)\n        return str(assigned) + \u0027 of \u0027 + str(total) + \u0027 products assigned\u0027\n    except:\n        return \u0027\u0027",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                        "fontSize": 10
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "treeFooter"
+                },
+                "position": {
+                  "basis": "60px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "borderTop": "1px solid #1B2432",
+                    "gap": 4,
+                    "padding": "10px 14px"
+                  }
+                },
+                "type": "ia.container.flex"
               }
             ],
             "meta": {
               "name": "treeCard"
             },
             "position": {
-              "basis": "300px",
+              "basis": "260px",
               "grow": 1,
               "shrink": 0
             },
             "props": {
-              "classes": "mes-card mes-shadow-md",
               "direction": "column",
               "style": {
-                "backgroundColor": "var(--mes-bg-card, #21262d)",
-                "border": "1px solid rgba(255, 255, 255, 0.05)",
-                "borderRadius": "16px",
+                "backgroundColor": "#111822",
+                "border": "1px solid #1B2432",
+                "borderRadius": 6,
                 "overflow": "hidden"
               }
             },
@@ -235,35 +313,119 @@
                     "children": [
                       {
                         "meta": {
-                          "name": "icon"
-                        },
-                        "props": {
-                          "classes": "views/icons_blue",
-                          "path": "material/inventory_2",
-                          "style": {
-                            "color": "#3b82f6",
-                            "fontSize": "22px"
-                          }
-                        },
-                        "type": "ia.display.icon"
-                      },
-                      {
-                        "meta": {
                           "name": "title"
                         },
                         "position": {
                           "grow": 1
                         },
                         "props": {
-                          "classes": "mes-title-primary",
                           "style": {
-                            "color": "var(--mes-text-primary, #ffffff)",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "16px",
-                            "fontWeight": "600",
-                            "letterSpacing": "-0.3px"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Product Codes"
+                          "text": "PRODUCT CODES"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\tself.parent.parent.parent.parent.parent.getChild(\"root\").custom.showCreateProduct \u003d not self.parent.parent.parent.parent.parent.getChild(\"root\").custom.showCreateProduct\n\tself.parent.parent.parent.parent.parent.getChild(\"root\").custom.showAssignProduct \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "addIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#22C55E",
+                          "path": "material/add_circle_outline",
+                          "style": {
+                            "cursor": "pointer"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\n    logger \u003d system.util.getLogger(\u0027DataConfig\u0027)\n    table \u003d self.parent.getSibling(\u0027productCodesTable\u0027)\n    selData \u003d table.props.selection.data\n    if not selData or len(selData) \u003d\u003d 0:\n        return\n    row \u003d list(selData)[0]\n    productId \u003d row[\u0027ID\u0027]\n    productCode \u003d row[\u0027ProductCode\u0027]\n    confirm \u003d system.perspective.confirm(\u0027Delete \u0027 + str(productCode) + \u0027?\u0027, \u0027This removes the product and all line assignments.\u0027)\n    if confirm:\n        try:\n            system.db.runPrepUpdate(\u0027DELETE FROM productcodeline WHERE productcodeid \u003d ?\u0027, [productId], \u0027mes_core\u0027)\n            system.db.runPrepUpdate(\u0027DELETE FROM productcode WHERE id \u003d ?\u0027, [productId], \u0027mes_core\u0027)\n            table.refreshBinding(\u0027props.data\u0027)\n            self.parent.parent.parent.getChild(\u0027lineProductCodesCard\u0027).getChild(\u0027lineProductCodesTable\u0027).refreshBinding(\u0027props.data\u0027)\n        except Exception as e:\n            logger.error(\u0027Delete failed: {}\u0027.format(str(e)))"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "deleteIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#EF4444",
+                          "path": "material/delete_forever",
+                          "style": {
+                            "cursor": "pointer",
+                            "marginLeft": 6
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "45px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "formTitle"
+                        },
+                        "position": {
+                          "basis": "18px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "marginBottom": 8,
+                            "textTransform": "uppercase"
+                          },
+                          "text": "CREATE PRODUCT CODE"
                         },
                         "type": "ia.display.label"
                       },
@@ -273,33 +435,57 @@
                             "children": [
                               {
                                 "meta": {
-                                  "name": "addIcon"
+                                  "name": "label"
+                                },
+                                "position": {
+                                  "basis": "16px"
                                 },
                                 "props": {
-                                  "classes": "views/icons_green",
-                                  "path": "material/add",
                                   "style": {
-                                    "color": "#10b981",
-                                    "fontSize": "20px"
+                                    "color": "#4A6080",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 9,
+                                    "fontWeight": 600,
+                                    "letterSpacing": "0.07em",
+                                    "textTransform": "uppercase"
+                                  },
+                                  "text": "PRODUCT CODE"
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "codeInput"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "grow": 1
+                                },
+                                "props": {
+                                  "placeholder": "Enter product code...",
+                                  "style": {
+                                    "backgroundColor": "#111822",
+                                    "border": "1px solid #223044",
+                                    "borderRadius": 4,
+                                    "color": "#E2E8F0",
+                                    "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                    "fontSize": 12,
+                                    "fontWeight": 600
                                   }
                                 },
-                                "type": "ia.display.icon"
+                                "type": "ia.input.text-field"
                               }
                             ],
                             "meta": {
-                              "name": "addBtn"
+                              "name": "codeField"
+                            },
+                            "position": {
+                              "grow": 1
                             },
                             "props": {
-                              "alignItems": "center",
-                              "classes": "ui_ux/hover_glow_green",
-                              "justifyContent": "center",
+                              "direction": "column",
                               "style": {
-                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
-                                "border": "1px solid rgba(16, 185, 129, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
+                                "gap": 4
                               }
                             },
                             "type": "ia.container.flex"
@@ -308,63 +494,207 @@
                             "children": [
                               {
                                 "meta": {
-                                  "name": "deleteIcon"
+                                  "name": "label"
+                                },
+                                "position": {
+                                  "basis": "16px"
                                 },
                                 "props": {
-                                  "path": "material/delete_outline",
                                   "style": {
-                                    "color": "#ef4444",
-                                    "fontSize": "20px"
+                                    "color": "#4A6080",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 9,
+                                    "fontWeight": 600,
+                                    "letterSpacing": "0.07em",
+                                    "textTransform": "uppercase"
+                                  },
+                                  "text": "DESCRIPTION"
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "descInput"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "grow": 1
+                                },
+                                "props": {
+                                  "placeholder": "Description...",
+                                  "style": {
+                                    "backgroundColor": "#111822",
+                                    "border": "1px solid #223044",
+                                    "borderRadius": 4,
+                                    "color": "#E2E8F0",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 12
                                   }
                                 },
-                                "type": "ia.display.icon"
+                                "type": "ia.input.text-field"
                               }
                             ],
                             "meta": {
-                              "name": "deleteBtn"
+                              "name": "descField"
+                            },
+                            "position": {
+                              "grow": 2
                             },
                             "props": {
-                              "alignItems": "center",
-                              "justifyContent": "center",
+                              "direction": "column",
                               "style": {
-                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
-                                "border": "1px solid rgba(239, 68, 68, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
+                                "gap": 4
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "events": {
+                                  "component": {
+                                    "onActionPerformed": {
+                                      "config": {
+                                        "script": "\n\tlogger \u003d system.util.getLogger(\u0027DataConfig\u0027)\n\tform \u003d self.parent.parent\n\tcode \u003d str(form.getChild(\u0027codeField\u0027).getChild(\u0027codeInput\u0027).props.text or \u0027\u0027).strip()\n\tdesc \u003d str(form.getChild(\u0027descField\u0027).getChild(\u0027descInput\u0027).props.text or \u0027\u0027).strip()\n\tif not code:\n\t\treturn\n\ttry:\n\t\tsystem.db.runPrepUpdate(\u0027INSERT INTO productcode (productcode, description, disable, \"TimeStamp\") VALUES (?, ?, false, NOW())\u0027, [code, desc], \u0027mes_core\u0027)\n\t\tself.view.custom.showCreateProduct \u003d False\n\t\tform.parent.getChild(\u0027productCodesTable\u0027).refreshBinding(\u0027props.data\u0027)\n\texcept Exception as e:\n\t\tlogger.error(\u0027Create failed: {}\u0027.format(str(e)))"
+                                      },
+                                      "scope": "G",
+                                      "type": "script"
+                                    }
+                                  }
+                                },
+                                "meta": {
+                                  "name": "createBtn"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "backgroundColor": "#22C55E",
+                                    "borderColor": "#22C55E",
+                                    "borderRadius": 4,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1
+                                  },
+                                  "text": "Create",
+                                  "textStyle": {
+                                    "color": "#FFFFFF",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 11,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                "type": "ia.input.button"
+                              }
+                            ],
+                            "meta": {
+                              "name": "descField_0"
+                            },
+                            "position": {
+                              "grow": 2
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "gap": 4
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "events": {
+                                  "component": {
+                                    "onActionPerformed": {
+                                      "config": {
+                                        "script": "\tself.view.custom.showCreateProduct \u003d False"
+                                      },
+                                      "scope": "G",
+                                      "type": "script"
+                                    }
+                                  }
+                                },
+                                "meta": {
+                                  "name": "cancelBtn"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#1B2432",
+                                    "borderRadius": 4,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1
+                                  },
+                                  "text": "Cancel",
+                                  "textStyle": {
+                                    "color": "#A8B8CE",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 11,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                "type": "ia.input.button"
+                              }
+                            ],
+                            "meta": {
+                              "name": "descField_1"
+                            },
+                            "position": {
+                              "grow": 2
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "gap": 4
                               }
                             },
                             "type": "ia.container.flex"
                           }
                         ],
                         "meta": {
-                          "name": "actions"
+                          "name": "formRow"
+                        },
+                        "position": {
+                          "basis": "50px"
                         },
                         "props": {
-                          "alignItems": "center",
+                          "alignItems": "flex-end",
                           "style": {
-                            "gap": "8px"
+                            "gap": 10
                           }
                         },
                         "type": "ia.container.flex"
                       }
                     ],
                     "meta": {
-                      "name": "header"
+                      "name": "createForm"
                     },
                     "position": {
-                      "basis": "56px",
+                      "basis": "100px",
                       "shrink": 0
                     },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": "...../root.custom.showCreateProduct"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
                     "props": {
-                      "alignItems": "center",
-                      "classes": "mes-card-header",
+                      "direction": "column",
                       "style": {
-                        "backgroundColor": "transparent",
-                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                        "gap": "12px",
-                        "padding": "16px 20px"
+                        "backgroundColor": "#0D1117",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "12px 14px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -386,7 +716,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Define the query for the productcode table (PostgreSQL)\n    query \u003d \"SELECT productcode AS \\\"ProductCode\\\", description AS \\\"Description\\\", disable AS \\\"Disable\\\", \\\"TimeStamp\\\" FROM productcode\"\n    try:\n        # Execute the query\n        data \u003d system.db.runPrepQuery(query, [], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "code": "\n    dbName \u003d \"mes_core\"\n    query \u003d \"SELECT id AS \\\"ID\\\", productcode AS \\\"ProductCode\\\", description AS \\\"Description\\\", disable AS \\\"Disable\\\", \\\"TimeStamp\\\" FROM productcode ORDER BY productcode\"\n    try:\n        data \u003d system.db.runPrepQuery(query, [], dbName)\n        if data.getRowCount() \u003e 0:\n            column_names \u003d data.getColumnNames()\n            json_data \u003d system.dataset.toPyDataSet(data)\n            return [{ col: row[col] for col in column_names } for row in json_data]\n        else:\n            return []\n    except Exception as e:\n        system.util.getLogger(\u0027DataConfig\u0027).error(\u0027Query failed: {}\u0027.format(str(e)))\n        return []",
                               "type": "script"
                             }
                           ],
@@ -396,49 +726,46 @@
                     },
                     "props": {
                       "bodyStyle": {
-                        "backgroundColor": "#101418"
+                        "backgroundColor": "#111822"
                       },
                       "cells": {
                         "style": {
-                          "borderRight": "none",
-                          "padding": "12px 16px"
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
                         }
                       },
-                      "classes": "mes-table",
                       "columns": [
+                        {
+                          "field": "ID",
+                          "visible": false
+                        },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "ProductCode",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "PRODUCT CODE"
+                            "title": "Product Code"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "visible": true,
-                          "width": ""
+                          "style": {
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontWeight": 500
+                          },
+                          "visible": true
                         },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "Description",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "DESCRIPTION"
+                            "title": "Description"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "visible": true,
-                          "width": ""
+                          "visible": true
                         },
                         {
                           "align": "center",
@@ -446,17 +773,13 @@
                           "editable": false,
                           "field": "Disable",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "DISABLE"
+                            "title": "Disable"
                           },
-                          "justify": "center",
                           "render": "boolean",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "100px"
+                          "width": "90px"
                         },
                         {
                           "align": "center",
@@ -464,27 +787,24 @@
                           "editable": false,
                           "field": "TimeStamp",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "TIMESTAMP"
+                            "title": "Timestamp"
                           },
-                          "justify": "center",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "180px"
+                          "width": "160px"
                         }
                       ],
                       "headerStyle": {
-                        "backgroundColor": "#21262d",
-                        "borderBottom": "2px solid #10b981",
-                        "color": "var(--mes-text-primary, #ffffff)",
-                        "fontSize": "13px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.5px",
-                        "padding": "14px 16px",
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": "10px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
                         "textTransform": "uppercase"
                       },
                       "pager": {
@@ -492,31 +812,33 @@
                       },
                       "rows": {
                         "highlight": {
-                          "color": "rgba(16, 185, 129, 0.08)"
+                          "color": "rgba(34, 197, 94, 0.08)"
                         },
                         "striped": {
                           "color": {
-                            "even": "#101418",
-                            "odd": "#161b22"
+                            "even": "#111822",
+                            "odd": "#0D1117"
                           }
                         },
                         "style": {
-                          "color": "var(--mes-text-primary, #ffffff)",
-                          "fontSize": "14px",
-                          "fontWeight": "400"
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "fontSize": "12px",
+                          "fontWeight": 400
                         }
                       },
                       "selection": {
                         "style": {
-                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                          "borderLeft": "3px solid #10b981"
+                          "backgroundColor": "rgba(34, 197, 94, 0.12)",
+                          "borderLeft": "3px solid #22C55E"
                         }
                       },
                       "style": {
-                        "backgroundColor": "#101418",
-                        "borderRadius": "0 0 12px 12px",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "margin": 10,
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 0,
                         "overflow": "hidden"
                       }
                     },
@@ -530,12 +852,11 @@
                   "grow": 1
                 },
                 "props": {
-                  "classes": "mes-card mes-shadow-md",
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "var(--mes-bg-card, #21262d)",
-                    "border": "1px solid rgba(255, 255, 255, 0.05)",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -547,184 +868,406 @@
                     "children": [
                       {
                         "meta": {
-                          "name": "icon"
-                        },
-                        "props": {
-                          "classes": "views/icons_green",
-                          "path": "material/precision_manufacturing",
-                          "style": {
-                            "color": "#10b981",
-                            "fontSize": "22px"
-                          }
-                        },
-                        "type": "ia.display.icon"
-                      },
-                      {
-                        "meta": {
                           "name": "title"
                         },
                         "position": {
                           "grow": 1
                         },
                         "props": {
-                          "classes": "mes-title-primary",
                           "style": {
-                            "color": "var(--mes-text-primary, #ffffff)",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "16px",
-                            "fontWeight": "600",
-                            "letterSpacing": "-0.3px"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Product Codes for Production Line"
+                          "text": "LINE PRODUCT CODES"
                         },
                         "type": "ia.display.label"
                       },
                       {
-                        "children": [
-                          {
-                            "meta": {
-                              "name": "selectedLabel"
-                            },
-                            "props": {
-                              "style": {
-                                "color": "#9ca3af",
-                                "fontSize": "12px",
-                                "fontWeight": "500"
-                              },
-                              "text": "Selected:"
-                            },
-                            "type": "ia.display.label"
-                          },
-                          {
-                            "meta": {
-                              "name": "lineValue"
-                            },
-                            "props": {
-                              "classes": "mes-badge-success",
-                              "style": {
-                                "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                                "border": "1px solid rgba(16, 185, 129, 0.3)",
-                                "borderRadius": "9999px",
-                                "color": "#10b981",
-                                "fontSize": "12px",
-                                "fontWeight": "600",
-                                "padding": "4px 10px"
-                              },
-                              "text": "Line 1"
-                            },
-                            "type": "ia.display.label"
-                          }
-                        ],
                         "meta": {
-                          "name": "selectedLine"
+                          "name": "lineValue"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.selectedLineName"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None or value \u003d\u003d \u0027\u0027:\n\t\treturn \u0027Line 1\u0027\n\treturn str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
                         },
                         "props": {
-                          "alignItems": "center",
                           "style": {
-                            "gap": "4px"
+                            "backgroundColor": "rgba(34, 197, 94, 0.1)",
+                            "border": "1px solid #22C55E",
+                            "borderRadius": 4,
+                            "color": "#22C55E",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "paddingBottom": 3,
+                            "paddingLeft": 10,
+                            "paddingRight": 10,
+                            "paddingTop": 3,
+                            "textTransform": "uppercase"
                           }
                         },
-                        "type": "ia.container.flex"
+                        "type": "ia.display.label"
                       },
                       {
-                        "children": [
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "addIcon"
-                                },
-                                "props": {
-                                  "classes": "views/icons_green",
-                                  "path": "material/add",
-                                  "style": {
-                                    "color": "#10b981",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "addBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "classes": "ui_ux/hover_glow_green",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
-                                "border": "1px solid rgba(16, 185, 129, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
-                          },
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "deleteIcon"
-                                },
-                                "props": {
-                                  "path": "material/delete_outline",
-                                  "style": {
-                                    "color": "#ef4444",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "deleteBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
-                                "border": "1px solid rgba(239, 68, 68, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\tself.parent.parent.parent.parent.parent.getChild(\"root\").custom.showAssignProduct \u003d not self.parent.parent.parent.parent.parent.getChild(\"root\").custom.showAssignProduct\n\tself.parent.parent.parent.parent.parent.getChild(\"root\").custom.showCreateProduct \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
                           }
-                        ],
+                        },
                         "meta": {
-                          "name": "actions"
+                          "name": "addIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
                         },
                         "props": {
-                          "alignItems": "center",
+                          "color": "#22C55E",
+                          "path": "material/add_circle_outline",
                           "style": {
-                            "gap": "8px",
-                            "marginLeft": "12px"
+                            "cursor": "pointer",
+                            "marginLeft": 8
                           }
                         },
-                        "type": "ia.container.flex"
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\n    logger \u003d system.util.getLogger(\u0027DataConfig\u0027)\n    table \u003d self.parent.getSibling(\u0027lineProductCodesTable\u0027)\n    selData \u003d table.props.selection.data\n    if not selData or len(selData) \u003d\u003d 0:\n        return\n    row \u003d list(selData)[0]\n    pclId \u003d row[\u0027ID\u0027]\n    productCode \u003d row[\u0027ProductCode\u0027]\n    lineName \u003d self.view.custom.selectedLineName or \u0027this line\u0027\n    confirm \u003d system.perspective.confirm(\u0027Remove \u0027 + str(productCode) + \u0027 from \u0027 + str(lineName) + \u0027?\u0027, \u0027The product code itself will not be deleted.\u0027)\n    if confirm:\n        try:\n            system.db.runPrepUpdate(\u0027DELETE FROM productcodeline WHERE id \u003d ?\u0027, [pclId], \u0027mes_core\u0027)\n            table.refreshBinding(\u0027props.data\u0027)\n        except Exception as e:\n            logger.error(\u0027Delete failed: {}\u0027.format(str(e)))"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "deleteIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#EF4444",
+                          "path": "material/delete_forever",
+                          "style": {
+                            "cursor": "pointer",
+                            "marginLeft": 6
+                          }
+                        },
+                        "type": "ia.display.icon"
                       }
                     ],
                     "meta": {
                       "name": "header"
                     },
                     "position": {
-                      "basis": "56px",
+                      "basis": "45px",
                       "shrink": 0
                     },
                     "props": {
                       "alignItems": "center",
-                      "classes": "mes-card-header",
                       "style": {
-                        "backgroundColor": "transparent",
-                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                        "gap": "12px",
-                        "padding": "16px 20px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "formTitle"
+                        },
+                        "position": {
+                          "basis": "18px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.selectedLineName"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None or value \u003d\u003d \u0027\u0027:\n\t\treturn \u0027ASSIGN PRODUCT TO LINE\u0027\n\treturn \u0027ASSIGN PRODUCT TO \u0027 + str(value).upper()",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "marginBottom": 8,
+                            "textTransform": "uppercase"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "label"
+                                },
+                                "position": {
+                                  "basis": "16px"
+                                },
+                                "props": {
+                                  "style": {
+                                    "color": "#4A6080",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 9,
+                                    "fontWeight": 600,
+                                    "letterSpacing": "0.07em",
+                                    "textTransform": "uppercase"
+                                  },
+                                  "text": "PRODUCT"
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "productDropdown"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "grow": 1
+                                },
+                                "propConfig": {
+                                  "props.options": {
+                                    "binding": {
+                                      "config": {
+                                        "fallbackDelay": 2.5,
+                                        "mode": "expression",
+                                        "tagPath": "now()"
+                                      },
+                                      "transforms": [
+                                        {
+                                          "code": "\ttry:\n\t\tdata \u003d system.db.runQuery(\u0027SELECT id, productcode FROM productcode WHERE disable \u003d false ORDER BY productcode\u0027, \u0027mes_core\u0027)\n\t\tjson_data \u003d system.dataset.toPyDataSet(data)\n\t\treturn [{\u0027label\u0027: row[\u0027productcode\u0027], \u0027value\u0027: row[\u0027id\u0027]} for row in json_data]\n\texcept:\n\t\treturn []",
+                                          "type": "script"
+                                        }
+                                      ],
+                                      "type": "tag"
+                                    }
+                                  }
+                                },
+                                "props": {
+                                  "style": {
+                                    "backgroundColor": "#111822",
+                                    "border": "1px solid #223044",
+                                    "borderRadius": 4,
+                                    "color": "#E2E8F0",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 12
+                                  },
+                                  "value": 1
+                                },
+                                "type": "ia.input.dropdown"
+                              }
+                            ],
+                            "meta": {
+                              "name": "productField"
+                            },
+                            "position": {
+                              "basis": "600px",
+                              "grow": 1
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "gap": 4
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "events": {
+                                  "component": {
+                                    "onActionPerformed": {
+                                      "config": {
+                                        "script": "\n\tlogger \u003d system.util.getLogger(\u0027DataConfig\u0027)\n\tform \u003d self.parent.parent\n\tproductId \u003d form.getChild(\u0027productField\u0027).getChild(\u0027productDropdown\u0027).props.value\n\tlineId \u003d self.view.custom.selectedLineId\n\tif productId is None or lineId is None:\n\t\treturn\n\ttry:\n\t\texists \u003d system.db.runPrepQuery(\u0027SELECT id FROM productcodeline WHERE productcodeid \u003d ? AND lineid \u003d ?\u0027, [productId, lineId], \u0027mes_core\u0027)\n\t\tif exists.getRowCount() \u003e 0:\n\t\t\tsystem.db.runPrepUpdate(\u0027UPDATE productcodeline SET enable \u003d true, \"TimeStamp\" \u003d NOW() WHERE productcodeid \u003d ? AND lineid \u003d ?\u0027, [productId, lineId], \u0027mes_core\u0027)\n\t\telse:\n\t\t\tsystem.db.runPrepUpdate(\u0027INSERT INTO productcodeline (productcodeid, lineid, enable, \"TimeStamp\") VALUES (?, ?, true, NOW())\u0027, [productId, lineId], \u0027mes_core\u0027)\n\t\tself.view.custom.showAssignProduct \u003d False\n\t\tform.parent.getChild(\u0027lineProductCodesTable\u0027).refreshBinding(\u0027props.data\u0027)\n\texcept Exception as e:\n\t\tlogger.error(\u0027Assign failed: {}\u0027.format(str(e)))"
+                                      },
+                                      "scope": "G",
+                                      "type": "script"
+                                    }
+                                  }
+                                },
+                                "meta": {
+                                  "name": "assignBtn"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "backgroundColor": "#22C55E",
+                                    "borderColor": "#22C55E",
+                                    "borderRadius": 4,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1
+                                  },
+                                  "text": "Assign",
+                                  "textStyle": {
+                                    "color": "#FFFFFF",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 11,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                "type": "ia.input.button"
+                              }
+                            ],
+                            "meta": {
+                              "name": "productField_0"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "gap": 4
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "children": [
+                              {
+                                "events": {
+                                  "component": {
+                                    "onActionPerformed": {
+                                      "config": {
+                                        "script": "\tself.view.custom.showAssignProduct \u003d False"
+                                      },
+                                      "scope": "G",
+                                      "type": "script"
+                                    }
+                                  }
+                                },
+                                "meta": {
+                                  "name": "cancelBtn"
+                                },
+                                "position": {
+                                  "basis": "30px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "style": {
+                                    "backgroundColor": "transparent",
+                                    "borderColor": "#1B2432",
+                                    "borderRadius": 4,
+                                    "borderStyle": "solid",
+                                    "borderWidth": 1
+                                  },
+                                  "text": "Cancel",
+                                  "textStyle": {
+                                    "color": "#A8B8CE",
+                                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                    "fontSize": 11,
+                                    "fontWeight": 600
+                                  }
+                                },
+                                "type": "ia.input.button"
+                              }
+                            ],
+                            "meta": {
+                              "name": "productField_1"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "gap": 4
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "formRow"
+                        },
+                        "position": {
+                          "basis": "50px"
+                        },
+                        "props": {
+                          "alignItems": "flex-end",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "assignForm"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": "...../root.custom.showAssignProduct"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#0D1117",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "12px 14px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -740,65 +1283,60 @@
                       "props.data": {
                         "binding": {
                           "config": {
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "now()"
+                            "expression": "{view.custom.selectedLineId}"
                           },
                           "transforms": [
                             {
-                              "code": "\n    # Define database name\n    dbName \u003d \"mes_core\"\n    \n    # Define the query with join and parameterized LineID (PostgreSQL)\n    query \u003d \"\"\"\n        SELECT pc.productcode AS \\\"ProductCode\\\", pc.description AS \\\"Description\\\", pcl.enable AS \\\"Enable\\\", pcl.\\\"TimeStamp\\\" \n        FROM productcode pc\n        LEFT JOIN productcodeline pcl\n        ON pc.id \u003d pcl.productcodeid\n        WHERE pcl.lineid \u003d ?\n    \"\"\"\n    try:\n        # Execute the query with LineID from component property (adjust path as needed)\n        lineID \u003d 1  # Adjust based on your Perspective property path\n        data \u003d system.db.runPrepQuery(query, [lineID], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "code": "\n    dbName \u003d \u0027mes_core\u0027\n    lineId \u003d value\n    if lineId is None:\n        lineId \u003d 1\n    query \u003d \"\"\"\n        SELECT pcl.id AS \"ID\", pc.productcode AS \"ProductCode\", pc.description AS \"Description\", pcl.enable AS \"Enable\", pcl.\"TimeStamp\"\n        FROM productcode pc\n        JOIN productcodeline pcl ON pc.id \u003d pcl.productcodeid\n        WHERE pcl.lineid \u003d ?\n        ORDER BY pc.productcode\n    \"\"\"\n    try:\n        data \u003d system.db.runPrepQuery(query, [int(lineId)], dbName)\n        if data.getRowCount() \u003e 0:\n            column_names \u003d data.getColumnNames()\n            json_data \u003d system.dataset.toPyDataSet(data)\n            return [{ col: row[col] for col in column_names } for row in json_data]\n        else:\n            return []\n    except Exception as e:\n        system.util.getLogger(\u0027DataConfig\u0027).error(\u0027Query failed: {}\u0027.format(str(e)))\n        return []",
                               "type": "script"
                             }
                           ],
-                          "type": "tag"
+                          "type": "expr"
                         }
                       }
                     },
                     "props": {
                       "bodyStyle": {
-                        "backgroundColor": "#101418"
+                        "backgroundColor": "#111822"
                       },
                       "cells": {
                         "style": {
-                          "borderRight": "none",
-                          "padding": "12px 16px"
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
                         }
                       },
-                      "classes": "mes-table",
                       "columns": [
+                        {
+                          "field": "ID",
+                          "visible": false
+                        },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "ProductCode",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "PRODUCT CODE"
+                            "title": "Product Code"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "visible": true,
-                          "width": ""
+                          "style": {
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontWeight": 500
+                          },
+                          "visible": true
                         },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "Description",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "DESCRIPTION"
+                            "title": "Description"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "visible": true,
-                          "width": ""
+                          "visible": true
                         },
                         {
                           "align": "center",
@@ -806,17 +1344,13 @@
                           "editable": false,
                           "field": "Enable",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "ENABLED"
+                            "title": "Enabled"
                           },
-                          "justify": "center",
                           "render": "boolean",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "100px"
+                          "width": "90px"
                         },
                         {
                           "align": "center",
@@ -824,27 +1358,24 @@
                           "editable": false,
                           "field": "TimeStamp",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "TIMESTAMP"
+                            "title": "Timestamp"
                           },
-                          "justify": "center",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "180px"
+                          "width": "160px"
                         }
                       ],
                       "headerStyle": {
-                        "backgroundColor": "#21262d",
-                        "borderBottom": "2px solid #10b981",
-                        "color": "var(--mes-text-primary, #ffffff)",
-                        "fontSize": "13px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.5px",
-                        "padding": "14px 16px",
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": "10px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
                         "textTransform": "uppercase"
                       },
                       "pager": {
@@ -852,31 +1383,33 @@
                       },
                       "rows": {
                         "highlight": {
-                          "color": "rgba(16, 185, 129, 0.08)"
+                          "color": "rgba(34, 197, 94, 0.08)"
                         },
                         "striped": {
                           "color": {
-                            "even": "#101418",
-                            "odd": "#161b22"
+                            "even": "#111822",
+                            "odd": "#0D1117"
                           }
                         },
                         "style": {
-                          "color": "var(--mes-text-primary, #ffffff)",
-                          "fontSize": "14px",
-                          "fontWeight": "400"
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "fontSize": "12px",
+                          "fontWeight": 400
                         }
                       },
                       "selection": {
                         "style": {
-                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                          "borderLeft": "3px solid #10b981"
+                          "backgroundColor": "rgba(34, 197, 94, 0.12)",
+                          "borderLeft": "3px solid #22C55E"
                         }
                       },
                       "style": {
-                        "backgroundColor": "#101418",
-                        "borderRadius": "0 0 12px 12px",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "margin": 10,
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 0,
                         "overflow": "hidden"
                       }
                     },
@@ -890,12 +1423,11 @@
                   "grow": 1
                 },
                 "props": {
-                  "classes": "mes-card mes-shadow-md",
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "var(--mes-bg-card, #21262d)",
-                    "border": "1px solid rgba(255, 255, 255, 0.05)",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -911,12 +1443,18 @@
             "props": {
               "direction": "column",
               "style": {
-                "gap": "16px"
+                "gap": 10
               }
             },
             "type": "ia.container.flex"
           }
         ],
+        "custom": {
+          "selectedLineId": 0,
+          "selectedLineName": "",
+          "showAssignProduct": false,
+          "showCreateProduct": false
+        },
         "meta": {
           "name": "root"
         },
@@ -924,11 +1462,10 @@
           "grow": 1
         },
         "props": {
-          "classes": "",
           "style": {
-            "backgroundColor": "var(--mes-bg-primary, #0d1117)",
-            "gap": "16px",
-            "padding": "16px"
+            "backgroundColor": "#0A0E14",
+            "gap": 10,
+            "padding": 10
           }
         },
         "type": "ia.container.flex"

@@ -1,0 +1,11 @@
+[
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "MeasureValueData",
+    "tagType": "AtomicTag"
+  }
+]

@@ -11,135 +11,174 @@
       {
         "children": [
           {
-            "meta": {
-              "name": "EmbeddedView"
-            },
-            "props": {
-              "path": "desktop/mes_core/operations/templates/schedule",
-              "style": {
-                "backgroundColor": "#0d1117"
-              }
-            },
-            "type": "ia.display.view"
-          },
-          {
-            "meta": {
-              "name": "EmbeddedView_0"
-            },
-            "position": {
-              "tabIndex": 1
-            },
-            "props": {
-              "path": "desktop/mes_core/operations/templates/downtime"
-            },
-            "type": "ia.display.view"
-          },
-          {
-            "meta": {
-              "name": "EmbeddedView_1"
-            },
-            "position": {
-              "tabIndex": 2
-            },
-            "props": {
-              "path": "desktop/mes_core/operations/templates/downtime_pareto",
-              "style": {
-                "backgroundColor": "#0d1117"
-              }
-            },
-            "type": "ia.display.view"
-          },
-          {
-            "meta": {
-              "name": "EmbeddedView_2"
-            },
-            "position": {
-              "tabIndex": 3
-            },
-            "props": {
-              "path": "desktop/mes_core/operations/templates/notes"
-            },
-            "type": "ia.display.view"
-          },
-          {
-            "meta": {
-              "name": "EmbeddedView_3"
-            },
-            "position": {
-              "tabIndex": 4
-            },
-            "props": {
-              "params": {
-                "tagPath": "[default]Enterprise/Site/Area/Line 1"
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/schedule",
+                  "style": {
+                    "backgroundColor": "#0A0E14"
+                  }
+                },
+                "type": "ia.display.view"
               },
-              "path": "desktop/mes_core/operations/templates/accumulated_waste_pareto"
-            },
-            "type": "ia.display.view"
-          },
-          {
+              {
+                "meta": {
+                  "name": "EmbeddedView_0"
+                },
+                "position": {
+                  "tabIndex": 1
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/downtime",
+                  "style": {
+                    "backgroundColor": "#0A0E14"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "EmbeddedView_1"
+                },
+                "position": {
+                  "tabIndex": 2
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/downtime_pareto",
+                  "style": {
+                    "backgroundColor": "#0A0E14"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "EmbeddedView_2"
+                },
+                "position": {
+                  "tabIndex": 3
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/notes",
+                  "style": {
+                    "backgroundColor": "#0A0E14"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "EmbeddedView_3"
+                },
+                "position": {
+                  "tabIndex": 4
+                },
+                "props": {
+                  "params": {
+                    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+                  },
+                  "path": "desktop/mes_core/operations/templates/accumulated_waste_pareto",
+                  "style": {
+                    "backgroundColor": "#0A0E14"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "EmbeddedView_4"
+                },
+                "position": {
+                  "tabIndex": 5
+                },
+                "props": {
+                  "path": "desktop/mes_core/operations/templates/agent",
+                  "style": {
+                    "backgroundColor": "#0A0E14"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
             "meta": {
-              "name": "EmbeddedView_4"
+              "name": "TabContainer"
             },
             "position": {
-              "tabIndex": 5
+              "basis": "300px",
+              "grow": 1
             },
             "props": {
-              "path": "desktop/mes_core/operations/templates/agent"
+              "contentStyle": {
+                "backgroundColor": "#0A0E14",
+                "borderColor": "transparent",
+                "borderStyle": "none",
+                "borderWidth": 0,
+                "boxShadow": "none",
+                "outlineStyle": "none"
+              },
+              "menuStyle": {
+                "backgroundColor": "#16202E",
+                "borderBottom": "1px solid #1B2432",
+                "borderStyle": "none",
+                "borderWidth": 0,
+                "boxShadow": "none",
+                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 10,
+                "fontWeight": 600,
+                "letterSpacing": "0.07em",
+                "outlineStyle": "none",
+                "textTransform": "uppercase"
+              },
+              "menuType": "modern",
+              "style": {
+                "backgroundColor": "#111822",
+                "borderColor": "transparent",
+                "borderStyle": "none",
+                "borderWidth": 0,
+                "boxShadow": "none",
+                "margin": 0,
+                "outlineColor": "transparent",
+                "outlineStyle": "none",
+                "outlineWidth": 0
+              },
+              "tabStyle": {
+                "active": {
+                  "color": "#3B82F6"
+                },
+                "inactive": {
+                  "color": "#4A6080"
+                }
+              },
+              "tabs": [
+                "Schedule",
+                "Downtime",
+                "Pareto",
+                "Notes",
+                "Waste",
+                "Agent"
+              ]
             },
-            "type": "ia.display.view"
+            "type": "ia.container.tab"
           }
         ],
         "meta": {
-          "name": "TabContainer"
+          "name": "root"
         },
         "position": {
-          "basis": "300px",
           "grow": 1
         },
         "props": {
-          "contentStyle": {
-            "borderColor": "transparent",
-            "borderStyle": "none",
-            "borderWidth": 0,
-            "boxShadow": "none",
-            "outlineStyle": "none"
-          },
-          "menuStyle": {
-            "borderStyle": "none",
-            "borderWidth": 0,
-            "boxShadow": "none",
-            "outlineStyle": "none"
-          },
-          "menuType": "modern",
+          "direction": "column",
           "style": {
-            "backgroundColor": "#21262d",
-            "borderColor": "transparent",
-            "borderStyle": "none",
-            "borderWidth": 0,
-            "boxShadow": "none",
-            "margin": 5,
-            "outlineColor": "transparent",
-            "outlineStyle": "none",
-            "outlineWidth": 0
-          },
-          "tabStyle": {
-            "active": {
-              "color": "#3b82f6"
-            },
-            "inactive": {
-              "color": "#9ca3af"
-            }
-          },
-          "tabs": [
-            "Schedule",
-            "Downtime",
-            "Pareto",
-            "Notes",
-            "Waste",
-            "Agent"
-          ]
+            "backgroundColor": "#111822",
+            "border": "1px solid #1B2432",
+            "borderRadius": 6
+          }
         },
-        "type": "ia.container.tab"
+        "type": "ia.container.flex"
       }
     ],
     "meta": {

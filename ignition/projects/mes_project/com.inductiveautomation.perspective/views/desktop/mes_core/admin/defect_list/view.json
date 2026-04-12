@@ -1,0 +1,1589 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "title"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "DEFECT LIST"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "recordCount"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    dbName \u003d \"mes_core\"\n    try:\n        data \u003d system.db.runPrepQuery(\"SELECT COUNT(*) AS cnt FROM defect_list\", [], dbName)\n        cnt \u003d data.getValueAt(0, 0)\n        return str(cnt) + \u0027 records\u0027\n    except:\n        return \u0027\u0027",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#2A3A50",
+                        "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                        "fontSize": 9
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tself.parent.parent.parent.parent.getChild(\"root\").custom.showCreateForm \u003d not self.parent.parent.parent.parent.getChild(\"root\").custom.showCreateForm "
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "addIcon"
+                    },
+                    "position": {
+                      "basis": "22px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#22C55E",
+                      "path": "material/add_circle_outline",
+                      "style": {
+                        "cursor": "pointer",
+                        "marginLeft": 8
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\n    logger \u003d system.util.getLogger(\"DefectList\")\n    table \u003d self.parent.getSibling(\"defectListTable\")\n    selection_data \u003d table.props.selection.data\n    \n    if not selection_data or len(selection_data) \u003d\u003d 0:\n        logger.warn(\"No defect selected\")\n        return\n    \n    row_data \u003d list(selection_data)[0]\n    defect_id \u003d row_data[\"id\"]\n    defect_code \u003d row_data[\"DefectCode\"]\n    \n    confirm \u003d system.perspective.confirm(\n        \u0027Delete \u0027 + str(defect_code) + \u0027?\u0027,\n        \u0027This removes the defect from the master list. Existing defect_log records will retain their data.\u0027\n    )\n    \n    if confirm:\n        try:\n            system.db.runPrepUpdate(\u0027DELETE FROM defect_list WHERE id \u003d ?\u0027, [defect_id], \u0027mes_core\u0027)\n            table.refreshBinding(\u0027props.data\u0027)\n        except Exception as e:\n            logger.error(\u0027Delete failed: {}\u0027.format(str(e)))"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "deleteIcon"
+                    },
+                    "position": {
+                      "basis": "22px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#EF4444",
+                      "path": "material/delete_forever",
+                      "style": {
+                        "cursor": "pointer",
+                        "marginLeft": 6
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "header"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "style": {
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "0px 10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "formTitle"
+                    },
+                    "position": {
+                      "basis": "20px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "marginBottom": 10,
+                        "textTransform": "uppercase"
+                      },
+                      "text": "CREATE DEFECT"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "80px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Code:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "codeInput"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "placeholder": "e.g. CRACK, GOUGE...",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#EF4444",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 12,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "codeRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "80px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Type:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "typeDropdown"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "options": [
+                            {
+                              "label": "Production",
+                              "value": 1
+                            },
+                            {
+                              "label": "Quality",
+                              "value": 2
+                            },
+                            {
+                              "label": "Material",
+                              "value": 3
+                            },
+                            {
+                              "label": "Shipping",
+                              "value": 4
+                            }
+                          ],
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 12
+                          },
+                          "value": 1
+                        },
+                        "type": "ia.input.dropdown"
+                      }
+                    ],
+                    "meta": {
+                      "name": "typeRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "80px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Description:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "descInput"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "placeholder": "Defect description...",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 12
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "descRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "80px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Area:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "areaDropdown"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "options": [
+                            {
+                              "label": "Production",
+                              "value": "Production"
+                            },
+                            {
+                              "label": "Quality",
+                              "value": "Quality"
+                            },
+                            {
+                              "label": "Material",
+                              "value": "Material"
+                            },
+                            {
+                              "label": "Shipping",
+                              "value": "Shipping"
+                            }
+                          ],
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 12
+                          },
+                          "value": "Production"
+                        },
+                        "type": "ia.input.dropdown"
+                      }
+                    ],
+                    "meta": {
+                      "name": "areaRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\n\tlogger \u003d system.util.getLogger(\u0027DefectList\u0027)\n\t\n\troot \u003d self.parent.parent\n\tcode \u003d str(root.getChild(\u0027codeRow\u0027).getChild(\u0027codeInput\u0027).props.text or \u0027\u0027).strip().upper()\n\ttypeVal \u003d root.getChild(\u0027typeRow\u0027).getChild(\u0027typeDropdown\u0027).props.value\n\tdesc \u003d str(root.getChild(\u0027descRow\u0027).getChild(\u0027descInput\u0027).props.text or \u0027\u0027).strip()\n\tarea \u003d str(root.getChild(\u0027areaRow\u0027).getChild(\u0027areaDropdown\u0027).props.value or \u0027\u0027)\n\t\n\tif not code:\n\t\tlogger.warn(\u0027Defect code is required\u0027)\n\t\treturn\n\tif not desc:\n\t\tlogger.warn(\u0027Description is required\u0027)\n\t\treturn\n\t\n\ttry:\n\t\tusername \u003d self.session.props.auth.user.userName\n\texcept:\n\t\tusername \u003d \u0027admin\u0027\n\t\n\tquery \u003d \u0027\u0027\u0027INSERT INTO defect_list (defect_code, defect_type, defect_description, revision, \"user\", \"timestamp\", area)\n\t\tVALUES (?, ?, ?, ?, ?, NOW(), ?)\u0027\u0027\u0027\n\t\n\ttry:\n\t\tresult \u003d system.db.runPrepUpdate(query, [code, int(typeVal), desc, \u00271.0\u0027, username, area], \u0027mes_core\u0027)\n\t\tif result \u003d\u003d 1:\n\t\t\tself.view.custom.showCreateForm \u003d False\n\t\t\troot.parent.getChild(\u0027defectListTable\u0027).refreshBinding(\u0027props.data\u0027)\n\texcept Exception as e:\n\t\tlogger.error(\u0027Insert failed: {}\u0027.format(str(e)))"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "createBtn"
+                        },
+                        "position": {
+                          "basis": "80px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#22C55E",
+                            "borderColor": "#22C55E",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Create",
+                          "textStyle": {
+                            "color": "#FFFFFF",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\n\tself.parent.parent.parent.parent.parent.getChild(\"root\").custom.showCreateForm \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "cancelBtn"
+                        },
+                        "position": {
+                          "basis": "80px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "transparent",
+                            "borderColor": "#1B2432",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Cancel",
+                          "textStyle": {
+                            "color": "#A8B8CE",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "formButtons"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "style": {
+                        "gap": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "createForm"
+                },
+                "position": {
+                  "basis": "260px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "..../root.custom.showCreateForm"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "borderTop": "1px solid #1B2432",
+                    "padding": "12px 14px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "searchInput"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "placeholder": "Search codes or descriptions...",
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #223044",
+                        "borderRadius": 4,
+                        "color": "#E2E8F0",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 12,
+                        "padding": "8px 10px"
+                      }
+                    },
+                    "type": "ia.input.text-field"
+                  }
+                ],
+                "meta": {
+                  "name": "searchBar"
+                },
+                "position": {
+                  "basis": "50px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "style": {
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "8px 10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "typeFilter"
+                    },
+                    "position": {
+                      "display": false,
+                      "grow": 1
+                    },
+                    "props": {
+                      "options": [
+                        {
+                          "label": "All Types",
+                          "value": 0
+                        },
+                        {
+                          "label": "Production",
+                          "value": 1
+                        },
+                        {
+                          "label": "Quality",
+                          "value": 2
+                        },
+                        {
+                          "label": "Material",
+                          "value": 3
+                        },
+                        {
+                          "label": "Shipping",
+                          "value": 4
+                        }
+                      ],
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #223044",
+                        "borderRadius": 4,
+                        "color": "#E2E8F0",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 12
+                      },
+                      "value": 0
+                    },
+                    "type": "ia.input.dropdown"
+                  },
+                  {
+                    "meta": {
+                      "name": "areaFilter"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "options": [
+                        {
+                          "label": "All Areas",
+                          "value": ""
+                        },
+                        {
+                          "label": "Production",
+                          "value": "Production"
+                        },
+                        {
+                          "label": "Quality",
+                          "value": "Quality"
+                        },
+                        {
+                          "label": "Material",
+                          "value": "Material"
+                        },
+                        {
+                          "label": "Shipping",
+                          "value": "Shipping"
+                        }
+                      ],
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #223044",
+                        "borderRadius": 4,
+                        "color": "#E2E8F0",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 12
+                      }
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "filterBar"
+                },
+                "position": {
+                  "basis": "42px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "style": {
+                    "borderBottom": "1px solid #1B2432",
+                    "gap": 8,
+                    "padding": "6px 10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "defectListTable"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "now()"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\n    dbName \u003d \"mes_core\"\n    \n    searchText \u003d \u0027\u0027\n    typeFilter \u003d 0\n    areaFilter \u003d \u0027\u0027\n    \n    try:\n        searchText \u003d str(self.parent.getChild(\u0027searchBar\u0027).getChild(\u0027searchInput\u0027).props.text or \u0027\u0027).strip()\n    except:\n        pass\n    try:\n        typeFilter \u003d int(self.parent.getChild(\u0027filterBar\u0027).getChild(\u0027typeFilter\u0027).props.value or 0)\n    except:\n        typeFilter \u003d 0\n    try:\n        areaFilter \u003d str(self.parent.getChild(\u0027filterBar\u0027).getChild(\u0027areaFilter\u0027).props.value or \u0027\u0027).strip()\n    except:\n        areaFilter \u003d \u0027\u0027\n    \n    conditions \u003d []\n    params \u003d []\n    \n    if searchText:\n        conditions.append(\"(dl.defect_code ILIKE ? OR dl.defect_description ILIKE ?)\")\n        params.append(\u0027%\u0027 + searchText + \u0027%\u0027)\n        params.append(\u0027%\u0027 + searchText + \u0027%\u0027)\n    \n    if typeFilter \u003e 0:\n        conditions.append(\"dl.defect_type \u003d ?\")\n        params.append(typeFilter)\n    \n    if areaFilter:\n        conditions.append(\"dl.area \u003d ?\")\n        params.append(areaFilter)\n    \n    whereClause \u003d \u0027\u0027\n    if conditions:\n        whereClause \u003d \u0027WHERE \u0027 + \u0027 AND \u0027.join(conditions)\n    \n    query \u003d \"\"\"\n        SELECT \n            dl.id,\n            dl.defect_code AS \"DefectCode\",\n            dl.defect_description AS \"DefectDescription\",\n            dl.defect_type AS \"DefectType\",\n            CASE dl.defect_type\n                WHEN 1 THEN \u0027Production\u0027\n                WHEN 2 THEN \u0027Quality\u0027\n                WHEN 3 THEN \u0027Material\u0027\n                WHEN 4 THEN \u0027Shipping\u0027\n                ELSE \u0027Unknown\u0027\n            END AS \"TypeName\",\n            dl.area AS \"Area\",\n            dl.revision AS \"Revision\",\n            dl.\"user\" AS \"User\",\n            dl.\"timestamp\" AS \"TimeStamp\"\n        FROM defect_list dl\n        {}\n        ORDER BY dl.defect_type, dl.defect_code\n    \"\"\".format(whereClause)\n    \n    try:\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        if data.getRowCount() \u003e 0:\n            column_names \u003d data.getColumnNames()\n            json_data \u003d system.dataset.toPyDataSet(data)\n            return [{ col: row[col] for col in column_names } for row in json_data]\n        else:\n            return []\n    except Exception as e:\n        system.util.getLogger(\"DefectList\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "bodyStyle": {
+                    "backgroundColor": "#0D1117"
+                  },
+                  "cells": {
+                    "style": {
+                      "borderRight": "1px solid #141C28",
+                      "padding": "8px 10px"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "align": "left",
+                      "editable": false,
+                      "field": "DefectCode",
+                      "header": {
+                        "title": "Code"
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sortable": true,
+                      "style": {
+                        "color": "#EF4444",
+                        "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                        "fontWeight": 600
+                      },
+                      "visible": true,
+                      "width": "110px"
+                    },
+                    {
+                      "align": "left",
+                      "editable": false,
+                      "field": "DefectDescription",
+                      "header": {
+                        "title": "Description"
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sortable": true,
+                      "visible": true
+                    },
+                    {
+                      "align": "left",
+                      "editable": false,
+                      "field": "TypeName",
+                      "header": {
+                        "title": "Type"
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sortable": true,
+                      "visible": true,
+                      "width": "90px"
+                    },
+                    {
+                      "align": "left",
+                      "editable": false,
+                      "field": "Area",
+                      "header": {
+                        "title": "Area"
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sortable": true,
+                      "visible": true,
+                      "width": "90px"
+                    },
+                    {
+                      "align": "center",
+                      "editable": false,
+                      "field": "Revision",
+                      "header": {
+                        "title": "Rev"
+                      },
+                      "render": "auto",
+                      "resizable": false,
+                      "sortable": true,
+                      "style": {
+                        "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace"
+                      },
+                      "visible": true,
+                      "width": "50px"
+                    },
+                    {
+                      "field": "id",
+                      "visible": false
+                    },
+                    {
+                      "field": "DefectType",
+                      "visible": false
+                    }
+                  ],
+                  "headerStyle": {
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "color": "#4A6080",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": "9px",
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "padding": "6px 10px",
+                    "textTransform": "uppercase"
+                  },
+                  "pager": {
+                    "bottom": false
+                  },
+                  "rows": {
+                    "highlight": {
+                      "color": "rgba(59, 130, 246, 0.08)"
+                    },
+                    "striped": {
+                      "color": {
+                        "even": "#0D1117",
+                        "odd": "#111822"
+                      }
+                    },
+                    "style": {
+                      "color": "#A8B8CE",
+                      "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                      "fontSize": "11px",
+                      "fontWeight": 400
+                    }
+                  },
+                  "selection": {
+                    "style": {
+                      "backgroundColor": "rgba(59, 130, 246, 0.12)",
+                      "borderLeft": "3px solid #3B82F6"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "borderRadius": 0,
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "margin": 10,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "leftPanel"
+            },
+            "position": {
+              "basis": "50%",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#0D1117",
+                "borderRight": "1px solid #1B2432",
+                "overflow": "hidden",
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "title"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": ".../leftPanel/defectListTable.props.selection.data[0].DefectCode"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None:\n\t\treturn \u0027SELECT A DEFECT TO EDIT\u0027\n\treturn \u0027EDIT \u0027 + str(value)",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "editHeader"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "style": {
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "0px 10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "110px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Defect Code:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "input"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].DefectCode"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027\u0027\n\treturn str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#EF4444",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 12,
+                            "fontWeight": 600,
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "codeRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 2
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "110px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Defect Type:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "input"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.value": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].DefectType"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn 1\n\treturn int(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "options": [
+                            {
+                              "label": "Production",
+                              "value": 1
+                            },
+                            {
+                              "label": "Quality",
+                              "value": 2
+                            },
+                            {
+                              "label": "Material",
+                              "value": 3
+                            },
+                            {
+                              "label": "Shipping",
+                              "value": 4
+                            }
+                          ],
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 12
+                          }
+                        },
+                        "type": "ia.input.dropdown"
+                      }
+                    ],
+                    "meta": {
+                      "name": "typeRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 2
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "110px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Description:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "input"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].DefectDescription"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027\u0027\n\treturn str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 12,
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "descRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 2
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "110px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Area:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "input"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.value": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].Area"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027Production\u0027\n\treturn str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "options": [
+                            {
+                              "label": "Production",
+                              "value": "Production"
+                            },
+                            {
+                              "label": "Quality",
+                              "value": "Quality"
+                            },
+                            {
+                              "label": "Material",
+                              "value": "Material"
+                            },
+                            {
+                              "label": "Shipping",
+                              "value": "Shipping"
+                            }
+                          ],
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 12
+                          }
+                        },
+                        "type": "ia.input.dropdown"
+                      }
+                    ],
+                    "meta": {
+                      "name": "areaRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 2
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "110px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Revision:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "input"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].Revision"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027\u0027\n\treturn str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 12,
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "revRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 2
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "metaUser"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].User"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027User:\u0027\n\treturn \u0027User: \u0027 + str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#6B7280",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 10
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "metaTimestamp"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].TimeStamp"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027Modified:\u0027\n\treturn \u0027Modified: \u0027 + str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#6B7280",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 10
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "metaId"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/defectListTable.props.selection.data[0].id"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027ID:\u0027\n\treturn \u0027ID: \u0027 + str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 10
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "metaRow"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "borderTop": "1px solid #1B2432",
+                        "gap": 24,
+                        "marginTop": 6,
+                        "paddingTop": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\n\tlogger \u003d system.util.getLogger(\u0027DefectList\u0027)\n\t\n\ttable \u003d self.parent.parent.parent.parent.getChild(\u0027leftPanel\u0027).getChild(\u0027defectListTable\u0027)\n\tselection_data \u003d table.props.selection.data\n\t\n\tif not selection_data or len(selection_data) \u003d\u003d 0:\n\t\tlogger.warn(\u0027No defect selected\u0027)\n\t\treturn\n\t\n\trow_data \u003d list(selection_data)[0]\n\tdefect_id \u003d row_data[\u0027id\u0027]\n\t\n\tformBody \u003d self.parent.parent\n\tcode \u003d str(formBody.getChild(\u0027codeRow\u0027).getChild(\u0027input\u0027).props.text or \u0027\u0027).strip()\n\ttypeVal \u003d formBody.getChild(\u0027typeRow\u0027).getChild(\u0027input\u0027).props.value\n\tdesc \u003d str(formBody.getChild(\u0027descRow\u0027).getChild(\u0027input\u0027).props.text or \u0027\u0027).strip()\n\tarea \u003d str(formBody.getChild(\u0027areaRow\u0027).getChild(\u0027input\u0027).props.value or \u0027\u0027)\n\trev \u003d str(formBody.getChild(\u0027revRow\u0027).getChild(\u0027input\u0027).props.text or \u0027\u0027).strip()\n\t\n\tif not code or not desc:\n\t\tlogger.warn(\u0027Code and description are required\u0027)\n\t\treturn\n\t\n\ttry:\n\t\tusername \u003d self.session.props.auth.user.userName\n\texcept:\n\t\tusername \u003d \u0027admin\u0027\n\t\n\tquery \u003d \u0027\u0027\u0027\n\t\tUPDATE defect_list\n\t\tSET defect_code \u003d ?,\n\t\t    defect_type \u003d ?,\n\t\t    defect_description \u003d ?,\n\t\t    area \u003d ?,\n\t\t    revision \u003d ?,\n\t\t    \"user\" \u003d ?,\n\t\t    \"timestamp\" \u003d NOW()\n\t\tWHERE id \u003d ?\n\t\u0027\u0027\u0027\n\t\n\ttry:\n\t\tsystem.db.runPrepUpdate(query, [code, int(typeVal), desc, area, rev, username, int(defect_id)], \u0027mes_core\u0027)\n\t\ttable.refreshBinding(\u0027props.data\u0027)\n\texcept Exception as e:\n\t\tlogger.error(\u0027Update failed: {}\u0027.format(str(e)))"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "saveBtn"
+                        },
+                        "position": {
+                          "basis": "80px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#22C55E",
+                            "borderColor": "#22C55E",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Save Changes",
+                          "textStyle": {
+                            "color": "#FFFFFF",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\n\ttable \u003d self.parent.parent.parent.parent.getChild(\u0027leftPanel\u0027).getChild(\u0027defectListTable\u0027)\n\ttable.refreshBinding(\u0027props.data\u0027)"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "cancelBtn"
+                        },
+                        "position": {
+                          "basis": "80px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "transparent",
+                            "borderColor": "#1B2432",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Cancel",
+                          "textStyle": {
+                            "color": "#A8B8CE",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "formButtons"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "style": {
+                        "gap": 8,
+                        "marginTop": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "formBody"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "gap": 12,
+                    "padding": "16px 20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "rightPanel"
+            },
+            "position": {
+              "basis": "50%",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden",
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "custom": {
+          "showCreateForm": false
+        },
+        "meta": {
+          "name": "root"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#0A0E14"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tself.getChild(\"root\").custom.showCreateForm \u003d False"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

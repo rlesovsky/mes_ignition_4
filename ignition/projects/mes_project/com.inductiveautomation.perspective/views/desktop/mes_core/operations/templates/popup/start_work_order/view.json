@@ -16,8 +16,8 @@
   },
   "props": {
     "defaultSize": {
-      "height": 73,
-      "width": 297
+      "height": 169,
+      "width": 398
     }
   },
   "root": {
@@ -25,147 +25,197 @@
       {
         "children": [
           {
-            "meta": {
-              "name": "Label"
-            },
-            "position": {
-              "basis": "307px",
-              "grow": 1
-            },
-            "props": {
-              "text": "Confirm Start Work Order",
-              "textStyle": {
-                "color": "#ffffff",
-                "fontFamily": "Arial",
-                "fontSize": 18,
-                "fontWeight": "600",
-                "marginLeft": 20
-              }
-            },
-            "type": "ia.display.label"
-          }
-        ],
-        "meta": {
-          "name": "header"
-        },
-        "position": {
-          "basis": "30px",
-          "display": false
-        },
-        "props": {
-          "style": {
-            "backgroundColor": "#21262d"
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "events": {
-              "component": {
-                "onActionPerformed": {
-                  "config": {
-                    "script": "\t\n\ttagPath \u003d self.view.params.tagPath + \"/Line\"\n\tscheduleID \u003d self.view.params.scheduleID\n\tlineID \u003d system.tag.readBlocking(tagPath + \"/Line ID\")[0].value\n\t\n\tmes_core.run.startRun(scheduleID, tagPath, lineID)\n\t\n\tsystem.perspective.closePopup(\"\")\n\t"
+            "children": [
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "props": {
+                  "path": "material/play_circle_outline",
+                  "style": {
+                    "color": "#22c55e",
+                    "marginRight": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#7088a8",
+                    "fontSize": 10,
+                    "fontWeight": "600",
+                    "letterSpacing": "0.07em"
                   },
-                  "scope": "G",
-                  "type": "script"
-                }
+                  "text": "CONFIRM START WORK ORDER"
+                },
+                "type": "ia.display.label"
               }
-            },
+            ],
             "meta": {
-              "name": "yes"
+              "name": "header"
             },
             "position": {
-              "basis": "40px",
-              "grow": 1
+              "basis": "50px",
+              "shrink": 0
             },
             "props": {
-              "image": {
-                "icon": {
-                  "color": "#d1d5db"
-                }
-              },
+              "alignItems": "center",
               "style": {
-                "backgroundColor": "#10b981",
-                "borderBottomLeftRadius": 12,
-                "borderBottomRightRadius": 12,
-                "borderColor": "#9ca3af",
-                "borderStyle": "solid",
-                "borderTopLeftRadius": 12,
-                "borderTopRightRadius": 12,
-                "borderWidth": 2,
-                "marginRight": 5
-              },
-              "text": "Yes",
-              "textStyle": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 18,
-                "fontWeight": "600"
+                "backgroundColor": "#16202e",
+                "borderBottom": "1px solid #1b2432",
+                "padding": "8px 14px"
               }
             },
-            "type": "ia.input.button"
+            "type": "ia.container.flex"
           },
           {
-            "events": {
-              "component": {
-                "onActionPerformed": {
-                  "config": {
-                    "script": "\tsystem.perspective.closePopup(\"\")"
+            "children": [
+              {
+                "meta": {
+                  "name": "message"
+                },
+                "props": {
+                  "style": {
+                    "color": "#a8b8ce",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                    "fontSize": 14,
+                    "textAlign": "center"
                   },
-                  "scope": "G",
-                  "type": "script"
-                }
+                  "text": "Are you sure you want to start this work order?"
+                },
+                "type": "ia.display.label"
               }
-            },
+            ],
             "meta": {
-              "name": "no"
+              "name": "body"
             },
             "position": {
-              "basis": "40px",
               "grow": 1
             },
             "props": {
-              "image": {
-                "icon": {
-                  "color": "#FAFAFB8C"
-                }
-              },
+              "alignItems": "center",
+              "direction": "column",
+              "justifyContent": "center",
               "style": {
-                "backgroundColor": "#FCA5A5A8",
-                "borderBottomLeftRadius": 12,
-                "borderBottomRightRadius": 12,
-                "borderColor": "#ef4444",
-                "borderStyle": "solid",
-                "borderTopLeftRadius": 12,
-                "borderTopRightRadius": 12,
-                "borderWidth": 2,
-                "marginLeft": 5
-              },
-              "text": "No",
-              "textStyle": {
-                "color": "#FAFAFB8C",
-                "fontFamily": "Arial",
-                "fontSize": 18,
-                "fontWeight": "600"
+                "padding": "20px 14px"
               }
             },
-            "type": "ia.input.button"
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\ttagPath \u003d self.view.params.tagPath + \"/Line\"\n\tscheduleID \u003d self.view.params.scheduleID\n\tlineID \u003d system.tag.readBlocking(tagPath + \"/Line ID\")[0].value\n\t\n\tmes_core.run.startRun(scheduleID, tagPath, lineID)\n\t\n\tsystem.perspective.closePopup(\"\")"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "yes"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#22c55e",
+                    "borderRadius": 6,
+                    "borderStyle": "none"
+                  },
+                  "text": "Start Run",
+                  "textStyle": {
+                    "color": "#ffffff",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                    "fontSize": 13,
+                    "fontWeight": "600"
+                  }
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tsystem.perspective.closePopup(\"\")"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "no"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid #1b2432",
+                    "borderRadius": 6
+                  },
+                  "text": "Cancel",
+                  "textStyle": {
+                    "color": "#a8b8ce",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                    "fontSize": 13,
+                    "fontWeight": "600"
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "buttons"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "borderTop": "1px solid #1b2432",
+                "gap": 8,
+                "padding": "10px 14px"
+              }
+            },
+            "type": "ia.container.flex"
           }
         ],
         "meta": {
-          "name": "start"
+          "name": "root"
         },
         "position": {
-          "basis": "50px"
+          "grow": 1
         },
         "props": {
-          "justify": "space-between",
+          "direction": "column",
           "style": {
-            "backgroundColor": "#0d1117",
-            "marginTop": 10,
-            "padding": 5
+            "backgroundColor": "#111822",
+            "border": "1px solid #1b2432",
+            "borderRadius": 8,
+            "overflow": "hidden"
           }
         },
         "type": "ia.container.flex"

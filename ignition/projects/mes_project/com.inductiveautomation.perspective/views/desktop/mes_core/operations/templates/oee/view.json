@@ -20,669 +20,644 @@
       {
         "children": [
           {
+            "children": [
+              {
+                "meta": {
+                  "name": "title_label"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#7088A8",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "OEE"
+                },
+                "type": "ia.display.label"
+              }
+            ],
             "meta": {
-              "name": "title_icon"
+              "name": "card_header"
             },
             "position": {
-              "basis": "24px",
+              "basis": "32px",
               "shrink": 0
             },
             "props": {
-              "color": "#10b981",
-              "path": "material/speed",
+              "alignItems": "center",
               "style": {
-                "marginRight": 10
+                "backgroundColor": "#16202E",
+                "borderBottom": "1px solid #1B2432",
+                "padding": "5px 10px"
               }
             },
-            "type": "ia.display.icon"
+            "type": "ia.container.flex"
           },
           {
             "meta": {
-              "name": "title_label"
+              "name": "Label"
+            },
+            "position": {
+              "basis": "1px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "18px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "AVAILABILITY"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "gauge_availability"
+                    },
+                    "position": {
+                      "basis": "80%"
+                    },
+                    "propConfig": {
+                      "props.options.colors": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Availability\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [\"#4A6080\"]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\tif v \u003e\u003d 85:\n\t\treturn [\"#22C55E\"]\n\telif v \u003e\u003d 60:\n\t\treturn [\"#F59E0B\"]\n\telse:\n\t\treturn [\"#EF4444\"]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      },
+                      "props.series": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Availability\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [0]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\treturn [round(v, 1)]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "options": {
+                        "chart": {
+                          "background": "transparent",
+                          "sparkline": {
+                            "enabled": true
+                          },
+                          "toolbar": {
+                            "show": false
+                          },
+                          "type": "radialBar"
+                        },
+                        "fill": {
+                          "type": "solid"
+                        },
+                        "plotOptions": {
+                          "radialBar": {
+                            "dataLabels": {
+                              "name": {
+                                "show": false
+                              },
+                              "value": {
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": "22px",
+                                "fontWeight": 700,
+                                "offsetY": 8,
+                                "show": true
+                              }
+                            },
+                            "endAngle": 360,
+                            "hollow": {
+                              "size": "60%"
+                            },
+                            "startAngle": 0,
+                            "track": {
+                              "background": "#1C2838",
+                              "strokeWidth": "100%"
+                            }
+                          }
+                        },
+                        "stroke": {
+                          "lineCap": "round"
+                        },
+                        "theme": {
+                          "mode": "dark"
+                        }
+                      },
+                      "style": {
+                        "aspectRatio": "1/1",
+                        "maxWidth": "100%",
+                        "overflow": "hidden"
+                      },
+                      "type": "radialBar"
+                    },
+                    "type": "kyvislabs.display.apexchart"
+                  }
+                ],
+                "meta": {
+                  "name": "col_availability"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "padding": "6px 4px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "18px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "QUALITY"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "gauge_quality"
+                    },
+                    "position": {
+                      "basis": "80%"
+                    },
+                    "propConfig": {
+                      "props.options.colors": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Quality\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [\"#4A6080\"]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\tif v \u003e\u003d 85:\n\t\treturn [\"#06B6D4\"]\n\telif v \u003e\u003d 60:\n\t\treturn [\"#F59E0B\"]\n\telse:\n\t\treturn [\"#EF4444\"]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      },
+                      "props.series": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Quality\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [0]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\treturn [round(v, 1)]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "options": {
+                        "chart": {
+                          "background": "transparent",
+                          "sparkline": {
+                            "enabled": true
+                          },
+                          "toolbar": {
+                            "show": false
+                          },
+                          "type": "radialBar"
+                        },
+                        "fill": {
+                          "type": "solid"
+                        },
+                        "plotOptions": {
+                          "radialBar": {
+                            "dataLabels": {
+                              "name": {
+                                "show": false
+                              },
+                              "value": {
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": "22px",
+                                "fontWeight": 700,
+                                "offsetY": 8,
+                                "show": true
+                              }
+                            },
+                            "endAngle": 360,
+                            "hollow": {
+                              "size": "60%"
+                            },
+                            "startAngle": 0,
+                            "track": {
+                              "background": "#1C2838",
+                              "strokeWidth": "100%"
+                            }
+                          }
+                        },
+                        "stroke": {
+                          "lineCap": "round"
+                        },
+                        "theme": {
+                          "mode": "dark"
+                        }
+                      },
+                      "style": {
+                        "aspectRatio": "1/1",
+                        "maxWidth": "100%",
+                        "overflow": "hidden"
+                      },
+                      "type": "radialBar"
+                    },
+                    "type": "kyvislabs.display.apexchart"
+                  }
+                ],
+                "meta": {
+                  "name": "col_quality"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "padding": "6px 4px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "18px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "PERFORMANCE"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "gauge_performance"
+                    },
+                    "position": {
+                      "basis": "80%"
+                    },
+                    "propConfig": {
+                      "props.options.colors": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Performance\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [\"#4A6080\"]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\tif v \u003e\u003d 85:\n\t\treturn [\"#3B82F6\"]\n\telif v \u003e\u003d 60:\n\t\treturn [\"#F59E0B\"]\n\telse:\n\t\treturn [\"#EF4444\"]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      },
+                      "props.series": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Performance\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [0]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\treturn [round(v, 1)]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "options": {
+                        "chart": {
+                          "background": "transparent",
+                          "sparkline": {
+                            "enabled": true
+                          },
+                          "toolbar": {
+                            "show": false
+                          },
+                          "type": "radialBar"
+                        },
+                        "fill": {
+                          "type": "solid"
+                        },
+                        "plotOptions": {
+                          "radialBar": {
+                            "dataLabels": {
+                              "name": {
+                                "show": false
+                              },
+                              "value": {
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": "22px",
+                                "fontWeight": 700,
+                                "offsetY": 8,
+                                "show": true
+                              }
+                            },
+                            "endAngle": 360,
+                            "hollow": {
+                              "size": "60%"
+                            },
+                            "startAngle": 0,
+                            "track": {
+                              "background": "#1C2838",
+                              "strokeWidth": "100%"
+                            }
+                          }
+                        },
+                        "stroke": {
+                          "lineCap": "round"
+                        },
+                        "theme": {
+                          "mode": "dark"
+                        }
+                      },
+                      "style": {
+                        "aspectRatio": "1/1",
+                        "maxWidth": "100%",
+                        "overflow": "hidden"
+                      },
+                      "type": "radialBar"
+                    },
+                    "type": "kyvislabs.display.apexchart"
+                  }
+                ],
+                "meta": {
+                  "name": "col_performance"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "padding": "6px 4px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "label"
+                    },
+                    "position": {
+                      "basis": "18px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "OEE"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "gauge_oee"
+                    },
+                    "position": {
+                      "basis": "80%"
+                    },
+                    "propConfig": {
+                      "props.options.colors": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [\"#4A6080\"]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\tif v \u003e\u003d 85:\n\t\treturn [\"#F59E0B\"]\n\telif v \u003e\u003d 60:\n\t\treturn [\"#F59E0B\"]\n\telse:\n\t\treturn [\"#EF4444\"]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      },
+                      "props.series": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE\""
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or not quality.isGood():\n\t\treturn [0]\n\tv \u003d float(value)\n\tif v \u003c\u003d 1.0:\n\t\tv \u003d v * 100\n\treturn [round(v, 1)]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "options": {
+                        "chart": {
+                          "background": "transparent",
+                          "sparkline": {
+                            "enabled": true
+                          },
+                          "toolbar": {
+                            "show": false
+                          },
+                          "type": "radialBar"
+                        },
+                        "fill": {
+                          "type": "solid"
+                        },
+                        "plotOptions": {
+                          "radialBar": {
+                            "dataLabels": {
+                              "name": {
+                                "show": false
+                              },
+                              "value": {
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": "22px",
+                                "fontWeight": 700,
+                                "offsetY": 8,
+                                "show": true
+                              }
+                            },
+                            "endAngle": 360,
+                            "hollow": {
+                              "size": "60%"
+                            },
+                            "startAngle": 0,
+                            "track": {
+                              "background": "#1C2838",
+                              "strokeWidth": "100%"
+                            }
+                          }
+                        },
+                        "stroke": {
+                          "lineCap": "round"
+                        },
+                        "theme": {
+                          "mode": "dark"
+                        }
+                      },
+                      "style": {
+                        "aspectRatio": "1/1",
+                        "maxWidth": "100%",
+                        "overflow": "hidden"
+                      },
+                      "type": "radialBar"
+                    },
+                    "type": "kyvislabs.display.apexchart"
+                  }
+                ],
+                "meta": {
+                  "name": "col_oee"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "padding": "6px 4px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "gauges_row"
             },
             "position": {
               "grow": 1
             },
             "props": {
-              "style": {
-                "color": "#ffffff",
-                "fontFamily": "Arial",
-                "fontSize": 18,
-                "fontWeight": "600"
-              },
-              "text": "OEE"
+              "justify": "center"
             },
-            "type": "ia.display.label"
+            "type": "ia.container.flex"
           }
         ],
         "meta": {
-          "name": "card_header"
-        },
-        "position": {
-          "basis": "40px",
-          "shrink": 0
-        },
-        "props": {
-          "alignItems": "center",
-          "style": {
-            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-            "marginBottom": 8,
-            "paddingBottom": 8
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "meta": {
-              "name": "lbl_availability"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 14,
-                "fontWeight": 500,
-                "textAlign": "center"
-              },
-              "text": "Availability"
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "lbl_quality"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 14,
-                "fontWeight": 500,
-                "textAlign": "center"
-              },
-              "text": "Quality"
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "lbl_performance"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 14,
-                "fontWeight": 500,
-                "textAlign": "center"
-              },
-              "text": "Performance"
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "lbl_oee"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "color": "#d1d5db",
-                "fontFamily": "Arial",
-                "fontSize": 14,
-                "fontWeight": 500,
-                "textAlign": "center"
-              },
-              "text": "OEE"
-            },
-            "type": "ia.display.label"
-          }
-        ],
-        "meta": {
-          "name": "gauge_labels_row"
-        },
-        "position": {
-          "basis": "22px",
-          "shrink": 0
-        },
-        "props": {
-          "alignItems": "center",
-          "justify": "space-around"
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "meta": {
-              "name": "status_availability"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_availability.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_availability.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"Excellent\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"Good\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"Average\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
-            },
-            "props": {
-              "style": {
-                "fontFamily": "Arial",
-                "fontSize": 12,
-                "fontWeight": 600,
-                "textAlign": "center"
-              }
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "status_quality"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_quality.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_quality.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"Excellent\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"Good\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"Average\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
-            },
-            "props": {
-              "style": {
-                "fontFamily": "Arial",
-                "fontSize": 12,
-                "fontWeight": 600,
-                "textAlign": "center"
-              }
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "status_performance"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_performance.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_performance.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"Excellent\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"Good\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"Average\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
-            },
-            "props": {
-              "style": {
-                "fontFamily": "Arial",
-                "fontSize": 12,
-                "fontWeight": 600,
-                "textAlign": "center"
-              }
-            },
-            "type": "ia.display.label"
-          },
-          {
-            "meta": {
-              "name": "status_oee"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_oee.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "path": ".../gauges_row/gauge_oee.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"No Data\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"Invalid\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"Excellent\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"Good\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"Average\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"Needs Improvement\"\n\telse:\n\t\treturn \"Critical\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              }
-            },
-            "props": {
-              "style": {
-                "fontFamily": "Arial",
-                "fontSize": 12,
-                "fontWeight": 600,
-                "textAlign": "center"
-              }
-            },
-            "type": "ia.display.label"
-          }
-        ],
-        "meta": {
-          "name": "status_labels_row"
-        },
-        "position": {
-          "basis": "20px",
-          "shrink": 0
-        },
-        "props": {
-          "alignItems": "center",
-          "justify": "space-around",
-          "style": {
-            "marginBottom": 4
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "meta": {
-              "name": "gauge_availability"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.arc.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.value": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Availability\""
-                  },
-                  "transforms": [
-                    {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              }
-            },
-            "props": {
-              "arc": {
-                "width": 5
-              },
-              "arcBackground": {},
-              "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
-                "offsetY": 20,
-                "size": 42
-              },
-              "startAngle": 0,
-              "style": {
-                "padding": 8
-              }
-            },
-            "type": "ia.chart.simple-gauge"
-          },
-          {
-            "meta": {
-              "name": "gauge_quality"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.arc.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.value": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Quality\""
-                  },
-                  "transforms": [
-                    {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              }
-            },
-            "props": {
-              "arc": {
-                "width": 5
-              },
-              "arcBackground": {},
-              "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
-                "offsetY": 20,
-                "size": 42
-              },
-              "startAngle": 0,
-              "style": {
-                "padding": 8
-              }
-            },
-            "type": "ia.chart.simple-gauge"
-          },
-          {
-            "meta": {
-              "name": "gauge_performance"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.arc.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.value": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE Performance\""
-                  },
-                  "transforms": [
-                    {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              }
-            },
-            "props": {
-              "arc": {
-                "width": 5
-              },
-              "arcBackground": {},
-              "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
-                "offsetY": 20,
-                "size": 42
-              },
-              "startAngle": 0,
-              "style": {
-                "padding": 8
-              }
-            },
-            "type": "ia.chart.simple-gauge"
-          },
-          {
-            "meta": {
-              "name": "gauge_oee"
-            },
-            "position": {
-              "basis": "150px",
-              "grow": 1
-            },
-            "propConfig": {
-              "props.arc.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"#6b7280\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"#6b7280\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"#10b981\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"#3b82f6\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"#f59e0b\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"#f97316\"\n\telse:\n\t\treturn \"#ef4444\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.arcBackground.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.value"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\tif value is None:\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\ttry:\n\t\tvalue_str \u003d str(value).strip()\n\t\tif value_str.endswith(\u0027%\u0027):\n\t\t\tvalue_str \u003d value_str[:-1]\n\t\tpercentage \u003d float(value_str)\n\texcept (ValueError, TypeError):\n\t\treturn \"rgba(107, 114, 128, 0.2)\"\n\tpercentage \u003d max(0, min(100, percentage))\n\tif percentage \u003e\u003d 85:\n\t\treturn \"rgba(16, 185, 129, 0.2)\"\n\telif percentage \u003e\u003d 70:\n\t\treturn \"rgba(59, 130, 246, 0.2)\"\n\telif percentage \u003e\u003d 50:\n\t\treturn \"rgba(245, 158, 11, 0.2)\"\n\telif percentage \u003e\u003d 30:\n\t\treturn \"rgba(249, 115, 22, 0.2)\"\n\telse:\n\t\treturn \"rgba(239, 68, 68, 0.2)\"",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.value": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/OEE\""
-                  },
-                  "transforms": [
-                    {
-                      "formatType": "numeric",
-                      "formatValue": "percent",
-                      "type": "format"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              }
-            },
-            "props": {
-              "arc": {
-                "width": 5
-              },
-              "arcBackground": {},
-              "label": {
-                "color": "#d1d5db",
-                "maxDecimal": 0,
-                "offsetY": 20,
-                "size": 42
-              },
-              "startAngle": 0,
-              "style": {
-                "padding": 8
-              }
-            },
-            "type": "ia.chart.simple-gauge"
-          }
-        ],
-        "meta": {
-          "name": "gauges_row"
+          "name": "root"
         },
         "position": {
           "grow": 1
         },
         "props": {
-          "alignItems": "center",
-          "justify": "space-around"
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#111822",
+            "border": "1px solid #1B2432",
+            "borderRadius": 6,
+            "padding": 0
+          }
         },
         "type": "ia.container.flex"
       }
@@ -695,8 +670,7 @@
       "style": {
         "backgroundColor": "#21262d",
         "border": "1px solid rgba(255, 255, 255, 0.05)",
-        "borderRadius": 16,
-        "padding": 16
+        "borderRadius": 16
       }
     },
     "type": "ia.container.flex"

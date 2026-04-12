@@ -1,0 +1,742 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "title"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "DATA CONFIGURATION"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "header"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "style": {
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "5px 12px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Tree"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "appearance": {
+                    "defaultNodeIcons": {
+                      "collapsed": {
+                        "path": "material/folder",
+                        "style": {
+                          "color": "#F59E0B"
+                        }
+                      },
+                      "empty": {
+                        "path": "material/circle",
+                        "style": {
+                          "color": "#4A6080",
+                          "fontSize": "8px"
+                        }
+                      },
+                      "expanded": {
+                        "path": "material/folder_open",
+                        "style": {
+                          "color": "#F59E0B"
+                        }
+                      }
+                    },
+                    "expandIcons": {
+                      "collapsed": {
+                        "path": "material/chevron_right",
+                        "style": {
+                          "color": "#4A6080"
+                        }
+                      },
+                      "expanded": {
+                        "path": "material/expand_more",
+                        "style": {
+                          "color": "#7088A8"
+                        }
+                      }
+                    },
+                    "hoverStyle": {
+                      "backgroundColor": "rgba(255, 255, 255, 0.03)"
+                    },
+                    "itemStyle": {
+                      "borderRadius": 4,
+                      "color": "#E2E8F0",
+                      "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                      "fontSize": "13px",
+                      "fontWeight": 400,
+                      "marginBottom": "2px",
+                      "padding": "8px 12px"
+                    },
+                    "selectedStyle": {
+                      "backgroundColor": "rgba(34, 197, 94, 0.1)",
+                      "borderLeft": "3px solid #22C55E",
+                      "borderRadius": 4
+                    }
+                  },
+                  "items": [
+                    {
+                      "data": "I am string data for Item 1",
+                      "expanded": true,
+                      "icon": {
+                        "color": "#3B82F6",
+                        "path": "material/corporate_fare"
+                      },
+                      "items": [
+                        {
+                          "data": {
+                            "someKey": "Information here."
+                          },
+                          "expanded": true,
+                          "icon": {
+                            "color": "#4A6080",
+                            "path": "material/business"
+                          },
+                          "items": [
+                            {
+                              "data": {},
+                              "expanded": true,
+                              "icon": {
+                                "color": "#4A6080",
+                                "path": "material/domain"
+                              },
+                              "items": [
+                                {
+                                  "data": {},
+                                  "expanded": false,
+                                  "icon": {
+                                    "color": "#22C55E",
+                                    "path": "material/precision_manufacturing"
+                                  },
+                                  "items": [],
+                                  "label": "Line 1"
+                                },
+                                {
+                                  "data": {},
+                                  "expanded": false,
+                                  "icon": {
+                                    "color": "#22C55E",
+                                    "path": "material/precision_manufacturing"
+                                  },
+                                  "items": [],
+                                  "label": "Line 2"
+                                }
+                              ],
+                              "label": "Area"
+                            }
+                          ],
+                          "label": "Site"
+                        }
+                      ],
+                      "label": "Enterprise"
+                    }
+                  ],
+                  "selection": [
+                    "0/0/0/0"
+                  ],
+                  "selectionData": [
+                    {
+                      "itemPath": "0/0/0/0",
+                      "value": {}
+                    }
+                  ],
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "padding": 12
+                  }
+                },
+                "type": "ia.display.tree"
+              }
+            ],
+            "meta": {
+              "name": "treeCard"
+            },
+            "position": {
+              "basis": "300px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "#111822",
+                "border": "1px solid #1B2432",
+                "borderRadius": 6,
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "PRODUCT CODES"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "addIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#22C55E",
+                          "path": "material/add_circle_outline",
+                          "style": {
+                            "cursor": "pointer"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "deleteIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#EF4444",
+                          "path": "material/delete_forever",
+                          "style": {
+                            "cursor": "pointer",
+                            "marginLeft": 6
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "45px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "productCodesTable"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    dbName \u003d \"mes_core\"\n    query \u003d \"SELECT productcode AS \\\"ProductCode\\\", description AS \\\"Description\\\", disable AS \\\"Disable\\\", \\\"TimeStamp\\\" FROM productcode\"\n    try:\n        data \u003d system.db.runPrepQuery(query, [], dbName)\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            { col: row[col] for col in data.getColumnNames() }\n            for row in json_data\n        ]\n        return result\n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "bodyStyle": {
+                        "backgroundColor": "#111822"
+                      },
+                      "cells": {
+                        "style": {
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
+                        }
+                      },
+                      "columns": [
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "ProductCode",
+                          "header": {
+                            "title": "Product Code"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true
+                        },
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "Description",
+                          "header": {
+                            "title": "Description"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "editable": false,
+                          "field": "Disable",
+                          "header": {
+                            "title": "Disable"
+                          },
+                          "render": "boolean",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "90px"
+                        },
+                        {
+                          "align": "center",
+                          "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                          "editable": false,
+                          "field": "TimeStamp",
+                          "header": {
+                            "title": "Timestamp"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "160px"
+                        }
+                      ],
+                      "headerStyle": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": "10px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
+                        "textTransform": "uppercase"
+                      },
+                      "pager": {
+                        "bottom": false
+                      },
+                      "rows": {
+                        "highlight": {
+                          "color": "rgba(34, 197, 94, 0.08)"
+                        },
+                        "striped": {
+                          "color": {
+                            "even": "#111822",
+                            "odd": "#0D1117"
+                          }
+                        },
+                        "style": {
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "fontSize": "12px",
+                          "fontWeight": 400
+                        }
+                      },
+                      "selection": {
+                        "style": {
+                          "backgroundColor": "rgba(34, 197, 94, 0.12)",
+                          "borderLeft": "3px solid #22C55E"
+                        }
+                      },
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 0,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.table"
+                  }
+                ],
+                "meta": {
+                  "name": "productCodesCard"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "LINE PRODUCT CODES"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "lineValue"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "rgba(34, 197, 94, 0.1)",
+                            "border": "1px solid #22C55E",
+                            "borderRadius": 4,
+                            "color": "#22C55E",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "paddingBottom": 3,
+                            "paddingLeft": 10,
+                            "paddingRight": 10,
+                            "paddingTop": 3,
+                            "textTransform": "uppercase"
+                          },
+                          "text": "Line 1"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "addIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#22C55E",
+                          "path": "material/add_circle_outline",
+                          "style": {
+                            "cursor": "pointer",
+                            "marginLeft": 8
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "deleteIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#EF4444",
+                          "path": "material/delete_forever",
+                          "style": {
+                            "cursor": "pointer",
+                            "marginLeft": 6
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "meta": {
+                      "name": "header"
+                    },
+                    "position": {
+                      "basis": "45px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "lineProductCodesTable"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    dbName \u003d \"mes_core\"\n    query \u003d \"\"\"\n        SELECT pc.productcode AS \\\"ProductCode\\\", pc.description AS \\\"Description\\\", pcl.enable AS \\\"Enable\\\", pcl.\\\"TimeStamp\\\" \n        FROM productcode pc\n        LEFT JOIN productcodeline pcl\n        ON pc.id \u003d pcl.productcodeid\n        WHERE pcl.lineid \u003d ?\n    \"\"\"\n    try:\n        lineID \u003d 1\n        data \u003d system.db.runPrepQuery(query, [lineID], dbName)\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            { col: row[col] for col in data.getColumnNames() }\n            for row in json_data\n        ]\n        return result\n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "bodyStyle": {
+                        "backgroundColor": "#111822"
+                      },
+                      "cells": {
+                        "style": {
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
+                        }
+                      },
+                      "columns": [
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "ProductCode",
+                          "header": {
+                            "title": "Product Code"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true
+                        },
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "Description",
+                          "header": {
+                            "title": "Description"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "editable": false,
+                          "field": "Enable",
+                          "header": {
+                            "title": "Enabled"
+                          },
+                          "render": "boolean",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "90px"
+                        },
+                        {
+                          "align": "center",
+                          "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                          "editable": false,
+                          "field": "TimeStamp",
+                          "header": {
+                            "title": "Timestamp"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "160px"
+                        }
+                      ],
+                      "headerStyle": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": "10px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
+                        "textTransform": "uppercase"
+                      },
+                      "pager": {
+                        "bottom": false
+                      },
+                      "rows": {
+                        "highlight": {
+                          "color": "rgba(34, 197, 94, 0.08)"
+                        },
+                        "striped": {
+                          "color": {
+                            "even": "#111822",
+                            "odd": "#0D1117"
+                          }
+                        },
+                        "style": {
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "fontSize": "12px",
+                          "fontWeight": 400
+                        }
+                      },
+                      "selection": {
+                        "style": {
+                          "backgroundColor": "rgba(34, 197, 94, 0.12)",
+                          "borderLeft": "3px solid #22C55E"
+                        }
+                      },
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 0,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.table"
+                  }
+                ],
+                "meta": {
+                  "name": "lineProductCodesCard"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "tablesColumn"
+            },
+            "position": {
+              "grow": 3
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": 10
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "root"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#0A0E14",
+            "gap": 10,
+            "padding": 10
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

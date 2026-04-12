@@ -1,5 +1,24 @@
 [
   {
+    "name": "maintainx",
+    "typeId": null,
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "memory",
+        "dataType": "DataSet",
+        "name": "Maint Requested",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "DataSet",
+        "name": "Open WO",
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
     "name": "OdooWorkOrder",
     "typeId": "",
     "tagType": "UdtType",

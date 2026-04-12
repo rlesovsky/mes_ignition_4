@@ -1,0 +1,317 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 298
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "title_icon"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#10b981",
+                  "path": "material/assessment",
+                  "style": {
+                    "marginRight": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "title_label"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "Arial",
+                    "fontSize": 18,
+                    "fontWeight": "600"
+                  },
+                  "text": "Production Rate vs Standard Rate"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "card_header"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
+                "marginBottom": 8,
+                "padding": 5,
+                "paddingBottom": 8
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "PowerChart"
+            },
+            "position": {
+              "basis": "450px",
+              "grow": 1
+            },
+            "props": {
+              "axes": [
+                {
+                  "grid": {
+                    "style": {
+                      "stroke": "#30363d",
+                      "strokeWidth": 1
+                    },
+                    "visible": true
+                  },
+                  "label": {
+                    "style": {
+                      "fill": "#8b949e",
+                      "fontSize": 11
+                    },
+                    "text": "Rate (parts/hr)"
+                  },
+                  "name": "rate-axis",
+                  "position": "left",
+                  "tick": {
+                    "style": {
+                      "fill": "#8b949e",
+                      "fontSize": 10
+                    }
+                  },
+                  "visible": true
+                }
+              ],
+              "config": {
+                "rangeEndDate": {
+                  "$": [
+                    "ts",
+                    0,
+                    1774720502704
+                  ],
+                  "$ts": 1774720491059
+                },
+                "rangeStartDate": {
+                  "$": [
+                    "ts",
+                    0,
+                    1774720502704
+                  ],
+                  "$ts": 1774716903059
+                },
+                "unitOfTime": 1
+              },
+              "interaction": {
+                "chartZoomLevel": 1,
+                "rangeZoomLevel": 1
+              },
+              "legend": {
+                "visible": true
+              },
+              "pens": [
+                {
+                  "axis": "rate-axis",
+                  "data": {
+                    "aggregateMode": "default",
+                    "source": "histprov:timebase:/drv:default:ignitiondefault:/tag:ignitiondefault/Enterprise/Site/Area/Line 1/Line/OEE/Production Rate"
+                  },
+                  "display": {
+                    "breakLine": true,
+                    "interpolation": "curveMonotoneX",
+                    "radius": 3,
+                    "styles": {
+                      "highlighted": {
+                        "fill": {
+                          "color": "#10b981",
+                          "opacity": 0.4
+                        },
+                        "stroke": {
+                          "color": "#10b981",
+                          "opacity": 1,
+                          "width": 3
+                        }
+                      },
+                      "muted": {
+                        "fill": {
+                          "color": "#10b981",
+                          "opacity": 0.1
+                        },
+                        "stroke": {
+                          "color": "#10b981",
+                          "opacity": 0.3,
+                          "width": 1
+                        }
+                      },
+                      "normal": {
+                        "fill": {
+                          "color": "#10b981",
+                          "opacity": 0.3
+                        },
+                        "stroke": {
+                          "color": "#10b981",
+                          "opacity": 1,
+                          "width": 2
+                        }
+                      },
+                      "selected": {
+                        "fill": {
+                          "color": "#10b981",
+                          "opacity": 0.5
+                        },
+                        "stroke": {
+                          "color": "#10b981",
+                          "opacity": 1,
+                          "width": 3
+                        }
+                      }
+                    },
+                    "type": "area"
+                  },
+                  "enabled": true,
+                  "name": "Production Rate",
+                  "plot": 0,
+                  "selectable": true,
+                  "visible": true
+                },
+                {
+                  "axis": "rate-axis",
+                  "data": {
+                    "aggregateMode": "default",
+                    "source": "histprov:timebase:/drv:default:ignitiondefault:/tag:ignitiondefault/Enterprise/Site/Area/Line 1/Line/OEE/Standard Rate"
+                  },
+                  "display": {
+                    "breakLine": true,
+                    "interpolation": "curveMonotoneX",
+                    "radius": 3,
+                    "styles": {
+                      "highlighted": {
+                        "fill": {
+                          "color": "transparent",
+                          "opacity": 0
+                        },
+                        "stroke": {
+                          "color": "#f97316",
+                          "dashArray": "8,4",
+                          "opacity": 1,
+                          "width": 3
+                        }
+                      },
+                      "muted": {
+                        "fill": {
+                          "color": "transparent",
+                          "opacity": 0
+                        },
+                        "stroke": {
+                          "color": "#f97316",
+                          "dashArray": "8,4",
+                          "opacity": 0.3,
+                          "width": 1
+                        }
+                      },
+                      "normal": {
+                        "fill": {
+                          "color": "transparent",
+                          "opacity": 0
+                        },
+                        "stroke": {
+                          "color": "#f97316",
+                          "dashArray": "8,4",
+                          "opacity": 1,
+                          "width": 2
+                        }
+                      },
+                      "selected": {
+                        "fill": {
+                          "color": "transparent",
+                          "opacity": 0
+                        },
+                        "stroke": {
+                          "color": "#f97316",
+                          "dashArray": "8,4",
+                          "opacity": 1,
+                          "width": 3
+                        }
+                      }
+                    },
+                    "type": "line"
+                  },
+                  "enabled": true,
+                  "name": "Standard Rate",
+                  "plot": 0,
+                  "selectable": true,
+                  "visible": true
+                }
+              ],
+              "plots": [
+                {
+                  "color": "#101418",
+                  "markers": [],
+                  "name": "plot-0",
+                  "relativeWeight": 1,
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              ],
+              "style": {
+                "classes": "mes-powerchart-dark",
+                "margin": 10
+              }
+            },
+            "type": "ia.chart.powerchart"
+          }
+        ],
+        "meta": {
+          "name": "root"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#21262d",
+            "border": "1px solid #30363d",
+            "borderRadius": "16px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#21262d",
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

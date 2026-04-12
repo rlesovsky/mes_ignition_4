@@ -1,0 +1,830 @@
+{
+  "custom": {},
+  "params": {
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 564
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Image"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "fit": {
+                "mode": "fill"
+              },
+              "source": "/system/images/maintainX.svg",
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "marginLeft": 10
+              }
+            },
+            "type": "ia.display.image"
+          },
+          {
+            "meta": {
+              "name": "title"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "#3b82f6",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 18,
+                "fontWeight": 600,
+                "letterSpacing": "-0.3px",
+                "marginLeft": 10
+              },
+              "text": "\n"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "api_status"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "rgba(16, 185, 129, 0.15)",
+                "border": "1px solid rgba(16, 185, 129, 0.3)",
+                "borderRadius": 9999,
+                "color": "#10b981",
+                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 11,
+                "fontWeight": 600,
+                "letterSpacing": "0.5px",
+                "marginRight": 16,
+                "paddingBottom": 5,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+                "paddingTop": 5,
+                "textTransform": "uppercase"
+              },
+              "text": "CONNECTED"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "backgroundColor": "#21262d",
+            "borderBottom": "1px solid rgba(255, 255, 255, 0.1)"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "section_title"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 11,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.5px",
+                        "marginBottom": 12,
+                        "textTransform": "uppercase"
+                      },
+                      "text": "REQUEST DETAILS"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "100px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#8b949e",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          },
+                          "text": "Title"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "title_input"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "placeholder": "Brief description of the issue...",
+                          "style": {
+                            "backgroundColor": "#21262d",
+                            "border": "1px solid rgba(255, 255, 255, 0.1)",
+                            "borderRadius": 8,
+                            "color": "#ffffff",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          },
+                          "text": "This is a Request From Line 1"
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "title_row"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "style": {
+                        "marginBottom": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "100px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#8b949e",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          },
+                          "text": "Description"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "desc_input"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "placeholder": "Details about the issue, when it started, relevant context...",
+                          "style": {
+                            "backgroundColor": "#21262d",
+                            "border": "1px solid rgba(255, 255, 255, 0.1)",
+                            "borderRadius": 8,
+                            "color": "#ffffff",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          },
+                          "text": "I am hearing weird noises coming from the barrings on the infeed filler motor. "
+                        },
+                        "type": "ia.input.text-area"
+                      }
+                    ],
+                    "meta": {
+                      "name": "desc_row"
+                    },
+                    "position": {
+                      "basis": "90px"
+                    },
+                    "props": {
+                      "style": {
+                        "marginBottom": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "100px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#8b949e",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          },
+                          "text": "Location"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "label_0"
+                        },
+                        "position": {
+                          "basis": "100px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.tagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t\n\treturn value.split(\"/\")[-1]\n\t",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#8b949e",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "location_row"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "style": {
+                        "marginBottom": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "100px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#8b949e",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          },
+                          "text": "Asset"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "asset_dropdown"
+                        },
+                        "position": {
+                          "basis": "200px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "options": [
+                            {
+                              "label": "Filler 1",
+                              "value": 15967534
+                            }
+                          ],
+                          "style": {
+                            "backgroundColor": "#21262d",
+                            "border": "1px solid rgba(255, 255, 255, 0.1)",
+                            "borderRadius": 8,
+                            "color": "#ffffff",
+                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 14
+                          },
+                          "value": 15967534
+                        },
+                        "type": "ia.input.dropdown"
+                      }
+                    ],
+                    "meta": {
+                      "name": "asset_row"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "request_section"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#161b22",
+                    "borderRadius": 12,
+                    "padding": 5
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "section_title"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#8b949e",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 11,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.5px",
+                        "marginBottom": 12,
+                        "textTransform": "uppercase"
+                      },
+                      "text": "PRIORITY"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "RadioGroup"
+                        },
+                        "position": {
+                          "basis": "155px"
+                        },
+                        "props": {
+                          "index": null,
+                          "radios": [
+                            {
+                              "selected": false,
+                              "text": "None",
+                              "value": "Radio button"
+                            }
+                          ],
+                          "value": ""
+                        },
+                        "type": "ia.input.radio-group"
+                      },
+                      {
+                        "meta": {
+                          "name": "RadioGroup_0"
+                        },
+                        "position": {
+                          "basis": "155px"
+                        },
+                        "props": {
+                          "index": null,
+                          "radios": [
+                            {
+                              "selected": false,
+                              "text": "Low",
+                              "value": "Radio button"
+                            }
+                          ],
+                          "value": ""
+                        },
+                        "type": "ia.input.radio-group"
+                      },
+                      {
+                        "meta": {
+                          "name": "RadioGroup_1"
+                        },
+                        "position": {
+                          "basis": "155px"
+                        },
+                        "props": {
+                          "radios": [
+                            {
+                              "selected": true,
+                              "text": "Medium",
+                              "value": "Radio button"
+                            }
+                          ]
+                        },
+                        "type": "ia.input.radio-group"
+                      },
+                      {
+                        "meta": {
+                          "name": "RadioGroup_2"
+                        },
+                        "position": {
+                          "basis": "155px"
+                        },
+                        "props": {
+                          "index": null,
+                          "radios": [
+                            {
+                              "selected": false,
+                              "text": "High",
+                              "value": "Radio button"
+                            }
+                          ],
+                          "value": ""
+                        },
+                        "type": "ia.input.radio-group"
+                      }
+                    ],
+                    "meta": {
+                      "name": "priority_buttons"
+                    },
+                    "position": {
+                      "basis": "44px"
+                    },
+                    "props": {
+                      "justify": "center",
+                      "style": {
+                        "gap": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "priority_section"
+                },
+                "position": {
+                  "basis": "90px"
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#161b22",
+                    "borderRadius": 12,
+                    "marginTop": 5,
+                    "padding": 10
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\timport maintainx.workrequests as wr\n\n\troot \u003d self.parent.parent\n\tcontent \u003d root.getChild(\u0027content\u0027)\n\trequest_section \u003d content.getChild(\u0027request_section\u0027)\n\n\ttitle \u003d request_section.getChild(\u0027title_row\u0027).getChild(\u0027title_input\u0027).props.text\n\tdesc \u003d request_section.getChild(\u0027desc_row\u0027).getChild(\u0027desc_input\u0027).props.text\n\n\t# Try to get priority from custom, default to MEDIUM if not set\n\ttry:\n\t\tpriority \u003d self.view.custom.selectedPriority\n\texcept:\n\t\tpriority \u003d \u0027MEDIUM\u0027\n\n\tif not title or title.strip() \u003d\u003d \u0027\u0027:\n\t\tsystem.perspective.print(\u0027Title is required\u0027)\n\t\treturn\n\n\tresult \u003d wr.createSimple(\n\t\ttitle \u003d title,\n\t\tdescription \u003d desc if desc else \u0027\u0027,\n\t\tpriority \u003d priority if priority else \u0027MEDIUM\u0027\n\t)\n\n\tif result[\u0027success\u0027]:\n\t\tsystem.tag.writeBlocking(\n\t\t\t[\"[default]Enterprise/Site/Area/Line 1/Maintain X/Maint Requested\"],\n\t\t\t[True]\n\t\t)\n\t\tsystem.perspective.print(\u0027Work Request Created: WR-\u0027 + str(result[\u0027workRequestId\u0027]))\n\t\tsystem.perspective.closePopup(\u0027\u0027)\n\telse:\n\t\tsystem.perspective.print(\u0027Error: \u0027 + str(result[\u0027error\u0027]))"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "submit"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "rgba(245, 158, 11, 0.15)",
+                        "borderColor": "rgba(245, 158, 11, 0.4)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "marginRight": 8
+                      },
+                      "text": "Submit Request",
+                      "textStyle": {
+                        "color": "#fbbf24",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tsystem.perspective.closePopup(\u0027\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "cancel"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "rgba(239, 68, 68, 0.15)",
+                        "borderColor": "rgba(239, 68, 68, 0.3)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "marginLeft": 8
+                      },
+                      "text": "Cancel",
+                      "textStyle": {
+                        "color": "#ef4444",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "buttons"
+                },
+                "position": {
+                  "basis": "70px"
+                },
+                "props": {
+                  "style": {
+                    "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                    "padding": 5
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "content"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "table"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Enterprise/Site/Area/Line 1/Maintain X/Open WO"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "bodyStyle": {
+                    "backgroundColor": "#101418"
+                  },
+                  "cells": {
+                    "style": {
+                      "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                      "padding": "12px 16px"
+                    }
+                  },
+                  "headerStyle": {
+                    "backgroundColor": "#161b22",
+                    "borderBottom": "2px solid #3b82f6",
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": "13px",
+                    "fontWeight": 600,
+                    "letterSpacing": "0.5px",
+                    "padding": "12px 16px",
+                    "textTransform": "uppercase"
+                  },
+                  "pager": {
+                    "bottom": false
+                  },
+                  "rows": {
+                    "highlight": {
+                      "color": "rgba(59, 130, 246, 0.1)"
+                    },
+                    "striped": {
+                      "color": {
+                        "even": "#101418",
+                        "odd": "#161b22"
+                      }
+                    },
+                    "style": {
+                      "color": "#ffffff",
+                      "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": 400
+                    }
+                  },
+                  "selection": {
+                    "style": {
+                      "backgroundColor": "rgba(59, 130, 246, 0.15)",
+                      "border": "1px solid #3b82f6"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid rgba(255, 255, 255, 0.08)",
+                    "borderRadius": 8,
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.table"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\n\timport maintainx.workorders as wo\n\n\tresult \u003d wo.list(limit\u003d50)\n\n\tif result[\"success\"]:\n\t\t# Client-side filter for OPEN + Line 1\n\t\torders \u003d [\n\t\t\to for o in result[\"workOrders\"]\n\t\t\tif o.get(\"status\") \u003d\u003d \"OPEN\" and o.get(\"locationId\") \u003d\u003d 4605031\n\t\t]\n\n\t\theaders \u003d [\"id\", \"title\", \"status\", \"priority\", \"assetId\", \"createdAt\"]\n\t\trows \u003d []\n\t\tfor o in orders:\n\t\t\trows.append([\n\t\t\t\to.get(\"id\", 0),\n\t\t\t\to.get(\"title\", \"\"),\n\t\t\t\to.get(\"status\", \"\"),\n\t\t\t\to.get(\"priority\", \"\"),\n\t\t\t\to.get(\"assetId\", 0),\n\t\t\t\to.get(\"createdAt\", \"\")\n\t\t\t])\n\n\t\tds \u003d system.dataset.toDataSet(headers, rows)\n\n\t\tsystem.tag.writeBlocking(\n\t\t\t[\"[default]Enterprise/Site/Area/Line 1/Maintain X/Open WO\"],\n\t\t\t[ds]\n\t\t)\n\n\t\tsystem.perspective.print(\u0027Found %d open work orders\u0027 % len(orders))\n\telse:\n\t\tsystem.perspective.print(\u0027Error: \u0027 + str(result[\"error\"]))"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "submit"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "rgba(245, 158, 11, 0.15)",
+                        "borderColor": "rgba(245, 158, 11, 0.4)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "marginRight": 8
+                      },
+                      "text": "Request",
+                      "textStyle": {
+                        "color": "#fbbf24",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tsystem.perspective.closePopup(\u0027\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "cancel"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "rgba(239, 68, 68, 0.15)",
+                        "borderColor": "rgba(239, 68, 68, 0.3)",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "marginLeft": 8
+                      },
+                      "text": "Cancel",
+                      "textStyle": {
+                        "color": "#ef4444",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": 600
+                      }
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "buttons"
+                },
+                "position": {
+                  "basis": "70px"
+                },
+                "props": {
+                  "style": {
+                    "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+                    "padding": 5
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "content_0"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1
+        },
+        "props": {
+          "menuType": "modern",
+          "tabs": [
+            "Request",
+            "Open W/O"
+          ]
+        },
+        "type": "ia.container.tab"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -4,18 +4,18 @@
       "$": [
         "ts",
         192,
-        1767317740862
+        1775180482503
       ],
-      "$ts": 1767317740862
+      "$ts": 1775180482503
     },
-    "runID": -1,
+    "runID": 15,
     "startDate": {
       "$": [
         "ts",
         192,
-        1766460906998
+        1775084196155
       ],
-      "$ts": 1759678093000
+      "$ts": 1775084196149
     }
   },
   "params": {
@@ -70,531 +70,218 @@
       {
         "children": [
           {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#7088A8",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "ACCUMULATED WASTE"
+                },
+                "type": "ia.display.label"
+              }
+            ],
             "meta": {
-              "name": "icon"
+              "name": "header"
             },
             "position": {
-              "basis": "32px"
+              "basis": "32px",
+              "shrink": 0
             },
             "props": {
-              "path": "material/delete_sweep",
+              "alignItems": "center",
               "style": {
-                "color": "#f97316",
-                "marginLeft": 10
+                "backgroundColor": "#16202E",
+                "borderBottom": "1px solid #1B2432",
+                "padding": "5px 10px"
               }
             },
-            "type": "ia.display.icon"
+            "type": "ia.container.flex"
           },
           {
             "meta": {
-              "name": "Label"
+              "name": "apexchart"
             },
             "position": {
+              "basis": "0px",
               "grow": 1
             },
-            "props": {
-              "style": {
-                "color": "#ffffff",
-                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                "fontSize": 18,
-                "fontWeight": 600,
-                "letterSpacing": "-0.3px",
-                "marginLeft": 10
-              },
-              "text": "Accumulated Waste"
+            "propConfig": {
+              "props.series": {
+                "binding": {
+                  "config": {
+                    "expression": "now()"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\n\tlogger \u003d system.util.getLogger(\"WasteApexChart\")\n\t\n\ttry:\n\t\trunID \u003d self.view.custom.runID if hasattr(self.view.custom, \u0027runID\u0027) else None\n\t\t\n\t\tif runID is None:\n\t\t\treturn [{\"name\": \"Waste Count\", \"data\": []}]\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Parameter error: \" + str(e))\n\t\treturn [{\"name\": \"Waste Count\", \"data\": []}]\n\t\n\ttry:\n\t\tsql_query \u003d \"\"\"\n\t\tSELECT EXTRACT(HOUR FROM \"TimeStamp\") as Hour, \n\t\t       SUM(count) as Actual\n\t\tFROM counthistory\n\t\tWHERE counttypeid \u003d 3\n\t\t  AND runid \u003d ?\n\t\t  AND count \u003e 0\n\t\tGROUP BY DATE(\"TimeStamp\"), EXTRACT(HOUR FROM \"TimeStamp\")\n\t\tORDER BY DATE(\"TimeStamp\") DESC, EXTRACT(HOUR FROM \"TimeStamp\") DESC\n\t\tLIMIT 8\n\t\t\"\"\"\n\t\t\n\t\tdataset \u003d system.db.runPrepQuery(sql_query, [runID], \u0027mes_core\u0027)\n\t\tlogger.info(\"Query executed, found {} rows for runID {}\".format(dataset.getRowCount(), runID))\n\t\t\n\t\tdata \u003d []\n\t\tfor row in range(dataset.getRowCount()):\n\t\t\thour \u003d dataset.getValueAt(row, \"Hour\")\n\t\t\tactual \u003d dataset.getValueAt(row, \"Actual\")\n\t\t\t\n\t\t\tif hour is not None and actual is not None:\n\t\t\t\tdata.append({\n\t\t\t\t\t\"x\": \"{}:00\".format(int(hour)),\n\t\t\t\t\t\"y\": int(actual)\n\t\t\t\t})\n\t\t\t\tlogger.info(\"Added: Hour {} \u003d {} units\".format(hour, actual))\n\t\t\n\t\tdata.reverse()\n\t\t\n\t\treturn [{\"name\": \"Waste Count\", \"data\": data}]\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Query error: \" + str(e))\n\t\treturn [{\"name\": \"Waste Count\", \"data\": []}]",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
             },
-            "type": "ia.display.label"
+            "props": {
+              "options": {
+                "chart": {
+                  "background": "#111822",
+                  "events": {
+                    "animationEnd": false,
+                    "beforeMount": false,
+                    "beforeResetZoom": false,
+                    "beforeZoom": false,
+                    "brushScrolled": false,
+                    "click": false,
+                    "dataPointMouseEnter": false,
+                    "dataPointMouseLeave": false,
+                    "dataPointSelection": false,
+                    "legendClick": false,
+                    "markerClick": false,
+                    "mounted": false,
+                    "mouseLeave": false,
+                    "mouseMove": false,
+                    "scrolled": false,
+                    "selection": false,
+                    "updated": false,
+                    "xAxisLabelClick": false,
+                    "zoomed": false
+                  },
+                  "height": "100%",
+                  "toolbar": {
+                    "show": true
+                  },
+                  "type": "bar"
+                },
+                "colors": [
+                  "#F97316"
+                ],
+                "dataLabels": {
+                  "enabled": false
+                },
+                "fill": {
+                  "colors": [
+                    "#F97316"
+                  ],
+                  "opacity": 1
+                },
+                "grid": {
+                  "borderColor": "#1B2432"
+                },
+                "legend": {
+                  "show": false
+                },
+                "plotOptions": {
+                  "bar": {
+                    "borderRadius": 3,
+                    "columnWidth": "50%",
+                    "horizontal": false
+                  }
+                },
+                "stroke": {
+                  "colors": [
+                    "#F97316"
+                  ],
+                  "show": true,
+                  "width": 1
+                },
+                "theme": {
+                  "mode": "dark"
+                },
+                "tooltip": {
+                  "style": {
+                    "fontSize": "12px"
+                  },
+                  "theme": "dark",
+                  "y": {
+                    "formatter": "function (val) { return val + \u0027 units\u0027; }"
+                  }
+                },
+                "xaxis": {
+                  "axisBorder": {
+                    "color": "#1B2432"
+                  },
+                  "axisTicks": {
+                    "color": "#1B2432"
+                  },
+                  "labels": {
+                    "style": {
+                      "colors": "#4A6080",
+                      "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                      "fontSize": "10px",
+                      "fontWeight": 500
+                    }
+                  },
+                  "title": {
+                    "style": {
+                      "color": "#4A6080",
+                      "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                      "fontSize": "10px",
+                      "fontWeight": 600
+                    },
+                    "text": "Hour"
+                  },
+                  "type": "category"
+                },
+                "yaxis": {
+                  "labels": {
+                    "formatter": "function (val) { return val + \u0027 units\u0027; }",
+                    "style": {
+                      "colors": "#4A6080",
+                      "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                      "fontSize": "10px",
+                      "fontWeight": 500
+                    }
+                  },
+                  "min": 0,
+                  "title": {
+                    "style": {
+                      "color": "#4A6080",
+                      "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                      "fontSize": "10px",
+                      "fontWeight": 600
+                    },
+                    "text": "Waste Count"
+                  }
+                }
+              },
+              "style": {
+                "overflow": "hidden",
+                "padding": 5
+              },
+              "type": "bar"
+            },
+            "type": "kyvislabs.display.apexchart"
           }
         ],
         "meta": {
-          "name": "header"
-        },
-        "position": {
-          "basis": "50px"
-        },
-        "props": {
-          "alignItems": "center",
-          "style": {
-            "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "meta": {
-          "name": "WasteCountChart"
+          "name": "root"
         },
         "position": {
           "grow": 1
         },
-        "propConfig": {
-          "props.dataSources": {
-            "binding": {
-              "config": {
-                "expression": "now()"
-              },
-              "transforms": [
-                {
-                  "code": "\n\tlogger \u003d system.util.getLogger(\"WasteCountChart\")\n\t\n\ttry:\n\t\t# Get view parameter for runID\n\t\trunID \u003d self.view.custom.runID if hasattr(self.view.custom, \u0027runID\u0027) else 1\n\t\t\n\t\tlogger.info(\"Query parameter - RunID: {}\".format(runID))\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Parameter error: \" + str(e))\n\t\treturn {\"waste_data\": []}\n\t\n\ttry:\n\t\tsql_query \u003d \"\"\"\n\t\tSELECT EXTRACT(HOUR FROM \\\"TimeStamp\\\") as Hour, sum(count) as Actual \n\t\tFROM counthistory\n\t\tWHERE counttypeid \u003d 3\n\t\t  AND runid \u003d ?\n\t\tGROUP BY DATE(\\\"TimeStamp\\\"), EXTRACT(HOUR FROM \\\"TimeStamp\\\")\n\t\tORDER BY DATE(\\\"TimeStamp\\\") DESC, EXTRACT(HOUR FROM \\\"TimeStamp\\\") DESC\n\t\tLIMIT 8\n\t\t\"\"\"\n\t\t\n\t\tdataset \u003d system.db.runPrepQuery(sql_query, [runID], \u0027mes_core\u0027)\n\t\t\n\t\tlogger.info(\"Query executed, found {} rows\".format(dataset.getRowCount()))\n\t\t\n\t\tresult \u003d []\n\t\tfor row in range(dataset.getRowCount()):\n\t\t\thour \u003d dataset.getValueAt(row, \"Hour\")\n\t\t\tactual \u003d dataset.getValueAt(row, \"Actual\")\n\t\t\t\n\t\t\tif hour is not None and actual is not None:\n\t\t\t\tresult.append({\n\t\t\t\t\t\"Hour\": \"{}:00\".format(int(hour)),  # Format as \"14:00\", \"15:00\", etc.\n\t\t\t\t\t\"Actual\": int(actual)\n\t\t\t\t})\n\t\t\t\tlogger.info(\"Added: Hour {} \u003d {} units\".format(hour, actual))\n\t\t\n\t\t# Reverse to show chronological order (oldest to newest)\n\t\tresult.reverse()\n\t\t\n\t\treturn {\"waste_data\": result}\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\"Query error: \" + str(e))\n\t\treturn {\"waste_data\": []}",
-                  "type": "script"
-                }
-              ],
-              "type": "expr"
-            }
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#111822",
+            "border": "1px solid #1B2432",
+            "borderRadius": 6,
+            "overflow": "hidden",
+            "padding": 0
           }
         },
-        "props": {
-          "background": {
-            "color": "#101418",
-            "render": "color"
-          },
-          "series": [
-            {
-              "candlestick": {
-                "appearance": {
-                  "deriveFieldsFromData": {
-                    "fill": {
-                      "color": "",
-                      "opacity": ""
-                    },
-                    "stroke": {
-                      "color": "",
-                      "opacity": "",
-                      "width": ""
-                    }
-                  },
-                  "fill": {
-                    "color": "",
-                    "opacity": 1
-                  },
-                  "heatRules": {
-                    "dataField": "",
-                    "enabled": false,
-                    "max": "",
-                    "min": ""
-                  },
-                  "stacked": false,
-                  "stroke": {
-                    "color": "",
-                    "opacity": 1,
-                    "width": 1
-                  }
-                },
-                "high": {
-                  "x": "",
-                  "y": ""
-                },
-                "low": {
-                  "x": "",
-                  "y": ""
-                },
-                "open": {
-                  "x": "",
-                  "y": ""
-                }
-              },
-              "column": {
-                "appearance": {
-                  "deriveFieldsFromData": {
-                    "fill": {
-                      "color": "",
-                      "opacity": ""
-                    },
-                    "stroke": {
-                      "color": "",
-                      "opacity": "",
-                      "width": ""
-                    }
-                  },
-                  "fill": {
-                    "color": "#f97316",
-                    "opacity": 1
-                  },
-                  "heatRules": {
-                    "dataField": "",
-                    "enabled": false,
-                    "max": "",
-                    "min": ""
-                  },
-                  "height": null,
-                  "stacked": false,
-                  "stroke": {
-                    "color": "#ea580c",
-                    "opacity": 1,
-                    "width": 1
-                  },
-                  "width": null
-                },
-                "open": {
-                  "x": "",
-                  "y": ""
-                }
-              },
-              "data": {
-                "source": "waste_data",
-                "x": "Hour",
-                "y": "Actual"
-              },
-              "defaultState": {
-                "visible": true
-              },
-              "hiddenInLegend": true,
-              "label": {
-                "text": "Waste Count"
-              },
-              "line": {
-                "appearance": {
-                  "bullets": [
-                    {
-                      "deriveFieldsFromData": {
-                        "fill": {
-                          "color": "",
-                          "opacity": ""
-                        },
-                        "rotation": "",
-                        "stroke": {
-                          "color": "",
-                          "opacity": "",
-                          "width": ""
-                        }
-                      },
-                      "enabled": false,
-                      "fill": {
-                        "color": "",
-                        "opacity": 1
-                      },
-                      "heatRules": {
-                        "dataField": "",
-                        "enabled": false,
-                        "max": 100,
-                        "min": 2
-                      },
-                      "height": 10,
-                      "label": {
-                        "position": {
-                          "dx": 0,
-                          "dy": 0
-                        },
-                        "text": "{value}"
-                      },
-                      "render": "circle",
-                      "rotation": 0,
-                      "stroke": {
-                        "color": "",
-                        "opacity": 1,
-                        "width": 1
-                      },
-                      "tooltip": {
-                        "background": {
-                          "color": "",
-                          "opacity": 1
-                        },
-                        "cornerRadius": 3,
-                        "enabled": true,
-                        "pointerLength": 4,
-                        "text": "{name}: [bold]{valueY}[/]"
-                      },
-                      "width": 10
-                    }
-                  ],
-                  "connect": true,
-                  "fill": {
-                    "color": "",
-                    "opacity": 0
-                  },
-                  "minDistance": 0.5,
-                  "stroke": {
-                    "color": "",
-                    "dashArray": "",
-                    "opacity": 1,
-                    "width": 3
-                  },
-                  "tensionX": 1,
-                  "tensionY": 1
-                },
-                "open": {
-                  "x": "",
-                  "y": ""
-                }
-              },
-              "name": "waste_count",
-              "render": "column",
-              "stepLine": {
-                "appearance": {
-                  "bullets": [
-                    {
-                      "deriveFieldsFromData": {
-                        "fill": {
-                          "color": "",
-                          "opacity": ""
-                        },
-                        "rotation": "",
-                        "stroke": {
-                          "color": "",
-                          "opacity": "",
-                          "width": ""
-                        }
-                      },
-                      "enabled": true,
-                      "fill": {
-                        "color": "",
-                        "opacity": 1
-                      },
-                      "heatRules": {
-                        "dataField": "",
-                        "enabled": false,
-                        "max": 100,
-                        "min": 2
-                      },
-                      "height": 10,
-                      "label": {
-                        "position": {
-                          "dx": 0,
-                          "dy": 0
-                        },
-                        "text": "{value}"
-                      },
-                      "render": "circle",
-                      "rotation": 0,
-                      "stroke": {
-                        "color": "",
-                        "opacity": 1,
-                        "width": 1
-                      },
-                      "tooltip": {
-                        "background": {
-                          "color": "",
-                          "opacity": 1
-                        },
-                        "cornerRadius": 3,
-                        "enabled": true,
-                        "pointerLength": 4,
-                        "text": "{name}: [bold]{valueY}[/]"
-                      },
-                      "width": 10
-                    }
-                  ],
-                  "connect": true,
-                  "fill": {
-                    "color": "",
-                    "opacity": 0
-                  },
-                  "minDistance": 0.5,
-                  "stroke": {
-                    "color": "",
-                    "dashArray": "",
-                    "opacity": 1,
-                    "width": 3
-                  },
-                  "tensionX": 1,
-                  "tensionY": 1
-                },
-                "open": {
-                  "x": "",
-                  "y": ""
-                }
-              },
-              "tooltip": {
-                "background": {
-                  "color": "#21262d",
-                  "opacity": 0.95
-                },
-                "cornerRadius": 8,
-                "enabled": true,
-                "pointerLength": 4,
-                "text": "Hour {categoryX}: [bold]{valueY} units[/]"
-              },
-              "visible": true,
-              "xAxis": "hour",
-              "yAxis": "count",
-              "zIndex": 0
-            }
-          ],
-          "style": {
-            "borderRadius": 12,
-            "margin": 0,
-            "overflow": "hidden"
-          },
-          "xAxes": [
-            {
-              "appearance": {
-                "font": {
-                  "size": 12,
-                  "weight": 500
-                },
-                "grid": {
-                  "color": "rgba(255, 255, 255, 0.05)",
-                  "dashArray": "",
-                  "minDistance": null,
-                  "opacity": 1,
-                  "position": 0.5
-                },
-                "inside": false,
-                "labels": {
-                  "color": "#9ca3af",
-                  "horizontalCenter": "middle",
-                  "opacity": 1,
-                  "rotation": 0,
-                  "verticalCenter": "middle"
-                },
-                "opposite": false
-              },
-              "category": {
-                "break": {
-                  "enabled": false,
-                  "endCategory": "",
-                  "size": 0.05,
-                  "startCategory": ""
-                }
-              },
-              "date": {
-                "baseInterval": {
-                  "count": 1,
-                  "enabled": false,
-                  "skipEmptyPeriods": false,
-                  "timeUnit": "hour"
-                },
-                "break": {
-                  "enabled": false,
-                  "endDate": "",
-                  "size": 0.05,
-                  "startDate": ""
-                },
-                "format": "M/d/yyyy HH:mm:ss",
-                "inputFormat": "yyyy-MM-dd kk:mm:ss",
-                "range": {
-                  "max": "",
-                  "min": "",
-                  "useStrict": false
-                }
-              },
-              "inversed": false,
-              "label": {
-                "color": "#9ca3af",
-                "enabled": true,
-                "text": "Hour"
-              },
-              "name": "hour",
-              "render": "category",
-              "tooltip": {
-                "background": {
-                  "color": "#21262d",
-                  "opacity": 0.95
-                },
-                "cornerRadius": 8,
-                "enabled": true,
-                "pointerLength": 4,
-                "text": ""
-              },
-              "value": {
-                "break": {
-                  "enabled": false,
-                  "endValue": 100,
-                  "size": 0.05,
-                  "startValue": 0
-                },
-                "format": "#,###.##",
-                "logarithmic": false,
-                "range": {
-                  "max": "",
-                  "min": "",
-                  "useStrict": false
-                }
-              },
-              "visible": true
-            }
-          ],
-          "yAxes": [
-            {
-              "appearance": {
-                "font": {
-                  "size": 12,
-                  "weight": 500
-                },
-                "grid": {
-                  "color": "rgba(255, 255, 255, 0.05)",
-                  "dashArray": "",
-                  "minDistance": null,
-                  "opacity": 1,
-                  "position": 0.5
-                },
-                "inside": false,
-                "labels": {
-                  "color": "#9ca3af",
-                  "horizontalCenter": "middle",
-                  "opacity": 1,
-                  "rotation": 0,
-                  "verticalCenter": "middle"
-                },
-                "opposite": false
-              },
-              "category": {
-                "break": {
-                  "enabled": false,
-                  "endCategory": "",
-                  "size": 0.05,
-                  "startCategory": ""
-                }
-              },
-              "date": {
-                "baseInterval": {
-                  "count": 1,
-                  "enabled": false,
-                  "skipEmptyPeriods": false,
-                  "timeUnit": "hour"
-                },
-                "break": {
-                  "enabled": false,
-                  "endDate": "",
-                  "size": 0.05,
-                  "startDate": ""
-                },
-                "format": "M/d/yyyy HH:mm:ss",
-                "inputFormat": "yyyy-MM-dd kk:mm:ss",
-                "range": {
-                  "max": "",
-                  "min": "",
-                  "useStrict": false
-                }
-              },
-              "inversed": false,
-              "label": {
-                "color": "#9ca3af",
-                "enabled": true,
-                "text": "Waste Count"
-              },
-              "name": "count",
-              "render": "value",
-              "tooltip": {
-                "background": {
-                  "color": "#21262d",
-                  "opacity": 0.95
-                },
-                "cornerRadius": 8,
-                "enabled": true,
-                "pointerLength": 4,
-                "text": ""
-              },
-              "value": {
-                "break": {
-                  "enabled": false,
-                  "endValue": 100,
-                  "size": 0.05,
-                  "startValue": 0
-                },
-                "format": "#,### units",
-                "logarithmic": false,
-                "range": {
-                  "max": "",
-                  "min": 0,
-                  "useStrict": false
-                }
-              },
-              "visible": true
-            }
-          ]
-        },
-        "type": "ia.chart.xy"
+        "type": "ia.container.flex"
       }
     ],
     "meta": {
@@ -606,7 +293,7 @@
         "backgroundColor": "#21262d",
         "border": "1px solid rgba(255, 255, 255, 0.05)",
         "borderRadius": 0,
-        "padding": 6
+        "padding": 0
       }
     },
     "type": "ia.container.flex"

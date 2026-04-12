@@ -49,22 +49,6 @@
             "children": [
               {
                 "meta": {
-                  "name": "icon"
-                },
-                "position": {
-                  "basis": "32px"
-                },
-                "props": {
-                  "path": "material/work",
-                  "style": {
-                    "color": "#3b82f6",
-                    "marginLeft": 16
-                  }
-                },
-                "type": "ia.display.icon"
-              },
-              {
-                "meta": {
                   "name": "title"
                 },
                 "position": {
@@ -72,14 +56,14 @@
                 },
                 "props": {
                   "style": {
-                    "color": "#ffffff",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "fontSize": 18,
+                    "color": "#7088A8",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
                     "fontWeight": 600,
-                    "letterSpacing": "-0.3px",
-                    "marginLeft": 10
+                    "letterSpacing": "0.07em",
+                    "textTransform": "uppercase"
                   },
-                  "text": "Create New Work Order"
+                  "text": "CREATE NEW WORK ORDER"
                 },
                 "type": "ia.display.label"
               }
@@ -88,14 +72,16 @@
               "name": "header"
             },
             "position": {
-              "basis": "50px",
-              "display": false
+              "basis": "32px",
+              "display": false,
+              "shrink": 0
             },
             "props": {
               "alignItems": "center",
               "style": {
-                "backgroundColor": "#21262d",
-                "borderBottom": "1px solid rgba(255, 255, 255, 0.1)"
+                "backgroundColor": "#16202E",
+                "borderBottom": "1px solid #1B2432",
+                "padding": "5px 10px"
               }
             },
             "type": "ia.container.flex"
@@ -109,16 +95,16 @@
                       "name": "section_title"
                     },
                     "position": {
-                      "basis": "24px"
+                      "basis": "22px"
                     },
                     "props": {
                       "style": {
-                        "color": "#8b949e",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 11,
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
                         "fontWeight": 600,
-                        "letterSpacing": "0.5px",
-                        "marginBottom": 12,
+                        "letterSpacing": "0.07em",
+                        "marginBottom": 8,
                         "textTransform": "uppercase"
                       },
                       "text": "SELECT PRODUCT"
@@ -152,23 +138,23 @@
                     },
                     "props": {
                       "bodyStyle": {
-                        "backgroundColor": "#101418"
+                        "backgroundColor": "#111822"
                       },
                       "cells": {
                         "style": {
-                          "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
-                          "padding": "12px 16px"
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
                         }
                       },
                       "headerStyle": {
-                        "backgroundColor": "#161b22",
-                        "borderBottom": "2px solid #3b82f6",
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": "13px",
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": "10px",
                         "fontWeight": 600,
-                        "letterSpacing": "0.5px",
-                        "padding": "12px 16px",
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
                         "textTransform": "uppercase"
                       },
                       "pager": {
@@ -180,28 +166,28 @@
                         },
                         "striped": {
                           "color": {
-                            "even": "#101418",
-                            "odd": "#161b22"
+                            "even": "#111822",
+                            "odd": "#0D1117"
                           }
                         },
                         "style": {
-                          "color": "#ffffff",
-                          "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                          "fontSize": "14px",
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "fontSize": "12px",
                           "fontWeight": 400
                         }
                       },
                       "selection": {
                         "style": {
                           "backgroundColor": "rgba(59, 130, 246, 0.15)",
-                          "border": "1px solid #3b82f6"
+                          "border": "1px solid #3B82F6"
                         }
                       },
                       "style": {
                         "backgroundColor": "transparent",
-                        "border": "1px solid rgba(255, 255, 255, 0.08)",
-                        "borderRadius": 8,
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
                         "overflow": "hidden"
                       }
                     },
@@ -217,8 +203,9 @@
                 "props": {
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "#161b22",
-                    "borderRadius": 12,
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "padding": 10
                   }
                 },
@@ -231,16 +218,16 @@
                       "name": "section_title"
                     },
                     "position": {
-                      "basis": "24px"
+                      "basis": "22px"
                     },
                     "props": {
                       "style": {
-                        "color": "#8b949e",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 11,
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
                         "fontWeight": 600,
-                        "letterSpacing": "0.5px",
-                        "marginBottom": 12,
+                        "letterSpacing": "0.07em",
+                        "marginBottom": 8,
                         "textTransform": "uppercase"
                       },
                       "text": "WORK ORDER DETAILS"
@@ -258,11 +245,12 @@
                         },
                         "props": {
                           "style": {
-                            "color": "#8b949e",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": 14
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12,
+                            "fontWeight": 400
                           },
-                          "text": "Quantity"
+                          "text": "Quantity:"
                         },
                         "type": "ia.display.label"
                       },
@@ -275,11 +263,11 @@
                         },
                         "props": {
                           "style": {
-                            "backgroundColor": "#21262d",
-                            "border": "1px solid rgba(255, 255, 255, 0.1)",
-                            "borderRadius": 8,
-                            "color": "#ffffff",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
                             "fontSize": 14
                           },
                           "value": 1000
@@ -291,7 +279,10 @@
                       "name": "quantity"
                     },
                     "position": {
-                      "basis": "50px"
+                      "basis": "44px"
+                    },
+                    "props": {
+                      "alignItems": "center"
                     },
                     "type": "ia.container.flex"
                   }
@@ -305,9 +296,9 @@
                 "props": {
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "#161b22",
-                    "borderRadius": 12,
-                    "marginTop": 16,
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "padding": 10
                   }
                 },
@@ -325,7 +316,8 @@
             "props": {
               "direction": "column",
               "style": {
-                "padding": 5
+                "gap": 10,
+                "padding": 10
               }
             },
             "type": "ia.container.flex"
@@ -353,18 +345,17 @@
                 },
                 "props": {
                   "style": {
-                    "backgroundColor": "#10b981",
-                    "borderColor": "#34d399",
-                    "borderRadius": 10,
+                    "backgroundColor": "#22C55E",
+                    "borderColor": "#22C55E",
+                    "borderRadius": 6,
                     "borderStyle": "solid",
                     "borderWidth": 1,
-                    "boxShadow": "0 4px 16px rgba(16, 185, 129, 0.3)",
                     "marginRight": 8
                   },
                   "text": "Create",
                   "textStyle": {
-                    "color": "#ffffff",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "color": "#FFFFFF",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
                     "fontSize": 14,
                     "fontWeight": 600
                   }
@@ -392,17 +383,17 @@
                 },
                 "props": {
                   "style": {
-                    "backgroundColor": "rgba(239, 68, 68, 0.15)",
-                    "borderColor": "rgba(239, 68, 68, 0.3)",
-                    "borderRadius": 10,
+                    "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                    "borderColor": "#EF4444",
+                    "borderRadius": 6,
                     "borderStyle": "solid",
                     "borderWidth": 1,
                     "marginLeft": 8
                   },
                   "text": "Cancel",
                   "textStyle": {
-                    "color": "#ef4444",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "color": "#EF4444",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
                     "fontSize": 14,
                     "fontWeight": 600
                   }
@@ -414,12 +405,12 @@
               "name": "buttons"
             },
             "position": {
-              "basis": "70px"
+              "basis": "60px"
             },
             "props": {
               "style": {
-                "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
-                "padding": 5
+                "borderTop": "1px solid #1B2432",
+                "padding": "8px 10px"
               }
             },
             "type": "ia.container.flex"
@@ -434,7 +425,7 @@
         "props": {
           "direction": "column",
           "style": {
-            "backgroundColor": "#0d1117"
+            "backgroundColor": "#0A0E14"
           }
         },
         "type": "ia.container.flex"

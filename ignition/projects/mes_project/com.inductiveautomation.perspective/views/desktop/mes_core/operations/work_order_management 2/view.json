@@ -1,0 +1,1146 @@
+{
+  "custom": {
+    "id": 1
+  },
+  "params": {},
+  "propConfig": {
+    "custom.id": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "path": "material/work_outline",
+                  "style": {
+                    "color": "#3b82f6",
+                    "marginLeft": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 18,
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.3px",
+                    "marginLeft": 10
+                  },
+                  "text": "Work Orders"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "no_workorders_badge"
+                },
+                "position": {
+                  "basis": "220px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": ".../table_wrapper/table.props.data[0].WorkOrder"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": false,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": null,
+                              "output": true
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "#ef4444",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 12,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.5px",
+                    "marginRight": 10,
+                    "paddingBottom": 6,
+                    "paddingLeft": 14,
+                    "paddingRight": 14,
+                    "paddingTop": 6,
+                    "textAlign": "center",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "No Work Orders For This Line"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "draggable": true,
+                        "id": "LkRnMMg2",
+                        "modal": false,
+                        "overlayDismiss": true,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "title": "Create New Work Order",
+                        "type": "open",
+                        "viewPath": "desktop/mes_core/operations/templates/popup/create_new_work_order",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "add_0"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#10b981",
+                  "path": "material/add_circle_outline",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginLeft": 12
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\n    \"\"\"\n    Closes the selected work order by setting closed \u003d true\n    \"\"\"\n    logger \u003d system.util.getLogger(\"WorkOrder\")\n    \n    # Navigate from delete icon to table:\n    # delete -\u003e parent (header) -\u003e sibling (table_wrapper) -\u003e child (table)\n    table \u003d self.parent.getSibling(\"table_wrapper\").getChild(\"table\")\n    selection_data \u003d table.props.selection.data\n    \n    # Check if a row is selected\n    if not selection_data or len(selection_data) \u003d\u003d 0:\n        logger.warn(\"No work order selected\")\n        return\n    \n    # Get the selected row (convert to list to access by index)\n    row_data \u003d list(selection_data)[0]\n    workorder_id \u003d row_data[\"ID\"]\n    workorder_name \u003d row_data.get(\"WorkOrder\", \"Unknown\")\n    \n    logger.info(\"Closing Work Order ID: {}, Name: {}\".format(workorder_id, workorder_name))\n    \n    # Update the database - set closed \u003d true\n    query \u003d \"UPDATE workorder SET closed \u003d true WHERE id \u003d ?\"\n    \n    try:\n        system.db.runPrepUpdate(query, [workorder_id], \"mes_core\")\n        logger.info(\"Work Order ID {} has been closed\".format(workorder_id))\n        \n        # Refresh the table data\n        table.refreshBinding(\"props.data\")\n        \n    except Exception as e:\n        logger.error(\"Failed to close Work Order ID {}: {}\".format(workorder_id, str(e)))"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "delete"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#ef4444",
+                  "path": "material/delete_forever",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginLeft": 8,
+                    "marginRight": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "header"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "table"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "now()"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\n    dbName \u003d \"mes_core\"\n    \n    search_string \u003d self.view.params.get(\"searchFilter\", \"\")\n    \n    query \u003d \"\"\"\n        SELECT \n            w.id AS \"ID\",\n            w.workorder AS \"WorkOrder\",\n            w.productcode AS \"ProductCode\",\n            w.quantity AS \"QTY\",\n            w.closed AS \"Closed\",\n            w.hide AS \"Hide\",\n            w.\"TimeStamp\" AS \"TimeStamp\"\n        FROM workorder w\n        WHERE w.hide \u003d false\n        AND w.closed \u003d false\n    \"\"\"\n    \n    params \u003d []\n    \n    if search_string:\n        query +\u003d \" AND (w.workorder ILIKE ? OR w.productcode ILIKE ?)\"\n        params.append(\u0027%\u0027 + search_string + \u0027%\u0027)\n        params.append(\u0027%\u0027 + search_string + \u0027%\u0027)\n    \n    try:\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        if data.getRowCount() \u003e 0:\n            column_names \u003d data.getColumnNames()\n            json_data \u003d system.dataset.toPyDataSet(data)\n            return [{ col: row[col] for col in column_names } for row in json_data]\n        else:\n            return []\n            \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "bodyStyle": {
+                    "backgroundColor": "#101418"
+                  },
+                  "cells": {
+                    "style": {
+                      "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
+                      "padding": "12px 16px"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "WorkOrder",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "ProductCode",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "QTY",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": true,
+                      "field": "Closed",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "boolean",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Hide",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "ID",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                      "editable": false,
+                      "field": "TimeStamp",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "nullFormat": {
+                        "includeNullStrings": false,
+                        "nullFormatValue": "",
+                        "strict": false
+                      },
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    }
+                  ],
+                  "headerStyle": {
+                    "backgroundColor": "#161b22",
+                    "borderBottom": "2px solid #3b82f6",
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": "13px",
+                    "fontWeight": 600,
+                    "letterSpacing": "0.5px",
+                    "padding": "12px 16px",
+                    "textTransform": "uppercase"
+                  },
+                  "pager": {
+                    "bottom": false
+                  },
+                  "rows": {
+                    "highlight": {
+                      "color": "rgba(59, 130, 246, 0.1)"
+                    },
+                    "striped": {
+                      "color": {
+                        "even": "#101418",
+                        "odd": "#161b22"
+                      }
+                    },
+                    "style": {
+                      "color": "#ffffff",
+                      "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": 400
+                    }
+                  },
+                  "selection": {
+                    "style": {
+                      "backgroundColor": "rgba(59, 130, 246, 0.15)",
+                      "border": "1px solid #3b82f6"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "1px solid rgba(255, 255, 255, 0.08)",
+                    "borderRadius": 12,
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "margin": 10,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "table_wrapper"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "workorder_table"
+        },
+        "position": {
+          "basis": "470px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#21262d",
+            "border": "1px solid rgba(255, 255, 255, 0.05)",
+            "borderRadius": 16,
+            "margin": 10,
+            "padding": 6
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "path": "material/schedule",
+                  "style": {
+                    "color": "#3b82f6",
+                    "marginLeft": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "307px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#ffffff",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 18,
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.3px",
+                    "marginLeft": 10
+                  },
+                  "text": "Schedule"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "draggable": true,
+                        "id": "tMVGLlPp",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "title": "Schedule Work Order",
+                        "type": "open",
+                        "viewParams": {
+                          "id": "{/root/workorder_table/table_wrapper/table.props.selection.data[0].ID}",
+                          "lineID": "{view.custom.id}"
+                        },
+                        "viewPath": "desktop/mes_core/operations/templates/popup/schedule_work_order",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "add_0"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "color": "#10b981",
+                  "path": "material/add_circle_outline",
+                  "style": {
+                    "cursor": "pointer"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "delete"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "color": "#ef4444",
+                  "path": "material/delete_forever",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginRight": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "header"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "EquipmentSchedule"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.items": {
+                "binding": {
+                  "config": {
+                    "expression": "now()"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\n\tdbName \u003d \"mes_core\"\n\tlineID \u003d self.view.custom.id\n\t\n\ttry:\n\t\tquery \u003d \u0027SELECT name FROM line WHERE id \u003d ?\u0027\n\t\tresult \u003d system.db.runPrepQuery(query, [lineID], dbName)\n\t\t\n\t\tif result.getRowCount() \u003e 0:\n\t\t\tlineName \u003d result.getValueAt(0, 0)\n\t\telse:\n\t\t\tlineName \u003d \"Line \" + str(lineID)\n\t\t\n\t\treturn [\n\t\t\t{\n\t\t\t\t\"id\": \"line\" + str(lineID),\n\t\t\t\t\"label\": lineName,\n\t\t\t\t\"iconConfig\": {\n\t\t\t\t\t\"path\": \"\",\n\t\t\t\t\t\"color\": \"\",\n\t\t\t\t\t\"style\": {}\n\t\t\t\t},\n\t\t\t\t\"headerStyle\": {\"classes\": \"\"},\n\t\t\t\t\"rowStyle\": {\"classes\": \"\"}\n\t\t\t}\n\t\t]\n\texcept Exception as e:\n\t\tsystem.util.getLogger(\"ScriptLogger\").error(\"Line query failed: {}\".format(str(e)))\n\t\treturn [\n\t\t\t{\n\t\t\t\t\"id\": \"line1\",\n\t\t\t\t\"label\": \"Line 1\",\n\t\t\t\t\"iconConfig\": {\n\t\t\t\t\t\"path\": \"\",\n\t\t\t\t\t\"color\": \"\",\n\t\t\t\t\t\"style\": {}\n\t\t\t\t},\n\t\t\t\t\"headerStyle\": {\"classes\": \"\"},\n\t\t\t\t\"rowStyle\": {\"classes\": \"\"}\n\t\t\t}\n\t\t]",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.scheduledEvents": {
+                "binding": {
+                  "config": {
+                    "expression": "now()"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\n\tdbName \u003d \"mes_core\"\n\tlineID \u003d self.view.custom.id\n\t\n\tquery \u003d \"\"\"\n\t\tSELECT s.id AS \"ID\", s.lineid AS \"LineID\", s.workorderid AS \"WorkOrderID\",\n\t\t\ts.schedulestartdatetime AS \"StartDateTime\",\n\t\t\ts.schedulefinishdatetime AS \"FinishDateTime\",\n\t\t\ts.quantity AS \"Quantity\", w.workorder AS \"WorkOrder\"\n\t\tFROM schedule s\n\t\tINNER JOIN workorder w ON s.workorderid \u003d w.id\n\t\tWHERE s.lineid \u003d ?\n\t\tAND s.schedulestartdatetime \u003e\u003d ?\n\t\tAND s.schedulefinishdatetime \u003c\u003d ?\n\t\tORDER BY s.schedulestartdatetime\n\t\"\"\"\n\t\n\ttry:\n\t\tnow \u003d system.date.now()\n\t\tstart_date \u003d system.date.addDays(now, -7)\n\t\tend_date \u003d system.date.addDays(now, 30)\n\t\t\n\t\tdata \u003d system.db.runPrepQuery(query, [lineID, start_date, end_date], dbName)\n\t\tjson_data \u003d system.dataset.toPyDataSet(data)\n\t\tresult \u003d []\n\t\t\n\t\tfor row in json_data:\n\t\t\tstart_date_time \u003d row[\"StartDateTime\"]\n\t\t\tfinish_date_time \u003d row[\"FinishDateTime\"]\n\t\t\twork_order \u003d row[\"WorkOrder\"]\n\t\t\tquantity \u003d row[\"Quantity\"]\n\t\t\tschedule_id \u003d row[\"ID\"]\n\t\t\t\n\t\t\tif start_date_time is None or finish_date_time is None:\n\t\t\t\tcontinue\n\t\t\t\n\t\t\ttry:\n\t\t\t\tstart_millis \u003d system.date.toMillis(start_date_time)\n\t\t\t\tend_millis \u003d system.date.toMillis(finish_date_time)\n\t\t\t\tstart_date_output \u003d system.date.fromMillis(start_millis)\n\t\t\t\tend_date_output \u003d system.date.fromMillis(end_millis)\n\t\t\texcept:\n\t\t\t\ttry:\n\t\t\t\t\tstart_date_output \u003d system.date.fromMillis(start_date_time.getTime())\n\t\t\t\t\tend_date_output \u003d system.date.fromMillis(finish_date_time.getTime())\n\t\t\t\texcept:\n\t\t\t\t\tcontinue\n\t\t\t\n\t\t\tlabel \u003d \"{} ({:,})\".format(work_order, quantity) if quantity else work_order\n\t\t\t\n\t\t\trow_result \u003d {\n\t\t\t\t\"itemId\": \"line\" + str(lineID),\n\t\t\t\t\"eventId\": str(schedule_id),\n\t\t\t\t\"startDate\": start_date_output,\n\t\t\t\t\"endDate\": end_date_output,\n\t\t\t\t\"label\": label,\n\t\t\t\t\"leadTime\": 0,\n\t\t\t\t\"leadStyle\": {\"classes\": \"\"},\n\t\t\t\t\"percentDone\": 0,\n\t\t\t\t\"style\": {\"classes\": \"\"}\n\t\t\t}\n\t\t\t\n\t\t\tresult.append(row_result)\n\t\t\n\t\treturn result\n\t\n\texcept Exception as e:\n\t\tsystem.util.getLogger(\"ScriptLogger\").error(\"Schedule query failed: {}\".format(str(e)))\n\t\treturn []",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderStyle": "none",
+                "padding": 10
+              }
+            },
+            "type": "ia.display.equipmentschedule"
+          }
+        ],
+        "meta": {
+          "name": "schedule_table"
+        },
+        "position": {
+          "basis": "470px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#21262d",
+            "border": "1px solid rgba(255, 255, 255, 0.05)",
+            "borderRadius": 16,
+            "margin": 10,
+            "padding": 6
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

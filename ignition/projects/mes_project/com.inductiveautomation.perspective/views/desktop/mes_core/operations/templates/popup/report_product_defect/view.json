@@ -3,50 +3,43 @@
     "line": "Line 1",
     "runDS": [
       {
-        "Availability": -1.4904186725616455,
-        "Closed": true,
-        "CurrentInfeed": 1635,
-        "CurrentOutfeed": 1388,
-        "CurrentWaste": 247,
-        "GoodCount": 1388,
-        "ID": 2,
-        "OEE": 0.33780473470687866,
-        "Performance": -0.22499999403953552,
-        "Quality": 1.007262110710144,
+        "Availability": 0,
+        "Closed": false,
+        "CurrentInfeed": null,
+        "CurrentOutfeed": 0,
+        "CurrentWaste": 0,
+        "GoodCount": 0,
+        "ID": 17,
+        "OEE": 0,
+        "Performance": 0,
+        "Quality": 0,
         "RunStartDateTime": {
           "$": [
             "ts",
             192,
-            1768068183597
+            1775320341577
           ],
-          "$ts": 1767406623018
+          "$ts": 1775314397227
         },
-        "RunStopDateTime": {
-          "$": [
-            "ts",
-            192,
-            1768068183597
-          ],
-          "$ts": 1767472271600
-        },
-        "ScheduleID": 2,
+        "RunStopDateTime": null,
+        "ScheduleID": 40,
         "TimeStamp": {
           "$": [
             "ts",
             192,
-            1768068183597
+            1775320341577
           ],
-          "$ts": 1767472271600
+          "$ts": 1775314397227
         },
-        "TotalCount": 1377,
-        "WasteCount": 247
+        "TotalCount": 0,
+        "WasteCount": 0
       }
     ],
-    "runID": 2,
-    "scheduleID": 2
+    "runID": 17,
+    "scheduleID": 40
   },
   "params": {
-    "runID": 2,
+    "runID": 17,
     "tagPath": "[default]Enterprise/Site/Area/Line 1"
   },
   "propConfig": {
@@ -128,12 +121,14 @@
                         },
                         "props": {
                           "style": {
-                            "color": "#f0f6fc",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                            "fontSize": "14px",
-                            "fontWeight": "600"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Record Defect"
+                          "text": "RECORD DEFECT"
                         },
                         "type": "ia.display.label"
                       }
@@ -142,16 +137,15 @@
                       "name": "cardHeader"
                     },
                     "position": {
-                      "basis": "44px",
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
                       "alignItems": "center",
                       "style": {
-                        "backgroundColor": "#161b22",
-                        "borderBottom": "1px solid #30363d",
-                        "gap": "10px",
-                        "padding": "12px 16px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 10px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -165,16 +159,16 @@
                               "name": "label"
                             },
                             "position": {
-                              "basis": "120px"
+                              "basis": "110px"
                             },
                             "props": {
                               "style": {
-                                "color": "#8b949e",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "13px",
-                                "fontWeight": "500"
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                "fontSize": 12,
+                                "fontWeight": 400
                               },
-                              "text": "Part Number"
+                              "text": "Part Number:"
                             },
                             "type": "ia.display.label"
                           },
@@ -197,10 +191,10 @@
                             },
                             "props": {
                               "style": {
-                                "color": "#f0f6fc",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "15px",
-                                "fontWeight": "600"
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "fontWeight": 700
                               }
                             },
                             "type": "ia.display.label"
@@ -210,15 +204,16 @@
                           "name": "partNumberRow"
                         },
                         "position": {
-                          "basis": "48px",
+                          "basis": "44px",
                           "shrink": 0
                         },
                         "props": {
                           "alignItems": "center",
                           "style": {
-                            "backgroundColor": "#101418",
-                            "borderRadius": "10px",
-                            "padding": "12px 16px"
+                            "backgroundColor": "#0D1117",
+                            "border": "1px solid #1B2432",
+                            "borderRadius": 6,
+                            "padding": "10px 14px"
                           }
                         },
                         "type": "ia.container.flex"
@@ -230,16 +225,16 @@
                               "name": "label"
                             },
                             "position": {
-                              "basis": "120px"
+                              "basis": "110px"
                             },
                             "props": {
                               "style": {
-                                "color": "#8b949e",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "13px",
-                                "fontWeight": "500"
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                "fontSize": 12,
+                                "fontWeight": 400
                               },
-                              "text": "Quantity"
+                              "text": "Quantity:"
                             },
                             "type": "ia.display.label"
                           },
@@ -252,13 +247,13 @@
                             },
                             "props": {
                               "style": {
-                                "backgroundColor": "#21262d",
-                                "border": "1px solid #30363d",
-                                "borderRadius": "8px",
-                                "color": "#f0f6fc",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "15px",
-                                "fontWeight": "600"
+                                "backgroundColor": "#111822",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "fontWeight": 600
                               },
                               "value": 1
                             },
@@ -269,15 +264,16 @@
                           "name": "quantityRow"
                         },
                         "position": {
-                          "basis": "48px",
+                          "basis": "44px",
                           "shrink": 0
                         },
                         "props": {
                           "alignItems": "center",
                           "style": {
-                            "backgroundColor": "#101418",
-                            "borderRadius": "10px",
-                            "padding": "12px 16px"
+                            "backgroundColor": "#0D1117",
+                            "border": "1px solid #1B2432",
+                            "borderRadius": 6,
+                            "padding": "10px 14px"
                           }
                         },
                         "type": "ia.container.flex"
@@ -291,15 +287,15 @@
                         },
                         "props": {
                           "style": {
-                            "color": "#8b949e",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                            "fontSize": "12px",
-                            "fontWeight": "500",
-                            "letterSpacing": "0.5px",
-                            "marginTop": "4px",
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "marginTop": 4,
                             "textTransform": "uppercase"
                           },
-                          "text": "Select Defect Code"
+                          "text": "SELECT DEFECT CODE"
                         },
                         "type": "ia.display.label"
                       },
@@ -330,12 +326,12 @@
                         },
                         "props": {
                           "bodyStyle": {
-                            "backgroundColor": "#101418"
+                            "backgroundColor": "#111822"
                           },
                           "cells": {
                             "style": {
-                              "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
-                              "padding": "10px 12px"
+                              "borderRight": "1px solid #141C28",
+                              "padding": "10px 14px"
                             }
                           },
                           "columns": [
@@ -344,12 +340,8 @@
                               "editable": false,
                               "field": "defect_code",
                               "header": {
-                                "style": {
-                                  "classes": ""
-                                },
                                 "title": "Code"
                               },
-                              "justify": "auto",
                               "render": "auto",
                               "resizable": true,
                               "sortable": true,
@@ -361,12 +353,8 @@
                               "editable": false,
                               "field": "defect_description",
                               "header": {
-                                "style": {
-                                  "classes": ""
-                                },
                                 "title": "Description"
                               },
-                              "justify": "auto",
                               "render": "auto",
                               "resizable": true,
                               "sortable": true,
@@ -377,12 +365,8 @@
                               "editable": false,
                               "field": "defect_type",
                               "header": {
-                                "style": {
-                                  "classes": ""
-                                },
                                 "title": "Type"
                               },
-                              "justify": "auto",
                               "render": "auto",
                               "resizable": true,
                               "sortable": true,
@@ -395,13 +379,14 @@
                             }
                           ],
                           "headerStyle": {
-                            "backgroundColor": "#161b22",
-                            "borderBottom": "2px solid #3b82f6",
-                            "color": "#8b949e",
-                            "fontSize": "11px",
-                            "fontWeight": "600",
-                            "letterSpacing": "0.5px",
-                            "padding": "10px 12px",
+                            "backgroundColor": "#16202E",
+                            "borderBottom": "1px solid #1B2432",
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": "10px",
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "padding": "10px 14px",
                             "textTransform": "uppercase"
                           },
                           "pager": {
@@ -413,27 +398,28 @@
                             },
                             "striped": {
                               "color": {
-                                "even": "#101418",
-                                "odd": "#161b22"
+                                "even": "#111822",
+                                "odd": "#0D1117"
                               }
                             },
                             "style": {
-                              "color": "#d1d5db",
-                              "fontSize": "13px",
-                              "fontWeight": "400"
+                              "color": "#A8B8CE",
+                              "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                              "fontSize": "12px",
+                              "fontWeight": 400
                             }
                           },
                           "selection": {
                             "style": {
-                              "backgroundColor": "rgba(59, 130, 246, 0.2)",
-                              "border": "1px solid #3b82f6"
+                              "backgroundColor": "rgba(59, 130, 246, 0.15)",
+                              "border": "1px solid #3B82F6"
                             }
                           },
                           "style": {
-                            "backgroundColor": "#101418",
-                            "border": "1px solid #30363d",
-                            "borderRadius": "10px",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
+                            "backgroundColor": "transparent",
+                            "border": "1px solid #1B2432",
+                            "borderRadius": 6,
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
                             "overflow": "hidden"
                           }
                         },
@@ -449,8 +435,8 @@
                     "props": {
                       "direction": "column",
                       "style": {
-                        "gap": "12px",
-                        "padding": "16px"
+                        "gap": 8,
+                        "padding": 10
                       }
                     },
                     "type": "ia.container.flex"
@@ -466,9 +452,9 @@
                 "props": {
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "#21262d",
-                    "border": "1px solid #30363d",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -484,12 +470,14 @@
                         },
                         "props": {
                           "style": {
-                            "color": "#f0f6fc",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                            "fontSize": "14px",
-                            "fontWeight": "600"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Run Scrap Summary"
+                          "text": "RUN SCRAP SUMMARY"
                         },
                         "type": "ia.display.label"
                       }
@@ -498,16 +486,15 @@
                       "name": "cardHeader"
                     },
                     "position": {
-                      "basis": "44px",
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
                       "alignItems": "center",
                       "style": {
-                        "backgroundColor": "#161b22",
-                        "borderBottom": "1px solid #30363d",
-                        "gap": "10px",
-                        "padding": "12px 16px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 10px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -522,10 +509,10 @@
                             },
                             "props": {
                               "style": {
-                                "color": "#8b949e",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "14px",
-                                "fontWeight": "500"
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                "fontSize": 12,
+                                "fontWeight": 400
                               },
                               "text": "Total Scrap"
                             },
@@ -553,10 +540,10 @@
                             },
                             "props": {
                               "style": {
-                                "color": "#ef4444",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "24px",
-                                "fontWeight": "600"
+                                "color": "#EF4444",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 24,
+                                "fontWeight": 700
                               }
                             },
                             "type": "ia.display.label"
@@ -570,11 +557,13 @@
                           "shrink": 0
                         },
                         "props": {
+                          "alignItems": "center",
                           "justify": "space-between",
                           "style": {
-                            "backgroundColor": "#101418",
-                            "borderRadius": "10px",
-                            "padding": "16px"
+                            "backgroundColor": "#0D1117",
+                            "border": "1px solid #1B2432",
+                            "borderRadius": 6,
+                            "padding": "12px 14px"
                           }
                         },
                         "type": "ia.container.flex"
@@ -587,10 +576,10 @@
                             },
                             "props": {
                               "style": {
-                                "color": "#8b949e",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "14px",
-                                "fontWeight": "500"
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                "fontSize": 12,
+                                "fontWeight": 400
                               },
                               "text": "Reported"
                             },
@@ -618,10 +607,10 @@
                             },
                             "props": {
                               "style": {
-                                "color": "#10b981",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "24px",
-                                "fontWeight": "600"
+                                "color": "#22C55E",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 24,
+                                "fontWeight": 700
                               }
                             },
                             "type": "ia.display.label"
@@ -635,11 +624,13 @@
                           "shrink": 0
                         },
                         "props": {
+                          "alignItems": "center",
                           "justify": "space-between",
                           "style": {
-                            "backgroundColor": "#101418",
-                            "borderRadius": "10px",
-                            "padding": "16px"
+                            "backgroundColor": "#0D1117",
+                            "border": "1px solid #1B2432",
+                            "borderRadius": 6,
+                            "padding": "12px 14px"
                           }
                         },
                         "type": "ia.container.flex"
@@ -652,10 +643,10 @@
                             },
                             "props": {
                               "style": {
-                                "color": "#f59e0b",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "14px",
-                                "fontWeight": "600"
+                                "color": "#F59E0B",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                                "fontSize": 12,
+                                "fontWeight": 600
                               },
                               "text": "Unreported"
                             },
@@ -677,10 +668,10 @@
                             },
                             "props": {
                               "style": {
-                                "color": "#f59e0b",
-                                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                                "fontSize": "24px",
-                                "fontWeight": "600"
+                                "color": "#F59E0B",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 24,
+                                "fontWeight": 700
                               }
                             },
                             "type": "ia.display.label"
@@ -694,12 +685,13 @@
                           "shrink": 0
                         },
                         "props": {
+                          "alignItems": "center",
                           "justify": "space-between",
                           "style": {
-                            "backgroundColor": "rgba(245, 158, 11, 0.1)",
-                            "border": "1px solid rgba(245, 158, 11, 0.3)",
-                            "borderRadius": "10px",
-                            "padding": "16px"
+                            "backgroundColor": "rgba(245, 158, 11, 0.05)",
+                            "border": "1px solid #F59E0B",
+                            "borderRadius": 6,
+                            "padding": "12px 14px"
                           }
                         },
                         "type": "ia.container.flex"
@@ -714,8 +706,8 @@
                     "props": {
                       "direction": "column",
                       "style": {
-                        "gap": "12px",
-                        "padding": "16px"
+                        "gap": 8,
+                        "padding": 10
                       }
                     },
                     "type": "ia.container.flex"
@@ -731,9 +723,9 @@
                 "props": {
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "#21262d",
-                    "border": "1px solid #30363d",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -749,7 +741,7 @@
             },
             "props": {
               "style": {
-                "gap": "16px"
+                "gap": 10
               }
             },
             "type": "ia.container.flex"
@@ -764,12 +756,14 @@
                     },
                     "props": {
                       "style": {
-                        "color": "#f0f6fc",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                        "fontSize": "14px",
-                        "fontWeight": "600"
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textTransform": "uppercase"
                       },
-                      "text": "Defect History"
+                      "text": "DEFECT HISTORY"
                     },
                     "type": "ia.display.label"
                   }
@@ -778,16 +772,15 @@
                   "name": "cardHeader"
                 },
                 "position": {
-                  "basis": "44px",
+                  "basis": "32px",
                   "shrink": 0
                 },
                 "props": {
                   "alignItems": "center",
                   "style": {
-                    "backgroundColor": "#161b22",
-                    "borderBottom": "1px solid #30363d",
-                    "gap": "10px",
-                    "padding": "12px 16px"
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "5px 10px"
                   }
                 },
                 "type": "ia.container.flex"
@@ -817,22 +810,23 @@
                 },
                 "props": {
                   "bodyStyle": {
-                    "backgroundColor": "#101418"
+                    "backgroundColor": "#111822"
                   },
                   "cells": {
                     "style": {
-                      "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
-                      "padding": "10px 12px"
+                      "borderRight": "1px solid #141C28",
+                      "padding": "10px 14px"
                     }
                   },
                   "headerStyle": {
-                    "backgroundColor": "#161b22",
-                    "borderBottom": "2px solid #10b981",
-                    "color": "#8b949e",
-                    "fontSize": "11px",
-                    "fontWeight": "600",
-                    "letterSpacing": "0.5px",
-                    "padding": "10px 12px",
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "color": "#4A6080",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": "10px",
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "padding": "10px 14px",
                     "textTransform": "uppercase"
                   },
                   "pager": {
@@ -840,30 +834,31 @@
                   },
                   "rows": {
                     "highlight": {
-                      "color": "rgba(16, 185, 129, 0.1)"
+                      "color": "rgba(34, 197, 94, 0.1)"
                     },
                     "striped": {
                       "color": {
-                        "even": "#101418",
-                        "odd": "#161b22"
+                        "even": "#111822",
+                        "odd": "#0D1117"
                       }
                     },
                     "style": {
-                      "color": "#d1d5db",
-                      "fontSize": "13px",
-                      "fontWeight": "400"
+                      "color": "#A8B8CE",
+                      "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": 400
                     }
                   },
                   "selection": {
                     "style": {
-                      "backgroundColor": "rgba(16, 185, 129, 0.2)",
-                      "border": "1px solid #10b981"
+                      "backgroundColor": "rgba(34, 197, 94, 0.15)",
+                      "border": "1px solid #22C55E"
                     }
                   },
                   "style": {
-                    "backgroundColor": "#101418",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                    "margin": 10
+                    "backgroundColor": "transparent",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "margin": 0
                   }
                 },
                 "type": "ia.display.table"
@@ -878,9 +873,9 @@
             "props": {
               "direction": "column",
               "style": {
-                "backgroundColor": "#21262d",
-                "border": "1px solid #30363d",
-                "borderRadius": "16px",
+                "backgroundColor": "#111822",
+                "border": "1px solid #1B2432",
+                "borderRadius": 6,
                 "overflow": "hidden"
               }
             },
@@ -893,7 +888,7 @@
                   "component": {
                     "onActionPerformed": {
                       "config": {
-                        "script": "\n\t# Define database name\n\tdbName \u003d \"mes_core\"\n\tlogger \u003d system.util.getLogger(\"DefectLogInsert\")\n\t\n\t# Retrieve runID and scheduleID from view custom properties\n\trunID \u003d self.view.custom.runID\n\tscheduleID \u003d self.view.custom.scheduleID\n\tline \u003d self.view.custom.line\n\t\n\t# Log execution details\n\tsession_id \u003d self.session.props.id if hasattr(self.session, \u0027props\u0027) and hasattr(self.session.props, \u0027id\u0027) else \"Unknown\"\n\tcomponent_name \u003d self.meta.name if hasattr(self.meta, \u0027name\u0027) else \"Unknown Component\"\n\tlogger.info(\"Insert started for defect_log (Session: {}, Component: {}, runID: {}, scheduleID: {})\".format(\n\t\tsession_id, component_name, runID, scheduleID))\n\t\n\t# Validate required parameters\n\tif runID is None:\n\t\tlogger.error(\"runID parameter is missing or undefined in view.custom\")\n\t\treturn\n\t\n\tif scheduleID is None:\n\t\tlogger.error(\"scheduleID parameter is missing or undefined in view.custom\")\n\t\treturn\n\t\n\tif line is None:\n\t\tlogger.error(\"line property is missing in view.custom\")\n\t\treturn\n\t\n\ttry:\n\t\t# Get reference to root container (buttonRow -\u003e root)\n\t\troot \u003d self.parent.parent\n\t\t\n\t\t# Get product code from the part number display\n\t\tpartNumberLabel \u003d root.getChild(\"cardsRow\").getChild(\"recordCard\").getChild(\"cardBody\").getChild(\"partNumberRow\").getChild(\"value\")\n\t\tproductCode \u003d partNumberLabel.props.text if partNumberLabel else None\n\t\t\n\t\tif not productCode:\n\t\t\tlogger.error(\"productCode is missing or empty\")\n\t\t\treturn\n\t\t\n\t\t# Get defect_code_id from defectTable selection\n\t\ttable \u003d root.getChild(\"cardsRow\").getChild(\"recordCard\").getChild(\"cardBody\").getChild(\"defectTable\")\n\t\tselection \u003d table.props.selection.data\n\t\t\n\t\tif not selection or len(selection) \u003d\u003d 0:\n\t\t\tlogger.error(\"No row selected in defectTable\")\n\t\t\treturn\n\t\t\n\t\tdefectCodeID \u003d selection[0].get(\u0027id\u0027, None)\n\t\tdefectCode \u003d selection[0].get(\u0027defect_code\u0027, \u0027Unknown\u0027)\n\t\t\n\t\tif defectCodeID is None:\n\t\t\tlogger.error(\"defect_code_id is missing in defectTable selection\")\n\t\t\treturn\n\t\t\n\t\t# Get quantity from quantityInput\n\t\tquantityInput \u003d root.getChild(\"cardsRow\").getChild(\"recordCard\").getChild(\"cardBody\").getChild(\"quantityRow\").getChild(\"quantityInput\")\n\t\tquantity \u003d quantityInput.props.value if quantityInput else None\n\t\t\n\t\tif quantity is None or quantity \u003c\u003d 0:\n\t\t\tlogger.error(\"quantity is missing or invalid: {}\".format(quantity))\n\t\t\treturn\n\t\t\n\t\t# Get current user from session (or fallback)\n\t\ttry:\n\t\t\tuser \u003d self.session.props.auth.user.userName\n\t\texcept:\n\t\t\tuser \u003d \"Unknown\"\n\t\t\n\t\t# Set defect entry type\n\t\tdefect_entry_type \u003d 1  # 1 \u003d MACHINE_SETUP_SCRAP_ATTRIBUTED\n\t\t\n\t\t# PostgreSQL query - quote reserved words \"timestamp\" and \"user\"\n\t\tquery \u003d \"\"\"\n\t\t\tINSERT INTO defect_log \n\t\t\t\t(schedule_id, run_id, line, product_code, defect_entry_type, defect_code_id, quantity, \"timestamp\", \"user\")\n\t\t\tVALUES \n\t\t\t\t(?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)\n\t\t\"\"\"\n\t\t\n\t\t# Log query execution attempt\n\t\tlogger.info(\"Executing INSERT with params: [scheduleID: {}, runID: {}, line: {}, productCode: {}, defect_entry_type: {}, defectCodeID: {}, quantity: {}, user: {}]\".format(\n\t\t\tscheduleID, runID, line, productCode, defect_entry_type, defectCodeID, quantity, user))\n\t\t\n\t\t# Execute the query\n\t\tsystem.db.runPrepUpdate(query, [scheduleID, runID, line, productCode, defect_entry_type, defectCodeID, quantity, user], dbName)\n\t\t\n\t\tlogger.info(\"Successfully inserted defect_log entry - Code: {}, Qty: {}\".format(defectCode, quantity))\n\t\t\n\t\t# Reset quantity input to 1 for next entry\n\t\tquantityInput.props.value \u003d 1\n\t\t\n\texcept Exception as e:\n\t\timport traceback\n\t\tlogger.error(\"Insert failed: {}\".format(str(e)))\n\t\tlogger.error(\"Traceback: {}\".format(traceback.format_exc()))\n\t\n\t# Close the popup\n\tsystem.perspective.closePopup(\"\")"
+                        "script": "\n\tdbName \u003d \"mes_core\"\n\tlogger \u003d system.util.getLogger(\"DefectLogInsert\")\n\t\n\t# Retrieve values\n\trunID \u003d self.view.custom.runID\n\tscheduleID \u003d self.view.custom.scheduleID\n\tline \u003d self.view.custom.line\n\t\n\t# Only unwrap numeric IDs - never unwrap strings\n\tif not isinstance(runID, (int, float)):\n\t\tif isinstance(runID, list) or str(type(runID)).find(\u0027ArrayWrapper\u0027) \u003e\u003d 0:\n\t\t\ttry:\n\t\t\t\trunID \u003d runID[0]\n\t\t\texcept:\n\t\t\t\tpass\n\t\n\tif not isinstance(scheduleID, (int, float)):\n\t\tif isinstance(scheduleID, list) or str(type(scheduleID)).find(\u0027ArrayWrapper\u0027) \u003e\u003d 0:\n\t\t\ttry:\n\t\t\t\tscheduleID \u003d scheduleID[0]\n\t\t\texcept:\n\t\t\t\tpass\n\t\n\tlogger.info(\"Insert started - runID: {} ({}), scheduleID: {} ({}), line: {}\".format(\n\t\trunID, type(runID), scheduleID, type(scheduleID), line))\n\t\n\tif runID is None:\n\t\tlogger.error(\"runID is missing\")\n\t\treturn\n\t\n\tif scheduleID is None:\n\t\tlogger.error(\"scheduleID is missing\")\n\t\treturn\n\t\n\tif line is None:\n\t\tlogger.error(\"line is missing\")\n\t\treturn\n\t\n\ttry:\n\t\troot \u003d self.parent.parent\n\t\t\n\t\t# Get product code\n\t\tpartNumberLabel \u003d root.getChild(\"cardsRow\").getChild(\"recordCard\").getChild(\"cardBody\").getChild(\"partNumberRow\").getChild(\"value\")\n\t\tproductCode \u003d partNumberLabel.props.text if partNumberLabel else None\n\t\t\n\t\tif not productCode:\n\t\t\tlogger.error(\"productCode is missing\")\n\t\t\treturn\n\t\t\n\t\t# Get defect selection\n\t\ttable \u003d root.getChild(\"cardsRow\").getChild(\"recordCard\").getChild(\"cardBody\").getChild(\"defectTable\")\n\t\tselection \u003d table.props.selection.data\n\t\t\n\t\tif not selection or len(selection) \u003d\u003d 0:\n\t\t\tlogger.error(\"No row selected in defectTable\")\n\t\t\treturn\n\t\t\n\t\tdefectCodeID \u003d selection[0].get(\u0027id\u0027, None)\n\t\tdefectCode \u003d selection[0].get(\u0027defect_code\u0027, \u0027Unknown\u0027)\n\t\t\n\t\tif defectCodeID is None:\n\t\t\tlogger.error(\"defect_code_id is missing\")\n\t\t\treturn\n\t\t\n\t\t# Get quantity\n\t\tquantityInput \u003d root.getChild(\"cardsRow\").getChild(\"recordCard\").getChild(\"cardBody\").getChild(\"quantityRow\").getChild(\"quantityInput\")\n\t\tquantity \u003d quantityInput.props.value if quantityInput else None\n\t\t\n\t\tif quantity is None or quantity \u003c\u003d 0:\n\t\t\tlogger.error(\"quantity is invalid: {}\".format(quantity))\n\t\t\treturn\n\t\t\n\t\t# Get user\n\t\ttry:\n\t\t\tuser \u003d self.session.props.auth.user.userName\n\t\texcept:\n\t\t\tuser \u003d \"Unknown\"\n\t\t\n\t\tdefect_entry_type \u003d 1\n\t\t\n\t\tquery \u003d \"\"\"\n\t\t\tINSERT INTO defect_log \n\t\t\t\t(schedule_id, run_id, line, product_code, defect_entry_type, defect_code_id, quantity, \"timestamp\", \"user\")\n\t\t\tVALUES \n\t\t\t\t(?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)\n\t\t\"\"\"\n\t\t\n\t\tlogger.info(\"Inserting: scheduleID\u003d{}, runID\u003d{}, line\u003d{}, product\u003d{}, defectID\u003d{}, qty\u003d{}, user\u003d{}\".format(\n\t\t\tscheduleID, runID, line, productCode, defectCodeID, quantity, user))\n\t\t\n\t\tsystem.db.runPrepUpdate(query, [int(scheduleID), int(runID), str(line), str(productCode), defect_entry_type, int(defectCodeID), int(quantity), str(user)], dbName)\n\t\t\n\t\tlogger.info(\"Successfully inserted - Code: {}, Qty: {}\".format(defectCode, quantity))\n\t\t\n\t\t# Reset quantity\n\t\tquantityInput.props.value \u003d 1\n\t\t\n\t\t# Refresh the history table\n\t\thistoryTable \u003d root.getChild(\"historyCard\").getChild(\"historyTable\")\n\t\thistoryTable.refreshBinding(\"props.data\")\n\t\t\n\t\t# Refresh the reported value\n\t\treportedValue \u003d root.getChild(\"cardsRow\").getChild(\"summaryCard\").getChild(\"cardBody\").getChild(\"reportedRow\").getChild(\"reportedValue\")\n\t\treportedValue.refreshBinding(\"props.text\")\n\t\t\n\texcept Exception as e:\n\t\timport traceback\n\t\tlogger.error(\"Insert failed: {}\".format(str(e)))\n\t\tlogger.error(\"Traceback: {}\".format(traceback.format_exc()))"
                       },
                       "scope": "G",
                       "type": "script"
@@ -909,16 +904,13 @@
                 },
                 "props": {
                   "style": {
-                    "backgroundColor": "#10b981",
-                    "border": "2px solid #34d399",
-                    "borderRadius": "12px",
-                    "boxShadow": "0 4px 16px rgba(16, 185, 129, 0.3)",
-                    "color": "#ffffff",
-                    "cursor": "pointer",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                    "fontSize": "15px",
-                    "fontWeight": "600",
-                    "padding": "12px 32px"
+                    "backgroundColor": "#22C55E",
+                    "border": "1px solid #22C55E",
+                    "borderRadius": 6,
+                    "color": "#FFFFFF",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
                   },
                   "text": "Record Defect"
                 },
@@ -945,15 +937,13 @@
                 },
                 "props": {
                   "style": {
-                    "backgroundColor": "rgba(239, 68, 68, 0.15)",
-                    "border": "2px solid #ef4444",
-                    "borderRadius": "12px",
-                    "color": "#fca5a5",
-                    "cursor": "pointer",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, sans-serif",
-                    "fontSize": "15px",
-                    "fontWeight": "600",
-                    "padding": "12px 32px"
+                    "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                    "border": "1px solid #EF4444",
+                    "borderRadius": 6,
+                    "color": "#EF4444",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 600
                   },
                   "text": "Cancel"
                 },
@@ -964,14 +954,13 @@
               "name": "buttonRow"
             },
             "position": {
-              "basis": "56px",
+              "basis": "48px",
               "shrink": 0
             },
             "props": {
               "justify": "center",
               "style": {
-                "gap": "12px",
-                "paddingTop": "8px"
+                "gap": 8
               }
             },
             "type": "ia.container.flex"
@@ -987,9 +976,9 @@
         "props": {
           "direction": "column",
           "style": {
-            "backgroundColor": "#0d1117",
-            "gap": "16px",
-            "padding": "16px"
+            "backgroundColor": "#0A0E14",
+            "gap": 10,
+            "padding": 10
           }
         },
         "type": "ia.container.flex"

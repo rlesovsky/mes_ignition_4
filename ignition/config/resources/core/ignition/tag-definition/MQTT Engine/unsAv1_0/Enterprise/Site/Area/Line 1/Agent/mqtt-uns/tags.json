@@ -5,6 +5,15 @@
       "dataType": "String",
       "enabled": true
     },
+    "name": "Status",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
     "name": "Identity",
     "tagType": "AtomicTag"
   },
@@ -15,15 +24,6 @@
       "enabled": true
     },
     "name": "Heartbeat",
-    "tagType": "AtomicTag"
-  },
-  {
-    "usr": {
-      "readOnly": true,
-      "dataType": "String",
-      "enabled": true
-    },
-    "name": "Status",
     "tagType": "AtomicTag"
   }
 ]

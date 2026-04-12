@@ -11,36 +11,143 @@
       {
         "children": [
           {
+            "children": [
+              {
+                "meta": {
+                  "name": "company_label"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "labels/font",
+                    "color": "#22C55E",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 12,
+                    "fontWeight": 700
+                  },
+                  "text": "TAS"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "divider_dot"
+                },
+                "position": {
+                  "basis": "16px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#4A6080",
+                    "textAlign": "center"
+                  },
+                  "text": "•"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "theme_icon"
+                    },
+                    "position": {
+                      "basis": "18px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#4A6080",
+                      "path": "material/brightness_medium"
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tif self.session.props.theme \u003d\u003d \u0027light\u0027:\n\t\tself.session.props.theme \u003d \u0027dark\u0027\n\telse:\n\t\tself.session.props.theme \u003d \u0027light\u0027"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "theme_toggle",
+                  "tooltip": {
+                    "enabled": true,
+                    "text": "Toggle Light/Dark Mode"
+                  }
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "borderRadius": 4,
+                    "classes": "ui_ux/hover_highlight",
+                    "cursor": "pointer"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
             "meta": {
-              "name": "company_label"
+              "name": "left_section"
             },
             "position": {
-              "basis": "40px",
+              "basis": "120px",
               "shrink": 0
             },
             "props": {
-              "text": "TAS",
-              "style": {
-                "classes": "labels/font",
-                "color": "#10b981",
-                "fontSize": "14px",
-                "fontWeight": "700"
-              }
+              "alignItems": "center"
             },
-            "type": "ia.display.label"
+            "type": "ia.container.flex"
           },
           {
             "meta": {
-              "name": "divider_dot"
+              "name": "timestamp"
             },
             "position": {
-              "basis": "16px",
-              "shrink": 0
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[System]Gateway/CurrentDateTime"
+                  },
+                  "transforms": [
+                    {
+                      "formatType": "datetime",
+                      "formatValue": {
+                        "date": "short",
+                        "time": "medium"
+                      },
+                      "type": "format"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
             },
             "props": {
-              "text": "•",
               "style": {
-                "color": "#6b7280",
+                "classes": "labels/font labels/size_normal",
+                "color": "#A8B8CE",
+                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                "fontSize": 11,
+                "fontWeight": 400,
                 "textAlign": "center"
               }
             },
@@ -50,165 +157,88 @@
             "children": [
               {
                 "meta": {
-                  "name": "theme_icon"
+                  "name": "status_dot"
                 },
                 "position": {
-                  "basis": "18px",
+                  "basis": "8px",
                   "shrink": 0
                 },
                 "props": {
-                  "color": "#9ca3af",
-                  "path": "material/brightness_medium"
+                  "style": {
+                    "backgroundColor": "#22C55E",
+                    "borderRadius": "50%",
+                    "boxShadow": "0 0 6px #22C55E",
+                    "height": "8px",
+                    "marginRight": "8px",
+                    "width": "8px"
+                  }
                 },
-                "type": "ia.display.icon"
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "redundancy_role"
+                },
+                "position": {
+                  "basis": "80px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[System]Gateway/Redundancy/Role"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "labels/font labels/size_normal",
+                    "color": "#4A6080",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 400,
+                    "textAlign": "right"
+                  }
+                },
+                "type": "ia.display.label"
               }
             ],
-            "events": {
-              "dom": {
-                "onClick": {
-                  "config": {
-                    "script": "\tif self.session.props.theme == 'light':\n\t\tself.session.props.theme = 'dark'\n\telse:\n\t\tself.session.props.theme = 'light'"
-                  },
-                  "scope": "G",
-                  "type": "script"
-                }
-              }
-            },
             "meta": {
-              "name": "theme_toggle",
-              "tooltip": {
-                "enabled": true,
-                "text": "Toggle Light/Dark Mode"
-              }
+              "name": "right_section"
             },
             "position": {
-              "basis": "32px",
+              "basis": "100px",
               "shrink": 0
             },
             "props": {
               "alignItems": "center",
-              "justify": "center",
-              "style": {
-                "borderRadius": "6px",
-                "classes": "ui_ux/hover_highlight",
-                "cursor": "pointer"
-              }
+              "justify": "flex-end"
             },
             "type": "ia.container.flex"
           }
         ],
         "meta": {
-          "name": "left_section"
-        },
-        "position": {
-          "basis": "120px",
-          "shrink": 0
-        },
-        "props": {
-          "alignItems": "center"
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "meta": {
-          "name": "timestamp"
+          "name": "root"
         },
         "position": {
           "grow": 1
         },
-        "propConfig": {
-          "props.text": {
-            "binding": {
-              "config": {
-                "fallbackDelay": 2.5,
-                "mode": "direct",
-                "tagPath": "[System]Gateway/CurrentDateTime"
-              },
-              "transforms": [
-                {
-                  "formatType": "datetime",
-                  "formatValue": {
-                    "date": "short",
-                    "time": "medium"
-                  },
-                  "type": "format"
-                }
-              ],
-              "type": "tag"
-            }
-          }
-        },
-        "props": {
-          "style": {
-            "classes": "labels/font labels/size_normal",
-            "color": "#d1d5db",
-            "textAlign": "center"
-          }
-        },
-        "type": "ia.display.label"
-      },
-      {
-        "children": [
-          {
-            "meta": {
-              "name": "status_dot"
-            },
-            "position": {
-              "basis": "8px",
-              "shrink": 0
-            },
-            "props": {
-              "style": {
-                "backgroundColor": "#10b981",
-                "borderRadius": "50%",
-                "boxShadow": "0 0 6px #10b981",
-                "height": "8px",
-                "marginRight": "8px",
-                "width": "8px"
-              }
-            },
-            "type": "ia.container.flex"
-          },
-          {
-            "meta": {
-              "name": "redundancy_role"
-            },
-            "position": {
-              "basis": "80px",
-              "shrink": 0
-            },
-            "propConfig": {
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "direct",
-                    "tagPath": "[System]Gateway/Redundancy/Role"
-                  },
-                  "type": "tag"
-                }
-              }
-            },
-            "props": {
-              "style": {
-                "classes": "labels/font labels/size_normal",
-                "color": "#9ca3af",
-                "textAlign": "right"
-              }
-            },
-            "type": "ia.display.label"
-          }
-        ],
-        "meta": {
-          "name": "right_section"
-        },
-        "position": {
-          "basis": "100px",
-          "shrink": 0
-        },
         "props": {
           "alignItems": "center",
-          "justify": "flex-end"
+          "justify": "space-between",
+          "style": {
+            "backgroundColor": "#0D1117",
+            "borderTop": "1px solid #1B2432",
+            "classes": "mes-footer",
+            "overflow": "hidden",
+            "paddingLeft": 12,
+            "paddingRight": 12
+          }
         },
         "type": "ia.container.flex"
       }
@@ -220,7 +250,7 @@
       "alignItems": "center",
       "justify": "space-between",
       "style": {
-        "backgroundColor": "#21262d",
+        "backgroundColor": "#0D1117",
         "borderTop": "1px solid rgba(255, 255, 255, 0.05)",
         "classes": "mes-footer",
         "overflow": "hidden",

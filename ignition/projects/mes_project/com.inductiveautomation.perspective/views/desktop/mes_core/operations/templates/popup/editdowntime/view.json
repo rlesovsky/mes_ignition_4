@@ -1,0 +1,790 @@
+{
+  "custom": {
+    "line": "Line 1"
+  },
+  "params": {
+    "runID": 17,
+    "scheduleID": 40,
+    "tagPath": "[default]Enterprise/Site/Area/Line 1"
+  },
+  "propConfig": {
+    "custom.line": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "transforms": [
+          {
+            "code": "\n    logger \u003d system.util.getLogger(\"StringSplitTransform\")\n    \n    if not quality.isGood():\n        return \"\"\n    \n    if not isinstance(value, basestring) or value is None:\n        logger.error(\"Invalid input: {}\".format(value))\n        return \"\"\n        \n    return value.rsplit(\u0027/\u0027, 1)[-1] if \u0027/\u0027 in value else value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.runID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.scheduleID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 502
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "title"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "#7088A8",
+                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 10,
+                "fontWeight": 600,
+                "letterSpacing": "0.07em",
+                "textTransform": "uppercase"
+              },
+              "text": "EDIT DOWNTIME"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "changeCount"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.display": {
+                "binding": {
+                  "config": {
+                    "expression": "if(len({/root.custom.pendingChanges}) \u003e 0, \u0027block\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "len({/root.custom.pendingChanges})"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tcount \u003d value\n\tif count \u003d\u003d 0:\n\t\treturn \u0027\u0027\n\telif count \u003d\u003d 1:\n\t\treturn \u00271 CHANGE\u0027\n\telse:\n\t\treturn str(count) + \u0027 CHANGES\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "rgba(245, 158, 11, 0.15)",
+                "border": "1px solid #F59E0B",
+                "borderRadius": 4,
+                "color": "#F59E0B",
+                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                "fontSize": 10,
+                "fontWeight": 600,
+                "letterSpacing": "0.07em",
+                "marginRight": 8,
+                "paddingBottom": 3,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+                "paddingTop": 3,
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "runBadge"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\u0027RUN #\u0027 + {view.params.runID}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "rgba(59, 130, 246, 0.1)",
+                "border": "1px solid #3B82F6",
+                "borderRadius": 4,
+                "color": "#3B82F6",
+                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                "fontSize": 10,
+                "fontWeight": 600,
+                "letterSpacing": "0.07em",
+                "paddingBottom": 3,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+                "paddingTop": 3,
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "backgroundColor": "#16202E",
+            "borderBottom": "1px solid #1B2432",
+            "padding": "5px 10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "sectionTitle"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#7088A8",
+                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 10,
+                "fontWeight": 600,
+                "letterSpacing": "0.07em",
+                "marginBottom": 8,
+                "textTransform": "uppercase"
+              },
+              "text": "SELECTED EVENT"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "emptyMsg"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.style.display": {
+                "binding": {
+                  "config": {
+                    "expression": "if({.../downtimeTable.props.selection.data[0].ID} \u003d null, \u0027block\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#2A3A50",
+                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 12,
+                "textAlign": "center"
+              },
+              "text": "Select a downtime event from the table below to edit"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "lockedMsg"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.style.display": {
+                "binding": {
+                  "config": {
+                    "expression": "if({.../downtimeTable.props.selection.data[0].ID} !\u003d null \u0026\u0026 !{.../downtimeTable.props.selection.data[0].ID}, \u0027block\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#2A3A50",
+                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 12
+              },
+              "text": "This downtime event is system-managed and cannot be edited by operators."
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "reasonLabel"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#4A6080",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "REASON"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "reasonDropdown"
+                },
+                "position": {
+                  "basis": "220px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.options": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "now()"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tdbName \u003d \u0027mes_core\u0027\n\tlineId \u003d 1\n\n\tquery \u003d \"\"\"\n\t\tSELECT id, reasoncode, reasonname\n\t\tFROM statereason\n\t\tWHERE parentid \u003d ?\n\t\t\tAND operatorselectable \u003d true\n\t\tORDER BY reasonname\n\t\"\"\"\n\n\ttry:\n\t\tdata \u003d system.db.runPrepQuery(query, [lineId], dbName)\n\t\tresult \u003d []\n\t\tfor row in system.dataset.toPyDataSet(data):\n\t\t\tresult.append({\n\t\t\t\t\u0027label\u0027: row[\u0027reasonname\u0027],\n\t\t\t\t\u0027value\u0027: row[\u0027id\u0027]\n\t\t\t})\n\t\treturn result\n\texcept Exception as e:\n\t\tlogger \u003d system.util.getLogger(\u0027EditDowntime\u0027)\n\t\tlogger.error(\u0027Failed to load reasons: \u0027 + str(e))\n\t\treturn []",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#0D1117",
+                    "border": "1px solid #223044",
+                    "borderRadius": 4,
+                    "color": "#E2E8F0",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 12
+                  },
+                  "value": 4
+                },
+                "type": "ia.input.dropdown"
+              },
+              {
+                "meta": {
+                  "name": "noteLabel"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#4A6080",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "marginLeft": 4,
+                    "textTransform": "uppercase"
+                  },
+                  "text": "NOTE"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "noteInput"
+                },
+                "position": {
+                  "basis": "100px",
+                  "grow": 1
+                },
+                "props": {
+                  "placeholder": "Add note...",
+                  "style": {
+                    "backgroundColor": "#0D1117",
+                    "border": "1px solid #223044",
+                    "borderRadius": 4,
+                    "color": "#E2E8F0",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 12
+                  }
+                },
+                "type": "ia.input.text-field"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tlogger \u003d system.util.getLogger(\u0027EditDowntime\u0027)\n\n\troot \u003d self.parent.parent.parent\n\teditPanel \u003d root.getChild(\u0027editPanel\u0027)\n\teditRow \u003d editPanel.getChild(\u0027editFieldsRow\u0027)\n\n\t# Get the selected event ID\n\tselectedId \u003d root.custom.selectedEventId\n\tif selectedId is None:\n\t\treturn\n\n\t# Get the new values from the edit fields\n\treasonDropdown \u003d editRow.getChild(\u0027reasonDropdown\u0027)\n\tnoteInput \u003d editRow.getChild(\u0027noteInput\u0027)\n\n\tnewReasonId \u003d reasonDropdown.props.value\n\tnewReasonLabel \u003d \u0027\u0027\n\tfor opt in reasonDropdown.props.options:\n\t\tif opt[\u0027value\u0027] \u003d\u003d newReasonId:\n\t\t\tnewReasonLabel \u003d opt[\u0027label\u0027]\n\t\t\tbreak\n\n\tnewNote \u003d noteInput.props.text if noteInput.props.text else \u0027\u0027\n\n\t# Get the reason code from the database\n\tdbName \u003d \u0027mes_core\u0027\n\ttry:\n\t\tcodeQuery \u003d \"SELECT reasoncode FROM statereason WHERE id \u003d ?\"\n\t\tcodeResult \u003d system.db.runPrepQuery(codeQuery, [newReasonId], dbName)\n\t\tnewReasonCode \u003d codeResult.getValueAt(0, 0) if codeResult.getRowCount() \u003e 0 else 0\n\texcept:\n\t\tnewReasonCode \u003d 0\n\n\t# Build the change entry\n\tchangeEntry \u003d {\n\t\t\u0027statehistoryId\u0027: selectedId,\n\t\t\u0027statereasonId\u0027: newReasonId,\n\t\t\u0027reasoncode\u0027: newReasonCode,\n\t\t\u0027reasonname\u0027: newReasonLabel,\n\t\t\u0027note\u0027: newNote\n\t}\n\n\t# Update or add to pending changes\n\tpending \u003d list(root.custom.pendingChanges)\n\tfound \u003d False\n\tfor i, entry in enumerate(pending):\n\t\tif entry[\u0027statehistoryId\u0027] \u003d\u003d selectedId:\n\t\t\tpending[i] \u003d changeEntry\n\t\t\tfound \u003d True\n\t\t\tbreak\n\n\tif not found:\n\t\tpending.append(changeEntry)\n\n\troot.custom.pendingChanges \u003d pending\n\n\tlogger.info(\u0027Applied change for event \u0027 + str(selectedId) + \u0027: \u0027 + newReasonLabel)\n\tsystem.perspective.print(\u0027Change applied for event \u0027 + str(selectedId))"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "applyBtn"
+                },
+                "position": {
+                  "basis": "80px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "rgba(245, 158, 11, 0.1)",
+                    "borderColor": "#F59E0B",
+                    "borderRadius": 4,
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  },
+                  "text": "Apply",
+                  "textStyle": {
+                    "color": "#F59E0B",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 11,
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "editFieldsRow"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.display": {
+                "binding": {
+                  "config": {
+                    "expression": "if({.../downtimeTable.props.selection.data[0].ID} !\u003d null \u0026\u0026 {.../downtimeTable.props.selection.data[0].OperatorSelectable}, \u0027flex\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "gap": 10
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "editPanel"
+        },
+        "position": {
+          "basis": "120px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "#111822",
+            "borderBottom": "1px solid #1B2432",
+            "padding": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "component": {
+            "onSelectionChange": {
+              "config": {
+                "script": "\troot \u003d self.parent\n\teditPanel \u003d root.getChild(\u0027editPanel\u0027)\n\teditRow \u003d editPanel.getChild(\u0027editFieldsRow\u0027)\n\n\tselData \u003d self.props.selection.data\n\n\tif selData is None or len(selData) \u003d\u003d 0:\n\t\troot.custom.selectedEventId \u003d None\n\t\troot.custom.selectedEditable \u003d False\n\t\treturn\n\n\trow \u003d selData[0]\n\teventId \u003d row[\u0027ID\u0027]\n\teditable \u003d row[\u0027OperatorSelectable\u0027]\n\n\troot.custom.selectedEventId \u003d eventId\n\troot.custom.selectedEditable \u003d editable\n\n\tif editable:\n\t\t# Check if there is a pending change for this event\n\t\tpending \u003d root.custom.pendingChanges\n\t\tpendingEntry \u003d None\n\t\tfor entry in pending:\n\t\t\tif entry[\u0027statehistoryId\u0027] \u003d\u003d eventId:\n\t\t\t\tpendingEntry \u003d entry\n\t\t\t\tbreak\n\n\t\treasonDropdown \u003d editRow.getChild(\u0027reasonDropdown\u0027)\n\t\tnoteInput \u003d editRow.getChild(\u0027noteInput\u0027)\n\n\t\tif pendingEntry:\n\t\t\treasonDropdown.props.value \u003d pendingEntry[\u0027statereasonId\u0027]\n\t\t\tnoteInput.props.text \u003d pendingEntry[\u0027note\u0027]\n\t\telse:\n\t\t\treasonDropdown.props.value \u003d row[\u0027StateReasonId\u0027]\n\t\t\tnoteInput.props.text \u003d row[\u0027Note\u0027] if row[\u0027Note\u0027] else \u0027\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "downtimeTable"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\tdbName \u003d \u0027mes_core\u0027\n\tlogger \u003d system.util.getLogger(\u0027EditDowntime\u0027)\n\n\trunId \u003d self.view.params.runID\n\tlineId \u003d 1\n\n\tquery \u003d \"\"\"\n\t\tSELECT\n\t\t\ts.id AS \"ID\",\n\t\t\ts.statereasonid AS \"StateReasonId\",\n\t\t\ts.reasonname AS \"ReasonName\",\n\t\t\ts.reasoncode AS \"ReasonCode\",\n\t\t\tCASE WHEN st.planneddowntime \u003d true THEN \u0027Planned\u0027 ELSE \u0027Unplanned\u0027 END AS \"Type\",\n\t\t\ts.startdatetime AS \"StartDateTime\",\n\t\t\ts.enddatetime AS \"EndDateTime\",\n\t\t\tCONCAT(\n\t\t\t\tFLOOR(EXTRACT(EPOCH FROM (s.enddatetime - s.startdatetime)) / 60)::TEXT,\n\t\t\t\t\u0027:\u0027,\n\t\t\t\tLPAD(MOD(EXTRACT(EPOCH FROM (s.enddatetime - s.startdatetime))::INTEGER, 60)::TEXT, 2, \u00270\u0027)\n\t\t\t) AS \"Duration\",\n\t\t\tCOALESCE(s.note, \u0027\u0027) AS \"Note\",\n\t\t\tCOALESCE(st.operatorselectable, false) AS \"OperatorSelectable\"\n\t\tFROM statehistory s\n\t\tLEFT JOIN statereason st ON s.statereasonid \u003d st.id\n\t\tWHERE st.recorddowntime \u003d true\n\t\t\tAND s.runid \u003d ?\n\t\t\tAND s.lineid \u003d ?\n\t\t\tAND s.enddatetime IS NOT NULL\n\t\t\tAND s.enddatetime \u003e s.startdatetime\n\t\tORDER BY s.startdatetime DESC\n\t\"\"\"\n\n\ttry:\n\t\tparams \u003d [runId, lineId]\n\t\tdata \u003d system.db.runPrepQuery(query, params, dbName)\n\t\tcolumn_names \u003d data.getColumnNames()\n\t\tjson_data \u003d system.dataset.toPyDataSet(data)\n\n\t\tif data.getRowCount() \u003e 0:\n\t\t\tresult \u003d [\n\t\t\t\t{col: row[col] for col in column_names}\n\t\t\t\tfor row in json_data\n\t\t\t]\n\t\telse:\n\t\t\tresult \u003d []\n\n\t\treturn result\n\n\texcept Exception as e:\n\t\tlogger.error(\u0027Downtime query failed: \u0027 + str(e))\n\t\treturn []",
+                  "type": "script"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "bodyStyle": {
+            "backgroundColor": "#111822"
+          },
+          "cells": {
+            "style": {
+              "borderRight": "1px solid #141C28",
+              "padding": "10px 14px"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "editable": false,
+              "field": "ReasonName",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Reason"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "editable": false,
+              "field": "Type",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Type"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "dateFormat": "MM/DD HH:mm:ss",
+              "editable": false,
+              "field": "StartDateTime",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Start"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "dateFormat": "MM/DD HH:mm:ss",
+              "editable": false,
+              "field": "EndDateTime",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "End"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "editable": false,
+              "field": "Duration",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Duration"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "visible": true
+            },
+            {
+              "align": "left",
+              "editable": false,
+              "field": "Note",
+              "filter": {
+                "enabled": false,
+                "visible": "on-hover"
+              },
+              "header": {
+                "title": "Note"
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": false,
+              "visible": true
+            },
+            {
+              "align": "center",
+              "editable": false,
+              "field": "ID",
+              "header": {
+                "title": "ID"
+              },
+              "render": "auto",
+              "visible": false
+            },
+            {
+              "align": "center",
+              "editable": false,
+              "field": "OperatorSelectable",
+              "header": {
+                "title": "Editable"
+              },
+              "render": "auto",
+              "visible": false
+            },
+            {
+              "align": "center",
+              "editable": false,
+              "field": "StateReasonId",
+              "header": {
+                "title": "StateReasonId"
+              },
+              "render": "auto",
+              "visible": false
+            }
+          ],
+          "headerStyle": {
+            "backgroundColor": "#16202E",
+            "borderBottom": "1px solid #1B2432",
+            "color": "#4A6080",
+            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+            "fontSize": "10px",
+            "fontWeight": 600,
+            "letterSpacing": "0.07em",
+            "padding": "10px 14px",
+            "textTransform": "uppercase"
+          },
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "highlight": {
+              "color": "rgba(112, 136, 168, 0.06)"
+            },
+            "striped": {
+              "color": {
+                "even": "#111822",
+                "odd": "#0D1117"
+              }
+            },
+            "style": {
+              "color": "#A8B8CE",
+              "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+              "fontSize": "12px",
+              "fontWeight": 400
+            }
+          },
+          "selection": {
+            "data": [
+              {
+                "Duration": "0:17",
+                "EndDateTime": "Sat Apr 04 2026 10:19:57 GMT-0500 (Colombia Standard Time)",
+                "ID": 148,
+                "Note": "",
+                "OperatorSelectable": true,
+                "ReasonName": "Blocked",
+                "StartDateTime": "Sat Apr 04 2026 10:19:40 GMT-0500 (Colombia Standard Time)",
+                "StateReasonId": 4,
+                "Type": "Unplanned"
+              }
+            ],
+            "selectedColumn": "ReasonName",
+            "selectedRow": 0,
+            "style": {
+              "backgroundColor": "rgba(245, 158, 11, 0.08)",
+              "border": "1px solid rgba(245, 158, 11, 0.3)"
+            }
+          },
+          "style": {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": 0,
+            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+            "margin": 0,
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tlogger \u003d system.util.getLogger(\u0027EditDowntime\u0027)\n\tdbName \u003d \u0027mes_core\u0027\n\n\troot \u003d self.parent.parent\n\tpending \u003d root.custom.pendingChanges\n\n\tif pending is None or len(pending) \u003d\u003d 0:\n\t\tsystem.perspective.print(\u0027No changes to save.\u0027)\n\t\treturn\n\n\tupdateQuery \u003d \"\"\"\n\t\tUPDATE statehistory\n\t\tSET statereasonid \u003d ?,\n\t\t\treasoncode \u003d ?,\n\t\t\treasonname \u003d ?,\n\t\t\tnote \u003d ?\n\t\tWHERE id \u003d ?\n\t\"\"\"\n\n\tsuccessCount \u003d 0\n\terrorCount \u003d 0\n\n\tfor change in pending:\n\t\ttry:\n\t\t\tparams \u003d [\n\t\t\t\tchange[\u0027statereasonId\u0027],\n\t\t\t\tchange[\u0027reasoncode\u0027],\n\t\t\t\tchange[\u0027reasonname\u0027],\n\t\t\t\tchange[\u0027note\u0027],\n\t\t\t\tchange[\u0027statehistoryId\u0027]\n\t\t\t]\n\t\t\tsystem.db.runPrepUpdate(updateQuery, params, dbName)\n\t\t\tsuccessCount +\u003d 1\n\t\t\tlogger.info(\u0027Updated statehistory id\u003d\u0027 + str(change[\u0027statehistoryId\u0027]))\n\t\texcept Exception as e:\n\t\t\terrorCount +\u003d 1\n\t\t\tlogger.error(\u0027Failed to update statehistory id\u003d\u0027 + str(change[\u0027statehistoryId\u0027]) + \u0027: \u0027 + str(e))\n\n\tif errorCount \u003d\u003d 0:\n\t\tsystem.perspective.print(\u0027Saved \u0027 + str(successCount) + \u0027 change(s) successfully.\u0027)\n\t\troot.custom.pendingChanges \u003d []\n\t\tsystem.perspective.closePopup(\u0027editDowntimePopup\u0027)\n\telse:\n\t\tsystem.perspective.print(\u0027Saved \u0027 + str(successCount) + \u0027, failed \u0027 + str(errorCount) + \u0027. Check logs.\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "saveBtn"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "rgba(245, 158, 11, 0.1)",
+                "borderColor": "#F59E0B",
+                "borderRadius": 6,
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "marginRight": 8
+              },
+              "text": "Save Changes",
+              "textStyle": {
+                "color": "#F59E0B",
+                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 14,
+                "fontWeight": 600
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\u0027editDowntimePopup\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "cancelBtn"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                "borderColor": "#EF4444",
+                "borderRadius": 6,
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "marginLeft": 8
+              },
+              "text": "Cancel",
+              "textStyle": {
+                "color": "#EF4444",
+                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                "fontSize": 14,
+                "fontWeight": 600
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "footer"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderTop": "1px solid #1B2432",
+            "padding": "8px 10px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "custom": {
+      "pendingChanges": [],
+      "selectedEditable": true,
+      "selectedEventId": 148
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#0d1117"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

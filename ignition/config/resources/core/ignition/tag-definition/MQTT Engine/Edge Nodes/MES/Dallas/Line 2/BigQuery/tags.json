@@ -1,0 +1,9 @@
+[
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "Line Data",
+    "tagType": "AtomicTag"
+  }
+]

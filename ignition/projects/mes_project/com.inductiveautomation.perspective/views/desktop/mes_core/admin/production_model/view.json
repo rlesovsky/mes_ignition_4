@@ -19,19 +19,6 @@
                     "children": [
                       {
                         "meta": {
-                          "name": "icon"
-                        },
-                        "props": {
-                          "path": "material/account_tree",
-                          "style": {
-                            "color": "#3b82f6",
-                            "fontSize": "22px"
-                          }
-                        },
-                        "type": "ia.display.icon"
-                      },
-                      {
-                        "meta": {
                           "name": "title"
                         },
                         "position": {
@@ -39,13 +26,14 @@
                         },
                         "props": {
                           "style": {
-                            "color": "var(--mes-text-primary, #ffffff)",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "16px",
-                            "fontWeight": "600",
-                            "letterSpacing": "-0.3px"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Production Model"
+                          "text": "PRODUCTION MODEL"
                         },
                         "type": "ia.display.label"
                       }
@@ -54,17 +42,15 @@
                       "name": "header"
                     },
                     "position": {
-                      "basis": "56px",
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
                       "alignItems": "center",
-                      "classes": "mes-card-header",
                       "style": {
-                        "backgroundColor": "transparent",
-                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                        "gap": "12px",
-                        "padding": "16px 20px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -82,20 +68,20 @@
                           "collapsed": {
                             "path": "material/folder",
                             "style": {
-                              "color": "#f59e0b"
+                              "color": "#F59E0B"
                             }
                           },
                           "empty": {
                             "path": "material/circle",
                             "style": {
-                              "color": "#6b7280",
+                              "color": "#4A6080",
                               "fontSize": "8px"
                             }
                           },
                           "expanded": {
                             "path": "material/folder_open",
                             "style": {
-                              "color": "#f59e0b"
+                              "color": "#F59E0B"
                             }
                           }
                         },
@@ -103,29 +89,32 @@
                           "collapsed": {
                             "path": "material/chevron_right",
                             "style": {
-                              "color": "#6b7280"
+                              "color": "#4A6080"
                             }
                           },
                           "expanded": {
                             "path": "material/expand_more",
                             "style": {
-                              "color": "#9ca3af"
+                              "color": "#7088A8"
                             }
                           }
                         },
+                        "hoverStyle": {
+                          "backgroundColor": "rgba(255, 255, 255, 0.03)"
+                        },
                         "itemStyle": {
-                          "borderRadius": "6px",
-                          "color": "var(--mes-text-primary, #ffffff)",
-                          "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "borderRadius": 4,
+                          "color": "#E2E8F0",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
                           "fontSize": "13px",
-                          "fontWeight": "400",
+                          "fontWeight": 400,
                           "marginBottom": "2px",
                           "padding": "8px 12px"
                         },
                         "selectedStyle": {
-                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                          "borderLeft": "3px solid #10b981",
-                          "borderRadius": "8px"
+                          "backgroundColor": "rgba(34, 197, 94, 0.1)",
+                          "borderLeft": "3px solid #22C55E",
+                          "borderRadius": 4
                         }
                       },
                       "items": [
@@ -133,7 +122,7 @@
                           "data": "I am string data for Item 1",
                           "expanded": true,
                           "icon": {
-                            "color": "#3b82f6",
+                            "color": "#3B82F6",
                             "path": "material/corporate_fare"
                           },
                           "items": [
@@ -143,9 +132,8 @@
                               },
                               "expanded": true,
                               "icon": {
-                                "color": "#9ca3af",
-                                "path": "material/business",
-                                "style": {}
+                                "color": "#4A6080",
+                                "path": "material/business"
                               },
                               "items": [
                                 {
@@ -160,16 +148,15 @@
                                   },
                                   "expanded": true,
                                   "icon": {
-                                    "color": "#9ca3af",
-                                    "path": "material/domain",
-                                    "style": {}
+                                    "color": "#4A6080",
+                                    "path": "material/domain"
                                   },
                                   "items": [
                                     {
                                       "data": {},
                                       "expanded": false,
                                       "icon": {
-                                        "color": "#10b981",
+                                        "color": "#22C55E",
                                         "path": "material/precision_manufacturing"
                                       },
                                       "items": [],
@@ -179,7 +166,7 @@
                                       "data": {},
                                       "expanded": false,
                                       "icon": {
-                                        "color": "#10b981",
+                                        "color": "#22C55E",
                                         "path": "material/precision_manufacturing"
                                       },
                                       "items": [],
@@ -206,7 +193,7 @@
                       ],
                       "style": {
                         "backgroundColor": "transparent",
-                        "padding": "12px"
+                        "padding": 12
                       }
                     },
                     "type": "ia.display.tree"
@@ -220,12 +207,11 @@
                   "grow": 1
                 },
                 "props": {
-                  "classes": "mes-card mes-shadow-md",
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "var(--mes-bg-card, #21262d)",
-                    "border": "1px solid rgba(255, 255, 255, 0.05)",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -237,19 +223,6 @@
                     "children": [
                       {
                         "meta": {
-                          "name": "icon"
-                        },
-                        "props": {
-                          "path": "material/sell",
-                          "style": {
-                            "color": "#f59e0b",
-                            "fontSize": "22px"
-                          }
-                        },
-                        "type": "ia.display.icon"
-                      },
-                      {
-                        "meta": {
                           "name": "title"
                         },
                         "position": {
@@ -257,13 +230,14 @@
                         },
                         "props": {
                           "style": {
-                            "color": "var(--mes-text-primary, #ffffff)",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "16px",
-                            "fontWeight": "600",
-                            "letterSpacing": "-0.3px"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Tag Browser"
+                          "text": "TAG BROWSER"
                         },
                         "type": "ia.display.label"
                       }
@@ -272,17 +246,15 @@
                       "name": "header"
                     },
                     "position": {
-                      "basis": "56px",
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
                       "alignItems": "center",
-                      "classes": "mes-card-header",
                       "style": {
-                        "backgroundColor": "transparent",
-                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                        "gap": "12px",
-                        "padding": "16px 20px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -305,11 +277,11 @@
                       },
                       "style": {
                         "backgroundColor": "transparent",
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "color": "#E2E8F0",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
                         "fontSize": "13px",
-                        "margin": 5,
-                        "padding": "12px"
+                        "margin": 0,
+                        "padding": 12
                       }
                     },
                     "type": "ia.display.tag-browse-tree"
@@ -323,12 +295,11 @@
                   "grow": 1
                 },
                 "props": {
-                  "classes": "mes-card mes-shadow-md",
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "var(--mes-bg-card, #21262d)",
-                    "border": "1px solid rgba(255, 255, 255, 0.05)",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -346,7 +317,7 @@
             "props": {
               "direction": "column",
               "style": {
-                "gap": "16px"
+                "gap": 10
               }
             },
             "type": "ia.container.flex"
@@ -359,30 +330,21 @@
                     "children": [
                       {
                         "meta": {
-                          "name": "icon"
-                        },
-                        "props": {
-                          "path": "material/report_problem",
-                          "style": {
-                            "color": "#f59e0b",
-                            "fontSize": "22px"
-                          }
-                        },
-                        "type": "ia.display.icon"
-                      },
-                      {
-                        "meta": {
                           "name": "title"
                         },
+                        "position": {
+                          "grow": 1
+                        },
                         "props": {
                           "style": {
-                            "color": "var(--mes-text-primary, #ffffff)",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "16px",
-                            "fontWeight": "600",
-                            "letterSpacing": "-0.3px"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "State Reasons"
+                          "text": "STATE REASONS"
                         },
                         "type": "ia.display.label"
                       },
@@ -392,13 +354,10 @@
                         },
                         "props": {
                           "style": {
-                            "borderRadius": "9999px",
-                            "color": "#9ca3af",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "12px",
-                            "fontWeight": "500",
-                            "marginLeft": "8px",
-                            "padding": "4px 10px"
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 400
                           },
                           "text": "Downtime Reasons"
                         },
@@ -406,114 +365,54 @@
                       },
                       {
                         "meta": {
-                          "name": "spacer"
+                          "name": "addIcon"
                         },
                         "position": {
-                          "grow": 1
+                          "basis": "22px",
+                          "shrink": 0
                         },
                         "props": {
+                          "color": "#22C55E",
+                          "path": "material/add_circle_outline",
                           "style": {
-                            "flexGrow": 1
+                            "cursor": "pointer",
+                            "marginLeft": 8
                           }
                         },
-                        "type": "ia.container.flex"
+                        "type": "ia.display.icon"
                       },
                       {
-                        "children": [
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "addIcon"
-                                },
-                                "props": {
-                                  "path": "material/add",
-                                  "style": {
-                                    "color": "#10b981",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "addBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "classes": "ui_ux/hover_glow_green",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
-                                "border": "1px solid rgba(16, 185, 129, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
-                          },
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "deleteIcon"
-                                },
-                                "props": {
-                                  "path": "material/delete_outline",
-                                  "style": {
-                                    "color": "#ef4444",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "deleteBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
-                                "border": "1px solid rgba(239, 68, 68, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
-                          }
-                        ],
                         "meta": {
-                          "name": "actions"
+                          "name": "deleteIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
                         },
                         "props": {
+                          "color": "#EF4444",
+                          "path": "material/delete_forever",
                           "style": {
-                            "gap": "8px"
+                            "cursor": "pointer",
+                            "marginLeft": 6
                           }
                         },
-                        "type": "ia.container.flex"
+                        "type": "ia.display.icon"
                       }
                     ],
                     "meta": {
                       "name": "header"
                     },
                     "position": {
-                      "basis": "56px",
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
                       "alignItems": "center",
-                      "classes": "mes-card-header",
                       "style": {
-                        "backgroundColor": "transparent",
-                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                        "gap": "12px",
-                        "padding": "16px 20px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -535,7 +434,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\n    # Define database name (replace with your actual database name)\n    dbName \u003d \"mes_core\"\n    \n    # Define the query with hardcoded ParentID (PostgreSQL with column aliases)\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        parentid AS \\\"ParentID\\\",\n        reasonname AS \\\"ReasonName\\\", \n        reasoncode AS \\\"ReasonCode\\\",\n        recorddowntime AS \\\"RecordDowntime\\\",\n        planneddowntime AS \\\"PlannedDowntime\\\",\n        operatorselectable AS \\\"OperatorSelectable\\\",\n        subreasonof AS \\\"SubReasonOf\\\"\n    FROM statereason WHERE parentid \u003d ?\"\"\"\n    try:\n        # Execute the query with ParentID \u003d 1\n        data \u003d system.db.runPrepQuery(query, [1], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n        # Uncomment the following line to return the dataset directly (e.g., for Vision)\n        # return data\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "code": "\n    dbName \u003d \"mes_core\"\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        parentid AS \\\"ParentID\\\",\n        reasonname AS \\\"ReasonName\\\", \n        reasoncode AS \\\"ReasonCode\\\",\n        recorddowntime AS \\\"RecordDowntime\\\",\n        planneddowntime AS \\\"PlannedDowntime\\\",\n        operatorselectable AS \\\"OperatorSelectable\\\",\n        subreasonof AS \\\"SubReasonOf\\\"\n    FROM statereason WHERE parentid \u003d ?\"\"\"\n    try:\n        data \u003d system.db.runPrepQuery(query, [1], dbName)\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [{ col: row[col] for col in data.getColumnNames() } for row in json_data]\n        return result\n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
                               "type": "script"
                             }
                           ],
@@ -545,49 +444,39 @@
                     },
                     "props": {
                       "bodyStyle": {
-                        "backgroundColor": "#101418"
+                        "backgroundColor": "#111822"
                       },
                       "cells": {
                         "style": {
-                          "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
-                          "padding": "12px 16px"
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
                         }
                       },
-                      "classes": "mes-table",
                       "columns": [
                         {
                           "align": "left",
                           "editable": false,
                           "field": "ReasonName",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "REASON NAME"
+                            "title": "Reason Name"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "visible": true,
-                          "width": ""
+                          "visible": true
                         },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "ReasonCode",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "REASON CODE"
+                            "title": "Reason Code"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "140px"
+                          "width": "130px"
                         },
                         {
                           "align": "center",
@@ -595,17 +484,13 @@
                           "editable": false,
                           "field": "PlannedDowntime",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "PLANNED"
+                            "title": "Planned"
                           },
-                          "justify": "center",
                           "render": "boolean",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "100px"
+                          "width": "90px"
                         },
                         {
                           "align": "center",
@@ -613,44 +498,37 @@
                           "editable": false,
                           "field": "OperatorSelectable",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "OPERATOR SELECT"
+                            "title": "Operator Select"
                           },
-                          "justify": "center",
                           "render": "boolean",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "140px"
+                          "width": "120px"
                         },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "SubReasonOf",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "SUB-REASON OF"
+                            "title": "Sub-Reason Of"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "140px"
+                          "width": "130px"
                         }
                       ],
                       "headerStyle": {
-                        "backgroundColor": "#21262d",
-                        "borderBottom": "2px solid #10b981",
-                        "color": "var(--mes-text-primary, #ffffff)",
-                        "fontSize": "13px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.5px",
-                        "padding": "14px 16px",
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": "10px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
                         "textTransform": "uppercase"
                       },
                       "pager": {
@@ -658,30 +536,33 @@
                       },
                       "rows": {
                         "highlight": {
-                          "color": "rgba(16, 185, 129, 0.08)"
+                          "color": "rgba(34, 197, 94, 0.08)"
                         },
                         "striped": {
                           "color": {
-                            "even": "#101418",
-                            "odd": "#161b22"
+                            "even": "#111822",
+                            "odd": "#0D1117"
                           }
                         },
                         "style": {
-                          "color": "var(--mes-text-primary, #ffffff)",
-                          "fontSize": "14px",
-                          "fontWeight": "400"
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                          "fontSize": "12px",
+                          "fontWeight": 400
                         }
                       },
                       "selection": {
                         "style": {
-                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                          "borderLeft": "3px solid #10b981"
+                          "backgroundColor": "rgba(34, 197, 94, 0.12)",
+                          "borderLeft": "3px solid #22C55E"
                         }
                       },
                       "style": {
-                        "backgroundColor": "#101418",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "margin": 10,
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "margin": 0,
                         "overflow": "hidden"
                       }
                     },
@@ -695,12 +576,11 @@
                   "grow": 1
                 },
                 "props": {
-                  "classes": "mes-card mes-shadow-md",
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "var(--mes-bg-card, #21262d)",
-                    "border": "1px solid rgba(255, 255, 255, 0.05)",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -712,19 +592,6 @@
                     "children": [
                       {
                         "meta": {
-                          "name": "icon"
-                        },
-                        "props": {
-                          "path": "material/tag",
-                          "style": {
-                            "color": "#3b82f6",
-                            "fontSize": "22px"
-                          }
-                        },
-                        "type": "ia.display.icon"
-                      },
-                      {
-                        "meta": {
                           "name": "title"
                         },
                         "position": {
@@ -732,112 +599,66 @@
                         },
                         "props": {
                           "style": {
-                            "color": "var(--mes-text-primary, #ffffff)",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "16px",
-                            "fontWeight": "600",
-                            "letterSpacing": "-0.3px"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Count Tags"
+                          "text": "COUNT TAGS"
                         },
                         "type": "ia.display.label"
                       },
                       {
-                        "children": [
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "addIcon"
-                                },
-                                "props": {
-                                  "path": "material/add",
-                                  "style": {
-                                    "color": "#10b981",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "addBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "classes": "ui_ux/hover_glow_green",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
-                                "border": "1px solid rgba(16, 185, 129, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
-                          },
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "deleteIcon"
-                                },
-                                "props": {
-                                  "path": "material/delete_outline",
-                                  "style": {
-                                    "color": "#ef4444",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "deleteBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
-                                "border": "1px solid rgba(239, 68, 68, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
-                          }
-                        ],
                         "meta": {
-                          "name": "actions"
+                          "name": "addIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
                         },
                         "props": {
+                          "color": "#22C55E",
+                          "path": "material/add_circle_outline",
                           "style": {
-                            "gap": "8px"
+                            "cursor": "pointer"
                           }
                         },
-                        "type": "ia.container.flex"
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "deleteIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#EF4444",
+                          "path": "material/delete_forever",
+                          "style": {
+                            "cursor": "pointer",
+                            "marginLeft": 6
+                          }
+                        },
+                        "type": "ia.display.icon"
                       }
                     ],
                     "meta": {
                       "name": "header"
                     },
                     "position": {
-                      "basis": "56px",
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
-                      "alignItems": "flex-end",
-                      "classes": "mes-card-header",
+                      "alignItems": "center",
                       "style": {
-                        "backgroundColor": "transparent",
-                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                        "gap": "12px",
-                        "padding": "16px 20px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -859,7 +680,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\n    # Define database name (replace with your actual database name)\n    dbName \u003d \"mes_core\"\n    \n    # Define the query with hardcoded ParentID (PostgreSQL with column aliases)\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        tagpath AS \\\"TagPath\\\",\n        parentid AS \\\"ParentID\\\"\n    FROM counttag WHERE parentid \u003d ?\"\"\"\n    try:\n        # Execute the query with ParentID \u003d 1\n        data \u003d system.db.runPrepQuery(query, [1], dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n        # Uncomment the following line to return the dataset directly (e.g., for Vision)\n        # return data\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "code": "\n    dbName \u003d \"mes_core\"\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        tagpath AS \\\"TagPath\\\",\n        parentid AS \\\"ParentID\\\"\n    FROM counttag WHERE parentid \u003d ?\"\"\"\n    try:\n        data \u003d system.db.runPrepQuery(query, [1], dbName)\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [{ col: row[col] for col in data.getColumnNames() } for row in json_data]\n        return result\n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
                               "type": "script"
                             }
                           ],
@@ -869,83 +690,63 @@
                     },
                     "props": {
                       "bodyStyle": {
-                        "backgroundColor": "#101418"
+                        "backgroundColor": "#111822"
                       },
                       "cells": {
                         "style": {
-                          "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
-                          "padding": "12px 16px"
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
                         }
                       },
-                      "classes": "mes-table",
                       "columns": [
                         {
                           "align": "center",
                           "editable": false,
                           "field": "ID",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
                             "title": "ID"
                           },
-                          "justify": "center",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "80px"
+                          "width": "70px"
                         },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "TagPath",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "TAG PATH"
+                            "title": "Tag Path"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "visible": true,
-                          "width": ""
+                          "visible": true
                         },
                         {
                           "align": "center",
-                          "boolean": "toggleSwitch",
                           "editable": false,
                           "field": "ParentID",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "PARENT ID"
+                            "title": "Parent ID"
                           },
-                          "justify": "center",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "toggleSwitch": {
-                            "color": {
-                              "selected": "#10b981",
-                              "unselected": "rgba(255, 255, 255, 0.3)"
-                            }
-                          },
                           "visible": true,
-                          "width": "120px"
+                          "width": "100px"
                         }
                       ],
                       "headerStyle": {
-                        "backgroundColor": "#21262d",
-                        "borderBottom": "2px solid #3b82f6",
-                        "color": "var(--mes-text-primary, #ffffff)",
-                        "fontSize": "13px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.5px",
-                        "padding": "14px 16px",
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": "10px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
                         "textTransform": "uppercase"
                       },
                       "pager": {
@@ -953,30 +754,33 @@
                       },
                       "rows": {
                         "highlight": {
-                          "color": "rgba(16, 185, 129, 0.08)"
+                          "color": "rgba(34, 197, 94, 0.08)"
                         },
                         "striped": {
                           "color": {
-                            "even": "#101418",
-                            "odd": "#161b22"
+                            "even": "#111822",
+                            "odd": "#0D1117"
                           }
                         },
                         "style": {
-                          "color": "var(--mes-text-primary, #ffffff)",
-                          "fontSize": "14px",
-                          "fontWeight": "400"
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                          "fontSize": "12px",
+                          "fontWeight": 400
                         }
                       },
                       "selection": {
                         "style": {
-                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                          "borderLeft": "3px solid #10b981"
+                          "backgroundColor": "rgba(34, 197, 94, 0.12)",
+                          "borderLeft": "3px solid #22C55E"
                         }
                       },
                       "style": {
-                        "backgroundColor": "#101418",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "margin": 10,
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "margin": 0,
                         "overflow": "hidden"
                       }
                     },
@@ -990,12 +794,11 @@
                   "grow": 1
                 },
                 "props": {
-                  "classes": "mes-card mes-shadow-md",
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "var(--mes-bg-card, #21262d)",
-                    "border": "1px solid rgba(255, 255, 255, 0.05)",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -1007,19 +810,6 @@
                     "children": [
                       {
                         "meta": {
-                          "name": "icon"
-                        },
-                        "props": {
-                          "path": "material/format_list_numbered",
-                          "style": {
-                            "color": "#10b981",
-                            "fontSize": "22px"
-                          }
-                        },
-                        "type": "ia.display.icon"
-                      },
-                      {
-                        "meta": {
                           "name": "title"
                         },
                         "position": {
@@ -1027,112 +817,66 @@
                         },
                         "props": {
                           "style": {
-                            "color": "var(--mes-text-primary, #ffffff)",
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": "16px",
-                            "fontWeight": "600",
-                            "letterSpacing": "-0.3px"
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "text": "Count Types"
+                          "text": "COUNT TYPES"
                         },
                         "type": "ia.display.label"
                       },
                       {
-                        "children": [
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "addIcon"
-                                },
-                                "props": {
-                                  "path": "material/add",
-                                  "style": {
-                                    "color": "#10b981",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "addBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "classes": "ui_ux/hover_glow_green",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(16, 185, 129, 0.1)",
-                                "border": "1px solid rgba(16, 185, 129, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
-                          },
-                          {
-                            "children": [
-                              {
-                                "meta": {
-                                  "name": "deleteIcon"
-                                },
-                                "props": {
-                                  "path": "material/delete_outline",
-                                  "style": {
-                                    "color": "#ef4444",
-                                    "fontSize": "20px"
-                                  }
-                                },
-                                "type": "ia.display.icon"
-                              }
-                            ],
-                            "meta": {
-                              "name": "deleteBtn"
-                            },
-                            "props": {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                              "style": {
-                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
-                                "border": "1px solid rgba(239, 68, 68, 0.2)",
-                                "borderRadius": "8px",
-                                "cursor": "pointer",
-                                "height": "36px",
-                                "width": "36px"
-                              }
-                            },
-                            "type": "ia.container.flex"
-                          }
-                        ],
                         "meta": {
-                          "name": "actions"
+                          "name": "addIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
                         },
                         "props": {
+                          "color": "#22C55E",
+                          "path": "material/add_circle_outline",
                           "style": {
-                            "gap": "8px"
+                            "cursor": "pointer"
                           }
                         },
-                        "type": "ia.container.flex"
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "deleteIcon"
+                        },
+                        "position": {
+                          "basis": "22px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#EF4444",
+                          "path": "material/delete_forever",
+                          "style": {
+                            "cursor": "pointer",
+                            "marginLeft": 6
+                          }
+                        },
+                        "type": "ia.display.icon"
                       }
                     ],
                     "meta": {
                       "name": "header"
                     },
                     "position": {
-                      "basis": "56px",
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
                       "alignItems": "center",
-                      "classes": "mes-card-header",
                       "style": {
-                        "backgroundColor": "transparent",
-                        "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                        "gap": "12px",
-                        "padding": "16px 20px"
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
                       }
                     },
                     "type": "ia.container.flex"
@@ -1154,7 +898,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\n    # Define database name (replace with your actual database name)\n    dbName \u003d \"mes_core\"\n    \n    # Define the query (PostgreSQL with column aliases)\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        counttype AS \\\"CountType\\\"\n    FROM counttype\"\"\"\n    try:\n        # Execute the query\n        data \u003d system.db.runQuery(query, dbName)\n        \n        # Convert dataset to JSON for Perspective compatibility\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [\n            {\n                col: row[col]\n                for col in data.getColumnNames()\n            }\n            for row in json_data\n        ]\n        return result\n        \n        # Uncomment the following line to return the dataset directly (e.g., for Vision)\n        # return data\n        \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "code": "\n    dbName \u003d \"mes_core\"\n    query \u003d \"\"\"SELECT \n        id AS \\\"ID\\\",\n        counttype AS \\\"CountType\\\"\n    FROM counttype\"\"\"\n    try:\n        data \u003d system.db.runQuery(query, dbName)\n        json_data \u003d system.dataset.toPyDataSet(data)\n        result \u003d [{ col: row[col] for col in data.getColumnNames() } for row in json_data]\n        return result\n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
                               "type": "script"
                             }
                           ],
@@ -1164,59 +908,50 @@
                     },
                     "props": {
                       "bodyStyle": {
-                        "backgroundColor": "#101418"
+                        "backgroundColor": "#111822"
                       },
                       "cells": {
                         "style": {
-                          "borderRight": "1px solid rgba(255, 255, 255, 0.03)",
-                          "padding": "12px 16px"
+                          "borderRight": "1px solid #141C28",
+                          "padding": "10px 14px"
                         }
                       },
-                      "classes": "mes-table",
                       "columns": [
                         {
                           "align": "center",
                           "editable": false,
                           "field": "ID",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
                             "title": "ID"
                           },
-                          "justify": "center",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
                           "visible": true,
-                          "width": "80px"
+                          "width": "70px"
                         },
                         {
                           "align": "left",
                           "editable": false,
                           "field": "CountType",
                           "header": {
-                            "style": {
-                              "classes": ""
-                            },
-                            "title": "COUNT TYPE"
+                            "title": "Count Type"
                           },
-                          "justify": "left",
                           "render": "auto",
                           "resizable": true,
                           "sortable": true,
-                          "visible": true,
-                          "width": ""
+                          "visible": true
                         }
                       ],
                       "headerStyle": {
-                        "backgroundColor": "#21262d",
-                        "borderBottom": "2px solid #10b981",
-                        "color": "var(--mes-text-primary, #ffffff)",
-                        "fontSize": "13px",
-                        "fontWeight": "600",
-                        "letterSpacing": "0.5px",
-                        "padding": "14px 16px",
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "fontSize": "10px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "10px 14px",
                         "textTransform": "uppercase"
                       },
                       "pager": {
@@ -1224,30 +959,33 @@
                       },
                       "rows": {
                         "highlight": {
-                          "color": "rgba(16, 185, 129, 0.08)"
+                          "color": "rgba(34, 197, 94, 0.08)"
                         },
                         "striped": {
                           "color": {
-                            "even": "#101418",
-                            "odd": "#161b22"
+                            "even": "#111822",
+                            "odd": "#0D1117"
                           }
                         },
                         "style": {
-                          "color": "var(--mes-text-primary, #ffffff)",
-                          "fontSize": "14px",
-                          "fontWeight": "400"
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                          "fontSize": "12px",
+                          "fontWeight": 400
                         }
                       },
                       "selection": {
                         "style": {
-                          "backgroundColor": "rgba(16, 185, 129, 0.15)",
-                          "borderLeft": "3px solid #10b981"
+                          "backgroundColor": "rgba(34, 197, 94, 0.12)",
+                          "borderLeft": "3px solid #22C55E"
                         }
                       },
                       "style": {
-                        "backgroundColor": "#101418",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "margin": 10,
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                        "margin": 0,
                         "overflow": "hidden"
                       }
                     },
@@ -1261,12 +999,11 @@
                   "grow": 1
                 },
                 "props": {
-                  "classes": "mes-card mes-shadow-md",
                   "direction": "column",
                   "style": {
-                    "backgroundColor": "var(--mes-bg-card, #21262d)",
-                    "border": "1px solid rgba(255, 255, 255, 0.05)",
-                    "borderRadius": "16px",
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
                     "overflow": "hidden"
                   }
                 },
@@ -1282,7 +1019,7 @@
             "props": {
               "direction": "column",
               "style": {
-                "gap": "16px"
+                "gap": 10
               }
             },
             "type": "ia.container.flex"
@@ -1296,9 +1033,9 @@
         },
         "props": {
           "style": {
-            "backgroundColor": "var(--mes-bg-primary, #0d1117)",
-            "gap": "16px",
-            "padding": "16px"
+            "backgroundColor": "#0A0E14",
+            "gap": 10,
+            "padding": 10
           }
         },
         "type": "ia.container.flex"

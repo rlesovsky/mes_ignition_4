@@ -4,6 +4,10 @@
       "title": "",
       "viewPath": "desktop/mes_core/operations/line_main"
     },
+    "/defect list": {
+      "title": "",
+      "viewPath": "desktop/mes_core/admin/defect_list"
+    },
     "/line": {
       "title": "",
       "viewPath": "desktop/mes_core/operations/line_main"
@@ -15,6 +19,10 @@
     "/production model": {
       "title": "",
       "viewPath": "desktop/mes_core/admin/production_model"
+    },
+    "/run_report": {
+      "title": "",
+      "viewPath": "desktop/mes_core/operations/reporting/production_reporting"
     },
     "/work order": {
       "title": "",

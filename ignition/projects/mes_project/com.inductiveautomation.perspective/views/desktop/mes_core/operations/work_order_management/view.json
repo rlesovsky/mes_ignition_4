@@ -1,6 +1,7 @@
 {
   "custom": {
-    "id": 1
+    "id": 1,
+    "showScheduleForm": false
   },
   "params": {},
   "propConfig": {
@@ -21,171 +22,645 @@
           {
             "children": [
               {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "title"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "WORK ORDERS"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "no_wo_badge"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": ".../woTableWrapper/woTable.props.data"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value is None or len(value) \u003d\u003d 0:\n\t\treturn True\n\treturn False",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#EF4444",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 9,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "No Work Orders"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tself.parent.parent.parent.parent.getChild(\"root\").custom.showCreateForm \u003d not self.parent.parent.parent.parent.getChild(\"root\").custom.showCreateForm"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "addIcon"
+                    },
+                    "position": {
+                      "basis": "22px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#22C55E",
+                      "path": "material/add_circle_outline",
+                      "style": {
+                        "cursor": "pointer",
+                        "marginLeft": 8
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\n    logger \u003d system.util.getLogger(\"WorkOrder\")\n    table \u003d self.parent.getSibling(\"woTableWrapper\").getChild(\"woTable\")\n    selection_data \u003d table.props.selection.data\n    \n    if not selection_data or len(selection_data) \u003d\u003d 0:\n        logger.warn(\"No work order selected\")\n        return\n    \n    row_data \u003d list(selection_data)[0]\n    workorder_id \u003d row_data[\"ID\"]\n    \n    query \u003d \"UPDATE workorder SET closed \u003d true WHERE id \u003d ?\"\n    \n    try:\n        system.db.runPrepUpdate(query, [workorder_id], \"mes_core\")\n        table.refreshBinding(\"props.data\")\n    except Exception as e:\n        logger.error(\"Failed to close Work Order ID {}: {}\".format(workorder_id, str(e)))"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "deleteIcon"
+                    },
+                    "position": {
+                      "basis": "22px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#EF4444",
+                      "path": "material/delete_forever",
+                      "style": {
+                        "cursor": "pointer",
+                        "marginLeft": 6
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
                 "meta": {
-                  "name": "icon"
+                  "name": "header"
                 },
                 "position": {
-                  "basis": "32px"
+                  "basis": "36px",
+                  "shrink": 0
                 },
                 "props": {
-                  "path": "material/work_outline",
+                  "alignItems": "center",
                   "style": {
-                    "color": "#3b82f6",
-                    "marginLeft": 10
+                    "backgroundColor": "#16202E",
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "0px 10px"
                   }
                 },
-                "type": "ia.display.icon"
+                "type": "ia.container.flex"
               },
               {
-                "meta": {
-                  "name": "Label"
-                },
-                "position": {
-                  "grow": 1
-                },
-                "props": {
-                  "style": {
-                    "color": "#ffffff",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "fontSize": 18,
-                    "fontWeight": 600,
-                    "letterSpacing": "-0.3px",
-                    "marginLeft": 10
+                "children": [
+                  {
+                    "meta": {
+                      "name": "formTitle"
+                    },
+                    "position": {
+                      "basis": "20px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#7088A8",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 10,
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "marginBottom": 10,
+                        "textTransform": "uppercase"
+                      },
+                      "text": "CREATE WORK ORDER"
+                    },
+                    "type": "ia.display.label"
                   },
-                  "text": "Work Orders"
-                },
-                "type": "ia.display.label"
-              },
-              {
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "70px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Product:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "productDropdown"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.options": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "expression",
+                                "tagPath": "now()"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tdbName \u003d \"mes_core\"\n\tquery \u003d \"SELECT id, productcode FROM productcode WHERE disable \u003d false ORDER BY productcode\"\n\ttry:\n\t\tdata \u003d system.db.runQuery(query, dbName)\n\t\tjson_data \u003d system.dataset.toPyDataSet(data)\n\t\treturn [{\"label\": row[\"productcode\"], \"value\": row[\"id\"]} for row in json_data]\n\texcept:\n\t\treturn []",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12
+                          },
+                          "value": 1
+                        },
+                        "type": "ia.input.dropdown"
+                      }
+                    ],
+                    "meta": {
+                      "name": "productRow"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "basis": "70px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 400
+                          },
+                          "text": "Quantity:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "qtyInput"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 16,
+                            "minHeight": 40,
+                            "padding": "8px 10px"
+                          },
+                          "value": 1000
+                        },
+                        "type": "ia.input.numeric-entry-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "qtyRow"
+                    },
+                    "position": {
+                      "basis": "46px"
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "marginBottom": 10
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\ttimestamp \u003d system.date.now()\n\ttimestamp_str \u003d system.date.format(timestamp, \"yyyy-MM-dd_HH-mm-ss\")\n\n\troot \u003d self.parent.parent\n\tproductDropdown \u003d root.getChild(\u0027productRow\u0027).getChild(\u0027productDropdown\u0027)\n\tqtyInput \u003d root.getChild(\u0027qtyRow\u0027).getChild(\u0027qtyInput\u0027)\n\n\tproduct_code_id \u003d productDropdown.props.value\n\tprod_code_label \u003d \u0027\u0027\n\tfor opt in productDropdown.props.options:\n\t\tif opt[\u0027value\u0027] \u003d\u003d product_code_id:\n\t\t\tprod_code_label \u003d opt[\u0027label\u0027]\n\t\t\tbreak\n\n\tquantity \u003d qtyInput.props.value\n\n\tdb \u003d \u0027mes_core\u0027\n\tprod_code_clean \u003d prod_code_label.replace(\" \", \"_\")\n\twork_order \u003d \"WO__\" + prod_code_clean + \"_\" + timestamp_str\n\n\tquery \u003d \u0027\u0027\u0027INSERT INTO workorder (workorder, quantity, closed, hide, \"TimeStamp\", productcodeid, productcode)\n\t\tVALUES (?, ?, ?, ?, ?, ?, ?)\u0027\u0027\u0027\n\n\ttry:\n\t\tresult \u003d system.db.runPrepUpdate(query, [work_order, quantity, False, False, timestamp, product_code_id, prod_code_label], db)\n\t\tif result \u003d\u003d 1:\n\t\t\tself.view.custom.showCreateForm \u003d False\n\t\t\tself.parent.parent.parent.getChild(\u0027woTableWrapper\u0027).getChild(\u0027woTable\u0027).refreshBinding(\u0027props.data\u0027)\n\texcept Exception as e:\n\t\tsystem.util.getLogger(\u0027ScriptLogger\u0027).error(\u0027Insert failed: {}\u0027.format(str(e)))"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "createBtn"
+                        },
+                        "position": {
+                          "basis": "80px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#22C55E",
+                            "borderColor": "#22C55E",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Create",
+                          "textStyle": {
+                            "color": "#FFFFFF",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\tself.view.custom.showCreateForm \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "cancelBtn"
+                        },
+                        "position": {
+                          "basis": "80px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "transparent",
+                            "borderColor": "#1B2432",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Cancel",
+                          "textStyle": {
+                            "color": "#A8B8CE",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 12,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "formButtons"
+                    },
+                    "position": {
+                      "basis": "36px"
+                    },
+                    "props": {
+                      "style": {
+                        "gap": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
                 "meta": {
-                  "name": "no_workorders_badge"
+                  "name": "createForm"
                 },
                 "position": {
-                  "basis": "220px",
+                  "basis": "200px",
                   "shrink": 0
                 },
                 "propConfig": {
                   "position.display": {
                     "binding": {
                       "config": {
-                        "path": ".../table_wrapper/table.props.data[0].WorkOrder"
+                        "path": "..../root.custom.showCreateForm"
                       },
-                      "transforms": [
-                        {
-                          "fallback": false,
-                          "inputType": "scalar",
-                          "mappings": [
-                            {
-                              "input": null,
-                              "output": true
-                            }
-                          ],
-                          "outputType": "scalar",
-                          "type": "map"
-                        }
-                      ],
                       "type": "property"
                     }
                   }
                 },
                 "props": {
+                  "direction": "column",
                   "style": {
-                    "color": "#ef4444",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "fontSize": 12,
-                    "fontWeight": 600,
-                    "letterSpacing": "0.5px",
-                    "marginRight": 10,
-                    "paddingBottom": 6,
-                    "paddingLeft": 14,
-                    "paddingRight": 14,
-                    "paddingTop": 6,
-                    "textAlign": "center",
-                    "textTransform": "uppercase"
-                  },
-                  "text": "No Work Orders For This Line"
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "events": {
-                  "dom": {
-                    "onClick": {
-                      "config": {
-                        "draggable": true,
-                        "id": "LkRnMMg2",
-                        "modal": false,
-                        "overlayDismiss": true,
-                        "resizable": true,
-                        "showCloseIcon": true,
-                        "title": "Create New Work Order",
-                        "type": "open",
-                        "viewPath": "desktop/mes_core/operations/templates/popup/create_new_work_order",
-                        "viewportBound": false
-                      },
-                      "scope": "C",
-                      "type": "popup"
-                    }
+                    "backgroundColor": "#111822",
+                    "borderTop": "1px solid #1B2432",
+                    "padding": "12px 14px"
                   }
                 },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "searchInput"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "placeholder": "Search work orders...",
+                      "style": {
+                        "backgroundColor": "#111822",
+                        "border": "1px solid #223044",
+                        "borderRadius": 4,
+                        "color": "#E2E8F0",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": 16,
+                        "minHeight": 40,
+                        "padding": "8px 10px"
+                      }
+                    },
+                    "type": "ia.input.text-field"
+                  }
+                ],
                 "meta": {
-                  "name": "add_0"
+                  "name": "searchBar"
                 },
                 "position": {
-                  "basis": "24px",
+                  "basis": "60px",
                   "shrink": 0
                 },
                 "props": {
-                  "color": "#10b981",
-                  "path": "material/add_circle_outline",
+                  "alignItems": "center",
                   "style": {
-                    "cursor": "pointer",
-                    "marginLeft": 12
+                    "borderBottom": "1px solid #1B2432",
+                    "padding": "8px 10px"
                   }
                 },
-                "type": "ia.display.icon"
+                "type": "ia.container.flex"
               },
               {
-                "events": {
-                  "dom": {
-                    "onClick": {
-                      "config": {
-                        "script": "\n    \"\"\"\n    Closes the selected work order by setting closed \u003d true\n    \"\"\"\n    logger \u003d system.util.getLogger(\"WorkOrder\")\n    \n    # Navigate from delete icon to table:\n    # delete -\u003e parent (header) -\u003e sibling (table_wrapper) -\u003e child (table)\n    table \u003d self.parent.getSibling(\"table_wrapper\").getChild(\"table\")\n    selection_data \u003d table.props.selection.data\n    \n    # Check if a row is selected\n    if not selection_data or len(selection_data) \u003d\u003d 0:\n        logger.warn(\"No work order selected\")\n        return\n    \n    # Get the selected row (convert to list to access by index)\n    row_data \u003d list(selection_data)[0]\n    workorder_id \u003d row_data[\"ID\"]\n    workorder_name \u003d row_data.get(\"WorkOrder\", \"Unknown\")\n    \n    logger.info(\"Closing Work Order ID: {}, Name: {}\".format(workorder_id, workorder_name))\n    \n    # Update the database - set closed \u003d true\n    query \u003d \"UPDATE workorder SET closed \u003d true WHERE id \u003d ?\"\n    \n    try:\n        system.db.runPrepUpdate(query, [workorder_id], \"mes_core\")\n        logger.info(\"Work Order ID {} has been closed\".format(workorder_id))\n        \n        # Refresh the table data\n        table.refreshBinding(\"props.data\")\n        \n    except Exception as e:\n        logger.error(\"Failed to close Work Order ID {}: {}\".format(workorder_id, str(e)))"
+                "children": [
+                  {
+                    "meta": {
+                      "name": "woTable"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "expression",
+                            "tagPath": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n    dbName \u003d \"mes_core\"\n    \n    search_string \u003d self.view.params.get(\"searchFilter\", \"\")\n    \n    query \u003d \"\"\"\n        SELECT \n            w.id AS \"ID\",\n            w.workorder AS \"WorkOrder\",\n            w.productcode AS \"ProductCode\",\n            w.quantity AS \"QTY\",\n            w.closed AS \"Closed\",\n            w.hide AS \"Hide\",\n            w.\"TimeStamp\" AS \"TimeStamp\"\n        FROM workorder w\n        WHERE w.hide \u003d false\n        AND w.closed \u003d false\n    \"\"\"\n    \n    params \u003d []\n    \n    if search_string:\n        query +\u003d \" AND (w.workorder ILIKE ? OR w.productcode ILIKE ?)\"\n        params.append(\u0027%\u0027 + search_string + \u0027%\u0027)\n        params.append(\u0027%\u0027 + search_string + \u0027%\u0027)\n    \n    try:\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        if data.getRowCount() \u003e 0:\n            column_names \u003d data.getColumnNames()\n            json_data \u003d system.dataset.toPyDataSet(data)\n            return [{ col: row[col] for col in column_names } for row in json_data]\n        else:\n            return []\n            \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "bodyStyle": {
+                        "backgroundColor": "#0D1117"
                       },
-                      "scope": "G",
-                      "type": "script"
-                    }
+                      "cells": {
+                        "style": {
+                          "borderRight": "1px solid #141C28",
+                          "padding": "8px 10px"
+                        }
+                      },
+                      "columns": [
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "WorkOrder",
+                          "filter": {
+                            "enabled": false,
+                            "visible": "on-hover"
+                          },
+                          "header": {
+                            "title": "Work Order"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true
+                        },
+                        {
+                          "align": "left",
+                          "editable": false,
+                          "field": "ProductCode",
+                          "filter": {
+                            "enabled": false,
+                            "visible": "on-hover"
+                          },
+                          "header": {
+                            "title": "Product"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true
+                        },
+                        {
+                          "align": "center",
+                          "editable": false,
+                          "field": "QTY",
+                          "filter": {
+                            "enabled": false,
+                            "visible": "on-hover"
+                          },
+                          "header": {
+                            "title": "QTY"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "70px"
+                        },
+                        {
+                          "align": "center",
+                          "dateFormat": "MM/DD/YYYY HH:mm",
+                          "editable": false,
+                          "field": "TimeStamp",
+                          "filter": {
+                            "enabled": false,
+                            "visible": "on-hover"
+                          },
+                          "header": {
+                            "title": "Created"
+                          },
+                          "render": "auto",
+                          "resizable": true,
+                          "sortable": true,
+                          "visible": true,
+                          "width": "120px"
+                        },
+                        {
+                          "field": "ID",
+                          "visible": false
+                        },
+                        {
+                          "field": "Closed",
+                          "visible": false
+                        },
+                        {
+                          "field": "Hide",
+                          "visible": false
+                        }
+                      ],
+                      "headerStyle": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "color": "#4A6080",
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "fontSize": "9px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.07em",
+                        "padding": "6px 10px",
+                        "textTransform": "uppercase"
+                      },
+                      "pager": {
+                        "bottom": false
+                      },
+                      "rows": {
+                        "highlight": {
+                          "color": "rgba(59, 130, 246, 0.08)"
+                        },
+                        "striped": {
+                          "color": {
+                            "even": "#0D1117",
+                            "odd": "#111822"
+                          }
+                        },
+                        "style": {
+                          "color": "#A8B8CE",
+                          "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                          "fontSize": "11px",
+                          "fontWeight": 400
+                        }
+                      },
+                      "selection": {
+                        "style": {
+                          "backgroundColor": "rgba(59, 130, 246, 0.12)",
+                          "borderLeft": "3px solid #3B82F6"
+                        }
+                      },
+                      "style": {
+                        "backgroundColor": "transparent",
+                        "border": "none",
+                        "borderRadius": 0,
+                        "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                        "margin": 0,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.table"
                   }
-                },
+                ],
                 "meta": {
-                  "name": "delete"
+                  "name": "woTableWrapper"
                 },
                 "position": {
-                  "basis": "24px",
-                  "shrink": 0
+                  "grow": 1
                 },
                 "props": {
-                  "color": "#ef4444",
-                  "path": "material/delete_forever",
-                  "style": {
-                    "cursor": "pointer",
-                    "marginLeft": 8,
-                    "marginRight": 10
-                  }
+                  "direction": "column"
                 },
-                "type": "ia.display.icon"
+                "type": "ia.container.flex"
               }
             ],
             "meta": {
-              "name": "header"
+              "name": "leftPanel"
             },
             "position": {
-              "basis": "50px"
+              "basis": "600px",
+              "shrink": 0
             },
             "props": {
-              "alignItems": "center",
+              "direction": "column",
               "style": {
-                "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
+                "backgroundColor": "#0D1117",
+                "borderRight": "1px solid #1B2432",
+                "overflow": "hidden",
+                "padding": 5
               }
             },
             "type": "ia.container.flex"
@@ -193,958 +668,729 @@
           {
             "children": [
               {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "woTitle"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": ".../leftPanel/woTableWrapper/woTable.props.selection.data[0].WorkOrder"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027Select a Work Order\u0027\n\treturn value",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 16,
+                            "fontWeight": 700
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "woSubtitle"
+                        },
+                        "position": {
+                          "basis": "18px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/woTableWrapper/woTable.props.selection.data[0].WorkOrder"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027\u0027\n\treturn \u0027Product: \u0027 + str(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#A8B8CE",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "titleBlock"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "value"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "...../leftPanel/woTableWrapper/woTable.props.selection.data[0].QTY"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value is None:\n\t\treturn \u0027—\u0027\n\treturn \u0027{:,}\u0027.format(int(value))",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#22C55E",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 20,
+                            "fontWeight": 700,
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 9,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textAlign": "center",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "TOTAL QTY"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "kpiTotal"
+                    },
+                    "position": {
+                      "basis": "80px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "direction": "column",
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\tself.parent.parent.parent.parent.parent.getChild(\"root\").custom.showScheduleForm \u003d not self.parent.parent.parent.parent.parent.getChild(\"root\").custom.showScheduleForm"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "scheduleBtn"
+                        },
+                        "position": {
+                          "basis": "150px"
+                        },
+                        "props": {
+                          "image": {
+                            "icon": {
+                              "color": "#3B82F6",
+                              "path": "material/event"
+                            }
+                          },
+                          "primary": false,
+                          "style": {
+                            "backgroundColor": "rgba(59, 130, 246, 0.1)",
+                            "borderColor": "#3B82F6",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Schedule",
+                          "textStyle": {
+                            "color": "#3B82F6",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "meta": {
+                          "name": "closeWoBtn"
+                        },
+                        "position": {
+                          "basis": "150px"
+                        },
+                        "props": {
+                          "image": {
+                            "icon": {
+                              "color": "#EF4444",
+                              "path": "material/cancel"
+                            }
+                          },
+                          "primary": false,
+                          "style": {
+                            "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                            "borderColor": "#EF4444",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Close WO",
+                          "textStyle": {
+                            "color": "#EF4444",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "detailActions"
+                    },
+                    "position": {
+                      "basis": "300px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "gap": 8
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
                 "meta": {
-                  "name": "table"
+                  "name": "detailHeader"
                 },
                 "position": {
-                  "grow": 1
+                  "basis": "70px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "borderBottom": "1px solid #1B2432",
+                    "gap": 20,
+                    "padding": "12px 20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 9,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "marginBottom": 4,
+                            "textTransform": "uppercase"
+                          },
+                          "text": "START TIME"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "startInput"
+                        },
+                        "position": {
+                          "basis": "50px"
+                        },
+                        "props": {
+                          "dateFormat": "MMM d, yyyy h:mm a",
+                          "formattedValue": "Apr 4, 2026 11:00 AM",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 11
+                          },
+                          "value": {
+                            "$": [
+                              "ts",
+                              0,
+                              1775313455021
+                            ],
+                            "$ts": 1775318400000
+                          }
+                        },
+                        "type": "ia.input.date-time-input"
+                      }
+                    ],
+                    "meta": {
+                      "name": "startField"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 9,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "marginBottom": 4,
+                            "textTransform": "uppercase"
+                          },
+                          "text": "END TIME"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "endInput"
+                        },
+                        "position": {
+                          "basis": "50px"
+                        },
+                        "props": {
+                          "dateFormat": "MMM d, yyyy h:mm a",
+                          "formattedValue": "Apr 4, 2026 5:00 PM",
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 11
+                          },
+                          "value": {
+                            "$": [
+                              "ts",
+                              0,
+                              1775313463785
+                            ],
+                            "$ts": 1775340000000
+                          }
+                        },
+                        "type": "ia.input.date-time-input"
+                      }
+                    ],
+                    "meta": {
+                      "name": "endField"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "label"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 9,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "marginBottom": 4,
+                            "textTransform": "uppercase"
+                          },
+                          "text": "QUANTITY"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "schQtyInput"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#111822",
+                            "border": "1px solid #223044",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 12
+                          },
+                          "value": 2000
+                        },
+                        "type": "ia.input.numeric-entry-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "schQtyField"
+                    },
+                    "position": {
+                      "basis": "150px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\n\tlogger \u003d system.util.getLogger(\u0027Schedule\u0027)\n\ttimestamp \u003d system.date.now()\n\tdb \u003d \u0027mes_core\u0027\n\t\n\tquery \u003d \u0027\u0027\u0027INSERT INTO schedule (lineid, workorderid, scheduletype, note, schedulestartdatetime, schedulefinishdatetime, quantity, enteredby, \"TimeStamp\") \n\t           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)\u0027\u0027\u0027\n\t\n\ttry:\n\t\t# All values from view custom properties or direct parent (scheduleForm)\n\t\tlineID \u003d self.view.custom.id\n\t\tworkOrderID \u003d self.parent.parent.parent.parent.getChild(\"leftPanel\").getChild(\"woTableWrapper\").getChild(\"woTable\").props.data[0].ID\n\t\t\n\t\tlogger.info(\"LineID: {}, WorkOrderID: {}\".format(lineID, workOrderID))\n\t\t\n\t\tif lineID is None or workOrderID is None:\n\t\t\tlogger.error(\"Missing lineID or workOrderID\")\n\t\t\treturn\n\t\t\n\t\t# Button is at: scheduleForm \u003e addSchedule \u003e addScheduleBtn\n\t\t# self.parent \u003d addSchedule, self.parent.parent \u003d scheduleForm\n\t\tscheduleForm \u003d self.parent.parent\n\t\tstartDate \u003d self.parent.parent.getChild(\"startField\").getChild(\"startInput\").props.value\n\t\tfinishDate \u003d self.parent.parent.getChild(\"endField\").getChild(\"endInput\").props.value\n\t\tquantity \u003d self.parent.parent.getChild(\"schQtyField\").getChild(\"schQtyInput\").props.value\n\t\t\n\t\tlogger.info(\"StartDate: {}, FinishDate: {}, Qty: {}\".format(startDate, finishDate, quantity))\n\t\t\n\t\tif startDate is None or finishDate is None:\n\t\t\tlogger.error(\"Start or finish date is None\")\n\t\t\treturn\n\t\t\n\t\tif isinstance(startDate, basestring) or isinstance(startDate, str):\n\t\t\tstartDate \u003d system.date.parse(startDate, \"yyyy-MM-dd\u0027T\u0027HH:mm:ss\")\n\t\tif isinstance(finishDate, basestring) or isinstance(finishDate, str):\n\t\t\tfinishDate \u003d system.date.parse(finishDate, \"yyyy-MM-dd\u0027T\u0027HH:mm:ss\")\n\t\t\n\t\tif quantity is None:\n\t\t\tquantity \u003d 0\n\t\tquantity \u003d int(quantity)\n\t\t\n\t\tuserName \u003d \u0027System\u0027\n\t\t\n\t\tresult \u003d system.db.runPrepUpdate(query, [lineID, workOrderID, 1, \u0027\u0027, startDate, finishDate, quantity, userName, timestamp], db)\n\t\t\n\t\tlogger.info(\"Insert result: {}\".format(result))\n\t\t\n\t\tif result \u003d\u003d 1:\n\t\t\tself.view.custom.showScheduleForm \u003d False\n\t\t\n\texcept Exception as e:\n\t\tlogger.error(\u0027Insert failed: {}\u0027.format(str(e)))"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "addScheduleBtn"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#22C55E",
+                            "borderColor": "#22C55E",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Add to Schedule",
+                          "textStyle": {
+                            "color": "#FFFFFF",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "addSchedule"
+                    },
+                    "position": {
+                      "basis": "150px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\tself.view.custom.showScheduleForm \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "cancelScheduleBtn"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "transparent",
+                            "borderColor": "#1B2432",
+                            "borderRadius": 4,
+                            "borderStyle": "solid",
+                            "borderWidth": 1
+                          },
+                          "text": "Cancel",
+                          "textStyle": {
+                            "color": "#A8B8CE",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 11,
+                            "fontWeight": 600
+                          }
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "cancelSchedule"
+                    },
+                    "position": {
+                      "basis": "150px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "scheduleForm"
+                },
+                "position": {
+                  "basis": "80px",
+                  "shrink": 0
                 },
                 "propConfig": {
-                  "props.data": {
+                  "position.display": {
                     "binding": {
                       "config": {
-                        "fallbackDelay": 2.5,
-                        "mode": "expression",
-                        "tagPath": "now()"
+                        "path": "..../root.custom.showScheduleForm"
                       },
-                      "transforms": [
-                        {
-                          "code": "\n    dbName \u003d \"mes_core\"\n    \n    search_string \u003d self.view.params.get(\"searchFilter\", \"\")\n    \n    query \u003d \"\"\"\n        SELECT \n            w.id AS \"ID\",\n            w.workorder AS \"WorkOrder\",\n            w.productcode AS \"ProductCode\",\n            w.quantity AS \"QTY\",\n            w.closed AS \"Closed\",\n            w.hide AS \"Hide\",\n            w.\"TimeStamp\" AS \"TimeStamp\"\n        FROM workorder w\n        WHERE w.hide \u003d false\n        AND w.closed \u003d false\n    \"\"\"\n    \n    params \u003d []\n    \n    if search_string:\n        query +\u003d \" AND (w.workorder ILIKE ? OR w.productcode ILIKE ?)\"\n        params.append(\u0027%\u0027 + search_string + \u0027%\u0027)\n        params.append(\u0027%\u0027 + search_string + \u0027%\u0027)\n    \n    try:\n        data \u003d system.db.runPrepQuery(query, params, dbName)\n        \n        if data.getRowCount() \u003e 0:\n            column_names \u003d data.getColumnNames()\n            json_data \u003d system.dataset.toPyDataSet(data)\n            return [{ col: row[col] for col in column_names } for row in json_data]\n        else:\n            return []\n            \n    except Exception as e:\n        system.util.getLogger(\"ScriptLogger\").error(\"Query failed: {}\".format(str(e)))\n        return []",
-                          "type": "script"
-                        }
-                      ],
-                      "type": "tag"
+                      "type": "property"
                     }
                   }
                 },
                 "props": {
-                  "bodyStyle": {
-                    "backgroundColor": "#101418"
-                  },
-                  "cells": {
-                    "style": {
-                      "borderRight": "1px solid rgba(255, 255, 255, 0.05)",
-                      "padding": "12px 16px"
-                    }
-                  },
-                  "columns": [
-                    {
-                      "align": "center",
-                      "boolean": "checkbox",
-                      "dateFormat": "MM/DD/YYYY",
-                      "editable": false,
-                      "field": "WorkOrder",
-                      "filter": {
-                        "boolean": {
-                          "condition": ""
-                        },
-                        "date": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "enabled": false,
-                        "number": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "string": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "visible": "on-hover"
-                      },
-                      "footer": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "header": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "justify": "auto",
-                      "nullFormat": {
-                        "includeNullStrings": false,
-                        "nullFormatValue": "",
-                        "strict": false
-                      },
-                      "number": "value",
-                      "numberFormat": "0,0.##",
-                      "progressBar": {
-                        "bar": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "max": 100,
-                        "min": 0,
-                        "track": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "value": {
-                          "enabled": true,
-                          "format": "0,0.##",
-                          "justify": "center",
-                          "style": {
-                            "classes": ""
-                          }
-                        }
-                      },
-                      "render": "auto",
-                      "resizable": true,
-                      "sort": "none",
-                      "sortable": true,
-                      "strictWidth": false,
-                      "style": {
-                        "classes": ""
-                      },
-                      "toggleSwitch": {
-                        "color": {
-                          "selected": "",
-                          "unselected": ""
-                        }
-                      },
-                      "viewParams": {},
-                      "viewPath": "",
-                      "visible": true,
-                      "width": ""
-                    },
-                    {
-                      "align": "center",
-                      "boolean": "checkbox",
-                      "dateFormat": "MM/DD/YYYY",
-                      "editable": false,
-                      "field": "ProductCode",
-                      "filter": {
-                        "boolean": {
-                          "condition": ""
-                        },
-                        "date": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "enabled": false,
-                        "number": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "string": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "visible": "on-hover"
-                      },
-                      "footer": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "header": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "justify": "auto",
-                      "nullFormat": {
-                        "includeNullStrings": false,
-                        "nullFormatValue": "",
-                        "strict": false
-                      },
-                      "number": "value",
-                      "numberFormat": "0,0.##",
-                      "progressBar": {
-                        "bar": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "max": 100,
-                        "min": 0,
-                        "track": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "value": {
-                          "enabled": true,
-                          "format": "0,0.##",
-                          "justify": "center",
-                          "style": {
-                            "classes": ""
-                          }
-                        }
-                      },
-                      "render": "auto",
-                      "resizable": true,
-                      "sort": "none",
-                      "sortable": true,
-                      "strictWidth": false,
-                      "style": {
-                        "classes": ""
-                      },
-                      "toggleSwitch": {
-                        "color": {
-                          "selected": "",
-                          "unselected": ""
-                        }
-                      },
-                      "viewParams": {},
-                      "viewPath": "",
-                      "visible": true,
-                      "width": ""
-                    },
-                    {
-                      "align": "center",
-                      "boolean": "checkbox",
-                      "dateFormat": "MM/DD/YYYY",
-                      "editable": false,
-                      "field": "QTY",
-                      "filter": {
-                        "boolean": {
-                          "condition": ""
-                        },
-                        "date": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "enabled": false,
-                        "number": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "string": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "visible": "on-hover"
-                      },
-                      "footer": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "header": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "justify": "auto",
-                      "nullFormat": {
-                        "includeNullStrings": false,
-                        "nullFormatValue": "",
-                        "strict": false
-                      },
-                      "number": "value",
-                      "numberFormat": "0,0.##",
-                      "progressBar": {
-                        "bar": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "max": 100,
-                        "min": 0,
-                        "track": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "value": {
-                          "enabled": true,
-                          "format": "0,0.##",
-                          "justify": "center",
-                          "style": {
-                            "classes": ""
-                          }
-                        }
-                      },
-                      "render": "auto",
-                      "resizable": true,
-                      "sort": "none",
-                      "sortable": true,
-                      "strictWidth": false,
-                      "style": {
-                        "classes": ""
-                      },
-                      "toggleSwitch": {
-                        "color": {
-                          "selected": "",
-                          "unselected": ""
-                        }
-                      },
-                      "viewParams": {},
-                      "viewPath": "",
-                      "visible": true,
-                      "width": ""
-                    },
-                    {
-                      "align": "center",
-                      "boolean": "checkbox",
-                      "dateFormat": "MM/DD/YYYY",
-                      "editable": true,
-                      "field": "Closed",
-                      "filter": {
-                        "boolean": {
-                          "condition": ""
-                        },
-                        "date": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "enabled": false,
-                        "number": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "string": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "visible": "on-hover"
-                      },
-                      "footer": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "header": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "justify": "auto",
-                      "nullFormat": {
-                        "includeNullStrings": false,
-                        "nullFormatValue": "",
-                        "strict": false
-                      },
-                      "number": "value",
-                      "numberFormat": "0,0.##",
-                      "progressBar": {
-                        "bar": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "max": 100,
-                        "min": 0,
-                        "track": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "value": {
-                          "enabled": true,
-                          "format": "0,0.##",
-                          "justify": "center",
-                          "style": {
-                            "classes": ""
-                          }
-                        }
-                      },
-                      "render": "boolean",
-                      "resizable": true,
-                      "sort": "none",
-                      "sortable": true,
-                      "strictWidth": false,
-                      "style": {
-                        "classes": ""
-                      },
-                      "toggleSwitch": {
-                        "color": {
-                          "selected": "",
-                          "unselected": ""
-                        }
-                      },
-                      "viewParams": {},
-                      "viewPath": "",
-                      "visible": true,
-                      "width": ""
-                    },
-                    {
-                      "align": "center",
-                      "boolean": "checkbox",
-                      "dateFormat": "MM/DD/YYYY",
-                      "editable": false,
-                      "field": "Hide",
-                      "filter": {
-                        "boolean": {
-                          "condition": ""
-                        },
-                        "date": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "enabled": false,
-                        "number": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "string": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "visible": "on-hover"
-                      },
-                      "footer": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "header": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "justify": "auto",
-                      "nullFormat": {
-                        "includeNullStrings": false,
-                        "nullFormatValue": "",
-                        "strict": false
-                      },
-                      "number": "value",
-                      "numberFormat": "0,0.##",
-                      "progressBar": {
-                        "bar": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "max": 100,
-                        "min": 0,
-                        "track": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "value": {
-                          "enabled": true,
-                          "format": "0,0.##",
-                          "justify": "center",
-                          "style": {
-                            "classes": ""
-                          }
-                        }
-                      },
-                      "render": "auto",
-                      "resizable": true,
-                      "sort": "none",
-                      "sortable": true,
-                      "strictWidth": false,
-                      "style": {
-                        "classes": ""
-                      },
-                      "toggleSwitch": {
-                        "color": {
-                          "selected": "",
-                          "unselected": ""
-                        }
-                      },
-                      "viewParams": {},
-                      "viewPath": "",
-                      "visible": true,
-                      "width": ""
-                    },
-                    {
-                      "align": "center",
-                      "boolean": "checkbox",
-                      "dateFormat": "MM/DD/YYYY",
-                      "editable": false,
-                      "field": "ID",
-                      "filter": {
-                        "boolean": {
-                          "condition": ""
-                        },
-                        "date": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "enabled": false,
-                        "number": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "string": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "visible": "on-hover"
-                      },
-                      "footer": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "header": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "justify": "auto",
-                      "nullFormat": {
-                        "includeNullStrings": false,
-                        "nullFormatValue": "",
-                        "strict": false
-                      },
-                      "number": "value",
-                      "numberFormat": "0,0.##",
-                      "progressBar": {
-                        "bar": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "max": 100,
-                        "min": 0,
-                        "track": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "value": {
-                          "enabled": true,
-                          "format": "0,0.##",
-                          "justify": "center",
-                          "style": {
-                            "classes": ""
-                          }
-                        }
-                      },
-                      "render": "auto",
-                      "resizable": true,
-                      "sort": "none",
-                      "sortable": true,
-                      "strictWidth": false,
-                      "style": {
-                        "classes": ""
-                      },
-                      "toggleSwitch": {
-                        "color": {
-                          "selected": "",
-                          "unselected": ""
-                        }
-                      },
-                      "viewParams": {},
-                      "viewPath": "",
-                      "visible": true,
-                      "width": ""
-                    },
-                    {
-                      "align": "center",
-                      "boolean": "checkbox",
-                      "dateFormat": "MM/DD/YYYY HH:mm:ss",
-                      "editable": false,
-                      "field": "TimeStamp",
-                      "filter": {
-                        "boolean": {
-                          "condition": ""
-                        },
-                        "date": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "enabled": false,
-                        "number": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "string": {
-                          "condition": "",
-                          "value": ""
-                        },
-                        "visible": "on-hover"
-                      },
-                      "footer": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "header": {
-                        "align": "center",
-                        "justify": "left",
-                        "style": {
-                          "classes": ""
-                        },
-                        "title": ""
-                      },
-                      "justify": "auto",
-                      "nullFormat": {
-                        "includeNullStrings": false,
-                        "nullFormatValue": "",
-                        "strict": false
-                      },
-                      "number": "value",
-                      "numberFormat": "0,0.##",
-                      "progressBar": {
-                        "bar": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "max": 100,
-                        "min": 0,
-                        "track": {
-                          "color": "",
-                          "style": {
-                            "classes": ""
-                          }
-                        },
-                        "value": {
-                          "enabled": true,
-                          "format": "0,0.##",
-                          "justify": "center",
-                          "style": {
-                            "classes": ""
-                          }
-                        }
-                      },
-                      "render": "auto",
-                      "resizable": true,
-                      "sort": "none",
-                      "sortable": true,
-                      "strictWidth": false,
-                      "style": {
-                        "classes": ""
-                      },
-                      "toggleSwitch": {
-                        "color": {
-                          "selected": "",
-                          "unselected": ""
-                        }
-                      },
-                      "viewParams": {},
-                      "viewPath": "",
-                      "visible": true,
-                      "width": ""
-                    }
-                  ],
-                  "headerStyle": {
-                    "backgroundColor": "#161b22",
-                    "borderBottom": "2px solid #3b82f6",
-                    "color": "#ffffff",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "fontSize": "13px",
-                    "fontWeight": 600,
-                    "letterSpacing": "0.5px",
-                    "padding": "12px 16px",
-                    "textTransform": "uppercase"
-                  },
-                  "pager": {
-                    "bottom": false
-                  },
-                  "rows": {
-                    "highlight": {
-                      "color": "rgba(59, 130, 246, 0.1)"
-                    },
-                    "striped": {
-                      "color": {
-                        "even": "#101418",
-                        "odd": "#161b22"
-                      }
-                    },
-                    "style": {
-                      "color": "#ffffff",
-                      "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                      "fontSize": "14px",
-                      "fontWeight": 400
-                    }
-                  },
-                  "selection": {
-                    "data": [
+                  "alignItems": "flex-end",
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "borderBottom": "1px solid #1B2432",
+                    "gap": 14,
+                    "padding": "12px 20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
                       {
-                        "Closed": false,
-                        "Hide": false,
-                        "ID": 10,
-                        "ProductCode": "This is my New Product",
-                        "QTY": 1000,
-                        "TimeStamp": "Thu Jan 08 2026 20:25:36 GMT-0600 (Central Standard Time)",
-                        "WorkOrder": "WO__This_is_my_New_Product_2026-01-08_20-25-36"
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "SCHEDULE"
+                        },
+                        "type": "ia.display.label"
                       }
                     ],
-                    "selectedColumn": "WorkOrder",
-                    "selectedRow": 0,
-                    "style": {
-                      "backgroundColor": "rgba(59, 130, 246, 0.15)",
-                      "border": "1px solid #3b82f6"
-                    }
+                    "meta": {
+                      "name": "scheduleHeader"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 10px"
+                      }
+                    },
+                    "type": "ia.container.flex"
                   },
+                  {
+                    "meta": {
+                      "name": "gantt"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.items": {
+                        "binding": {
+                          "config": {
+                            "expression": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n\tdbName \u003d \"mes_core\"\n\tlineID \u003d self.view.custom.id\n\t\n\ttry:\n\t\tquery \u003d \u0027SELECT name FROM line WHERE id \u003d ?\u0027\n\t\tresult \u003d system.db.runPrepQuery(query, [lineID], dbName)\n\t\t\n\t\tif result.getRowCount() \u003e 0:\n\t\t\tlineName \u003d result.getValueAt(0, 0)\n\t\telse:\n\t\t\tlineName \u003d \"Line \" + str(lineID)\n\t\t\n\t\treturn [\n\t\t\t{\n\t\t\t\t\"id\": \"line\" + str(lineID),\n\t\t\t\t\"label\": lineName,\n\t\t\t\t\"iconConfig\": { \"path\": \"\", \"color\": \"\", \"style\": {} },\n\t\t\t\t\"headerStyle\": {\"classes\": \"mes-gantt-row-header\"},\n\t\t\t\t\"rowStyle\": {\"classes\": \"mes-gantt-row\"}\n\t\t\t}\n\t\t]\n\texcept Exception as e:\n\t\tsystem.util.getLogger(\"ScriptLogger\").error(\"Line query failed: {}\".format(str(e)))\n\t\treturn [\n\t\t\t{\n\t\t\t\t\"id\": \"line1\",\n\t\t\t\t\"label\": \"Line 1\",\n\t\t\t\t\"iconConfig\": { \"path\": \"\", \"color\": \"\", \"style\": {} },\n\t\t\t\t\"headerStyle\": {\"classes\": \"mes-gantt-row-header\"},\n\t\t\t\t\"rowStyle\": {\"classes\": \"mes-gantt-row\"}\n\t\t\t}\n\t\t]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      },
+                      "props.scheduledEvents": {
+                        "binding": {
+                          "config": {
+                            "expression": "now()"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\n\tdbName \u003d \"mes_core\"\n\tlineID \u003d self.view.custom.id\n\t\n\tquery \u003d \"\"\"\n\t\tSELECT s.id AS \"ID\", s.lineid AS \"LineID\", s.workorderid AS \"WorkOrderID\",\n\t\t\ts.schedulestartdatetime AS \"StartDateTime\",\n\t\t\ts.schedulefinishdatetime AS \"FinishDateTime\",\n\t\t\ts.quantity AS \"Quantity\", w.workorder AS \"WorkOrder\",\n\t\t\tCASE \n\t\t\t\tWHEN r.id IS NOT NULL AND r.closed \u003d FALSE THEN \u0027running\u0027\n\t\t\t\tWHEN r.id IS NOT NULL AND r.closed \u003d TRUE THEN \u0027completed\u0027\n\t\t\t\tELSE \u0027scheduled\u0027\n\t\t\tEND AS \"Status\"\n\t\tFROM schedule s\n\t\tINNER JOIN workorder w ON s.workorderid \u003d w.id\n\t\tLEFT JOIN run r ON r.scheduleid \u003d s.id\n\t\tWHERE s.lineid \u003d ?\n\t\tAND s.schedulestartdatetime \u003e\u003d ?\n\t\tAND s.schedulefinishdatetime \u003c\u003d ?\n\t\tORDER BY s.schedulestartdatetime\n\t\"\"\"\n\t\n\ttry:\n\t\tnow \u003d system.date.now()\n\t\tstart_date \u003d system.date.addDays(now, -7)\n\t\tend_date \u003d system.date.addDays(now, 30)\n\t\t\n\t\tdata \u003d system.db.runPrepQuery(query, [lineID, start_date, end_date], dbName)\n\t\tjson_data \u003d system.dataset.toPyDataSet(data)\n\t\tresult \u003d []\n\t\t\n\t\t# Inline style map matching MES 4.0 style guide\n\t\tstyleMap \u003d {\n\t\t\t\"running\": {\n\t\t\t\t\"backgroundColor\": \"rgba(34, 197, 94, 0.25)\",\n\t\t\t\t\"borderColor\": \"#22C55E\",\n\t\t\t\t\"borderStyle\": \"solid\",\n\t\t\t\t\"borderWidth\": 1,\n\t\t\t\t\"borderLeftWidth\": 3,\n\t\t\t\t\"borderRadius\": 3,\n\t\t\t\t\"color\": \"#22C55E\",\n\t\t\t\t\"fontFamily\": \"\u0027IBM Plex Mono\u0027, Consolas, monospace\",\n\t\t\t\t\"fontSize\": 10,\n\t\t\t\t\"fontWeight\": 600\n\t\t\t},\n\t\t\t\"completed\": {\n\t\t\t\t\"backgroundColor\": \"rgba(59, 130, 246, 0.2)\",\n\t\t\t\t\"borderColor\": \"#3B82F6\",\n\t\t\t\t\"borderStyle\": \"solid\",\n\t\t\t\t\"borderWidth\": 1,\n\t\t\t\t\"borderLeftWidth\": 3,\n\t\t\t\t\"borderRadius\": 3,\n\t\t\t\t\"color\": \"#3B82F6\",\n\t\t\t\t\"fontFamily\": \"\u0027IBM Plex Mono\u0027, Consolas, monospace\",\n\t\t\t\t\"fontSize\": 10,\n\t\t\t\t\"fontWeight\": 600\n\t\t\t},\n\t\t\t\"scheduled\": {\n\t\t\t\t\"backgroundColor\": \"rgba(245, 158, 11, 0.2)\",\n\t\t\t\t\"borderColor\": \"#F59E0B\",\n\t\t\t\t\"borderStyle\": \"solid\",\n\t\t\t\t\"borderWidth\": 1,\n\t\t\t\t\"borderLeftWidth\": 3,\n\t\t\t\t\"borderRadius\": 3,\n\t\t\t\t\"color\": \"#F59E0B\",\n\t\t\t\t\"fontFamily\": \"\u0027IBM Plex Mono\u0027, Consolas, monospace\",\n\t\t\t\t\"fontSize\": 10,\n\t\t\t\t\"fontWeight\": 600\n\t\t\t}\n\t\t}\n\t\t\n\t\tfor row in json_data:\n\t\t\tstart_date_time \u003d row[\"StartDateTime\"]\n\t\t\tfinish_date_time \u003d row[\"FinishDateTime\"]\n\t\t\twork_order \u003d row[\"WorkOrder\"]\n\t\t\tquantity \u003d row[\"Quantity\"]\n\t\t\tschedule_id \u003d row[\"ID\"]\n\t\t\tstatus \u003d row[\"Status\"]\n\t\t\t\n\t\t\tif start_date_time is None or finish_date_time is None:\n\t\t\t\tcontinue\n\t\t\t\n\t\t\ttry:\n\t\t\t\tstart_millis \u003d system.date.toMillis(start_date_time)\n\t\t\t\tend_millis \u003d system.date.toMillis(finish_date_time)\n\t\t\t\tstart_date_output \u003d system.date.fromMillis(start_millis)\n\t\t\t\tend_date_output \u003d system.date.fromMillis(end_millis)\n\t\t\texcept:\n\t\t\t\ttry:\n\t\t\t\t\tstart_date_output \u003d system.date.fromMillis(start_date_time.getTime())\n\t\t\t\t\tend_date_output \u003d system.date.fromMillis(finish_date_time.getTime())\n\t\t\t\texcept:\n\t\t\t\t\tcontinue\n\t\t\t\n\t\t\tlabel \u003d \"{} ({:,})\".format(work_order, quantity) if quantity else work_order\n\t\t\teventStyle \u003d styleMap.get(status, styleMap[\"scheduled\"])\n\t\t\t\n\t\t\trow_result \u003d {\n\t\t\t\t\"itemId\": \"line\" + str(lineID),\n\t\t\t\t\"eventId\": str(schedule_id),\n\t\t\t\t\"startDate\": start_date_output,\n\t\t\t\t\"endDate\": end_date_output,\n\t\t\t\t\"label\": label,\n\t\t\t\t\"leadTime\": 0,\n\t\t\t\t\"leadStyle\": {},\n\t\t\t\t\"percentDone\": 0,\n\t\t\t\t\"style\": eventStyle\n\t\t\t}\n\t\t\t\n\t\t\tresult.append(row_result)\n\t\t\n\t\treturn result\n\t\n\texcept Exception as e:\n\t\tsystem.util.getLogger(\"ScriptLogger\").error(\"Schedule query failed: {}\".format(str(e)))\n\t\treturn []",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "borderStyle": "none",
+                        "classes": "mes-gantt",
+                        "padding": 0
+                      }
+                    },
+                    "type": "ia.display.equipmentschedule"
+                  }
+                ],
+                "meta": {
+                  "name": "scheduleSection"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
                   "style": {
-                    "backgroundColor": "transparent",
-                    "border": "1px solid rgba(255, 255, 255, 0.08)",
-                    "borderRadius": 12,
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "margin": 10,
                     "overflow": "hidden"
                   }
                 },
-                "type": "ia.display.table"
+                "type": "ia.container.flex"
               }
             ],
             "meta": {
-              "name": "table_wrapper"
+              "name": "rightPanel"
             },
             "position": {
               "grow": 1
             },
             "props": {
-              "direction": "column"
+              "direction": "column",
+              "style": {
+                "overflow": "hidden",
+                "padding": 5
+              }
             },
             "type": "ia.container.flex"
           }
         ],
+        "custom": {
+          "showCreateForm": false,
+          "showScheduleForm": false
+        },
         "meta": {
-          "name": "workorder_table"
+          "name": "root"
         },
         "position": {
-          "basis": "470px",
           "grow": 1
         },
         "props": {
-          "direction": "column",
           "style": {
-            "backgroundColor": "#21262d",
-            "border": "1px solid rgba(255, 255, 255, 0.05)",
-            "borderRadius": 16,
-            "margin": 10,
-            "padding": 6
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "children": [
-              {
-                "meta": {
-                  "name": "icon"
-                },
-                "position": {
-                  "basis": "32px"
-                },
-                "props": {
-                  "path": "material/schedule",
-                  "style": {
-                    "color": "#3b82f6",
-                    "marginLeft": 10
-                  }
-                },
-                "type": "ia.display.icon"
-              },
-              {
-                "meta": {
-                  "name": "Label"
-                },
-                "position": {
-                  "basis": "307px",
-                  "grow": 1
-                },
-                "props": {
-                  "style": {
-                    "color": "#ffffff",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "fontSize": 18,
-                    "fontWeight": 600,
-                    "letterSpacing": "-0.3px",
-                    "marginLeft": 10
-                  },
-                  "text": "Schedule"
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "events": {
-                  "dom": {
-                    "onClick": {
-                      "config": {
-                        "draggable": true,
-                        "id": "tMVGLlPp",
-                        "modal": false,
-                        "overlayDismiss": false,
-                        "resizable": true,
-                        "showCloseIcon": true,
-                        "title": "Schedule Work Order",
-                        "type": "open",
-                        "viewParams": {
-                          "id": "{/root/workorder_table/table_wrapper/table.props.selection.data[0].ID}",
-                          "lineID": "{view.custom.id}"
-                        },
-                        "viewPath": "desktop/mes_core/operations/templates/popup/schedule_work_order",
-                        "viewportBound": false
-                      },
-                      "scope": "C",
-                      "type": "popup"
-                    }
-                  }
-                },
-                "meta": {
-                  "name": "add_0"
-                },
-                "position": {
-                  "basis": "30px"
-                },
-                "props": {
-                  "color": "#10b981",
-                  "path": "material/add_circle_outline",
-                  "style": {
-                    "cursor": "pointer"
-                  }
-                },
-                "type": "ia.display.icon"
-              },
-              {
-                "meta": {
-                  "name": "delete"
-                },
-                "position": {
-                  "basis": "30px"
-                },
-                "props": {
-                  "color": "#ef4444",
-                  "path": "material/delete_forever",
-                  "style": {
-                    "cursor": "pointer",
-                    "marginRight": 10
-                  }
-                },
-                "type": "ia.display.icon"
-              }
-            ],
-            "meta": {
-              "name": "header"
-            },
-            "position": {
-              "basis": "50px"
-            },
-            "props": {
-              "alignItems": "center",
-              "style": {
-                "borderBottom": "1px solid rgba(255, 255, 255, 0.05)"
-              }
-            },
-            "type": "ia.container.flex"
-          },
-          {
-            "meta": {
-              "name": "EquipmentSchedule"
-            },
-            "position": {
-              "grow": 1
-            },
-            "propConfig": {
-              "props.items": {
-                "binding": {
-                  "config": {
-                    "expression": "now()"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n\tdbName \u003d \"mes_core\"\n\tlineID \u003d self.view.custom.id\n\t\n\ttry:\n\t\tquery \u003d \u0027SELECT name FROM line WHERE id \u003d ?\u0027\n\t\tresult \u003d system.db.runPrepQuery(query, [lineID], dbName)\n\t\t\n\t\tif result.getRowCount() \u003e 0:\n\t\t\tlineName \u003d result.getValueAt(0, 0)\n\t\telse:\n\t\t\tlineName \u003d \"Line \" + str(lineID)\n\t\t\n\t\treturn [\n\t\t\t{\n\t\t\t\t\"id\": \"line\" + str(lineID),\n\t\t\t\t\"label\": lineName,\n\t\t\t\t\"iconConfig\": {\n\t\t\t\t\t\"path\": \"\",\n\t\t\t\t\t\"color\": \"\",\n\t\t\t\t\t\"style\": {}\n\t\t\t\t},\n\t\t\t\t\"headerStyle\": {\"classes\": \"\"},\n\t\t\t\t\"rowStyle\": {\"classes\": \"\"}\n\t\t\t}\n\t\t]\n\texcept Exception as e:\n\t\tsystem.util.getLogger(\"ScriptLogger\").error(\"Line query failed: {}\".format(str(e)))\n\t\treturn [\n\t\t\t{\n\t\t\t\t\"id\": \"line1\",\n\t\t\t\t\"label\": \"Line 1\",\n\t\t\t\t\"iconConfig\": {\n\t\t\t\t\t\"path\": \"\",\n\t\t\t\t\t\"color\": \"\",\n\t\t\t\t\t\"style\": {}\n\t\t\t\t},\n\t\t\t\t\"headerStyle\": {\"classes\": \"\"},\n\t\t\t\t\"rowStyle\": {\"classes\": \"\"}\n\t\t\t}\n\t\t]",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "expr"
-                }
-              },
-              "props.scheduledEvents": {
-                "binding": {
-                  "config": {
-                    "expression": "now()"
-                  },
-                  "transforms": [
-                    {
-                      "code": "\n\tdbName \u003d \"mes_core\"\n\tlineID \u003d self.view.custom.id\n\t\n\tquery \u003d \"\"\"\n\t\tSELECT s.id AS \"ID\", s.lineid AS \"LineID\", s.workorderid AS \"WorkOrderID\",\n\t\t\ts.schedulestartdatetime AS \"StartDateTime\",\n\t\t\ts.schedulefinishdatetime AS \"FinishDateTime\",\n\t\t\ts.quantity AS \"Quantity\", w.workorder AS \"WorkOrder\"\n\t\tFROM schedule s\n\t\tINNER JOIN workorder w ON s.workorderid \u003d w.id\n\t\tWHERE s.lineid \u003d ?\n\t\tAND s.schedulestartdatetime \u003e\u003d ?\n\t\tAND s.schedulefinishdatetime \u003c\u003d ?\n\t\tORDER BY s.schedulestartdatetime\n\t\"\"\"\n\t\n\ttry:\n\t\tnow \u003d system.date.now()\n\t\tstart_date \u003d system.date.addDays(now, -7)\n\t\tend_date \u003d system.date.addDays(now, 30)\n\t\t\n\t\tdata \u003d system.db.runPrepQuery(query, [lineID, start_date, end_date], dbName)\n\t\tjson_data \u003d system.dataset.toPyDataSet(data)\n\t\tresult \u003d []\n\t\t\n\t\tfor row in json_data:\n\t\t\tstart_date_time \u003d row[\"StartDateTime\"]\n\t\t\tfinish_date_time \u003d row[\"FinishDateTime\"]\n\t\t\twork_order \u003d row[\"WorkOrder\"]\n\t\t\tquantity \u003d row[\"Quantity\"]\n\t\t\tschedule_id \u003d row[\"ID\"]\n\t\t\t\n\t\t\tif start_date_time is None or finish_date_time is None:\n\t\t\t\tcontinue\n\t\t\t\n\t\t\ttry:\n\t\t\t\tstart_millis \u003d system.date.toMillis(start_date_time)\n\t\t\t\tend_millis \u003d system.date.toMillis(finish_date_time)\n\t\t\t\tstart_date_output \u003d system.date.fromMillis(start_millis)\n\t\t\t\tend_date_output \u003d system.date.fromMillis(end_millis)\n\t\t\texcept:\n\t\t\t\ttry:\n\t\t\t\t\tstart_date_output \u003d system.date.fromMillis(start_date_time.getTime())\n\t\t\t\t\tend_date_output \u003d system.date.fromMillis(finish_date_time.getTime())\n\t\t\t\texcept:\n\t\t\t\t\tcontinue\n\t\t\t\n\t\t\tlabel \u003d \"{} ({:,})\".format(work_order, quantity) if quantity else work_order\n\t\t\t\n\t\t\trow_result \u003d {\n\t\t\t\t\"itemId\": \"line\" + str(lineID),\n\t\t\t\t\"eventId\": str(schedule_id),\n\t\t\t\t\"startDate\": start_date_output,\n\t\t\t\t\"endDate\": end_date_output,\n\t\t\t\t\"label\": label,\n\t\t\t\t\"leadTime\": 0,\n\t\t\t\t\"leadStyle\": {\"classes\": \"\"},\n\t\t\t\t\"percentDone\": 0,\n\t\t\t\t\"style\": {\"classes\": \"\"}\n\t\t\t}\n\t\t\t\n\t\t\tresult.append(row_result)\n\t\t\n\t\treturn result\n\t\n\texcept Exception as e:\n\t\tsystem.util.getLogger(\"ScriptLogger\").error(\"Schedule query failed: {}\".format(str(e)))\n\t\treturn []",
-                      "type": "script"
-                    }
-                  ],
-                  "type": "expr"
-                }
-              }
-            },
-            "props": {
-              "style": {
-                "borderStyle": "none",
-                "padding": 10
-              }
-            },
-            "type": "ia.display.equipmentschedule"
-          }
-        ],
-        "meta": {
-          "name": "schedule_table"
-        },
-        "position": {
-          "basis": "470px",
-          "grow": 1
-        },
-        "props": {
-          "direction": "column",
-          "style": {
-            "backgroundColor": "#21262d",
-            "border": "1px solid rgba(255, 255, 255, 0.05)",
-            "borderRadius": 16,
-            "margin": 10,
-            "padding": 6
+            "backgroundColor": "#0A0E14"
           }
         },
         "type": "ia.container.flex"
       }
     ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\n\tself.getChild(\"root\").custom.showCreateForm \u003d False\n\tself.getChild(\"root\").custom.showScheduleForm \u003d False\t"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
     "meta": {
       "name": "root"
     },

@@ -9,212 +9,279 @@
   "root": {
     "children": [
       {
+        "children": [
+          {
+            "meta": {
+              "name": "menu_1"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "headerStyle": {
+                "classes": "labels/font labels/size_heading_2",
+                "color": "#E2E8F0",
+                "overflow": "hidden"
+              },
+              "itemStyle": {
+                "borderStyle": "none",
+                "classes": "labels/color_normal labels/font labels/size_normal ui_ux/hover_highlight ui_ux/hover_underline",
+                "overflow": "hidden"
+              },
+              "items": [
+                {
+                  "enabled": true,
+                  "items": [],
+                  "label": {
+                    "icon": {
+                      "color": "#22C55E",
+                      "path": "material/home"
+                    },
+                    "text": "Home"
+                  },
+                  "navIcon": {
+                    "color": "",
+                    "path": ""
+                  },
+                  "resetOnClick": false,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem",
+                    "color": "#E2E8F0"
+                  },
+                  "target": "/",
+                  "visible": true
+                },
+                {
+                  "backActionText": "",
+                  "enabled": true,
+                  "items": [
+                    {
+                      "backActionText": "",
+                      "enabled": true,
+                      "items": [],
+                      "label": {
+                        "icon": {
+                          "path": ""
+                        },
+                        "text": "Line 1"
+                      },
+                      "navIcon": {
+                        "path": ""
+                      },
+                      "resetOnClick": true,
+                      "showHeader": true,
+                      "style": {
+                        "classes": "leftdockitem",
+                        "color": "#A8B8CE"
+                      },
+                      "target": "/line",
+                      "visible": true
+                    }
+                  ],
+                  "label": {
+                    "icon": {
+                      "color": "#3B82F6",
+                      "path": "material/dashboard"
+                    },
+                    "text": "Lines"
+                  },
+                  "navIcon": {
+                    "color": "#4A6080",
+                    "path": "material/chevron_right"
+                  },
+                  "resetOnClick": false,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem",
+                    "color": "#E2E8F0"
+                  },
+                  "target": "",
+                  "visible": true
+                },
+                {
+                  "backActionText": "",
+                  "enabled": true,
+                  "items": [
+                    {
+                      "backActionText": "",
+                      "enabled": true,
+                      "items": [],
+                      "label": {
+                        "icon": {
+                          "path": ""
+                        },
+                        "text": "Work Order"
+                      },
+                      "navIcon": {
+                        "path": ""
+                      },
+                      "resetOnClick": false,
+                      "showHeader": true,
+                      "style": {
+                        "classes": "leftdockitem",
+                        "color": "#A8B8CE"
+                      },
+                      "target": "/work order",
+                      "visible": true
+                    },
+                    {
+                      "backActionText": "",
+                      "enabled": true,
+                      "items": [],
+                      "label": {
+                        "icon": {
+                          "path": ""
+                        },
+                        "text": "Run Report"
+                      },
+                      "navIcon": {
+                        "path": ""
+                      },
+                      "resetOnClick": false,
+                      "showHeader": true,
+                      "style": {
+                        "classes": "leftdockitem",
+                        "color": "#A8B8CE"
+                      },
+                      "target": "/run_report",
+                      "visible": true
+                    }
+                  ],
+                  "label": {
+                    "icon": {
+                      "color": "#22C55E",
+                      "path": "material/assignment"
+                    },
+                    "text": "Production"
+                  },
+                  "navIcon": {
+                    "color": "#4A6080",
+                    "path": "material/chevron_right"
+                  },
+                  "resetOnClick": false,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem",
+                    "color": "#E2E8F0"
+                  },
+                  "target": "",
+                  "visible": true
+                },
+                {
+                  "backActionText": "",
+                  "enabled": true,
+                  "items": [
+                    {
+                      "backActionText": "",
+                      "enabled": true,
+                      "items": [],
+                      "label": {
+                        "icon": {
+                          "path": ""
+                        },
+                        "text": "Production Model"
+                      },
+                      "navIcon": {
+                        "path": ""
+                      },
+                      "resetOnClick": false,
+                      "showHeader": true,
+                      "style": {
+                        "classes": "leftdockitem",
+                        "color": "#A8B8CE"
+                      },
+                      "target": "/production model",
+                      "visible": true
+                    },
+                    {
+                      "backActionText": "",
+                      "enabled": true,
+                      "items": [],
+                      "label": {
+                        "icon": {
+                          "path": ""
+                        },
+                        "text": "Product Codes"
+                      },
+                      "navIcon": {
+                        "path": ""
+                      },
+                      "resetOnClick": false,
+                      "showHeader": true,
+                      "style": {
+                        "classes": "leftdockitem",
+                        "color": "#A8B8CE"
+                      },
+                      "target": "/product codes",
+                      "visible": true
+                    },
+                    {
+                      "backActionText": "",
+                      "enabled": true,
+                      "items": [],
+                      "label": {
+                        "icon": {
+                          "path": ""
+                        },
+                        "text": "Defect List"
+                      },
+                      "navIcon": {
+                        "path": ""
+                      },
+                      "resetOnClick": false,
+                      "showHeader": true,
+                      "style": {
+                        "classes": "leftdockitem",
+                        "color": "#A8B8CE"
+                      },
+                      "target": "/defect list",
+                      "visible": true
+                    }
+                  ],
+                  "label": {
+                    "icon": {
+                      "color": "#F59E0B",
+                      "path": "material/admin_panel_settings"
+                    },
+                    "text": "Admin"
+                  },
+                  "navIcon": {
+                    "color": "#4A6080",
+                    "path": "material/chevron_right"
+                  },
+                  "resetOnClick": false,
+                  "showHeader": true,
+                  "style": {
+                    "classes": "leftdockitem",
+                    "color": "#E2E8F0"
+                  },
+                  "target": "",
+                  "visible": true
+                }
+              ],
+              "style": {
+                "backgroundColor": "#0D1117"
+              }
+            },
+            "type": "ia.navigation.menutree"
+          }
+        ],
         "meta": {
-          "name": "menu_1"
+          "name": "root"
         },
         "position": {
           "grow": 1
         },
         "props": {
-          "headerStyle": {
-            "classes": "labels/font labels/size_heading_2",
-            "color": "#FFFFFF",
-            "overflow": "hidden"
-          },
-          "itemStyle": {
-            "borderStyle": "none",
-            "classes": "labels/color_normal labels/font labels/size_normal ui_ux/hover_highlight ui_ux/hover_underline",
-            "overflow": "hidden"
-          },
-          "items": [
-            {
-              "enabled": true,
-              "items": [],
-              "label": {
-                "icon": {
-                  "color": "#10b981",
-                  "path": "material/home"
-                },
-                "text": "Home"
-              },
-              "navIcon": {
-                "color": "",
-                "path": ""
-              },
-              "resetOnClick": false,
-              "showHeader": true,
-              "style": {
-                "classes": "leftdockitem",
-                "color": "#FFFFFF"
-              },
-              "target": "/",
-              "visible": true
-            },
-            {
-              "backActionText": "",
-              "enabled": true,
-              "items": [
-                {
-                  "backActionText": "",
-                  "enabled": true,
-                  "items": [],
-                  "label": {
-                    "icon": {
-                      "path": ""
-                    },
-                    "text": "Line 1"
-                  },
-                  "navIcon": {
-                    "path": ""
-                  },
-                  "resetOnClick": true,
-                  "showHeader": true,
-                  "style": {
-                    "classes": "leftdockitem",
-                    "color": "#FFFFFF"
-                  },
-                  "target": "/line",
-                  "visible": true
-                }
-              ],
-              "label": {
-                "icon": {
-                  "color": "#3b82f6",
-                  "path": "material/dashboard"
-                },
-                "text": "Lines"
-              },
-              "navIcon": {
-                "color": "#FFFFFF",
-                "path": "material/chevron_right"
-              },
-              "resetOnClick": false,
-              "showHeader": true,
-              "style": {
-                "classes": "leftdockitem",
-                "color": "#FFFFFF"
-              },
-              "target": "",
-              "visible": true
-            },
-            {
-              "backActionText": "",
-              "enabled": true,
-              "items": [
-                {
-                  "backActionText": "",
-                  "enabled": true,
-                  "items": [],
-                  "label": {
-                    "icon": {
-                      "path": ""
-                    },
-                    "text": "Work Order"
-                  },
-                  "navIcon": {
-                    "path": ""
-                  },
-                  "resetOnClick": false,
-                  "showHeader": true,
-                  "style": {
-                    "classes": "leftdockitem"
-                  },
-                  "target": "/work order",
-                  "visible": true
-                }
-              ],
-              "label": {
-                "icon": {
-                  "color": "#10b981",
-                  "path": "material/assignment"
-                },
-                "text": "Production"
-              },
-              "navIcon": {
-                "color": "#FFFFFF",
-                "path": "material/chevron_right"
-              },
-              "resetOnClick": false,
-              "showHeader": true,
-              "style": {
-                "classes": "leftdockitem",
-                "color": "#FFFFFF"
-              },
-              "target": "",
-              "visible": true
-            },
-            {
-              "backActionText": "",
-              "enabled": true,
-              "items": [
-                {
-                  "backActionText": "",
-                  "enabled": true,
-                  "items": [],
-                  "label": {
-                    "icon": {
-                      "path": ""
-                    },
-                    "text": "Production Model"
-                  },
-                  "navIcon": {
-                    "path": ""
-                  },
-                  "resetOnClick": false,
-                  "showHeader": true,
-                  "style": {
-                    "classes": "leftdockitem"
-                  },
-                  "target": "/production model",
-                  "visible": true
-                },
-                {
-                  "backActionText": "",
-                  "enabled": true,
-                  "items": [],
-                  "label": {
-                    "icon": {
-                      "path": ""
-                    },
-                    "text": "Product Codes"
-                  },
-                  "navIcon": {
-                    "path": ""
-                  },
-                  "resetOnClick": false,
-                  "showHeader": true,
-                  "style": {
-                    "classes": "leftdockitem"
-                  },
-                  "target": "/product codes",
-                  "visible": true
-                }
-              ],
-              "label": {
-                "icon": {
-                  "color": "#f59e0b",
-                  "path": "material/admin_panel_settings"
-                },
-                "text": "Admin"
-              },
-              "navIcon": {
-                "color": "#FFFFFF",
-                "path": "material/chevron_right"
-              },
-              "resetOnClick": false,
-              "showHeader": true,
-              "style": {
-                "classes": "leftdockitem"
-              },
-              "target": "",
-              "visible": true
-            }
-          ],
+          "direction": "column",
           "style": {
-            "backgroundColor": "#21262d"
+            "borderRight": "1px solid #1B2432",
+            "classes": "leftdock",
+            "overflow": "hidden"
           }
         },
-        "type": "ia.navigation.menutree"
+        "type": "ia.container.flex"
       }
     ],
     "meta": {

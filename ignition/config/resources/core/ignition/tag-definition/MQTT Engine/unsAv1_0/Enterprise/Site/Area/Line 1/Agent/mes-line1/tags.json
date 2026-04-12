@@ -5,7 +5,7 @@
       "dataType": "String",
       "enabled": true
     },
-    "name": "Identity",
+    "name": "Status",
     "tagType": "AtomicTag"
   },
   {
@@ -14,7 +14,7 @@
       "dataType": "String",
       "enabled": true
     },
-    "name": "Status",
+    "name": "Identity",
     "tagType": "AtomicTag"
   }
 ]

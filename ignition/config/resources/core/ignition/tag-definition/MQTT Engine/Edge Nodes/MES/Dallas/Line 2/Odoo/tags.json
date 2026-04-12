@@ -1,0 +1,46 @@
+[
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "product_name",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "DataSet",
+      "datasource": "odoo",
+      "query": "SELECT \r\n    manufacturing_order_number,\r\n    product_name,\r\n    product_quality,\r\n    order_status,\r\n    quantity_planned,\r\n    quantity_produced,\r\n    bom_component_name,\r\n    bom_component_quantity as bom_compoenent_quantity,\r\n    unit_of_measure,\r\n    consumed_quantity,\r\n    component_consumption_pct\r\nFROM v_work_order_details\r\nWHERE order_status IN (\u0027ready\u0027, \u0027in_progress\u0027)\r\nORDER BY work_order_id, bom_component_id"
+    },
+    "name": "WorkOrderDS",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "manufacturing_order_number",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "bom_compoenent_quantity",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "product_quality",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "dataType": "String"
+    },
+    "name": "bom_component_name",
+    "tagType": "AtomicTag"
+  }
+]

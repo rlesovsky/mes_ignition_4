@@ -20,997 +20,310 @@
       {
         "children": [
           {
-            "meta": {
-              "name": "icon"
-            },
-            "position": {
-              "basis": "32px"
-            },
-            "props": {
-              "path": "material/bug_report",
-              "style": {
-                "color": "#f97316",
-                "marginRight": 12
-              }
-            },
-            "type": "ia.display.icon"
-          },
-          {
-            "meta": {
-              "name": "title"
-            },
-            "position": {
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "color": "#f97316",
-                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                "fontSize": 22,
-                "fontWeight": 600,
-                "letterSpacing": "-0.3px"
+            "children": [
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#F97316",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 700,
+                    "letterSpacing": "0.07em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "SIMULATOR"
+                },
+                "type": "ia.display.label"
               },
-              "text": "Simulator"
-            },
-            "type": "ia.display.label"
-          },
-          {
+              {
+                "meta": {
+                  "name": "status_badge"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "rgba(239, 68, 68, 0.1)",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": true,
+                              "output": "rgba(34, 197, 94, 0.1)"
+                            },
+                            {
+                              "input": false,
+                              "output": "rgba(239, 68, 68, 0.1)"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.style.border": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "1px solid #EF4444",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": true,
+                              "output": "1px solid #22C55E"
+                            },
+                            {
+                              "input": false,
+                              "output": "1px solid #EF4444"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "#EF4444",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": true,
+                              "output": "#22C55E"
+                            },
+                            {
+                              "input": false,
+                              "output": "#EF4444"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "SIM OFF",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": true,
+                              "output": "SIM ON"
+                            },
+                            {
+                              "input": false,
+                              "output": "SIM OFF"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRadius": 4,
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "paddingBottom": 4,
+                    "paddingLeft": 12,
+                    "paddingRight": 12,
+                    "paddingTop": 4,
+                    "textTransform": "uppercase"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "status_badge_1"
+                },
+                "position": {
+                  "basis": "100px",
+                  "shrink": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t\n\tsystem.perspective.closePopup(\u0027\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "status_badge_0"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "rgba(239, 68, 68, 0.1)",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": false,
+                              "output": "rgba(34, 197, 94, 0.1)"
+                            },
+                            {
+                              "input": true,
+                              "output": "rgba(239, 68, 68, 0.1)"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.style.border": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "1px solid #EF4444",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": false,
+                              "output": "1px solid #22C55E"
+                            },
+                            {
+                              "input": true,
+                              "output": "1px solid #EF4444"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "expression",
+                        "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "#EF4444",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": false,
+                              "output": "#22C55E"
+                            },
+                            {
+                              "input": true,
+                              "output": "#EF4444"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRadius": 4,
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "paddingBottom": 4,
+                    "paddingLeft": 12,
+                    "paddingRight": 12,
+                    "paddingTop": 4,
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Close"
+                },
+                "type": "ia.display.label"
+              }
+            ],
             "meta": {
-              "name": "status_badge"
+              "name": "header"
             },
             "position": {
+              "basis": "50px",
               "shrink": 0
             },
-            "propConfig": {
-              "props.style.backgroundColor": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                  },
-                  "transforms": [
-                    {
-                      "fallback": "rgba(239, 68, 68, 0.15)",
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": true,
-                          "output": "rgba(16, 185, 129, 0.15)"
-                        },
-                        {
-                          "input": false,
-                          "output": "rgba(239, 68, 68, 0.15)"
-                        }
-                      ],
-                      "outputType": "scalar",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              },
-              "props.style.border": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                  },
-                  "transforms": [
-                    {
-                      "fallback": "1px solid rgba(239, 68, 68, 0.3)",
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": true,
-                          "output": "1px solid rgba(16, 185, 129, 0.3)"
-                        },
-                        {
-                          "input": false,
-                          "output": "1px solid rgba(239, 68, 68, 0.3)"
-                        }
-                      ],
-                      "outputType": "scalar",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              },
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                  },
-                  "transforms": [
-                    {
-                      "fallback": "#ef4444",
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": true,
-                          "output": "#10b981"
-                        },
-                        {
-                          "input": false,
-                          "output": "#ef4444"
-                        }
-                      ],
-                      "outputType": "scalar",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "expression",
-                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                  },
-                  "transforms": [
-                    {
-                      "fallback": "SIM OFF",
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": true,
-                          "output": "SIM ON"
-                        },
-                        {
-                          "input": false,
-                          "output": "SIM OFF"
-                        }
-                      ],
-                      "outputType": "scalar",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              }
-            },
             "props": {
+              "alignItems": "center",
               "style": {
-                "borderRadius": 9999,
-                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                "fontSize": 12,
-                "fontWeight": 600,
-                "letterSpacing": "0.5px",
-                "paddingBottom": 6,
-                "paddingLeft": 16,
-                "paddingRight": 16,
-                "paddingTop": 6,
-                "textTransform": "uppercase"
-              }
-            },
-            "type": "ia.display.label"
-          }
-        ],
-        "meta": {
-          "name": "header"
-        },
-        "position": {
-          "basis": "60px",
-          "shrink": 0
-        },
-        "props": {
-          "alignItems": "center",
-          "style": {
-            "backgroundColor": "#21262d",
-            "border": "1px solid rgba(255, 255, 255, 0.05)",
-            "borderRadius": 16,
-            "paddingBottom": 12,
-            "paddingLeft": 16,
-            "paddingRight": 16,
-            "paddingTop": 12
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "children": [
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "icon"
-                    },
-                    "position": {
-                      "basis": "24px"
-                    },
-                    "props": {
-                      "path": "material/memory",
-                      "style": {
-                        "color": "#3b82f6",
-                        "marginRight": 10
-                      }
-                    },
-                    "type": "ia.display.icon"
-                  },
-                  {
-                    "meta": {
-                      "name": "title"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 16,
-                        "fontWeight": 600
-                      },
-                      "text": "Edge Simulator"
-                    },
-                    "type": "ia.display.label"
-                  }
-                ],
-                "meta": {
-                  "name": "edge_header"
-                },
-                "position": {
-                  "basis": "40px",
-                  "shrink": 0
-                },
-                "props": {
-                  "alignItems": "center",
-                  "style": {
-                    "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                    "paddingBottom": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "meta": {
-                  "name": "tag_path"
-                },
-                "position": {
-                  "basis": "36px",
-                  "shrink": 0
-                },
-                "propConfig": {
-                  "props.text": {
-                    "binding": {
-                      "config": {
-                        "expression": "{view.params.tagPath} + \"/Edge\""
-                      },
-                      "type": "expr"
-                    }
-                  }
-                },
-                "props": {
-                  "style": {
-                    "backgroundColor": "#101418",
-                    "borderRadius": 8,
-                    "color": "#9ca3af",
-                    "fontFamily": "monospace",
-                    "fontSize": 12,
-                    "padding": 10
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "label"
-                    },
-                    "position": {
-                      "basis": "80px"
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#9ca3af",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 500
-                      },
-                      "text": "Infeed"
-                    },
-                    "type": "ia.display.label"
-                  },
-                  {
-                    "meta": {
-                      "name": "value"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "propConfig": {
-                      "props.value": {
-                        "binding": {
-                          "config": {
-                            "bidirectional": true,
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "{view.params.tagPath} + \"/Edge/Infeed\""
-                          },
-                          "type": "tag"
-                        }
-                      }
-                    },
-                    "props": {
-                      "style": {
-                        "backgroundColor": "#101418",
-                        "borderColor": "rgba(255, 255, 255, 0.1)",
-                        "borderRadius": 10,
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "textAlign": "center"
-                      }
-                    },
-                    "type": "ia.input.numeric-entry-field"
-                  }
-                ],
-                "meta": {
-                  "name": "infeed_row"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "gap": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "label"
-                    },
-                    "position": {
-                      "basis": "80px"
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#9ca3af",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 500
-                      },
-                      "text": "Outfeed"
-                    },
-                    "type": "ia.display.label"
-                  },
-                  {
-                    "meta": {
-                      "name": "value"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "propConfig": {
-                      "props.value": {
-                        "binding": {
-                          "config": {
-                            "bidirectional": true,
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "{view.params.tagPath} + \"/Edge/Outfeed\""
-                          },
-                          "type": "tag"
-                        }
-                      }
-                    },
-                    "props": {
-                      "style": {
-                        "backgroundColor": "#101418",
-                        "borderColor": "rgba(255, 255, 255, 0.1)",
-                        "borderRadius": 10,
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "textAlign": "center"
-                      }
-                    },
-                    "type": "ia.input.numeric-entry-field"
-                  }
-                ],
-                "meta": {
-                  "name": "outfeed_row"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "gap": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "label"
-                    },
-                    "position": {
-                      "basis": "80px"
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#9ca3af",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 500
-                      },
-                      "text": "Waste"
-                    },
-                    "type": "ia.display.label"
-                  },
-                  {
-                    "meta": {
-                      "name": "value"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "propConfig": {
-                      "props.value": {
-                        "binding": {
-                          "config": {
-                            "bidirectional": true,
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "{view.params.tagPath} + \"/Edge/Waste\""
-                          },
-                          "type": "tag"
-                        }
-                      }
-                    },
-                    "props": {
-                      "style": {
-                        "backgroundColor": "#101418",
-                        "borderColor": "rgba(255, 255, 255, 0.1)",
-                        "borderRadius": 10,
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "textAlign": "center"
-                      }
-                    },
-                    "type": "ia.input.numeric-entry-field"
-                  }
-                ],
-                "meta": {
-                  "name": "waste_row"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "gap": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "label"
-                    },
-                    "position": {
-                      "basis": "80px"
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#9ca3af",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 500
-                      },
-                      "text": "State"
-                    },
-                    "type": "ia.display.label"
-                  },
-                  {
-                    "meta": {
-                      "name": "value"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "propConfig": {
-                      "props.value": {
-                        "binding": {
-                          "config": {
-                            "bidirectional": true,
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "{view.params.tagPath} + \"/Edge/State\""
-                          },
-                          "type": "tag"
-                        }
-                      }
-                    },
-                    "props": {
-                      "style": {
-                        "backgroundColor": "#101418",
-                        "borderColor": "rgba(255, 255, 255, 0.1)",
-                        "borderRadius": 10,
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "textAlign": "center"
-                      }
-                    },
-                    "type": "ia.input.numeric-entry-field"
-                  }
-                ],
-                "meta": {
-                  "name": "state_row"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "gap": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "label"
-                    },
-                    "position": {
-                      "basis": "80px"
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#9ca3af",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 500
-                      },
-                      "text": "State"
-                    },
-                    "type": "ia.display.label"
-                  },
-                  {
-                    "meta": {
-                      "name": "value"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "propConfig": {
-                      "props.value": {
-                        "binding": {
-                          "config": {
-                            "bidirectional": true,
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "{view.params.tagPath} + \"/Edge/Quality Setpoint\""
-                          },
-                          "type": "tag"
-                        }
-                      }
-                    },
-                    "props": {
-                      "style": {
-                        "backgroundColor": "#101418",
-                        "borderColor": "rgba(255, 255, 255, 0.1)",
-                        "borderRadius": 10,
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "textAlign": "center"
-                      }
-                    },
-                    "type": "ia.input.numeric-entry-field"
-                  }
-                ],
-                "meta": {
-                  "name": "quality_row"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "gap": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "events": {
-                          "component": {
-                            "onActionPerformed": {
-                              "config": {
-                                "script": "\n    tagPath \u003d self.view.params.tagPath\n    edgeTag \u003d tagPath + \"/Edge/Enable\"\n    lineTag \u003d tagPath + \"/Line/Dispatch/Enable\"\n    \n    currentValue \u003d system.tag.readBlocking([edgeTag])[0].value\n    newValue \u003d not currentValue\n    \n    system.tag.writeBlocking([edgeTag, lineTag], [newValue, newValue])"
-                              },
-                              "scope": "G",
-                              "type": "script"
-                            }
-                          }
-                        },
-                        "meta": {
-                          "name": "sim_button"
-                        },
-                        "position": {
-                          "basis": "44px",
-                          "shrink": 0
-                        },
-                        "propConfig": {
-                          "props.style.backgroundColor": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "expression",
-                                "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "rgba(239, 68, 68, 0.15)",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": true,
-                                      "output": "rgba(16, 185, 129, 0.15)"
-                                    },
-                                    {
-                                      "input": false,
-                                      "output": "rgba(239, 68, 68, 0.15)"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          },
-                          "props.style.borderColor": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "expression",
-                                "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "rgba(239, 68, 68, 0.4)",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": true,
-                                      "output": "rgba(16, 185, 129, 0.4)"
-                                    },
-                                    {
-                                      "input": false,
-                                      "output": "rgba(239, 68, 68, 0.4)"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          },
-                          "props.text": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "expression",
-                                "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "SIM OFF",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": true,
-                                      "output": "SIM ON"
-                                    },
-                                    {
-                                      "input": false,
-                                      "output": "SIM OFF"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          },
-                          "props.textStyle.color": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "expression",
-                                "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "#fca5a5",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": true,
-                                      "output": "#6ee7b7"
-                                    },
-                                    {
-                                      "input": false,
-                                      "output": "#fca5a5"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          }
-                        },
-                        "props": {
-                          "primary": false,
-                          "style": {
-                            "borderRadius": 10,
-                            "borderStyle": "solid",
-                            "borderWidth": 1
-                          },
-                          "textStyle": {
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": 14,
-                            "fontWeight": "normal"
-                          }
-                        },
-                        "type": "ia.input.button"
-                      }
-                    ],
-                    "meta": {
-                      "name": "sim_toggle"
-                    },
-                    "position": {
-                      "basis": "100px",
-                      "grow": 1,
-                      "shrink": 0
-                    },
-                    "props": {
-                      "direction": "column",
-                      "style": {
-                        "gap": 8
-                      }
-                    },
-                    "type": "ia.container.flex"
-                  },
-                  {
-                    "children": [
-                      {
-                        "events": {
-                          "component": {
-                            "onActionPerformed": {
-                              "config": {
-                                "script": "\ttagPath \u003d self.view.params.tagPath\n\ttag \u003d tagPath + \"Edge/State\"\n\tcurrentValue \u003d system.tag.readBlocking([tag])[0].value\n\tnewValue \u003d 0 if currentValue \u003d\u003d 1 else 1\n\tsystem.tag.writeBlocking([tag], [newValue])"
-                              },
-                              "scope": "G",
-                              "type": "script"
-                            }
-                          }
-                        },
-                        "meta": {
-                          "name": "state_button"
-                        },
-                        "position": {
-                          "basis": "44px",
-                          "shrink": 0
-                        },
-                        "propConfig": {
-                          "props.style.backgroundColor": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "direct",
-                                "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "rgba(239, 68, 68, 0.15)",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": 0,
-                                      "output": "rgba(239, 68, 68, 0.15)"
-                                    },
-                                    {
-                                      "input": 1,
-                                      "output": "rgba(16, 185, 129, 0.15)"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          },
-                          "props.style.borderColor": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "direct",
-                                "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "rgba(239, 68, 68, 0.4)",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": 0,
-                                      "output": "rgba(239, 68, 68, 0.4)"
-                                    },
-                                    {
-                                      "input": 1,
-                                      "output": "rgba(16, 185, 129, 0.4)"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          },
-                          "props.text": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "direct",
-                                "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "OFF",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": 0,
-                                      "output": "OFF"
-                                    },
-                                    {
-                                      "input": 1,
-                                      "output": "ON"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          },
-                          "props.textStyle.color": {
-                            "binding": {
-                              "config": {
-                                "fallbackDelay": 2.5,
-                                "mode": "direct",
-                                "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
-                              },
-                              "transforms": [
-                                {
-                                  "fallback": "#fca5a5",
-                                  "inputType": "scalar",
-                                  "mappings": [
-                                    {
-                                      "input": 0,
-                                      "output": "#fca5a5"
-                                    },
-                                    {
-                                      "input": 1,
-                                      "output": "#6ee7b7"
-                                    }
-                                  ],
-                                  "outputType": "scalar",
-                                  "type": "map"
-                                }
-                              ],
-                              "type": "tag"
-                            }
-                          }
-                        },
-                        "props": {
-                          "primary": false,
-                          "style": {
-                            "borderRadius": 10,
-                            "borderStyle": "solid",
-                            "borderWidth": 1
-                          },
-                          "textStyle": {
-                            "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                            "fontSize": 14,
-                            "fontWeight": 600
-                          }
-                        },
-                        "type": "ia.input.button"
-                      }
-                    ],
-                    "meta": {
-                      "name": "state_toggle"
-                    },
-                    "position": {
-                      "basis": "100px",
-                      "grow": 1,
-                      "shrink": 0
-                    },
-                    "props": {
-                      "direction": "column",
-                      "style": {
-                        "gap": 8
-                      }
-                    },
-                    "type": "ia.container.flex"
-                  }
-                ],
-                "meta": {
-                  "name": "sim_controls"
-                },
-                "position": {
-                  "basis": "50px",
-                  "grow": 1,
-                  "shrink": 0
-                },
-                "props": {
-                  "justify": "center",
-                  "style": {
-                    "borderTop": "1px solid rgba(255, 255, 255, 0.05)",
-                    "gap": 12,
-                    "paddingTop": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              }
-            ],
-            "meta": {
-              "name": "edge_panel"
-            },
-            "position": {
-              "basis": "0px",
-              "grow": 1
-            },
-            "props": {
-              "direction": "column",
-              "style": {
-                "backgroundColor": "#21262d",
-                "border": "1px solid rgba(255, 255, 255, 0.05)",
-                "borderRadius": 16,
-                "gap": 12,
-                "padding": 20
+                "backgroundColor": "#111822",
+                "border": "1px solid #1B2432",
+                "borderRadius": 6,
+                "padding": "10px 16px"
               }
             },
             "type": "ia.container.flex"
@@ -1020,407 +333,1200 @@
               {
                 "children": [
                   {
-                    "meta": {
-                      "name": "icon"
-                    },
-                    "position": {
-                      "basis": "24px"
-                    },
-                    "props": {
-                      "path": "material/settings",
-                      "style": {
-                        "color": "#10b981",
-                        "marginRight": 10
-                      }
-                    },
-                    "type": "ia.display.icon"
-                  },
-                  {
-                    "meta": {
-                      "name": "title"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#ffffff",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 16,
-                        "fontWeight": 600
-                      },
-                      "text": "Line Configuration"
-                    },
-                    "type": "ia.display.label"
-                  }
-                ],
-                "meta": {
-                  "name": "line_header"
-                },
-                "position": {
-                  "basis": "40px",
-                  "shrink": 0
-                },
-                "props": {
-                  "alignItems": "center",
-                  "style": {
-                    "borderBottom": "1px solid rgba(255, 255, 255, 0.05)",
-                    "paddingBottom": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "meta": {
-                  "name": "line_tag_path"
-                },
-                "position": {
-                  "basis": "36px",
-                  "shrink": 0
-                },
-                "propConfig": {
-                  "props.text": {
-                    "binding": {
-                      "config": {
-                        "expression": "{view.params.tagPath} + \"/Line\""
-                      },
-                      "type": "expr"
-                    }
-                  }
-                },
-                "props": {
-                  "style": {
-                    "backgroundColor": "#101418",
-                    "borderRadius": 8,
-                    "color": "#9ca3af",
-                    "fontFamily": "monospace",
-                    "fontSize": 12,
-                    "padding": 10
-                  }
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "meta": {
-                  "name": "line_dropdown"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "options": [
-                    {
-                      "label": "Line 1",
-                      "value": "[default]Enterprise/Site/Area/Line 1"
-                    },
-                    {
-                      "label": "Line 2",
-                      "value": "[default]Enterprise/Site/Area/Line 2"
-                    },
-                    {
-                      "label": "Line 3",
-                      "value": "[default]Enterprise/Site/Area/Line 3"
-                    }
-                  ],
-                  "placeholder": {
-                    "color": "#8b949e",
-                    "text": "Select a line..."
-                  },
-                  "style": {
-                    "backgroundColor": "#101418",
-                    "border": "2px solid #ef4444",
-                    "borderRadius": 10,
-                    "color": "#ffffff",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "fontSize": 14
-                  },
-                  "value": "[default]Enterprise/Site/Area/Line 1"
-                },
-                "type": "ia.input.dropdown"
-              },
-              {
-                "meta": {
-                  "name": "line_name"
-                },
-                "position": {
-                  "basis": "36px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "color": "#ffffff",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                    "fontSize": 18,
-                    "fontWeight": 600,
-                    "marginBottom": 8,
-                    "marginTop": 8
-                  },
-                  "text": "Line 1"
-                },
-                "type": "ia.display.label"
-              },
-              {
-                "children": [
-                  {
-                    "meta": {
-                      "name": "label"
-                    },
-                    "position": {
-                      "grow": 1
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#9ca3af",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 500
-                      },
-                      "text": "Line ID"
-                    },
-                    "type": "ia.display.label"
-                  },
-                  {
-                    "meta": {
-                      "name": "value"
-                    },
-                    "position": {
-                      "basis": "80px"
-                    },
-                    "propConfig": {
-                      "props.value": {
-                        "binding": {
-                          "config": {
-                            "bidirectional": true,
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "{view.params.tagPath} + \"/Line/Line ID\""
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
                           },
-                          "type": "tag"
-                        }
+                          "text": "EDGE SIMULATOR"
+                        },
+                        "type": "ia.display.label"
                       }
-                    },
-                    "props": {
-                      "style": {
-                        "backgroundColor": "#101418",
-                        "borderColor": "rgba(255, 255, 255, 0.1)",
-                        "borderRadius": 10,
-                        "color": "#3b82f6",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 600,
-                        "textAlign": "center"
-                      }
-                    },
-                    "type": "ia.input.numeric-entry-field"
-                  }
-                ],
-                "meta": {
-                  "name": "line_id_row"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "gap": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "children": [
-                  {
+                    ],
                     "meta": {
-                      "name": "label"
+                      "name": "edge_header"
                     },
                     "position": {
-                      "grow": 1
-                    },
-                    "props": {
-                      "style": {
-                        "color": "#9ca3af",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 500
-                      },
-                      "text": "Run ID"
-                    },
-                    "type": "ia.display.label"
-                  },
-                  {
-                    "meta": {
-                      "name": "value"
-                    },
-                    "position": {
-                      "basis": "80px"
-                    },
-                    "propConfig": {
-                      "props.value": {
-                        "binding": {
-                          "config": {
-                            "bidirectional": true,
-                            "fallbackDelay": 2.5,
-                            "mode": "expression",
-                            "tagPath": "{view.params.tagPath} + \"/Line/OEE/RunID\""
-                          },
-                          "type": "tag"
-                        }
-                      }
-                    },
-                    "props": {
-                      "style": {
-                        "backgroundColor": "#101418",
-                        "borderColor": "rgba(255, 255, 255, 0.1)",
-                        "borderRadius": 10,
-                        "color": "#3b82f6",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 600,
-                        "textAlign": "center"
-                      }
-                    },
-                    "type": "ia.input.numeric-entry-field"
-                  }
-                ],
-                "meta": {
-                  "name": "run_id_row"
-                },
-                "position": {
-                  "basis": "44px",
-                  "shrink": 0
-                },
-                "props": {
-                  "style": {
-                    "gap": 12
-                  }
-                },
-                "type": "ia.container.flex"
-              },
-              {
-                "children": [
-                  {
-                    "events": {
-                      "component": {
-                        "onActionPerformed": {
-                          "config": {
-                            "script": "\n\ttagPath \u003d self.view.params.tagPath\n\ttag \u003d tagPath + \"/Edge/Refresh\"\n\tcurrentValue \u003d system.tag.readBlocking([tag])[0].value\n\tsystem.tag.writeBlocking([tag], [not currentValue])\t"
-                          },
-                          "scope": "G",
-                          "type": "script"
-                        }
-                      }
-                    },
-                    "meta": {
-                      "name": "refresh_button"
-                    },
-                    "position": {
-                      "basis": "100px",
-                      "grow": 1,
+                      "basis": "32px",
                       "shrink": 0
                     },
                     "props": {
-                      "primary": false,
+                      "alignItems": "center",
                       "style": {
-                        "backgroundColor": "rgba(75, 85, 99, 0.4)",
-                        "borderColor": "rgba(107, 114, 128, 0.5)",
-                        "borderRadius": 10,
-                        "borderStyle": "solid",
-                        "borderWidth": 1
-                      },
-                      "text": "Refresh",
-                      "textStyle": {
-                        "color": "#d1d5db",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 600
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
                       }
                     },
-                    "type": "ia.input.button"
+                    "type": "ia.container.flex"
                   },
                   {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "tag_path"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \"/Edge\""
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#0D1117",
+                            "border": "1px solid #1B2432",
+                            "borderRadius": 4,
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 11,
+                            "padding": "6px 10px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "label"
+                            },
+                            "position": {
+                              "basis": "90px"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 400
+                              },
+                              "text": "Infeed:"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "value"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.value": {
+                                "binding": {
+                                  "config": {
+                                    "bidirectional": true,
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Infeed\""
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "backgroundColor": "#0D1117",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "minHeight": 36,
+                                "padding": "6px 10px",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.input.numeric-entry-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "infeed_row"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "label"
+                            },
+                            "position": {
+                              "basis": "90px"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 400
+                              },
+                              "text": "Outfeed:"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "value"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.value": {
+                                "binding": {
+                                  "config": {
+                                    "bidirectional": true,
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Outfeed\""
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "backgroundColor": "#0D1117",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#E2E8F0",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "minHeight": 36,
+                                "padding": "6px 10px",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.input.numeric-entry-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "outfeed_row"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "label"
+                            },
+                            "position": {
+                              "basis": "90px"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 400
+                              },
+                              "text": "Waste:"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "value"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.value": {
+                                "binding": {
+                                  "config": {
+                                    "bidirectional": true,
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Waste\""
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "backgroundColor": "#0D1117",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#F97316",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "minHeight": 36,
+                                "padding": "6px 10px",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.input.numeric-entry-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "waste_row"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "label"
+                            },
+                            "position": {
+                              "basis": "90px"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 400
+                              },
+                              "text": "State:"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "value"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.value": {
+                                "binding": {
+                                  "config": {
+                                    "bidirectional": true,
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/State\""
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "backgroundColor": "#0D1117",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#3B82F6",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "minHeight": 36,
+                                "padding": "6px 10px",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.input.numeric-entry-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "state_row"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "label"
+                            },
+                            "position": {
+                              "basis": "90px"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 400
+                              },
+                              "text": "Quality SP:"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "value"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.value": {
+                                "binding": {
+                                  "config": {
+                                    "bidirectional": true,
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Quality Setpoint\""
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "backgroundColor": "#0D1117",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#06B6D4",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "minHeight": 36,
+                                "padding": "6px 10px",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.input.numeric-entry-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "quality_row"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "component": {
+                                "onActionPerformed": {
+                                  "config": {
+                                    "script": "\n    tagPath \u003d self.view.params.tagPath\n    edgeTag \u003d tagPath + \"/Edge/Enable\"\n    lineTag \u003d tagPath + \"/Line/Dispatch/Enable\"\n    \n    currentValue \u003d system.tag.readBlocking([edgeTag])[0].value\n    newValue \u003d not currentValue\n    \n    system.tag.writeBlocking([edgeTag, lineTag], [newValue, newValue])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "sim_button"
+                            },
+                            "position": {
+                              "basis": "100px",
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.style.backgroundColor": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "rgba(239, 68, 68, 0.1)",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": true,
+                                          "output": "rgba(34, 197, 94, 0.1)"
+                                        },
+                                        {
+                                          "input": false,
+                                          "output": "rgba(239, 68, 68, 0.1)"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.style.borderColor": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "#EF4444",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": true,
+                                          "output": "#22C55E"
+                                        },
+                                        {
+                                          "input": false,
+                                          "output": "#EF4444"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "SIM OFF",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": true,
+                                          "output": "SIM ON"
+                                        },
+                                        {
+                                          "input": false,
+                                          "output": "SIM OFF"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.textStyle.color": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Edge/Enable\""
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "#EF4444",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": true,
+                                          "output": "#22C55E"
+                                        },
+                                        {
+                                          "input": false,
+                                          "output": "#EF4444"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "primary": false,
+                              "style": {
+                                "borderRadius": 4,
+                                "borderStyle": "solid",
+                                "borderWidth": 1,
+                                "minHeight": 36
+                              },
+                              "textStyle": {
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 600
+                              }
+                            },
+                            "type": "ia.input.button"
+                          },
+                          {
+                            "events": {
+                              "component": {
+                                "onActionPerformed": {
+                                  "config": {
+                                    "script": "\ttagPath \u003d self.view.params.tagPath\n\ttag \u003d tagPath + \"Edge/State\"\n\tcurrentValue \u003d system.tag.readBlocking([tag])[0].value\n\tnewValue \u003d 0 if currentValue \u003d\u003d 1 else 1\n\tsystem.tag.writeBlocking([tag], [newValue])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "state_button"
+                            },
+                            "position": {
+                              "basis": "100px",
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.style.backgroundColor": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "direct",
+                                    "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "rgba(239, 68, 68, 0.1)",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": 0,
+                                          "output": "rgba(239, 68, 68, 0.1)"
+                                        },
+                                        {
+                                          "input": 1,
+                                          "output": "rgba(34, 197, 94, 0.1)"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.style.borderColor": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "direct",
+                                    "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "#EF4444",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": 0,
+                                          "output": "#EF4444"
+                                        },
+                                        {
+                                          "input": 1,
+                                          "output": "#22C55E"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "direct",
+                                    "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "OFF",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": 0,
+                                          "output": "OFF"
+                                        },
+                                        {
+                                          "input": 1,
+                                          "output": "ON"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.textStyle.color": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "direct",
+                                    "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": "#EF4444",
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": 0,
+                                          "output": "#EF4444"
+                                        },
+                                        {
+                                          "input": 1,
+                                          "output": "#22C55E"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "primary": false,
+                              "style": {
+                                "borderRadius": 4,
+                                "borderStyle": "solid",
+                                "borderWidth": 1,
+                                "minHeight": 36
+                              },
+                              "textStyle": {
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 600
+                              }
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "sim_controls"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "center",
+                          "style": {
+                            "borderTop": "1px solid #1B2432",
+                            "gap": 8,
+                            "paddingTop": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
                     "meta": {
-                      "name": "nuke_button"
+                      "name": "edge_body"
                     },
                     "position": {
-                      "basis": "120px",
-                      "grow": 1,
-                      "shrink": 0
+                      "grow": 1
                     },
                     "props": {
-                      "image": {
-                        "icon": {
-                          "color": "#fca5a5",
-                          "path": "material/close"
-                        }
-                      },
-                      "primary": false,
+                      "direction": "column",
                       "style": {
-                        "backgroundColor": "rgba(239, 68, 68, 0.15)",
-                        "borderColor": "rgba(239, 68, 68, 0.4)",
-                        "borderRadius": 10,
-                        "borderStyle": "solid",
-                        "borderWidth": 1
-                      },
-                      "text": "Nuke",
-                      "textStyle": {
-                        "color": "#fca5a5",
-                        "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": 600
+                        "gap": 8,
+                        "padding": 12
                       }
                     },
-                    "type": "ia.input.button"
+                    "type": "ia.container.flex"
                   }
                 ],
                 "meta": {
-                  "name": "action_buttons"
+                  "name": "edge_panel"
                 },
                 "position": {
-                  "basis": "49px"
+                  "basis": "0px",
+                  "grow": 1
                 },
                 "props": {
-                  "justify": "center",
+                  "direction": "column",
                   "style": {
-                    "borderTop": "1px solid rgba(255, 255, 255, 0.05)",
-                    "gap": 12,
-                    "paddingTop": 0
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
+                    "padding": 0
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#7088A8",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 10,
+                            "fontWeight": 600,
+                            "letterSpacing": "0.07em",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "LINE CONFIGURATION"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "line_header"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "style": {
+                        "backgroundColor": "#16202E",
+                        "borderBottom": "1px solid #1B2432",
+                        "padding": "5px 12px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "line_tag_path"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.tagPath} + \"/Line\""
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#0D1117",
+                            "border": "1px solid #1B2432",
+                            "borderRadius": 4,
+                            "color": "#4A6080",
+                            "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                            "fontSize": 11,
+                            "padding": "6px 10px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "line_dropdown"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "options": [
+                            {
+                              "label": "Line 1",
+                              "value": "[default]Enterprise/Site/Area/Line 1"
+                            },
+                            {
+                              "label": "Line 2",
+                              "value": "[default]Enterprise/Site/Area/Line 2"
+                            },
+                            {
+                              "label": "Line 3",
+                              "value": "[default]Enterprise/Site/Area/Line 3"
+                            }
+                          ],
+                          "placeholder": {
+                            "color": "#4A6080",
+                            "text": "Select a line..."
+                          },
+                          "style": {
+                            "backgroundColor": "#0D1117",
+                            "border": "1px solid #EF4444",
+                            "borderRadius": 4,
+                            "color": "#E2E8F0",
+                            "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                            "fontSize": 13,
+                            "minHeight": 36
+                          },
+                          "value": "[default]Enterprise/Site/Area/Line 1"
+                        },
+                        "type": "ia.input.dropdown"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "label"
+                            },
+                            "position": {
+                              "basis": "90px"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 400
+                              },
+                              "text": "Line ID:"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "value"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.value": {
+                                "binding": {
+                                  "config": {
+                                    "bidirectional": true,
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Line/Line ID\""
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "backgroundColor": "#0D1117",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#3B82F6",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "fontWeight": 600,
+                                "minHeight": 36,
+                                "padding": "6px 10px",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.input.numeric-entry-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "line_id_row"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "label"
+                            },
+                            "position": {
+                              "basis": "90px"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#4A6080",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 400
+                              },
+                              "text": "Run ID:"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "value"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.value": {
+                                "binding": {
+                                  "config": {
+                                    "bidirectional": true,
+                                    "fallbackDelay": 2.5,
+                                    "mode": "expression",
+                                    "tagPath": "{view.params.tagPath} + \"/Line/OEE/RunID\""
+                                  },
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "backgroundColor": "#0D1117",
+                                "border": "1px solid #223044",
+                                "borderRadius": 4,
+                                "color": "#3B82F6",
+                                "fontFamily": "\u0027IBM Plex Mono\u0027, Consolas, monospace",
+                                "fontSize": 14,
+                                "fontWeight": 600,
+                                "minHeight": 36,
+                                "padding": "6px 10px",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.input.numeric-entry-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "run_id_row"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "component": {
+                                "onActionPerformed": {
+                                  "config": {
+                                    "script": "\n\ttagPath \u003d self.view.params.tagPath\n\ttag \u003d tagPath + \"/Edge/Refresh\"\n\tcurrentValue \u003d system.tag.readBlocking([tag])[0].value\n\tsystem.tag.writeBlocking([tag], [not currentValue])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "refresh_button"
+                            },
+                            "position": {
+                              "basis": "100px",
+                              "grow": 1
+                            },
+                            "props": {
+                              "primary": false,
+                              "style": {
+                                "backgroundColor": "#16202E",
+                                "borderColor": "#1B2432",
+                                "borderRadius": 4,
+                                "borderStyle": "solid",
+                                "borderWidth": 1,
+                                "minHeight": 36
+                              },
+                              "text": "Refresh",
+                              "textStyle": {
+                                "color": "#A8B8CE",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 600
+                              }
+                            },
+                            "type": "ia.input.button"
+                          },
+                          {
+                            "meta": {
+                              "name": "nuke_button"
+                            },
+                            "position": {
+                              "basis": "120px",
+                              "grow": 1
+                            },
+                            "props": {
+                              "image": {
+                                "icon": {
+                                  "color": "#EF4444",
+                                  "path": "material/close"
+                                }
+                              },
+                              "primary": false,
+                              "style": {
+                                "backgroundColor": "rgba(239, 68, 68, 0.1)",
+                                "borderColor": "#EF4444",
+                                "borderRadius": 4,
+                                "borderStyle": "solid",
+                                "borderWidth": 1,
+                                "minHeight": 36
+                              },
+                              "text": "Nuke",
+                              "textStyle": {
+                                "color": "#EF4444",
+                                "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, sans-serif",
+                                "fontSize": 13,
+                                "fontWeight": 600
+                              }
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "action_buttons"
+                        },
+                        "position": {
+                          "basis": "55px"
+                        },
+                        "props": {
+                          "justify": "center",
+                          "style": {
+                            "borderTop": "1px solid #1B2432",
+                            "gap": 8,
+                            "paddingTop": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "line_body"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": 8,
+                        "padding": 12
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "line_panel"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "#111822",
+                    "border": "1px solid #1B2432",
+                    "borderRadius": 6,
+                    "padding": 0
                   }
                 },
                 "type": "ia.container.flex"
               }
             ],
             "meta": {
-              "name": "line_panel"
+              "name": "content"
             },
             "position": {
               "basis": "0px",
               "grow": 1
             },
             "props": {
-              "direction": "column",
               "style": {
-                "backgroundColor": "#21262d",
-                "border": "1px solid rgba(255, 255, 255, 0.05)",
-                "borderRadius": 16,
-                "gap": 12,
-                "padding": 20
+                "gap": 10
               }
             },
             "type": "ia.container.flex"
           }
         ],
         "meta": {
-          "name": "content"
+          "name": "root"
         },
         "position": {
-          "basis": "0px",
           "grow": 1
         },
         "props": {
+          "direction": "column",
           "style": {
-            "gap": 16
+            "backgroundColor": "#0A0E14",
+            "gap": 10,
+            "padding": 10
           }
         },
         "type": "ia.container.flex"
@@ -1434,7 +1540,7 @@
       "style": {
         "backgroundColor": "#0d1117",
         "gap": 16,
-        "padding": 16
+        "padding": 0
       }
     },
     "type": "ia.container.flex"

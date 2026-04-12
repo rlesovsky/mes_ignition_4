@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "maintainX.svg"
+  ],
+  "attributes": {
+    "size": 5576,
+    "lastModificationSignature": "4499a31dc12821a3ed5fe255567af7dec8a1a1eca52a7d48096be78c26c743f1",
+    "width": 2257,
+    "format": "SVG",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2026-03-25T02:58:32Z"
+    },
+    "height": 357
+  }
+}

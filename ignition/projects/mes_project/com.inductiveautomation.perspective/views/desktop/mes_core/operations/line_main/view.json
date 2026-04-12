@@ -20,327 +20,342 @@
       {
         "children": [
           {
-            "meta": {
-              "name": "icon"
-            },
-            "position": {
-              "basis": "32px"
-            },
-            "props": {
-              "path": "material/widgets",
-              "style": {
-                "color": "#3b82f6",
-                "marginLeft": 16
-              }
-            },
-            "type": "ia.display.icon"
-          },
-          {
-            "meta": {
-              "name": "Label"
-            },
-            "position": {
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "color": "#ffffff",
-                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                "fontSize": 18,
-                "fontWeight": 600,
-                "letterSpacing": "-0.3px",
-                "marginLeft": 10
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#E2E8F0",
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": 700,
+                    "letterSpacing": "0.05em",
+                    "marginLeft": 14
+                  },
+                  "text": "LINE 1 PRODUCTION"
+                },
+                "type": "ia.display.label"
               },
-              "text": "Line 1 Production"
-            },
-            "type": "ia.display.label"
-          },
-          {
+              {
+                "meta": {
+                  "name": "status_badge"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "rgba(239, 68, 68, 0.1)",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "Running",
+                              "output": "rgba(34, 197, 94, 0.1)"
+                            },
+                            {
+                              "input": "Stopped",
+                              "output": "rgba(239, 68, 68, 0.1)"
+                            },
+                            {
+                              "input": "E-Stop",
+                              "output": "rgba(239, 68, 68, 0.1)"
+                            },
+                            {
+                              "input": "Blocked",
+                              "output": "rgba(249, 115, 22, 0.1)"
+                            },
+                            {
+                              "input": "Starved",
+                              "output": "rgba(249, 115, 22, 0.1)"
+                            },
+                            {
+                              "input": "Change Over",
+                              "output": "rgba(59, 130, 246, 0.1)"
+                            }
+                          ],
+                          "outputType": "color",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.border": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "1px solid #EF4444",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "Running",
+                              "output": "1px solid #22C55E"
+                            },
+                            {
+                              "input": "Stopped",
+                              "output": "1px solid #EF4444"
+                            },
+                            {
+                              "input": "E-Stop",
+                              "output": "1px solid #EF4444"
+                            },
+                            {
+                              "input": "Blocked",
+                              "output": "1px solid #F97316"
+                            },
+                            {
+                              "input": "Starved",
+                              "output": "1px solid #F97316"
+                            },
+                            {
+                              "input": "Change Over",
+                              "output": "1px solid #3B82F6"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "#EF4444",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "Running",
+                              "output": "#22C55E"
+                            },
+                            {
+                              "input": "Stopped",
+                              "output": "#EF4444"
+                            },
+                            {
+                              "input": "E-Stop",
+                              "output": "#EF4444"
+                            },
+                            {
+                              "input": "Blocked",
+                              "output": "#F97316"
+                            },
+                            {
+                              "input": "Starved",
+                              "output": "#F97316"
+                            },
+                            {
+                              "input": "Change Over",
+                              "output": "#3B82F6"
+                            }
+                          ],
+                          "outputType": "color",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": null,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": 0,
+                              "output": "Stopped"
+                            },
+                            {
+                              "input": 1,
+                              "output": "Running"
+                            },
+                            {
+                              "input": 2,
+                              "output": "E-Stop"
+                            },
+                            {
+                              "input": 3,
+                              "output": "Blocked"
+                            },
+                            {
+                              "input": 4,
+                              "output": "Starved"
+                            },
+                            {
+                              "input": 5,
+                              "output": "Change Over"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRadius": 4,
+                    "fontFamily": "\u0027IBM Plex Sans\u0027, -apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
+                    "fontSize": 10,
+                    "fontWeight": 600,
+                    "letterSpacing": "0.07em",
+                    "paddingBottom": 4,
+                    "paddingLeft": 12,
+                    "paddingRight": 12,
+                    "paddingTop": 4,
+                    "textAlign": "center",
+                    "textTransform": "uppercase"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\n\ttagPath \u003d self.view.params.tagPath\n\t\n\tsystem.perspective.openPopup(\n\t\t\u0027maintainxPopup\u0027,\n\t\t\u0027desktop/mes_core/simulator\u0027,\n\t\tparams\u003d{\u0027tagPath\u0027: tagPath},\n\t\tmodal\u003dTrue,\n\t\tshowCloseIcon\u003dFalse,\n\t\tdraggable\u003dFalse,\n\t\tresizable\u003dFalse,\n\t\toverlayDismiss\u003dTrue\n\t)\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "simulator_icon"
+                },
+                "position": {
+                  "basis": "24px"
+                },
+                "props": {
+                  "path": "material/bug_report",
+                  "style": {
+                    "color": "#4A6080",
+                    "cursor": "pointer",
+                    "marginLeft": 12,
+                    "marginRight": 14
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
             "meta": {
-              "name": "status_badge"
+              "name": "header"
             },
             "position": {
-              "basis": "120px",
+              "basis": "40px",
               "shrink": 0
             },
-            "propConfig": {
-              "props.style.backgroundColor": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.text"
-                  },
-                  "transforms": [
-                    {
-                      "fallback": "rgba(239, 68, 68, 0.15)",
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": "Running",
-                          "output": "rgba(16, 185, 129, 0.15)"
-                        },
-                        {
-                          "input": "Stopped",
-                          "output": "rgba(239, 68, 68, 0.15)"
-                        },
-                        {
-                          "input": "E-Stop",
-                          "output": "rgba(239, 68, 68, 0.15)"
-                        },
-                        {
-                          "input": "Blocked",
-                          "output": "rgba(249, 115, 22, 0.15)"
-                        },
-                        {
-                          "input": "Starved",
-                          "output": "rgba(249, 115, 22, 0.15)"
-                        },
-                        {
-                          "input": "Change Over",
-                          "output": "rgba(59, 130, 246, 0.15)"
-                        }
-                      ],
-                      "outputType": "color",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.style.border": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.text"
-                  },
-                  "transforms": [
-                    {
-                      "fallback": "1px solid rgba(239, 68, 68, 0.3)",
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": "Running",
-                          "output": "1px solid rgba(16, 185, 129, 0.3)"
-                        },
-                        {
-                          "input": "Stopped",
-                          "output": "1px solid rgba(239, 68, 68, 0.3)"
-                        },
-                        {
-                          "input": "E-Stop",
-                          "output": "1px solid rgba(239, 68, 68, 0.3)"
-                        },
-                        {
-                          "input": "Blocked",
-                          "output": "1px solid rgba(249, 115, 22, 0.3)"
-                        },
-                        {
-                          "input": "Starved",
-                          "output": "1px solid rgba(249, 115, 22, 0.3)"
-                        },
-                        {
-                          "input": "Change Over",
-                          "output": "1px solid rgba(59, 130, 246, 0.3)"
-                        }
-                      ],
-                      "outputType": "scalar",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.style.color": {
-                "binding": {
-                  "config": {
-                    "path": "this.props.text"
-                  },
-                  "transforms": [
-                    {
-                      "fallback": "#ef4444",
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": "Running",
-                          "output": "#10b981"
-                        },
-                        {
-                          "input": "Stopped",
-                          "output": "#ef4444"
-                        },
-                        {
-                          "input": "E-Stop",
-                          "output": "#ef4444"
-                        },
-                        {
-                          "input": "Blocked",
-                          "output": "#f97316"
-                        },
-                        {
-                          "input": "Starved",
-                          "output": "#f97316"
-                        },
-                        {
-                          "input": "Change Over",
-                          "output": "#3b82f6"
-                        }
-                      ],
-                      "outputType": "color",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "property"
-                }
-              },
-              "props.text": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "direct",
-                    "tagPath": "[default]Enterprise/Site/Area/Line 1/Edge/State"
-                  },
-                  "transforms": [
-                    {
-                      "fallback": null,
-                      "inputType": "scalar",
-                      "mappings": [
-                        {
-                          "input": 0,
-                          "output": "Stopped"
-                        },
-                        {
-                          "input": 1,
-                          "output": "Running"
-                        },
-                        {
-                          "input": 2,
-                          "output": "E-Stop"
-                        },
-                        {
-                          "input": 3,
-                          "output": "Blocked"
-                        },
-                        {
-                          "input": 4,
-                          "output": "Starved"
-                        },
-                        {
-                          "input": 5,
-                          "output": "Change Over"
-                        }
-                      ],
-                      "outputType": "scalar",
-                      "type": "map"
-                    }
-                  ],
-                  "type": "tag"
-                }
-              }
-            },
             "props": {
+              "alignItems": "center",
               "style": {
-                "borderRadius": 9999,
-                "fontFamily": "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Arial, sans-serif",
-                "fontSize": 12,
-                "fontWeight": 600,
-                "letterSpacing": "0.5px",
-                "paddingBottom": 6,
-                "paddingLeft": 14,
-                "paddingRight": 14,
-                "paddingTop": 6,
-                "textAlign": "center",
-                "textTransform": "uppercase"
+                "backgroundColor": "#0D1117",
+                "border": "1px solid #1B2432",
+                "borderRadius": 6,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "marginTop": 10
               }
             },
-            "type": "ia.display.label"
+            "type": "ia.container.flex"
           },
           {
-            "events": {
-              "dom": {
-                "onClick": {
-                  "config": {
-                    "draggable": true,
-                    "id": "_6WHVY2d",
-                    "modal": false,
-                    "overlayDismiss": false,
-                    "resizable": true,
-                    "showCloseIcon": true,
-                    "title": "Simulator",
-                    "type": "open",
-                    "viewParams": {
-                      "tagPath": "{view.params.tagPath}"
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "EmbeddedView"
                     },
-                    "viewPath": "desktop/mes_core/simulator",
-                    "viewportBound": false
-                  },
-                  "scope": "C",
-                  "type": "popup"
-                }
-              }
-            },
-            "meta": {
-              "name": "simulator_icon"
-            },
-            "position": {
-              "basis": "32px"
-            },
-            "props": {
-              "path": "material/bug_report",
-              "style": {
-                "color": "#f97316",
-                "cursor": "pointer",
-                "marginLeft": 12,
-                "marginRight": 16
-              }
-            },
-            "type": "ia.display.icon"
-          }
-        ],
-        "meta": {
-          "name": "header"
-        },
-        "position": {
-          "basis": "50px"
-        },
-        "props": {
-          "alignItems": "center",
-          "style": {
-            "backgroundColor": "#21262d",
-            "border": "1px solid rgba(255, 255, 255, 0.05)",
-            "borderRadius": 16,
-            "marginLeft": 10,
-            "marginRight": 10,
-            "marginTop": 5
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "children": [
-              {
+                    "position": {
+                      "basis": "320px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "params": {
+                        "tagPath": "[default]Enterprise/Site/Area/Line 1"
+                      },
+                      "path": "desktop/mes_core/operations/templates/production_status"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
                 "meta": {
-                  "name": "EmbeddedView"
+                  "name": "card_1"
                 },
                 "position": {
-                  "basis": "320px",
+                  "basis": "960px",
                   "grow": 1
                 },
-                "props": {
-                  "path": "desktop/mes_core/operations/templates/production_status"
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "EmbeddedView"
+                    },
+                    "position": {
+                      "basis": "320px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "path": "desktop/mes_core/operations/templates/oee"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "card_2"
                 },
-                "type": "ia.display.view"
+                "position": {
+                  "basis": "960px",
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
               }
             ],
             "meta": {
-              "name": "card_1"
+              "name": "middle"
             },
             "position": {
-              "basis": "960px",
+              "basis": "489px",
               "grow": 1
             },
             "props": {
               "style": {
-                "marginLeft": 10
+                "gap": 10,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "marginTop": 10
               }
             },
             "type": "ia.container.flex"
@@ -348,124 +363,85 @@
           {
             "children": [
               {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "EmbeddedView"
+                    },
+                    "position": {
+                      "basis": "320px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "path": "desktop/mes_core/operations/metrics"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
                 "meta": {
-                  "name": "EmbeddedView"
+                  "name": "card_1"
                 },
                 "position": {
-                  "basis": "320px",
+                  "basis": "960px",
                   "grow": 1
                 },
-                "props": {
-                  "path": "desktop/mes_core/operations/templates/oee"
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "EmbeddedView"
+                    },
+                    "position": {
+                      "basis": "320px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "path": "desktop/mes_core/operations/templates/trend"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "card_2"
                 },
-                "type": "ia.display.view"
+                "position": {
+                  "basis": "960px",
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
               }
             ],
             "meta": {
-              "name": "card_2"
+              "name": "bottom"
             },
             "position": {
-              "basis": "960px",
+              "basis": "489px",
               "grow": 1
             },
             "props": {
               "style": {
+                "gap": 10,
+                "marginBottom": 10,
                 "marginLeft": 10,
-                "marginRight": 10
+                "marginRight": 10,
+                "marginTop": 10
               }
             },
             "type": "ia.container.flex"
           }
         ],
         "meta": {
-          "name": "middle"
+          "name": "root"
         },
         "position": {
-          "basis": "489px",
           "grow": 1
         },
         "props": {
+          "direction": "column",
           "style": {
-            "marginTop": 10
-          }
-        },
-        "type": "ia.container.flex"
-      },
-      {
-        "children": [
-          {
-            "children": [
-              {
-                "meta": {
-                  "name": "EmbeddedView"
-                },
-                "position": {
-                  "basis": "320px",
-                  "grow": 1
-                },
-                "props": {
-                  "path": "desktop/mes_core/operations/metrics"
-                },
-                "type": "ia.display.view"
-              }
-            ],
-            "meta": {
-              "name": "card_1"
-            },
-            "position": {
-              "basis": "960px",
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "marginLeft": 10
-              }
-            },
-            "type": "ia.container.flex"
-          },
-          {
-            "children": [
-              {
-                "meta": {
-                  "name": "EmbeddedView"
-                },
-                "position": {
-                  "basis": "320px",
-                  "grow": 1
-                },
-                "props": {
-                  "path": "desktop/mes_core/operations/templates/trend"
-                },
-                "type": "ia.display.view"
-              }
-            ],
-            "meta": {
-              "name": "card_2"
-            },
-            "position": {
-              "basis": "960px",
-              "grow": 1
-            },
-            "props": {
-              "style": {
-                "marginLeft": 10,
-                "marginRight": 10
-              }
-            },
-            "type": "ia.container.flex"
-          }
-        ],
-        "meta": {
-          "name": "bottom"
-        },
-        "position": {
-          "basis": "489px",
-          "grow": 1
-        },
-        "props": {
-          "style": {
-            "marginBottom": 10,
-            "marginTop": 10
+            "backgroundColor": "#0A0E14"
           }
         },
         "type": "ia.container.flex"

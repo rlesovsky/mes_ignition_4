@@ -1,0 +1,38 @@
+[
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "Open WO",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "Maint Requested_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "Open WO_props",
+    "tagType": "AtomicTag"
+  },
+  {
+    "usr": {
+      "readOnly": true,
+      "dataType": "String",
+      "enabled": true
+    },
+    "name": "Maint Requested",
+    "tagType": "AtomicTag"
+  }
+]
