@@ -24,42 +24,39 @@ Dependencies: Requires 'mes_core' database with matching schema.
 import re
 import system
 
-class MESFilterResults:
-    # Purpose: Converts database query results into a list of dynamic objects with getter methods and dictionary-like access.
+class _ResultEntry(object):
+    # Purpose: Represents a single row with dynamic getters and dictionary access.
+    # Public interface (relied on by callers): iterate -> values, entry.getId()/getName()/
+    # getEquipmentpath(), entry['ID'] (by name), entry[0] (by index).
+    def __init__(self, headers, values):
+        self._headers = headers
+        self._values  = list(values)
+        self._byName  = dict(zip(headers, self._values))
+        # Default-arg capture fixes late binding (every getter would otherwise return the last column).
+        for name in headers:
+            setattr(self, 'get' + name.capitalize(), (lambda v=self._byName[name]: v))
+
+    def __iter__(self):
+        return iter(self._values)
+
+    def __getitem__(self, key):
+        # Support index (int) or column-name access.
+        return self._values[key] if isinstance(key, int) else self._byName.get(key)
+
+    def __repr__(self):
+        return str(self._byName)
+
+class MESFilterResults(object):
+    # Purpose: Converts database query results into a list of accessor objects with getter
+    # methods and dictionary-like access.
     # Parameters:
     #   - queryResults: Ignition dataset from system.db.runPrepQuery.
     def __init__(self, queryResults):
         # Extract column names as headers
-        self._headers = [str(c) for c in queryResults.getUnderlyingDataset().getColumnNames()]
-        
-        class ResultEntry:
-            # Purpose: Represents a single row with dynamic getters and dictionary access.
-            __slots__ = self._headers  # Optimize memory usage
-            
-            def __init__(self, *args):
-                self._values = args
-                # Map headers to values for dictionary access
-                self.__dict__.update(zip(self.__slots__, args))
-                # Create getter methods (e.g., getId, getName)
-                for name in self.__slots__:
-                    setattr(self, 'get' + name.capitalize(), lambda: self.__dict__.get(name))
-            
-            def __iter__(self):
-                return iter(self._values)
-            
-            def __repr__(self):
-                return str(dict(zip(self.__slots__, self._values)))
-            
-            def __getitem__(self, key):
-                # Support index or column name access
-                try:
-                    return self._values[key]
-                except (TypeError, IndexError):
-                    return self.__dict__.get(key)
-        
-        # Convert dataset to list of ResultEntry objects (faster with list comprehension)
-        self.results = [ResultEntry(*row) for row in queryResults]
-    
+        headers = [str(c) for c in queryResults.getUnderlyingDataset().getColumnNames()]
+        self.results = [_ResultEntry(headers, [row[i] for i in range(len(headers))])
+                        for row in queryResults]
+
     def __iter__(self):
         return iter(self.results)
 
@@ -101,20 +98,20 @@ loadMESObjectsQueries = {
     'Enterprise': '''
         SELECT e.id AS ID, e.name AS Name, CONCAT_WS('/', e.name) AS EquipmentPath
         FROM enterprise AS e
-        WHERE e.disable = 0
+        WHERE e.disable = false
     ''',
     'Site': '''
         SELECT s.id AS ID, s.name AS Name, CONCAT_WS('/', e.name, s.name) AS EquipmentPath
         FROM enterprise AS e
         INNER JOIN site AS s ON e.id = s.parentid
-        WHERE e.disable = 0 AND s.disable = 0
+        WHERE e.disable = false AND s.disable = false
     ''',
     'Area': '''
         SELECT a.id AS ID, a.name AS Name, CONCAT_WS('/', e.name, s.name, a.name) AS EquipmentPath
         FROM enterprise AS e
         INNER JOIN site AS s ON e.id = s.parentid
         INNER JOIN area AS a ON s.id = a.parentid
-        WHERE e.disable = 0 AND s.disable = 0 AND a.disable = 0
+        WHERE e.disable = false AND s.disable = false AND a.disable = false
     ''',
     'Line': '''
         SELECT l.id AS ID, l.name AS Name, CONCAT_WS('/', e.name, s.name, a.name, l.name) AS EquipmentPath
@@ -122,7 +119,7 @@ loadMESObjectsQueries = {
         INNER JOIN site AS s ON e.id = s.parentid
         INNER JOIN area AS a ON s.id = a.parentid
         INNER JOIN line AS l ON a.id = l.parentid
-        WHERE e.disable = 0 AND s.disable = 0 AND a.disable = 0 AND l.disable = 0
+        WHERE e.disable = false AND s.disable = false AND a.disable = false AND l.disable = false
     ''',
     'Cell': '''
         SELECT c.id AS ID, c.name AS Name, CONCAT_WS('/', e.name, s.name, a.name, l.name, c.name) AS EquipmentPath
@@ -131,9 +128,13 @@ loadMESObjectsQueries = {
         INNER JOIN area AS a ON s.id = a.parentid
         INNER JOIN line AS l ON a.id = l.parentid
         INNER JOIN cell AS c ON l.id = c.parentid
-        WHERE e.disable = 0 AND s.disable = 0 AND a.disable = 0 AND l.disable = 0 AND c.disable = 0
+        WHERE e.disable = false AND s.disable = false AND a.disable = false AND l.disable = false AND c.disable = false
     '''
 }
+
+# Table alias used inside each query above (the tables are aliased, so a single-object
+# filter must qualify the name column by alias, not by the table name).
+_ALIAS = {'Enterprise': 'e', 'Site': 's', 'Area': 'a', 'Line': 'l', 'Cell': 'c'}
 
 def loadMESObjects(mesFilter, db='mes_core', debug=False):
     # Purpose: Queries MES objects based on the filter's object type.
@@ -173,7 +174,7 @@ def loadMESObject(name, mesObjectType, db='mes_core', debug=False):
         mesObjectType = mesObjectType.capitalize()
         if mesObjectType not in MESFilter.mesObjectTypes:
             raise ValueError('Invalid object type: %s' % mesObjectType)
-        query = loadMESObjectsQueries[mesObjectType] + ' AND %s.name = ?' % mesObjectType.lower()
+        query = loadMESObjectsQueries[mesObjectType] + ' AND %s.name = ?' % _ALIAS[mesObjectType]
         results = system.db.runPrepQuery(query, [name], db)
         if not results:
             raise ValueError('No %s found with name %s' % (mesObjectType, name))

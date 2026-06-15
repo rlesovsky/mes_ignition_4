@@ -46,16 +46,15 @@ def storeCountHistory(currentCount, lastCount, tagID, countTypeID, runID=None, d
 		countDelta = currentCount - lastCount
 		
 		if abs(countDelta) >= 1:
-			# Build parameters - include runID if provided
-			params = {
-				'tagID': tagID,
-				'countTypeID': countTypeID,
-				'count': int(countDelta),
-				'runID': runID
-			}
-			
-			system.db.runNamedQuery("InsertCountHistory", params, db)
-			
+			# Scope-independent prepped insert: this runs in gateway scope (tag-change
+			# event), where runNamedQuery's first positional must be a project name and
+			# there is no datasource arg. A prepped update keeps the `db` connection and
+			# avoids the project dependency entirely.
+			system.db.runPrepUpdate(
+				'INSERT INTO counthistory (tagid, counttypeid, count, runid, "TimeStamp") '
+				'VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)',
+				[tagID, countTypeID, int(countDelta), runID], db)
+
 			if debug:
 				logger.info("Inserted delta %s for tagID=%s, runID=%s" % (countDelta, tagID, runID))
 			

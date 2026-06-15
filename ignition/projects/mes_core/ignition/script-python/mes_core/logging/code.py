@@ -26,9 +26,8 @@ Parameters:
 '''
 
 def log(message, level, debug=False):
-    import system
     logger = system.util.getLogger('MES')
-    
+
     try:
         # Validate inputs lightly
         if not isinstance(message, str):
@@ -38,13 +37,12 @@ def log(message, level, debug=False):
         if level not in ('fatal', 'error', 'warn', 'info', 'debug', 'trace'):
             logger.error('Invalid log level: %s' % level)
             return
-            
-        # Log message using getattr for efficiency
-        if debug or level in ('error', 'fatal'):
-            getattr(logger, level)(message)
-            if debug:
-                system.util.sendLogMessage('MES: [%s] %s' % (level.upper(), message), 'MES')
-                
+
+        # Always log at the requested level; `debug` only gates the extra status message.
+        getattr(logger, level)(message)
+        if debug:
+            system.util.sendLogMessage('MES: [%s] %s' % (level.upper(), message), 'MES')
+
     except Exception as e:
         logger.error('Logging error: %s' % str(e))
         if debug:
