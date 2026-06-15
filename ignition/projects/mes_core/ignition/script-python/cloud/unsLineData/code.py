@@ -8,9 +8,7 @@ Company: Texas Automation Systems
 Version: 1.0.1
 """
 
-import system.tag
 import json
-import system.date
 
 
 def publish_to_bigquery(line_path, logger=None):
