@@ -5,38 +5,28 @@ Gateway Events HiveMQ UNS
 
 
 '''
-This script is used to publish tag values from an Ignition SCADA system to an MQTT broker, 
-using the Cirrus Link MQTT Transmission module. The script works as follows:
+This script publishes tag values from an Ignition SCADA system to an MQTT broker, using the
+Cirrus Link MQTT Transmission module, for a UNS. It works as follows:
 
-1. It starts from a root tag path in the Ignition system, and it recursively goes through all 
-   tags and subfolders from that path.
+1. Starting from the root tag path '[default]Enterprise', it recursively browses all subfolders
+   to COLLECT the full paths of every AtomicTag (a tag that holds a value).
 
-2. For each tag encountered, it checks if the tag is of type 'AtomicTag', which indicates that 
-   the tag holds a value.
+2. All collected paths are read in a single bulk system.tag.readBlocking([...]) call rather than
+   one read per tag.
 
-3. If the tag is an 'AtomicTag', it reads the tag's value. If the value is None, it converts 
-   it to an empty string. 
+3. For each tag, the MQTT topic is built by replacing the '[default]Enterprise' root with an
+   'Enterprise' topic prefix.
 
-4. It then constructs an MQTT topic for the tag. The topic is built by appending the tag's 
-   full path (with the root path removed) to a base string 'UFP Industries/Retail/Moneta VA 554/SCADA'.
+4. If the value is a dataset (BasicDataset), it is converted to a list of row dictionaries.
 
-5. If the tag's value is a dataset (instance of BasicDataset), it retrieves the column names 
-   and then converts the dataset into a list of dictionaries, where each dictionary represents 
-   a row in the dataset.
+5. The value is serialized to a JSON string for the payload. If serialization fails, a string
+   fallback payload is published (the tag is NOT silently dropped).
 
-6. The tag value (or the list of dictionaries if it's a dataset) is then converted to a JSON 
-   string to be used as the MQTT payload. If the conversion fails (which can happen if the value 
-   is not serializable), it assigns the raw tagValue to the payload and skips to the next iteration.
+6. Each message is published RETAINED (retain=1) so consumers receive the last-known value on
+   connect. Publish activity is logged at DEBUG, not INFO.
 
-7. Finally, it publishes the MQTT message to the broker using the MQTT Transmission module. 
-   The publish function is called with the following arguments: the MQTT Server name, the MQTT 
-   topic, the payload, the QoS, and the retain flag.
-
-8. If the tag is not an 'AtomicTag', it assumes that the tag is a folder and calls the 
-   process_tags function recursively on the tag's path to process its subtags.
-
-9. The root tag path is defined as '[edge]Driftwood Dairy', and the process starts by calling 
-   the process_tags function on this root path.
+Note: this is still timer-polled. For a UNS the ideal trigger is a tag-change event rather than
+polling the whole tree each tick; that is a gateway-event configuration change beyond this script.
 '''
 
 
@@ -46,9 +36,7 @@ def publish_mqtt():
     import system
     import json
 
-    # Logging function
-    def log(message):
-        system.util.getLogger("MQTT_Publish").info(message)
+    logger = system.util.getLogger("MQTT_Publish")
 
     # Function to convert BasicDataset to a list of dictionaries
     def convert_dataset_to_dict_list(dataset):
@@ -61,51 +49,48 @@ def publish_mqtt():
             rowData.append(rowDict)
         return rowData
 
-    # Recursive function to process tags under a given path
-    def process_tags(path):
-        # Browse through the tags under the given path
-        results = system.tag.browse(path).getResults()
-
-        for result in results:
-            tagPath = result['fullPath']
-            tagPath = str(tagPath)
-            # If the tag is a folder, process its subtags
+    # Recursively collect the paths of every AtomicTag under the given path (no reads here).
+    def collect_tag_paths(path, paths):
+        for result in system.tag.browse(path).getResults():
+            tagPath = str(result['fullPath'])
             if str(result['tagType']) == 'AtomicTag':
-                # Read the value of the tag
-                tagValue = system.tag.readBlocking([tagPath])[0].value
-                if tagValue is None:
-                    tagValue = ''
-                # Construct the MQTT topic from the tag's full path
-                mqtt_topic = 'Enterprise' + tagPath.replace('[default]Enterprise', '')
-
-                # Check if the tag's dataType is a DataSet
-                if isinstance(tagValue, BasicDataset):
-                    # Convert BasicDataset to a list of dictionaries
-                    tagValue = convert_dataset_to_dict_list(tagValue)
-
-                    # Log the converted dataset for debugging
-                    log("Converted dataset for {}: {}".format(tagPath, tagValue))
-
-                # Convert the tag value to a string to be used as MQTT payload
-                try:
-                    payload = json.dumps(tagValue)
-                except Exception as e:
-                    log("Failed to serialize tag value to JSON for {}: {}".format(tagPath, str(e)))
-                    payload = str(tagValue)
-                    continue
-
-                # Publish the MQTT message using the Cirrus Link MQTT Transmission Module
-                # Arguments: MQTT Server name, MQTT topic, payload, QoS, and retain flag
-                system.cirruslink.transmission.publish("HiveMQ", str(mqtt_topic), str(payload), 0, 0)
-                log("Published to {}: {}".format(mqtt_topic, payload))
-
+                paths.append(tagPath)
             else:
-                process_tags(tagPath)
+                collect_tag_paths(tagPath, paths)
 
     # Define the path where the tags are located
     root_path = '[default]Enterprise'
 
-    # Call the function to start the process
-    process_tags(root_path)
+    # 1) Collect, then 2) bulk-read in a single call.
+    tagPaths = []
+    collect_tag_paths(root_path, tagPaths)
+    if not tagPaths:
+        return
+    qualifiedValues = system.tag.readBlocking(tagPaths)
+
+    for tagPath, qv in zip(tagPaths, qualifiedValues):
+        tagValue = qv.value
+        if tagValue is None:
+            tagValue = ''
+
+        # Construct the MQTT topic from the tag's full path
+        mqtt_topic = 'Enterprise' + tagPath.replace('[default]Enterprise', '')
+
+        # Convert datasets to a JSON-friendly list of row dicts
+        if isinstance(tagValue, BasicDataset):
+            tagValue = convert_dataset_to_dict_list(tagValue)
+            logger.debug("Converted dataset for {}: {}".format(tagPath, tagValue))
+
+        # Serialize to JSON; on failure publish a string fallback (do not drop the tag)
+        try:
+            payload = json.dumps(tagValue)
+        except Exception as e:
+            logger.debug("JSON serialize failed for {}: {}; publishing string fallback".format(tagPath, str(e)))
+            payload = str(tagValue)
+
+        # Publish RETAINED (QoS 0, retain 1) so consumers get last-known value on connect.
+        # Arguments: MQTT Server name, MQTT topic, payload, QoS, retain flag
+        system.cirruslink.transmission.publish("HiveMQ", str(mqtt_topic), str(payload), 0, 1)
+        logger.debug("Published to {}: {}".format(mqtt_topic, payload))
 
 #publish_mqtt()

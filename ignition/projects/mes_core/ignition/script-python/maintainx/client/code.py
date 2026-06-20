@@ -17,6 +17,8 @@ Usage from Script Console:
 
 import maintainx.config as config
 
+from java.net import URLEncoder
+
 # =============================================================================
 # LOGGER
 # =============================================================================
@@ -34,6 +36,22 @@ def _getHeaders():
 		"Accept": "application/json",
 		"Authorization": "Bearer %s" % config.API_KEY
 	}
+
+
+def _encode(value):
+	"""URL-encode a query key or value (UTF-8) so special characters in filter
+	values can't break or inject into the query string."""
+	return URLEncoder.encode("%s" % value, "UTF-8")
+
+
+def _client():
+	"""HTTP client with the configured CONNECTION timeout.
+
+	The httpClient() constructor's `timeout` is the connection timeout only and
+	has no read_timeout argument. The per-request READ timeout is applied
+	separately on each verb call (get/post/patch/delete) as their documented
+	`timeout` parameter, so a hung MaintainX endpoint can't block the caller."""
+	return system.net.httpClient(timeout=config.CONNECT_TIMEOUT_MS)
 
 
 def _buildUrl(endpoint, params=None):
@@ -62,9 +80,9 @@ def _buildUrl(endpoint, params=None):
 				# Handle list values (e.g. expand=assignees&expand=asset)
 				if isinstance(value, list):
 					for item in value:
-						queryParts.append("%s=%s" % (key, item))
+						queryParts.append("%s=%s" % (_encode(key), _encode(item)))
 				else:
-					queryParts.append("%s=%s" % (key, value))
+					queryParts.append("%s=%s" % (_encode(key), _encode(value)))
 			url = "%s?%s" % (url, "&".join(queryParts))
 	
 	return url
@@ -112,6 +130,49 @@ def _parseJsonResponse(response):
 		return {}
 
 # =============================================================================
+# REQUEST EXECUTION (shared retry + result normalization)
+# =============================================================================
+
+def _handle(method, endpoint, call):
+	"""Execute an HTTP call, retry on HTTP 429 with linear backoff, and
+	normalize the outcome to the standard {success, statusCode, data, error}
+	dict used by every public method.
+
+	`call` is a zero-arg callable returning the JythonHttpResponse, so the
+	request can be re-issued on retry. Backoff uses the previously-unused
+	config.MAX_RETRIES / config.RETRY_DELAY_MS settings.
+	"""
+	attempt = 0
+	while True:
+		try:
+			response = call()
+		except Exception as e:
+			logger.error("%s %s -> Exception: %s" % (method, endpoint, str(e)))
+			return {"success": False, "statusCode": 0, "data": None, "error": str(e)}
+
+		statusCode = response.statusCode
+		logger.debug("%s %s -> %d" % (method, endpoint, statusCode))
+
+		# Retry on HTTP 429 (rate limited) with linear backoff.
+		if statusCode == 429 and attempt < config.MAX_RETRIES:
+			attempt += 1
+			delay = config.RETRY_DELAY_MS * attempt
+			logger.warn("%s %s -> 429 rate limited; retry %d/%d after %d ms"
+				% (method, endpoint, attempt, config.MAX_RETRIES, delay))
+			system.util.sleep(delay)
+			continue
+
+		if response.good:
+			data = _parseJsonResponse(response)
+			logger.info("%s %s -> %d (OK)" % (method, endpoint, statusCode))
+			return {"success": True, "statusCode": statusCode, "data": data, "error": None}
+
+		errorBody = _decodeResponseBody(response)
+		logger.error("%s %s -> %d: %s" % (method, endpoint, statusCode, errorBody))
+		return {"success": False, "statusCode": statusCode, "data": None, "error": errorBody}
+
+
+# =============================================================================
 # PUBLIC API METHODS
 # =============================================================================
 
@@ -133,43 +194,9 @@ def get(endpoint, params=None):
 	"""
 	url = _buildUrl(endpoint, params)
 	headers = _getHeaders()
-	
+
 	logger.debug("GET %s" % url)
-	
-	try:
-		client = system.net.httpClient()
-		response = client.get(url, headers=headers)
-		
-		statusCode = response.statusCode
-		logger.debug("GET %s -> %d" % (endpoint, statusCode))
-		
-		if response.good:
-			data = _parseJsonResponse(response)
-			logger.info("GET %s -> %d (OK)" % (endpoint, statusCode))
-			return {
-				"success": True,
-				"statusCode": statusCode,
-				"data": data,
-				"error": None
-			}
-		else:
-			errorBody = _decodeResponseBody(response)
-			logger.error("GET %s -> %d: %s" % (endpoint, statusCode, errorBody))
-			return {
-				"success": False,
-				"statusCode": statusCode,
-				"data": None,
-				"error": errorBody
-			}
-	
-	except Exception as e:
-		logger.error("GET %s -> Exception: %s" % (endpoint, str(e)))
-		return {
-			"success": False,
-			"statusCode": 0,
-			"data": None,
-			"error": str(e)
-		}
+	return _handle("GET", endpoint, lambda: _client().get(url, headers=headers, timeout=config.READ_TIMEOUT_MS))
 
 
 def post(endpoint, body):
@@ -190,43 +217,9 @@ def post(endpoint, body):
 	"""
 	url = _buildUrl(endpoint)
 	headers = _getHeaders()
-	
+
 	logger.debug("POST %s" % url)
-	
-	try:
-		client = system.net.httpClient()
-		response = client.post(url, data=body, headers=headers)
-		
-		statusCode = response.statusCode
-		logger.debug("POST %s -> %d" % (endpoint, statusCode))
-		
-		if response.good:
-			data = _parseJsonResponse(response)
-			logger.info("POST %s -> %d (OK)" % (endpoint, statusCode))
-			return {
-				"success": True,
-				"statusCode": statusCode,
-				"data": data,
-				"error": None
-			}
-		else:
-			errorBody = _decodeResponseBody(response)
-			logger.error("POST %s -> %d: %s" % (endpoint, statusCode, errorBody))
-			return {
-				"success": False,
-				"statusCode": statusCode,
-				"data": None,
-				"error": errorBody
-			}
-	
-	except Exception as e:
-		logger.error("POST %s -> Exception: %s" % (endpoint, str(e)))
-		return {
-			"success": False,
-			"statusCode": 0,
-			"data": None,
-			"error": str(e)
-		}
+	return _handle("POST", endpoint, lambda: _client().post(url, data=body, headers=headers, timeout=config.READ_TIMEOUT_MS))
 
 
 def patch(endpoint, body):
@@ -242,43 +235,9 @@ def patch(endpoint, body):
 	"""
 	url = _buildUrl(endpoint)
 	headers = _getHeaders()
-	
+
 	logger.debug("PATCH %s" % url)
-	
-	try:
-		client = system.net.httpClient()
-		response = client.patch(url, data=body, headers=headers)
-		
-		statusCode = response.statusCode
-		logger.debug("PATCH %s -> %d" % (endpoint, statusCode))
-		
-		if response.good:
-			data = _parseJsonResponse(response)
-			logger.info("PATCH %s -> %d (OK)" % (endpoint, statusCode))
-			return {
-				"success": True,
-				"statusCode": statusCode,
-				"data": data,
-				"error": None
-			}
-		else:
-			errorBody = _decodeResponseBody(response)
-			logger.error("PATCH %s -> %d: %s" % (endpoint, statusCode, errorBody))
-			return {
-				"success": False,
-				"statusCode": statusCode,
-				"data": None,
-				"error": errorBody
-			}
-	
-	except Exception as e:
-		logger.error("PATCH %s -> Exception: %s" % (endpoint, str(e)))
-		return {
-			"success": False,
-			"statusCode": 0,
-			"data": None,
-			"error": str(e)
-		}
+	return _handle("PATCH", endpoint, lambda: _client().patch(url, data=body, headers=headers, timeout=config.READ_TIMEOUT_MS))
 
 
 def delete(endpoint):
@@ -293,43 +252,9 @@ def delete(endpoint):
 	"""
 	url = _buildUrl(endpoint)
 	headers = _getHeaders()
-	
+
 	logger.debug("DELETE %s" % url)
-	
-	try:
-		client = system.net.httpClient()
-		response = client.delete(url, headers=headers)
-		
-		statusCode = response.statusCode
-		logger.debug("DELETE %s -> %d" % (endpoint, statusCode))
-		
-		if response.good:
-			data = _parseJsonResponse(response)
-			logger.info("DELETE %s -> %d (OK)" % (endpoint, statusCode))
-			return {
-				"success": True,
-				"statusCode": statusCode,
-				"data": data,
-				"error": None
-			}
-		else:
-			errorBody = _decodeResponseBody(response)
-			logger.error("DELETE %s -> %d: %s" % (endpoint, statusCode, errorBody))
-			return {
-				"success": False,
-				"statusCode": statusCode,
-				"data": None,
-				"error": errorBody
-			}
-	
-	except Exception as e:
-		logger.error("DELETE %s -> Exception: %s" % (endpoint, str(e)))
-		return {
-			"success": False,
-			"statusCode": 0,
-			"data": None,
-			"error": str(e)
-		}
+	return _handle("DELETE", endpoint, lambda: _client().delete(url, headers=headers, timeout=config.READ_TIMEOUT_MS))
 
 
 # =============================================================================
@@ -361,9 +286,13 @@ def getAll(endpoint, listKey, params=None):
 	pageCount = 0
 	cursor = None
 	
+	# Copy so the cursor/limit mutations below don't leak back into the
+	# caller's dict (cursor-injection side effect on repeated calls).
 	if params is None:
 		params = {}
-	
+	else:
+		params = dict(params)
+
 	# Set default limit if not specified
 	if "limit" not in params:
 		params["limit"] = config.DEFAULT_LIMIT

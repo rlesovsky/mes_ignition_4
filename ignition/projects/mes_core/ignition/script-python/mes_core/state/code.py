@@ -29,7 +29,9 @@ MySQL to PostgreSQL conversions:
 - Added proper error handling
 '''
 
-db = 'mes_core'
+from mes_core import config
+
+db = config.DB
 logger = system.util.getLogger("MES_StateHistory")
 
 

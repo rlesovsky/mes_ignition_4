@@ -25,9 +25,11 @@ MySQL to PostgreSQL conversions:
 - insert table(...) -> INSERT INTO table(...)
 '''
 
-from shared.mes_core.model import getLineID
+from mes_core.model import getLineID
+from mes_core import config
 
-db = 'mes_core'
+db = config.DB
+logger = system.util.getLogger("MES_Order")
 
 
 def addProductCode(productCode, description, disable=False, db=db):
@@ -94,7 +96,6 @@ def updateProductCodeLineStatus(productCode, modelPath, enable=True, db=db):
 		return 1
 		
 	except Exception as e:
-		logger = system.util.getLogger("MES_ProductCode")
 		logger.error("updateProductCodeLineStatus error: %s" % str(e))
 		return 0
 
@@ -143,3 +144,21 @@ def updateWorkOrderEntry(oldWorkOrderID, newWorkOrder, productCode, quantity, db
 	"""
 	
 	system.db.runPrepUpdate(query, [newWorkOrder, quantity, pcID, productCode, oldWorkOrderID], db)
+	
+	
+def setProductRate(productCodeId, standardRate, theoreticalRate, db=db):
+	"""Insert or update the standard/theoretical rate for a product code."""
+	try:
+		query = '''
+            INSERT INTO productcoderate (productcodeid, standard_rate, theoretical_rate, "TimeStamp")
+            VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+            ON CONFLICT (productcodeid) DO UPDATE SET
+                standard_rate    = EXCLUDED.standard_rate,
+                theoretical_rate = EXCLUDED.theoretical_rate,
+                "TimeStamp"      = CURRENT_TIMESTAMP
+        '''
+		system.db.runPrepUpdate(query, [productCodeId, standardRate, theoreticalRate], db)
+		return 1
+	except Exception as e:
+		logger.error("setProductRate error for product %s: %s" % (productCodeId, str(e)))
+		return 0

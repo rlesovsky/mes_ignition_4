@@ -20,8 +20,9 @@ MaintainX API Docs: https://api.getmaintainx.com/v1/docs
 
 BASE_URL = "https://api.getmaintainx.com/v1"
 
-# --- API Key: Hardcoded for Testing ---
-API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzMDE0NTMsIm9yZ2FuaXphdGlvbklkIjo1MTQxOTIsImlhdCI6MTc3NDEzNDg2Miwic3ViIjoiUkVTVF9BUElfQVVUSCIsImp0aSI6IjYyOWQ5MTE4LTlkY2MtNDk5NS1hZmY3LTg4YWZkMzhjYzliNCJ9.7qQsAB7DOyIzqmSrvYudBifnCX7bK8gVVx9IbTV4W4s"
+# --- API Key: set before use (do NOT commit a real key) ---
+# For local testing paste a key here; for production use the tag-based read below.
+API_KEY = ""
 
 # --- API Key: Tag-Based for Production (uncomment when ready) ---
 # API_KEY = str(system.tag.readBlocking(["[System]MaintainX/APIKey"])[0].value)
@@ -42,6 +43,12 @@ PAGE_DELAY_MS = 100
 # Retry settings for 429 rate limit responses
 MAX_RETRIES = 3
 RETRY_DELAY_MS = 2000
+
+# HTTP client timeouts (milliseconds)
+# CONNECT_TIMEOUT_MS  - max time to establish the TCP/TLS connection
+# READ_TIMEOUT_MS     - max time to wait for the response once connected
+CONNECT_TIMEOUT_MS = 10000
+READ_TIMEOUT_MS = 30000
 
 # =============================================================================
 # RESPONSE KEY MAPPINGS

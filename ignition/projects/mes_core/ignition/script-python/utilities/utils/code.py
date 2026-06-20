@@ -5,7 +5,7 @@
 #*  All Rights Reserved.
 #* 
 #* NOTICE:  All information contained herein is, and remains
-#* the property of Intellic Integration LLC and its suppliers,
+#* the property of 4.0 Solutions LLC and its suppliers,
 #* if any.  The intellectual and technical concepts contained
 #* herein are proprietary to 4.0 Solutions LLC
 #* and its suppliers and may be covered by U.S. and Foreign Patents,
@@ -33,19 +33,6 @@ def stripHTML(string, handleBreaks=False):
 	return string
 	
 	
-def clipboard(imagePath):
-	from java.awt.datatransfer import StringSelection
-	from java.awt.datatransfer import Clipboard
-	from java.awt import Toolkit
-	from java.awt.datatransfer import DataFlavor
-	toolkit = Toolkit.getDefaultToolkit()
-	clipboard = toolkit.getSystemClipboard()
-	clipboard.setContents(StringSelection(imagePath), None)
-	contents = clipboard.getContents(None)
-	logger = system.util.getLogger('IntellicInfo')
-	content = contents.getTransferData(DataFlavor.stringFlavor)
-	logger.infof('Image %s copied to clipboard.  Content = %s',imagePath,content)
-	
 def retarget(project):
 	system.util.retarget(project)
 	
@@ -70,11 +57,12 @@ def translateTable(component, translateColumns = [], locale=None, rawTableProper
 #	setattr(component, destinationTablePropertyName, data)
 	
 	if data.getRowCount() > 0:
+		# Ignition datasets are immutable; system.dataset.setValue returns a NEW dataset
+		# rather than mutating in place (data.setValueAt would not stick).
 		for rix in range(data.getRowCount()):
 			for cix in translateColumnIX:
-				entry = data.getValueAt(rix, cix)
-				translatedEntry = system.util.translate(entry, locale, False)
-				data.setValueAt(rix, cix, translatedEntry)
-		
+				translatedEntry = system.util.translate(data.getValueAt(rix, cix), locale, False)
+				data = system.dataset.setValue(data, rix, cix, translatedEntry)
+
 		setattr(component, destinationTablePropertyName, data)
 	

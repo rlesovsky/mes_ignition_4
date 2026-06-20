@@ -14,7 +14,7 @@
 #* is strictly forbidden unless prior written permission is obtained
 #* from 4.0 Solutions LLC.
 
-''''
+'''
 Script: store_count_history.py
 Purpose: Logs count delta from Ignition tag events to counthistory table.
 Context: Used in tag change events for MES production tracking.
@@ -31,10 +31,13 @@ Returns:
    
 '''
 
+from mes_core import config
+
+
 def storeCountHistory(currentCount, lastCount, tagID, countTypeID, runID=None, debug=False):
 	logger = system.util.getLogger("MES_CountHistory")
-	
-	db = "mes_core"
+
+	db = config.DB
 	
 	try:
 		# Validate inputs
@@ -46,16 +49,15 @@ def storeCountHistory(currentCount, lastCount, tagID, countTypeID, runID=None, d
 		countDelta = currentCount - lastCount
 		
 		if abs(countDelta) >= 1:
-			# Build parameters - include runID if provided
-			params = {
-				'tagID': tagID,
-				'countTypeID': countTypeID,
-				'count': int(countDelta),
-				'runID': runID
-			}
-			
-			system.db.runNamedQuery("InsertCountHistory", params, db)
-			
+			# Scope-independent prepped insert: this runs in gateway scope (tag-change
+			# event), where runNamedQuery's first positional must be a project name and
+			# there is no datasource arg. A prepped update keeps the `db` connection and
+			# avoids the project dependency entirely.
+			system.db.runPrepUpdate(
+				'INSERT INTO counthistory (tagid, counttypeid, count, runid, "TimeStamp") '
+				'VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)',
+				[tagID, countTypeID, int(countDelta), runID], db)
+
 			if debug:
 				logger.info("Inserted delta %s for tagID=%s, runID=%s" % (countDelta, tagID, runID))
 			
